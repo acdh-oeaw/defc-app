@@ -75,17 +75,18 @@ WSGI_APPLICATION = 'orea.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'orea',
-        'USER': 'root',
-        'PASSWORD': '142812',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+#
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'orea',
+#        'USER': 'root',
+#        'PASSWORD': '142812',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
+import settings_db
 
 
 # Internationalization
