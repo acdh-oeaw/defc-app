@@ -66,6 +66,9 @@ class Period(models.Model):
     class Meta:
         db_table = 'Period'
 
+    def __str__(self):
+        return self.label
+
 
 class ResearchEvent(models.Model):
     id_research = models.AutoField(db_column='ID_Research', primary_key=True)  # Field name made lowercase.
@@ -199,10 +202,10 @@ class Site(models.Model):
         null=True, help_text="Name of the state province where site is located.",
         choices = PROVINCE_CHOICES_EN)
     country = models.CharField(max_length=50, blank=True,
-        null=True, help_text="Name of the state where site is located.")
-    description = models.CharField(max_length=400, blank=True, null=True,
-        help_text="Free text summary account on the site.",
+        null=True, help_text="Name of the state where site is located.",
         choices=COUNTRY_CHOICES)
+    description = models.CharField(max_length=400, blank=True, null=True,
+        help_text="Free text summary account on the site.")
     topography = models.CharField(max_length=50, blank=True, null=True,
         help_text="Description of surface shape and features.")
     gps_data_coordinate_system = models.CharField(db_column='GPS_data_coordinate_system',
@@ -220,8 +223,10 @@ class Site(models.Model):
     reference_site = models.CharField(db_column='reference_SITE', max_length=100,
         blank=True, null=True, 
         help_text="Bibliographic and web-based references to publications and other relevant information on the site.")  # Field name made lowercase.
+		
     class Meta:
         db_table = 'Site'
+		
 
 
 class Finds(models.Model):
