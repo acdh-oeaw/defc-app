@@ -29,9 +29,30 @@ class Area(models.Model):
 
 
 class Period(models.Model):
+    CHRONOLOGICALSSYSTEM_CHOICES = (
+        ("Anatolia","Anatolia"),
+        ("Crete: Evans/Vagnetti", "Crete: Evans/Vagnetti"),
+        ("Crete: Tomkins 2007a","Crete: Tomkins 2007a"),
+        ("Cyclades: Attika-Kephala culture", "Cyclades: Attika-Kephala culture"),
+        ("Cyclades: Saliagos culture", "Cyclades: Saliagos culture"),
+        ("Macedonia/Thrace", "Macedonia/Thrace"),
+        ("Renfrew 1968", "Renfrew 1968"),
+        ("Thessaly", "Thessaly"),
+        )
+    PERIOD_CHOICES = (
+        ("Pre-Pottery Neolithic", "Pre-Pottery Neolithic"),
+        ("Pre-Pottery Neolithic/Neolithic", "Pre-Pottery Neolithic/Neolithic"),
+        ("Neolithic", "Neolithic"),
+        ("Early Chalcolithic", "Early Chalcolithic"),
+        ("Middle Chalcolithic", "Middle Chalcolithic"),
+        ("Late Chalcolithic", "Late Chalcolithic"),
+        )
     id_period = models.AutoField(db_column='ID_Period', primary_key=True)  # Field name made lowercase.
-    chronological_system = models.CharField(max_length=100, blank=True, null=True)
-    period = models.CharField(max_length=100, blank=True, null=True)
+    chronological_system = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEXT",
+        choices=CHRONOLOGICALSSYSTEM_CHOICES)
+    period = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX", choices=PERIOD_CHOICES)
     absolute_date_from = models.CharField(max_length=100, blank=True, null=True)
     absolute_date_to = models.CharField(max_length=100, blank=True, null=True)
     dating_method = models.CharField(max_length=100, blank=True, null=True)
@@ -63,7 +84,15 @@ class ResearchEvent(models.Model):
 
 
 class Site(models.Model):
-    NAME_CHOICES_EN =(
+    
+    REGION_CHOICES_EN = (
+        ("Anatolia/East Aegean", "Anatolia/East Aegean"),
+        ("Crete", "Crete"),
+        ("Cyclades", "Cyclades"),
+        ("Macedonia/Thrace","Southern and Central Greece"),
+        ("Thessaly", "Thessaly"),
+        )
+    PROVINCE_CHOICES_EN =(
         ("Adana", "Adana"),
         ("Adiyaman", "Adiyaman"),
         ("Afyon", "Afyon"),
@@ -148,33 +177,38 @@ class Site(models.Model):
         ("Zonguldak", "Zonguldak"),
         ("Xanthos", "Xanthos"),
         )
-    REGION_CHOICES_EN = (
-        ("Anatolia/East Aegean", "Anatolia/East Aegean"),
-        ("Crete", "Crete"),
-        ("Cyclades", "Cyclades"),
-        ("Macedonia/Thrace","Southern and Central Greece"),
-        ("Thessaly", "Thessaly"),
+    COUNTRY_CHOICES = (
+        ("Turkey", "Turkey"),
+        ("Greece", "Greece"),
         )
+    GPSSYSTEM_CHOICES = (
+        ("Google map", "Google map"),
+        ("GPS", "GPS"),
+        ("literature", "literature"),
+        )
+
     id_sites = models.AutoField(db_column='ID_Site', primary_key=True)  # Field name made lowercase.
     name = models.CharField(max_length=350, blank=True, null=True,
-        help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.",
-        choices = NAME_CHOICES_EN)
-    name_geonmaes = models.CharField(max_length=20, blank=True, null=True,
+        help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
+    name_geonames = models.CharField(max_length=20, blank=True, null=True,
         help_text="Holds the GeoNames-ID belonging to the name-field") # or any other usable id-provider
     region = models.CharField(max_length=50, blank=True,
         null=True, help_text="Geographical area where the site is located.", 
         choices=REGION_CHOICES_EN)
     province = models.CharField(max_length=50, blank=True,
-        null=True, help_text="Name of the state province where site is located.")
+        null=True, help_text="Name of the state province where site is located.",
+        choices = PROVINCE_CHOICES_EN)
     country = models.CharField(max_length=50, blank=True,
         null=True, help_text="Name of the state where site is located.")
     description = models.CharField(max_length=400, blank=True, null=True,
-        help_text="Free text summary account on the site.")
+        help_text="Free text summary account on the site.",
+        choices=COUNTRY_CHOICES)
     topography = models.CharField(max_length=50, blank=True, null=True,
         help_text="Description of surface shape and features.")
     gps_data_coordinate_system = models.CharField(db_column='GPS_data_coordinate_system',
         max_length=50, blank=True, null=True,
-        help_text="Name of system uniquely determining the position of the site.")  # Field name made lowercase.
+        help_text="Name of system uniquely determining the position of the site.",
+        choices=GPSSYSTEM_CHOICES)  # Field name made lowercase.
     gps_data_n = models.CharField(db_column='GPS_data_N', max_length=50,
         blank=True, null=True, help_text="North value of coordinate.")  # Field name made lowercase.
     gps_data_e = models.CharField(db_column='GPS_data_E', max_length=50,
