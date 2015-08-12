@@ -1,0 +1,37 @@
+{% extends "webapp/base.html" %} 
+
+{% block Titel %}Peters Collection Registry{% endblock %}
+
+{% block content %}
+
+<h1>Site Descriptions</h1> 
+{% if site_list %}
+<table class="table table-striped">
+	<tr>
+		<th>Site´s Name</th>
+		<th>Region</th>
+		<th>Province</th>
+		<th>Description</th>
+		<th>Area</th>
+	</tr>	
+	    {% for site in  site_list %}
+	 <tr>
+	 	<td>
+	 		{{ site.name }}
+	 	</td>
+	 	<td>
+	 		{{ site.region }}
+	 	</td>	
+	 	<td>
+	 		{{ site.province }}
+	 	</td>
+	 	<td>
+	 		{{ site.description }}
+	 	</td>
+	 </tr>	
+    {% endfor %}
+</table>
+{% else %}
+<p> Es gibt keine <i>collection_list</i></p>
+{% endif %} 
+{% endblock content %}

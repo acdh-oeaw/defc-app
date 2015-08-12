@@ -1,0 +1,96 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block Titel %} OREA - TRY {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A little Application">
+    <meta name="author" content="Peter Andorfer, ACDH">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap -->
+      <link rel="shortcut icon" href="../templates/bootstrap/img/exist_icon_16x16.ico"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+  </head>
+  <body  role="document">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation!</span>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+          </button>
+          <a class="navbar-brand" href="{% url 'webapp:start' %}">OREA-WebApp</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'webapp:site_list' %}">See Sites</a>
+                </li>
+                <li>
+                  <a href="{% url 'webapp:site_create' %}">Create new Site</a>
+                </li>
+                <li role="separator" class="divider"/>
+                <li>
+                  <a href="{% url 'webapp:start' %}">go back to start page</a>
+                </li>
+                <li role="separator" class="divider"/>
+                <li>
+                  <a href="#">One more separated link</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">Link</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">place for LogIn<span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Log In</a>
+                </li>
+                <li>
+                  <a href="#">Log Out</a>
+                </li>
+                <li role="separator" class="divider"/>
+                <li>
+                  <a href="#">Crate User</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+  <div id="content" class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+    <div id="footer">
+      <div class="container">
+        <p>&copy; 2015 ACDH</p>
+      </div>
+    </div>
+    <div/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+        {% block scripts %}
+        {% endblock %}
+  </body>
+</html>
