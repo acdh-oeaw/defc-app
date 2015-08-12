@@ -17,7 +17,7 @@
 	    {% for site in  site_list %}
 	 <tr>
 	 	<td>
-	 		{{ site.name }}
+	 		<a href="/webapp/sites/update/{{ site.id_site }}">{{ site.name }}</a> <!-- Attention this is link is hard coded because the way with named linkes triggers some "reverse" error -->
 	 	</td>
 	 	<td>
 	 		{{ site.region }}

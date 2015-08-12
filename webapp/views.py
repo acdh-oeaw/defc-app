@@ -14,6 +14,8 @@ class SiteUpdate(UpdateView):
 		fields = "__all__"
 		template_name_suffix = '_update_form'
 
+#	<!--<a href="{% url 'webapp:site_update' %} {{ site.id_site }}">{{ site.name }}</a>--> creates an error
+
 	
 class IndexView(generic.ListView):
 	template_name = 'webapp/sites.html'
