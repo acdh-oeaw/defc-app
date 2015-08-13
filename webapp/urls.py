@@ -10,6 +10,7 @@ url(r'^sites/delete/(?P<pk>[0-9]+)$', views.SiteDelete.as_view(), name='site_del
 url(r'^sites/detail/(?P<pk>[0-9]+)$', views.SiteDetail.as_view(), name='site_detail'),
 url(r'^finds/$', views.FindsListView.as_view(), name='finds_list'),
 url(r'^finds/create/$', views.FindsCreate.as_view(), name="finds_create"),
+url(r'^sites/detail/(?P<pk>[0-9]+)$', views.SiteDetail.as_view(), name='site_detail'),
 ]
 
 #some change for git

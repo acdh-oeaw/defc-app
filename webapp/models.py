@@ -368,7 +368,7 @@ class Finds(models.Model):
     comment = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     interpretationid_interpretation = models.IntegerField(db_column='InterpretationID_Interpretation')  # Field name made lowercase.
-    period_id_period = models.ForeignKey(Period, db_column='Period_ID_Period')  # Field name made lowercase.
+    period_id_period = models.ForeignKey('Period', db_column='Period_ID_Period')  # Field name made lowercase.
     research_event_id_research = models.ForeignKey('ResearchEvent', db_column='Research_Event_ID_Research')  # Field name made lowercase.
     area_id_area = models.ForeignKey(Area, db_column='Area_ID_Area')  # Field name made lowercase.
     area_site = models.ForeignKey(Site, db_column='Area_Site_ID')  # Field name made lowercase. PA: Changed Foreing Key form Area to Site
@@ -376,8 +376,11 @@ class Finds(models.Model):
     class Meta:
         db_table = 'Finds'
 
-    def __unicode(self):
-        return self.finds_type
+    def __unicode__(self):
+        return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
+
+    def get_absolute_url(self):
+        return reverse('webapp:finds_list')
 
 
 class Interpretation(models.Model):

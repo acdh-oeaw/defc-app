@@ -5,13 +5,13 @@
 {% block content %}
 
 <h1>Finds</h1> 
-{% if Finds_list %}
+{% if finds_list %}
 <table class="table table-striped">
 
 	    {% for finds in  finds_list %}
 	 <tr>
 	 	<td>
-	 		{{ finds.name }} 
+	 		{{ finds }} 
 	 	</td>
 	 	<td>
 	 		<a class ="btn btn-primary" href="/webapp/finds/detail/{{ finds.id_finds }}"> See Details </a>

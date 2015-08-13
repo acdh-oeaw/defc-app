@@ -98,12 +98,22 @@ class FindsCreate(CreateView):
 	def dispatch(self, *args, **kwargs):
 		return super(FindsCreate, self).dispatch(*args, **kwargs)
 
+
 class FindsListView(generic.ListView):
 	template_name = 'webapp/finds_list.html'
 	context_object_name = 'finds_list'
 
 	def get_queryset(self):
-		return Finds.objects.order_by('name')
+		return Finds.objects.order_by('finds_type')
+
+
+class FindsDelete(DeleteView):
+	model = Finds
+	success_url = reverse_lazy('webapp:finds_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsDelete, self).dispatch(*args, **kwargs)
 
 
 
