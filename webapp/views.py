@@ -79,12 +79,35 @@ class SiteDelete(DeleteView):
 
 	
 class SiteListView(generic.ListView):
-	template_name = 'webapp/sites.html'
+	template_name = 'webapp/site_list.html'
 	context_object_name = 'site_list'
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
-		
+
+
+#################################################################
+#				views for Finds									#
+#################################################################
+
+class FindsCreate(CreateView):
+	model = Finds
+	fields = "__all__"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsCreate, self).dispatch(*args, **kwargs)
+
+class FindsListView(generic.ListView):
+	template_name = 'webapp/finds_list.html'
+	context_object_name = 'finds_list'
+
+	def get_queryset(self):
+		return Finds.objects.order_by('name')
+
+
+
+
 
 def start_view(request):
 	context = RequestContext(request)

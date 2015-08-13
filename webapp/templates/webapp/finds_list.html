@@ -1,0 +1,31 @@
+{% extends "webapp/base.html" %} 
+
+{% block Titel %}See Finds{% endblock %}
+
+{% block content %}
+
+<h1>Finds</h1> 
+{% if Finds_list %}
+<table class="table table-striped">
+
+	    {% for finds in  finds_list %}
+	 <tr>
+	 	<td>
+	 		{{ finds.name }} 
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/webapp/finds/detail/{{ finds.id_finds }}"> See Details </a>
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/webapp/finds/update/{{ finds.id_finds }}"> Edit </a> 
+	 	</td>	
+	 	<td>
+	 		<a class ="btn btn-danger btn-sm" href="/webapp/finds/delete/{{ finds.id_finds }}"> Delete </a> 
+	 	</td>
+	 </tr>	
+    {% endfor %}
+</table>
+{% else %}
+<p> There is no  <i>finds_lists</i></p>
+{% endif %} 
+{% endblock content %}

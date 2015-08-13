@@ -1,0 +1,17 @@
+{% extends "webapp/base.html" %} {% block Titel %} {{ collection.title }} {% endblock %} {% block content %}
+<h4>was is los</h4>
+<form method="post" action=".">
+    {% csrf_token %} {{ formset.management_form }}
+    <table class="table table-striped">
+        {% for form in formset %} 
+        {% for field in form %}
+        <tr>
+            <td> {{ field.label_tag }}</td>
+            <td> {{ field }}</td>
+        </tr>
+        {% endfor %} 
+        {% endfor %}
+    </table>
+    <input type="submit" value="Create" />
+</form>
+{% endblock %}
