@@ -7,7 +7,7 @@
     <title>{% block Titel %} OREA - TRY {% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A little Application">
-    <meta name="author" content="Peter Andorfer, ACDH">
+    <meta name="author" content="ACDH">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Bootstrap -->
       <link rel="shortcut icon" href="../templates/bootstrap/img/exist_icon_16x16.ico"/>
@@ -60,10 +60,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="#">Log In</a>
+                  <a href="{% url 'user_login' %}">Log In</a>
                 </li>
                 <li>
-                  <a href="#">Log Out</a>
+                  <a href="{% url 'user_logout' %}">Log Out</a>
                 </li>
                 <li role="separator" class="divider"/>
                 <li>

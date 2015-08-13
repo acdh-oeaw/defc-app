@@ -4,8 +4,13 @@
 
 {% block content %}
 <div class="jumbotron">
-	<h1>Hello, world!</h1>
+	{% if user.is_authenticated %}
+	<h1>Hello, {{ request.user.username }}!</h1>
+	{% else %}
+	<h1>Hello, Nobody!</h1>
+	{% endif %}
 	<p>This is the main site of the orea-app</p>
 	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
 {% endblock content %}
+

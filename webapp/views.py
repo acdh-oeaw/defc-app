@@ -1,17 +1,55 @@
-from django.shortcuts import render, render_to_response, redirect
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect,HttpResponseForbidden
+from django.shortcuts import render, render_to_response
+from django.template import RequestContext
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views import generic
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
-from .models import Site
 
+from .models import Site
+from .forms import *
 
 #################################################################
-#						views for Site							#
+#				views for login/logout							#
+#################################################################
+def user_login(request):
+	errors=[]
+	if request.method == 'POST':
+		form = form_user_login(request.POST)
+		if form.is_valid():
+			cd = form.cleaned_data
+			user = authenticate(username=cd['username'],password=cd['password'])
+			if user is not None:
+				if user.is_active:
+					login(request, user)
+					return HttpResponseRedirect(request.GET.get('next','/webapp/'))
+				else:
+					return HttpResponse('not active.')
+			else:
+				return HttpResponse('user does not exist')
+	else:
+		form = form_user_login()
+		return render(request, 'webapp/user_login.html', {'form':form})
+
+
+def user_logout(request):
+	logout(request)
+	return render_to_response('webapp/logout.html')
+
+#################################################################
+#				views for Site									#
 #################################################################
 class SiteCreate(CreateView):
 	model = Site
 	fields = "__all__"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SiteCreate, self).dispatch(*args, **kwargs)
 
 	
 class SiteUpdate(UpdateView):
@@ -19,7 +57,10 @@ class SiteUpdate(UpdateView):
 	fields = "__all__"
 	template_name_suffix = '_update_form'
 
-#	<!--<a href="{% url 'webapp:site_update' %} {{ site.id_site }}">{{ site.name }}</a>--> creates an error
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SiteUpdate, self).dispatch(*args, **kwargs)
+
 
 class SiteDetail(DetailView):
 	model = Site
@@ -32,8 +73,12 @@ class SiteDelete(DeleteView):
 	model = Site
 	success_url = reverse_lazy('webapp:site_list')
 
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SiteDelete, self).dispatch(*args, **kwargs)
+
 	
-class IndexView(generic.ListView):
+class SiteListView(generic.ListView):
 	template_name = 'webapp/sites.html'
 	context_object_name = 'site_list'
 
@@ -42,4 +87,6 @@ class IndexView(generic.ListView):
 		
 
 def start_view(request):
-	return render_to_response('webapp/index.html')
+	context = RequestContext(request)
+	return render(request, 'webapp/index.html', context)
+
