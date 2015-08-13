@@ -1,32 +1,31 @@
 {% extends "webapp/base.html" %} 
 
-{% block Titel %}Peters Collection Registry{% endblock %}
+{% block Titel %}See Sites{% endblock %}
 
 {% block content %}
 
 <h1>Site Descriptions</h1> 
 {% if site_list %}
 <table class="table table-striped">
-	<tr>
+<!--	<tr>
 		<th>Site´s Name</th>
-		<th>Region</th>
-		<th>Province</th>
-		<th>Description</th>
-		<th>Area</th>
-	</tr>	
+		<th>See Details</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>	-->
 	    {% for site in  site_list %}
 	 <tr>
 	 	<td>
-	 		<a href="/webapp/sites/update/{{ site.id_site }}">{{ site.name }}</a> <!-- Attention this is link is hard coded because the way with named linkes triggers some "reverse" error -->
+	 		{{ site.name }} 
 	 	</td>
 	 	<td>
-	 		{{ site.region }}
+	 		<a class ="btn btn-primary" href="/webapp/sites/detail/{{ site.id_site }}"> See Details </a>
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/webapp/sites/update/{{ site.id_site }}"> Edit </a> 
 	 	</td>	
 	 	<td>
-	 		{{ site.province }}
-	 	</td>
-	 	<td>
-	 		{{ site.description }}
+	 		<a class ="btn btn-danger btn-sm" href="/webapp/sites/delete/{{ site.id_site }}"> Delete </a> 
 	 	</td>
 	 </tr>	
     {% endfor %}
