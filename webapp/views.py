@@ -5,7 +5,10 @@ from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 from .models import Site
 
-#views for Site
+
+#################################################################
+#						views for Site							#
+#################################################################
 class SiteCreate(CreateView):
 	model = Site
 	fields = "__all__"
