@@ -1,4 +1,13 @@
 {% extends "webapp/base.html" %} 
 {% block content %}
-<h1> {{ object.name }}
+<table>
+	<tr>
+		<td>Name of the site </td>
+		<td>{{ object.name }}</td>
+	</tr>
+	<tr>
+		<td>Region of the site</td>
+		<td>{{ object.region }}</td>
+	</tr>	
+</table>
 {% endblock content %}
