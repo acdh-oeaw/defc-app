@@ -10,7 +10,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site
+from .models import Site, Settlement, Finds
 from .forms import *
 
 #################################################################
@@ -138,7 +138,57 @@ class FindsDetail(DetailView):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
 		return context
 
-		
+
+#################################################################
+#				views for Finds									#
+#################################################################
+
+class SettlementListView(generic.ListView):
+	template_name = 'webapp/settlement_list.html'
+	context_object_name = 'object_list'
+
+	def get_queryset(self):
+		return Settlement.objects.order_by('settlement_type')
+
+
+class SettlementCreate(CreateView):
+	model = Settlement
+	fields = "__all__"
+	template_name = "webapp/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SettlementCreate, self).dispatch(*args, **kwargs)
+
+
+class SettlementUpdate(UpdateView):
+	model = Settlement
+	fields = "__all__"
+	template_name = 'webapp/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SettlementUpdate, self).dispatch(*args, **kwargs)
+
+
+class SettlementDelete(DeleteView):
+	model = Settlement
+	template_name = 'webapp/confirm_delete.html'
+	success_url = reverse_lazy('webapp:settlement_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SettlementDelete, self).dispatch(*args, **kwargs)
+
+
+class SettlementDetail(DetailView):
+	model = Settlement
+	def get_context_data(self, **kwargs):
+		context = super(SettlementDetail, self).get_context_data(**kwargs)
+		return context
+
+
+
 #################################################################
 #				basic application views							#
 #################################################################

@@ -13,6 +13,11 @@ url(r'^finds/create/$', views.FindsCreate.as_view(), name='finds_create'),
 url(r'^finds/update/(?P<pk>[0-9]+)$', views.FindsUpdate.as_view(), name='finds_update'),
 url(r'^finds/delete/(?P<pk>[0-9]+)$', views.FindsDelete.as_view(), name='finds_delete'),
 url(r'^finds/detail/(?P<pk>[0-9]+)$', views.FindsDetail.as_view(), name='finds_detail'),
+url(r'^settlement/$', views.SettlementListView.as_view(), name='settlement_list'),
+url(r'^settlement/create/$', views.SettlementCreate.as_view(), name='settlement_create'),
+url(r'^settlement/update/(?P<pk>[0-9]+)$', views.SettlementUpdate.as_view(), name='settlement_update'),
+url(r'^settlement/delete/(?P<pk>[0-9]+)$', views.SettlementDelete.as_view(), name='settlement_delete'),
+url(r'^settlement/detail/(?P<pk>[0-9]+)$', views.SettlementDetail.as_view(), name='settlement_detail'),
 ]
 
 #some change for git

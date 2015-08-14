@@ -16,7 +16,7 @@
 # PA: Changed fieldname type in class Finds to finds_type because type 
 #is a python keyword
 # PA: It would ease many things if every class would have the same field 
-#name for the field which stores the pirmary key maybe just named "id",
+#name for the field which stores the pirmary key (maybe named "id"),
 # e.g. this could be used for writing one list_view template used by all
 #classes. 
 
@@ -194,8 +194,10 @@ class Settlement(models.Model):
         db_table = 'Settlement'
 
     def __unicode__(self):
-        return self.id_settlements
+        return self.settlement_type.encode('utf8')+'_'+str(self.id_settlements).encode('utf8')
 
+    def get_absolute_url(self):
+        return reverse('webapp:settlement_list')
 
 class SettlementArea(models.Model):
     id_settlementArea = models.AutoField(db_column='ID_SettlementArea', primary_key=True) # PA: Added id field
