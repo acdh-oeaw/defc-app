@@ -4,33 +4,28 @@
 
 {% block content %}
 
-<h1>Site Descriptions</h1> 
-{% if site_list %}
+<h1>All Sites</h1> 
+{% if object_list %}
 <table class="table table-striped">
-<!--	<tr>
-		<th>Site´s Name</th>
-		<th>See Details</th>
-		<th>Edit</th>
-		<th>Delete</th>
-	</tr>	-->
-	    {% for site in  site_list %}
+
+	    {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{{ site.name }} 
+	 		{{ object.name }} 
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/sites/detail/{{ site.id_site }}"> See Details </a>
+	 		<a class ="btn btn-primary" href="/webapp/sites/detail/{{ object.id_site }}"> See Details </a>
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/sites/update/{{ site.id_site }}"> Edit </a> 
+	 		<a class ="btn btn-primary" href="/webapp/sites/update/{{ object.id_site }}"> Edit </a> 
 	 	</td>	
 	 	<td>
-	 		<a class ="btn btn-danger btn-sm" href="/webapp/sites/delete/{{ site.id_site }}"> Delete </a> 
+	 		<a class ="btn btn-danger btn-sm" href="/webapp/sites/delete/{{ object.id_site }}"> Delete </a> 
 	 	</td>
 	 </tr>	
     {% endfor %}
 </table>
 {% else %}
-<p> Es gibt keine <i>collection_list</i></p>
+<p> There is no <i>object_list</i></p>
 {% endif %} 
 {% endblock content %}

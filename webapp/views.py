@@ -43,9 +43,20 @@ def user_logout(request):
 #################################################################
 #				views for Site									#
 #################################################################
+class SiteListView(generic.ListView):
+	template_name = 'webapp/site_list.html'
+	context_object_name = 'object_list' # use object_list instead of
+	# e.g. site_list so the template does not need to be changed so much
+	#for each class. 
+
+	def get_queryset(self):
+		return Site.objects.order_by('name')
+
+
 class SiteCreate(CreateView):
 	model = Site
 	fields = "__all__"
+	template_name = "webapp/create_form.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -55,11 +66,21 @@ class SiteCreate(CreateView):
 class SiteUpdate(UpdateView):
 	model = Site
 	fields = "__all__"
-	template_name_suffix = '_update_form'
+	template_name = 'webapp/update_form.html'
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(SiteUpdate, self).dispatch(*args, **kwargs)
+
+
+class SiteDelete(DeleteView):
+	model = Site
+	template_name = 'webapp/confirm_delete.html'
+	success_url = reverse_lazy('webapp:site_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(SiteDelete, self).dispatch(*args, **kwargs)
 
 
 class SiteDetail(DetailView):
@@ -69,46 +90,41 @@ class SiteDetail(DetailView):
 		return context
 
 
-class SiteDelete(DeleteView):
-	model = Site
-	success_url = reverse_lazy('webapp:site_list')
-
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(SiteDelete, self).dispatch(*args, **kwargs)
-
-	
-class SiteListView(generic.ListView):
-	template_name = 'webapp/site_list.html'
-	context_object_name = 'site_list'
-
-	def get_queryset(self):
-		return Site.objects.order_by('name')
-
-
 #################################################################
 #				views for Finds									#
 #################################################################
 
+class FindsListView(generic.ListView):
+	template_name = 'webapp/finds_list.html'
+	context_object_name = 'object_list'
+
+	def get_queryset(self):
+		return Finds.objects.order_by('finds_type')
+
+
 class FindsCreate(CreateView):
 	model = Finds
 	fields = "__all__"
+	template_name = "webapp/create_form.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(FindsCreate, self).dispatch(*args, **kwargs)
 
 
-class FindsListView(generic.ListView):
-	template_name = 'webapp/finds_list.html'
-	context_object_name = 'finds_list'
+class FindsUpdate(UpdateView):
+	model = Finds
+	fields = "__all__"
+	template_name = 'webapp/update_form.html'
 
-	def get_queryset(self):
-		return Finds.objects.order_by('finds_type')
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsUpdate, self).dispatch(*args, **kwargs)
 
 
 class FindsDelete(DeleteView):
 	model = Finds
+	template_name = 'webapp/confirm_delete.html'
 	success_url = reverse_lazy('webapp:finds_list')
 
 	@method_decorator(login_required)
@@ -116,7 +132,16 @@ class FindsDelete(DeleteView):
 		return super(FindsDelete, self).dispatch(*args, **kwargs)
 
 
+class FindsDetail(DetailView):
+	model = Finds
+	def get_context_data(self, **kwargs):
+		context = super(FindsDetail, self).get_context_data(**kwargs)
+		return context
 
+		
+#################################################################
+#				basic application views							#
+#################################################################
 
 
 def start_view(request):

@@ -5,27 +5,27 @@
 {% block content %}
 
 <h1>Finds</h1> 
-{% if finds_list %}
+{% if object_list %}
 <table class="table table-striped">
 
-	    {% for finds in  finds_list %}
+	    {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{{ finds }} 
+	 		{{ object }} 
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/finds/detail/{{ finds.id_finds }}"> See Details </a>
+	 		<a class ="btn btn-primary" href="/webapp/finds/detail/{{ object.id_finds }}"> See Details </a>
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/finds/update/{{ finds.id_finds }}"> Edit </a> 
+	 		<a class ="btn btn-primary" href="/webapp/finds/update/{{ object.id_finds }}"> Edit </a> 
 	 	</td>	
 	 	<td>
-	 		<a class ="btn btn-danger btn-sm" href="/webapp/finds/delete/{{ finds.id_finds }}"> Delete </a> 
+	 		<a class ="btn btn-danger btn-sm" href="/webapp/finds/delete/{{ object.id_finds }}"> Delete </a> 
 	 	</td>
 	 </tr>	
     {% endfor %}
 </table>
 {% else %}
-<p> There is no  <i>finds_lists</i></p>
+<p> There is no  <i>object_lists</i></p>
 {% endif %} 
 {% endblock content %}

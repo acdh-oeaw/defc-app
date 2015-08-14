@@ -4,13 +4,21 @@
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
 #   * Make sure each model has one field with primary_key=True
-#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
-# Feel free to rename the models, but don't rename db_table values or field names.
+#   * Remove `managed = False` lines if you wish to allow Django 
+#to create, modify, and delete the table
+# Feel free to rename the models, but don't rename 
+#db_table values or field names.
 #
-# Also note: You'll have to insert the output of 'django-admin sqlcustom [app_label]'
+# Also note: You'll have to insert the output of 
+#'django-admin sqlcustom [app_label]'
 # into your database.
 # PA: Add an encoding decleration on the first line
-# PA: Changed fieldname type in class Finds to finds_type because type is a python keyword
+# PA: Changed fieldname type in class Finds to finds_type because type 
+#is a python keyword
+# PA: It would ease many things if every class would have the same field 
+#name for the field which stores the pirmary key maybe just named "id",
+# e.g. this could be used for writing one list_view template used by all
+#classes. 
 
 from __future__ import unicode_literals
 
