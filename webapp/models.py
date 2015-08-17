@@ -84,7 +84,7 @@ class Period(models.Model):
         db_table = 'Period'
 
     def __unicode__(self):
-        return self.period
+        return self.period#comment
 
 
 class ResearchEvent(models.Model):
