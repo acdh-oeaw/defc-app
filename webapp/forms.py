@@ -7,6 +7,7 @@ from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
 from webapp.models import *
 from django.utils.translation import ugettext_lazy as _
 
+#comment
 
 class form_user_login(forms.Form):
 	username = forms.CharField(label='Username',widget=forms.TextInput)
