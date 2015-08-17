@@ -199,3 +199,163 @@ class Site(models.Model):
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
+
+
+class Area(models.Model):
+	AREATYPE_CHOICES = (
+		("Settlement", "Settlement"),
+		("Caves and Rockshelters", "Caves and Rockshelters"),
+		("Quarry", "Quarry"),
+		("Cemetery/Grave", "Cemetery/Grave"),		
+		)
+#filds of settlements	
+	CONSTRUCTIONTYPE_CHOICES = (
+		("apsidal",  "apsidal"),
+        ("circular", "circular"),
+        ("one-room", "one-room"),
+        ("rectangular", "rectangular"),
+        ("Tsangli house", "Tsangli house"),
+        )
+	BUILDINGTECHNIQUE_CHOICES = (
+		("mud brick", "mud brick"),
+        ("pavement", "pavement"),
+        ("pisé", "pisé"),
+        ("plaster wall", "plaster wall"),
+        ("stone socket", "stone socket"),
+        ("wattle and daub", "wattle and daub"),
+        )
+	SPECIALFEATURES_CHOICES = (
+		("bench", "bench"),
+        ("channel", "channel"),
+        ("hearth", "hearth"),
+        ("pit", "pit"),
+        ("post-hole", "post-hole"),
+        ("stone setting", "stone setting"),
+        ("storage building", "storage building"),
+        ("storage pit", "storage pit"),
+        ("storage vessel", "storage vessel"),
+        ("well", "well"),
+        ("oven", "oven"),
+        )
+#field of caves&rockshelters
+	EVIDENCEOFGRAVES_HUMANREMAINS_CHOICES = ( 
+        ("not present", "not present"),
+        ("present", "present"),
+        )
+	EVIDENCEOFOCCUPATION_CHOICES = (
+		("fire place", "fire place"),
+        ("storage facilities", "storage facilities"),
+        ("post-hole", "post-hole"),
+        ("stone setting", "stone setting"),
+        ("pit", "pit"),
+        )
+	CAVESANDROCKSHELTERSTYPES_CHOICES = (
+		("cave", "cave"),
+        ("rock shelter", "rock shelter"),
+        )
+#fields of Quarry
+	RAWMATERIAL_CHOICES = (
+		("obsidian", "obsidian"),
+        ("copper", "copper"),
+        ("limestone", "limestone"),
+        ("flint", "flint"),
+        ("chert", "chert"),
+        ("clay", "clay"),
+        )
+	EXPLOITATIONTYPE_CHOICES = (
+		("pinge", "pinge"),
+        ("shaft mining", "shaft mining"),
+        ("surface", "surface"),
+        )
+#fields of Cemetery/Graves
+	TOPOGRAPHY_CHOICES = (
+		("intra mural", "intra mural"),
+        ("extra mural", "extra mural"),
+        ("in cave", "in cave"),
+        ("next to cave", "next to cave"),
+        ("part of house", "part of house"),
+        )
+	MORTUARYFEATURES_CHOICES = (
+		("pyre", "pyre"),
+        ("separating wall", "separating wall"),
+        ("platform", "platform"),
+        )
+	GRAVETYPES_CHOICES = (
+		("cist grave", "cist grave"),
+        ("pit grave", "pit grave"),
+        ("vessel", "vessel"),
+        ("none recorded", "none recorded"),
+        )
+	TYPEOFHUMANREMAINS_CHOICES = (
+		("cremations", "cremations"),
+        ("inhumations: complete bodies", "inhumations: complete bodies"),
+        ("secondary deposition", "secondary deposition"),
+        )
+	AGEGROUPS_CHOICES = (
+		("neonate", "neonate"),
+        ("infans I (0-6)", "infans I (0-6)"),
+        ("infans II (7-12)", "infans II (7-12)"),
+        ("juvenile (13-18)", "juvenile (13-18)"),
+        ("adult (19-40)", "adult (19-40)"),
+        ("adult-mature (19-45)", "adult-mature (19-45)"),
+        ("mature (41-60)", "mature (41-60)"),
+        ("mature-senile (51-70)", "mature-senile (51-70)"),
+        ("senile (60-)", "senile (60-)"),
+        ("not recorded", "not recorded"),
+        ("part of specialist report", "part of specialist report"),
+        ("immature", "immature"),
+        ("mature", "mature"),
+        ("children", "children"),
+        ("adults", "adults"),
+        )
+	SEXES_CHOICES = (
+		("male individuals: no.", "male individuals: no."),
+        ("female individuals: no.", "female individuals: no."),
+        ("not specified: no.", "not specified: no."),
+        ("part of specialist report", "part of specialist report"),
+        )
+	MANIPULATIONOFGRAVES_CHOICES = (
+		("consecutive burials", "consecutive burials"),
+        ("construction of settlement", "construction of settlement"),
+        ("looting", "looting"),
+        ("none recorded", "none recorded"),
+        )
+	area_type = models.CharField(max_length=100, blank=True, null=True,
+		help_text = "The type of the area", choices=AREATYPE_CHOICES)
+	period = models.ForeignKey(Period, blank=True, null=True, 
+		help_text="PLEASE PROVIDE SOME HELPTEX")  
+	settlement_constructiontype = models.CharField(max_length=100,
+		blank=True, null=True, choices=CONSTRUCTIONTYPE_CHOICES,
+		help_text="Method used for fabricating the settlement.")
+################# To Be Continued ####################
+
+
+class Finds(models.Model):
+    FINDS_TYPE_CHOICES = (
+        ("Fire dog", "Fire dog"),
+        ("Arrowshaft smoother", "Arrowshaft smoother"),
+        ("Bucranium", "Bucranium"),
+        ("and many more", "and many more"),
+        )
+    MATERIAL_CHOICES = (
+        ("stone", "stone"),
+        ("obsidian", "obsidian"),
+        ("fabrics", "fabrics"),
+        ("and some more", "and some more"),
+        )
+    finds_type = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX",
+        choices=FINDS_TYPE_CHOICES)
+    material = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    reference = models.ForeignKey(Reference, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    comment = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    #interpretationid_interpretation = models.IntegerField(db_column='InterpretationID_Interpretation')
+    area = models.ForeignKey(Area, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX") 
+    research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
+    def __unicode__(self):
+        return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
