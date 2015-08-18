@@ -3,6 +3,8 @@
 from django.db import models
 
 
+#what about persons????
+
 class Reference(models.Model):
 	REFERENCETYPE_CHOICES = (
 		("printed", "printed"),
@@ -320,10 +322,12 @@ class Area(models.Model):
         ("looting", "looting"),
         ("none recorded", "none recorded"),
         )
+	
 	area_type = models.CharField(max_length=100, blank=True, null=True,
 		help_text = "The type of the area", choices=AREATYPE_CHOICES)
 	period = models.ForeignKey(Period, blank=True, null=True, 
-		help_text="PLEASE PROVIDE SOME HELPTEX")  
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	site = models.ForeignKey(Site, blank=True, null=True)  
 	settlement_constructiontype = models.CharField(max_length=100,
 		blank=True, null=True, choices=CONSTRUCTIONTYPE_CHOICES,
 		help_text="Method used for fabricating the settlement.")
