@@ -195,8 +195,8 @@ class Site(models.Model):
 		help_text="Z value of coordinate (elevation).")#optional?
 	coordinate_source = models.CharField(max_length=100, blank=True, 
 		null=True,
-        help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
-	reference_site = models.CharField(max_length=100, blank=True, null=True, 
+        help_text="Source providing information about the global position of site.")#optional?
+	reference_site = models.ForeignKey(Reference, blank=True, null=True, 
         help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
@@ -210,7 +210,12 @@ class Area(models.Model):
 		("Quarry", "Quarry"),
 		("Cemetery/Grave", "Cemetery/Grave"),		
 		)
-#filds of settlements	
+#filds of settlements
+	SETTLEMENTTYPE_CHOICES = (
+		("lowland", "lowland"),
+        ("tell", "tell"),
+        ("tepe", "tepe"),
+        )	#taken from "\ownCloud\DEFC\Database_Examples_alltables_KB.xlsx"
 	CONSTRUCTIONTYPE_CHOICES = (
 		("apsidal",  "apsidal"),
         ("circular", "circular"),
@@ -322,17 +327,87 @@ class Area(models.Model):
         ("looting", "looting"),
         ("none recorded", "none recorded"),
         )
-	
+#common fields for area	
+	site = models.ForeignKey(Site, blank=True, null=True,
+		help_text="The site where this area is located.")
 	area_type = models.CharField(max_length=100, blank=True, null=True,
 		help_text = "The type of the area", choices=AREATYPE_CHOICES)
+	area_nr = models.CharField(max_length=45,blank=True, null=True, 
+		help_text = "An established identifier for this area") #does something like this exist?
 	period = models.ForeignKey(Period, blank=True, null=True, 
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	site = models.ForeignKey(Site, blank=True, null=True)  
+	description = models.CharField(max_length=100, blank=True, null=True,
+        help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
+	reference = models.ForeignKey(Reference, blank=True, null=True,
+        help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+#settlement fields
+	settlement_type = models.CharField(max_length=100, blank=True, null=True,
+        help_text="Classification of settlement.",
+        choices=SETTLEMENTTYPE_CHOICES)
 	settlement_constructiontype = models.CharField(max_length=100,
-		blank=True, null=True, choices=CONSTRUCTIONTYPE_CHOICES,
-		help_text="Method used for fabricating the settlement.")
-################# To Be Continued ####################
-
+		blank=True, null=True, help_text="Type of buildings.", 
+		choices=CONSTRUCTIONTYPE_CHOICES)
+	settlement_building_technique = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Method used for fabricating the buildings.",
+        choices = BUILDINGTECHNIQUE_CHOICES)
+	settlement_special_features = models.CharField(max_length=100,
+		blank=True, null=True, choices=SPECIALFEATURES_CHOICES,
+        help_text="Parts of the settlement other than buildings.")
+#cave&rockshelters fields
+	cave_rockshelters_type = models.CharField(max_length=100, blank=True,
+		null=True,
+        help_text="Type of cave/rockshelter.",
+        choices=CAVESANDROCKSHELTERSTYPES_CHOICES)
+	cave_rockshelters_evidence_of_graves_human_remains = models.CharField(
+		max_length=100, blank=True, null=True,
+        help_text="Presence of graves and/or human remains.",
+        choices=EVIDENCEOFGRAVES_HUMANREMAINS_CHOICES)
+	cave_rockshelters_evidence_of_occupation = models.CharField(
+		max_length=100, blank=True, null=True,
+        help_text="Type of evidence indicating occupation found.",
+        choices=EVIDENCEOFOCCUPATION_CHOICES)
+#quarry fields
+	quarry_exploitation_type = models.CharField(max_length=100, blank=True,
+		null=True, help_text="Type of extraction.",
+		choices=EXPLOITATIONTYPE_CHOICES)
+	quarry_raw_material = models.CharField(max_length=100, blank=True, null=True,
+        help_text="Resource that was extracted.",
+        choices=RAWMATERIAL_CHOICES)
+#cemetery/graves fields
+	cemetery_graves_topography = models.CharField(max_length=100,
+		blank=True, null=True,
+        help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.",
+        choices=TOPOGRAPHY_CHOICES)
+	cemetery_graves_mortuary_features = models.CharField(max_length=100,
+		blank=True, null=True,
+        help_text="Parts of the cemetery other than graves.",
+        choices=MORTUARYFEATURES_CHOICES)
+	cemetery_graves_number_of_graves = models.CharField(max_length=100,
+		blank=True, null=True, help_text="Number of graves.")  #CharField or IntegerField ?
+	cemetery_graves_grave_type =  models.CharField(max_length=100,
+		blank=True, null=True, help_text="Types of graves.",
+		choices=GRAVETYPES_CHOICES)
+	cemetery_graves_type_of_human_remains = models.CharField(max_length=100,
+		blank=True, null=True, choices=TYPEOFHUMANREMAINS_CHOICES,
+		help_text="How the humans were treated after death and buried.")
+	cemetery_graves_estimated_number_of_individuals = models.CharField(
+		max_length=100, blank=True, null=True,
+		help_text="minimum and or maximum")
+	cemetery_graves_age_groups = models.CharField(max_length=100, blank=True,
+		null=True, help_text="Age.", choices=AGEGROUPS_CHOICES)
+	cemetery_graves_sexes = models.CharField(max_length=100, blank=True,
+		null=True, help_text="Sex", choices=SEXES_CHOICES)
+	cemetery_graves_manipulations_of_graves = models.CharField(
+    	max_length=100, blank=True, null=True,
+        help_text="If and how the space with the graves is marked.",
+        choices=MANIPULATIONOFGRAVES_CHOICES)
+###################################################
+#Not sure about this
+#small_findsid_small_finds = models.IntegerField(models.CharField(
+#	max_length=100, blank=True, null=True)  # small finds and finds are the same or not?
+#interpretationid_interpretation = models.ForeignKey('Interpretation', ) 
+#what is this?type of field (plain text or int)?
+########################################################
 
 class Finds(models.Model):
     FINDS_TYPE_CHOICES = (
