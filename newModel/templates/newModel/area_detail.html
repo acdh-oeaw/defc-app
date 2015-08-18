@@ -1,0 +1,101 @@
+{% extends "newModel/base.html" %}
+{% block content %}
+<table class="table table-striped">
+        <tr>
+                <td>Site</td>
+                <td>{{ object.site }}</td>
+        </tr>
+        <tr>
+                <td>Area type</td>
+                <td>{{ object.area_type }}</td>
+        </tr>
+        <tr>
+                <td>Area NR</td>
+                <td>{{ object.area_nr }}</td>
+        </tr>
+        <tr>
+                <td>Period</td>
+                <td>{{ object.period }}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{{ object.reference }}</td>
+        </tr>
+        <tr>
+                <td>Settlement type</td>
+                <td>{{ object.settlement_type }}</td>
+        </tr>
+        <tr>
+                <td>Settlement construction type</td>
+                <td>{{ object.settlement_constructiontype }}</td>
+        </tr>
+        <tr>
+                <td>Settlement building technique</td>
+                <td>{{ object.settlement_building_technique }}</td>
+        </tr>
+        <tr>
+                <td>Settlement special features</td>
+                <td>{{ object.settlement_special_features }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters type</td>
+                <td>{{ object.cave_rockshelters_type }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of graves/human remains</td>
+                <td>{{ object.cave_rockshelters_evidence_of_graves_human_remains }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of occupation</td>
+                <td>{{ object.cave_rockshelters_evidence_of_occupation }}</td>
+        </tr>
+        <tr>
+                <td>Quarry exploitation type</td>
+                <td>{{ object.quarry_exploitation_type }}</td>
+        </tr>
+        <tr>
+                <td>Quarry raw material</td>
+                <td>{{ object.quarry_raw_material }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves topography</td>
+                <td>{{ object.cemetery_graves_topography }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves mortuary features</td>
+                <td>{{ object.cemetery_graves_mortuary_features }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: number of graves</td>
+                <td>{{ object.cemetery_graves_number_of_graves }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: grave type</td>
+                <td>{{ object.cemetery_graves_grave_type }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: type of human remains</td>
+                <td>{{ object.cemetery_graves_type_of_human_remains }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: estimated number of individuals</td>
+                <td>{{ object.cemetery_graves_estimated_number_of_individuals }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: age groups</td>
+                <td>{{ object.cemetery_graves_age_groups }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: sexes</td>
+                <td>{{ object.cemetery_graves_sexes }}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves: manipulations of graves</td>
+                <td>{{ object.cemetery_graves_manipulations_of_graves }}</td>
+        </tr>
+</table>
+{% endblock content %}

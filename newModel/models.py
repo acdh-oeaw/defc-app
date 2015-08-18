@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 #what about persons????
@@ -202,6 +203,9 @@ class Site(models.Model):
 	def __unicode__(self):
 		return self.name.encode('utf8')
 
+	def get_absolute_url(self):
+		return reverse('newModel:site_list')
+
 
 class Area(models.Model):
 	AREATYPE_CHOICES = (
@@ -401,6 +405,12 @@ class Area(models.Model):
     	max_length=100, blank=True, null=True,
         help_text="If and how the space with the graves is marked.",
         choices=MANIPULATIONOFGRAVES_CHOICES)
+
+	def __unicode__(self):
+		return self.area_type.encode('utf8')
+
+	def get_absolute_url(self):
+		return reverse('newModel:area_list')
 ###################################################
 #Not sure about this
 #small_findsid_small_finds = models.IntegerField(models.CharField(

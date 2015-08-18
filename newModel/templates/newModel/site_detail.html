@@ -1,0 +1,53 @@
+{% extends "newModel/base.html" %}
+{% block content %}
+<table class="table table-striped">
+        <tr>
+                <td>Name of the site </td>
+                <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+                <td>Region</td>
+                <td>{{ object.region }}</td>
+        </tr>
+        <tr>
+                <td>Province</td>
+                <td>{{ object.province }}</td>
+        </tr>
+        <tr>
+                <td>Country</td>
+                <td>{{ object.country }}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Topography</td>
+                <td>{{ object.topography }}</td>
+        </tr>
+        <tr>
+                <td>GPS data coordinate system</td>
+                <td>{{ object.gps_data_coordinate_system }}</td>
+        </tr>
+        <tr>
+                <td>GPS data N</td>
+                <td>{{ object.gps_data_n }}</td>
+        </tr>
+        <tr>
+                <td>GPS data E</td>
+                <td>{{ object.gps_data_e }}</td>
+        </tr>
+        <tr>
+                <td>GPS data Z</td>
+                <td>{{ object.gps_data_z }}</td>
+        </tr>
+        <tr>
+                <td>Coordinate source</td>
+                <td>{{ object.coordinate_source }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{{ object.reference_site }}</td>
+        </tr>
+</table>
+{% endblock content %}

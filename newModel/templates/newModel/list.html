@@ -1,0 +1,34 @@
+{% extends "newModel/base.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+<h1>All Objects</h1> 
+{% if object_list %}
+<hr />
+<p><strong>Problem:</strong> The current template uses hard corded links e.g. /newModel/sites/detail !!!</p>
+<hr />
+<table class="table table-striped">
+
+	    {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		{{ object }} 
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/sites/detail/{{ object.id }}"> See Details </a>
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/sites/update/{{ object.id }}"> Edit </a> 
+	 	</td>	
+	 	<td>
+	 		<a class ="btn btn-danger btn-sm" href="/newModel/sites/delete/{{ object.id }}"> Delete </a> 
+	 	</td>
+	 </tr>	
+    {% endfor %}
+</table>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+{% endblock content %}
