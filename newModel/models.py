@@ -6,14 +6,243 @@ from django.core.urlresolvers import reverse
 
 #what about persons????
 
+#################################
+#			DC-Classes			#
+#################################
+class DC_reference_type(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True)
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_researchevent_researchtype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Methods used for researching the site.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
+
+class DC_researchevent_institution(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Organisation that carried out a research project at the site.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
+
+class DC_period_chronologicalsystem(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Name of chronological reference system used for data entry.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_period_name(models.Model):    #added 'period' in order to avoid ambiguity (Ksenia)
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Name of archaeological period for which evidence was found.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_period_datingmethod(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Method used for dating the site.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_period_datedby(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Source providing information about date.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_site_gpssystem(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Name of system uniquely determining the position of the site.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_areatype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="The type of the area.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_settlementtype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Classification of settlement.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_constructiontype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Type of buildings.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_buildingtechnique(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Method used for fabricating the buildings.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_specialfeatures(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Parts of the settlement other than buildings.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_evidenceofgraveshumanremains(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Presence of graves and/or human remains.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_evidenceofoccupation(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Type of evidence indicating occupation found.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_caverockshelterstype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Type of cave/rockshelter.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_rawmaterial(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Resource that was extracted.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_exploitationtype(models.Model):
+	name = models.CharField(max_length=100, blank=True,
+        null=True, help_text="Type of extraction.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_topography(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_mortuaryfeatures(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Parts of the cemetery other than graves.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_gravetype(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Types of graves.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_typeofhumanremains(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="How the humans were treated after death and buried.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_agegroups(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Age.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_sexes(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Sex.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_area_manipulationofgraves(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="If and how the space with the graves is marked.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_type(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_material(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+#####################################
+#		content tables				#
+#####################################
+
+
+
+
 class Reference(models.Model):
-	REFERENCETYPE_CHOICES = (
-		("printed", "printed"),
-		("website", "website"),
-		)
-	reference_type = models.CharField(max_length=100, blank=True,
-		null=True, choices = REFERENCETYPE_CHOICES, 
-		help_text = "The type of the ressource.")
+	reference_type = models.ForeignKey(DC_reference_type, blank=True,
+		null=True, help_text = "The type of the resource.")
 	title = models.CharField(max_length=100, blank=True, null=True,
 		help_text="The title of the ressource.")
 	creator = models.CharField(max_length=100, blank=True, null=True,
@@ -39,6 +268,11 @@ class Project(models.Model):
 	def __unicode__(self):
 		return self.name.encode('utf8')
 
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
 
 class Region(models.Model):
 	name = models.CharField(max_length = 100, blank=True, 
@@ -48,6 +282,11 @@ class Region(models.Model):
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
 
 
 class Province(models.Model):
@@ -59,6 +298,11 @@ class Province(models.Model):
 	def __unicode__(self):
 		return self.name.encode('utf8')
 
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
 
 class Country(models.Model):
 	name = models.CharField(max_length = 100, blank=True, 
@@ -69,25 +313,18 @@ class Country(models.Model):
 	def __unicode__(self):
 		return self.name.encode('utf8')
 
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
 
 class ResearchEvent(models.Model):
-	RESEARCHTYPE_CHOICES = (
-		("borehole survey", "borehole survey"),
-        ("excavation: rescue", "excavation: rescue"),
-        ("excavation: research", "excavation: research"),
-        ("excavation: underwater", "excavation: underwater"),
-        ("excavation: undetermined", "excavation: undetermined"),
-        ("MORE TO COME", "MORE TO COME"),
-        )
-	INSTITUTION_CHOICES = (
-		("No values provided yet", "No values provided yet"),
-		)
-	research_type = models.CharField(max_length=100, blank=True,
-        null=True, help_text="Methods used for researching the site:",
-        choices=RESEARCHTYPE_CHOICES) #mandatory? default?
-	institution = models.CharField(max_length=100, blank=True, null=True,
-        help_text="Organisation that carried out a research project at the site.",
-        choices=INSTITUTION_CHOICES) #mandatory? default?
+
+	research_type = models.ForeignKey(DC_researchevent_researchtype, blank=True,
+        null=True, help_text="Methods used for researching the site.") #mandatory? default?
+	institution = models.ForeignKey(DC_researchevent_institution, blank=True, null=True,
+        help_text="Organisation that carried out a research project at the site.") #mandatory? default?
 	year_of_activity_start_year = models.DateField(auto_now=False,
         auto_now_add=False, blank=True, null=True,
         help_text="Year when research started.") # DateField? optional?
@@ -98,7 +335,7 @@ class ResearchEvent(models.Model):
 		help_text = "The project providing the context for the research event.")
 # wouldn´t it make sense to exclude these project-related information to 
 # another table/class?
-	reference = models.ForeignKey(Reference, blank=True, null=True,
+	reference = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and/or web-based reference(s) to publications and other relevant resources related to the project.")
 	#maybe create an extra table for bibliographic references? use a ManyToMany relation?
 	comment = models.CharField(max_length=100, blank=True, null=True,
@@ -114,46 +351,18 @@ class ResearchEvent(models.Model):
 
 
 class Period(models.Model):
-	CHRONOLOGICAL_SYSTEM_CHOICES = (
-		("Anatolia", "Anatolia"),
-		("Crete:Evans/Vagnetti", "Crete:Evans/Vagnetti"),
-		("Crete:Tomkins 2007a","Crete:Tomkins 2007a"),
-		("more to come", "more to come"),
-		)
-	NAME_CHOICES = (
-		("Pre-Pottery Neolithic","Pre-Pottery Neolithic"),
-		("Pre-Pottery Neolithic/Neolithic", "Pre-Pottery Neolithic/Neolithic"),
-		("Neolithic","Early Chalcolithic"),
-		("more to come", "more to come"),
-		)
-	DATING_METHOD_CHOICES = (
-		("radiocarbon dating", "radiocarbon dating"),
-		("dendrochronology", "dendrochronology"),
-		("material culture", "material culture"),
-		("none recorded", "none recorded"),
-		)
-	DATED_BY_CHOICES = (
-		("charcoal", "charcoal"),
-		("bone", "bone"),
-		("grain", "grain"),
-		("Samen", "Samen"),
-		)
-	chronological_system = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Name of chronological reference system used for data entry.",
-		choices = CHRONOLOGICAL_SYSTEM_CHOICES) #mandatory/optional? choices in extra table?
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Name of archaeological period for which evidence was found.",
-		choices = NAME_CHOICES) #mandatory/optional? choices in extra table?
+	chronological_system = models.ForeignKey(DC_period_chronologicalsystem, blank=True,
+		null=True, help_text="Name of chronological reference system used for data entry.") #mandatory/optional? choices in extra table?
+	name = models.ForeignKey(DC_period_name, blank=True,
+		null=True, help_text="Name of archaeological period for which evidence was found.") #mandatory/optional? choices in extra table?
 	absolute_date_from = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Year when archaeological period started.") #mandatory/optional? change models.DateField?
 	# see: http://stackoverflow.com/questions/15857797/bc-dates-in-python
 	absolute_date_to = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Year when archaeological period ended.") #mandatory/optional? change models.DateField?
-	dating_method = models.CharField(max_length=100, blank=True, null=True,
-		help_text="Method used for dating the site.",
-		choices = DATING_METHOD_CHOICES)
-	dated_by = models.CharField(max_length=100, blank=True, null=True,
-		choices = DATED_BY_CHOICES,
+	dating_method = models.ForeignKey(DC_period_datingmethod, blank=True, null=True,
+		help_text="Method used for dating the site.")
+	dated_by = models.ForeignKey(DC_period_datedby, blank=True, null=True,
 		help_text="Source providing information about date.") #mandatory/optional?
 	c14_calibrated = models.CharField(max_length=100, blank=True, null=True,
 		help_text = "Date is a calibrated date.") #mandatory/optional? what kind of values?
@@ -161,12 +370,11 @@ class Period(models.Model):
 		help_text = "Year when archaeological period started.") #mandatory/optional? change models.DateField?
 	c14_absolute_to = models.CharField(max_length=100, blank=True, null=True,
 		help_text = "Year when archaeological period ended.") #mandatory/optional? change models.DateField?
-	reference = models.ForeignKey(Reference, blank=True, null=True, 
+	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
 	#optional? implement an reference table?
 	comment = models.CharField(max_length=100, blank=True, null=True, 
 		help_text = "Additional information on the chronology not covered in any other field.")
-	#optional?
 
 	def __unicode__(self):
 		return self.name
@@ -178,11 +386,6 @@ class Period(models.Model):
 
 
 class Site(models.Model):
-	GPSSYSTEM_CHOICES = (
-		("Google map", "Google map"),
-        ("GPS", "GPS"),
-        ("literature", "literature"),
-        )
 	name = models.CharField(max_length=350, blank=True, null=True,
         help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
 	region = models.ForeignKey(Region, blank=True, null=True,
@@ -195,9 +398,8 @@ class Site(models.Model):
         help_text="Free text summary account on the site.") #optional?
 	topography = models.CharField(max_length=400, blank=True, null=True,
         help_text="Description of surface shape and features.") #optional?
-	gps_data_coordinate_system = models.CharField(max_length=50, blank=True,
-		null=True, choices=GPSSYSTEM_CHOICES,
-		help_text="Name of system uniquely determining the position of the site.")#optional?
+	gps_data_coordinate_system = models.ForeignKey(DC_site_gpssystem, blank=True,
+		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
 	gps_data_n = models.CharField(max_length=50, blank=True, null=True,
 		help_text="North value of coordinate.")
 	gps_data_e = models.CharField(max_length=50, blank=True,
@@ -207,8 +409,8 @@ class Site(models.Model):
 	coordinate_source = models.CharField(max_length=100, blank=True, 
 		null=True,
         help_text="Source providing information about the global position of site.")#optional?
-	reference_site = models.ForeignKey(Reference, blank=True, null=True, 
-        help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
+	reference_site = models.ManyToManyField(Reference, blank=True,
+		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -223,203 +425,66 @@ class Site(models.Model):
 
 
 class Area(models.Model):
-	AREATYPE_CHOICES = (
-		("Settlement", "Settlement"),
-		("Caves and Rockshelters", "Caves and Rockshelters"),
-		("Quarry", "Quarry"),
-		("Cemetery/Grave", "Cemetery/Grave"),		
-		)
-#filds of settlements
-	SETTLEMENTTYPE_CHOICES = (
-		("lowland", "lowland"),
-        ("tell", "tell"),
-        ("tepe", "tepe"),
-        )	#taken from "\ownCloud\DEFC\Database_Examples_alltables_KB.xlsx"
-	CONSTRUCTIONTYPE_CHOICES = (
-		("apsidal",  "apsidal"),
-        ("circular", "circular"),
-        ("one-room", "one-room"),
-        ("rectangular", "rectangular"),
-        ("Tsangli house", "Tsangli house"),
-        )
-	BUILDINGTECHNIQUE_CHOICES = (
-		("mud brick", "mud brick"),
-        ("pavement", "pavement"),
-        ("pisé", "pisé"),
-        ("plaster wall", "plaster wall"),
-        ("stone socket", "stone socket"),
-        ("wattle and daub", "wattle and daub"),
-        )
-	SPECIALFEATURES_CHOICES = (
-		("bench", "bench"),
-        ("channel", "channel"),
-        ("hearth", "hearth"),
-        ("pit", "pit"),
-        ("post-hole", "post-hole"),
-        ("stone setting", "stone setting"),
-        ("storage building", "storage building"),
-        ("storage pit", "storage pit"),
-        ("storage vessel", "storage vessel"),
-        ("well", "well"),
-        ("oven", "oven"),
-        )
-#field of caves&rockshelters
-	EVIDENCEOFGRAVES_HUMANREMAINS_CHOICES = ( 
-        ("not present", "not present"),
-        ("present", "present"),
-        )
-	EVIDENCEOFOCCUPATION_CHOICES = (
-		("fire place", "fire place"),
-        ("storage facilities", "storage facilities"),
-        ("post-hole", "post-hole"),
-        ("stone setting", "stone setting"),
-        ("pit", "pit"),
-        )
-	CAVESANDROCKSHELTERSTYPES_CHOICES = (
-		("cave", "cave"),
-        ("rock shelter", "rock shelter"),
-        )
-#fields of Quarry
-	RAWMATERIAL_CHOICES = (
-		("obsidian", "obsidian"),
-        ("copper", "copper"),
-        ("limestone", "limestone"),
-        ("flint", "flint"),
-        ("chert", "chert"),
-        ("clay", "clay"),
-        )
-	EXPLOITATIONTYPE_CHOICES = (
-		("pinge", "pinge"),
-        ("shaft mining", "shaft mining"),
-        ("surface", "surface"),
-        )
-#fields of Cemetery/Graves
-	TOPOGRAPHY_CHOICES = (
-		("intra mural", "intra mural"),
-        ("extra mural", "extra mural"),
-        ("in cave", "in cave"),
-        ("next to cave", "next to cave"),
-        ("part of house", "part of house"),
-        )
-	MORTUARYFEATURES_CHOICES = (
-		("pyre", "pyre"),
-        ("separating wall", "separating wall"),
-        ("platform", "platform"),
-        )
-	GRAVETYPES_CHOICES = (
-		("cist grave", "cist grave"),
-        ("pit grave", "pit grave"),
-        ("vessel", "vessel"),
-        ("none recorded", "none recorded"),
-        )
-	TYPEOFHUMANREMAINS_CHOICES = (
-		("cremations", "cremations"),
-        ("inhumations: complete bodies", "inhumations: complete bodies"),
-        ("secondary deposition", "secondary deposition"),
-        )
-	AGEGROUPS_CHOICES = (
-		("neonate", "neonate"),
-        ("infans I (0-6)", "infans I (0-6)"),
-        ("infans II (7-12)", "infans II (7-12)"),
-        ("juvenile (13-18)", "juvenile (13-18)"),
-        ("adult (19-40)", "adult (19-40)"),
-        ("adult-mature (19-45)", "adult-mature (19-45)"),
-        ("mature (41-60)", "mature (41-60)"),
-        ("mature-senile (51-70)", "mature-senile (51-70)"),
-        ("senile (60-)", "senile (60-)"),
-        ("not recorded", "not recorded"),
-        ("part of specialist report", "part of specialist report"),
-        ("immature", "immature"),
-        ("mature", "mature"),
-        ("children", "children"),
-        ("adults", "adults"),
-        )
-	SEXES_CHOICES = (
-		("male individuals: no.", "male individuals: no."),
-        ("female individuals: no.", "female individuals: no."),
-        ("not specified: no.", "not specified: no."),
-        ("part of specialist report", "part of specialist report"),
-        )
-	MANIPULATIONOFGRAVES_CHOICES = (
-		("consecutive burials", "consecutive burials"),
-        ("construction of settlement", "construction of settlement"),
-        ("looting", "looting"),
-        ("none recorded", "none recorded"),
-        )
-#common fields for area	
 	site = models.ForeignKey(Site, blank=True, null=True,
 		help_text="The site where this area is located.")
-	area_type = models.CharField(max_length=100, blank=True, null=True,
-		help_text = "The type of the area", choices=AREATYPE_CHOICES)
+	area_type = models.ForeignKey(DC_area_areatype, blank=True, null=True,
+		help_text = "The type of the area.")
 	area_nr = models.CharField(max_length=45,blank=True, null=True, 
 		help_text = "An established identifier for this area") #does something like this exist?
 	period = models.ForeignKey(Period, blank=True, null=True, 
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.CharField(max_length=100, blank=True, null=True,
         help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
-	reference = models.ForeignKey(Reference, blank=True, null=True,
-        help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+	reference = models.ManyToManyField(Reference, blank=True,
+		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
 #settlement fields
-	settlement_type = models.CharField(max_length=100, blank=True, null=True,
-        help_text="Classification of settlement.",
-        choices=SETTLEMENTTYPE_CHOICES)
-	settlement_constructiontype = models.CharField(max_length=100,
-		blank=True, null=True, help_text="Type of buildings.", 
-		choices=CONSTRUCTIONTYPE_CHOICES)
-	settlement_building_technique = models.CharField(max_length=100, blank=True,
-        null=True, help_text="Method used for fabricating the buildings.",
-        choices = BUILDINGTECHNIQUE_CHOICES)
-	settlement_special_features = models.CharField(max_length=100,
-		blank=True, null=True, choices=SPECIALFEATURES_CHOICES,
-        help_text="Parts of the settlement other than buildings.")
+	settlement_type = models.ForeignKey(DC_area_settlementtype, blank=True, null=True,
+        help_text="Classification of settlement.")
+	settlement_constructiontype = models.ForeignKey(DC_area_constructiontype,
+		blank=True, null=True, help_text="Type of buildings.")
+	settlement_building_technique = models.ForeignKey(DC_area_buildingtechnique, blank=True,
+        null=True, help_text="Method used for fabricating the buildings.")
+	settlement_special_features = models.ForeignKey(DC_area_specialfeatures,
+		blank=True, null=True, help_text="Parts of the settlement other than buildings.")
 #cave&rockshelters fields
-	cave_rockshelters_type = models.CharField(max_length=100, blank=True,
-		null=True,
-        help_text="Type of cave/rockshelter.",
-        choices=CAVESANDROCKSHELTERSTYPES_CHOICES)
-	cave_rockshelters_evidence_of_graves_human_remains = models.CharField(
-		max_length=100, blank=True, null=True,
-        help_text="Presence of graves and/or human remains.",
-        choices=EVIDENCEOFGRAVES_HUMANREMAINS_CHOICES)
-	cave_rockshelters_evidence_of_occupation = models.CharField(
-		max_length=100, blank=True, null=True,
-        help_text="Type of evidence indicating occupation found.",
-        choices=EVIDENCEOFOCCUPATION_CHOICES)
+	cave_rockshelters_type = models.ForeignKey(DC_area_caverockshelterstype, blank=True,
+		null=True,help_text="Type of cave/rockshelter.")
+	cave_rockshelters_evidence_of_graves_human_remains = models.ForeignKey(
+		DC_area_evidenceofgraveshumanremains, blank=True, null=True,
+        help_text="Presence of graves and/or human remains.")
+	cave_rockshelters_evidence_of_occupation = models.ForeignKey(
+		DC_area_evidenceofoccupation, blank=True, null=True,
+        help_text="Type of evidence indicating occupation found.")
 #quarry fields
-	quarry_exploitation_type = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Type of extraction.",
-		choices=EXPLOITATIONTYPE_CHOICES)
-	quarry_raw_material = models.CharField(max_length=100, blank=True, null=True,
-        help_text="Resource that was extracted.",
-        choices=RAWMATERIAL_CHOICES)
+	quarry_exploitation_type = models.ForeignKey(DC_area_exploitationtype, blank=True,
+		null=True, help_text="Type of extraction.")
+	quarry_raw_material = models.ForeignKey(DC_area_rawmaterial, blank=True, null=True,
+        help_text="Resource that was extracted.")
 #cemetery/graves fields
-	cemetery_graves_topography = models.CharField(max_length=100,
+	cemetery_graves_topography = models.ForeignKey(DC_area_topography,
 		blank=True, null=True,
-        help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.",
-        choices=TOPOGRAPHY_CHOICES)
-	cemetery_graves_mortuary_features = models.CharField(max_length=100,
+        help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.")
+	cemetery_graves_mortuary_features = models.ForeignKey(DC_area_mortuaryfeatures,
 		blank=True, null=True,
-        help_text="Parts of the cemetery other than graves.",
-        choices=MORTUARYFEATURES_CHOICES)
+        help_text="Parts of the cemetery other than graves.")
 	cemetery_graves_number_of_graves = models.CharField(max_length=100,
 		blank=True, null=True, help_text="Number of graves.")  #CharField or IntegerField ?
-	cemetery_graves_grave_type =  models.CharField(max_length=100,
-		blank=True, null=True, help_text="Types of graves.",
-		choices=GRAVETYPES_CHOICES)
-	cemetery_graves_type_of_human_remains = models.CharField(max_length=100,
-		blank=True, null=True, choices=TYPEOFHUMANREMAINS_CHOICES,
+	cemetery_graves_grave_type =  models.ForeignKey(DC_area_gravetype,
+		blank=True, null=True, help_text="Types of graves.")
+	cemetery_graves_type_of_human_remains = models.ForeignKey(
+		DC_area_typeofhumanremains,
+		blank=True, null=True, 
 		help_text="How the humans were treated after death and buried.")
 	cemetery_graves_estimated_number_of_individuals = models.CharField(
 		max_length=100, blank=True, null=True,
 		help_text="minimum and or maximum")
-	cemetery_graves_age_groups = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Age.", choices=AGEGROUPS_CHOICES)
-	cemetery_graves_sexes = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Sex", choices=SEXES_CHOICES)
-	cemetery_graves_manipulations_of_graves = models.CharField(
-    	max_length=100, blank=True, null=True,
-        help_text="If and how the space with the graves is marked.",
-        choices=MANIPULATIONOFGRAVES_CHOICES)
+	cemetery_graves_age_groups = models.ForeignKey(DC_area_agegroups, blank=True,
+		null=True, help_text="Age.")
+	cemetery_graves_sexes = models.ForeignKey(DC_area_sexes, blank=True,
+		null=True, help_text="Sex.")
+	cemetery_graves_manipulations_of_graves = models.ForeignKey(
+    	DC_area_manipulationofgraves, blank=True, null=True,
+        help_text="If and how the space with the graves is marked.")
 
 	def __unicode__(self):
 		return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
@@ -440,24 +505,11 @@ class Area(models.Model):
 ########################################################
 
 class Finds(models.Model):
-    FINDS_TYPE_CHOICES = (
-        ("Fire dog", "Fire dog"),
-        ("Arrowshaft smoother", "Arrowshaft smoother"),
-        ("Bucranium", "Bucranium"),
-        ("and many more", "and many more"),
-        )
-    MATERIAL_CHOICES = (
-        ("stone", "stone"),
-        ("obsidian", "obsidian"),
-        ("fabrics", "fabrics"),
-        ("and some more", "and some more"),
-        )
-    finds_type = models.CharField(max_length=100, blank=True, null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX",
-        choices=FINDS_TYPE_CHOICES)
-    material = models.CharField(max_length=100, blank=True, null=True,
+    finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
-    reference = models.ForeignKey(Reference, blank=True, null=True,
+    material = models.ForeignKey(DC_finds_material,blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    reference = models.ManyToManyField(Reference, blank=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     comment = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
@@ -474,3 +526,4 @@ class Finds(models.Model):
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
+
