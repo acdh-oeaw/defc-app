@@ -63,7 +63,7 @@ class SiteDetail(DetailView):
 		return context
 
 #################################################################
-#				views for Site									#
+#				views for Area									#
 #################################################################
 class AreaListView(generic.ListView):
 	template_name = 'newModel/list.html'
@@ -83,6 +83,16 @@ class AreaCreate(CreateView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(AreaCreate, self).dispatch(*args, **kwargs)
+
+
+class AreaUpdate(UpdateView):
+	model = Area
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(AreaUpdate, self).dispatch(*args, **kwargs)
 
 
 class AreaDelete(DeleteView):

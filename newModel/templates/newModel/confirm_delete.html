@@ -1,7 +1,8 @@
 {% extends "newModel/base.html" %} 
 {% block content %}
 <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete the site: <strong>{{ object }}</strong> ?</p>
+    <p>STOP</p>
+    <p>Are you sure you want to delete the {{ object.get_classname }}:<br /> <strong>{{ object }}</strong> ?</p>
     <input  class="btn btn-danger" type="submit" value="Confirm" />
 </form>
 {% endblock content %}

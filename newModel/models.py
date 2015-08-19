@@ -107,6 +107,11 @@ class ResearchEvent(models.Model):
 	def __unicode__(self):
 		return self.research_type.encode('utf8')+'_'+str(self.id).encode('utf8')
 
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
 
 class Period(models.Model):
 	CHRONOLOGICAL_SYSTEM_CHOICES = (
@@ -166,6 +171,11 @@ class Period(models.Model):
 	def __unicode__(self):
 		return self.name
 
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
 
 class Site(models.Model):
 	GPSSYSTEM_CHOICES = (
@@ -205,6 +215,11 @@ class Site(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('newModel:site_list')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
 
 
 class Area(models.Model):
@@ -407,10 +422,15 @@ class Area(models.Model):
         choices=MANIPULATIONOFGRAVES_CHOICES)
 
 	def __unicode__(self):
-		return self.area_type.encode('utf8')
+		return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
 
 	def get_absolute_url(self):
 		return reverse('newModel:area_list')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
 ###################################################
 #Not sure about this
 #small_findsid_small_finds = models.IntegerField(models.CharField(
@@ -446,5 +466,11 @@ class Finds(models.Model):
     	help_text="PLEASE PROVIDE SOME HELPTEX") 
     research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
     	help_text="PLEASE PROVIDE SOME HELPTEX")
+    
     def __unicode__(self):
         return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
+
+    def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
