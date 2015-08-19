@@ -233,6 +233,9 @@ class DC_finds_material(models.Model):
 	def __unicode__(self):
 		return self.name.encode('utf8')
 
+
+
+
 #####################################
 #		content tables				#
 #####################################
@@ -342,7 +345,10 @@ class ResearchEvent(models.Model):
         help_text="Additional information on the research history not covered in any other field.")
 
 	def __unicode__(self):
-		return self.research_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		"""changed to self.id to avoid dependency due to ForeignKey"""
+		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		return str(self.id).encode('utf8')
+		#return self.research_type.encode('utf8')+'_'+str(self.id).encode('utf8')
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -487,7 +493,9 @@ class Area(models.Model):
         help_text="If and how the space with the graves is marked.")
 
 	def __unicode__(self):
-		return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		"""changed to self.id to avoid dependency due to ForeignKey"""
+		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		return str(self.id).encode('utf8')
 
 	def get_absolute_url(self):
 		return reverse('newModel:area_list')
@@ -503,6 +511,7 @@ class Area(models.Model):
 #interpretationid_interpretation = models.ForeignKey('Interpretation', ) 
 #what is this?type of field (plain text or int)?
 ########################################################
+
 
 class Finds(models.Model):
     finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
@@ -520,7 +529,9 @@ class Finds(models.Model):
     	help_text="PLEASE PROVIDE SOME HELPTEX")
     
     def __unicode__(self):
-        return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
+    	"""changed to self.id to avoid dependency due to ForeignKey"""
+    	return str(self.id).encode('utf8')
+        #return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
 
     def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
