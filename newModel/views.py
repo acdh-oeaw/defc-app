@@ -61,6 +61,8 @@ class ResearchEventDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
 		return context
+
+
 #################################################################
 #				views for Periode								#
 #################################################################
@@ -213,6 +215,16 @@ class SiteDetail(DetailView):
 #################################################################
 #				views for Area									#
 #################################################################
+class AreaCreateDynamic(CreateView):
+	model = Area
+	fields = "__all__"
+	template_name = "newModel/create_area.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(AreaCreateDynamic, self).dispatch(*args, **kwargs)
+
+
 class AreaListView(generic.ListView):
 	template_name = 'newModel/list.html'
 	context_object_name = 'object_list' # use object_list instead of

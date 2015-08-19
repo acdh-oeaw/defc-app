@@ -533,6 +533,10 @@ class Finds(models.Model):
     research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
     	help_text="PLEASE PROVIDE SOME HELPTEX")
     
+    def get_classname(self):
+    	class_name = str(self.__class__.__name__).lower()
+    	return class_name
+
     def get_absolute_url(self):
     	return reverse('newModel:finds_list')
 
@@ -540,8 +544,3 @@ class Finds(models.Model):
     	"""changed to self.id to avoid dependency due to ForeignKey"""
     	return str(self.id).encode('utf8')
         #return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
-
-    def get_classname(self):
-		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
-		return class_name

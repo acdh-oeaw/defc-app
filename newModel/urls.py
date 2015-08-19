@@ -15,6 +15,7 @@ url(r'^finds/delete/(?P<pk>[0-9]+)$', views.FindsDelete.as_view(), name='finds_d
 url(r'^finds/detail/(?P<pk>[0-9]+)$', views.FindsDetail.as_view(), name='finds_detail'),
 url(r'^area/$', views.AreaListView.as_view(), name='area_list'),
 url(r'^area/create/$', views.AreaCreate.as_view(), name='area_create'),
+url(r'^area/createA/$', views.AreaCreateDynamic.as_view(), name='area_create'),
 url(r'^area/update/(?P<pk>[0-9]+)$', views.AreaUpdate.as_view(), name='area_update'),
 url(r'^area/delete/(?P<pk>[0-9]+)$', views.AreaDelete.as_view(), name='area_delete'),
 url(r'^area/detail/(?P<pk>[0-9]+)$', views.AreaDetail.as_view(), name='area_detail'),
