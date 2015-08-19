@@ -1,4 +1,4 @@
-{% extends "webapp/base.html" %} 
+{% extends "newModel/base.html" %} 
 
 {% block Titel %}See Finds{% endblock %}
 
@@ -14,13 +14,13 @@
 	 		{{ object }} 
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/finds/detail/{{ object.id_finds }}"> See Details </a>
+	 		<a class ="btn btn-primary" href="/newModel/finds/detail/{{ object.id_finds }}"> See Details </a>
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/webapp/finds/update/{{ object.id_finds }}"> Edit </a> 
+	 		<a class ="btn btn-primary" href="/newModel/finds/update/{{ object.id_finds }}"> Edit </a> 
 	 	</td>	
 	 	<td>
-	 		<a class ="btn btn-danger btn-sm" href="/webapp/finds/delete/{{ object.id_finds }}"> Delete </a> 
+	 		<a class ="btn btn-danger btn-sm" href="/newModel/finds/delete/{{ object.id_finds }}"> Delete </a> 
 	 	</td>
 	 </tr>	
     {% endfor %}

@@ -49,7 +49,7 @@ class SiteUpdate(UpdateView):
 class SiteDelete(DeleteView):
 	model = Site
 	template_name = 'newModel/confirm_delete.html'
-	success_url = reverse_lazy('webapp:site_list')
+	success_url = reverse_lazy('newModel:site_list')
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -83,6 +83,16 @@ class AreaCreate(CreateView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(AreaCreate, self).dispatch(*args, **kwargs)
+
+
+class AreaDelete(DeleteView):
+	model = Area
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:area_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(AreaDelete, self).dispatch(*args, **kwargs)
 
 
 class AreaDetail(DetailView):
