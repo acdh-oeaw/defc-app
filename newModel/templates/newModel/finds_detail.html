@@ -1,13 +1,30 @@
-{% extends "newModel/base.html" %} 
+{% extends "newModel/base.html" %}
 {% block content %}
-<table>
-	<tr>
-		<td>Name of the site </td>
-		<td>{{ object.name }}</td>
-	</tr>
-	<tr>
-		<td>Region of the site</td>
-		<td>{{ object.region }}</td>
-	</tr>	
+<h1>Finds</h1>
+<table class="table table-striped">
+        <tr>
+                <td>Finds type</td>
+                <td>{{ object.finds_type }}</td>
+        </tr>
+        <tr>
+                <td>Material</td>
+                <td>{{ object.material }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{{ object.reference }}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>Area</td>
+                <td>{{ object.area }}</td>
+        </tr>
+        <tr>
+                <td>Research event</td>
+                <td>{{ object.research_event }}</td>
+        </tr>
 </table>
 {% endblock content %}

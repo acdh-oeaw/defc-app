@@ -56,10 +56,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="#">See all Finds</a>
+                  <a href="{% url 'newModel:finds_list' %}">See all Finds</a>
                 </li>
                 <li>
-                  <a href="#">Create new Find</a>
+                  <a href="{% url 'newModel:finds_create' %}">Create new Find</a>
                 </li>
                 <li role="separator" class="divider"/>
                 <li>
@@ -92,7 +92,21 @@
                 </li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Period
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'newModel:period_list' %}">See all Periods</a>
+                </li>
+                <li>
+                  <a href="{% url 'newModel:period_create' %}">Create new Period</a>
+                </li>
+              </ul>
+            </li>
           </ul>
+
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="#">Link</a>

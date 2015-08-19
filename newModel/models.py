@@ -382,8 +382,12 @@ class Period(models.Model):
 	comment = models.CharField(max_length=100, blank=True, null=True, 
 		help_text = "Additional information on the chronology not covered in any other field.")
 
+	def get_absolute_url(self):
+		return reverse('newModel:period_list')
+
 	def __unicode__(self):
-		return self.name
+		#return self.name changed to avoid dependency of ForeignKey
+		return str(self.id)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -528,6 +532,9 @@ class Finds(models.Model):
     research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
     	help_text="PLEASE PROVIDE SOME HELPTEX")
     
+    def get_absolute_url(self):
+    	return reverse('newModel:finds_list')
+
     def __unicode__(self):
     	"""changed to self.id to avoid dependency due to ForeignKey"""
     	return str(self.id).encode('utf8')
@@ -537,4 +544,3 @@ class Finds(models.Model):
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
-

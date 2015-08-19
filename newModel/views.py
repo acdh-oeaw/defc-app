@@ -10,8 +10,108 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area
+from .models import Site, Area, Finds, Period
 from .forms import form_user_login
+
+#################################################################
+#				views for Periode								#
+#################################################################
+class PeriodListView(generic.ListView):
+	template_name = 'newModel/list.html'
+	context_object_name = 'object_list' # use object_list instead of
+	# e.g. site_list so the template does not need to be changed so much
+	#for each class. 
+
+	def get_queryset(self):
+		return Period.objects.order_by('name')
+
+
+class PeriodCreate(CreateView):
+	model = Period
+	fields = "__all__"
+	template_name = "newModel/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(PeriodCreate, self).dispatch(*args, **kwargs)
+
+
+class PeriodUpdate(UpdateView):
+	model = Period
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(PeriodUpdate, self).dispatch(*args, **kwargs)
+
+
+class PeriodDelete(DeleteView):
+	model = Period
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:period_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(PeriodDelete, self).dispatch(*args, **kwargs)
+
+
+class PeriodDetail(DetailView):
+	model = Period
+	def get_context_data(self, **kwargs):
+		context = super(PeriodDetail, self).get_context_data(**kwargs)
+		return context
+
+
+#################################################################
+#				views for Finds									#
+#################################################################
+class FindsListView(generic.ListView):
+	template_name = 'newModel/list.html'
+	context_object_name = 'object_list' # use object_list instead of
+	# e.g. site_list so the template does not need to be changed so much
+	#for each class. 
+
+	def get_queryset(self):
+		return Finds.objects.order_by('finds_type')
+
+
+class FindsCreate(CreateView):
+	model = Finds
+	fields = "__all__"
+	template_name = "newModel/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsCreate, self).dispatch(*args, **kwargs)
+
+
+class FindsUpdate(UpdateView):
+	model = Finds
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsUpdate, self).dispatch(*args, **kwargs)
+
+
+class FindsDelete(DeleteView):
+	model = Finds
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:finds_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(FindsDelete, self).dispatch(*args, **kwargs)
+
+
+class FindsDetail(DetailView):
+	model = Finds
+	def get_context_data(self, **kwargs):
+		context = super(FindsDetail, self).get_context_data(**kwargs)
+		return context
+
 
 #################################################################
 #				views for Site									#
