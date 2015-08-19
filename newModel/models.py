@@ -323,7 +323,6 @@ class Country(models.Model):
 
 
 class ResearchEvent(models.Model):
-
 	research_type = models.ForeignKey(DC_researchevent_researchtype, blank=True,
         null=True, help_text="Methods used for researching the site.") #mandatory? default?
 	institution = models.ForeignKey(DC_researchevent_institution, blank=True, null=True,
@@ -355,6 +354,8 @@ class ResearchEvent(models.Model):
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
 
+	def get_absolute_url(self):
+		return reverse('newModel:researchevent_list')
 
 class Period(models.Model):
 	chronological_system = models.ForeignKey(DC_period_chronologicalsystem, blank=True,

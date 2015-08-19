@@ -23,6 +23,11 @@ url(r'^period/create/$', views.PeriodCreate.as_view(), name='period_create'),
 url(r'^period/update/(?P<pk>[0-9]+)$', views.PeriodUpdate.as_view(), name='period_update'),
 url(r'^period/delete/(?P<pk>[0-9]+)$', views.PeriodDelete.as_view(), name='period_delete'),
 url(r'^period/detail/(?P<pk>[0-9]+)$', views.PeriodDetail.as_view(), name='period_detail'),
+url(r'^researchevent/$', views.ResearchEventListView.as_view(), name='researchevent_list'),
+url(r'^researchevent/create/$', views.ResearchEventCreate.as_view(), name='researchevent_create'),
+url(r'^researchevent/update/(?P<pk>[0-9]+)$', views.ResearchEventUpdate.as_view(), name='researchevent_update'),
+url(r'^researchevent/delete/(?P<pk>[0-9]+)$', views.ResearchEventDelete.as_view(), name='researchevent_delete'),
+url(r'^researchevent/detail/(?P<pk>[0-9]+)$', views.ResearchEventDetail.as_view(), name='researchevent_detail'),
 ]
 
 #some change for git

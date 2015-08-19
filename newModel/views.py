@@ -10,9 +10,57 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period
+from .models import Site, Area, Finds, Period, ResearchEvent
 from .forms import form_user_login
 
+#################################################################
+#				views for ResearchEvent								#
+#################################################################
+class ResearchEventListView(generic.ListView):
+	template_name = 'newModel/list.html'
+	context_object_name = 'object_list' # use object_list instead of
+	# e.g. site_list so the template does not need to be changed so much
+	#for each class. 
+
+	def get_queryset(self):
+		return ResearchEvent.objects.order_by('research_type')
+
+
+class ResearchEventCreate(CreateView):
+	model = ResearchEvent
+	fields = "__all__"
+	template_name = "newModel/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ResearchEventCreate, self).dispatch(*args, **kwargs)
+
+
+class ResearchEventUpdate(UpdateView):
+	model = ResearchEvent
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ResearchEventUpdate, self).dispatch(*args, **kwargs)
+
+
+class ResearchEventDelete(DeleteView):
+	model = ResearchEvent
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:researchevent_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ResearchEventDelete, self).dispatch(*args, **kwargs)
+
+
+class ResearchEventDetail(DetailView):
+	model = ResearchEvent
+	def get_context_data(self, **kwargs):
+		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
+		return context
 #################################################################
 #				views for Periode								#
 #################################################################
