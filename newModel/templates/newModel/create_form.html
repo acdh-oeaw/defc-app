@@ -7,3 +7,41 @@
     <input class="btn btn-primary" type="submit" value="Create" />
 </form>
 {% endblock content %}
+{% block scripts %}
+<script type="text/javascript">
+           $('#id_area_type').change(function(){
+            if(this.value =='1'){
+                $('tr:has(th:contains("Settlement"))').show("slow");
+                $('tr:has(th:contains("Quarry"))').hide();
+                $('tr:has(th:contains("Cave"))').hide();
+                $('tr:has(th:contains("Cemetery"))').hide();
+            }
+            else if($(this).val()=='2') {
+                 $('tr:has(th:contains("Quarry"))').show("slow");
+				 $('tr:has(th:contains("Settlement"))').hide();
+                 $('tr:has(th:contains("Cave"))').hide();
+                 $('tr:has(th:contains("Cemetery"))').hide();
+
+            }
+            else if($(this).val()=='3') {
+            	 $('tr:has(th:contains("Cave"))').show("slow");
+                 $('tr:has(th:contains("Quarry"))').hide();
+                 $('tr:has(th:contains("Settlement"))').hide();
+                 $('tr:has(th:contains("Cemetery"))').hide();
+            }
+            else if($(this).val()=='4') {
+            	 $('tr:has(th:contains("Cemetery"))').show("slow");
+                 $('tr:has(th:contains("Quarry"))').hide();
+                 $('tr:has(th:contains("Settlement"))').hide();
+                 $('tr:has(th:contains("Cave"))').hide();
+            }
+            if(this.value =='5'){
+                $('tr:has(th:contains("settlement"))').hide();
+                $('tr:has(th:contains("Quarry"))').hide();
+                $('tr:has(th:contains("Cave"))').hide();
+                $('tr:has(th:contains("Cemetery"))').hide();
+            }
+           });
+</script>
+
+{% endblock scripts %}
