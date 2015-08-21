@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect,HttpResponseForbidden
 from django.shortcuts import render, render_to_response
@@ -14,7 +16,7 @@ from .models import Site, Area, Finds, Period, ResearchEvent
 from .forms import form_user_login
 
 #################################################################
-#				views for ResearchEvent								#
+#				views for ResearchEvent							#
 #################################################################
 class ResearchEventListView(generic.ListView):
 	template_name = 'newModel/list.html'
@@ -154,8 +156,6 @@ class FindsDelete(DeleteView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(FindsDelete, self).dispatch(*args, **kwargs)
-
-
 class FindsDetail(DetailView):
 	model = Finds
 	def get_context_data(self, **kwargs):
