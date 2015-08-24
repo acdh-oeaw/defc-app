@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django import forms
 #import autocomplete_light
 from crispy_forms.helper import FormHelper

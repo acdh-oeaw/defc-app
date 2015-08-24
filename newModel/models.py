@@ -234,13 +234,156 @@ class DC_finds_material(models.Model):
 		return self.name.encode('utf8')
 
 
+class DC_finds_amount(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_small_finds_type(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_small_finds_category(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_botany_species(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	latin_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_animal_reamins_species(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	latin_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_animal_reamins_completeness(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_animal_reamins_part(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_lithics_debitage(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_lithics_modified_tools(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_lithics_core(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_lithics_technology(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_pottery_form(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_pottery_detail(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+class DC_finds_pottery_decoration(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+class DC_province(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the province")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the province")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+class DC_country(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the country")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the country")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+
+
+class DC_region(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the region")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the region")
+	province = models.ForeignKey(DC_province, blank=True,null=True,
+		help_text="The name of the region")
+	country = models.ForeignKey(DC_country, blank=True,null=True,
+		help_text="The name of the region")
+
 
 
 #####################################
 #		content tables				#
 #####################################
-
-
 
 
 class Reference(models.Model):
@@ -278,10 +421,10 @@ class Project(models.Model):
 
 
 class Region(models.Model):
-	name = models.CharField(max_length = 100, blank=True, 
+	name = models.ForeignKey(DC_region, blank=True, 
 		null=True, help_text="Name of the region. Follow the ???-Standard")
 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-        help_text="The id of the authoritiy ???, e.g. GeoNames")
+        help_text="The id of the chosen authoritiy file, e.g. GeoNames")
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -401,10 +544,6 @@ class Site(models.Model):
         help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
 	region = models.ForeignKey(Region, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?
-	province = models.ForeignKey(Province, blank=True, null=True,
-		help_text = "Name of the state province where site is located.") #mandatory?
-	country = models.ForeignKey(Country, blank=True, null=True,
-		help_text = "Name of the state where site is located.") #mandatory?
 	description = models.CharField(max_length=400, blank=True, null=True,
         help_text="Free text summary account on the site.") #optional?
 	topography = models.CharField(max_length=400, blank=True, null=True,
@@ -442,6 +581,11 @@ class Area(models.Model):
 		help_text = "The type of the area.")
 	area_nr = models.CharField(max_length=45,blank=True, null=True, 
 		help_text = "An established identifier for this area") #does something like this exist?
+	stratigraphical_unit_id = models.CharField(max_length=100, blank=True,
+		null=True, 
+		help_text="The identifier of the area´s stratigraphical unit")
+	geographical_reference = models.CharField(max_length=100, blank=True,
+		null=True, help_text="Locats the Area in the Site")
 	period = models.ForeignKey(Period, blank=True, null=True, 
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.CharField(max_length=100, blank=True, null=True,
@@ -519,10 +663,8 @@ class Area(models.Model):
 
 
 class Finds(models.Model):
-    finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
-    material = models.ForeignKey(DC_finds_material,blank=True, null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True, 
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
     reference = models.ManyToManyField(Reference, blank=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     comment = models.CharField(max_length=100, blank=True, null=True,
@@ -532,7 +674,46 @@ class Finds(models.Model):
     	help_text="PLEASE PROVIDE SOME HELPTEX") 
     research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
     	help_text="PLEASE PROVIDE SOME HELPTEX")
+    amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
+    material = models.ForeignKey(DC_finds_material, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+# small finds properties
+    small_finds_category = models.ForeignKey(DC_finds_small_finds_category,
+		blank=True, null=True, 
+		help_text="either a tool, jewellery or figurines")
+    small_finds_type = models.ForeignKey(DC_finds_small_finds_type,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
     
+# Botany
+    botany_species = models.ForeignKey(DC_finds_botany_species,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+# Animal remains
+    animal_reamins_species = models.ForeignKey(DC_finds_animal_reamins_species,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    animal_reamins_completeness = models.ForeignKey(DC_finds_animal_reamins_completeness,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    animal_reamins_part = models.ForeignKey(DC_finds_animal_reamins_part,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+# Lithics
+    lithics_debitage = models.ForeignKey(DC_finds_lithics_debitage,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    lithics_modified_tools = models.ForeignKey(DC_finds_lithics_modified_tools,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    lithics_cores = models.ForeignKey(DC_finds_lithics_core,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    lithics_technology = models.ForeignKey(DC_finds_lithics_technology,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+# Pottery
+    pottery_form = models.ForeignKey(DC_finds_pottery_form,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    pottery_detail = models.ForeignKey(DC_finds_pottery_detail,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    pottery_decoration = models.ForeignKey(DC_finds_pottery_decoration,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
+
     def get_classname(self):
     	class_name = str(self.__class__.__name__).lower()
     	return class_name
