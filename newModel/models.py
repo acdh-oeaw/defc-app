@@ -268,7 +268,7 @@ class DC_finds_botany_species(models.Model):
 		return self.name.encode('utf8')
 
 
-class DC_finds_animal_reamins_species(models.Model):
+class DC_finds_animal_remains_species(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	latin_name = models.CharField(max_length=100, blank=True,null=True,
@@ -278,7 +278,7 @@ class DC_finds_animal_reamins_species(models.Model):
 		return self.name.encode('utf8')
 
 
-class DC_finds_animal_reamins_completeness(models.Model):
+class DC_finds_animal_remains_completeness(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
@@ -286,7 +286,7 @@ class DC_finds_animal_reamins_completeness(models.Model):
 		return self.name.encode('utf8')
 
 
-class DC_finds_animal_reamins_part(models.Model):
+class DC_finds_animal_remains_part(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
@@ -354,6 +354,8 @@ class DC_province(models.Model):
 		help_text="The name of the province")
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the province")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -363,6 +365,8 @@ class DC_country(models.Model):
 		help_text="The name of the country")
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the country")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -374,10 +378,15 @@ class DC_region(models.Model):
 		help_text="The name of the region")
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the region")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
 	province = models.ForeignKey(DC_province, blank=True,null=True,
 		help_text="The name of the region")
 	country = models.ForeignKey(DC_country, blank=True,null=True,
 		help_text="The name of the region")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
 
 
 
@@ -423,8 +432,6 @@ class Project(models.Model):
 class Region(models.Model):
 	name = models.ForeignKey(DC_region, blank=True, 
 		null=True, help_text="Name of the region. Follow the ???-Standard")
-	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-        help_text="The id of the chosen authoritiy file, e.g. GeoNames")
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -531,7 +538,7 @@ class Period(models.Model):
 
 	def __unicode__(self):
 		#return self.name changed to avoid dependency of ForeignKey
-		return str(self.id)
+		return str(self.name)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -542,7 +549,7 @@ class Period(models.Model):
 class Site(models.Model):
 	name = models.CharField(max_length=350, blank=True, null=True,
         help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
-	region = models.ForeignKey(Region, blank=True, null=True,
+	region = models.ForeignKey(DC_region, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?
 	description = models.CharField(max_length=400, blank=True, null=True,
         help_text="Free text summary account on the site.") #optional?
@@ -689,11 +696,11 @@ class Finds(models.Model):
     botany_species = models.ForeignKey(DC_finds_botany_species,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 # Animal remains
-    animal_reamins_species = models.ForeignKey(DC_finds_animal_reamins_species,
+    animal_remains_species = models.ForeignKey(DC_finds_animal_remains_species,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
-    animal_reamins_completeness = models.ForeignKey(DC_finds_animal_reamins_completeness,
+    animal_remains_completeness = models.ForeignKey(DC_finds_animal_remains_completeness,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
-    animal_reamins_part = models.ForeignKey(DC_finds_animal_reamins_part,
+    animal_remains_part = models.ForeignKey(DC_finds_animal_remains_part,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 # Lithics
     lithics_debitage = models.ForeignKey(DC_finds_lithics_debitage,
