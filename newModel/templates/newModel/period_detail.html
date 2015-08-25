@@ -46,5 +46,13 @@
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+            </tr>
 </table>
 {% endblock content %}

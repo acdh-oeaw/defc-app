@@ -3,6 +3,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
+from .customTypes import CustomIntegerField
 
 #what about persons????
 
@@ -32,6 +33,18 @@ class DC_researchevent_researchtype(models.Model):
 class DC_researchevent_institution(models.Model):
 	name = models.CharField(max_length=100, blank=True,
         null=True, help_text="Organisation that carried out a research project at the site.")
+
+	def __unicode__(self):
+		return self.name.encode('utf8')
+
+	def get_classname(self):
+		"""Returns the name of the class as lowercase string"""
+		class_name = str(self.__class__.__name__).lower()
+		return class_name
+
+class DC_researchevent_special_analysis(models.Model):
+	name = models.CharField(max_length=100, blank=True, null=True,
+		help_text="Analyses other than excavation that were carried out to research the site.")
 
 	def __unicode__(self):
 		return self.name.encode('utf8')
@@ -402,8 +415,9 @@ class Reference(models.Model):
 		help_text="The title of the ressource.")
 	creator = models.CharField(max_length=100, blank=True, null=True,
 		help_text="The person who is main responsible for creating the resource")
-	creation_time = models.DateField(blank=True, null=True,
-		help_text="The date of the creation date of the ressource")
+	creation_time = CustomIntegerField(min_value=0, max_value=9999,
+		blank=True, null=True,
+		help_text="The date of the creation date of the ressource.")
 	# note: maybe use dc-vocabulary or maybe follow Zotero/Citavi?
 	url = models.URLField(max_length=100, blank=True, null=True,
 		help_text="The URL to the ressource")
@@ -477,19 +491,19 @@ class ResearchEvent(models.Model):
         null=True, help_text="Methods used for researching the site.") #mandatory? default?
 	institution = models.ForeignKey(DC_researchevent_institution, blank=True, null=True,
         help_text="Organisation that carried out a research project at the site.") #mandatory? default?
-	year_of_activity_start_year = models.DateField(auto_now=False,
-        auto_now_add=False, blank=True, null=True,
+	year_of_activity_start_year = CustomIntegerField(min_value=0, max_value=9999,
+		blank=True, null=True,
         help_text="Year when research started.") # DateField? optional?
-	year_of_activity_end_year = models.DateField(auto_now=False,
-        auto_now_add=False, blank=True, null=True,
+	year_of_activity_end_year = CustomIntegerField(min_value=0, max_value=9999,
+		blank=True, null=True,
         help_text="Year when research ended.")  # DateField? optional?
 	project = models.ForeignKey(Project, blank=True, null=True,
 		help_text = "The project providing the context for the research event.")
-# wouldn´t it make sense to exclude these project-related information to 
-# another table/class?
+	special_analysis = models.ForeignKey(DC_researchevent_special_analysis,
+		blank=True, null=True,
+		help_text="Analyses other than excavation that were carried out to research the site.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and/or web-based reference(s) to publications and other relevant resources related to the project.")
-	#maybe create an extra table for bibliographic references? use a ManyToMany relation?
 	comment = models.CharField(max_length=100, blank=True, null=True,
         help_text="Additional information on the research history not covered in any other field.")
 
@@ -512,11 +526,11 @@ class Period(models.Model):
 		null=True, help_text="Name of chronological reference system used for data entry.") #mandatory/optional? choices in extra table?
 	name = models.ForeignKey(DC_period_name, blank=True,
 		null=True, help_text="Name of archaeological period for which evidence was found.") #mandatory/optional? choices in extra table?
-	absolute_date_from = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Year when archaeological period started.") #mandatory/optional? change models.DateField?
-	# see: http://stackoverflow.com/questions/15857797/bc-dates-in-python
-	absolute_date_to = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Year when archaeological period ended.") #mandatory/optional? change models.DateField?
+	absolute_date_from = CustomIntegerField(min_value=-9999999, max_value=9999,
+		blank=True, null=True, help_text="Year when archaeological period started.") #mandatory/optional? 
+	absolute_date_to = CustomIntegerField(min_value=-9999999, max_value=9999,
+		blank=True, null=True, 
+		help_text="Year when archaeological period ended.") #mandatory/optional? 
 	dating_method = models.ForeignKey(DC_period_datingmethod, blank=True, null=True,
 		help_text="Method used for dating the site.")
 	dated_by = models.ForeignKey(DC_period_datedby, blank=True, null=True,
@@ -537,8 +551,7 @@ class Period(models.Model):
 		return reverse('newModel:period_list')
 
 	def __unicode__(self):
-		#return self.name changed to avoid dependency of ForeignKey
-		return str(self.name)
+		return str(self.chronological_system)+'_'+str(self.name)+' ('+str(self.absolute_date_from)+' to' +str(self.absolute_date_to)+')'
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -570,7 +583,7 @@ class Site(models.Model):
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return str(self.region)+'_'+self.name.encode('utf8')
 
 	def get_absolute_url(self):
 		return reverse('newModel:site_list')
@@ -651,7 +664,7 @@ class Area(models.Model):
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""
 		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
-		return str(self.id).encode('utf8')
+		return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
 
 	def get_absolute_url(self):
 		return reverse('newModel:area_list')
@@ -670,28 +683,16 @@ class Area(models.Model):
 
 
 class Finds(models.Model):
-    finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True, 
-    	help_text="PLEASE PROVIDE SOME HELPTEX")
-    reference = models.ManyToManyField(Reference, blank=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
-    comment = models.CharField(max_length=100, blank=True, null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
-    #interpretationid_interpretation = models.IntegerField(db_column='InterpretationID_Interpretation')
     area = models.ForeignKey(Area, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
+    finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True, 
     	help_text="PLEASE PROVIDE SOME HELPTEX") 
-    research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
-    	help_text="PLEASE PROVIDE SOME HELPTEX")
-    amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
-    	help_text="PLEASE PROVIDE SOME HELPTEX")
-    material = models.ForeignKey(DC_finds_material, blank=True, null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
 # small finds properties
+    small_finds_type = models.ForeignKey(DC_finds_small_finds_type,
+		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
     small_finds_category = models.ForeignKey(DC_finds_small_finds_category,
 		blank=True, null=True, 
 		help_text="either a tool, jewellery or figurines")
-    small_finds_type = models.ForeignKey(DC_finds_small_finds_type,
-		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
-    
 # Botany
     botany_species = models.ForeignKey(DC_finds_botany_species,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
@@ -718,7 +719,17 @@ class Finds(models.Model):
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
     pottery_decoration = models.ForeignKey(DC_finds_pottery_decoration,
 		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
-
+# common fields
+    amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
+    material = models.ForeignKey(DC_finds_material, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
+    	help_text="PLEASE PROVIDE SOME HELPTEX")
+    reference = models.ManyToManyField(Reference, blank=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
+    comment = models.CharField(max_length=100, blank=True, null=True,
+        help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
     def get_classname(self):
@@ -729,6 +740,6 @@ class Finds(models.Model):
     	return reverse('newModel:finds_list')
 
     def __unicode__(self):
-    	"""changed to self.id to avoid dependency due to ForeignKey"""
-    	return str(self.id).encode('utf8')
-        #return self.finds_type.encode('utf8')+'_'+str(self.id_finds).encode('utf8')
+    	return str(self.area)+str(self.finds_type)+'_'+str(self.id)
+    #maybe use Autoslug modul, see:
+    # https://pythonhosted.org/django-autoslug/
