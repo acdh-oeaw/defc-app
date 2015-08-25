@@ -14,12 +14,14 @@ $ conda create --name python27 python=2.7
 Installing crispy forms
 1. pip install django-crispy-forms==1.3.0
 
+  *ToDo change README.me according to use the requirements.txt
+
 
 Running django app:
-1. cd to your django app directory
-2. run python manage.py makemigrations
-3. run python manage.py migrate
-4. run python manage.py createsuperuser
-5. run python manage.py runserver
+1. cd to your django app directory --settings=PROJECTNAME.settings.local OR server OR db_sqlLite
+2. run python manage.py makemigrations --settings=PROJECTNAME.settings.local OR server OR db_sqlLite
+3. run python manage.py migrate --settings=PROJECTNAME.settings.local OR server OR db_sqlLite
+4. run python manage.py createsuperuser --settings=PROJECTNAME.settings.local OR server OR db_sqlLite
+5. run python manage.py runserver --settings=PROJECTNAME.settings.local OR server OR db_sqlLite
 
 

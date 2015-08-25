@@ -74,22 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'orea.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-#
-#import settings_db
-# DATABASES = {
-    # 'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'pandorfer',
-        # 'USER': 'pandorfer',
-        # 'PASSWORD': 'XD3wtXoJFz',
-        # 'HOST': 'localhost',
-        # 'PORT': '3306',
-    # }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
