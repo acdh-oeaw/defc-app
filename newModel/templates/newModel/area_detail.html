@@ -1,6 +1,12 @@
 {% extends "newModel/base.html" %}
 {% block content %}
+
+<h1>TEST</h1>
 <table class="table table-striped">
+<ul>
+
+</ul>
+
         <tr>
                 <td>Site</td>
                 <td>{{ object.site }}</td>
@@ -96,6 +102,17 @@
         <tr>
                 <td>Cemetery/graves: manipulations of graves</td>
                 <td>{{ object.cemetery_graves_manipulations_of_graves }}</td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td>{% for find in finds_list %}
+        <li>
+                <a href="/newModel/{{ find.get_classname }}/detail/{{ find.id }}">
+                {{ find }}
+        </a>
+        </li>
+                {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>

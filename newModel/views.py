@@ -260,6 +260,7 @@ class AreaDetail(DetailView):
 	model = Area
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
+		context['finds_list'] = Finds.objects.all()
 		return context
 		
 #################################################################

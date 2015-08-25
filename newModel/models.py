@@ -740,6 +740,6 @@ class Finds(models.Model):
     	return reverse('newModel:finds_list')
 
     def __unicode__(self):
-    	return str(self.area)+str(self.finds_type)+'_'+str(self.id)
+    	return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)
     #maybe use Autoslug modul, see:
     # https://pythonhosted.org/django-autoslug/
