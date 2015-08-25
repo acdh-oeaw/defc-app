@@ -510,8 +510,8 @@ class ResearchEvent(models.Model):
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""
 		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
-		return str(self.id).encode('utf8')
-		#return self.research_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		#return str(self.id).encode('utf8')
+		return str(self.research_type)+'_'+str(self.institution)+'_'+str(self.id).encode('utf8')
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
