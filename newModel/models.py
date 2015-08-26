@@ -14,7 +14,7 @@ class DC_reference_type(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True)
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_researchevent_researchtype(models.Model):
@@ -35,7 +35,7 @@ class DC_researchevent_institution(models.Model):
         null=True, help_text="Organisation that carried out a research project at the site.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -47,7 +47,7 @@ class DC_researchevent_special_analysis(models.Model):
 		help_text="Analyses other than excavation that were carried out to research the site.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -60,7 +60,7 @@ class DC_period_chronologicalsystem(models.Model):
         null=True, help_text="Name of chronological reference system used for data entry.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_period_name(models.Model):    #added 'period' in order to avoid ambiguity (Ksenia)
@@ -68,7 +68,7 @@ class DC_period_name(models.Model):    #added 'period' in order to avoid ambigui
         null=True, help_text="Name of archaeological period for which evidence was found.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_period_datingmethod(models.Model):
@@ -76,7 +76,7 @@ class DC_period_datingmethod(models.Model):
         null=True, help_text="Method used for dating the site.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_period_datedby(models.Model):
@@ -84,7 +84,7 @@ class DC_period_datedby(models.Model):
         null=True, help_text="Source providing information about date.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_site_gpssystem(models.Model):
@@ -92,7 +92,7 @@ class DC_site_gpssystem(models.Model):
         null=True, help_text="Name of system uniquely determining the position of the site.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_areatype(models.Model):
@@ -100,7 +100,7 @@ class DC_area_areatype(models.Model):
         null=True, help_text="The type of the area.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_settlementtype(models.Model):
@@ -108,7 +108,7 @@ class DC_area_settlementtype(models.Model):
         null=True, help_text="Classification of settlement.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_constructiontype(models.Model):
@@ -116,7 +116,7 @@ class DC_area_constructiontype(models.Model):
         null=True, help_text="Type of buildings.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_buildingtechnique(models.Model):
@@ -124,7 +124,7 @@ class DC_area_buildingtechnique(models.Model):
         null=True, help_text="Method used for fabricating the buildings.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_specialfeatures(models.Model):
@@ -132,7 +132,7 @@ class DC_area_specialfeatures(models.Model):
         null=True, help_text="Parts of the settlement other than buildings.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_evidenceofgraveshumanremains(models.Model):
@@ -140,7 +140,7 @@ class DC_area_evidenceofgraveshumanremains(models.Model):
         null=True, help_text="Presence of graves and/or human remains.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_evidenceofoccupation(models.Model):
@@ -148,7 +148,7 @@ class DC_area_evidenceofoccupation(models.Model):
         null=True, help_text="Type of evidence indicating occupation found.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_caverockshelterstype(models.Model):
@@ -156,7 +156,7 @@ class DC_area_caverockshelterstype(models.Model):
         null=True, help_text="Type of cave/rockshelter.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_rawmaterial(models.Model):
@@ -164,7 +164,7 @@ class DC_area_rawmaterial(models.Model):
         null=True, help_text="Resource that was extracted.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_exploitationtype(models.Model):
@@ -172,7 +172,7 @@ class DC_area_exploitationtype(models.Model):
         null=True, help_text="Type of extraction.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_topography(models.Model):
@@ -180,7 +180,7 @@ class DC_area_topography(models.Model):
 		help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_mortuaryfeatures(models.Model):
@@ -188,7 +188,7 @@ class DC_area_mortuaryfeatures(models.Model):
 		help_text="Parts of the cemetery other than graves.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_gravetype(models.Model):
@@ -196,7 +196,7 @@ class DC_area_gravetype(models.Model):
 		help_text="Types of graves.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_typeofhumanremains(models.Model):
@@ -204,7 +204,7 @@ class DC_area_typeofhumanremains(models.Model):
 		help_text="How the humans were treated after death and buried.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_agegroups(models.Model):
@@ -212,7 +212,7 @@ class DC_area_agegroups(models.Model):
 		help_text="Age.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_sexes(models.Model):
@@ -220,7 +220,7 @@ class DC_area_sexes(models.Model):
 		help_text="Sex.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_area_manipulationofgraves(models.Model):
@@ -228,7 +228,7 @@ class DC_area_manipulationofgraves(models.Model):
 		help_text="If and how the space with the graves is marked.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_type(models.Model):
@@ -236,7 +236,7 @@ class DC_finds_type(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_material(models.Model):
@@ -244,7 +244,7 @@ class DC_finds_material(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_amount(models.Model):
@@ -252,7 +252,7 @@ class DC_finds_amount(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_small_finds_type(models.Model):
@@ -260,7 +260,7 @@ class DC_finds_small_finds_type(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_small_finds_category(models.Model):
@@ -268,7 +268,7 @@ class DC_finds_small_finds_category(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_botany_species(models.Model):
@@ -278,7 +278,7 @@ class DC_finds_botany_species(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_animal_remains_species(models.Model):
@@ -288,7 +288,7 @@ class DC_finds_animal_remains_species(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_animal_remains_completeness(models.Model):
@@ -296,7 +296,7 @@ class DC_finds_animal_remains_completeness(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_animal_remains_part(models.Model):
@@ -304,7 +304,7 @@ class DC_finds_animal_remains_part(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_lithics_debitage(models.Model):
@@ -312,7 +312,7 @@ class DC_finds_lithics_debitage(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_lithics_modified_tools(models.Model):
@@ -320,7 +320,7 @@ class DC_finds_lithics_modified_tools(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_lithics_core(models.Model):
@@ -328,7 +328,7 @@ class DC_finds_lithics_core(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_lithics_technology(models.Model):
@@ -336,7 +336,7 @@ class DC_finds_lithics_technology(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_pottery_form(models.Model):
@@ -344,7 +344,7 @@ class DC_finds_pottery_form(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_pottery_detail(models.Model):
@@ -352,7 +352,7 @@ class DC_finds_pottery_detail(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 class DC_finds_pottery_decoration(models.Model):
@@ -360,7 +360,7 @@ class DC_finds_pottery_decoration(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 class DC_province(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
@@ -371,7 +371,7 @@ class DC_province(models.Model):
 		help_text="Identifier provided by some authority file")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 class DC_country(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
@@ -382,7 +382,7 @@ class DC_country(models.Model):
 		help_text="Identifier provided by some authority file")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 
@@ -399,7 +399,7 @@ class DC_region(models.Model):
 		help_text="The name of the region")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 
 
@@ -423,7 +423,7 @@ class Reference(models.Model):
 		help_text="The URL to the ressource")
 
 	def __unicode__(self):
-		return self.title.encode('utf8')
+		return self.title
 
 
 class Project(models.Model):
@@ -435,7 +435,7 @@ class Project(models.Model):
         help_text="Leader of the research project.") #optional?
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -448,7 +448,7 @@ class Region(models.Model):
 		null=True, help_text="Name of the region. Follow the ???-Standard")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -463,7 +463,7 @@ class Province(models.Model):
         help_text="The id of the authoritiy ???, e.g. GeoNames")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -478,7 +478,7 @@ class Country(models.Model):
         help_text="The id of the authoritiy ???, e.g. GeoNames")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -509,9 +509,9 @@ class ResearchEvent(models.Model):
 
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""
-		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
-		#return str(self.id).encode('utf8')
-		return str(self.research_type)+'_'+str(self.institution)+'_'+str(self.id).encode('utf8')
+		#return self.area_type+'_'+str(self.id)
+		#return str(self.id)
+		return str(self.research_type)+'_'+str(self.institution)+'_'+str(self.id)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -583,7 +583,7 @@ class Site(models.Model):
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
-		return str(self.region)+'_'+self.name.encode('utf8')
+		return str(self.region)+'_'+self.name
 
 	def get_absolute_url(self):
 		return reverse('newModel:site_list')
@@ -663,7 +663,7 @@ class Area(models.Model):
 
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""
-		#return self.area_type.encode('utf8')+'_'+str(self.id).encode('utf8')
+		#return self.area_type+'_'+str(self.id)
 		return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
 
 	def get_absolute_url(self):
