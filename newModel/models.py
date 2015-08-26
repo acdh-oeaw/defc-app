@@ -22,7 +22,7 @@ class DC_researchevent_researchtype(models.Model):
         null=True, help_text="Methods used for researching the site.")
 
 	def __unicode__(self):
-		return self.name.encode('utf8')
+		return self.name
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
