@@ -18,6 +18,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from newModel import views
 #from webapp import views as oldviews
+# a comment for the commit
 
 
 urlpatterns = [
