@@ -160,6 +160,8 @@ class FindsDetail(DetailView):
 	model = Finds
 	def get_context_data(self, **kwargs):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
+		current_find = self.object
+		context['area_list'] = Area.objects.filter(finds=current_find.id)
 		return context
 
 
@@ -210,6 +212,8 @@ class SiteDetail(DetailView):
 	model = Site
 	def get_context_data(self, **kwargs):
 		context = super(SiteDetail, self).get_context_data(**kwargs)
+		current_site = self.object
+		context['areas_list'] = Area.objects.filter(site = current_site.id)
 		return context
 
 		
@@ -260,7 +264,8 @@ class AreaDetail(DetailView):
 	model = Area
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
-		context['finds_list'] = Finds.objects.all()
+		current_area = self.object
+		context['finds_list'] = Finds.objects.filter(area=current_area.id)
 		return context
 		
 #################################################################

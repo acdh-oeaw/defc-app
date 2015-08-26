@@ -49,6 +49,13 @@
                 <td>Reference</td>
                 <td>{{ object.reference_site }}</td>
         </tr>
+         <tr>
+                <td>Areas</td>
+                <td>{% for area in areas_list %}
+                        <a href="/newModel/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/></a>
+                        {% endfor %}
+                </td>
+        </tr>
         <tr>
                 <td>
                         <a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>

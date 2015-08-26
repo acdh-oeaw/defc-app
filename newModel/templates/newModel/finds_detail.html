@@ -18,11 +18,19 @@
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-        <tr>
+         <tr>
                 <td>Area</td>
-                <td>{{ object.area }}</td>
+                <td>{% for area in area_list %}
+                        <a href="/newModel/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
         </tr>
         <tr>
+                <td>Research event</td>
+                <td>{{ object.research_event }}</td>
+        </tr>
+       <tr>
                 <td>Research event</td>
                 <td>{{ object.research_event }}</td>
         </tr>

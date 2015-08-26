@@ -106,12 +106,8 @@
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-        <li>
-                <a href="/newModel/{{ find.get_classname }}/detail/{{ find.id }}">
-                {{ find }}
-        </a>
-        </li>
-                {% endfor %}
+                        <a href="/newModel/{{ find.get_classname }}/detail/{{ find.id }}"> See find: {{ find }} <br/></a>
+                        {% endfor %}
                 </td>
         </tr>
         <tr>
