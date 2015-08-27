@@ -75,8 +75,7 @@ class PeriodListView(generic.ListView):
 	#for each class. 
 
 	def get_queryset(self):
-		return Period.objects.order_by('name')
-
+		return Period.objects.order_by('period_name') #'name' changed for 'period_name'
 
 class PeriodCreate(CreateView):
 	model = Period
