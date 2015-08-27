@@ -379,6 +379,20 @@ class DC_province(models.Model):
 		help_text="The original or local name of the province")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Identifier provided by some authority file")
+	
+
+	def __unicode__(self):
+		return self.name
+
+
+class DC_region(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the region")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the region")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
+	
 
 	def __unicode__(self):
 		return self.name
@@ -393,24 +407,6 @@ class DC_country(models.Model):
 
 	def __unicode__(self):
 		return self.name
-
-
-
-class DC_region(models.Model):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The name of the region")
-	original_name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The original or local name of the region")
-	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
-	province = models.ForeignKey(DC_province, blank=True,null=True,
-		help_text="The name of the region")
-	country = models.ForeignKey(DC_country, blank=True,null=True,
-		help_text="The name of the region")
-
-	def __unicode__(self):
-		return self.name
-
 
 
 #####################################
@@ -453,9 +449,10 @@ class Project(models.Model):
 		return class_name
 
 
-class Region(models.Model):
-	name = models.ForeignKey(DC_region, blank=True, 
-		null=True, help_text="Name of the region. Follow the ???-Standard")
+class Province(models.Model):
+	name = models.ForeignKey(DC_province, blank=True, 
+		null=True, help_text="Name of the province. Follow the ???-Standard")
+	
 
 	def __unicode__(self):
 		return self.name
@@ -465,10 +462,9 @@ class Region(models.Model):
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
 
-
-class Province(models.Model):
-	name = models.CharField(max_length = 100, blank=True, 
-		null=True, help_text="Name of the province. Follow the ???-Standard")
+class Region(models.Model):
+	name = models.ForeignKey(DC_region, blank=True, 
+		null=True, help_text="Name of the region. Follow the ???-Standard")
 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
 		help_text="The id of the authoritiy ???, e.g. GeoNames")
 
@@ -566,7 +562,7 @@ class Period(models.Model):                    #New class Period based on chrono
 class Site(models.Model):
 	name = models.CharField(max_length=350, blank=True, null=True,
 		help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
-	region = models.ForeignKey(DC_region, blank=True, null=True,
+	province = models.ForeignKey(DC_province, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?
 	description = models.CharField(max_length=400, blank=True, null=True,
 		help_text="Free text summary account on the site.") #optional?
@@ -587,7 +583,7 @@ class Site(models.Model):
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
-		return str(self.region)+'_'+str(self.name)
+		return str(self.province)+'_'+str(self.name)
 
 	def get_absolute_url(self):
 		return reverse('newModel:site_list')
