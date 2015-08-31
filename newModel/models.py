@@ -372,33 +372,8 @@ class DC_finds_pottery_decoration(models.Model):
 	def __unicode__(self):
 		return self.name
 
-class DC_province(models.Model):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The name of the province")
-	original_name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The original or local name of the province")
-	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
-	
-
-	def __unicode__(self):
-		return self.name
-
-
-class DC_region(models.Model):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The name of the region")
-	original_name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="The original or local name of the region")
-	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
-	
-
-	def __unicode__(self):
-		return self.name
-
 class DC_country(models.Model):
-	name = models.CharField(max_length=100, blank=True,null=True,
+	name = models.CharField(max_length=100, blank=True,primary_key=True,
 		help_text="The name of the country")
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the country")
@@ -408,6 +383,33 @@ class DC_country(models.Model):
 	def __unicode__(self):
 		return self.name
 
+class DC_region(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the region")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the region")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
+	country = models.ForeignKey(DC_country,
+		help_text="The name of the country")
+
+
+	def __unicode__(self):
+		return self.name
+
+class DC_province(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The name of the province")
+	original_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="The original or local name of the province")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by some authority file")
+	region = models.ForeignKey(DC_region,
+		help_text="The name of the country")
+	
+
+	def __unicode__(self):
+		return self.name
 
 #####################################
 #		content tables				#
@@ -449,47 +451,47 @@ class Project(models.Model):
 		return class_name
 
 
-class Province(models.Model):
-	name = models.ForeignKey(DC_province, blank=True, 
-		null=True, help_text="Name of the province. Follow the ???-Standard")
-	
+# class Province(models.Model):
+# 	name = models.ForeignKey(DC_province, blank=True,
+# 		null=True, help_text="Name of the province. Follow the ???-Standard")
+#
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# 	def get_classname(self):
+# 		"""Returns the name of the class as lowercase string"""
+# 		class_name = str(self.__class__.__name__).lower()
+# 		return class_name
 
-	def __unicode__(self):
-		return self.name
-
-	def get_classname(self):
-		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
-		return class_name
-
-class Region(models.Model):
-	name = models.ForeignKey(DC_region, blank=True, 
-		null=True, help_text="Name of the region. Follow the ???-Standard")
-	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-		help_text="The id of the authoritiy ???, e.g. GeoNames")
-
-	def __unicode__(self):
-		return self.name
-
-	def get_classname(self):
-		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
-		return class_name
+# class Region(models.Model):
+# 	name = models.ForeignKey(DC_region, blank=True,
+# 		null=True, help_text="Name of the region. Follow the ???-Standard")
+# 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
+# 		help_text="The id of the authoritiy ???, e.g. GeoNames")
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# 	def get_classname(self):
+# 		"""Returns the name of the class as lowercase string"""
+# 		class_name = str(self.__class__.__name__).lower()
+# 		return class_name
 
 
-class Country(models.Model):
-	name = models.CharField(max_length = 100, blank=True, 
-		null=True, help_text="Name of the country/state. Follow the ???-Standard")
-	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-		help_text="The id of the authoritiy ???, e.g. GeoNames")
-
-	def __unicode__(self):
-		return self.name
-
-	def get_classname(self):
-		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
-		return class_name
+# class Country(models.Model):
+# 	name = models.CharField(max_length = 100, blank=True,
+# 		null=True, help_text="Name of the country/state. Follow the ???-Standard")
+# 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
+# 		help_text="The id of the authoritiy ???, e.g. GeoNames")
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# 	def get_classname(self):
+# 		"""Returns the name of the class as lowercase string"""
+# 		class_name = str(self.__class__.__name__).lower()
+# 		return class_name
 
 
 class ResearchEvent(models.Model):
