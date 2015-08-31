@@ -72,7 +72,7 @@ class PeriodListView(generic.ListView):
 	template_name = 'newModel/list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
-	#for each class. 
+	#for each class.
 
 	def get_queryset(self):
 		return Period.objects.order_by('period_name') #'name' changed for 'period_name'

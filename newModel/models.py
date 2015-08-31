@@ -55,47 +55,47 @@ class DC_researchevent_special_analysis(models.Model):
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
 
-class DC_period_periodname(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Name of archaeological period for which evidence was found.")
-
-	def __unicode__(self):
-		return self.name
-
-class DC_period_startdate1_BC(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Helptext") #Helptext needed
-
-	def __unicode__(self):
-		return self.name
-
-class DC_period_startdate2_BC(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Helptext") #Helptext needed
-
-	def __unicode__(self):
-		return self.name
-
-class DC_period_enddate1_BC(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Helptext") #Helptext needed
-
-	def __unicode__(self):
-		return self.name
-
-class DC_period_enddate2_BC(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Helptext") #Helptext needed
-
-	def __unicode__(self):
-		return self.name
-
-class DC_period_region(models.Model): #values in this DC are taken from chronologie_v2.xlsx and they are different that DC_region values in Site
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Helptext")
-
-	def __unicode__(self):
-		return self.name
+# class DC_period_periodname(models.Model):
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Name of archaeological period for which evidence was found.")
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# class DC_period_startdate1_BC(models.Model):
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Helptext") #Helptext needed
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# class DC_period_startdate2_BC(models.Model):
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Helptext") #Helptext needed
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# class DC_period_enddate1_BC(models.Model):
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Helptext") #Helptext needed
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# class DC_period_enddate2_BC(models.Model):
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Helptext") #Helptext needed
+#
+# 	def __unicode__(self):
+# 		return self.name
+#
+# class DC_period_region(models.Model): #values in this DC are taken from chronologie_v2.xlsx and they are different that DC_region values in Site
+# 	name = models.CharField(max_length=100, blank=True,
+# 		null=True, help_text="Helptext")
+#
+# 	def __unicode__(self):
+# 		return self.name
 
 class DC_site_gpssystem(models.Model):
 	name = models.CharField(max_length=100, blank=True,
@@ -532,21 +532,20 @@ class ResearchEvent(models.Model):
 
 
 class Period(models.Model):                    #New class Period based on chronologie_v2.xslx
-	period_name = models.ForeignKey(DC_period_periodname, blank=True,
-		null=True, help_text="Helptext")
-	start_date1_BC = models.ForeignKey(DC_period_startdate1_BC, blank=True,
-		null=True, help_text="Helptext")
-	start_date2_BC = models.ForeignKey(DC_period_startdate2_BC, blank=True,
-		null=True, help_text="Helptext")
-	end_date1_BC = models.ForeignKey(DC_period_enddate1_BC, blank=True,
-		null=True, help_text="Helptext")
-	end_date2_BC = models.ForeignKey(DC_period_enddate2_BC, blank=True,
-		null=True, help_text="Helptext")
+	chronological_system = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="Name of the chronological system.")
+	period_name = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="Name of archaeological period for which evidence was found.")
+	start_date1_BC = models.IntegerField(help_text="Helptext")
+	start_date2_BC = models.IntegerField(help_text="Helptext")
+	end_date1_BC = models.IntegerField(help_text="Helptext")
+	end_date2_BC = models.IntegerField(help_text="Helptext")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
 	#optional? implement an reference table?
 	comment = models.CharField(max_length=100, blank=True, null=True,
 		help_text = "Additional information on the chronology not covered in any other field.")
+	region = models.ForeignKey(DC_region)
 
 	def get_absolute_url(self):
 		return reverse('newModel:period_list')
@@ -558,7 +557,6 @@ class Period(models.Model):                    #New class Period based on chrono
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
-
 
 
 class Site(models.Model):
