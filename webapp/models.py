@@ -307,9 +307,18 @@ class Site(models.Model):
         ("Greece", "Greece"),
         )
     GPSSYSTEM_CHOICES = (
-        ("Google map", "Google map"),
-        ("GPS", "GPS"),
-        ("literature", "literature"),
+        ("ED50", "European Datum 1950"),
+        ("SAD69", "South American Datum 1969"),
+        ("GRS80", "Geodetic Reference System 1980"),
+        ("NAD83", "North American Datum 1983"),
+        ("WGS84", "World Geodetic System 1984"),
+        ("NAVD88", "North America Virtual Datum 1988"),
+        ("ETRS89", "European Terrestrial Reference System 1989"),
+        ("GCJ02", "Chinese Encrypted Datum 2002"),
+        ("EPSG", "European Petrol survey Group"),
+        ("UTM", "Universal Transverse Mercator"),
+
+
         )
 
     id_site = models.AutoField(db_column='ID_Site', primary_key=True)  # Field name made lowercase.
