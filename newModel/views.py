@@ -12,8 +12,60 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent
+from .models import Site, Area, Finds, Period, ResearchEvent, Project
 from .forms import form_user_login
+
+
+#################################################################
+#				views for Project							#
+#################################################################
+class ProjectListView(generic.ListView):
+	template_name = 'newModel/list.html'
+	context_object_name = 'object_list' # use object_list instead of
+	# e.g. site_list so the template does not need to be changed so much
+	#for each class. 
+
+	def get_queryset(self):
+		return Project.objects.order_by('name')
+
+
+class ProjectCreate(CreateView):
+	model = Project
+	fields = "__all__"
+	template_name = "newModel/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ProjectCreate, self).dispatch(*args, **kwargs)
+
+
+class ProjectUpdate(UpdateView):
+	model = Project
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ProjectUpdate, self).dispatch(*args, **kwargs)
+
+
+class ProjectDelete(DeleteView):
+	model = Project
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:Project_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(ProjectDelete, self).dispatch(*args, **kwargs)
+
+
+class ProjectDetail(DetailView):
+	model = Project
+	def get_context_data(self, **kwargs):
+		context = super(ProjectDetail, self).get_context_data(**kwargs)
+		return context
+
+
 
 #################################################################
 #				views for ResearchEvent							#

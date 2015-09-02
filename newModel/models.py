@@ -411,6 +411,9 @@ class Project(models.Model):
 		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
+	def get_absolute_url(self):
+		return reverse('newModel:project_list')
+
 
 class ResearchEvent(models.Model):
 	research_type = models.ForeignKey(DC_researchevent_researchtype, blank=True,

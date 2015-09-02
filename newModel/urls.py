@@ -29,6 +29,11 @@ url(r'^researchevent/create/$', views.ResearchEventCreate.as_view(), name='resea
 url(r'^researchevent/update/(?P<pk>[0-9]+)$', views.ResearchEventUpdate.as_view(), name='researchevent_update'),
 url(r'^researchevent/delete/(?P<pk>[0-9]+)$', views.ResearchEventDelete.as_view(), name='researchevent_delete'),
 url(r'^researchevent/detail/(?P<pk>[0-9]+)$', views.ResearchEventDetail.as_view(), name='researchevent_detail'),
+url(r'^project/$', views.ProjectListView.as_view(), name='project_list'),
+url(r'^project/create/$', views.ProjectCreate.as_view(), name='project_create'),
+url(r'^project/update/(?P<pk>[0-9]+)$', views.ProjectUpdate.as_view(), name='project_update'),
+url(r'^project/delete/(?P<pk>[0-9]+)$', views.ProjectDelete.as_view(), name='project_delete'),
+url(r'^project/detail/(?P<pk>[0-9]+)$', views.ProjectDetail.as_view(), name='project_detail'),
 ]
 
 #some change for git

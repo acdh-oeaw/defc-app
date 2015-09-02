@@ -1,0 +1,17 @@
+{% extends "newModel/base.html" %}
+{% block content %}
+<table class="table table-striped">
+        <tr>
+                <td>Name of the Project </td>
+                <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+                <td>Project ID</td>
+                <td>{{ object.project_id }}</td>
+        </tr>
+        <tr>
+                <td>Project Leader</td>
+                <td>{{ object }}</td>
+        </tr>
+</table>
+{% endblock content %}
