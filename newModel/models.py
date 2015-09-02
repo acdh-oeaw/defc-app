@@ -32,8 +32,8 @@ class DC_researchevent_researchtype(models.Model):
 
 
 class DC_researchevent_institution(models.Model):
-	name = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Organisation that carried out a research project at the site.")
+	name = models.CharField(max_length=100, blank=True, null=True,
+		help_text="Organisation that carried out a research project at the site.")
 
 	def __unicode__(self):
 		return self.name
@@ -55,49 +55,8 @@ class DC_researchevent_special_analysis(models.Model):
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
 
-# class DC_period_periodname(models.Model):
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Name of archaeological period for which evidence was found.")
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# class DC_period_startdate1_BC(models.Model):
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Helptext") #Helptext needed
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# class DC_period_startdate2_BC(models.Model):
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Helptext") #Helptext needed
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# class DC_period_enddate1_BC(models.Model):
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Helptext") #Helptext needed
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# class DC_period_enddate2_BC(models.Model):
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Helptext") #Helptext needed
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# class DC_period_region(models.Model): #values in this DC are taken from chronologie_v2.xlsx and they are different that DC_region values in Site
-# 	name = models.CharField(max_length=100, blank=True,
-# 		null=True, help_text="Helptext")
-#
-# 	def __unicode__(self):
-# 		return self.name
 
-class DC_site_gpssystem(models.Model):
+class DC_site_geographicalreferencesystem(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")
 
@@ -372,8 +331,9 @@ class DC_finds_pottery_decoration(models.Model):
 	def __unicode__(self):
 		return self.name
 
+
 class DC_country(models.Model):
-	name = models.CharField(max_length=100, blank=True,primary_key=True,
+	name = models.CharField(max_length=100, blank=True,
 		help_text="The name of the country")
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the country")
@@ -383,6 +343,7 @@ class DC_country(models.Model):
 	def __unicode__(self):
 		return self.name
 
+
 class DC_region(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The name of the region")
@@ -390,12 +351,12 @@ class DC_region(models.Model):
 		help_text="The original or local name of the region")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Identifier provided by some authority file")
-	country = models.ForeignKey(DC_country,
+	country = models.ForeignKey(DC_country, blank=True, null=True,
 		help_text="The name of the country")
-
 
 	def __unicode__(self):
 		return self.name
+
 
 class DC_province(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
@@ -404,7 +365,7 @@ class DC_province(models.Model):
 		help_text="The original or local name of the province")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Identifier provided by some authority file")
-	region = models.ForeignKey(DC_region,
+	region = models.ForeignKey(DC_region, blank=True,null=True,
 		help_text="The name of the country")
 	
 
@@ -449,49 +410,6 @@ class Project(models.Model):
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
-
-
-# class Province(models.Model):
-# 	name = models.ForeignKey(DC_province, blank=True,
-# 		null=True, help_text="Name of the province. Follow the ???-Standard")
-#
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# 	def get_classname(self):
-# 		"""Returns the name of the class as lowercase string"""
-# 		class_name = str(self.__class__.__name__).lower()
-# 		return class_name
-
-# class Region(models.Model):
-# 	name = models.ForeignKey(DC_region, blank=True,
-# 		null=True, help_text="Name of the region. Follow the ???-Standard")
-# 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-# 		help_text="The id of the authoritiy ???, e.g. GeoNames")
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# 	def get_classname(self):
-# 		"""Returns the name of the class as lowercase string"""
-# 		class_name = str(self.__class__.__name__).lower()
-# 		return class_name
-
-
-# class Country(models.Model):
-# 	name = models.CharField(max_length = 100, blank=True,
-# 		null=True, help_text="Name of the country/state. Follow the ???-Standard")
-# 	authorityfile_id = models.CharField(max_length=100, blank=True, null=True,
-# 		help_text="The id of the authoritiy ???, e.g. GeoNames")
-#
-# 	def __unicode__(self):
-# 		return self.name
-#
-# 	def get_classname(self):
-# 		"""Returns the name of the class as lowercase string"""
-# 		class_name = str(self.__class__.__name__).lower()
-# 		return class_name
 
 
 class ResearchEvent(models.Model):
@@ -568,7 +486,7 @@ class Site(models.Model):
 		help_text="Free text summary account on the site.") #optional?
 	topography = models.CharField(max_length=400, blank=True, null=True,
 		help_text="Description of surface shape and features.") #optional?
-	gps_data_coordinate_system = models.ForeignKey(DC_site_gpssystem, blank=True,
+	geographical_coordinate_reference_system = models.ForeignKey(DC_site_geographicalreferencesystem, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
 	gps_data_n = models.CharField(max_length=50, blank=True, null=True,
 		help_text="North value of coordinate.")
