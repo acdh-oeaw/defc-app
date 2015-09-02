@@ -23,11 +23,11 @@ class DC_researchevent_researchtype(models.Model):
 		null=True, help_text="Methods used for researching the site.")
 
 	def __unicode__(self):
-		return str(self.name)
+		return unicode(self.name)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -40,7 +40,7 @@ class DC_researchevent_institution(models.Model):
 		
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 class DC_researchevent_special_analysis(models.Model):
@@ -52,7 +52,7 @@ class DC_researchevent_special_analysis(models.Model):
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -370,7 +370,7 @@ class DC_province(models.Model):
 	
 
 	def __unicode__(self):
-		return str(self.region)+'_'+self.name
+		return unicode(self.region)+'_'+self.name
 
 #####################################
 #		content tables				#
@@ -408,7 +408,7 @@ class Project(models.Model):
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -434,11 +434,11 @@ class ResearchEvent(models.Model):
 		help_text="Additional information on the research history not covered in any other field.")
 
 	def __unicode__(self):
-		return str(self.research_type)
+		return self.research_type.name+'_'+unicode(self.institution)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 	def get_absolute_url(self):
@@ -466,11 +466,11 @@ class Period(models.Model):                    #New class Period based on chrono
 		return reverse('newModel:period_list')
 
 	def __unicode__(self):
-		return str(self.region)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
+		return unicode(self.region)+'_'+unicode(self.period_name)+'_'+unicode(self.start_date1_BC)+'_'+unicode(self.end_date1_BC)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -498,14 +498,14 @@ class Site(models.Model):
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
 	def __unicode__(self):
-		return str(self.province)+'_'+str(self.name)
+		return unicode(self.province)+'_'+unicode(self.name)
 
 	def get_absolute_url(self):
 		return reverse('newModel:site_list')
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -578,15 +578,15 @@ class Area(models.Model):
 
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""
-		#return self.area_type+'_'+str(self.id)
-		return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
+		#return self.area_type+'_'+unicode(self.id)
+		return unicode(self.site)+'_'+unicode(self.area_type)+'_'+unicode(self.id)
 
 	def get_absolute_url(self):
 		return reverse('newModel:area_list')
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 
@@ -650,13 +650,13 @@ class Finds(models.Model):
 
 
 	def get_classname(self):
-		class_name = str(self.__class__.__name__).lower()
+		class_name = unicode(self.__class__.__name__).lower()
 		return class_name
 
 	def get_absolute_url(self):
 		return reverse('newModel:finds_list')
 
 	def __unicode__(self):
-		return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)
+		return unicode(self.area)+'_'+unicode(self.finds_type)+'_'+unicode(self.id)
 	#maybe use Autoslug modul, see:
 	# https://pythonhosted.org/django-autoslug/
