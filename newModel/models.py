@@ -23,7 +23,7 @@ class DC_researchevent_researchtype(models.Model):
 		null=True, help_text="Methods used for researching the site.")
 
 	def __unicode__(self):
-		return self.name
+		return str(self.name)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -37,7 +37,7 @@ class DC_researchevent_institution(models.Model):
 
 	def __unicode__(self):
 		return self.name
-
+		
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
@@ -370,7 +370,7 @@ class DC_province(models.Model):
 	
 
 	def __unicode__(self):
-		return self.name
+		return str(self.region)+'_'+self.name
 
 #####################################
 #		content tables				#
@@ -434,10 +434,7 @@ class ResearchEvent(models.Model):
 		help_text="Additional information on the research history not covered in any other field.")
 
 	def __unicode__(self):
-		"""changed to self.id to avoid dependency due to ForeignKey"""
-		#return self.area_type+'_'+str(self.id)
-		#return str(self.id)
-		return str(self.research_type)+'_'+str(self.institution)+'_'+str(self.id)
+		return str(self.research_type)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -469,7 +466,7 @@ class Period(models.Model):                    #New class Period based on chrono
 		return reverse('newModel:period_list')
 
 	def __unicode__(self):
-		return str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
+		return str(self.region)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -591,13 +588,6 @@ class Area(models.Model):
 		"""Returns the name of the class as lowercase string"""
 		class_name = str(self.__class__.__name__).lower()
 		return class_name
-###################################################
-#Not sure about this
-#small_findsid_small_finds = models.IntegerField(models.CharField(
-#	max_length=100, blank=True, null=True)  # small finds and finds are the same or not?
-#interpretationid_interpretation = models.ForeignKey('Interpretation', ) 
-#what is this?type of field (plain text or int)?
-########################################################
 
 
 class Finds(models.Model):
