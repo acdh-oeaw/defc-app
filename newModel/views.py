@@ -52,7 +52,7 @@ class ProjectUpdate(UpdateView):
 class ProjectDelete(DeleteView):
 	model = Project
 	template_name = 'newModel/confirm_delete.html'
-	success_url = reverse_lazy('newModel:Project_list')
+	success_url = reverse_lazy('newModel:project_list')
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
