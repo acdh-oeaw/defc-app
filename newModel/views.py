@@ -63,6 +63,8 @@ class ProjectDetail(DetailView):
 	model = Project
 	def get_context_data(self, **kwargs):
 		context = super(ProjectDetail, self).get_context_data(**kwargs)
+		current_project = self.object
+		context['researchevent_list'] = ResearchEvent.objects.filter(project=current_project.id)
 		return context
 
 
@@ -114,6 +116,8 @@ class ResearchEventDetail(DetailView):
 	model = ResearchEvent
 	def get_context_data(self, **kwargs):
 		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
+		current_researchevent = self.object
+		context['Project_list'] = Project.objects.filter(researchevent = current_researchevent.id)
 		return context
 
 

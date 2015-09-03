@@ -11,7 +11,23 @@
         </tr>
         <tr>
                 <td>Project Leader</td>
-                <td>{{ object }}</td>
+                <td>{{ object.project_leader }}</td>
+        </tr>
+        <tr>
+                <td>Research Event</td>
+                <td>{% for researchevent in researchevent_list %}
+                        <a href="/newModel/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}"> See research event: {{ researchevent }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
         </tr>
 </table>
 {% endblock content %}
