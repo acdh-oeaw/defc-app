@@ -322,6 +322,10 @@ class AreaDetail(DetailView):
 		current_area = self.object
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
 		return context
+
+#################################################################
+#				views for SInterpretation						#   #to be done
+#################################################################
 		
 #################################################################
 #				views for login/logout							#

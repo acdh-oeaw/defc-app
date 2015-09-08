@@ -372,6 +372,22 @@ class DC_province(models.Model):
 	def __unicode__(self):
 		return unicode(self.region)+'_'+self.name
 
+######DCs for Interpretation######
+class DC_interpretation_productiontype(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Types of production for which evidence was found.")
+
+	def __unicode__(self):
+		return self.name
+
+class DC_interpretation_subsistencetype(models.Model):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Types of livelihood for which evidence was found.")
+
+	def __unicode__(self):
+		return self.name
+
+
 #####################################
 #		content tables				#
 #####################################
@@ -458,10 +474,16 @@ class Period(models.Model):                    #New class Period based on chrono
 	start_date2_BC = models.IntegerField(help_text="Helptext")
 	end_date1_BC = models.IntegerField(help_text="Helptext")
 	end_date2_BC = models.IntegerField(help_text="Helptext")
+	dating_method = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="Method used for dating the site.")
+	dated_by = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="Source providing information about date.")
+	c14_calibrated = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="Date is a calibrated date.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
 	#optional? implement an reference table?
-	comment = models.CharField(max_length=100, blank=True, null=True,
+	comment = models.CharField(max_length=500, blank=True, null=True,
 		help_text = "Additional information on the chronology not covered in any other field.")
 	region = models.ForeignKey(DC_region)
 
@@ -644,6 +666,8 @@ class Finds(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
 		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
+	interpretation = models.ForeignKey('Interpretation', blank=True, null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX" )
 	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	reference = models.ManyToManyField(Reference, blank=True,
@@ -663,3 +687,28 @@ class Finds(models.Model):
 		return unicode(self.area)+'_'+unicode(self.finds_type)+'_'+unicode(self.id)
 	#maybe use Autoslug modul, see:
 	# https://pythonhosted.org/django-autoslug/
+
+#######new class Interpretation(this is a chosen name for Subsistence&Production)######
+class Interpretation(models.Model):
+	finds = models.ForeignKey(Finds, blank=True, null=True,   #we still don't know relations between Finds and Interpretation, so it might be ManytoManyfield
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	description = models.CharField(max_length=500, blank=True, null=True,
+		help_text="Free text summary account on subsistence & production of the site.")
+	production_type = models.ForeignKey(DC_interpretation_productiontype, blank=True, null=True, 
+		help_text="Types of production for which evidence was found.")
+	subsistence_type = models.ForeignKey(DC_interpretation_subsistencetype, blank=True, null=True, 
+		help_text="Types of livelihood for which evidence was found.")
+	reference = models.ManyToManyField(Reference, blank=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	comment = models.CharField(max_length=100, blank=True, null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	def get_classname(self):
+		class_name = unicode(self.__class__.__name__).lower()
+		return class_name
+
+	def get_absolute_url(self):
+		return reverse('newModel:interpretation_list')
+
+	def __unicode__(self):
+		return 'Interpretation'+unicode(self.finds)+'_'+unicode(self.id)

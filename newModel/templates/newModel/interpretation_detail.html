@@ -1,0 +1,38 @@
+% extends "newModel/base.html" %}
+{% block content %}
+<h1>Interpretation</h1>
+<table class="table table-striped">
+        <tr>
+                <td>Finds</td>
+                <td>{{ object.finds }}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Production type</td>
+                <td>{{ object.production_type }}</td>
+        </tr>
+        <tr>
+                <td>Subsistence type</td>
+                <td>{{ object.subsistence_type }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{{ object.reference }}</td>
+        </tr>
+         <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+            </tr>
+</table>
+{% endblock content %}

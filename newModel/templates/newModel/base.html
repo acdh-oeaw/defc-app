@@ -81,6 +81,19 @@
               </ul>
             </li>
             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Interpretation
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'newModel:interpretation_list' %}">See all Interpretations</a>
+                </li>
+                <li>
+                  <a href="{% url 'newModel:interpretation_create' %}">Create new Interpretation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Event
                 <span class="caret"/>
               </a>

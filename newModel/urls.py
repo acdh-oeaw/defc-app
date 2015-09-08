@@ -35,5 +35,5 @@ url(r'^project/update/(?P<pk>[0-9]+)$', views.ProjectUpdate.as_view(), name='pro
 url(r'^project/delete/(?P<pk>[0-9]+)$', views.ProjectDelete.as_view(), name='project_delete'),
 url(r'^project/detail/(?P<pk>[0-9]+)$', views.ProjectDetail.as_view(), name='project_detail'),
 ]
-
+#class Interpretation must be added
 #some change for git
