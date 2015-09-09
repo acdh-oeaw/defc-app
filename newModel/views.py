@@ -12,7 +12,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Project
+from .models import Site, Area, Finds, Period, ResearchEvent, Project, Interpretation
 from .forms import form_user_login
 
 
@@ -217,6 +217,8 @@ class FindsDetail(DetailView):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
 		current_find = self.object
 		context['area_list'] = Area.objects.filter(finds=current_find.id)
+		#current_find_2 = self.object
+		#context['interpretation_list'] = Interpretation.objects.filter(finds=current_find_2.id)
 		return context
 
 
@@ -324,9 +326,52 @@ class AreaDetail(DetailView):
 		return context
 
 #################################################################
-#				views for SInterpretation						#   #to be done
+#				views for Interpretation						#   #to be done
 #################################################################
-		
+class InterpretationListView(generic.ListView):
+	template_name = 'newModel/list.html'
+	context_object_name = 'object_list'
+
+	def get_queryset(self):
+		return Interpretation.objects.order_by('name')
+
+class InterpretationCreate(CreateView):
+	model = Interpretation
+	fields = "__all__"
+	template_name = "newModel/create_form.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(InterpretationCreate, self).dispatch(*args, **kwargs)
+
+
+class InterpretationUpdate(UpdateView):
+	model = Interpretation
+	fields = "__all__"
+	template_name = 'newModel/update_form.html'
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(InterpretationUpdate, self).dispatch(*args, **kwargs)
+
+class InterpretationDelete(DeleteView):
+	model = Interpretation
+	template_name = 'newModel/confirm_delete.html'
+	success_url = reverse_lazy('newModel:interpretation_list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(InterpretationDelete, self).dispatch(*args, **kwargs)
+
+class InterpretationDetail(DetailView):
+	model = Interpretation
+	def get_context_data(self, **kwargs):
+		context = super(InterpretationDetail, self).get_context_data(**kwargs)
+		#current_interpretation = self.object
+		#context = ['finds_list'] = Finds.objects.filter(interpretation=current_interpretation.id) 
+		#instead we are using ManytoMany so all finds will be in finds field
+		return context
+
 #################################################################
 #				views for login/logout							#
 #################################################################

@@ -34,6 +34,11 @@ url(r'^project/create/$', views.ProjectCreate.as_view(), name='project_create'),
 url(r'^project/update/(?P<pk>[0-9]+)$', views.ProjectUpdate.as_view(), name='project_update'),
 url(r'^project/delete/(?P<pk>[0-9]+)$', views.ProjectDelete.as_view(), name='project_delete'),
 url(r'^project/detail/(?P<pk>[0-9]+)$', views.ProjectDetail.as_view(), name='project_detail'),
+url(r'^interpretation/$', views.InterpretationListView.as_view(), name='interpretation_list'),
+url(r'^interpretation/create/$', views.InterpretationCreate.as_view(), name='interpretation_create'),
+url(r'^interpretation/update/(?P<pk>[0-9]+)$', views.InterpretationUpdate.as_view(), name='interpretation_update'),
+url(r'^interpretation/delete/(?P<pk>[0-9]+)$', views.InterpretationDelete.as_view(), name='interpretation_delete'),
+url(r'^interpretation/detail/(?P<pk>[0-9]+)$', views.InterpretationDetail.as_view(), name='interpretation_detail'),
 ]
 #class Interpretation must be added
 #some change for git

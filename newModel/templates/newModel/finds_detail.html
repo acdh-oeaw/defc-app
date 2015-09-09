@@ -31,6 +31,14 @@
                 </td>
         </tr>
         <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretation_list %}
+                        <a href="/newModel/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
                 <td>Research event</td>
                 <td>{{ object.research_event }}</td>
         </tr>

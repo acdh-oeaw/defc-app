@@ -666,8 +666,6 @@ class Finds(models.Model):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
 		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
-	interpretation = models.ForeignKey('Interpretation', blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX" )
 	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	reference = models.ManyToManyField(Reference, blank=True,
@@ -690,7 +688,7 @@ class Finds(models.Model):
 
 #######new class Interpretation(this is a chosen name for Subsistence&Production)######
 class Interpretation(models.Model):
-	finds = models.ForeignKey(Finds, blank=True, null=True,   #we still don't know relations between Finds and Interpretation, so it might be ManytoManyfield
+	finds = models.ManyToManyField(Finds, blank=True,   
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.CharField(max_length=500, blank=True, null=True,
 		help_text="Free text summary account on subsistence & production of the site.")
@@ -711,4 +709,4 @@ class Interpretation(models.Model):
 		return reverse('newModel:interpretation_list')
 
 	def __unicode__(self):
-		return 'Interpretation'+unicode(self.finds)+'_'+unicode(self.id)
+		return 'Interpretation'+'_'+unicode(self.finds)+'_'+unicode(self.id)
