@@ -333,7 +333,7 @@ class InterpretationListView(generic.ListView):
 	context_object_name = 'object_list'
 
 	def get_queryset(self):
-		return Interpretation.objects.order_by('name')
+		return Interpretation.objects.order_by('finds')
 
 class InterpretationCreate(CreateView):
 	model = Interpretation
