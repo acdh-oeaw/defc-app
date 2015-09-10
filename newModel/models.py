@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, render_to_response, redirect
+from django.forms import Textarea
+
 
 from .customTypes import CustomIntegerField
 
@@ -449,11 +451,11 @@ class ResearchEvent(models.Model):
 		help_text="Analyses other than excavation that were carried out to research the site.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and/or web-based reference(s) to publications and other relevant resources related to the project.")
-	comment = models.CharField(max_length=100, blank=True, null=True,
+	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on the research history not covered in any other field.")
 
 	def __unicode__(self):
-		return self.research_type.name+'_'+unicode(self.institution)
+		return self.research_type+'_'+unicode(self.institution)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -502,6 +504,10 @@ class Period(models.Model):                    #New class Period based on chrono
 class Site(models.Model):
 	name = models.CharField(max_length=350, blank=True, null=True,
 		help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
+	alias_name = models.CharField(max_length=350, blank=True, null=True,
+		help_text="Alias name of the site.")
+	alternative_name = models.CharField(max_length=350, blank=True, null=True,
+		help_text="Alternative name of the site.")
 	province = models.ForeignKey(DC_province, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?
 	description = models.CharField(max_length=400, blank=True, null=True,
@@ -519,6 +525,8 @@ class Site(models.Model):
 	coordinate_source = models.CharField(max_length=100, blank=True, 
 		null=True,
 		help_text="Source providing information about the global position of site.")#optional?
+	number_of_activity_periods = models.CharField(max_length=100, blank=True, null=True,
+		help_text="Number of times past activity was recorded at the site.")
 	reference_site = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 
@@ -545,7 +553,7 @@ class Area(models.Model):
 		null=True, 
 		help_text="The identifier of the area´s stratigraphical unit")
 	geographical_reference = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Locats the Area in the Site")
+		null=True, help_text="Locates the Area in the Site")
 	period = models.ForeignKey(Period, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.CharField(max_length=100, blank=True, null=True,
@@ -559,8 +567,8 @@ class Area(models.Model):
 		blank=True, null=True, help_text="Type of buildings.")
 	settlement_building_technique = models.ForeignKey(DC_area_buildingtechnique, blank=True,
 		null=True, help_text="Method used for fabricating the buildings.")
-	settlement_special_features = models.ForeignKey(DC_area_specialfeatures,
-		blank=True, null=True, help_text="Parts of the settlement other than buildings.")
+	settlement_special_features = models.ManyToManyField(DC_area_specialfeatures,  #it was FK field
+		blank=True, help_text="Parts of the settlement other than buildings.")
 #cave&rockshelters fields
 	cave_rockshelters_type = models.ForeignKey(DC_area_caverockshelterstype, blank=True,
 		null=True,help_text="Type of cave/rockshelter.")
@@ -597,6 +605,7 @@ class Area(models.Model):
 		null=True, help_text="Age.")
 	cemetery_graves_sexes = models.ForeignKey(DC_area_sexes, blank=True,
 		null=True, help_text="Sex.")
+	cemetery_graves_sexes_number = models.IntegerField(null=True, blank=True, help_text = "Helptext")
 	cemetery_graves_manipulations_of_graves = models.ForeignKey(
 		DC_area_manipulationofgraves, blank=True, null=True,
 		help_text="If and how the space with the graves is marked.")
