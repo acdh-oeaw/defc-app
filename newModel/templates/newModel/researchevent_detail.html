@@ -19,13 +19,6 @@
                 <td>{{ object.year_of_activity_end_year }}</td>
         </tr>
         <tr>
-                <td>Project</td>
-                <td>{% for project in Project_list %}
-                        <a href="/newModel/{{ project.get_classname }}/detail/{{ project.id }}"> See project: {{ project }} <br/></a>
-                        {% endfor %}
-                </td>
-        </tr>
-        <tr>
                 <td>Reference</td>
                 <td>{{ object.reference }}</td>
         </tr>

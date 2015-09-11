@@ -12,61 +12,8 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Project, Interpretation
+from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation
 from .forms import form_user_login
-
-
-#################################################################
-#				views for Project							#
-#################################################################
-class ProjectListView(generic.ListView):
-	template_name = 'newModel/list.html'
-	context_object_name = 'object_list' # use object_list instead of
-	# e.g. site_list so the template does not need to be changed so much
-	#for each class. 
-
-	def get_queryset(self):
-		return Project.objects.order_by('name')
-
-
-class ProjectCreate(CreateView):
-	model = Project
-	fields = "__all__"
-	template_name = "newModel/create_form.html"
-
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(ProjectCreate, self).dispatch(*args, **kwargs)
-
-
-class ProjectUpdate(UpdateView):
-	model = Project
-	fields = "__all__"
-	template_name = 'newModel/update_form.html'
-
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(ProjectUpdate, self).dispatch(*args, **kwargs)
-
-
-class ProjectDelete(DeleteView):
-	model = Project
-	template_name = 'newModel/confirm_delete.html'
-	success_url = reverse_lazy('newModel:project_list')
-
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(ProjectDelete, self).dispatch(*args, **kwargs)
-
-
-class ProjectDetail(DetailView):
-	model = Project
-	def get_context_data(self, **kwargs):
-		context = super(ProjectDetail, self).get_context_data(**kwargs)
-		current_project = self.object
-		context['researchevent_list'] = ResearchEvent.objects.filter(project=current_project.id)
-		return context
-
 
 
 #################################################################
@@ -117,12 +64,11 @@ class ResearchEventDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
 		current_researchevent = self.object
-		context['Project_list'] = Project.objects.filter(researchevent = current_researchevent.id)
 		return context
 
 
 #################################################################
-#				views for Periode								#
+#				views for Period								#
 #################################################################
 class PeriodListView(generic.ListView):
 	template_name = 'newModel/list.html'
@@ -131,7 +77,7 @@ class PeriodListView(generic.ListView):
 	#for each class.
 
 	def get_queryset(self):
-		return Period.objects.order_by('period_name') #'name' changed for 'period_name'
+		return Period.objects.order_by('system') #'name' changed for 'period_name'
 
 class PeriodCreate(CreateView):
 	model = Period
