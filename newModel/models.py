@@ -14,6 +14,9 @@ from .customTypes import CustomIntegerField
 class DC_reference_type(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True)
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -21,6 +24,9 @@ class DC_reference_type(models.Model):
 class DC_researchevent_researchtype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Methods used for researching the site.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return unicode(self.name)
@@ -35,6 +41,9 @@ class DC_researchevent_institution(models.Model):
 	name = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Organisation that carried out a research project at the site.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 		
@@ -46,6 +55,9 @@ class DC_researchevent_institution(models.Model):
 class DC_researchevent_special_analysis(models.Model):
 	name = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Analyses other than excavation that were carried out to research the site.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -60,6 +72,9 @@ class DC_site_geographicalreferencesystem(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -67,6 +82,9 @@ class DC_site_geographicalreferencesystem(models.Model):
 class DC_area_areatype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="The type of the area.")
+
+	class Meta:
+		ordering = ('name', )                  #to order dropdown lists alphabetically
 
 	def __unicode__(self):
 		return self.name
@@ -76,6 +94,9 @@ class DC_area_settlementtype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Classification of settlement.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -83,6 +104,9 @@ class DC_area_settlementtype(models.Model):
 class DC_area_settlementstructure(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Layout of settlement.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -92,6 +116,9 @@ class DC_area_constructiontype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Type of buildings.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -99,6 +126,9 @@ class DC_area_constructiontype(models.Model):
 class DC_area_buildingtechnique(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Method used for fabricating the buildings.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -108,6 +138,9 @@ class DC_area_specialfeatures(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Parts of the settlement other than buildings.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -115,6 +148,9 @@ class DC_area_specialfeatures(models.Model):
 class DC_area_evidenceofgraveshumanremains(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Presence of graves and/or human remains.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -124,6 +160,9 @@ class DC_area_evidenceofoccupation(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Type of evidence indicating occupation found.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -131,6 +170,9 @@ class DC_area_evidenceofoccupation(models.Model):
 class DC_area_caverockshelterstype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Type of cave/rockshelter.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -140,6 +182,9 @@ class DC_area_rawmaterial(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Resource that was extracted.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -147,6 +192,9 @@ class DC_area_rawmaterial(models.Model):
 class DC_area_exploitationtype(models.Model):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Type of extraction.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -156,6 +204,9 @@ class DC_area_topography(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Connection of the cemetery/graves with other archaeological /natural or modified landscape features.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -163,6 +214,9 @@ class DC_area_topography(models.Model):
 class DC_area_mortuaryfeatures(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Parts of the cemetery other than graves.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -172,6 +226,9 @@ class DC_area_gravetype(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Types of graves.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -179,6 +236,9 @@ class DC_area_gravetype(models.Model):
 class DC_area_typeofhumanremains(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="How the humans were treated after death and buried.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -188,6 +248,9 @@ class DC_area_agegroups(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Age.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -195,6 +258,9 @@ class DC_area_agegroups(models.Model):
 class DC_area_sexes(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Sex.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -204,6 +270,9 @@ class DC_area_manipulationofgraves(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="If and how the space with the graves is marked.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -211,6 +280,10 @@ class DC_area_manipulationofgraves(models.Model):
 class DC_finds_type(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
+
 
 	def __unicode__(self):
 		return self.name
@@ -220,6 +293,9 @@ class DC_finds_material(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -227,6 +303,9 @@ class DC_finds_material(models.Model):
 class DC_finds_amount(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -236,6 +315,9 @@ class DC_finds_small_finds_type(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -243,6 +325,9 @@ class DC_finds_small_finds_type(models.Model):
 class DC_finds_small_finds_category(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -254,6 +339,9 @@ class DC_finds_botany_species(models.Model):
 	latin_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -264,6 +352,9 @@ class DC_finds_animal_remains_species(models.Model):
 	latin_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -271,6 +362,9 @@ class DC_finds_animal_remains_species(models.Model):
 class DC_finds_animal_remains_completeness(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -280,6 +374,9 @@ class DC_finds_animal_remains_part(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -287,6 +384,9 @@ class DC_finds_animal_remains_part(models.Model):
 class DC_finds_lithics_debitage(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -296,6 +396,9 @@ class DC_finds_lithics_modified_tools(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -304,6 +407,9 @@ class DC_finds_lithics_core(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+	
 	def __unicode__(self):
 		return self.name
 
@@ -311,6 +417,9 @@ class DC_finds_lithics_core(models.Model):
 class DC_finds_lithics_technology(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -320,6 +429,9 @@ class DC_finds_pottery_form(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -328,6 +440,9 @@ class DC_finds_pottery_detail(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -335,6 +450,9 @@ class DC_finds_pottery_detail(models.Model):
 class DC_finds_pottery_decoration(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -347,6 +465,9 @@ class DC_country(models.Model):
 		help_text="The original or local name of the country")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Identifier provided by some authority file")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -362,6 +483,9 @@ class DC_region(models.Model):
 	country = models.ForeignKey(DC_country, blank=True, null=True,
 		help_text="The name of the country")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -375,7 +499,6 @@ class DC_province(models.Model):
 		help_text="Identifier provided by some authority file")
 	region = models.ForeignKey(DC_region, blank=True,null=True,
 		help_text="The name of the country")
-	
 
 	def __unicode__(self):
 		return unicode(self.region)+'_'+self.name
@@ -385,12 +508,18 @@ class DC_interpretation_productiontype(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Types of production for which evidence was found.")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
 class DC_interpretation_subsistencetype(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Types of livelihood for which evidence was found.")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name
@@ -407,6 +536,7 @@ class DC_chronological_system(models.Model):
 	end_date2_BC = CustomIntegerField(blank=True, null=True)
 	region = models.ForeignKey(DC_region, blank=True, null=True)
 
+
 	def __unicode__(self):
 		return unicode(self.region)+'_'+unicode(self.cs_name)+'_'+unicode(self.period_name)+'_'+unicode(self.start_date1_BC)
 
@@ -415,6 +545,9 @@ class DC_period_datingmethod(models.Model):
 	name= models.CharField(max_length=100, blank=True,
  		null=True, help_text="please provide helptext")
 
+	class Meta:
+		ordering = ('name', )
+
 	def __unicode__(self):
 		return self.name
 
@@ -422,6 +555,9 @@ class DC_period_datingmethod(models.Model):
 class DC_period_datedby(models.Model):
 	name= models.CharField(max_length=100, blank=True,
  		null=True, help_text="please provide helptext")
+
+	class Meta:
+		ordering = ('name', )
 
 	def __unicode__(self):
 		return self.name

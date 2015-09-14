@@ -1,6 +1,6 @@
 -- Changes:
 -- replaced defc to orea
--- replaced newModel to newmodel
+-- replaced newModel to newModel
 -- deleted frontend-data
 -- DC_region befor DC_province
 -- change period data: new table name ...dc_chronological_system; removed 'id' and values, changed 'period' to cs_name
@@ -11,10 +11,10 @@
 
 
 --
--- Dumping data for table `newmodel_dc_area_agegroups`
+-- Dumping data for table `newModel_dc_area_agegroups`
 --
 
-INSERT INTO `newmodel_dc_area_agegroups` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_agegroups` (`id`, `name`) VALUES
 (1, 'neonate '),
 (2, 'infans I (0-6)'),
 (3, 'infans II (7-12)'),
@@ -32,20 +32,20 @@ INSERT INTO `newmodel_dc_area_agegroups` (`id`, `name`) VALUES
 (15, 'adults');
 
 --
--- Dumping data for table `newmodel_dc_area_areatype`
+-- Dumping data for table `newModel_dc_area_areatype`
 --
 
-INSERT INTO `newmodel_dc_area_areatype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_areatype` (`id`, `name`) VALUES
 (1, 'quarry'),
 (2, 'settlement'),
 (3, 'cave or rockshelter'),
 (4, 'cementary or grave');
 
 --
--- Dumping data for table `newmodel_dc_area_buildingtechnique`
+-- Dumping data for table `newModel_dc_area_buildingtechnique`
 --
 
-INSERT INTO `newmodel_dc_area_buildingtechnique` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_buildingtechnique` (`id`, `name`) VALUES
 (1, 'mud brick'),
 (2, 'pavement'),
 (3, 'pisé'),
@@ -54,18 +54,18 @@ INSERT INTO `newmodel_dc_area_buildingtechnique` (`id`, `name`) VALUES
 (6, 'wattle and daub');
 
 --
--- Dumping data for table `newmodel_dc_area_caverockshelterstype`
+-- Dumping data for table `newModel_dc_area_caverockshelterstype`
 --
 
-INSERT INTO `newmodel_dc_area_caverockshelterstype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_caverockshelterstype` (`id`, `name`) VALUES
 (1, 'cave'),
 (2, 'rock shelter');
 
 --
--- Dumping data for table `newmodel_dc_area_constructiontype`
+-- Dumping data for table `newModel_dc_area_constructiontype`
 --
 
-INSERT INTO `newmodel_dc_area_constructiontype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_constructiontype` (`id`, `name`) VALUES
 (1, 'apsidal '),
 (2, 'circular'),
 (3, 'one-room'),
@@ -73,18 +73,18 @@ INSERT INTO `newmodel_dc_area_constructiontype` (`id`, `name`) VALUES
 (5, 'Tsangli house');
 
 --
--- Dumping data for table `newmodel_dc_area_evidenceofgraveshumanremains`
+-- Dumping data for table `newModel_dc_area_evidenceofgraveshumanremains`
 --
 
-INSERT INTO `newmodel_dc_area_evidenceofgraveshumanremains` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_evidenceofgraveshumanremains` (`id`, `name`) VALUES
 (1, 'not present'),
 (2, 'present');
 
 --
--- Dumping data for table `newmodel_dc_area_evidenceofoccupation`
+-- Dumping data for table `newModel_dc_area_evidenceofoccupation`
 --
 
-INSERT INTO `newmodel_dc_area_evidenceofoccupation` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_evidenceofoccupation` (`id`, `name`) VALUES
 (1, 'fire place'),
 (2, 'storage facilities'),
 (3, 'post-hole'),
@@ -92,48 +92,48 @@ INSERT INTO `newmodel_dc_area_evidenceofoccupation` (`id`, `name`) VALUES
 (5, 'pit');
 
 --
--- Dumping data for table `newmodel_dc_area_exploitationtype`
+-- Dumping data for table `newModel_dc_area_exploitationtype`
 --
 
-INSERT INTO `newmodel_dc_area_exploitationtype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_exploitationtype` (`id`, `name`) VALUES
 (1, 'pinge'),
 (2, 'shaft mining'),
 (3, 'surface');
 
 --
--- Dumping data for table `newmodel_dc_area_gravetype`
+-- Dumping data for table `newModel_dc_area_gravetype`
 --
 
-INSERT INTO `newmodel_dc_area_gravetype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_gravetype` (`id`, `name`) VALUES
 (1, 'cist grave'),
 (2, 'pit grave'),
 (3, 'vessel'),
 (4, 'none recorded');
 
 --
--- Dumping data for table `newmodel_dc_area_manipulationofgraves`
+-- Dumping data for table `newModel_dc_area_manipulationofgraves`
 --
 
-INSERT INTO `newmodel_dc_area_manipulationofgraves` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_manipulationofgraves` (`id`, `name`) VALUES
 (1, 'consecutive burials'),
 (2, 'construction of settlement'),
 (3, 'looting'),
 (4, 'none recorded');
 
 --
--- Dumping data for table `newmodel_dc_area_mortuaryfeatures`
+-- Dumping data for table `newModel_dc_area_mortuaryfeatures`
 --
 
-INSERT INTO `newmodel_dc_area_mortuaryfeatures` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_mortuaryfeatures` (`id`, `name`) VALUES
 (1, 'pyre'),
 (2, 'separating wall'),
 (3, 'platform');
 
 --
--- Dumping data for table `newmodel_dc_area_rawmaterial`
+-- Dumping data for table `newModel_dc_area_rawmaterial`
 --
 
-INSERT INTO `newmodel_dc_area_rawmaterial` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_rawmaterial` (`id`, `name`) VALUES
 (1, 'obsidian'),
 (2, 'copper'),
 (3, 'limestone'),
@@ -142,29 +142,29 @@ INSERT INTO `newmodel_dc_area_rawmaterial` (`id`, `name`) VALUES
 (6, 'clay');
 
 --
--- Dumping data for table `newmodel_dc_area_settlementtype`
+-- Dumping data for table `newModel_dc_area_settlementtype`
 --
 
-INSERT INTO `newmodel_dc_area_settlementtype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_settlementtype` (`id`, `name`) VALUES
 (1, 'lowland'),
 (2, 'tell'),
 (3, 'tepe');
 
 --
--- Dumping data for table `newmodel_dc_area_sexes`
+-- Dumping data for table `newModel_dc_area_sexes`
 --
 
-INSERT INTO `newmodel_dc_area_sexes` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_sexes` (`id`, `name`) VALUES
 (1, 'male individuals: no.'),
 (2, 'female individuals: no.'),
 (3, 'not specified: no.'),
 (4, 'part of specialist report');
 
 --
--- Dumping data for table `newmodel_dc_area_specialfeatures`
+-- Dumping data for table `newModel_dc_area_specialfeatures`
 --
 
-INSERT INTO `newmodel_dc_area_specialfeatures` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_specialfeatures` (`id`, `name`) VALUES
 (1, 'bench'),
 (2, 'channel'),
 (3, 'hearth'),
@@ -178,10 +178,10 @@ INSERT INTO `newmodel_dc_area_specialfeatures` (`id`, `name`) VALUES
 (11, 'oven');
 
 --
--- Dumping data for table `newmodel_dc_area_topography`
+-- Dumping data for table `newModel_dc_area_topography`
 --
 
-INSERT INTO `newmodel_dc_area_topography` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_topography` (`id`, `name`) VALUES
 (1, 'intra mural'),
 (2, 'extra mural'),
 (3, 'in cave'),
@@ -189,27 +189,27 @@ INSERT INTO `newmodel_dc_area_topography` (`id`, `name`) VALUES
 (5, 'part of house');
 
 --
--- Dumping data for table `newmodel_dc_area_typeofhumanremains`
+-- Dumping data for table `newModel_dc_area_typeofhumanremains`
 --
 
-INSERT INTO `newmodel_dc_area_typeofhumanremains` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_area_typeofhumanremains` (`id`, `name`) VALUES
 (1, 'cremations'),
 (2, 'inhumations: complete bodies'),
 (3, 'secondary deposition');
 
 --
--- Dumping data for table `newmodel_dc_country`
+-- Dumping data for table `newModel_dc_country`
 --
 
-INSERT INTO `newmodel_dc_country` (`id`, `name`, `original_name`, `authorityfile_id`) VALUES
+INSERT INTO `newModel_dc_country` (`id`, `name`, `original_name`, `authorityfile_id`) VALUES
 (1, 'Turkey', 'Türkiye', NULL),
 (2, 'Greece', 'Ελλάδα', NULL);
 
 --
--- Dumping data for table `newmodel_dc_finds_amount`
+-- Dumping data for table `newModel_dc_finds_amount`
 --
 
-INSERT INTO `newmodel_dc_finds_amount` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_amount` (`id`, `name`) VALUES
 (1, '1'),
 (2, '2-5'),
 (3, '6-10'),
@@ -225,18 +225,18 @@ INSERT INTO `newmodel_dc_finds_amount` (`id`, `name`) VALUES
 (13, '10001 and more');
 
 --
--- Dumping data for table `newmodel_dc_finds_animal_remains_completeness`
+-- Dumping data for table `newModel_dc_finds_animal_remains_completeness`
 --
 
-INSERT INTO `newmodel_dc_finds_animal_remains_completeness` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_animal_remains_completeness` (`id`, `name`) VALUES
 (1, 'complete  '),
 (2, 'incomplete');
 
 --
--- Dumping data for table `newmodel_dc_finds_animal_remains_part`
+-- Dumping data for table `newModel_dc_finds_animal_remains_part`
 --
 
-INSERT INTO `newmodel_dc_finds_animal_remains_part` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_animal_remains_part` (`id`, `name`) VALUES
 (1, 'skull'),
 (2, 'hindlimb'),
 (3, 'forelimb'),
@@ -249,10 +249,10 @@ INSERT INTO `newmodel_dc_finds_animal_remains_part` (`id`, `name`) VALUES
 (10, 'claw');
 
 --
--- Dumping data for table `newmodel_dc_finds_animal_remains_species`
+-- Dumping data for table `newModel_dc_finds_animal_remains_species`
 --
 
-INSERT INTO `newmodel_dc_finds_animal_remains_species` (`id`, `name`, `latin_name`) VALUES
+INSERT INTO `newModel_dc_finds_animal_remains_species` (`id`, `name`, `latin_name`) VALUES
 (1, 'wild boar', NULL),
 (2, 'pig', NULL),
 (3, 'cattle', NULL),
@@ -273,10 +273,10 @@ INSERT INTO `newmodel_dc_finds_animal_remains_species` (`id`, `name`, `latin_nam
 (18, 'tuna', NULL);
 
 --
--- Dumping data for table `newmodel_dc_finds_botany_species`
+-- Dumping data for table `newModel_dc_finds_botany_species`
 --
 
-INSERT INTO `newmodel_dc_finds_botany_species` (`id`, `name`, `latin_name`) VALUES
+INSERT INTO `newModel_dc_finds_botany_species` (`id`, `name`, `latin_name`) VALUES
 (1, 'apricot', NULL),
 (2, 'barley', NULL),
 (3, 'bitter vetch', NULL),
@@ -304,10 +304,10 @@ INSERT INTO `newmodel_dc_finds_botany_species` (`id`, `name`, `latin_name`) VALU
 (25, 'wild pea', NULL);
 
 --
--- Dumping data for table `newmodel_dc_finds_lithics_core`
+-- Dumping data for table `newModel_dc_finds_lithics_core`
 --
 
-INSERT INTO `newmodel_dc_finds_lithics_core` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_lithics_core` (`id`, `name`) VALUES
 (1, 'core'),
 (2, 'bullet core '),
 (3, 'polyedric core'),
@@ -319,20 +319,20 @@ INSERT INTO `newmodel_dc_finds_lithics_core` (`id`, `name`) VALUES
 (9, 'blade-core');
 
 --
--- Dumping data for table `newmodel_dc_finds_lithics_debitage`
+-- Dumping data for table `newModel_dc_finds_lithics_debitage`
 --
 
-INSERT INTO `newmodel_dc_finds_lithics_debitage` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_lithics_debitage` (`id`, `name`) VALUES
 (1, 'flake'),
 (2, 'blade '),
 (3, 'debris '),
 (4, 'splinter/non-flake ');
 
 --
--- Dumping data for table `newmodel_dc_finds_lithics_modified_tools`
+-- Dumping data for table `newModel_dc_finds_lithics_modified_tools`
 --
 
-INSERT INTO `newmodel_dc_finds_lithics_modified_tools` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_lithics_modified_tools` (`id`, `name`) VALUES
 (1, 'arrowhead'),
 (2, 'blade: retouched'),
 (3, 'flake: retouched'),
@@ -351,20 +351,20 @@ INSERT INTO `newmodel_dc_finds_lithics_modified_tools` (`id`, `name`) VALUES
 (16, 'double truncation');
 
 --
--- Dumping data for table `newmodel_dc_finds_lithics_technology`
+-- Dumping data for table `newModel_dc_finds_lithics_technology`
 --
 
-INSERT INTO `newmodel_dc_finds_lithics_technology` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_lithics_technology` (`id`, `name`) VALUES
 (1, 'bullet cores'),
 (2, 'long blades'),
 (3, 'percussion technology'),
 (4, 'pressure technology ');
 
 --
--- Dumping data for table `newmodel_dc_finds_material`
+-- Dumping data for table `newModel_dc_finds_material`
 --
 
-INSERT INTO `newmodel_dc_finds_material` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_material` (`id`, `name`) VALUES
 (1, 'stone'),
 (2, 'obsidian'),
 (3, 'fabrics'),
@@ -386,10 +386,10 @@ INSERT INTO `newmodel_dc_finds_material` (`id`, `name`) VALUES
 (19, 'radiolarite');
 
 --
--- Dumping data for table `newmodel_dc_finds_pottery_decoration`
+-- Dumping data for table `newModel_dc_finds_pottery_decoration`
 --
 
-INSERT INTO `newmodel_dc_finds_pottery_decoration` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_pottery_decoration` (`id`, `name`) VALUES
 (1, 'Anatolia/East Aegean_ Impressed'),
 (2, 'Anatolia/East Aegean_ Crusted '),
 (3, 'Anatolia/East Aegean_ White on red '),
@@ -506,10 +506,10 @@ INSERT INTO `newmodel_dc_finds_pottery_decoration` (`id`, `name`) VALUES
 (114, 'Crete_ Wiped ');
 
 --
--- Dumping data for table `newmodel_dc_finds_pottery_detail`
+-- Dumping data for table `newModel_dc_finds_pottery_detail`
 --
 
-INSERT INTO `newmodel_dc_finds_pottery_detail` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_pottery_detail` (`id`, `name`) VALUES
 (1, 'Anatolia/East Aegean_ Horned handle'),
 (2, 'Anatolia/East Aegean_ Mushroom handle'),
 (3, 'Anatolia/East Aegean_ Bar handle with lug'),
@@ -576,10 +576,10 @@ INSERT INTO `newmodel_dc_finds_pottery_detail` (`id`, `name`) VALUES
 (64, 'Crete_ Small foot');
 
 --
--- Dumping data for table `newmodel_dc_finds_pottery_form`
+-- Dumping data for table `newModel_dc_finds_pottery_form`
 --
 
-INSERT INTO `newmodel_dc_finds_pottery_form` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_pottery_form` (`id`, `name`) VALUES
 (1, 'Anatolia/East Aegean_ Anthropomorphic vessel'),
 (2, 'Anatolia/East Aegean_ Bag shaped vessel (hole mouthed vessel)'),
 (3, 'Anatolia/East Aegean_ Baking pan'),
@@ -676,19 +676,19 @@ INSERT INTO `newmodel_dc_finds_pottery_form` (`id`, `name`) VALUES
 (94, 'Crete_ Tray');
 
 --
--- Dumping data for table `newmodel_dc_finds_small_finds_category`
+-- Dumping data for table `newModel_dc_finds_small_finds_category`
 --
 
-INSERT INTO `newmodel_dc_finds_small_finds_category` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_small_finds_category` (`id`, `name`) VALUES
 (1, 'tool'),
 (2, 'jewellery'),
 (3, 'figurines');
 
 --
--- Dumping data for table `newmodel_dc_finds_small_finds_type`
+-- Dumping data for table `newModel_dc_finds_small_finds_type`
 --
 
-INSERT INTO `newmodel_dc_finds_small_finds_type` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_small_finds_type` (`id`, `name`) VALUES
 (1, 'Fish hook'),
 (2, 'Sling bullet/missile'),
 (3, 'Belt hook'),
@@ -718,10 +718,10 @@ INSERT INTO `newmodel_dc_finds_small_finds_type` (`id`, `name`) VALUES
 (27, 'Naturalistic');
 
 --
--- Dumping data for table `newmodel_dc_finds_type`
+-- Dumping data for table `newModel_dc_finds_type`
 --
 
-INSERT INTO `newmodel_dc_finds_type` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_finds_type` (`id`, `name`) VALUES
 (1, 'small finds'),
 (2, 'botany'),
 (3, 'animal remains'),
@@ -729,11 +729,11 @@ INSERT INTO `newmodel_dc_finds_type` (`id`, `name`) VALUES
 (5, 'pottery');
 
 --
--- Dumping data for table `newmodel_dc_region`
+-- Dumping data for table `newModel_dc_region`
 --
 
 
-INSERT INTO `newmodel_dc_region` (`id`, `name`, `original_name`, `authorityfile_id`, `country_id`) VALUES
+INSERT INTO `newModel_dc_region` (`id`, `name`, `original_name`, `authorityfile_id`, `country_id`) VALUES
 (1, 'Anatolia/East Aegean', 'Anatolien/Ostägäis', NULL, 1),
 (2, 'Crete', 'Kreta', NULL, NULL),
 (3, 'Cyclades', 'Kykladen', NULL, NULL),
@@ -743,10 +743,10 @@ INSERT INTO `newmodel_dc_region` (`id`, `name`, `original_name`, `authorityfile_
 
 
 --
--- Dumping data for table `newmodel_dc_province`
+-- Dumping data for table `newModel_dc_province`
 --
 
-INSERT INTO `newmodel_dc_province` (`id`, `name`, `original_name`, `authorityfile_id`, `region_id`) VALUES
+INSERT INTO `newModel_dc_province` (`id`, `name`, `original_name`, `authorityfile_id`, `region_id`) VALUES
 (448, 'Adana', 'Adana', NULL, 1),
 (449, 'Adıyaman', 'Adiyaman', NULL, 1),
 (450, 'Afyonkarahisar', 'Afyon', NULL, 1),
@@ -883,10 +883,10 @@ INSERT INTO `newmodel_dc_province` (`id`, `name`, `original_name`, `authorityfil
 
 
 --
--- Dumping data for table `newmodel_dc_researchevent_institution`
+-- Dumping data for table `newModel_dc_researchevent_institution`
 --
 
-INSERT INTO `newmodel_dc_researchevent_institution` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_researchevent_institution` (`id`, `name`) VALUES
 (239, 'ÖAW - OREA - Ägäis/Anatolien'),
 (240, 'ÖAW - OREA - Ägypten/Levante'),
 (241, 'ÖAW - OREA - Europa'),
@@ -977,10 +977,10 @@ INSERT INTO `newmodel_dc_researchevent_institution` (`id`, `name`) VALUES
 (326, 'Hugo Obermaier Gesellschaft');
 
 --
--- Dumping data for table `newmodel_dc_researchevent_researchtype`
+-- Dumping data for table `newModel_dc_researchevent_researchtype`
 --
 
-INSERT INTO `newmodel_dc_researchevent_researchtype` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_researchevent_researchtype` (`id`, `name`) VALUES
 (1, 'borehole survey'),
 (2, 'excavation: rescue'),
 (3, 'excavation: research'),
@@ -1006,10 +1006,10 @@ INSERT INTO `newmodel_dc_researchevent_researchtype` (`id`, `name`) VALUES
 (23, 'underwater survey');
 
 --
--- Dumping data for table `newmodel_dc_researchevent_special_analysis`
+-- Dumping data for table `newModel_dc_researchevent_special_analysis`
 --
 
-INSERT INTO `newmodel_dc_researchevent_special_analysis` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_researchevent_special_analysis` (`id`, `name`) VALUES
 (1, 'animal remains report'),
 (2, 'archaeobotany: macro-botany'),
 (3, 'archaeobotany: pollen'),
@@ -1038,10 +1038,10 @@ INSERT INTO `newmodel_dc_researchevent_special_analysis` (`id`, `name`) VALUES
 (26, 'soil analysis: soil phosphorus analysis');
 
 --
--- Dumping data for table `newmodel_dc_site_geographicalreferencesystem`
+-- Dumping data for table `newModel_dc_site_geographicalreferencesystem`
 --
 
-INSERT INTO `newmodel_dc_site_geographicalreferencesystem` (`id`, `name`) VALUES
+INSERT INTO `newModel_dc_site_geographicalreferencesystem` (`id`, `name`) VALUES
 (1, 'ED50 - European Datum 1950'),
 (2, 'SAD69 - South America Datum 1969'),
 (3, 'GRS80 - Geodetic Reference System 1980 '),
@@ -1054,11 +1054,11 @@ INSERT INTO `newmodel_dc_site_geographicalreferencesystem` (`id`, `name`) VALUES
 (10, 'UTM - Universal Transverse Mercator');
 
 --
--- Dumping data for table `newmodel_finds`
+-- Dumping data for table `newModel_finds`
 --
 
 
-INSERT INTO `newmodel_dc_chronological_system` (`cs_name`, `period_name`, `start_date1_BC`, `start_date2_BC`, `end_date1_BC`, `end_date2_BC`, `region_id`) VALUES
+INSERT INTO `newModel_dc_chronological_system` (`cs_name`, `period_name`, `start_date1_BC`, `start_date2_BC`, `end_date1_BC`, `end_date2_BC`, `region_id`) VALUES
 ('Anatolia', 'Pre-Pottery Neolithic  ', 8000, 8000, 7500, 7500, 1),
 ('Anatolia', 'Pre-Pottery Neolithic/Neolithic', 7500, 7500, 7000, 7000, 1),
 ('Anatolia', 'Neolithic I', 7000, 7000, 6500, 6500, 1),

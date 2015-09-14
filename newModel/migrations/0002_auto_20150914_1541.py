@@ -11,9 +11,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='dc_reference_type',
-            name='test',
-            field=models.CharField(max_length=100, null=True, blank=True),
+        migrations.AlterModelOptions(
+            name='dc_area_areatype',
+            options={'ordering': ('name',)},
         ),
     ]
