@@ -614,7 +614,7 @@ class ResearchEvent(models.Model):
 		help_text="Additional information on the research history not covered in any other field.")
 
 	def __unicode__(self):
-		return self.research_type+'_'+unicode(self.institution)
+		return unicode(self.research_type.all()[0])+'_'+unicode(self.institution.all()[0])
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
