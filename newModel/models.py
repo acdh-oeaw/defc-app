@@ -586,7 +586,6 @@ class Reference(models.Model):
 	def __unicode__(self):
 		return self.title
 
-
 class ResearchEvent(models.Model):
 	research_type = models.ManyToManyField(DC_researchevent_researchtype,
 		blank=True, help_text="Methods used for researching the site.") #mandatory? default?
@@ -613,8 +612,17 @@ class ResearchEvent(models.Model):
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on the research history not covered in any other field.")
 
+	#def __unicode__(self):
+		#value = ''
+		#f len(self.research_type.all()) > 0:
+			#value += unicode(self.research_type.all()[0])
+		#if len(self.institution.all()) > 0:
+			#value += '_' + unicode(self.institution.all()[0])
+		#return value
 	def __unicode__(self):
 		return unicode(self.research_type.all()[0])+'_'+unicode(self.institution.all()[0])
+
+
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -633,7 +641,7 @@ class Period(models.Model):
 	system = models.ForeignKey(DC_chronological_system, blank=True,
 		null=True, help_text="Name of the chronological system.")
 	dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
-		help_text="HELPTEXT")
+		help_text="Method used for dating the site.")
 	dated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
 		blank=True, help_text="Source providing information about date.")
 	c14_calibrated = models.CharField(max_length=100, blank=True,
@@ -648,6 +656,8 @@ class Period(models.Model):
 
 	def __unicode__(self):
 		return unicode(self.system)
+
+
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -716,7 +726,7 @@ class Area(models.Model):
 		help_text="The identifier of the area´s stratigraphical unit")
 	geographical_reference = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Locates the Area in the Site")
-	period = models.ManyToManyField(Period, blank=True,
+	period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
@@ -726,7 +736,7 @@ class Area(models.Model):
 	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
 		help_text="Classification of settlement.")
 	settlement_structure = models.ManyToManyField(DC_area_settlementstructure,
-		blank = True, help_text="PLEASE PROVIDE HELPTEXT")
+		blank = True, help_text="Layout of settlement.")
 	settlement_construction_type = models.ManyToManyField(DC_area_constructiontype,
 		blank=True, help_text="Type of buildings.")
 	settlement_building_technique = models.ManyToManyField(DC_area_buildingtechnique,
@@ -801,56 +811,56 @@ class Finds(models.Model):
 	area = models.ForeignKey(Area, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX") 
+		help_text="Type of the finds.") 
 # small finds properties
 	small_finds_category = models.ForeignKey(DC_finds_small_finds_category,
 		blank=True, null=True,
-		help_text="either a tool, jewellery or figurines")
+		help_text="Either a tool, jewellery or figurines")
 	small_finds_type = models.ManyToManyField(DC_finds_small_finds_type,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Type of small find.")
 # Botany
 	botany_species = models.ManyToManyField(DC_finds_botany_species,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Species the botanical sample / find belongs to.")
 # Animal remains
 	animal_remains_species = models.ManyToManyField(
 		DC_finds_animal_remains_species,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Species the zoological sample / find belongs to.")
 	animal_remains_completeness = models.ForeignKey(
 		DC_finds_animal_remains_completeness,
-		blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, null=True, help_text="Condition of the zoological sample / find (complete or part).")
 	animal_remains_part = models.ManyToManyField(
 		DC_finds_animal_remains_part,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Part of the species the sample / find belongs to.")
 # Lithics
 	lithics_debitage = models.ManyToManyField(DC_finds_lithics_debitage,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Which basic form used (for tools).")
 	lithics_modified_tools = models.ManyToManyField(
 		DC_finds_lithics_modified_tools,
-		blank=True,help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True,help_text="Kind of tool which was made out of the debitage.")
 	lithics_cores = models.ManyToManyField(DC_finds_lithics_core,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Type of the cores.")
 	lithics_technology = models.ManyToManyField(DC_finds_lithics_technology,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Which technology was used to produce the debitage or tools.")
 # Pottery
 	pottery_form = models.ManyToManyField(DC_finds_pottery_form,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Form of pottery.")  #it appears as 'shape' in definitions doc but i kept 'form'
 	pottery_detail = models.ManyToManyField(DC_finds_pottery_detail,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Pottery type.")
 	pottery_decoration = models.ManyToManyField(DC_finds_pottery_decoration,
-		blank=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+		blank=True, help_text="Type of decoration.")
 # common fields
 	amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Amount of finds.")
 	material = models.ManyToManyField(DC_finds_material, blank=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Material used for find.")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
 		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
 	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Related research event.")
 	reference = models.ManyToManyField(Reference, blank=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Relevant resources on the finds.")
 	comment = models.TextField(blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Additional information not covered in any other field.")
 
 
 	def get_classname(self):
@@ -876,9 +886,9 @@ class Interpretation(models.Model):
 	subsistence_type = models.ManyToManyField(DC_interpretation_subsistencetype,
 		blank=True, help_text="Types of livelihood for which evidence was found.")
 	reference = models.ManyToManyField(Reference, blank=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Bibliographic and web-based reference(s)to publications and other relevant resources on industry & subsistence of the site/phase of the site.")
 	comment = models.TextField(blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Additional information on subsistence and production not covered in any other field.")
 
 	def get_classname(self):
 		class_name = unicode(self.__class__.__name__).lower()
