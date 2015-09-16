@@ -619,10 +619,10 @@ class ResearchEvent(models.Model):
 		#if len(self.institution.all()) > 0:
 			#value += '_' + unicode(self.institution.all()[0])
 		#return value
+	#def __unicode__(self):
+		#return unicode(self.research_type.all()[0])+'_'+unicode(self.institution.all()[0])
 	def __unicode__(self):
-		return unicode(self.research_type.all()[0])+'_'+unicode(self.institution.all()[0])
-
-
+		return unicode("/".join([unicode(x) for x in self.research_type.all()])+"_"+"/".join([unicode(x) for x in self.institution.all()]))
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -631,6 +631,7 @@ class ResearchEvent(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('newModel:researchevent_list')
+
 
 
 class Period(models.Model):
@@ -648,7 +649,7 @@ class Period(models.Model):
  		null=True, choices = YESNO, help_text="Date is a calibrated date.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
-	comment = models.TextField(max_length=500, blank=True, null=True,
+	comment = models.TextField(blank=True, null=True,
 		help_text = "Additional information on the chronology not covered in any other field.")
 
 	def get_absolute_url(self):
@@ -656,8 +657,6 @@ class Period(models.Model):
 
 	def __unicode__(self):
 		return unicode(self.system)
-
-
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -693,6 +692,8 @@ class Site(models.Model):
 		help_text="Number of times past activity was recorded at the site.")
 	reference_site = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
+	comment = models.TextField(blank=True, null=True,
+		help_text="Additional information on the site not covered in any other field.")
 
 	def __unicode__(self):
 		return unicode(self.province)+'_'+unicode(self.name)
@@ -732,6 +733,8 @@ class Area(models.Model):
 		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+	comment = models.TextField(blank=True, null=True,
+		help_text="Additional information not covered in any other field.")
 #settlement fields
 	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
 		help_text="Classification of settlement.")
