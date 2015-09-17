@@ -12,7 +12,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation
+from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod
 from .forms import form_user_login
 
 
@@ -63,7 +63,11 @@ class ResearchEventDetail(DetailView):
 	model = ResearchEvent
 	def get_context_data(self, **kwargs):
 		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
-		current_researchevent = self.object
+		current_object = self.object
+		context['researchtype_list'] = current_object.research_type.all()
+		context['institution_list'] = current_object.institution.all()
+		context['specialanalysis_list'] = current_object.special_analysis.all()
+		context['reference_list'] = current_object.reference.all()
 		return context
 
 
@@ -113,6 +117,10 @@ class PeriodDetail(DetailView):
 	model = Period
 	def get_context_data(self, **kwargs):
 		context = super(PeriodDetail, self).get_context_data(**kwargs)
+		current_object = self.object
+		context['datedby_list'] = current_object.dated_by.all()
+		context['datingmethod_list'] = current_object.dating_method.all()
+		context['reference_list'] = current_object.reference.all()
 		return context
 
 
@@ -165,6 +173,19 @@ class FindsDetail(DetailView):
 		context['area_list'] = Area.objects.filter(finds=current_find.id)
 		current_find_2 = self.object
 		context['interpretation_list'] = Interpretation.objects.filter(finds=current_find_2.id)
+		context['smallfindstype_list'] = current_find.small_finds_type.all()
+		context['botanyspecies_list'] = current_find.botany_species.all()
+		context['animalremainsspecies_list'] = current_find.animal_remains_species.all()
+		context['animalremainspart_list'] = current_find.animal_remains_part.all()
+		context['lithicsdebitage_list'] = current_find.lithics_debitage.all()
+		context['lithicsmodifiedtools_list'] = current_find.lithics_modified_tools.all()
+		context['lithicscores_list'] = current_find.lithics_cores.all()
+		context['lithicstechnology_list'] = current_find.lithics_technology.all()
+		context['potteryform_list'] = current_find.pottery_form.all()
+		context['potterydetail_list'] = current_find.pottery_detail.all()
+		context['potterydecoration_list'] = current_find.pottery_decoration.all()
+		context['material_list'] = current_find.material.all()
+		context['reference_list'] = current_find.reference.all()
 		return context
 
 
@@ -217,6 +238,7 @@ class SiteDetail(DetailView):
 		context = super(SiteDetail, self).get_context_data(**kwargs)
 		current_site = self.object
 		context['areas_list'] = Area.objects.filter(site = current_site.id)
+		context['reference_list'] = current_site.reference_site.all()
 		return context
 
 		
@@ -269,7 +291,24 @@ class AreaDetail(DetailView):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
-		context['period_list'] = Period.objects.filter(area=current_area.id)
+		#context['period_list'] = Period.objects.filter(area=current_area.id)
+		context['period_list'] = current_area.period.all()
+		context['reference_list'] = current_area.reference.all()
+		context['settlementtype_list'] = current_area.settlement_type.all()
+		context['settlementstructure_list'] = current_area.settlement_structure.all()
+		context['settlementconstructiontype_list'] = current_area.settlement_construction_type.all()
+		context['settlementbuildingtechnique_list'] = current_area.settlement_building_technique.all()
+		context['settlementspecialfeatures_list'] = current_area.settlement_special_features.all()
+		context['evidenceofoccupation_list'] = current_area.cave_rockshelters_evidence_of_occupation.all()
+		context['quarryexploitationtype_list'] = current_area.quarry_exploitation_type.all()
+		context['quarryrawmaterial_list'] = current_area.quarry_raw_material.all()
+		context['topography_list'] = current_area.cemetery_or_graves_topography.all()
+		context['mortuaryfeatures_list'] = current_area.cemetery_or_graves_mortuary_features.all()
+		context['gravetype_list'] = current_area.grave_type.all()
+		context['typeofhumanremains_list'] = current_area.grave_type_of_human_remains.all()
+		context['graveagegroups_list'] = current_area.grave_age_groups.all()
+		context['gravesexes_list'] = current_area.grave_sexes.all()
+		context['manipulationsofgraves_list'] = current_area.grave_manipulations_of_graves.all()
 		return context
 
 #################################################################
@@ -317,6 +356,11 @@ class InterpretationDetail(DetailView):
 		#current_interpretation = self.object
 		#context = ['finds_list'] = Finds.objects.filter(interpretation=current_interpretation.id) 
 		#instead we are using ManytoMany so all finds will be in finds field
+		current_object = self.object
+		context['finds_list'] = current_object.finds.all()
+		context['productiontype_list'] = current_object.production_type.all()
+		context['subsistencetype_list'] = current_object.subsistence_type.all()
+		context['reference_list'] = current_object.reference.all()
 		return context
 
 #################################################################

@@ -59,7 +59,10 @@
         </tr>
         <tr>
                 <td>Reference</td>
-                <td>{{ object.reference_site }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
          <tr>
                 <td>Areas</td>

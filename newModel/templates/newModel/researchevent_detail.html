@@ -4,11 +4,17 @@
 <table class="table table-striped">
         <tr>
                 <td>Research type</td>
-                <td>{{ object.research_type }}</td>
+                <td>{% for type in researchtype_list %}
+                        {{ type }}</br>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Institution</td>
-                <td>{{ object.institution }}</td>
+                <td>{% for institution in institution_list %}
+                        {{ institution }}</br>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Year of activity: start year</td>
@@ -19,8 +25,18 @@
                 <td>{{ object.year_of_activity_end_year }}</td>
         </tr>
         <tr>
+                <td>Special analysis</td>
+                <td>{% for analysis in specialanalysis_list %}
+                        {{ analysis }}</br>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
                 <td>Reference</td>
-                <td>{{ object.reference }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Comment</td>

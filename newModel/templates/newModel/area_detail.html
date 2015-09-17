@@ -34,23 +34,45 @@
         </tr>
         <tr>
                 <td>Reference</td>
-                <td>{{ object.reference }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Settlement type</td>
-                <td>{{ object.settlement_type }}</td>
+                <td>{% for type in settlementtype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Settlement structure</td>
+                <td>{% for structure in settlementstructure_list %}
+                    {{ structure }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Settlement construction type</td>
-                <td>{{ object.settlement_constructiontype }}</td>
+                <td>{% for type in settlementconstructiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Settlement building technique</td>
-                <td>{{ object.settlement_building_technique }}</td>
+                <td>{% for tech in settlementbuildingtechnique_list %}
+                    {{ tech }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Settlement special features</td>
-                <td>{{ object.settlement_special_features }}</td>
+                <td>{% for feature in settlementspecialfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cave/rockshelters type</td>
@@ -62,23 +84,38 @@
         </tr>
         <tr>
                 <td>Cave/rockshelters: Evidence of occupation</td>
-                <td>{{ object.cave_rockshelters_evidence_of_occupation }}</td>
+                <td>{% for evidence in evidenceofoccupation_list %}
+                    {{ evidence }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Quarry exploitation type</td>
-                <td>{{ object.quarry_exploitation_type }}</td>
+                <td>{% for type in quarryexploitationtype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Quarry raw material</td>
-                <td>{{ object.quarry_raw_material }}</td>
+                <td>{% for material in quarryrawmaterial_list %}
+                    {{ material }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves topography</td>
-                <td>{{ object.cemetery_graves_topography }}</td>
+                <td>{% for topography in topography_list %}
+                    {{ topography }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves mortuary features</td>
-                <td>{{ object.cemetery_graves_mortuary_features }}</td>
+                <td>{% for feature in mortuaryfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves: number of graves</td>
@@ -86,11 +123,17 @@
         </tr>
         <tr>
                 <td>Cemetery/graves: grave type</td>
-                <td>{{ object.cemetery_graves_grave_type }}</td>
+                <td>{% for type in gravetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves: type of human remains</td>
-                <td>{{ object.cemetery_graves_type_of_human_remains }}</td>
+                <td>{% for type in typeofhumanremains_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves: estimated number of individuals</td>
@@ -98,11 +141,17 @@
         </tr>
         <tr>
                 <td>Cemetery/graves: age groups</td>
-                <td>{{ object.cemetery_graves_age_groups }}</td>
+                <td>{% for age in graveagegroups_list %}
+                    {{ age }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves: sexes</td>
-                <td>{{ object.cemetery_graves_sexes }}</td>
+                <td>{% for sex in gravesexes_list %}
+                    {{ sex }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Cemetery/graves: number of males/females</td>
@@ -110,7 +159,10 @@
         </tr>
         <tr>
                 <td>Cemetery/graves: manipulations of graves</td>
-                <td>{{ object.cemetery_graves_manipulations_of_graves }}</td>
+                <td>{% for manipulation in manipulationsofgraves_list %}
+                    {{ manipulation }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Finds</td>

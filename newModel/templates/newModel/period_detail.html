@@ -4,31 +4,38 @@
 <table class="table table-striped">
         <tr>
                 <td>Period name</td>
-                <td>{{ object.period_name }}</td>
+                <td>{{ object.system.cs_name }}</td>
         </tr>
         <tr>
                 <td>Start date 1 BC</td>
-                <td>{{ object.start_date1_BC }}</td>
+                <td>{{ object.system.start_date1_BC }}</td>
         </tr>
         <tr>
                 <td>Start date 2 BC</td>
-                <td>{{ object.start_date2_BC }}</td>
+                <td>{{ object.system.start_date2_BC }}</td>
         </tr>
         <tr>
                 <td>End date 1 BC</td>
-                <td>{{ object.end_date1_BC }}</td>
+                <td>{{ object.system.end_date1_BC }}</td>
         </tr>
         <tr>
                 <td>End date 2 BC</td>
-                <td>{{ object.end_date2_BC }}</td>
+                <td>{{ object.system.end_date2_BC }}</td>
         </tr>
          <tr>
                 <td>Dating method</td>
-                <td>{{ object.dating_method }}</td>
+                <td>{% for method in datingmethod_list %}
+                    {{ method }}</br>
+                    {% endfor %}
+                </td>
         </tr>
          <tr>
                 <td>Dated by</td>
-                <td>{{ object.dated_by }}</td>
+                <td>
+                    {% for date in datedby_list %}
+                    {{ date }} </br>
+                    {% endfor %}
+                </td>
         </tr>
          <tr>
                 <td>C14: calibrated</td>
@@ -36,7 +43,10 @@
         </tr>
         <tr>
                 <td>Reference</td>
-                <td>{{ object.reference }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Comment</td>

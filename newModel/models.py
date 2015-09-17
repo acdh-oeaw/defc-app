@@ -901,4 +901,5 @@ class Interpretation(models.Model):
 		return reverse('newModel:interpretation_list')
 
 	def __unicode__(self):
-		return 'Interpretation'+'_'+unicode(self.finds)+'_'+unicode(self.id)
+		return 'Interpretation'+'_'+unicode(self.finds)+'_'+unicode(self.id) 
+		#return 'Interpretation'+'_'+unicode(self.id)  

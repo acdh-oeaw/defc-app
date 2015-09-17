@@ -4,7 +4,10 @@
 <table class="table table-striped">
         <tr>
                 <td>Finds</td>
-                <td>{{ object.finds }}</td>
+                <td>{% for find in finds_list %}
+                    {{ find }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Description</td>
@@ -12,15 +15,24 @@
         </tr>
         <tr>
                 <td>Production type</td>
-                <td>{{ object.production_type }}</td>
+                <td>{% for type in productiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Subsistence type</td>
-                <td>{{ object.subsistence_type }}</td>
+                <td>{% for type in subsistencetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Reference</td>
-                <td>{{ object.reference }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
          <tr>
                 <td>Comment</td>

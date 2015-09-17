@@ -7,8 +7,96 @@
                 <td>{{ object.finds_type }}</td>
         </tr>
         <tr>
+                <td>Small finds category</td>
+                <td>{{ object.small_finds_category }}</td>
+        </tr>
+        <tr>
+                <td>Small finds type</td>
+                <td>{% for find in smallfindstype_list %}
+                    {{ find }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Botany species</td>
+                <td>{% for species in botanyspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Animal remains species</td>
+                <td>{% for species in animalremainsspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Animal remains completeness</td>
+                <td>{{ object.animal_remains_completeness }}</td>
+        </tr>
+        <tr>
+                <td>Animal remains part</td>
+                <td>{% for part in animalremainspart_list %}
+                    {{ part }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics debitage</td>
+                <td>{% for lithics in lithicsdebitage_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics modified tools</td>
+                <td>{% for lithics in lithicsmodifiedtools_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics cores</td>
+                <td>{% for lithics in lithicscores_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics technology</td>
+                <td>{% for lithics in lithicstechnology_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Pottery form</td>
+                <td>{% for form in potteryform_list %}
+                    {{ form }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Pottery detail</td>
+                <td>{% for detail in potterydetail_list %}
+                    {{ detail }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Pottery decoration</td>
+                <td>{% for decoration in potterydecoration_list %}
+                    {{ decoration }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
                 <td>Material</td>
-                <td>{{ object.material }}</td>
+                <td>{% for material in material_list %}
+                    {{ material }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Confidence</td>
@@ -16,7 +104,10 @@
         </tr>
         <tr>
                 <td>Reference</td>
-                <td>{{ object.reference }}</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Comment</td>
