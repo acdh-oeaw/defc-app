@@ -343,7 +343,7 @@ class DC_finds_botany_species(models.Model):
 		ordering = ('name', )
 
 	def __unicode__(self):
-		return self.name
+		return u'%s (%s)' % (self.name, self.latin_name)
 
 
 class DC_finds_animal_remains_species(models.Model):
@@ -356,7 +356,7 @@ class DC_finds_animal_remains_species(models.Model):
 		ordering = ('name', )
 
 	def __unicode__(self):
-		return self.name
+		return u'%s (%s)' % (self.name, self.latin_name)
 
 
 class DC_finds_animal_remains_completeness(models.Model):
