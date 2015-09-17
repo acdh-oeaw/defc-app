@@ -269,6 +269,7 @@ class AreaDetail(DetailView):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
+		context['period_list'] = Period.objects.filter(area=current_area.id)
 		return context
 
 #################################################################

@@ -1,7 +1,7 @@
 {% extends "newModel/base.html" %}
 {% block content %}
 
-<h1>TEST</h1>
+<h1>AREA</h1>
 <table class="table table-striped">
 <ul>
 </ul>
@@ -23,7 +23,10 @@
         </tr>
         <tr>
                 <td>Period</td>
-                <td>{{ object.period.period_name }}</td>
+                <td>{% for period in period_list %}
+                {{ period }}<br/>
+                {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Description</td>
