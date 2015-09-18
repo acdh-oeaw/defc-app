@@ -729,12 +729,6 @@ class Area(models.Model):
 		null=True, help_text="Locates the Area in the Site")
 	period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	description = models.TextField(blank=True, null=True,
-		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
-	reference = models.ManyToManyField(Reference, blank=True,
-		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
-	comment = models.TextField(blank=True, null=True,
-		help_text="Additional information not covered in any other field.")
 #settlement fields
 	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
 		help_text="Classification of settlement.")
@@ -788,6 +782,13 @@ class Area(models.Model):
 	grave_manipulations_of_graves = models.ManyToManyField(
 		DC_area_manipulationofgraves, blank=True,
 		help_text="If and how the space with the graves is marked.")
+	#common fields
+	description = models.TextField(blank=True, null=True,
+		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
+	reference = models.ManyToManyField(Reference, blank=True,
+		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+	comment = models.TextField(blank=True, null=True,
+		help_text="Additional information not covered in any other field.")
 
 	def __unicode__(self):
 		"""changed to self.id to avoid dependency due to ForeignKey"""

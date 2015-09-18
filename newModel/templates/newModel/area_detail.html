@@ -28,17 +28,7 @@
                 {% endfor %}
                 </td>
         </tr>
-        <tr>
-                <td>Description</td>
-                <td>{{ object.description }}</td>
-        </tr>
-        <tr>
-                <td>Reference</td>
-                <td>{% for ref in reference_list %}
-                    {{ ref }}<br/>
-                    {% endfor %}
-                </td>
-        </tr>
+        
         <tr>
                 <td>Settlement type</td>
                 <td>{% for type in settlementtype_list %}
@@ -163,6 +153,21 @@
                     {{ manipulation }}<br/>
                     {% endfor %}
                 </td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td><style type="text/css">{{ object.comment }} </style></td>
         </tr>
         <tr>
                 <td>Finds</td>

@@ -32,7 +32,7 @@ class ResearchEventListView(generic.ListView):
 class ResearchEventCreate(CreateView):
 	model = ResearchEvent
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_researchevent.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -86,7 +86,7 @@ class PeriodListView(generic.ListView):
 class PeriodCreate(CreateView):
 	model = Period
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_period.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -140,7 +140,7 @@ class FindsListView(generic.ListView):
 class FindsCreate(CreateView):
 	model = Finds
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_finds.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -205,7 +205,7 @@ class SiteListView(generic.ListView):
 class SiteCreate(CreateView):
 	model = Site
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_site.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -258,7 +258,7 @@ class AreaListView(generic.ListView):
 class AreaCreate(CreateView):
 	model = Area
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_area.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
@@ -324,7 +324,7 @@ class InterpretationListView(generic.ListView):
 class InterpretationCreate(CreateView):
 	model = Interpretation
 	fields = "__all__"
-	template_name = "newModel/create_form.html"
+	template_name = "newModel/create_interpretation.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
