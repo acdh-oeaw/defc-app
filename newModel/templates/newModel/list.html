@@ -4,7 +4,8 @@
 
 {% block content %}
 
-<h1>All Objects</h1> 
+<h1> All Objects:  {{ object.get_classname }}  </h1>  <!--not working, why?-->
+
 {% if object_list %}
 <hr />
 <table class="table table-striped">

@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sites
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Site
                 <span class="caret"/>
               </a>
               <ul class="dropdown-menu">
@@ -38,6 +38,19 @@
                 </li>
                 <li>
                   <a href="{% url 'newModel:site_create' %}">Create new Site</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Event
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'newModel:researchevent_list' %}">See all Research Events</a>
+                </li>
+                <li>
+                  <a href="{% url 'newModel:researchevent_create' %}">Create new Research Event</a>
                 </li>
               </ul>
             </li>
@@ -92,21 +105,7 @@
                 </li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Event
-                <span class="caret"/>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'newModel:researchevent_list' %}">See all Research Events</a>
-                </li>
-                <li>
-                  <a href="{% url 'newModel:researchevent_create' %}">Create new Research Event</a>
-                </li>
-              </ul>
-            </li>
           </ul>
-
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a href="#">Link</a>

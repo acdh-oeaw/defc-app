@@ -108,47 +108,47 @@
                 </td>
         </tr>
         <tr>
-                <td>Cemetery/graves: number of graves</td>
-                <td>{{ object.cemetery_graves_number_of_graves }}</td>
+                <td>Grave: number of graves</td>
+                <td>{{ object.grave_number_of_graves }}</td>
         </tr>
         <tr>
-                <td>Cemetery/graves: grave type</td>
+                <td>Grave type</td>
                 <td>{% for type in gravetype_list %}
                     {{ type }}<br/>
                     {% endfor %}
                 </td>
         </tr>
         <tr>
-                <td>Cemetery/graves: type of human remains</td>
+                <td>Grave: type of human remains</td>
                 <td>{% for type in typeofhumanremains_list %}
                     {{ type }}<br/>
                     {% endfor %}
                 </td>
         </tr>
         <tr>
-                <td>Cemetery/graves: estimated number of individuals</td>
-                <td>{{ object.cemetery_graves_estimated_number_of_individuals }}</td>
+                <td>Grave: estimated number of individuals</td>
+                <td>{{ object.grave_estimated_number_of_individuals }}</td>
         </tr>
         <tr>
-                <td>Cemetery/graves: age groups</td>
+                <td>Grave: age groups</td>
                 <td>{% for age in graveagegroups_list %}
                     {{ age }}<br/>
                     {% endfor %}
                 </td>
         </tr>
         <tr>
-                <td>Cemetery/graves: sexes</td>
+                <td>Grave: sexes</td>
                 <td>{% for sex in gravesexes_list %}
                     {{ sex }}<br/>
                     {% endfor %}
                 </td>
         </tr>
         <tr>
-                <td>Cemetery/graves: number of males/females</td>
-                <td>{{ object.cemetery_graves_sexes_number }}</td>
+                <td>Grave: number of males/females</td>
+                <td>{{ object.grave_sexes_number }}</td>
         </tr>
         <tr>
-                <td>Cemetery/graves: manipulations of graves</td>
+                <td>Grave: manipulations of graves</td>
                 <td>{% for manipulation in manipulationsofgraves_list %}
                     {{ manipulation }}<br/>
                     {% endfor %}
