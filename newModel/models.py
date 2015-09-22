@@ -425,34 +425,29 @@ class DC_finds_lithics_technology(models.Model):
 class DC_finds_pottery_form(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-
-	class Meta:
-		ordering = ('name', )
+	region = models.CharField(max_length=100, blank=True,null=True)
 
 	def __unicode__(self):
-		return self.name
+		return u'%s - %s' % (self.name, self.region)
 
 
 class DC_finds_pottery_detail(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	region = models.CharField(max_length=100, blank=True,null=True)
 
-	class Meta:
-		ordering = ('name', )
 
 	def __unicode__(self):
-		return self.name
-
+		return u'%s - %s' % (self.name, self.region)
 
 class DC_finds_pottery_decoration(models.Model):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	region = models.CharField(max_length=100, blank=True,null=True)
 
-	class Meta:
-		ordering = ('name', )
-
+	
 	def __unicode__(self):
-		return self.name
+		return u'%s - %s' % (self.name, self.region)
 
 
 class DC_country(models.Model):
@@ -500,6 +495,8 @@ class DC_province(models.Model):
 
 	def __unicode__(self):
 		return unicode(self.region)+'_'+self.name
+		#return unicode(self.name)+'_'+self.region
+
 
 ######DCs for Interpretation######
 class DC_interpretation_productiontype(models.Model):
@@ -625,6 +622,7 @@ class ResearchEvent(models.Model):
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
 		class_name = unicode(self.__class__.__name__).lower()
+
 		return class_name
 
 	def get_absolute_url(self):
@@ -645,6 +643,8 @@ class Period(models.Model):
 		blank=True, help_text="Source providing information about date.")
 	c14_calibrated = models.CharField(max_length=100, blank=True,
  		null=True, choices = YESNO, help_text="Date is a calibrated date.")
+	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
+	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
 	comment = models.TextField(blank=True, null=True,

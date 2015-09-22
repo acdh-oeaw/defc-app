@@ -19,15 +19,17 @@ $(document).ready(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').hide();
 })
 $('#id_finds_type').change(function(){
     var selected_option =  $("#id_finds_type option:selected").text();
     if(selected_option =="small finds"){
-        $('tr:has(th:contains("all finds"))').show();
+        $('tr:has(th:contains("all finds"))').show("slow");
         $('tr:has(th:contains("otany"))').hide();
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').show("slow");
     }
     else if(selected_option =="botany"){
         $('tr:has(th:contains("all finds"))').hide();
@@ -35,6 +37,7 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').hide();
     }
     else if(selected_option =="animal remains"){
         $('tr:has(th:contains("all finds"))').hide();
@@ -42,6 +45,7 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').show("slow");
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').hide();
     }
     else if(selected_option =="lithics"){
         $('tr:has(th:contains("all finds"))').hide();
@@ -49,6 +53,7 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').show("slow");
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').show("slow");
     }
      else if(selected_option =="pottery"){
         $('tr:has(th:contains("all finds"))').hide();
@@ -56,6 +61,7 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').show("slow");
+        $('tr:has(th:contains("Material"))').hide();
     }
     else if(selected_option =="---------"){
         $('tr:has(th:contains("all finds"))').hide();
@@ -63,8 +69,10 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').hide();
+        $('tr:has(th:contains("Material"))').hide();
     }
 });
 </script>
 
 {% endblock scripts %}
+
