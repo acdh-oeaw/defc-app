@@ -290,6 +290,7 @@ class AreaDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
+		context['interpretations_list'] = Interpretation.objects.filter(area=current_area.id)
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
 		#context['period_list'] = Period.objects.filter(area=current_area.id)
 		context['period_list'] = current_area.period.all()
@@ -357,6 +358,7 @@ class InterpretationDetail(DetailView):
 		#context = ['finds_list'] = Finds.objects.filter(interpretation=current_interpretation.id) 
 		#instead we are using ManytoMany so all finds will be in finds field
 		current_object = self.object
+		context['areas_list'] = current_object.area.all()
 		context['finds_list'] = current_object.finds.all()
 		context['productiontype_list'] = current_object.production_type.all()
 		context['subsistencetype_list'] = current_object.subsistence_type.all()

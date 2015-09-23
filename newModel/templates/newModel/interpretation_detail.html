@@ -3,6 +3,13 @@
 <h1>Interpretation</h1>
 <table class="table table-striped">
         <tr>
+                <td>Area</td>
+                <td>{% for area in areas_list %}
+                    {{ area }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
                     {{ find }}<br/>

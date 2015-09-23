@@ -12,9 +12,24 @@
 {% block scripts %}
 
 
-<script type="text/javascript"></script>
-
-
+<script type="text/javascript">
+$(document).ready(function(){
+    $('tr:has(th:contains("yes"))').hide();
+    $('tr:has(th:contains("no"))').hide();
+})
+$('#id_c14_calibrated').change(function(){
+    var selected_option =  $('#id_c14_calibrated option:selected').text();
+    if(selected_option =="yes"){
+        $('tr:has(th:contains("absolute"))').show();
+    }
+    else if(selected_option =="no"){
+        $('tr:has(th:contains("absolute"))').hide();
+    }
+    else if(selected_option =="---------"){
+        $('tr:has(th:contains("absolute"))').show();
+    }
+});
+</script>
 
 <script type="text/javascript"> 
 // script managing the visibility of Area-Fields

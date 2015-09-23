@@ -3,6 +3,18 @@
 <h1>Finds</h1>
 <table class="table table-striped">
         <tr>
+                <td>Area</td>
+                <td>{% for area in area_list %}
+                        <a href="/newModel/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Research event</td>
+                <td>{{ object.research_event }}</td>
+        </tr>
+        <tr>
                 <td>Finds type</td>
                 <td>{{ object.finds_type }}</td>
         </tr>
@@ -113,14 +125,6 @@
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-         <tr>
-                <td>Area</td>
-                <td>{% for area in area_list %}
-                        <a href="/newModel/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/>
-                        </a>
-                        {% endfor %}
-                </td>
-        </tr>
         <tr>
                 <td>Interpretation</td>
                 <td>{% for interpretation in interpretation_list %}
@@ -128,10 +132,6 @@
                         </a>
                         {% endfor %}
                 </td>
-        </tr>
-        <tr>
-                <td>Research event</td>
-                <td>{{ object.research_event }}</td>
         </tr>
         <tr>
                 <td>

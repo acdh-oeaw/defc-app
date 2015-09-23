@@ -28,7 +28,18 @@
                 {% endfor %}
                 </td>
         </tr>
-        
+        <tr>
+                <td>C14: calibrated</td>
+                <td>{{ object.c14_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>C14: absolute from</td>
+                <td>{{ object.c14_absolute_from }}</td>
+        </tr>
+        <tr>
+                <td>C14: absolute to</td>
+                <td>{{ object.c14_absolute_to }}</td>
+        </tr>
         <tr>
                 <td>Settlement type</td>
                 <td>{% for type in settlementtype_list %}
@@ -144,8 +155,16 @@
                 </td>
         </tr>
         <tr>
-                <td>Grave: number of males/females</td>
-                <td>{{ object.grave_sexes_number }}</td>
+                <td>Grave: number of female sex</td>
+                <td>{{ object.grave_number_of_female_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of male sex</td>
+                <td>{{ object.grave_number_of_male_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of not specified sex</td>
+                <td>{{ object.grave_number_of_not_specified_sex }}</td>
         </tr>
         <tr>
                 <td>Grave: manipulations of graves</td>
@@ -168,6 +187,13 @@
         <tr>
                 <td>Comment</td>
                 <td><style type="text/css"> {{ object.comment }} </style></td>
+        </tr>
+        <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretations_list %}
+                        <a href="/newModel/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> See interpretation: {{ interpretation }} <br/></a>
+                        {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Finds</td>

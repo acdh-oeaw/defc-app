@@ -533,7 +533,8 @@ class DC_chronological_system(models.Model):
 
 
 	def __unicode__(self):
-		return unicode(self.region)+'_'+unicode(self.cs_name)+'_'+unicode(self.period_name)+'_'+unicode(self.start_date1_BC)
+		#return unicode(self.region)+'_'+unicode(self.cs_name)+'_'+unicode(self.period_name)+'_'+unicode(self.start_date1_BC)
+		return unicode(self.cs_name)+'_'+unicode(self.period_name)
 
 
 class DC_period_datingmethod(models.Model):
@@ -545,6 +546,7 @@ class DC_period_datingmethod(models.Model):
 
 	def __unicode__(self):
 		return self.name
+		#return ("/".join([unicode(x) for x in self.name.all()]))
 
 
 class DC_period_datedby(models.Model):
@@ -641,10 +643,6 @@ class Period(models.Model):
 		help_text="Method used for dating the site.")
 	dated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
 		blank=True, help_text="Source providing information about date.")
-	c14_calibrated = models.CharField(max_length=100, blank=True,
- 		null=True, choices = YESNO, help_text="Date is a calibrated date.")
-	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
-	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the chronology.")
 	comment = models.TextField(blank=True, null=True,
@@ -654,7 +652,8 @@ class Period(models.Model):
 		return reverse('newModel:period_list')
 
 	def __unicode__(self):
-		return unicode(self.system)
+		#return unicode(self.system)+'_'+unicode(self.dating_method)+'_'+unicode(self.dated_by)
+		return unicode(self.system)+'_'+unicode("/".join([unicode(x) for x in self.dating_method.all()])+"_"+"/".join([unicode(x) for x in self.dated_by.all()]))
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""
@@ -706,6 +705,10 @@ class Site(models.Model):
 
 
 class Area(models.Model):
+	YESNO = (
+		("yes", "yes"),
+		("no", "no")
+		)
 	GRAVEYESNO = (
 		("cemetery", "cemetery"),
 		("grave", "grave")
@@ -727,6 +730,10 @@ class Area(models.Model):
 		null=True, help_text="Locates the Area in the Site")
 	period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	c14_calibrated = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO, help_text="Date is a calibrated date.")
+	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
+	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
 #settlement fields
 	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
 		help_text="Classification of settlement.")
@@ -778,7 +785,12 @@ class Area(models.Model):
 		blank=True, help_text="Age.")
 	grave_sexes = models.ManyToManyField(DC_area_sexes, verbose_name="Grave: sexes", blank=True,
 		help_text="Sex.")
-	grave_sexes_number = models.IntegerField(verbose_name="Grave: sexes number", null=True, blank=True, help_text = "Helptext")
+	grave_number_of_female_sex = models.IntegerField(verbose_name="Grave: number of female sex", 
+		null=True, blank=True, help_text = "Helptext")
+	grave_number_of_male_sex = models.IntegerField(verbose_name="Grave: number of male sex", 
+		null=True, blank=True, help_text = "Helptext")
+	grave_number_of_not_specified_sex = models.IntegerField(verbose_name="Grave: number of not specified sex", 
+		null=True, blank=True, help_text = "Helptext")
 	grave_manipulations_of_graves = models.ManyToManyField(
 		DC_area_manipulationofgraves, verbose_name="Grave: manipulations of graves", blank=True,
 		help_text="If and how the space with the graves is marked.")
@@ -814,6 +826,8 @@ class Finds(models.Model):
 		)
 	area = models.ForeignKey(Area, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
+		help_text="Related research event.")
 	finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
 		help_text="Type of the finds.") 
 # small finds properties
@@ -859,8 +873,6 @@ class Finds(models.Model):
 		help_text="Material used for find.")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
 		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
-	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
-		help_text="Related research event.")
 	reference = models.ManyToManyField(Reference, blank=True,
 		help_text="Relevant resources on the finds.")
 	comment = models.TextField(blank=True, null=True,
@@ -881,6 +893,8 @@ class Finds(models.Model):
 
 #######new class Interpretation(this is a chosen name for Subsistence&Production)######
 class Interpretation(models.Model):
+	area = models.ManyToManyField(Area, blank=True,   
+		help_text="PLEASE PROVIDE SOME HELPTEX")
 	finds = models.ManyToManyField(Finds, blank=True,   
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	description = models.TextField(blank=True, null=True,
