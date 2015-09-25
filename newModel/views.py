@@ -134,13 +134,13 @@ class FindsListView(generic.ListView):
 	#for each class. 
 
 	def get_queryset(self):
-		return Finds.objects.order_by('finds_type')
+		return Finds.objects.order_by('finds_type') 
 
 
 class FindsCreate(CreateView):
 	model = Finds
 	fields = "__all__"
-	template_name = "newModel/create_finds_condition.html"
+	template_name = "newModel/create_finds_condition.html" #new template with condition
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
