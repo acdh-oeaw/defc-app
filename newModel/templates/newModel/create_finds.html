@@ -11,7 +11,7 @@
 {% endblock content %}
 {% block scripts %}
 
-<script type="text/javascript"> 
+<script type="text/javascript">  
 // script managing the visibility of Fields-Fields
 $(document).ready(function(){
     $('tr:has(th:contains("all finds"))').hide();
@@ -61,6 +61,23 @@ $('#id_finds_type').change(function(){
         $('tr:has(th:contains("nimal re"))').hide();
         $('tr:has(th:contains("ithics"))').hide();
         $('tr:has(th:contains("ottery"))').show("slow");
+        if($('#id_area option:selected').text() == "---------"){
+            $('#id_pottery_form option').hide();
+            $('#id_pottery_detail option').hide();
+            $('#id_pottery_decoration option').hide();
+            //console.log($('#id_area option:selected').text());
+        }
+        else {
+            $('#id_pottery_form option').hide();
+            $('#id_pottery_detail option').hide();
+            $('#id_pottery_decoration option').hide();
+            var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));
+            //console.log($('#id_pottery_form option:contains("Southern/Central Greece, Cyclades")'));
+            $('#id_pottery_form option:contains('+selected_area+')').show();
+           // $('#id_pottery_form ('tr:has(option:contains("Southern and Central Greece, Cyclades"))').show();
+            $('#id_pottery_detail option:contains('+selected_area+')').show();
+            $('#id_pottery_decoration option:contains('+selected_area+')').show();
+        }
         $('tr:has(th:contains("Material"))').hide();
     }
     else if(selected_option =="---------"){
@@ -73,6 +90,26 @@ $('#id_finds_type').change(function(){
     }
 });
 </script>
+<script type="text/javascript">
+    $('#id_area').change(function(){
+        $('#id_pottery_form option').hide();
+        $('#id_pottery_detail option').hide();
+        $('#id_pottery_decoration option').hide();
+        var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));
+
+        // $('#id_pottery_form option:contains('+selected_area+')').show();
+        //    // $('#id_pottery_form ('tr:has(option:contains("Southern and Central Greece, Cyclades"))').show();
+        // $('#id_pottery_detail option:contains('+selected_area+')').show();
+        // $('#id_pottery_decoration option:contains('+selected_area+')').show();
+        if(selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'))){
+                    $('#id_pottery_form option:contains('+selected_area+')').show();
+                    $('#id_pottery_detail option:contains('+selected_area+')').show();
+                    $('#id_pottery_decoration option:contains('+selected_area+')').show();
+            }
+    }
+    );
+</script>
 
 {% endblock scripts %}
+
 
