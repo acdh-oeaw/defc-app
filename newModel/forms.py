@@ -5,7 +5,6 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
-from webapp.models import *
 from django.utils.translation import ugettext_lazy as _
 
 #comment

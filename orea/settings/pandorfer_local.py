@@ -21,7 +21,7 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'orea',
+        'NAME': 'defc',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
