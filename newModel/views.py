@@ -140,7 +140,7 @@ class FindsListView(generic.ListView):
 class FindsCreate(CreateView):
 	model = Finds
 	fields = "__all__"
-	template_name = "newModel/create_finds_condition.html" #new template with condition
+	template_name = "newModel/create_finds.html"
 
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
