@@ -11,6 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ["DJANGO_SETTINGS_MODULE"] = "orea.settings"
-
+os.environ["DJANGO_SETTINGS_MODULE"] = "orea.settings.server"
+#os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings") #thats the default settings
 application = get_wsgi_application()
+
+

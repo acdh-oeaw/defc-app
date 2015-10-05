@@ -1,0 +1,39 @@
+{% extends "newModel/base.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+
+{% if object_list %}
+<h1> All Objects:  
+	{% with object_list|first as first_doc %}
+	{{ first_doc.get_classname|title }} 
+	{% endwith %}
+
+
+</h1>  <!--not working, why?-->
+<hr />
+<table class="table table-striped">
+
+	 {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		{{ object }} 
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/detail/{{ object.id }}"> See Details </a>
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a> 
+	 	</td>	
+	 	<td>
+	 		<a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a> 
+	 	</td>
+	 </tr>	
+    {% endfor %}
+</table>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+{% endblock content %}

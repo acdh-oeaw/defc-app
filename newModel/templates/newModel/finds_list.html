@@ -1,0 +1,31 @@
+{% extends "newModel/base.html" %} 
+
+{% block Titel %}See Finds{% endblock %}
+
+{% block content %}
+
+<h1>Finds</h1> 
+{% if object_list %}
+<table class="table table-striped">
+
+	    {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		{{ object }} 
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/finds/detail/{{ object.id_finds }}"> See Details </a>
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary" href="/newModel/finds/update/{{ object.id_finds }}"> Edit </a> 
+	 	</td>	
+	 	<td>
+	 		<a class ="btn btn-danger btn-sm" href="/newModel/finds/delete/{{ object.id_finds }}"> Delete </a> 
+	 	</td>
+	 </tr>	
+    {% endfor %}
+</table>
+{% else %}
+<p> There is no  <i>object_lists</i></p>
+{% endif %} 
+{% endblock content %}

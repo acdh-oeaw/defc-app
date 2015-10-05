@@ -1,0 +1,217 @@
+{% extends "newModel/base.html" %}
+{% block content %}
+
+<h1>Area</h1>
+<table class="table table-striped">
+<ul>
+</ul>
+        <tr>
+                <td>Site</td>
+                <td>{{ object.site }}</td>
+        </tr>
+        <tr>
+                <td>Area type</td>
+                <td>{{ object.area_type }}</td>
+        </tr>
+        <tr>
+                <td>Area NR</td>
+                <td>{{ object.area_nr }}</td>
+        </tr>
+         <tr>
+                <td>Stratigraphical unit</td>
+                <td>{{ object.stratigraphical_unit_id }}</td>
+        </tr>
+        <tr>
+                <td>Period</td>
+                <td>{% for period in period_list %}
+                {{ period }}<br/>
+                {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>C14: calibrated</td>
+                <td>{{ object.c14_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>C14: absolute from</td>
+                <td>{{ object.c14_absolute_from }}</td>
+        </tr>
+        <tr>
+                <td>C14: absolute to</td>
+                <td>{{ object.c14_absolute_to }}</td>
+        </tr>
+        <tr>
+                <td>Settlement type</td>
+                <td>{% for type in settlementtype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Settlement structure</td>
+                <td>{% for structure in settlementstructure_list %}
+                    {{ structure }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Settlement construction type</td>
+                <td>{% for type in settlementconstructiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Settlement building technique</td>
+                <td>{% for tech in settlementbuildingtechnique_list %}
+                    {{ tech }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Settlement special features</td>
+                <td>{% for feature in settlementspecialfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters type</td>
+                <td>{{ object.cave_rockshelters_type }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of graves/human remains</td>
+                <td>{{ object.cave_rockshelters_evidence_of_graves_human_remains }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of occupation</td>
+                <td>{% for evidence in evidenceofoccupation_list %}
+                    {{ evidence }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Quarry exploitation type</td>
+                <td>{% for type in quarryexploitationtype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Quarry raw material</td>
+                <td>{% for material in quarryrawmaterial_list %}
+                    {{ material }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves topography</td>
+                <td>{% for topography in topography_list %}
+                    {{ topography }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves mortuary features</td>
+                <td>{% for feature in mortuaryfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Grave: number of graves</td>
+                <td>{{ object.grave_number_of_graves }}</td>
+        </tr>
+        <tr>
+                <td>Grave type</td>
+                <td>{% for type in gravetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Grave: type of human remains</td>
+                <td>{% for type in typeofhumanremains_list %}
+                    {{ type }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Grave: estimated number of individuals</td>
+                <td>{{ object.grave_estimated_number_of_individuals }}</td>
+        </tr>
+        <tr>
+                <td>Grave: age groups</td>
+                <td>{% for age in graveagegroups_list %}
+                    {{ age }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Grave: sexes</td>
+                <td>{% for sex in gravesexes_list %}
+                    {{ sex }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Grave: number of female sex</td>
+                <td>{{ object.grave_number_of_female_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of male sex</td>
+                <td>{{ object.grave_number_of_male_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of not specified sex</td>
+                <td>{{ object.grave_number_of_not_specified_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: manipulations of graves</td>
+                <td>{% for manipulation in manipulationsofgraves_list %}
+                    {{ manipulation }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td><style type="text/css"> {{ object.comment }} </style></td>
+        </tr>
+        <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretations_list %}
+                        <a href="/newModel/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> See interpretation: {{ interpretation }} <br/></a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td>{% for find in finds_list %}
+                        <a href="/newModel/{{ find.get_classname }}/detail/{{ find.id }}"> See find: {{ find }} <br/></a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+        </tr>
+</table>
+{% endblock content %}
+
+
+
