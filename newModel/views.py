@@ -26,7 +26,9 @@ class ResearchEventListView(generic.ListView):
 	#for each class. 
 
 	def get_queryset(self):
-		return ResearchEvent.objects.order_by('research_type')
+		#return ResearchEvent.objects.order_by('research_type')
+		#return ResearchEvent.objects.order_by('institution')
+		return ResearchEvent.objects.all()
 
 
 class ResearchEventCreate(CreateView):
@@ -320,8 +322,9 @@ class InterpretationListView(generic.ListView):
 	context_object_name = 'object_list'
 
 	def get_queryset(self):
-		return Interpretation.objects.order_by('finds')
-
+		#return Interpretation.objects.order_by('finds')
+		return Interpretation.objects.all()
+		
 class InterpretationCreate(CreateView):
 	model = Interpretation
 	fields = "__all__"
