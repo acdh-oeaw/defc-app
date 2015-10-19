@@ -24,7 +24,8 @@ DATABASES = {
         'NAME': 'defc',
         'USER': 'defc',
         'PASSWORD': 'F7ffq5WUVp',
-        'HOST': 'helios.arz.oeaw.ac.at',
+        #'HOST': 'helios.arz.oeaw.ac.at',
+		'HOST': 'localhost',
         'PORT': '3306',
     }
 }

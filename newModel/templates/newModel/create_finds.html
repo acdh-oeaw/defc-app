@@ -1,4 +1,13 @@
 {% extends "newModel/base.html" %} 
+
+{% block scriptHeader %}
+    <script>
+    $(function() {
+    $('[multiple=multiple]').resizable();
+    });
+  </script>
+{% endblock scriptHeader %}
+
 {% block content %}
 
 <h1> Create new Find </h1>
