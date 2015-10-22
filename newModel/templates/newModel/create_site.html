@@ -11,13 +11,3 @@
     <input class="btn btn-primary" type="submit" value="Create" />
 </form>
 {% endblock content %}
-{% block scripts %}
-  <script>
-  $(function() {
-    $( "#sortable tbody").sortable({
-      revert: true
-    });
-    //$( "table, tr, td" ).disableSelection();
-  });
-  </script>
-{% endblock scripts %}
