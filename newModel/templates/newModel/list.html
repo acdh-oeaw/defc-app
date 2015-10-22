@@ -1,4 +1,4 @@
-{% extends "newModel/base.html" %} 
+{% extends "newModel/listBase.html" %} 
 
 {% block Titel %}See All Objects{% endblock %}
 
@@ -10,9 +10,8 @@
 	{% with object_list|first as first_doc %}
 	{{ first_doc.get_classname|title }} 
 	{% endwith %}
+</h1>
 
-
-</h1>  <!--not working, why?-->
 <hr />
 <table class="table table-striped">
 

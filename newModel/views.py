@@ -196,12 +196,17 @@ class FindsDetail(DetailView):
 #################################################################
 class SiteListView(generic.ListView):
 	template_name = 'newModel/list_list.html'
-	context_object_name = 'object_list' # use object_list instead of
-	# e.g. site_list so the template does not need to be changed so much
-	#for each class. 
+	# context_object_name = 'object_list' # use object_list instead of
+	# # e.g. site_list so the template does not need to be changed so much
+	# #for each class. 
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
+
+	def get_context_data(self, **kwargs):
+		context = super(SiteListView, self).get_context_data(**kwargs)
+		context['area_list'] = Area.objects.all()
+		return context
 
 
 class SiteCreate(CreateView):
