@@ -1,7 +1,20 @@
 {% extends "newModel/base.html" %}
+
+{% block scriptHeader %}
+<!--leafletjs -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+        <style>
+            #map { height: 500px; }
+        </style>
+{% endblock %}
+
 {% block content %}
 <h1>Site</h1>
-<table class="table table-striped">
+
+<div class="row">
+    <div class="col-md-7">
+        <table class="table table-striped">
         <tr>
                 <td>Name of the site </td>
                 <td>{{ object.name }}</td>
@@ -84,5 +97,28 @@
                         <a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
                 </td>
         </tr>
-</table>
+        </table>
+    </div>
+    <div class="col-md-5">
+        <div id="map"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    var gps1 = 37.73167;
+    var gps2 = 23.49111;
+    var siteName = "{{ object.name }}";
+    var map = L.map('map').setView([gps1, gps2], 6);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    //maxZoom: 5,
+    id: 'csae8092.npdoha49',
+    accessToken: 'pk.eyJ1IjoiY3NhZTgwOTIiLCJhIjoiY2lnM2FoZWpjMDJqZnY1a2gxdWl6a29kaiJ9.FQXlsKIu60WhiXLrfI59VA'
+    }).addTo(map);
+
+    L.marker([37.73167, 23.49111]).addTo(map)
+    .bindPopup(siteName)
+    .openPopup();
+
+</script>
 {% endblock content %}
