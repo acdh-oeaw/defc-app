@@ -69,7 +69,6 @@ class DC_province(GenericMethods):
 	region = models.ForeignKey(DC_region, blank=True,null=True,
 		help_text="The name of the country")
 
-
 	def __str__(self):
 		return str(self.region)+'_'+self.name
 		#return str(self.name)+'_'+self.region
@@ -328,7 +327,6 @@ class DC_chronological_system(GenericMethods):
 	region = models.ForeignKey(DC_region, blank=True, null=True)
 
 	class Meta:
-		abstract = True
 		ordering =( 'cs_name',)
 
 	def __str__(self):
@@ -367,7 +365,6 @@ class Reference(TrackChanges):
 		help_text="The URL to the ressource")
 
 	class Meta:
-		abstract = True
 		ordering =( 'title',)
 
 
@@ -396,7 +393,6 @@ class ResearchEvent(TrackChanges):
 		help_text="Additional information on the research history not covered in any other field.")
 
 	class Meta:
-		abstract = True
 		ordering =( 'id',)
 
 	def __str__(self):
@@ -419,7 +415,6 @@ class Period(TrackChanges):
 		blank=True, help_text="Source providing information about date.")
 
 	class Meta:
-		abstract = True
 		ordering =( 'system',)
 	
 
@@ -500,9 +495,10 @@ class Area(TrackChanges):
 	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
 	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
 	period_reference = models.ManyToManyField(Reference, blank=True,
-		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the period.")
+		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the period.",
+		related_name="referenceForPeriod")
 	period_comment = models.TextField(blank=True, null=True,
-		help_text = "Additional information on the period not covered in any other field.")
+		help_text = "Additional information on the period not covered in any other field.",)
 #settlement fields
 	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
 		help_text="Classification of settlement.")
@@ -572,7 +568,6 @@ class Area(TrackChanges):
 		help_text="Additional information not covered in any other field.")
 
 	class Meta:
-		abstract = True
 		ordering =( 'site',)
 
 	def __str__(self):
@@ -647,7 +642,6 @@ class Finds(TrackChanges):
 		help_text="Additional information not covered in any other field.")
 
 	class Meta:
-		abstract = True
 		ordering =( 'area',)
 
 	def get_absolute_url(self):
@@ -676,7 +670,6 @@ class Interpretation(TrackChanges):
 		help_text="Additional information on subsistence and production not covered in any other field.")
 
 	class Meta:
-		abstract = True
 		ordering =( 'id',)
 
 	def get_absolute_url(self):

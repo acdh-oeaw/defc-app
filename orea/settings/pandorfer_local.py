@@ -21,7 +21,7 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defc',
+        'NAME': 'defc2',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
