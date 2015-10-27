@@ -21,7 +21,7 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defc',
+        'NAME': 'defc2',
         'USER': 'defc',
         'PASSWORD': 'F7ffq5WUVp',
         #'HOST': 'helios.arz.oeaw.ac.at',

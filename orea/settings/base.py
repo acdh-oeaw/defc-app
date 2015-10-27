@@ -37,9 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'crispy_forms',
-	'newModel',
-	#'webapp',
+    'crispy_forms',
+    'rest_framework',
+	'defcdb',
+
 )
 
 MIDDLEWARE_CLASSES = (
