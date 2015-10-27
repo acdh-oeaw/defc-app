@@ -1,0 +1,111 @@
+{% extends "newModel/listBase.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+
+{% if object_list %}
+<h1> All Objects:  
+	{% with object_list|first as first_doc %}
+	{{ first_doc.get_classname|title }} 
+	{% endwith %}
+
+</h1>  
+<hr />
+<table class="table table-striped">
+	<thead>
+				<th colspan="7" class="ts-pager form-horizontal">
+        <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+        <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+        <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+        <select class="pagesize input-mini" title="Select page size">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="1000">all</option>
+        </select>
+        <select class="pagenum input-mini" title="Select page number"></select>
+      </th>
+		<tr>
+			<th>research type</th>
+			<th>Institution</th>
+			<th>year of activity:start year</th>
+			<th>year of activity:end year</th>
+			<th>project name</th>
+			<th>project id</th>
+			<th>projects leader</th>
+			<th>special analysis</th>
+			<th>view | modify | delete</th>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>research type</th>
+			<th>Institution</th>
+			<th>year of activity:start year</th>
+			<th>year of activity:end year</th>
+			<th>project name</th>
+			<th>project id</th>
+			<th>projects leader</th>
+			<th>special analysis</th>
+			<th>view | modify | delete</th>
+			<!-- <th>description</th> -->
+		</tr>
+	</tfoot>
+	<tbody>
+	 {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		{% for x in researchtype_list %}
+	 		<li>{{ x.name }}</li>
+	 		{% endfor %}
+	 	</td>
+	 	<td>
+	 		{{ object.institution }} 
+	 	</td>
+	 	<td>
+	 		{{ object.year_of_activity_start_year }} 
+	 	</td>
+	 	<td>
+	 		{{ object.year_of_activity_end_year }} 
+	 	</td>
+	 	<td>
+	 		{{ object.project_name }} 
+	 	</td>
+	 	<td>
+	 		{{ object.project_id }} 
+	 	</td>
+	 	<td>
+	 		{{ object.project_leader }} 
+	 	</td>
+	 	<td>
+	 		{{ object.special_analysis }} 
+	 	</td>
+      <!-- {% if object.area_set.all %}
+      {% for x in object.area_set.all %}
+        <a href="/newModel/area/detail/{{ x.id }}">
+          {{ x.area_type }}
+        </a>
+       <br />
+      {% endfor %}
+      {% else %}
+      <a class ="btn btn-primary btn-sm"  href="/newModel/area/create/?areaName={{ object.name }}">
+        create an<br /> area
+      </a>
+      {% endif %} -->
+	 	<td>
+	 		<a class ="btn btn-primary btn-sm"  href="/newModel/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+	 		<a class ="btn btn-primary btn-sm" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
+	 		<a class ="btn btn-danger btn-sm" href="/newModel/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+	 	</td>
+	 </tr>	
+    {% endfor %}
+	</tbody>
+</table>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+{% endblock content %}

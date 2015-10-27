@@ -12,7 +12,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod
+from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import form_user_login
 
 
@@ -20,7 +20,8 @@ from .forms import form_user_login
 #				views for ResearchEvent							#
 #################################################################
 class ResearchEventListView(generic.ListView):
-	template_name = 'newModel/list.html'
+	model = ResearchEvent
+	template_name = 'newModel/researchevent_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -29,6 +30,15 @@ class ResearchEventListView(generic.ListView):
 		#return ResearchEvent.objects.order_by('research_type')
 		#return ResearchEvent.objects.order_by('institution')
 		return ResearchEvent.objects.all()
+
+	def get_context_data(self, **kwargs):
+	 	context = super(ResearchEventListView, self).get_context_data(**kwargs)
+	 	current_object = self
+	 	#context['researchtype_list'] = DC_researchevent_researchtype.objects.filter(id=1)
+	 	context['researchtype_list'] = ResearchEvent.objects.all()
+	# 	context['institution_list'] = current_object.institution.all()
+	# 	context['specialanalysis_list'] = current_object.special_analysis.all()
+	 	return context
 
 
 class ResearchEventCreate(CreateView):
