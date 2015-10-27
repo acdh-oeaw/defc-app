@@ -6,7 +6,7 @@
 
 
 {% if object_list %}
-<h1> All Objects:  
+<h1> All Objects: 
 	{% with object_list|first as first_doc %}
 		{{ first_doc.get_classname|title }} 
 	{% endwith %}
@@ -31,57 +31,51 @@
       </th>
 		<tr>
 			<th>Name</th>
-			<th>alias name</th>
-			<th>alternative name</th>
-			<th>province</th>
-			<th>topography</th>
-      <th>areas</th>
+			<th>Institution</th>
+			<th>Starting year</th>
+			<th>Ending year</th>
+			<th>name</th>
+      		<th>finds</th>
 			<th>view | modify | delete</th>
 	</thead>
 	<tfoot>
 		<tr>
 			<th>Name</th>
-			<th>alias name</th>
-			<th>alternative name</th>
-			<th>province</th>
-			<th>topography</th>
-      <th>areas</th>
+			<th>Institution</th>
+			<th>Starting year</th>
+			<th>Ending year</th>
+			<th>name</th>
+      		<th>finds</th>
 			<th>view | modify | delete</th>
-			<!-- <th>description</th> -->
 		</tr>
 	</tfoot>
 	<tbody>
 	 {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{{ object.name }}
+	 		{% for x in object.research_type.all %}
+	 		{{ x.name }} <br/>
+	 		{% endfor %}
 	 	</td>
 	 	<td>
-	 		{{ object.alias_name }} 
+	 		{% for x in object.institution.all %}
+	 		{{ x.name }} <br/>
+	 		{% endfor %} 
 	 	</td>
 	 	<td>
-	 		{{ object.alternative_name }} 
+	 		{{ object.year_of_activity_start_year }} 
 	 	</td>
 	 	<td>
-	 		{{ object.province.name }} 
+	 		{{ object.year_of_activity_end_year }} 
 	 	</td>
 	 	<td>
-	 		{{ object.topography }} 
+	 		{{ object.project_name }} 
 	 	</td>
-    <td>
-      {% if object.area_set.all %}
-      {% for x in object.area_set.all %}
-        <a href="/newModel/area/detail/{{ x.id }}">
-          {{ x.area_type }}
-        </a>
-       <br />
-      {% endfor %}
-      {% else %}
-      <a class ="btn btn-primary btn-sm"  href="/newModel/area/create/?areaName={{ object.name }}">
-        create an<br /> area
-      </a>
-      {% endif %}
-    </td>
+	 	<td>
+	 		{% for y in object.finds_set.all %}
+	 		<a href="/newModel/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+	 		{% endfor %}
+	 	</td>
 	 	<td>
 	 		<a class ="btn btn-primary btn-sm"  href="/newModel/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
 	 		<a class ="btn btn-primary btn-sm" href="/newModel/{{ object.get_classname }}/update/{{ object.id }}">edit</a>

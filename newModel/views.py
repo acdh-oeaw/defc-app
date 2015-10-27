@@ -12,7 +12,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod
+from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import form_user_login
 
 
@@ -20,15 +20,11 @@ from .forms import form_user_login
 #				views for ResearchEvent							#
 #################################################################
 class ResearchEventListView(generic.ListView):
-	template_name = 'newModel/list.html'
-	context_object_name = 'object_list' # use object_list instead of
-	# e.g. site_list so the template does not need to be changed so much
-	#for each class. 
+	template_name = 'newModel/researchEvent_list.html'
+	context_object_name = 'object_list'
 
 	def get_queryset(self):
-		#return ResearchEvent.objects.order_by('research_type')
-		#return ResearchEvent.objects.order_by('institution')
-		return ResearchEvent.objects.all()
+		return ResearchEvent.objects.order_by('id')
 
 
 class ResearchEventCreate(CreateView):
@@ -195,18 +191,10 @@ class FindsDetail(DetailView):
 #				views for Site									#
 #################################################################
 class SiteListView(generic.ListView):
-	template_name = 'newModel/list_list.html'
-	# context_object_name = 'object_list' # use object_list instead of
-	# # e.g. site_list so the template does not need to be changed so much
-	# #for each class. 
+	template_name = 'newModel/site_list.html'
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
-
-	def get_context_data(self, **kwargs):
-		context = super(SiteListView, self).get_context_data(**kwargs)
-		context['area_list'] = Area.objects.all()
-		return context
 
 
 class SiteCreate(CreateView):
