@@ -73,7 +73,7 @@ class ResearchEventDetail(DetailView):
 #				views for Period								#
 #################################################################
 class PeriodListView(generic.ListView):
-	template_name = 'newModel/list.html'
+	template_name = 'newModel/period_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class.
@@ -126,7 +126,7 @@ class PeriodDetail(DetailView):
 #				views for Finds									#
 #################################################################
 class FindsListView(generic.ListView):
-	template_name = 'newModel/list.html'
+	template_name = 'newModel/finds_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -241,7 +241,7 @@ class SiteDetail(DetailView):
 #				views for Area									#
 #################################################################
 class AreaListView(generic.ListView):
-	template_name = 'newModel/list.html'
+	template_name = 'newModel/area_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -311,7 +311,7 @@ class AreaDetail(DetailView):
 #				views for Interpretation						#   #to be done
 #################################################################
 class InterpretationListView(generic.ListView):
-	template_name = 'newModel/list.html'
+	template_name = 'newModel/interpretation_list.html'
 	context_object_name = 'object_list'
 
 	def get_queryset(self):

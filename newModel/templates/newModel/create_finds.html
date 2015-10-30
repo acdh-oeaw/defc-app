@@ -16,6 +16,17 @@
 {% endblock content %}
 {% block scripts %}
 
+<script type="text/javascript">
+$(document).ready(function(){
+    var fetchedParameter = "{{ request.GET.area }}";
+   $("#id_area option").each(function() {
+        if($(this).text() == fetchedParameter) {
+            $(this).attr('selected', 'selected');
+        }                        
+    });
+});
+</script>
+
 <script type="text/javascript">  
 // script managing the visibility of Fields-Fields
 $(document).ready(function(){

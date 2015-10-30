@@ -31,21 +31,21 @@
       </th>
 		<tr>
 			<th>Name</th>
-			<th>alias name</th>
-			<th>alternative name</th>
-			<th>province</th>
-			<th>topography</th>
-      <th>areas</th>
+			<th>Alternative name</th>
+			<th>Region</th>
+			<th>Province</th>
+			<th>Topography</th>
+      		<th>Areas</th>
 			<th>view | modify | delete</th>
 	</thead>
 	<tfoot>
 		<tr>
 			<th>Name</th>
-			<th>alias name</th>
-			<th>alternative name</th>
-			<th>province</th>
-			<th>topography</th>
-      <th>areas</th>
+			<th>Alternative name</th>
+			<th>Region</th>
+			<th>Province</th>
+			<th>Topography</th>
+      		<th>Areas</th>
 			<th>view | modify | delete</th>
 			<!-- <th>description</th> -->
 		</tr>
@@ -57,10 +57,10 @@
 	 		{{ object.name }}
 	 	</td>
 	 	<td>
-	 		{{ object.alias_name }} 
+	 		{{ object.alternative_name }} 
 	 	</td>
 	 	<td>
-	 		{{ object.alternative_name }} 
+	 		{{ object.province.region }} 
 	 	</td>
 	 	<td>
 	 		{{ object.province.name }} 
@@ -73,12 +73,13 @@
       {% for x in object.area_set.all %}
         <a href="/newModel/area/detail/{{ x.id }}">
           {{ x.area_type }}
-        </a>
-       <br />
+        </a><br/>
       {% endfor %}
+      <a class ="btn btn-primary btn-sm"  href="/newModel/area/create/?site={{ object }}">
+              	create another area </a>
       {% else %}
       <a class ="btn btn-primary btn-sm"  href="/newModel/area/create/?site={{ object }}">
-        create an<br /> area
+        create a new area
       </a>
       {% endif %}
     </td>
