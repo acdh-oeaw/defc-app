@@ -1,31 +1,82 @@
-{% extends "defcdb/base.html" %} 
+{% extends "defcdb/listBase.html" %} 
 
-{% block Titel %}See Finds{% endblock %}
+{% block Titel %}See All Objects{% endblock %}
 
 {% block content %}
 
-<h1>Finds</h1> 
-{% if object_list %}
-<table class="table table-striped">
 
-	    {% for object in  object_list %}
+{% if object_list %}
+<h1> All Objects: 
+	{% with object_list|first as first_doc %}
+		{{ first_doc.get_classname|title }} 
+	{% endwith %}
+</h1>
+<hr />
+<table class="table table-striped">
+	<thead>
+				<th colspan="7" class="ts-pager form-horizontal">
+        <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+        <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+        <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+        <select class="pagesize input-mini" title="Select page size">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="1000">all</option>
+        </select>
+        <select class="pagenum input-mini" title="Select page number"></select>
+      </th>
+		<tr>
+			<th>Area</th>
+			<th>Area type</th>
+			<th>Research Event</th>
+			<th>Finds type</th>
+			<th>Interpretation</th>
+			<th>view | modify | delete</th>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>Area</th>
+			<th>Area type</th>
+			<th>Research Event</th>
+			<th>Finds type</th>
+			<th>Interpretation</th>
+			<th>view | modify | delete</th>
+		</tr>
+	</tfoot>
+	<tbody>
+	 {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{{ object }} 
+	 		<a href="/defcdb/area/detail/{{ object.area.id }}"> {{ object.area.site }} </a> 
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/defcdb/finds/detail/{{ object.id_finds }}"> See Details </a>
+	 		{{ object.area.area_type }}
 	 	</td>
 	 	<td>
-	 		<a class ="btn btn-primary" href="/defcdb/finds/update/{{ object.id_finds }}"> Edit </a> 
-	 	</td>	
+	 		{{ object.research_event }} 
+	 	</td>
 	 	<td>
-	 		<a class ="btn btn-danger btn-sm" href="/defcdb/finds/delete/{{ object.id_finds }}"> Delete </a> 
+	 		{{ object.finds_type }} 
+	 	</td>
+	 	<td>
+	 		{% for y in object.interpretation_set.all %}
+	 		<a href="/defcdb/interpretation/detail/{{ y.id }}">{{ y }}</a> <br/>
+	 		{% endfor %}
+	 	</td>
+	 	<td>
+	 		<a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+	 		<a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
+	 		<a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
 	 	</td>
 	 </tr>	
     {% endfor %}
+	</tbody>
 </table>
 {% else %}
-<p> There is no  <i>object_lists</i></p>
+<p> There is no <i>object_list</i></p>
 {% endif %} 
 {% endblock content %}

@@ -87,7 +87,7 @@ class ResearchEventDetail(DetailView):
 #				views for Period								#
 #################################################################
 class PeriodListView(generic.ListView):
-	template_name = 'defcdb/list.html'
+	template_name = 'defcdb/period_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class.
@@ -132,7 +132,7 @@ class PeriodDetail(DetailView):
 		current_object = self.object
 		context['datedby_list'] = current_object.dated_by.all()
 		context['datingmethod_list'] = current_object.dating_method.all()
-		context['reference_list'] = current_object.reference.all()
+		#context['reference_list'] = current_object.reference.all()
 		return context
 
 
@@ -140,7 +140,7 @@ class PeriodDetail(DetailView):
 #				views for Finds									#
 #################################################################
 class FindsListView(generic.ListView):
-	template_name = 'defcdb/list.html'
+	template_name = 'defcdb/finds_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -255,7 +255,7 @@ class SiteDetail(DetailView):
 		context = super(SiteDetail, self).get_context_data(**kwargs)
 		current_site = self.object
 		context['areas_list'] = Area.objects.filter(site = current_site.id)
-		context['reference_list'] = current_site.reference_site.all()
+		#context['reference_list'] = current_site.reference_site.all()
 		return context
 
 		
@@ -263,7 +263,7 @@ class SiteDetail(DetailView):
 #				views for Area									#
 #################################################################
 class AreaListView(generic.ListView):
-	template_name = 'defcdb/list.html'
+	template_name = 'defcdb/area_list.html'
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -333,7 +333,7 @@ class AreaDetail(DetailView):
 #				views for Interpretation						#   #to be done
 #################################################################
 class InterpretationListView(generic.ListView):
-	template_name = 'defcdb/list.html'
+	template_name = 'defcdb/interpretation_list.html'
 	context_object_name = 'object_list'
 
 	def get_queryset(self):

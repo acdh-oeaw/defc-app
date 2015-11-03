@@ -11,6 +11,17 @@
 {% endblock content %}
 {% block scripts %}
 
+<script type="text/javascript">
+$(document).ready(function(){
+    var fetchedParameter = "{{ request.GET.site }}";
+   $("#id_site option").each(function() {
+        if($(this).text() == fetchedParameter) {
+            $(this).attr('selected', 'selected');
+        }                        
+    });
+});
+</script>
+
 
 <script type="text/javascript">
 $(document).ready(function(){

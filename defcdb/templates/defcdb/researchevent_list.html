@@ -6,12 +6,11 @@
 
 
 {% if object_list %}
-<h1> All Objects:  
-	{% with object_list|first as first_doc %}
-	{{ first_doc.get_classname|title }} 
-	{% endwith %}
-
-</h1>  
+<h1> All Objects: Research Event
+	<!-- {% with object_list|first as first_doc %}
+		{{ first_doc.get_classname|title }} 
+	{% endwith %} -->
+</h1>
 <hr />
 <table class="table table-striped">
 	<thead>
@@ -31,40 +30,37 @@
         <select class="pagenum input-mini" title="Select page number"></select>
       </th>
 		<tr>
-			<th>research type</th>
+			<th>Name</th>
 			<th>Institution</th>
-			<th>year of activity:start year</th>
-			<th>year of activity:end year</th>
-			<th>project name</th>
-			<th>project id</th>
-			<th>projects leader</th>
-			<th>special analysis</th>
+			<th>Starting year</th>
+			<th>Ending year</th>
+			<th>Project name</th>
+      		<th>Finds</th>
 			<th>view | modify | delete</th>
 	</thead>
 	<tfoot>
 		<tr>
-			<th>research type</th>
+			<th>Name</th>
 			<th>Institution</th>
-			<th>year of activity:start year</th>
-			<th>year of activity:end year</th>
-			<th>project name</th>
-			<th>project id</th>
-			<th>projects leader</th>
-			<th>special analysis</th>
+			<th>Starting year</th>
+			<th>Ending year</th>
+			<th>Project name</th>
+      		<th>Finds</th>
 			<th>view | modify | delete</th>
-			<!-- <th>description</th> -->
 		</tr>
 	</tfoot>
 	<tbody>
 	 {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{% for x in researchtype_list %}
-	 		<li>{{ x.name }}</li>
+	 		{% for x in object.research_type.all %}
+	 		{{ x.name }} <br/>
 	 		{% endfor %}
 	 	</td>
 	 	<td>
-	 		{{ object.institution }} 
+	 		{% for x in object.institution.all %}
+	 		{{ x.name }} <br/>
+	 		{% endfor %} 
 	 	</td>
 	 	<td>
 	 		{{ object.year_of_activity_start_year }} 
@@ -76,26 +72,10 @@
 	 		{{ object.project_name }} 
 	 	</td>
 	 	<td>
-	 		{{ object.project_id }} 
+	 		{% for y in object.finds_set.all %}
+	 		<a href="/defcdb/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+	 		{% endfor %}
 	 	</td>
-	 	<td>
-	 		{{ object.project_leader }} 
-	 	</td>
-	 	<td>
-	 		{{ object.special_analysis }} 
-	 	</td>
-      <!-- {% if object.area_set.all %}
-      {% for x in object.area_set.all %}
-        <a href="/defcdb/area/detail/{{ x.id }}">
-          {{ x.area_type }}
-        </a>
-       <br />
-      {% endfor %}
-      {% else %}
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/area/create/?areaName={{ object.name }}">
-        create an<br /> area
-      </a>
-      {% endif %} -->
 	 	<td>
 	 		<a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
 	 		<a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
