@@ -427,6 +427,10 @@ class Period(TrackChanges):
 
 
 class Site(TrackChanges):
+	EXACT_LOCATION_CHOICES = (
+		("yes", "yes"), 
+		("no", "no"),
+		)
 	name = models.CharField(max_length=350, blank=True, null=True,
 		help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
 	alias_name = models.CharField(max_length=350, blank=True, null=True,
@@ -441,14 +445,16 @@ class Site(TrackChanges):
 		help_text="Description of surface shape and features.") #optional?
 	geographical_coordinate_reference_system = models.ForeignKey(DC_site_geographicalreferencesystem, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
-	gps_data_n = models.CharField(max_length=50, blank=True, null=True,
-		help_text="North value of coordinate.")
-	gps_data_e = models.CharField(max_length=50, blank=True,
-		null=True, help_text="East value of coordinate.")#optional?
-	gps_data_z = models.CharField(max_length=50, blank=True, null=True, 
-		help_text="Z value of coordinate (elevation).")#optional?
-	coordinate_source = models.CharField(max_length=100, blank=True, 
-		null=True,
+	latitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
+	longitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
+	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "yes")
+	# gps_data_n = models.CharField(max_length=50, blank=True, null=True,
+	# 	help_text="North value of coordinate.")
+	# gps_data_e = models.CharField(max_length=50, blank=True,
+	# 	null=True, help_text="East value of coordinate.")#optional?
+	# gps_data_z = models.CharField(max_length=50, blank=True, null=True, 
+	# 	help_text="Z value of coordinate (elevation).")#optional?
+	coordinate_source = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Source providing information about the global position of site.")#optional?
 	number_of_activity_periods = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Number of times past activity was recorded at the site.")
@@ -488,8 +494,10 @@ class Area(TrackChanges):
 		help_text="The identifier of the area´s stratigraphical unit")
 	geographical_reference = models.CharField(max_length=100, blank=True,
 		null=True, help_text="Locates the Area in the Site")
-	period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+	# period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
+	# 	help_text="PLEASE PROVIDE SOME HELPTEX")
+	period = models.ForeignKey(Period, blank = True, null =True, 
+		help_text="Period defined by the archaeologist")
 	c14_calibrated = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
  		null=True, choices = YESNO, help_text="Date is a calibrated date.")
 	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
@@ -623,8 +631,10 @@ class Finds(TrackChanges):
 	lithics_technology = models.ManyToManyField(DC_finds_lithics_technology,
 		blank=True, help_text="Which technology was used to produce the debitage or tools.")
 # Pottery
-	pottery_form = models.ManyToManyField(DC_finds_pottery_form,
-		blank=True, help_text="Form of pottery.")  #it appears as 'shape' in definitions doc but i kept 'form'
+	# pottery_form = models.ManyToManyField(DC_finds_pottery_form,
+	# 	blank=True, help_text="Form of pottery.")  #it appears as 'shape' in definitions doc but i kept 'form'
+	pottery_form = models.ForeignKey(DC_finds_pottery_form,
+	 	blank=True, null = True, help_text="Form of pottery.")
 	pottery_detail = models.ManyToManyField(DC_finds_pottery_detail,
 		blank=True, help_text="Pottery type.")
 	pottery_decoration = models.ManyToManyField(DC_finds_pottery_decoration,

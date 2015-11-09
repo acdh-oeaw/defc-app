@@ -14,7 +14,7 @@
 <hr />
 <table class="table table-striped">
 	<thead>
-				<th colspan="7" class="ts-pager form-horizontal">
+				<th colspan="8" class="ts-pager form-horizontal">
         <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
         <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
         <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
@@ -34,6 +34,8 @@
 			<th>Area type</th>
 			<th>Research Event</th>
 			<th>Finds type</th>
+			<th>Pottery form</th>
+			<th>Small finds category</th>
 			<th>Interpretation</th>
 			<th>view | modify | delete</th>
 	</thead>
@@ -43,6 +45,8 @@
 			<th>Area type</th>
 			<th>Research Event</th>
 			<th>Finds type</th>
+			<th>Pottery form</th>
+			<th>Small finds category</th>
 			<th>Interpretation</th>
 			<th>view | modify | delete</th>
 		</tr>
@@ -61,6 +65,12 @@
 	 	</td>
 	 	<td>
 	 		{{ object.finds_type }} 
+	 	</td>
+	 	<td>
+	 		{{ object.pottery_form }} 
+	 	</td>
+	 	<td>
+	 		{{ object.small_finds_category }} 
 	 	</td>
 	 	<td>
 	 		{% for y in object.interpretation_set.all %}
