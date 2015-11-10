@@ -352,8 +352,8 @@ class DC_period_datedby(GenericMethods):
 
 
 class Reference(TrackChanges):
-	reference_type = models.ForeignKey(DC_reference_type, blank=True,
-		null=True, help_text = "The type of the resource.")
+	# reference_type = models.ForeignKey(DC_reference_type, blank=True,
+	# 	null=True, help_text = "The type of the resource.")
 	title = models.CharField(max_length=100, blank=True, null=True,
 		help_text="The title of the ressource.")
 	creator = models.CharField(max_length=100, blank=True, null=True,
