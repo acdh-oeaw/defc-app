@@ -4,6 +4,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, render_to_response, redirect
 from django.forms import Textarea
+from bib.models import Book
 from audit_log.models import AuthStampedModel
 
 class TrackChanges(AuthStampedModel):
@@ -387,7 +388,7 @@ class ResearchEvent(TrackChanges):
 	special_analysis = models.ManyToManyField(DC_researchevent_special_analysis,
 		blank=True,
 		help_text="Analyses other than excavation that were carried out to research the site.")
-	reference = models.ManyToManyField(Reference, blank=True,
+	reference = models.ManyToManyField(Book, blank=True,
 		help_text="Bibliographic and/or web-based reference(s) to publications and other relevant resources related to the project.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on the research history not covered in any other field.")
@@ -458,7 +459,7 @@ class Site(TrackChanges):
 		help_text="Source providing information about the global position of site.")#optional?
 	number_of_activity_periods = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Number of times past activity was recorded at the site.")
-	# reference_site = models.ManyToManyField(Reference, blank=True,
+	# reference_site = models.ManyToManyField(Book, blank=True,
 	# 	help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on the site not covered in any other field.")
@@ -502,7 +503,7 @@ class Area(TrackChanges):
  		null=True, choices = YESNO, help_text="Date is a calibrated date.")
 	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
 	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
-	period_reference = models.ManyToManyField(Reference, blank=True,
+	period_reference = models.ManyToManyField(Book, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the period.",
 		related_name="referenceForPeriod")
 	period_comment = models.TextField(blank=True, null=True,
@@ -570,7 +571,7 @@ class Area(TrackChanges):
 	#common fields
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
-	reference = models.ManyToManyField(Reference, blank=True,
+	reference = models.ManyToManyField(Book, blank=True,
 		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information not covered in any other field.")
@@ -646,7 +647,7 @@ class Finds(TrackChanges):
 		help_text="Material used for find.")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
 		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
-	reference = models.ManyToManyField(Reference, blank=True,
+	reference = models.ManyToManyField(Book, blank=True,
 		help_text="Relevant resources on the finds.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information not covered in any other field.")
@@ -674,7 +675,7 @@ class Interpretation(TrackChanges):
 		blank=True,	help_text="Types of production for which evidence was found.")
 	subsistence_type = models.ManyToManyField(DC_interpretation_subsistencetype,
 		blank=True, help_text="Types of livelihood for which evidence was found.")
-	reference = models.ManyToManyField(Reference, blank=True,
+	reference = models.ManyToManyField(Book, blank=True,
 		help_text="Bibliographic and web-based reference(s)to publications and other relevant resources on industry & subsistence of the site/phase of the site.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on subsistence and production not covered in any other field.")
