@@ -1,0 +1,149 @@
+{% extends "defcdb/base.html" %}
+{% block content %}
+<h1>Finds</h1>
+<table class="table table-striped">
+        <tr>
+                <td>Area</td>
+                <td>{% for area in area_list %}
+                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Research event</td>
+                <td>{{ object.research_event }}</td>
+        </tr>
+        <tr>
+                <td>Finds type</td>
+                <td>{{ object.finds_type }}</td>
+        </tr>
+        <tr>
+                <td>Small finds category</td>
+                <td>{{ object.small_finds_category }}</td>
+        </tr>
+        <tr>
+                <td>Small finds type</td>
+                <td>{% for find in smallfindstype_list %}
+                    {{ find }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Botany species</td>
+                <td>{% for species in botanyspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Animal remains species</td>
+                <td>{% for species in animalremainsspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Animal remains completeness</td>
+                <td>{{ object.animal_remains_completeness }}</td>
+        </tr>
+        <tr>
+                <td>Animal remains part</td>
+                <td>{% for part in animalremainspart_list %}
+                    {{ part }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics debitage</td>
+                <td>{% for lithics in lithicsdebitage_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics modified tools</td>
+                <td>{% for lithics in lithicsmodifiedtools_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics cores</td>
+                <td>{% for lithics in lithicscores_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Lithics technology</td>
+                <td>{% for lithics in lithicstechnology_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <!-- <tr>
+                <td>Pottery form</td>
+                <td>{% for form in potteryform_list %}
+                    {{ form }}<br/>
+                    {% endfor %}
+                </td>
+        </tr> -->
+        <tr>
+                <td>Pottery form</td>
+                <td>{{ object.pottery_form }}</td>
+        </tr>
+        <tr>
+                <td>Pottery detail</td>
+                <td>{% for detail in potterydetail_list %}
+                    {{ detail }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Pottery decoration</td>
+                <td>{% for decoration in potterydecoration_list %}
+                    {{ decoration }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Material</td>
+                <td>{% for material in material_list %}
+                    {{ material }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Confidence</td>
+                <td>{{ object.confidence }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretation_list %}
+                        <a href="/defcdb/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
+                        </a>
+                        {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+            </tr>
+</table>
+{% endblock content %}

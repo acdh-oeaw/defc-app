@@ -16,15 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from newModel import views
-#from webapp import views as oldviews
+
+from defcdb import views
 # a comment for the commit
 
-
+# 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^newModel/', include('newModel.urls', namespace="newModel")),
-	#url(r'^webapp/', include('webapp.urls', namespace="webapp")),
+	url(r'^defcdb/', include('defcdb.urls', namespace="defcdb")),
 	url(r'^login/$', views.user_login, name='user_login'),
 	url(r'^accounts/login/$', views.user_login, name='user_login'),
 	url(r'^logout/$', views.user_logout, name='user_logout'),

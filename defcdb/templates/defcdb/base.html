@@ -1,0 +1,172 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<<<<<<< HEAD:newModel/templates/newModel/base.html
+    <title>{% block Titel %} DEFC-App {% endblock %}</title>
+=======
+    <title>{% block Titel %} OREA - defcdb {% endblock %}</title>
+>>>>>>> hopefully_final_version:defcdb/templates/defcdb/base.html
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A little Application">
+    <meta name="author" content="ACDH">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--CSS Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+<!-- CSS jQuery UI -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+<!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+      {% block scriptHeader %}
+      {% endblock %}
+
+  </head>
+  <body  role="document">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation!</span>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+            <span class="icon-bar"/>
+          </button>
+<<<<<<< HEAD:newModel/templates/newModel/base.html
+          <a class="navbar-brand" href="{% url 'newModel:start' %}">DEFC-App</a>
+=======
+          <a class="navbar-brand" href="{% url 'defcdb:start' %}">OREA-defcdb</a>
+>>>>>>> hopefully_final_version:defcdb/templates/defcdb/base.html
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Site
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:site_list' %}">See Sites</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:site_create' %}">Create new Site</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Event
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:researchevent_list' %}">See all Research Events</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:researchevent_create' %}">Create new Research Event</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Period
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:period_list' %}">See all Periods</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:period_create' %}">Create new Period</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Area
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:area_list' %}">See all Areas</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:area_create' %}">Create new Area</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finds
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:finds_list' %}">See all Finds</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:finds_create' %}">Create new Find</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Interpretation
+                <span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'defcdb:interpretation_list' %}">See all Interpretations</a>
+                </li>
+                <li>
+                  <a href="{% url 'defcdb:interpretation_create' %}">Create new Interpretation</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li>
+              <a href="#">Link</a>
+            </li> -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LogIn/Logout<span class="caret"/>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'user_login' %}">Log In</a>
+                </li>
+                <li>
+                  <a href="{% url 'user_logout' %}">Log Out</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+  <div id="content" class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+    <div id="footer">
+      <div class="container">
+        <p>{% now "M. Y" %}</p>
+      </div>
+    </div>
+    <div/>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<!-- jQuery UI -->
+<!-- jQuery UI resizable multiple select fields -->
+    <script>
+      $(function() {
+      $('[multiple=multiple]').resizable();
+      });
+    </script>
+    <style>
+      .ui-resizable-se { bottom: 18px; right: 25px; }
+    </style>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        {% block scripts %}
+        {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "defcdb/listBase.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+
+{% if object_list %}
+<h1> All Objects: 
+	{% with object_list|first as first_doc %}
+		{{ first_doc.get_classname|title }} 
+	{% endwith %}
+</h1>
+<hr />
+<table class="table table-striped">
+	<thead>
+				<th colspan="8" class="ts-pager form-horizontal">
+        <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+        <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+        <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+        <select class="pagesize input-mini" title="Select page size">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="1000">all</option>
+        </select>
+        <select class="pagenum input-mini" title="Select page number"></select>
+      </th>
+		<tr>
+			<th>Site</th>
+			<th>Province</th>
+			<th>Area type</th>
+			<th>Finds type</th>
+			<th>view | modify | delete</th>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>Site</th>
+			<th>Province</th>
+			<th>Area type</th>
+			<th>Finds type</th>
+			<th>view | modify | delete</th>
+		</tr>
+	</tfoot>
+	<tbody>
+	 {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		<a href="/defcdb/site/detail/{{ object.site.id }}"> {{ object.site.name }} </a>
+	 	</td>
+	 	<td>
+	 		{{ object.site.province }} 
+	 	</td>
+	 	<td>
+	 		{{ object.area_type }} 
+	 	</td>
+	 	<!-- <td>
+	 		{% for y in object.finds_set.all %}
+	 		<a href="/defcdb/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+	 		{% endfor %}
+	 	</td> -->
+	 	<td>
+      {% if object.finds_set.all %}
+      {% for x in object.finds_set.all %}
+        	<a href="/defcdb/finds/detail/{{ x.id }}">
+          		{{ x.finds_type }}
+        	</a> 
+       <br />
+      {% endfor %}
+
+ <a class ="btn btn-primary btn-sm"  href="/defcdb/finds/create/?area={{ object }}">
+        create another find
+      </a>
+      {% else %}
+      <a class ="btn btn-primary btn-sm"  href="/defcdb/finds/create/?area={{ object }}">
+        create a new find
+      </a>
+      {% endif %}
+    </td>
+	 	<td>
+	 		<a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+	 		<a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
+	 		<a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+	 	</td>
+	 </tr>	
+    {% endfor %}
+	</tbody>
+</table>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+{% endblock content %}
