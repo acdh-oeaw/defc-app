@@ -1,6 +1,7 @@
 {% extends "defcdb/base.html" %} 
 {% block content %}
 
+<div class="container">
 <h1> Create new Area </h1>
 <form action="" method="post">{% csrf_token %}
     <table class="table table-striped">
@@ -93,4 +94,5 @@ $('#id_area_type').change(function(){
     $('#id_pottery_form').resizable();
 });
   </script>
+</div>
 {% endblock scripts %}

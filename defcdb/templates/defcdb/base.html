@@ -2,14 +2,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block Titel %} OREA - defcdb {% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A little Application">
-    <meta name="author" content="ACDH">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--CSS Bootstrap -->
+<head>
+  <meta charset="utf-8">
+  <title>{% block Titel %} DEFC App home {% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A web-based archaeological data management system">
+  <meta name="author" content="ACDH">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--CSS Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 <!-- CSS jQuery UI -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
@@ -19,41 +20,96 @@
       {% block scriptHeader %}
       {% endblock %}
 
-  </head>
-  <body  role="document">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation!</span>
-            <span class="icon-bar"/>
-            <span class="icon-bar"/>
-            <span class="icon-bar"/>
-          </button>
+</head>
+  <style>
+  body {
+    padding-top: 50px;
+  }
+  a.navlink:visited {
+    color: black;
 
-          <a class="navbar-brand" href="{% url 'defcdb:start' %}">OREA-defcdb</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Site
-                <span class="caret"/>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:site_list' %}">See Sites</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:site_create' %}">Create new Site</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research Event
-                <span class="caret"/>
-              </a>
+  }
+
+  .jumbotron {
+    background-color: #F8F8F8b; /* Green */
+    color: #333;
+    padding: 100px 25px;
+  }
+  .container-fluid {
+    padding: 60px 50px;/**/
+  }
+  .logo {
+    font-size: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .thumbnail img {
+    width: 140;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  .carousel-inner img {
+    width: 1200px; /* Set width to 100% */
+    height: 400px;
+    margin: auto;
+  }
+
+  .carousel-caption h3 {
+    color: #EFEFEF;
+  }
+  .carousel-caption p {
+    color: #EFEFEF;
+  }
+
+  @media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  </style>
+<body role="document">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation!</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#">DEFC-App</a>-->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">  <!--navbar-right-->
+        <li><a href="{% url 'defcdb:start' %}">ABOUT</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">SITE
+               <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'defcdb:site_list' %}">See all Sites</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:site_create' %}">Create new Site</a>
+              </li>
+          </ul>
+        </li>
+          <li class="dropdown">
+            <a href="#researchevent" class="dropdown-toggle" 
+            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            RESEARCH EVENT<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'defcdb:researchevent_list' %}">See all Research Events</a>
@@ -62,11 +118,11 @@
                   <a href="{% url 'defcdb:researchevent_create' %}">Create new Research Event</a>
                 </li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Period
-                <span class="caret"/>
-              </a>
+          </li>
+          <li class="dropdown">
+            <a href="#period" class="dropdown-toggle"
+              data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              PERIOD<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'defcdb:period_list' %}">See all Periods</a>
@@ -75,11 +131,10 @@
                   <a href="{% url 'defcdb:period_create' %}">Create new Period</a>
                 </li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Area
-                <span class="caret"/>
-              </a>
+          </li>
+          <li class="dropdown">
+            <a href="#area" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+            aria-haspopup="true" aria-expanded="false">AREA<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'defcdb:area_list' %}">See all Areas</a>
@@ -88,11 +143,10 @@
                   <a href="{% url 'defcdb:area_create' %}">Create new Area</a>
                 </li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Finds
-                <span class="caret"/>
-              </a>
+          </li>
+          <li class="dropdown">
+            <a href="#finds" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+            aria-haspopup="true" aria-expanded="false">FINDS<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'defcdb:finds_list' %}">See all Finds</a>
@@ -101,11 +155,9 @@
                   <a href="{% url 'defcdb:finds_create' %}">Create new Find</a>
                 </li>
               </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Interpretation
-                <span class="caret"/>
-              </a>
+          </li>
+          <li class="dropdown">
+            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INTERPRETATION<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'defcdb:interpretation_list' %}">See all Interpretations</a>
@@ -114,14 +166,15 @@
                   <a href="{% url 'defcdb:interpretation_create' %}">Create new Interpretation</a>
                 </li>
               </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
+          </li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
             <!-- <li>
               <a href="#">Link</a>
             </li> -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LogIn/Logout<span class="caret"/>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                 aria-haspopup="true" aria-expanded="false">LogIn/Logout<span class="caret"/></span>
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -133,20 +186,20 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    
-  <div id="content" class="container">
+    </div>
+  </div>
+</nav>
+
+<div id="content" class="container">
     {% block content %}
     {% endblock %}
   </div>
-    <div id="footer">
+    <div class="container" id="footer">
       <div class="container">
         <p>{% now "M. Y" %}</p>
       </div>
     </div>
-    <div/>
+    </div>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->

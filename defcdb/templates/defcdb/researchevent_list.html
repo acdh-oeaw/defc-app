@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+<div class="container">
 {% if object_list %}
 <h1> All Objects: Research Event
 	<!-- {% with object_list|first as first_doc %}
@@ -89,4 +89,5 @@
 {% else %}
 <p> There is no <i>object_list</i></p>
 {% endif %} 
+</div>
 {% endblock content %}

@@ -1,5 +1,7 @@
 {% extends "defcdb/base.html" %} 
 {% block content %}
+
+<div class="container">
 <h1> Edit Area </h1>
     <form action="" method="post">{% csrf_token %}
     <table class="table table-striped">
@@ -7,5 +9,5 @@
     </table>
         <input class="btn btn-primary" type="submit" value="Save" />
 </form>
-
+</div>
 {% endblock content %}

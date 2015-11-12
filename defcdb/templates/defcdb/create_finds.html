@@ -6,6 +6,7 @@
 
 {% block content %}
 
+<div class="container">
 <h1> Create new Find </h1>
 <form action="" method="post">{% csrf_token %}
     <table class="table table-striped">
@@ -125,6 +126,7 @@ $('#id_finds_type').change(function(){
     }
     );
 </script>
+</div>
 
 {% endblock scripts %}
 
