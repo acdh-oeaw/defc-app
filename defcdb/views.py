@@ -13,7 +13,23 @@ from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
-from .forms import form_user_login
+from .forms import form_user_login, AreaForm
+
+
+
+#####################################################
+#				tries with forms 					#
+#####################################################
+
+def create_area(request):
+	if request.method == "POST":
+		form = AreaForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return render(request, 'defcdb/create_area_play.html', {'form':form})
+	else:
+		form = AreaForm()
+		return render(request, 'defcdb/create_area_play.html', {'form':form})
 
 
 #################################################################

@@ -15,6 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+import autocomplete_light.shortcuts as al
+al.autodiscover()
 from django.contrib import admin
 
 from defcdb import views
@@ -23,9 +25,10 @@ from defcdb import views
 # 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^defcdb/', include('defcdb.urls', namespace="defcdb")),
-	url(r'^login/$', views.user_login, name='user_login'),
-	url(r'^accounts/login/$', views.user_login, name='user_login'),
-	url(r'^logout/$', views.user_logout, name='user_logout'),
+    url(r'^defcdb/', include('defcdb.urls', namespace="defcdb")),
+    url(r'^login/$', views.user_login, name='user_login'),
+    url(r'^accounts/login/$', views.user_login, name='user_login'),
+    url(r'^logout/$', views.user_logout, name='user_logout'),
+    url(r'^autocomplete/', include('autocomplete_light.urls')),
 ]
 
