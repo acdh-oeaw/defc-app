@@ -519,7 +519,7 @@ class Area(TrackChanges):
 		blank=True, help_text="Method used for fabricating the buildings.")
 	settlement_special_features = models.ManyToManyField(DC_area_specialfeatures,  #it was FK field
 		blank=True, help_text="Parts of the settlement other than buildings.")
-	settlement_human_remains = models.CharField(max_length=3,blank=True,
+	settlement_human_remains = models.CharField(max_length=3, blank=True,
 		null=True, choices=HUMANREMAINS,
 		help_text = "Any human remains found in this Settlement?")
 #cave&rockshelters fields
@@ -571,8 +571,7 @@ class Area(TrackChanges):
 	#common fields
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
-	reference = models.ManyToManyField(Book, blank=True,
-		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+	reference = models.ManyToManyField(Book, blank=True, help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information not covered in any other field.")
 

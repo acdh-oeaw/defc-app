@@ -2,7 +2,7 @@
 
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect,HttpResponseForbidden
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -14,22 +14,13 @@ from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import form_user_login, AreaForm
+from bib.models import Book
 
 
 
 #####################################################
 #				tries with forms 					#
 #####################################################
-
-def create_area(request):
-	if request.method == "POST":
-		form = AreaForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return render(request, 'defcdb/create_area_play.html', {'form':form})
-	else:
-		form = AreaForm()
-		return render(request, 'defcdb/create_area_play.html', {'form':form})
 
 
 #################################################################
@@ -271,25 +262,49 @@ class AreaListView(generic.ListView):
 	def get_queryset(self):
 		return Area.objects.order_by('area_type')
 
+@login_required
+def update_area(request, pk):
+	instance = get_object_or_404(Area, id=pk)
+	if request.method == "POST":
+		form = AreaForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+		#return redirect('../../area/detail/'+pk)
+		return redirect('defcdb:area_detail', pk=pk)
+	else:
+		form = AreaForm(instance=instance)
+		return render(request, 'defcdb/edit_area.html', {'form':form})
 
-class AreaCreate(CreateView):
-	model = Area
-	fields = "__all__"
-	template_name = "defcdb/create_area.html"
+@login_required
+def create_area(request):
+	if request.method == "POST":
+		form = AreaForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:area_list')
+	else:
+		form = AreaForm()
+		return render(request, 'defcdb/create_area.html', {'form':form})
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(AreaCreate, self).dispatch(*args, **kwargs)
+
+# class AreaCreate(CreateView):
+# 	model = Area
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_area.html"
+
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(AreaCreate, self).dispatch(*args, **kwargs)
 
 
-class AreaUpdate(UpdateView):
-	model = Area
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
+# class AreaUpdate(UpdateView):
+# 	model = Area
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(AreaUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(AreaUpdate, self).dispatch(*args, **kwargs)
 
 
 class AreaDelete(DeleteView):
@@ -307,6 +322,7 @@ class AreaDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
+		context['period_reference_list'] = current_area.period_reference.all()
 		context['interpretations_list'] = Interpretation.objects.filter(area=current_area.id)
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
 		#context['period_list'] = Period.objects.filter(area=current_area.id)

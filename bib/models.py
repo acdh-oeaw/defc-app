@@ -8,7 +8,7 @@ class Book(models.Model):
 	title = models.CharField(max_length=100, blank=True, null=True)
 	publication_title = models.CharField(max_length=100, blank=True, null=True)
 	short_title = models.CharField(max_length=100, blank=True, null=True)
-	publication_year = models.CharField(max_length=100, blank=True, null=True)
+	publication_year = models.IntegerField(blank=True, null=True)
 	place = models.CharField(max_length=100, blank=True, null=True)
 	isbn = models.CharField(max_length=100, blank=True, null=True)
 	issn = models.CharField(max_length=100, blank=True, null=True)

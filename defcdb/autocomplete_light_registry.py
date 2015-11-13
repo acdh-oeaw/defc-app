@@ -3,7 +3,7 @@ import autocomplete_light
 from bib.models import Book
 
 class BookAutocomplete(autocomplete_light.AutocompleteModelBase):
-	search_fields=['title']
+	search_fields=['title', 'author']
 	model = Book
 	attrs = {
         'data-autocomplete-minimum-characters': 2,
