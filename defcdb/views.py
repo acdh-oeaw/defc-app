@@ -15,7 +15,7 @@ from rest_framework import viewsets
 
 from .models import DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import form_user_login, AreaForm
-from .serializers import DC_countrySerializer, DC_regionSerializer,DC_provinceSerializer
+from .serializers import DC_countrySerializer, DC_regionSerializer, DC_provinceSerializer
 from bib.models import Book
 
 
