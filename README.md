@@ -7,14 +7,13 @@ Creating virtual environment
 
 1. cd to Redmine\defc-webapp
 2. Create an virtual enviroment with the command: 
-$ conda create --name python27 python=2.7
+$ conda create --name freename python=3.4
 3. To activate this environment, use
->activate python27
+>activate freename
 
-Installing crispy forms
-1. pip install django-crispy-forms==1.3.0
+Installing packages
+1. pip install -r requirements.txt
 
-  *ToDo change README.me according to use the requirements.txt
 
 
 Running django app:
