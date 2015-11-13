@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
 from django.utils.translation import ugettext_lazy as _
 from .autocomplete_light_registry import BookAutocomplete
-from .models import Area
+from .models import Area, ResearchEvent, Site, Period, Finds, Interpretation
 from bib.models import Book
 
 
@@ -40,6 +40,46 @@ class AreaForm(autocomplete_light.ModelForm):
 		"grave_number_of_male_sex", "grave_number_of_not_specified_sex",
 		"grave_manipulations_of_graves", "reference", "description",
 		"comment"]
+
+
+class ResearcheventForm(autocomplete_light.ModelForm):
+	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+		required = False,
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
+		)
+
+	class Meta:
+		model = ResearchEvent
+		fields = '__all__'
+
+
+class FindsForm(autocomplete_light.ModelForm):
+	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+		required = False,
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+
+	class Meta:
+		model = Finds
+		fields = '__all__'
+
+class SiteForm(autocomplete_light.ModelForm):
+	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+		required = False,
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+
+	class Meta:
+		model = Site
+		fields = '__all__'
+
+class InterpretationForm(autocomplete_light.ModelForm):
+	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+		required = False,
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+
+	class Meta:
+		model = Interpretation
+		fields = '__all__'
+
 
 class form_user_login(forms.Form):
 	username = forms.CharField(label='Username',widget=forms.TextInput)

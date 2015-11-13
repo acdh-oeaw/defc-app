@@ -121,11 +121,11 @@
                 <td>{{ object.confidence }}</td>
         </tr>
         <tr>
-                <td>Reference</td>
-                <td>{% for ref in reference_list %}
-                    {{ ref }}<br/>
-                    {% endfor %}
-                </td>
+            <td>Reference</td>
+            <td>{% for ref in reference_list %}
+                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                {% endfor %}
+            </td>
         </tr>
         <tr>
                 <td>Comment</td>

@@ -13,7 +13,7 @@ from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 
 from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
-from .forms import form_user_login, AreaForm
+from .forms import form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 from bib.models import Book
 
 
@@ -36,25 +36,47 @@ class ResearchEventListView(generic.ListView):
 	def get_queryset(self):
 		return ResearchEvent.objects.order_by('id')
 
+@login_required
+def update_researchevent(request, pk):
+	instance = get_object_or_404(ResearchEvent, id=pk)
+	if request.method == "POST":
+		form = ResearcheventForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:researchevent_detail', pk=pk)
+	else:
+		form = ResearcheventForm(instance=instance)
+		return render(request, 'defcdb/update_form.html', {'form': form})
 
-class ResearchEventCreate(CreateView):
-	model = ResearchEvent
-	fields = "__all__"
-	template_name = "defcdb/create_researchevent.html"
+@login_required
+def create_researchevent(request):
+	if request.method == "POST":
+		form = ResearcheventForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:researchevent_list')
+	else:
+		form = ResearcheventForm()
+		return render(request, 'defcdb/create_researchevent.html', {'form':form})
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(ResearchEventCreate, self).dispatch(*args, **kwargs)
+# class ResearchEventCreate(CreateView):
+# 	model = ResearchEvent
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_researchevent.html"
+
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(ResearchEventCreate, self).dispatch(*args, **kwargs)
 
 
-class ResearchEventUpdate(UpdateView):
-	model = ResearchEvent
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
+# class ResearchEventUpdate(UpdateView):
+# 	model = ResearchEvent
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(ResearchEventUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(ResearchEventUpdate, self).dispatch(*args, **kwargs)
 
 
 class ResearchEventDelete(DeleteView):
@@ -142,27 +164,51 @@ class FindsListView(generic.ListView):
 	#for each class. 
 
 	def get_queryset(self):
-		return Finds.objects.order_by('finds_type') 
+		return Finds.objects.order_by('finds_type')
+
+@login_required
+def update_finds(request, pk):
+	instance = get_object_or_404(Finds, id=pk)
+	if request.method == "POST":
+		form = FindsForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:finds_detail', pk=pk)
+	else:
+		form = FindsForm(instance=instance)
+		return render(request, 'defcdb/update_form.html', {'form':form})
+
+@login_required
+def create_finds(request):
+	if request.method == "POST":
+		form = FindsForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:finds_list')
+	else:
+		form = FindsForm()
+		return render(request, 'defcdb/create_finds.html', {'form':form})
 
 
-class FindsCreate(CreateView):
-	model = Finds
-	fields = "__all__"
-	template_name = "defcdb/create_finds.html"
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(FindsCreate, self).dispatch(*args, **kwargs)
+# class FindsCreate(CreateView):
+# 	model = Finds
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_finds.html"
+
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(FindsCreate, self).dispatch(*args, **kwargs)
 
 
-class FindsUpdate(UpdateView):
-	model = Finds
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
+# class FindsUpdate(UpdateView):
+# 	model = Finds
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(FindsUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(FindsUpdate, self).dispatch(*args, **kwargs)
 
 
 class FindsDelete(DeleteView):
@@ -209,25 +255,49 @@ class SiteListView(generic.ListView):
 	def get_queryset(self):
 		return Site.objects.order_by('name')
 
+@login_required
+def update_site(request, pk):
+	instance = get_object_or_404(Site, id=pk)
+	if request.method == "POST":
+		form = SiteForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+		#return redirect('../../area/detail/'+pk)
+		return redirect('defcdb:site_detail', pk=pk)
+	else:
+		form = SiteForm(instance=instance)
+		return render(request, 'defcdb/update_form.html', {'form':form})
 
-class SiteCreate(CreateView):
-	model = Site
-	fields = "__all__"
-	template_name = "defcdb/create_site.html"
+@login_required
+def create_site(request):
+	if request.method == "POST":
+		form = SiteForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:site_list')
+	else:
+		form = SiteForm()
+		return render(request, 'defcdb/create_site.html', {'form':form})
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(SiteCreate, self).dispatch(*args, **kwargs)
+
+# class SiteCreate(CreateView):
+# 	model = Site
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_site.html"
+
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(SiteCreate, self).dispatch(*args, **kwargs)
 
 
-class SiteUpdate(UpdateView):
-	model = Site
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
+# class SiteUpdate(UpdateView):
+# 	model = Site
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(SiteUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(SiteUpdate, self).dispatch(*args, **kwargs)
 
 
 class SiteDelete(DeleteView):
@@ -246,7 +316,7 @@ class SiteDetail(DetailView):
 		context = super(SiteDetail, self).get_context_data(**kwargs)
 		current_site = self.object
 		context['areas_list'] = Area.objects.filter(site = current_site.id)
-		#context['reference_list'] = current_site.reference_site.all()
+		context['reference_list'] = current_site.reference.all()
 		return context
 
 		
@@ -355,25 +425,49 @@ class InterpretationListView(generic.ListView):
 	def get_queryset(self):
 		#return Interpretation.objects.order_by('finds')
 		return Interpretation.objects.all()
+
+@login_required
+def update_interpretation(request, pk):
+	instance = get_object_or_404(Interpretation, id=pk)
+	if request.method == "POST":
+		form = InterpretationForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+		#return redirect('../../area/detail/'+pk)
+		return redirect('defcdb:interpretation_detail', pk=pk)
+	else:
+		form = InterpretationForm(instance=instance)
+		return render(request, 'defcdb/update_form.html', {'form':form})
+
+@login_required
+def create_interpretation(request):
+	if request.method == "POST":
+		form = InterpretationForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return redirect('defcdb:interpretation_list')
+	else:
+		form = InterpretationForm()
+		return render(request, 'defcdb/create_interpretation.html', {'form':form})
 		
-class InterpretationCreate(CreateView):
-	model = Interpretation
-	fields = "__all__"
-	template_name = "defcdb/create_interpretation.html"
+# class InterpretationCreate(CreateView):
+# 	model = Interpretation
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_interpretation.html"
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(InterpretationCreate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(InterpretationCreate, self).dispatch(*args, **kwargs)
 
 
-class InterpretationUpdate(UpdateView):
-	model = Interpretation
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
+# class InterpretationUpdate(UpdateView):
+# 	model = Interpretation
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(InterpretationUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(InterpretationUpdate, self).dispatch(*args, **kwargs)
 
 class InterpretationDelete(DeleteView):
 	model = Interpretation

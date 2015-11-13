@@ -459,8 +459,8 @@ class Site(TrackChanges):
 		help_text="Source providing information about the global position of site.")#optional?
 	number_of_activity_periods = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Number of times past activity was recorded at the site.")
-	# reference_site = models.ManyToManyField(Book, blank=True,
-	# 	help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
+	reference = models.ManyToManyField(Book, blank=True,
+	 	help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information on the site not covered in any other field.")
 
