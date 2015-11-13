@@ -17,14 +17,21 @@ Including another URLconf
 from django.conf.urls import include, url
 import autocomplete_light.shortcuts as al
 al.autodiscover()
+from rest_framework import routers
 from django.contrib import admin
 
 from defcdb import views
-# a comment for the commit
+router = routers.DefaultRouter()
+router.register(r'dc_country', views.DC_countryViewSet)
+router.register(r'dc_region', views.DC_regionViewSet)
+router.register(r'dc_province', views.DC_provinceViewSet)
 
-# 
+
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^defcdb/', include('defcdb.urls', namespace="defcdb")),
     url(r'^login/$', views.user_login, name='user_login'),
     url(r'^accounts/login/$', views.user_login, name='user_login'),

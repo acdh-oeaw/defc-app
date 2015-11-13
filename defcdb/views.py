@@ -11,16 +11,30 @@ from django.views import generic
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
+from rest_framework import viewsets
 
-from .models import Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
+from .models import DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
+from .serializers import DC_countrySerializer, DC_regionSerializer, DC_provinceSerializer
 from bib.models import Book
 
 
+#####################################################
+#				RESTApi views						#
+#####################################################
+class DC_countryViewSet(viewsets.ModelViewSet):
+	queryset = DC_country.objects.all()
+	serializer_class = DC_countrySerializer
 
-#####################################################
-#				tries with forms 					#
-#####################################################
+
+class DC_regionViewSet(viewsets.ModelViewSet):
+	queryset = DC_region.objects.all()
+	serializer_class = DC_regionSerializer
+
+
+class DC_provinceViewSet(viewsets.ModelViewSet):
+	queryset = DC_province.objects.all()
+	serializer_class = DC_provinceSerializer
 
 
 #################################################################
