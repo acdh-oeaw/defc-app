@@ -207,7 +207,10 @@
 <!-- jQuery UI resizable multiple select fields -->
     <script>
       $(function() {
-      $('[multiple=multiple]').resizable();
+      $('[multiple=multiple]')
+      .not(document.getElementById( "id_period_reference" ))
+      .not(document.getElementById( "id_reference" ))
+      .resizable();
       });
     </script>
     <style>
