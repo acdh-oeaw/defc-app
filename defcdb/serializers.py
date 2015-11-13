@@ -5,9 +5,18 @@ from .models import *
 class DC_countrySerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = DC_country
-		#fields = "__all__"
+
 
 class DC_regionSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = DC_region
-		#fields = "__all__"
+
+
+class DC_regionSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = DC_region
+
+
+class DC_provinceSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = DC_province

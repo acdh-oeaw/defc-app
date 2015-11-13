@@ -24,6 +24,7 @@ from defcdb import views
 router = routers.DefaultRouter()
 router.register(r'dc_country', views.DC_countryViewSet)
 router.register(r'dc_region', views.DC_regionViewSet)
+router.register(r'dc_province', views.DC_provinceViewSet)
 
 
 
