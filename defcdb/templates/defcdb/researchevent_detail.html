@@ -1,22 +1,27 @@
-{% extends "defcdb/base.html" %}
+{% extends "defcdb/base_detail.html" %}
+
+{% block scriptHeader %}
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
 <h1>Research Event</h1>
+
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+
 <table class="table table-striped">
         <tr>
             <td>Research type</td>
             <td>{% for type in researchtype_list %}
                 {{ type }}</br>
-                {% endfor %}
-            </td>
+                {% endfor %}</td>
         </tr>
         <tr>
             <td>Institution</td>
             <td>{% for institution in institution_list %}
                 {{ institution }}</br>
-                {% endfor %}
-            </td>
+                {% endfor %}</td>
         </tr>
         <tr>
             <td>Year of activity: start year</td>
@@ -30,8 +35,7 @@
             <td>Special analysis</td>
             <td>{% for analysis in specialanalysis_list %}
                 {{ analysis }}</br>
-                {% endfor %}
-            </td>
+                {% endfor %}</td>
         </tr>
         <!-- <tr>
                 <td>Reference</td>
@@ -44,12 +48,11 @@
             <td>Reference</td>
             <td>{% for ref in reference_list %}
                 <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                {% endfor %}
-            </td>
+                {% endfor %}</td>
         </tr>
         <tr>
             <td>Comment</td>
-            <td><style type="text/css">{{ object.comment }} </style></td>
+            <td>{{ object.comment }}</td>
         </tr>
         <tr>
             <td>

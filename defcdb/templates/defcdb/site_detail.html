@@ -1,18 +1,44 @@
-{% extends "defcdb/base.html" %}
+{% extends "defcdb/base_detail.html" %}
 
 {% block scriptHeader %}
 <!--leafletjs -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    
     <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
         <style>
             #map { height: 500px; }
         </style>
+
 {% endblock %}
+<!-- {% block scripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("td:empty").parent().hide();
+    $("#01").click(function(){
+        // var testv = $("td:odd").text();
+        //  // alert(testv);
+        // if (testv == ""
+            var emptytd = $("td:empty");
+            // alert(emptytd.length);
+            $(emptytd).parent().toggle("slow");
+        /*testv.hide();*/
+  //       if ($('td:even:empty',this){ 
+  //       $(this).hide();
+  //       } else {
+  //       $(this).show();
+  // }
+});
+    });
+
+</script>
+{% endblock scripts %} -->
 
 {% block content %}
 
 <div class="container">
 <h1>Site</h1>
+
+<button id="01" class="btn btn-default">Show all fields</button><br/>
 
 <div class="row">
     <div class="col-md-7">
@@ -88,9 +114,8 @@
         <tr>
                 <td>Reference</td>
                 <td>{% for ref in reference_list %}
-                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                    {% endfor %}
-                </td>
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }},{{ ref.title }},{{ ref.publication_year }},{{ ref.place }}</a><br/>
+                    {% endfor %}</td>
         </tr>
         <tr>
                 <td>Comment</td>
@@ -100,8 +125,7 @@
                 <td>Areas</td>
                 <td>{% for area in areas_list %}
                         <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/></a>
-                        {% endfor %}
-                </td>
+                        {% endfor %}</td>
         </tr>
         <tr>
                 <td>
@@ -136,5 +160,21 @@
     .openPopup();
 
 </script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("button").click(function(){
+        $("tr").hide;
+  //       if ($('td:even:empty',this){ 
+  //       $(this).hide();
+  //       } else {
+  //       $(this).show();
+  // }
+});
+    });
+
+</script>
+
+
 </div>
 {% endblock content %}
+

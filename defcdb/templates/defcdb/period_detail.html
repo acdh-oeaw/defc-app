@@ -1,8 +1,9 @@
-{% extends "defcdb/base.html" %}
+{% extends "defcdb/base_detail.html" %}
 {% block content %}
 
 <div class="container">
 <h1>Period</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
 <table class="table table-striped">
         <tr>
                 <td>Period name</td>
@@ -28,16 +29,13 @@
                 <td>Dating method</td>
                 <td>{% for method in datingmethod_list %}
                     {{ method }}</br>
-                    {% endfor %}
-                </td>
+                    {% endfor %}</td>
         </tr>
          <tr>
                 <td>Dated by</td>
-                <td>
-                    {% for date in datedby_list %}
+                <td>{% for date in datedby_list %}
                     {{ date }} </br>
-                    {% endfor %}
-                </td>
+                    {% endfor %}</td>
         </tr>
         <!-- <tr>
                 <td>Reference</td>

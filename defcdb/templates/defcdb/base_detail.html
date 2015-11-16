@@ -1,0 +1,24 @@
+{% extends "defcdb/base.html" %}
+
+{% block scripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("td:empty").parent().hide();
+    $("#01").click(function(){
+        // var testv = $("td:odd").text();
+        //  // alert(testv);
+        // if (testv == ""
+            var emptytd = $("td:empty");
+            // alert(emptytd.length);
+            $(emptytd).parent().toggle("slow");
+        /*testv.hide();*/
+  //       if ($('td:even:empty',this){ 
+  //       $(this).hide();
+  //       } else {
+  //       $(this).show();
+  // }
+});
+    });
+
+</script>
+{% endblock scripts %}
