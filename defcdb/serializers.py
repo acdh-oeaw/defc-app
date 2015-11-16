@@ -12,9 +12,9 @@ class DC_regionSerializer(serializers.HyperlinkedModelSerializer):
 		model = DC_region
 
 
-class DC_regionSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = DC_region
+# class DC_regionSerializer(serializers.HyperlinkedModelSerializer):
+# 	class Meta:
+# 		model = DC_region
 
 
 class DC_provinceSerializer(serializers.HyperlinkedModelSerializer):
@@ -231,4 +231,37 @@ class DC_period_datedbySerializer(serializers.HyperlinkedModelSerializer):
 		model = DC_period_datedby
 
 
+class ReferenceSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Reference
+
+
+class ResearchEventSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = ResearchEvent
+
+
+class PeriodSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Period
+
+
+class SiteSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Period
+
+
+class AreaSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Period
+
+
+class FindsSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Period
+
+
+class InterpretationSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Period
 
