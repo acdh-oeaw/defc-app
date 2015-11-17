@@ -306,7 +306,7 @@ def update_researchevent(request, pk):
 		return redirect('defcdb:researchevent_detail', pk=pk)
 	else:
 		form = ResearcheventForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form': form})
+		return render(request, 'defcdb/update_form.html', {'form': form, 'classname':"research event"})
 
 @login_required
 def create_researchevent(request):
@@ -436,7 +436,7 @@ def update_finds(request, pk):
 		return redirect('defcdb:finds_detail', pk=pk)
 	else:
 		form = FindsForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form':form})
+		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"finds"})
 
 @login_required
 def create_finds(request):
@@ -526,7 +526,7 @@ def update_site(request, pk):
 		return redirect('defcdb:site_detail', pk=pk)
 	else:
 		form = SiteForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form':form})
+		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"site"})
 
 @login_required
 def create_site(request):
@@ -603,7 +603,7 @@ def update_area(request, pk):
 		return redirect('defcdb:area_detail', pk=pk)
 	else:
 		form = AreaForm(instance=instance)
-		return render(request, 'defcdb/edit_area.html', {'form':form})
+		return render(request, 'defcdb/edit_area.html', {'form':form })
 
 @login_required
 def create_area(request):
@@ -697,7 +697,7 @@ def update_interpretation(request, pk):
 		return redirect('defcdb:interpretation_detail', pk=pk)
 	else:
 		form = InterpretationForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form':form})
+		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"interpretation"})
 
 @login_required
 def create_interpretation(request):

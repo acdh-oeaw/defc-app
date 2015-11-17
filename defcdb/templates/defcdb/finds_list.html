@@ -12,6 +12,7 @@
 	{% endwith %}
 </h1>
 <hr />
+<div class="panel panel-default">
 <table class="table table-striped">
 	<thead>
 				<th colspan="8" class="ts-pager form-horizontal">
@@ -63,8 +64,17 @@
 	 	<td>
 	 		{{ object.research_event }} 
 	 	</td>
+	 	<!-- <td>
+	 		{{ object.finds_type }} ({{ object.pottery_form }}) 
+	 	</td> -->
 	 	<td>
-	 		{{ object.finds_type }} 
+	 		{% if object.finds_type == "pottery" %}
+	 			{{ object.finds_type }} ({{ object.pottery_form }})
+	 		{% elif object.finds_type == "small finds" % }
+	 			{{ object.finds_type }} ({{ object.small_finds_category }})
+	 		{% else %}
+	 			{{ object.finds_type }}
+	 		{% endif %}
 	 	</td>
 	 	<td>
 	 		{{ object.pottery_form }} 
@@ -89,5 +99,6 @@
 {% else %}
 <p> There is no <i>object_list</i></p>
 {% endif %}
+</div>
 </div>
 {% endblock content %}

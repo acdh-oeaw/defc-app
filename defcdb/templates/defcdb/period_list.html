@@ -12,6 +12,7 @@
 	{% endwith %}
 </h1>
 <hr />
+<div class="panel panel-default">
 <table class="table table-striped">
 	<thead>
 				<th colspan="8" class="ts-pager form-horizontal">
@@ -31,8 +32,10 @@
       </th>
 		<tr>
 			<th>System</th>
-			<th>Start date</th>
-			<th>End date</th>
+			<th>Start date 1 BC</th>
+			<th>Start date 2 BC</th>
+			<th>End date 1 BC</th>
+			<th>End date 2 BC</th>
 			<th>Dating method</th>
 			<th>Dated by</th>
 			<th>view | modify | delete</th>
@@ -40,8 +43,10 @@
 	<tfoot>
 		<tr>
 			<th>System</th>
-			<th>Start date</th>
-			<th>End date</th>
+			<th>Start date 1 BC</th>
+			<th>Start date 2 BC</th>
+			<th>End date 1 BC</th>
+			<th>End date 2 BC</th>
 			<th>Dating method</th>
 			<th>Dated by</th>
 			<th>view | modify | delete</th>
@@ -57,7 +62,13 @@
 	 		{{ object.system.start_date1_BC }} 
 	 	</td>
 	 	<td>
+	 		{{ object.system.start_date2_BC }} 
+	 	</td>
+	 	<td>
 	 		{{ object.system.end_date1_BC }} 
+	 	</td>
+	 	<td>
+	 		{{ object.system.end_date2_BC }} 
 	 	</td>
 	 	<td>
 	 		{% for x in object.dating_method.all %}
@@ -86,5 +97,6 @@
 {% else %}
 <p> There is no <i>object_list</i></p>
 {% endif %} 
+</div>
 </div>
 {% endblock content %}

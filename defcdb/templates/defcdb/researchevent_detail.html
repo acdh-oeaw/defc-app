@@ -34,6 +34,18 @@
             <td>{{ object.year_of_activity_end_year }}</td>
         </tr>
         <tr>
+            <td>Project name</td>
+            <td>{{ object.project_name }}</td>
+        </tr>
+        <tr>
+            <td>Project id</td>
+            <td>{{ object.project_id }}</td>
+        </tr>
+        <tr>
+            <td>Project leader</td>
+            <td>{{ object.project_leader }}</td>
+        </tr>
+        <tr>
             <td>Special analysis</td>
             <td>{% for analysis in specialanalysis_list %}
                 {{ analysis }}</br>
