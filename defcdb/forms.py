@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 from django import forms
 import autocomplete_light
+autocomplete_light.autodiscover()
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
 from django.utils.translation import ugettext_lazy as _
-from .autocomplete_light_registry import BookAutocomplete
-from .models import Area, ResearchEvent, Site, Period, Finds, Interpretation
+from .autocomplete_light_registry import BookAutocomplete, InstitutionAutocomplete, ProjectleaderAutocomplete
+from .models import Area, ResearchEvent, Site, Period, Finds, Interpretation, DC_researchevent_institution
 from bib.models import Book
-
 
 class AreaForm(autocomplete_light.ModelForm):
 	period_reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
@@ -43,15 +43,14 @@ class AreaForm(autocomplete_light.ModelForm):
 
 
 class ResearcheventForm(autocomplete_light.ModelForm):
-	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
-		)
-
+	# project_leader = autocomplete_light.ChoiceField(ResearchEvent.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.TextWidget('ProjectleaderAutocomplete'))
+#if user inputs a not yet existing Project Leader, the whole object won´t be stored in the db
+	
 	class Meta:
 		model = ResearchEvent
 		fields = '__all__'
-
 
 class FindsForm(autocomplete_light.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
