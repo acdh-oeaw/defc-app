@@ -27,21 +27,28 @@ class InstitutionAutocomplete(autocomplete_light.AutocompleteModelBase):
 autocomplete_light.register(DC_researchevent_institution, InstitutionAutocomplete)
 
 
-class ProjectleaderAutocomplete(autocomplete_light.AutocompleteListBase):
-	allProjectleaders = ResearchEvent.objects.values_list('project_leader')
-	choices = [str(name) for name in allProjectleaders]
-	choices = [re.sub('\(','',name) for name in choices]
-	choices = [re.sub('\)','',name) for name in choices]
-	choices = [re.sub("\'",'',name) for name in choices]
+#class ProjectleaderAutocomplete(autocomplete_light.AutocompleteListBase):
+#	allProjectleaders = ResearchEvent.objects.values_list('project_leader')
+#	choices = [str(name) for name in allProjectleaders]
+#	choices = [re.sub('\(','',name) for name in choices]
+#	choices = [re.sub('\)','',name) for name in choices]
+#	choices = [re.sub("\'",'',name) for name in choices]
 	
-autocomplete_light.register(ProjectleaderAutocomplete)
+class ProjectleaderAutocomplete(autocomplete_light.AutocompleteModelBase):
+
+	search_fields=['project_leader',]
+	attrs = {'placeholder': 'Start typing to get suggestions',}
+	def choice_label(self, choice):
+ 		return '{0.project_leader}'.format(choice)
+ 		#return str(choice.project_leader)
+
+autocomplete_light.register(ResearchEvent,ProjectleaderAutocomplete)
 
 
 # class ProjectleaderAutocomplete(autocomplete_light.AutocompleteModelBase):
 # 	search_fields=['project_leader']
 # 	models = ResearchEvent
 # 	attrs = {
-# 		'data-autocomplete-minimum-characters': 2,
 #         'placeholder': 'Start typing to get suggestions',
 # 	}
 # 	def choice_label(self, choice):

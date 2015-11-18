@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
 import autocomplete_light
-autocomplete_light.autodiscover()
+#autocomplete_light.autodiscover()
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
@@ -43,9 +43,10 @@ class AreaForm(autocomplete_light.ModelForm):
 
 
 class ResearcheventForm(autocomplete_light.ModelForm):
+	project_leader = forms.CharField(required=False, widget=autocomplete_light.TextWidget('ResearchEventProjectleaderAutocomplete'))
 	# project_leader = autocomplete_light.ChoiceField(ResearchEvent.objects.all(),
 	# 	required = False,
-	# 	widget =autocomplete_light.TextWidget('ProjectleaderAutocomplete'))
+	# 	widget = autocomplete_light.TextWidget('ProjectleaderAutocomplete'))
 #if user inputs a not yet existing Project Leader, the whole object won´t be stored in the db
 	
 	class Meta:
