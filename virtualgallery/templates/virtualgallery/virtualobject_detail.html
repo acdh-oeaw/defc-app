@@ -3,23 +3,23 @@
 {% block Titel %}See Detail{% endblock %}
 {% block scriptHeader %}
 <!--STYLESHEET-->
-<link type="text/css" rel="stylesheet" href="{% static 'stylesheet/3dhop.css' %}"/>  
+<link type="text/css" rel="stylesheet" href="{% static 'virtualgallery/stylesheet/3dhop.css' %}"/>  
 <!--SPIDERGL-->
-<script type="text/javascript" src="{% static 'js/spidergl.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/spidergl.js' %}"></script>
 <!--JQUERY-->
-<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/jquery.js' %}"></script>
 <!--PRESENTER-->
-<script type="text/javascript" src="{% static 'js/presenter.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/presenter.js' %}"></script>
 <!--3D MODELS LOADING AND RENDERING-->
-<script type="text/javascript" src="{% static 'js/nexus.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/ply.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/nexus.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/ply.js' %}"></script>
 <!--TRACKBALLS-->
-<script type="text/javascript" src="{% static 'js/trackball_sphere.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/trackball_turntable.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/trackball_turntable_pan.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/trackball_pantilt.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/trackball_sphere.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/trackball_turntable.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/trackball_turntable_pan.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/trackball_pantilt.js' %}"></script>
 <!--UTILITY-->
-<script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+<script type="text/javascript" src="{% static 'virtualgallery/js/init.js' %}"></script>
 {% endblock scriptHeader %}
 {% block content %}
 
@@ -29,13 +29,13 @@
 
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
  <div id="toolbar">
-  <img id="home"     title="Home"                  src="{% static 'skins/dark/home.png' %}"   /><br/>
-  <img id="zoomin"   title="Zoom In"               src="{% static 'skins/dark/zoomin.png' %}" /><br/>
-  <img id="zoomout"  title="Zoom Out"              src="{% static 'skins/dark/zoomout.png' %}"/><br/>
-  <img id="light_on" title="Disable Light Control" src="{% static 'skins/dark/light_on.png' %}" style="position:absolute; visibility:hidden;"/>
-  <img id="light"    title="Enable Light Control"  src="{% static 'skins/dark/light.png' %}"/><br/>
-  <img id="full_on"  title="Exit Full Screen"      src="{% static 'skins/dark/full_on.png' %}" style="position:absolute; visibility:hidden;"/>
-  <img id="full"     title="Full Screen"           src="{% static 'skins/dark/full.png' %}"   />
+  <img id="home"     title="Home"                  src="{% static 'virtualgallery/skins/dark/home.png' %}"   /><br/>
+  <img id="zoomin"   title="Zoom In"               src="{% static 'virtualgallery/skins/dark/zoomin.png' %}" /><br/>
+  <img id="zoomout"  title="Zoom Out"              src="{% static 'virtualgallery/skins/dark/zoomout.png' %}"/><br/>
+  <img id="light_on" title="Disable Light Control" src="{% static 'virtualgallery/skins/dark/light_on.png' %}" style="position:absolute; visibility:hidden;"/>
+  <img id="light"    title="Enable Light Control"  src="{% static 'virtualgallery/skins/dark/light.png' %}"/><br/>
+  <img id="full_on"  title="Exit Full Screen"      src="{% static 'virtualgallery/skins/dark/full_on.png' %}" style="position:absolute; visibility:hidden;"/>
+  <img id="full"     title="Full Screen"           src="{% static 'virtualgallery/skins/dark/full.png' %}"   />
  </div>
  <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
  	<canvas id="draw-canvas"/>
@@ -47,7 +47,7 @@
 	var presenter = null;
 	function setup3dhop() { 
 		presenter = new Presenter("draw-canvas");
-		//var meshUrl = "{% static 'models/multires/gargo.nxs' %}";
+		//var meshUrl = "{% static 'virtualgallery/models/multires/gargo.nxs' %}";
 		var meshUrl = "http://{{ request.get_host }}/media/{{ object.upload_file }}";
 		presenter.setScene({
 			meshes: {
