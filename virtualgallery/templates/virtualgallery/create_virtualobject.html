@@ -1,0 +1,15 @@
+{% extends "defcdb/base.html" %} 
+
+
+{% block content %}
+<div class="container">
+<h1> Upload a new Virtual Object </h1>
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table class="table table-striped">
+        {{ form.as_table }}
+    </table>
+    <input class="btn btn-primary" type="submit" value="Create" />
+</form>
+{% endblock content %}
+
+

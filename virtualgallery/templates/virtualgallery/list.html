@@ -1,0 +1,26 @@
+{% extends "defcdb/listBase.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+<h1>Virtual Gallery Overview</h1>
+<ul>
+	{% if object_list %}
+	{% for object in object_list %}
+	<li> {{ object.name }}<br/>
+		{% if object.upload_preview %}
+		<a href="./detail/{{ object.id }}">
+			<img src="http://{{ request.get_host }}/media/{{ object.upload_preview }}" style="width:50%;">
+		</a>
+		{% endif %}
+	</li>
+	{% endfor %}
+	{% endif %}
+</ul>
+
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}

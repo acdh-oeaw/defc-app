@@ -24,59 +24,47 @@
 
 </head>
   <style>
-  body {
-    padding-top: 50px;
-  }
-  a.navlink:visited {
-    color: black;
-
-  }
-  .jumbotron {
-    background-color: #F8F8F8b; /* Green */
-    color: #333;
-    padding: 100px 25px;
-  }
-  .container-fluid {
-    padding: 60px 50px;/**/
-  }
-  .logo {
-    font-size: 200px;
-  }
-  @media screen and (max-width: 768px) {
+    body {padding-top: 50px;}
+    a.navlink:visited {color: black;}
+    .jumbotron {
+      background-color: #F8F8F8b; /* Green */
+      color: #333;
+      padding: 100px 25px;
+    }
+    .container-fluid {padding: 60px 50px;/**/}
+    .logo {font-size: 200px;}
+    @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
       margin: 25px 0;
+      }
     }
-  }
-  .thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-  }
-
-  .thumbnail img {
-    width: 140;
-    height: 100px;
-    margin-bottom: 10px;
-  }
-  .carousel-inner img {
-    width: 1200px; /* Set width to 100% */
-    height: 400px;
-    margin: auto;
-  }
-
-  .carousel-caption h3 {
-    color: #EFEFEF;
-  }
-  .carousel-caption p {
-    color: #EFEFEF;
-  }
-
-  @media (max-width: 600px) {
-    .carousel-caption {
+    .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+    }
+    .thumbnail img {
+      width: 140;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .carousel-inner img {
+      width: 1200px; /* Set width to 100% */
+      height: 400px;
+      margin: auto;
+    }
+    .carousel-caption h3 {
+      color: #EFEFEF;
+    }
+    .carousel-caption p {
+      color: #EFEFEF;
+    }
+    @media (max-width: 600px) {
+      .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
     }
-  }
   </style>
 <body role="document">
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -170,6 +158,17 @@
           </li>
           <li >
            <a href="http://{{ request.get_host }}/api">API</a>
+          </li>
+           <li class="dropdown">
+            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VIRTUAL GALLERY<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'virtualgallery:list' %}">Browse Gallery</a>
+                </li>
+                <li>
+                  <a href="{% url 'virtualgallery:upload_file' %}">upload new object</a>
+                </li>
+              </ul>
           </li>
       </ul>
         <ul class="nav navbar-nav navbar-right">
