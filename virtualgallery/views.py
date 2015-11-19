@@ -6,6 +6,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 
 from .models import VirtualObject
@@ -41,4 +42,13 @@ class VirtualObjectDetail(DetailView):
 		current_object = self.object
 		return context
 
+
+class VirtualObjectDelete(DeleteView):
+	model = VirtualObject
+	template_name = 'defcdb/confirm_delete.html'
+	success_url = reverse_lazy('virtualgallery:list')
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(VirtualObjectDelete, self).dispatch(*args, **kwargs)
 

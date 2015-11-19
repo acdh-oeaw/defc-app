@@ -8,4 +8,5 @@ urlpatterns = [
 url(r'^$', views.VirtualObjectListView.as_view(), name='list'),
 url(r'^upload/$', views.upload_file, name='upload_file'),
 url(r'^detail/(?P<pk>[0-9]+)$', views.VirtualObjectDetail.as_view(), name='detail'),
+url(r'^delete/(?P<pk>[0-9]+)$', views.VirtualObjectDelete.as_view(), name='delete'),
 ]
