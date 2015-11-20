@@ -6,14 +6,20 @@
 
 <div class="container">
 {% if object_list %}
-<h1> All Objects:  
-	{% with object_list|first as first_doc %}
-		{{ first_doc.get_classname|title }} 
-	{% endwith %}
-</h1>
-<hr />
 
+<hr />
 <div class="panel panel-default">
+	<div class="panel-heading">
+		<h1> All Objects: 
+		{% with object_list|first as first_doc %}
+			{{ first_doc.get_classname|title }} 
+		{% endwith %}
+		</h1>
+		<div>
+			<a class ="btn btn-primary btn-lg"  href="{% url 'defcdb:site_create' %}">create new Site</a>
+		</div>
+	</div>
+	<div class="panel-body">
 <table class="table table-striped">
 	<thead>
 				<th colspan="7" class="ts-pager form-horizontal">
@@ -94,6 +100,7 @@
     {% endfor %}
 	</tbody>
 </table>
+</div>
 </div>
 </div>
 {% else %}

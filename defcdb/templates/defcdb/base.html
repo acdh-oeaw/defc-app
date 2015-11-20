@@ -83,90 +83,54 @@
         <li><a href="{% url 'defcdb:start' %}">ABOUT</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-               role="button" aria-haspopup="true" aria-expanded="false">SITE
+               role="button" aria-haspopup="true" aria-expanded="false">Data Curation
                <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
               <li>
-                <a href="{% url 'defcdb:site_list' %}">See all Sites</a>
+                <a href="{% url 'defcdb:site_list' %}">Sites</a>
               </li>
               <li>
-                <a href="{% url 'defcdb:site_create' %}">Create new Site</a>
+                <a href="{% url 'defcdb:researchevent_list' %}">Research Events</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:period_list' %}">Periods</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:area_list' %}">Areas</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:finds_list' %}">Finds</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:interpretation_list' %}">Interpretations</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">georeferencing</li>
+              <li>
+                <a href="{% url 'geolocation:province_list' %}">GND-Provinces</a>
+              </li>
+              <li>
+                <a href="#">GND-Regions</a>
               </li>
           </ul>
         </li>
-          <li class="dropdown">
-            <a href="#researchevent" class="dropdown-toggle" 
-            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            RESEARCH EVENT<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:researchevent_list' %}">See all Research Events</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:researchevent_create' %}">Create new Research Event</a>
-                </li>
-              </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#period" class="dropdown-toggle"
-              data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              PERIOD<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:period_list' %}">See all Periods</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:period_create' %}">Create new Period</a>
-                </li>
-              </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#area" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-            aria-haspopup="true" aria-expanded="false">AREA<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:area_list' %}">See all Areas</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:area_create' %}">Create new Area</a>
-                </li>
-              </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#finds" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-            aria-haspopup="true" aria-expanded="false">FINDS<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:finds_list' %}">See all Finds</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:finds_create' %}">Create new Find</a>
-                </li>
-              </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INTERPRETATION<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'defcdb:interpretation_list' %}">See all Interpretations</a>
-                </li>
-                <li>
-                  <a href="{% url 'defcdb:interpretation_create' %}">Create new Interpretation</a>
-                </li>
-              </ul>
-          </li>
-          <li >
-           <a href="http://{{ request.get_host }}/api">API</a>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">Data Exploration
+               <span class="caret"></span>
+          </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'virtualgallery:list' %}">Browse 3D-Models</a>
+              </li>
+            </ul>
           </li>
            <li class="dropdown">
-            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VIRTUAL GALLERY<span class="caret"></span></a>
+            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Retrieval<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
-                  <a href="{% url 'virtualgallery:list' %}">Browse Gallery</a>
-                </li>
-                <li>
-                  <a href="{% url 'virtualgallery:upload_file' %}">upload new object</a>
+                  <a href="http://{{ request.get_host }}/api">API</a>
                 </li>
               </ul>
           </li>
@@ -211,6 +175,7 @@
       $('[multiple=multiple]')
       .not(document.getElementById( "id_period_reference" ))
       .not(document.getElementById( "id_reference" ))
+      .not(document.getElementById( "id_institution" ))
       .resizable();
       });
     </script>

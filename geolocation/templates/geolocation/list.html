@@ -10,14 +10,7 @@
 <hr />
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h1> All Objects: 
-		{% with object_list|first as first_doc %}
-			{{ first_doc.get_classname|title }} 
-		{% endwith %}
-		</h1>
-		<div>
-			<a class ="btn btn-primary btn-lg"  href="{% url 'defcdb:researchevent_create' %}">create new Research Event</a>
-		</div>
+		<h1> All Provinces</h1>
 	</div>
 	<div class="panel-body">
 <table class="table table-striped">
@@ -38,66 +31,43 @@
         <select class="pagenum input-mini" title="Select page number"></select>
       </th>
 		<tr>
-			<th>Name</th>
-			<th>Institution</th>
-			<th>Starting year</th>
-			<th>Ending year</th>
-			<th>Project name</th>
-      		<th>Finds</th>
-
-			<th>view | modify | delete</th>
+			<th>Name (original name)</th>
+			<th>Region (Country)</th>
+			<th>GeoNames ID</th>
+			<th>Coordinates (lat/long)</th>
+		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<th>Name</th>
-			<th>Institution</th>
-			<th>Starting year</th>
-			<th>Ending year</th>
-			<th>Project name</th>
-      		<th>Finds</th>
-			<th>view | modify | delete</th>
+			<th>Name (original name)</th>
+			<th>Region (Country)</th>
+			<th>GeoNames ID</th>
+			<th>Coordinates (lat/long)</th>
 		</tr>
 	</tfoot>
 	<tbody>
 	 {% for object in  object_list %}
 	 <tr>
 	 	<td>
-	 		{% for x in object.research_type.all %}
-	 		{{ x.name }} <br/>
-	 		{% endfor %}
+	 		<a href="{% url 'geolocation:edit_province' object.id %}">{{ object.name }} ({{ object.original_name }})</a> 
 	 	</td>
 	 	<td>
-	 		{% for x in object.institution.all %}
-	 		{{ x.name }} <br/>
-	 		{% endfor %} 
+	 		{{ object.region.name }} ({{ object.region.country.name }})
 	 	</td>
 	 	<td>
-	 		{{ object.year_of_activity_start_year }} 
+	 		<a href="http://www.geonames.org/{{ object.authorityfile_id }}">{{ object.authorityfile_id }}</a>
 	 	</td>
 	 	<td>
-	 		{{ object.year_of_activity_end_year }} 
-	 	</td>
-	 	<td>
-	 		{{ object.project_name }} 
-	 	</td>
-	 	<td>
-	 		{% for y in object.finds_set.all %}
-	 		<a href="/defcdb/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
-	 		{% endfor %}
-	 	</td>
-	 	<td>
-	 		<a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
-	 		<a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
-	 		<a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+	 		{{ object.lat }}/{{ object.lng }}
 	 	</td>
 	 </tr>	
     {% endfor %}
 	</tbody>
 </table>
+</div>
+</div>
+</div>
 {% else %}
 <p> There is no <i>object_list</i></p>
 {% endif %} 
-</div>
-</div>
-</div>
 {% endblock content %}

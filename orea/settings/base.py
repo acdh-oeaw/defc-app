@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'defcdb',
     'bib',
     'virtualgallery',
+	'geolocation',
 
 )
 

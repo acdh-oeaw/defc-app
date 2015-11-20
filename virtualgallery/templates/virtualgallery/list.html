@@ -6,9 +6,17 @@
 
 <div class="container">
 {% if object_list %}
-	<h1>Virtual Gallery Overview</h1>
-	<hr/>
-	<div class="panel panel-default">
+
+<hr />
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1> All 3D-Models
+    </h1>
+    <div>
+      <a class ="btn btn-primary btn-lg"  href="{% url 'virtualgallery:upload_file' %}">upload new Model</a>
+    </div>
+  </div>
+  <div class="panel-body">
 		<table class="table table-striped">
 			<thead>
 				<th colspan="6" class="ts-pager form-horizontal">
@@ -58,6 +66,7 @@
 		<p> There is no <i>object_list</i></p>
 		{% endif %}
 	</div>
+</div>
 </div>
 {% endblock %}
 

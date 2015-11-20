@@ -6,13 +6,20 @@
 
 <div class="container">
 {% if object_list %}
-<h1> All Objects: 
-	{% with object_list|first as first_doc %}
-		{{ first_doc.get_classname|title }} 
-	{% endwith %}
-</h1>
+
 <hr />
 <div class="panel panel-default">
+	<div class="panel-heading">
+		<h1> All Objects: 
+		{% with object_list|first as first_doc %}
+			{{ first_doc.get_classname|title }} 
+		{% endwith %}
+		</h1>
+		<div>
+			<a class ="btn btn-primary btn-lg"  href="{% url 'defcdb:area_create' %}">create new Area</a>
+		</div>
+	</div>
+	<div class="panel-body">
 <table class="table table-striped">
 	<thead>
 				<th colspan="8" class="ts-pager form-horizontal">
@@ -93,6 +100,7 @@
 {% else %}
 <p> There is no <i>object_list</i></p>
 {% endif %} 
+</div>
 </div>
 </div>
 {% endblock content %}

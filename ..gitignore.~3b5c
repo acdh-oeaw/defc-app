@@ -1,6 +1,0 @@
-.idea
-orea/settings_db.py
-orea/settings_db.pyc
-db.sqlite3
-*.pyc
-__pycache__

@@ -46,7 +46,9 @@ class DC_country(GenericMethods):
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the country")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
+		help_text="Identifier provided by www.GeoNames.org")
+	lat = models.FloatField(blank=True, null=True)
+	lng = models.FloatField(blank=True, null=True)
 
 
 class DC_region(GenericMethods):
@@ -55,7 +57,9 @@ class DC_region(GenericMethods):
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the region")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
+		help_text="Identifier provided by www.GeoNames.org")
+	lat = models.FloatField(blank=True, null=True)
+	lng = models.FloatField(blank=True, null=True)
 	country = models.ForeignKey(DC_country, blank=True, null=True,
 		help_text="The name of the country")
 
@@ -66,7 +70,9 @@ class DC_province(GenericMethods):
 	original_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The original or local name of the province")
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by some authority file")
+		help_text="Identifier provided by www.GeoNames.org")
+	lat = models.FloatField(blank=True, null=True)
+	lng = models.FloatField(blank=True, null=True)
 	region = models.ForeignKey(DC_region, blank=True,null=True,
 		help_text="The name of the country")
 
@@ -444,6 +450,8 @@ class Site(TrackChanges):
 		help_text="Free text summary account on the site.") #optional?
 	topography = models.CharField(max_length=400, blank=True, null=True,
 		help_text="Description of surface shape and features.") #optional?
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by www.GeoNames.org")
 	geographical_coordinate_reference_system = models.ForeignKey(DC_site_geographicalreferencesystem, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
 	latitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
