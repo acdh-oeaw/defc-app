@@ -6,7 +6,20 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 from .forms import  DC_provinceForm
-from defcdb.models import DC_province
+from defcdb.models import DC_province, DC_region, DC_country, Site
+
+#################################################################
+#		geovisualization										#
+#################################################################
+
+def showplaces(request):
+	context = {}
+	context["province_list"] = DC_province.objects.filter(site__province__isnull=False).exclude(lat__isnull=True)
+	#context["province_list"] = DC_province.objects.filter(site__province=DC_proince)
+	context["region_list"] = DC_region.objects.all()
+	context["country_list"] = DC_country.objects.all()
+	context["site_list"] = Site.objects.all()
+	return render(request, 'geolocation/showplaces.html', context)
 
 
 #################################################################
@@ -19,7 +32,6 @@ class DC_provinceListView(generic.ListView):
 
 	def get_queryset(self):
 		return DC_province.objects.all()
-
 
 
 #################################################################

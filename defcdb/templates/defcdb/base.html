@@ -17,8 +17,6 @@
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
       {% include 'autocomplete_light/static.html' %}
-  
-
       {% block scriptHeader %}
       {% endblock %}
 
@@ -121,6 +119,9 @@
                <span class="caret"></span>
           </a>
             <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'geolocation:showplaces' %}">Show Sites</a>
+              </li>
               <li>
                 <a href="{% url 'virtualgallery:list' %}">Browse 3D-Models</a>
               </li>
