@@ -1,0 +1,58 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Interpretation</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<table class="table table-striped">
+<ul>
+</ul>
+        <tr>
+                <td>Area</td>
+                <td>{% for area in areas_list %}
+                    {{ area }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td>{% for find in finds_list %}
+                    {{ find }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Production type</td>
+                <td>{% for type in productiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Subsistence type</td>
+                <td>{% for type in subsistencetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+            </tr>
+</table>
+</div>
+{% endblock content %}

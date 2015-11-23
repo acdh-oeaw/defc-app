@@ -1,0 +1,73 @@
+{% extends "defcdb/listBase.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+<div class="container">
+{% if object_list %}
+
+<hr />
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1> All Provinces</h1>
+	</div>
+	<div class="panel-body">
+<table class="table table-striped">
+	<thead>
+				<th colspan="7" class="ts-pager form-horizontal">
+        <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+        <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+        <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+        <select class="pagesize input-mini" title="Select page size">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="1000">all</option>
+        </select>
+        <select class="pagenum input-mini" title="Select page number"></select>
+      </th>
+		<tr>
+			<th>Name (original name)</th>
+			<th>Region (Country)</th>
+			<th>GeoNames ID</th>
+			<th>Coordinates (lat/long)</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>Name (original name)</th>
+			<th>Region (Country)</th>
+			<th>GeoNames ID</th>
+			<th>Coordinates (lat/long)</th>
+		</tr>
+	</tfoot>
+	<tbody>
+	 {% for object in  object_list %}
+	 <tr>
+	 	<td>
+	 		<a href="{% url 'geolocation:edit_province' object.id %}">{{ object.name }} ({{ object.original_name }})</a> 
+	 	</td>
+	 	<td>
+	 		{{ object.region.name }} ({{ object.region.country.name }})
+	 	</td>
+	 	<td>
+	 		<a href="http://www.geonames.org/{{ object.authorityfile_id }}">{{ object.authorityfile_id }}</a>
+	 	</td>
+	 	<td>
+	 		{{ object.lat }}/{{ object.lng }}
+	 	</td>
+	 </tr>	
+    {% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+{% endblock content %}

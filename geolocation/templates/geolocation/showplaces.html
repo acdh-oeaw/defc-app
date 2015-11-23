@@ -1,0 +1,45 @@
+{% extends "defcdb/listBase.html" %} 
+
+{% block Titel %}Show Provinces with Sites{% endblock %}
+
+{% block scriptHeader %}<!--leafletjs -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+        <style>
+            #map { height: 600px; }
+        </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div>
+		{% if province_list %}
+			<h1>Provinces containing Site(s)</h1>
+			{% else %}
+			<p> There is no <i>province_list</i></p>
+		{% endif %} 
+	</div>
+	<div id="parentMap"></div>
+</div>
+<script type="text/javascript">
+	$( document ).ready(function() {
+ 		$("#map").remove();
+ 		$("#parentMap").append("<div id='map'></div>");
+    	var map = L.map('map').setView([35.470335, 27.135675 ], 6);
+
+    	L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+    	attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
+    	maxZoom: 18
+		}).addTo(map);
+
+		{% for province in province_list %}
+		var varName = ["hansi","{{ province.id }}"].join()
+		var varName = L.marker([{{ province.lat }}, {{ province.lng }}]).addTo(map)
+			.bindPopup("<h1>{{ province.name }}</h1> <table class='table table-striped'> <tr> <td>Name: </td> <td>{{ province.name }}</td> </tr> <tr> <td>Region: </td> <td>{{ province.region }}</td> </tr> <tr> <td>Country: </td> <td>{{ province.region.country.name }}</td> </tr> <tr> <td>Sites</td> <td> {% for x in province.site_set.all %} <a href='/defcdb/site/detail/{{ x.id }}'> {{ x.name }} </a><br/> {% endfor %} </td> </table>");
+		{% endfor %}
+
+
+
+		});
+</script>
+{% endblock content %}

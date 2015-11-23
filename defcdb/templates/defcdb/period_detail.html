@@ -1,0 +1,63 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Period</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<table class="table table-striped">
+    <ul>
+    </ul>
+        <tr>
+                <td>Period name</td>
+                <td>{{ object.system.cs_name }}</td>
+        </tr>
+        <tr>
+                <td>Start date 1 BC</td>
+                <td>{{ object.system.start_date1_BC }}</td>
+        </tr>
+        <tr>
+                <td>Start date 2 BC</td>
+                <td>{{ object.system.start_date2_BC }}</td>
+        </tr>
+        <tr>
+                <td>End date 1 BC</td>
+                <td>{{ object.system.end_date1_BC }}</td>
+        </tr>
+        <tr>
+                <td>End date 2 BC</td>
+                <td>{{ object.system.end_date2_BC }}</td>
+        </tr>
+         <tr>
+                <td>Dating method</td>
+                <td>{% for method in datingmethod_list %}
+                    {{ method }}</br>
+                    {% endfor %}</td>
+        </tr>
+         <tr>
+                <td>Dated by</td>
+                <td>{% for date in datedby_list %}
+                    {{ date }} </br>
+                    {% endfor %}</td>
+        </tr>
+        <!-- <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    {{ ref }}<br/>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr> -->
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+            </tr>
+</table>
+</div>
+{% endblock content %}

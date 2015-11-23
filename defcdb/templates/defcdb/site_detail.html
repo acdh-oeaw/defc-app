@@ -1,0 +1,182 @@
+{% extends "defcdb/base_detail.html" %}
+
+{% block scriptHeader %}
+<!--leafletjs -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+        <style>
+            #map { height: 500px; }
+        </style>
+
+{% endblock %}
+<!-- {% block scripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("td:empty").parent().hide();
+    $("#01").click(function(){
+        // var testv = $("td:odd").text();
+        //  // alert(testv);
+        // if (testv == ""
+            var emptytd = $("td:empty");
+            // alert(emptytd.length);
+            $(emptytd).parent().toggle("slow");
+        /*testv.hide();*/
+  //       if ($('td:even:empty',this){ 
+  //       $(this).hide();
+  //       } else {
+  //       $(this).show();
+  // }
+});
+    });
+
+</script>
+{% endblock scripts %} -->
+
+{% block content %}
+
+<div class="container">
+<h1>Site</h1>
+
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+
+<div class="row">
+    <div class="col-md-7">
+        <table class="table table-striped">
+        <ul>
+        </ul>
+        <tr>
+                <td>Name of the site </td>
+                <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+                <td>Alias name</td>
+                <td>{{ object.alias_name }}</td>
+        </tr>
+        <tr>
+                <td>Alternative name</td>
+                <td>{{ object.alternative_name }}</td>
+        </tr>
+        <tr>
+                <td>Province</td>
+                <td>{{ object.province }}</td>
+        </tr>
+        <tr>
+                <td>Region</td>
+                <td>{{ object.province.region.name }}</td>
+        </tr>
+        <tr>
+                <td>Country</td>
+                <td>{{ object.province.region.country }}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Topography</td>
+                <td>{{ object.topography }}</td>
+        </tr>
+        <tr>
+                <td>Geographical Coordinate Reference System</td>
+                <td>{{ object.gps_data_coordinate_system }}</td>
+        </tr>
+        <!-- <tr>
+                <td>GPS data N</td>
+                <td>{{ object.gps_data_n }}</td>
+        </tr>
+        <tr>
+                <td>GPS data E</td>
+                <td>{{ object.gps_data_e }}</td>
+        </tr>
+        <tr>
+                <td>GPS data Z</td>
+                <td>{{ object.gps_data_z }}</td>
+        </tr> -->
+        <tr>
+                <td>Latitude</td>
+                <td>{{ object.latitude }}</td>
+        </tr>
+        <tr>
+                <td>Longitude</td>
+                <td>{{ object.longitude }}</td>
+        </tr>
+        <tr>
+                <td>Exact location</td>
+                <td>{{ object.exact_location }}</td>
+        </tr>
+        <tr>
+                <td>Coordinate source</td>
+                <td>{{ object.coordinate_source }}</td>
+        </tr>
+        <tr>
+                <td>Number of activity periods</td>
+                <td>{{ object.number_of_activity_periods }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }},{{ ref.title }},{{ ref.publication_year }},{{ ref.place }}</a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+         <tr>
+                <td>Areas</td>
+                <td>{% for area in areas_list %}
+                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/></a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>
+                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+                </td>
+                <td>
+                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+                </td>
+        </tr>
+        </table>
+    </div>
+    <div class="col-md-5">
+        <div id="map"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var gps1 = 37.73167;
+    var gps2 = 23.49111;
+    var siteName = "{{ object.name }}";
+    var map = L.map('map').setView([gps1, gps2], 6);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    //maxZoom: 5,
+    id: 'csae8092.npdoha49',
+    accessToken: 'pk.eyJ1IjoiY3NhZTgwOTIiLCJhIjoiY2lnM2FoZWpjMDJqZnY1a2gxdWl6a29kaiJ9.FQXlsKIu60WhiXLrfI59VA'
+    }).addTo(map);
+
+    L.marker([48.306390000000, 14.286110000000]).addTo(map)
+    .bindPopup(siteName)
+    .openPopup();
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("button").click(function(){
+        $("tr").hide;
+  //       if ($('td:even:empty',this){ 
+  //       $(this).hide();
+  //       } else {
+  //       $(this).show();
+  // }
+});
+    });
+
+</script>
+
+
+</div>
+{% endblock content %}
+
