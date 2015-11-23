@@ -5,7 +5,7 @@ import requests, re, json
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
-from .forms import  DC_provinceForm
+from .forms import  DC_provinceForm, SearchForm
 from defcdb.models import DC_province, DC_region, DC_country, Site
 
 #################################################################
@@ -19,7 +19,23 @@ def showplaces(request):
 	context["region_list"] = DC_region.objects.all()
 	context["country_list"] = DC_country.objects.all()
 	context["site_list"] = Site.objects.all()
+	context["form"] = SearchForm
 	return render(request, 'geolocation/showplaces.html', context)
+
+def showplacesInteractiv(request):
+	if request.method == "GET":
+		context = {}
+		parameter = request.GET.get('region')
+		if parameter is None:
+			context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
+			context["form"] = SearchForm
+			return render(request, 'geolocation/showplaces.html', context)
+		else:
+			context["parameter"] = parameter
+			context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameter)
+			context["form"] = SearchForm
+			return render(request, 'geolocation/showplaces.html', context)
+
 
 
 #################################################################
