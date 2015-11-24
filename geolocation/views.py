@@ -13,27 +13,23 @@ from defcdb.models import DC_province, DC_region, DC_country, Site
 #################################################################
 
 def showplaces(request):
-	context = {}
-	context["province_list"] = DC_province.objects.filter(site__province__isnull=False).exclude(lat__isnull=True)
-	#context["province_list"] = DC_province.objects.filter(site__province=DC_proince)
-	context["region_list"] = DC_region.objects.all()
-	context["country_list"] = DC_country.objects.all()
-	context["site_list"] = Site.objects.all()
-	context["form"] = SearchForm
-	return render(request, 'geolocation/showplaces.html', context)
-
-def showplacesInteractiv(request):
 	if request.method == "GET":
 		context = {}
-		parameter = request.GET.get('region')
-		if parameter is None:
+		parameterRegion = request.GET.get('region')
+		parameterPeriod = request.GET.get('period')
+		context["form"] = SearchForm
+		if parameterRegion is None:
 			context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
-			context["form"] = SearchForm
 			return render(request, 'geolocation/showplaces.html', context)
 		else:
-			context["parameter"] = parameter
-			context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameter)
-			context["form"] = SearchForm
+			context["parameterRegion"] = parameterRegion
+			if parameterPeriod =="":
+				context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameterRegion)
+			elif parameterRegion =="":
+				context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(site__area__period__system__period_name=parameterPeriod)
+			else:
+				regionFilterd = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameterRegion)
+				context["province_list"] = regionFilterd.filter(region__name=parameterRegion).filter(site__area__period__system__period_name=parameterPeriod)
 			return render(request, 'geolocation/showplaces.html', context)
 
 

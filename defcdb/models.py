@@ -7,6 +7,7 @@ from django.forms import Textarea
 from bib.models import Book
 from audit_log.models import AuthStampedModel
 
+
 class TrackChanges(AuthStampedModel):
 	"""
 	Abstract base class with a creation and modification date and time

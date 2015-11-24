@@ -25,9 +25,7 @@
         </tr>
         <tr>
                 <td>Period</td>
-                <td>{% for period in period_list %}
-                {{ period }}<br/>
-                {% endfor %}</td>
+                <td>{{ object.period.system.period_name }}</td>
         </tr>
         <tr>
                 <td>C14: calibrated</td>
@@ -41,7 +39,7 @@
                 <td>C14: absolute to</td>
                 <td>{{ object.c14_absolute_to }}</td>
         </tr>
-         <tr>
+        <tr>
                 <td>Period Reference</td>
                 <td>{% for ref in period_reference_list %}
                     <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>

@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'bib',
     'virtualgallery',
 	'geolocation',
+    'django_extensions',
 
 )
 

@@ -6,32 +6,60 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
         <style>
-            #map { height: 600px; }
+            #map { height: 500px; }
         </style>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-	<div>
-		{% if province_list %}
-			<h1>Provinces containing Site(s)</h1>
-			{% else %}
-			<p> There is no <i>province_list</i></p>
-		{% endif %} 
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1>Geolocation of Sites</h1>
 	</div>
-	<div>
-		<form action="" method="get">
-            <table class="table table-striped">
-                {{ form.as_table }}
-            </table>
-            <input class="btn btn-primary btn-block" type="submit" value="filter" />
-            <a class="btn btn-primary btn-block" href="{% url 'geolocation:showplacesInteractiv' %}">reset</a>
-		</form>
-		<hr/>
+	<div class="panel-body">
+	<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Filters</h3>
+			</div>
+			<div class="panel-body">
+				<h3>Region</h3>
+				<form role="form" action="" method="get">
+  			 		{{ form.region }}
+  			 	<h3>Period</h3>
+  			 		{{ form.period }}
+  			 		<button type="submit" class="btn btn-default btn-block">Filter</button>
+  					<a class="btn btn-primary btn-block" href="{% url 'geolocation:showplaces' %}">reset</a>
+				</form>
+				<hr/>
+			</div>
+		</div>
 	</div>
-	<div>
+
+	<div class ="col-md-8">
 		<div id="parentMap"></div>
 	</div>
+	</div>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+	$( document ).ready(function() {
+		var fetchedParameterPeriod = "{{ request.GET.period }}";
+		var fetchedParameterRegion = "{{ request.GET.region }}";
+		$("#id_region option").each(function() {
+        	if($(this).text() == fetchedParameterRegion) {
+            	$(this).attr('selected', 'selected');
+        	}                        
+    	});
+    	$("#id_period option").each(function() {
+        	if($(this).text() == fetchedParameterPeriod) {
+            	$(this).attr('selected', 'selected');
+        	}                        
+    	});
+	});
+</script>
 <script type="text/javascript">
 	$( document ).ready(function() {
  		$("#map").remove();
