@@ -53,10 +53,11 @@ class ResearcheventForm(autocomplete_light.ModelForm):
 		model = ResearchEvent
 		fields = '__all__'
 
-class FindsForm(autocomplete_light.ModelForm):
+class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
 		required = False,
 		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+	research_event = forms.ModelMultipleChoiceField(queryset=ResearchEvent.objects.all())
 
 	class Meta:
 		model = Finds

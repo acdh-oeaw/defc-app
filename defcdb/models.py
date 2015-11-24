@@ -215,6 +215,7 @@ class DC_finds_amount(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
+
 	def __str__(self):
 		return self.name
 
