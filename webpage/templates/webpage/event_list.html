@@ -1,0 +1,27 @@
+{% extends "webpage/about.html" %} 
+
+{% block content %}
+
+<div class="container">
+{% if object_list %}
+
+<hr />
+<div class="container">
+<h1> Events </h1>
+	<table class="table-responsive">
+
+	 	{% for object in  object_list %}
+	 	<tr>
+	 		<td>
+	 			{{ object }} 
+	 		</td>
+	 		<td>
+	 			<a class ="btn btn-danger btn-sm" href="/delete/event/{{ object.id }}">  Delete </a> 
+	 		</td>
+	 	</tr>	
+    	{% endfor %}
+	</table>
+{% endif %}
+</div>
+  
+{% endblock %}

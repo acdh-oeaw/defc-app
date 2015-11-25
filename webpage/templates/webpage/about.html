@@ -1,0 +1,67 @@
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block content %}
+
+<div class="container text-center">
+      <h2 class="bs-docs-featurette-title">Digitizing Early Farming Cultures (DEFC)</h2>
+      <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a data-toggle="pill" href="#project">Project</a></li>
+          <li><a data-toggle="pill" href="#partners">Partners</a></li>
+          <li><a data-toggle="pill" href="#team">Team</a></li>
+          <li><a data-toggle="pill" href="#publications">Publications</a></li>
+          <li><a data-toggle="pill" href="#events">Events</a></li>
+          <li><a data-toggle="pill" href="#contact">Contact</a></li>
+    </ul>
+      <div class="tab-content text-left">
+    <div id="project" class="tab-pane fade in active">
+        <h3>Description</h3>
+        <p>Digitizing Early Farming Cultures aims to create standardized and integrated research data of Neolithic and Chalcolithic sites and finds of Greece and Anatolia (c. 7000–3000 BC according to Greek terminology). The bases for the project are non-digital and digital sources from a series of research projects from the new ÖAW research group Anatolian Aegean Prehistoric Phenomena (AAPP) at the OREA Institute. AAPP studies archaeological sites and finds from the Neolithic to the Bronze Age in Greece and Western Anatolia, two neighbouring and archaeologically closely related regions usually studied in isolation of each other. The group focusses on research questions concerning technological and social changes, settlement patterns, exchange and sourcing of raw materials.
+        </p>
+        <p>Research across the area currently suffers from fragmented data organized according to differing knowledge schemes, which developed independently in the two different research traditions. Independent terminologies and chronologies have developed, hindering collaborative research. To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of research data is required.
+        </p>
+        <p>The aim of this project is to harmonize existing datasets, digitize analogue data from publications and integrate metadata for easy access and data reuse. The data will be made available in an open access archaeological data management system, which complies with standards of data sharing and interoperability with related initiatives. Digitizing Early Farming Cultures, for the first time, will enable research across several, so far unlinked projects to answer research questions and it will foster active collaboration between researchers in OREA.
+        </p>
+
+    </div>
+    <div id="partners" class="tab-pane fade">
+        <h3></h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="team" class="tab-pane fade">
+        <h3></h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="publications" class="tab-pane fade">
+        <h3></h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+          <div id="events" class="tab-pane fade">
+        <h3></h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <div class="container">
+{% if event_list %}
+
+<hr />
+<div class="container">
+<h1> Events </h1>
+  <table class="table-responsive">
+
+    {% for object in  event_list %}
+    <tr>
+      <td>
+        {{ object }} 
+      </td>
+    </tr> 
+      {% endfor %}
+  </table>
+{% endif %}
+</div>
+    </div>
+          <div id="contact" class="tab-pane fade">
+        <h3></h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+
+  </div>
+{% endblock %}
