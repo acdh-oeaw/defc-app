@@ -787,5 +787,5 @@ def user_logout(request):
 
 def start_view(request):
 	context = RequestContext(request)
-	return render(request, 'defcdb/index.html', context)
+	return render(request, 'webpage/index.html', context)
 
