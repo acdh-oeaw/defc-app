@@ -766,7 +766,7 @@ def user_login(request):
 			if user is not None:
 				if user.is_active:
 					login(request, user)
-					return HttpResponseRedirect(request.GET.get('next','/defcdb/'))
+					return HttpResponseRedirect(request.GET.get('next','/'))
 				else:
 					return HttpResponse('not active.')
 			else:
