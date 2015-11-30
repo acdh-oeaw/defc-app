@@ -15,7 +15,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="{% static "defcdb/0505.jpg" %}" alt="First" width="1200" height="700">
+        <img src="{% static "webpage/0009.jpg" %}" alt="First" width="1200" height="700" title="Neolithische Flint und Obsidian Kerne (ERC Prehistoric Anatolia, N.Gail/ÖAI, B.Horejs)">
+        <div class="carousel-caption">
+          <h3>Research data</h3>
+          <p>Neolithic and Copper Age in Greece and Anatolia (7000-3000 BC)</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="{% static "webpage/0001.jpg" %}" alt="Second" width="1200" height="700" title="Blick über den Çukuriçi Höyük von Westen (ERC Prehistoric Anatolia, N.Gail/ÖAI, B.Horejs)">
         <div class="carousel-caption">
           <h3>Data model</h3>
           <p>High granularity of the archaeological data structure</p>
@@ -23,15 +31,7 @@
       </div>
 
       <div class="item">
-        <img src="{% static "defcdb/0404.jpg" %}" alt="Second" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>Django</h3>
-          <p>Python Web framework</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="{% static "defcdb/0101.jpg" %}" alt="Third" width="1200" height="700">
+        <img src="{% static "webpage/0002.jpg" %}" alt="Third" width="1200" height="700" title="Neolithische Kleinfunde (ERC Prehistoric Anatolia, N.Gail/ÖAI, B.Horejs)">
         <div class="carousel-caption">
           <h3>Linked Open Data</h3>
           <p>Open Access and Data reuse</p>
@@ -51,40 +51,45 @@
 </div>
 </div>
 <div class="container text-center">
-    <h2 class="bs-docs-featurette-title">About DEFC project</h2>
+    <h2 class="bs-docs-featurette-title">Digitizing Early Farming Cultures (DEFC)</h2>
     <div class="row">
         <div class="col-sm-12">
-  <h4 class="text-center">The project objective of Digitizing Early Farming Cultures (DEFC) is the standardization and integration of research data from sites and finds from the Neolithic and Copper Age (7000-3000 BC) located in Greece and Western Anatolia. </h4><br>
-  <p class="text-justify">The datasets are based on digital and analog resources of research projects of the research group Anatolian Aegean Prehistoric Phenomena (AAPP)  at the Institute for Oriental and European Archaeology (OREA) of the Austrian Academy of Sciences. Greece and Western Anatolia are two neighbouring and archaeologically closely related regions. They are, however, usually studied in isolation from each other and have therefore developed different terminologies and chronologies. Direct results of this de facto separation are not only huge amounts of fragmented research data but also several different models and standards for ordering and describing more or less the same kind of data. To pose and answer archaeological research questions concerning the whole territory, the information must be harmonized. The DEFC project aims to harmonize the existing data, to digitize analog resources and make metadata available to facilitate access and reuse this data.</p>
+  <h4 class="text-center">The objective of Digitizing Early Farming Cultures (DEFC) is the standardization and integration of archaeological research data from the Neolithic and Copper Age (7000 – 3000 BC) in Greece and Western Anatolia. </h4><br>
+  <p class="text-justify">Greece and Western Anatolia are two neighbouring and archaeologically closely related regions. However, they have usually been studied in isolation from each other, resulting in fragmented data organized according to different knowledge schemes. Independent terminologies and chronologies have developed, hindering collaborative research. To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of research data is required. The aim of this project is to harmonize existing datasets, digitize analogue data from publications and integrate metadata for easy access and data reuse.</p>
         </div>
     </div>
 </div>
 <div class="container text-center bg-grey">
-  <h2>Collaboration</h2></br>
+  <h2>Project partners</h2></br>
   <div class="row text-center">
-  <a href="https://acdh.oeaw.ac.at/acdh/" class="navlink" target="_blank">
     <div class="col-sm-6">
+      <a href="https://acdh.oeaw.ac.at/acdh/" class="navlink" target="_blank">
       <div class="thumbnail">
-          <img class="img-responsive" src="{% static "defcdb/ACDH_kurz_Farbe_rgb.png" %}" alt="ACDH">   
-        <!--<p>Yes, this is us</p>-->
+          <img class="img-responsive" src="{% static "webpage/acdh_logo.png" %}" alt="ACDH">   
       </div>
       <div>
         <p><strong>Austrian Centre for Digital Humanities</strong></p>
       </div>
     </div></a>
-    <a href="http://www.orea.oeaw.ac.at/" class="navlink" target="_blank">
     <div class="col-sm-6">
+      <a href="http://www.orea.oeaw.ac.at/" class="navlink" target="_blank">
       <div class="thumbnail">
-        <img class="img-responsive" src="{% static "defcdb/orea_logo.JPG" %}" alt="OREA">
+        <img class="img-responsive" id="orealogo" src="{% static "webpage/orea_e_logo.jpg" %}" alt="OREA">
       </div>
       <div> 
         <p><strong>Institute for Oriental and European Archaeology</strong></p>
-        <!--<p>They are archeologists</p>-->
+      </a>
+            <a href="http://www.orea.oeaw.ac.at/digital-archeaology.html" class="navlink" target="_blank">
+              <p>Digital Archaeology research team</p>
+            </a>
+            <a href="http://www.orea.oeaw.ac.at/anatolian-aegean.html" class="navlink" target="_blank">
+              <p>Anatolian Aegean Prehistoric Phenomena (AAPP) research team</p>
+            </a>
       </div>
     </div>
-  </a>
   </div>
 </div>
+
 <!-- <footer id="page-footer" class="ng-scope" data-autoscroll="false" ui-view="footer">
 <div class="main-cloak ng-scope">
   <div class="container main-cloak ng-scope">

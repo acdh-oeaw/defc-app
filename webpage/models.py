@@ -14,7 +14,7 @@ class Event(models.Model):
 		ordering =( '-start_date',)
 
 	def __str__(self):
-		return self.name
+		return str(self.start_date)+' - '+str(self.end_date)+' '+str(self.name)+' '+str(self.place)+' '+str(self.webpage)
 
 	def get_classname(self):
 		"""Returns the name of the class as lowercase string"""

@@ -3,63 +3,168 @@
 {% block content %}
 
 <div class="container text-center">
-      <h2 class="bs-docs-featurette-title">Digitizing Early Farming Cultures (DEFC)</h2>
+      <h2 class="bs-docs-featurette-title">Digitizing Early Farming Cultures (DEFC)</h2><br>
       <ul class="nav nav-tabs nav-justified">
-          <li class="active"><a data-toggle="pill" href="#project">Project</a></li>
-          <li><a data-toggle="pill" href="#partners">Partners</a></li>
-          <li><a data-toggle="pill" href="#team">Team</a></li>
-          <li><a data-toggle="pill" href="#publications">Publications</a></li>
-          <li><a data-toggle="pill" href="#events">Events</a></li>
-          <li><a data-toggle="pill" href="#contact">Contact</a></li>
+          <li class="active"><a data-toggle="pill" href="#project" style="color:#686868 ">Project</a></li>
+          <!-- <li><a data-toggle="pill" href="#partners" style="color:#686868 ">Partners</a></li> -->
+          <li><a data-toggle="pill" href="#team" style="color:#484848">Team</a></li>
+          <li><a data-toggle="pill" href="#events" style="color:#484848">Events</a></li>
+          <li><a data-toggle="pill" href="#contact" style="color:#484848">Contact</a></li>
     </ul>
-      <div class="tab-content text-left">
-    <div id="project" class="tab-pane fade in active">
-        <h3>Description</h3>
+    <div class="tab-content" style="text-align:justify">
+    <div id="project" class="tab-pane fade in active row">
+      <div class="col-sm-8">
+        <h3>About DEFC project</h3>
+        <!-- <img class="img-responsive" id="defclogo" src="{% static "webpage/defc_logo.jpg" %}" alt="defc"> --> 
         <p>Digitizing Early Farming Cultures aims to create standardized and integrated research data of Neolithic and Chalcolithic sites and finds of Greece and Anatolia (c. 7000–3000 BC according to Greek terminology). The bases for the project are non-digital and digital sources from a series of research projects from the new ÖAW research group Anatolian Aegean Prehistoric Phenomena (AAPP) at the OREA Institute. AAPP studies archaeological sites and finds from the Neolithic to the Bronze Age in Greece and Western Anatolia, two neighbouring and archaeologically closely related regions usually studied in isolation of each other. The group focusses on research questions concerning technological and social changes, settlement patterns, exchange and sourcing of raw materials.
         </p>
         <p>Research across the area currently suffers from fragmented data organized according to differing knowledge schemes, which developed independently in the two different research traditions. Independent terminologies and chronologies have developed, hindering collaborative research. To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of research data is required.
         </p>
         <p>The aim of this project is to harmonize existing datasets, digitize analogue data from publications and integrate metadata for easy access and data reuse. The data will be made available in an open access archaeological data management system, which complies with standards of data sharing and interoperability with related initiatives. Digitizing Early Farming Cultures, for the first time, will enable research across several, so far unlinked projects to answer research questions and it will foster active collaboration between researchers in OREA.
         </p>
+        <p>Project duration: 01.11.2014 - 31.10.2016</p>
+        <h3>Publications</h3>
+        <p>Aspöck, Edeltraud; Masur, Anja (2015). Digitizing Early Farming Cultures. Customizing the Arches Heritage Inventory and Management System. Proceedings of Digital Heritage International Congress 2015, 28. Sept. - 2. Oct., Granada, Spain. </p>
+        
+        <!-- <h3>Funded by</h3>
+        <div class="col-sm-6" style="text-align:center">
+          <a href="http://www.oeaw.ac.at/en/fellowship-funding/foerderprogramme/godigital/" class="navlink" target="_blank">
+          <p><strong>Austrian Academy of Sciences Initiative GO!DIGITAL (ACDH 2014/22)</strong></p><br>
+          
+            <img class="img-responsive" id="oeawlogo" src="{% static "webpage/OEAW_en_Logo_cmyk_text.jpg" %}" alt="OEAW"></a>
+        </div>
+        <div class="col-sm-6" style="text-align:center">
+          <a href="http://www.ariadne-infrastructure.eu/" class="navlink" target="_blank">
+          <p><strong>ARIADNE EU-funded project (FP7-313193)</strong></p><br><br>
+            <img class="img-responsive" src="{% static "webpage/Ariadne_logo.jpg" %}" alt="ARIADNE"> </a>
+        </div> -->
+      </div>
+      <!-- <div class="col-sm-4">
+        <img class="img-responsive" id="defclogo" src="{% static "webpage/defc_logo.jpg" %}" alt="defc">
 
-    </div>
-    <div id="partners" class="tab-pane fade">
-        <h3></h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="team" class="tab-pane fade">
-        <h3></h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="publications" class="tab-pane fade">
-        <h3></h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-          <div id="events" class="tab-pane fade">
-        <h3></h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      <div class="container">
-{% if event_list %}
+      </div> -->
 
-<hr />
-<div class="container">
-<h1> Events </h1>
-  <table class="table-responsive">
 
-    {% for object in  event_list %}
-    <tr>
-      <td>
-        {{ object }} 
-      </td>
-    </tr> 
+      <div class="col-sm-4" style="text-align:center">
+        <div class="thumbnail">
+        <img class="img-responsive" id="defclogo" src="{% static "webpage/defc_logo.jpg" %}" alt="defc">
+        </div>
+        <h3>Funded by</h3><br>
+        <a href="http://www.oeaw.ac.at/en/fellowship-funding/foerderprogramme/godigital/" class="navlink" target="_blank">
+        <div>
+          <p><strong>Austrian Academy of Sciences Initiative GO!DIGITAL (ACDH 2014/22)</strong></p>
+        </div><br>
+        <div class="thumbnail">
+          <img class="img-responsive" id="oeawlogo" src="{% static "webpage/OEAW_en_Logo_cmyk_text.jpg" %}" alt="OEAW">   
+        </div>
+        </a><br>
+        <a href="http://www.ariadne-infrastructure.eu/" class="navlink" target="_blank">
+        <div>
+          <p><strong>ARIADNE EU-funded project (FP7-313193)</strong></p>
+        </div><br>
+        <div class="thumbnail">
+          <img class="img-responsive" id="ariadnelogo" src="{% static "webpage/Ariadne_logo.jpg" %}" alt="ARIADNE">   
+        </div>
+        </a>
+      </div>
+    </div>
+      <!-- <div class="col-sm-4">
+        <img class="img-responsive" id="defclogo" src="{% static "webpage/defc_logo.jpg" %}" alt="defc">
+      </div>
+    </div> -->
+    <!-- <div id="partners" class="tab-pane fade">
+      <h3>Project partners</h3><br>
+      <div class="row text-center">
+        <div class="col-sm-6 thumbnail">
+        <img class="img-responsive" src="{% static "webpage/orea_e_logo.jpg" %}" alt="OREA"><br>
+        <a href="http://www.orea.oeaw.ac.at/" class="navlink" target="_blank">
+        <h4>Institute for Oriental and European Archaeology (OREA)</h4><br>
+        </a>
+        <ul>
+          <li>
+            <a href="http://www.orea.oeaw.ac.at/digital-archeaology.html" class="navlink" target="_blank">
+              Digital Archaeology research team
+            </a>
+          </li>
+          <li>
+            <a href="http://www.orea.oeaw.ac.at/anatolian-aegean.html" class="navlink" target="_blank">
+              Anatolian Aegean Prehistoric Phenomena (AAPP) research team
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-6 thumbnail">
+        <img class="img-responsive" src="{% static "webpage/acdh_logo.png" %}" alt="OREA"><br>
+        <a href="http://www.oeaw.ac.at/acdh/" class="navlink" target="_blank">
+        <h4 style="text-align:center">Austrian Centre for Digital Humanities (ACDH)</h4>
+        </a>
+      </div>
+    </div>
+  </div> -->
+  <div id="team" class="tab-pane fade">
+      <h3>Digital Archaeology</h3><br>
+      <p>Project leader: Edeltraud Aspöck</p>
+      <p>Research assistants: Anja Masur, Seta Štuhec, Irene Petschko</p>
+      <h3>Austrian Centre for Digital Humanities</h3><br>
+      <p>Project manager: Matej Ďurčo</p>
+      <p>Developers: Peter Andorfer, Ksenia Zaytseva</p>
+    </div>
+    <div id="events" class="tab-pane fade">
+        <h3></h3>     
+    {% if event_list %}  
+    <div class="panel panel-default">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr style="background-color:#F8F8F8">
+          <th>Dates</th>
+          <th>Event</th>
+          <th>Place</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for object in  event_list %}
+      <tr>
+        <td>
+          {% if object.end_date != None %}
+            {{ object.start_date }} - {{ object.end_date }}
+          {% else %}
+            {{ object.start_date }}
+          {% endif %}
+        </td>
+        <td>
+          {% if object.webpage != "" %}
+            <a href="{{ object.webpage }}" target="_blank" class="navlink">
+            {{ object.name }}</a>
+          {% else %}
+            {{ object.name }}
+          {% endif %}
+        </td>
+        <td>
+          {{ object.place }}
+        </td>
+      </tr> 
       {% endfor %}
-  </table>
-{% endif %}
-</div>
+    </tbody>
+    </table>
     </div>
-          <div id="contact" class="tab-pane fade">
-        <h3></h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    {% endif %}
+    <br>
+    </div>
+    <div id="contact" class="tab-pane fade">
+  <address>
+  <h3>Institute for Oriental and European Archaeology (OREA) </h3>
+  Fleischmarkt 20–22<br>
+  A-1010 Vienna, Austria<br>
+  <abbr title="Phone">P:</abbr> +43 1 51581-6101<br>
+  <a href="mailto:#" style="color:black">orea@oeaw.ac.at</a>
+</address>
+<address>
+  <h3>Austrian Center for Digital Humanities (ACDH)</h3>
+  Sonnenfelsgasse 19<br>
+  A-1010 Vienna, Austria<br>
+  <abbr title="Phone">P:</abbr> +43 1 51581-2200<br>
+  <a href="mailto:#" style="color:black">acdh@oeaw.ac.at</a>
+</address>
     </div>
   </div>
 
