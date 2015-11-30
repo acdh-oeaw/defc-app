@@ -72,8 +72,8 @@
 		}).addTo(map);
 
 		{% for province in province_list %}
-		var varName = ["hansi","{{ province.id }}"].join()
-		var varName = L.marker([{{ province.lat }}, {{ province.lng }}]).addTo(map)
+			L.marker([{{ province.lat }}, {{ province.lng }}])
+			.addTo(map)
 			.bindPopup("<h1>{{ province.name }}</h1> <table class='table table-striped'> <tr> <td>Name: </td> <td>{{ province.name }}</td> </tr> <tr> <td>Region: </td> <td>{{ province.region }}</td> </tr> <tr> <td>Country: </td> <td>{{ province.region.country.name }}</td> </tr> <tr> <td>Sites</td> <td> {% for x in province.site_set.all %} <a href='/defcdb/site/detail/{{ x.id }}'> {{ x.name }} </a><br/> {% endfor %} </td> </table>");
 		{% endfor %}
 
