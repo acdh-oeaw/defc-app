@@ -23,22 +23,49 @@
 {% endblock scriptHeader %}
 {% block content %}
 
-<div>
-	<h1>Discover the 3<sup>rd</sup> Dimension</h1>
+<div style="text-align:center">
+	<h1>Detail-view of <br/><strong>{{ object.name }}</strong></h1>
 </div>
 
-<div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
- <div id="toolbar">
-  <img id="home"     title="Home"                  src="{% static 'virtualgallery/skins/dark/home.png' %}"   /><br/>
-  <img id="zoomin"   title="Zoom In"               src="{% static 'virtualgallery/skins/dark/zoomin.png' %}" /><br/>
-  <img id="zoomout"  title="Zoom Out"              src="{% static 'virtualgallery/skins/dark/zoomout.png' %}"/><br/>
-  <img id="light_on" title="Disable Light Control" src="{% static 'virtualgallery/skins/dark/light_on.png' %}" style="position:absolute; visibility:hidden;"/>
-  <img id="light"    title="Enable Light Control"  src="{% static 'virtualgallery/skins/dark/light.png' %}"/><br/>
-  <img id="full_on"  title="Exit Full Screen"      src="{% static 'virtualgallery/skins/dark/full_on.png' %}" style="position:absolute; visibility:hidden;"/>
-  <img id="full"     title="Full Screen"           src="{% static 'virtualgallery/skins/dark/full.png' %}"   />
- </div>
- <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
- 	<canvas id="draw-canvas"/>
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-7">
+		<div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
+ 			<div id="toolbar">
+  				<img id="home"     title="Home"                  src="{% static 'virtualgallery/skins/dark/home.png' %}"   /><br/>
+  				<img id="zoomin"   title="Zoom In"               src="{% static 'virtualgallery/skins/dark/zoomin.png' %}" /><br/>
+  				<img id="zoomout"  title="Zoom Out"              src="{% static 'virtualgallery/skins/dark/zoomout.png' %}"/><br/>
+  				<img id="light_on" title="Disable Light Control" src="{% static 'virtualgallery/skins/dark/light_on.png' %}" style="position:absolute; visibility:hidden;"/>
+  				<img id="light"    title="Enable Light Control"  src="{% static 'virtualgallery/skins/dark/light.png' %}"/><br/>
+  				<img id="full_on"  title="Exit Full Screen"      src="{% static 'virtualgallery/skins/dark/full_on.png' %}" style="position:absolute; visibility:hidden;"/>
+  				<img id="full"     title="Full Screen"           src="{% static 'virtualgallery/skins/dark/full.png' %}"   />
+ 			</div>
+ 		<!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
+ 			<canvas id="draw-canvas"/>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<h3>Info</h3>
+		<table class="table table-striped">
+			<tr>
+				<td>Name</td>
+				<td>{{ object.name }}</td>
+			</tr>
+			<tr>
+				<td>ID</td>
+				<td>{{ object.catalogue_ID }}</td>
+			</tr>
+			<tr>
+				<td>Site</td>
+				<td><a href='/defcdb/site/detail/{{ object.site.id }}'>{{ object.site.name }}</a></td>
+			</tr>
+			<tr>
+				<td>3D-Model created by</td>
+				<td>{{ object.model_created_by }}</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-1"></div>
 </div>
 <div class="alert alert-info" style="text-align:center">
 	<a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>

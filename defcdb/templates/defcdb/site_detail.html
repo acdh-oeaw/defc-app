@@ -10,28 +10,6 @@
         </style>
 
 {% endblock %}
-<!-- {% block scripts %}
-<script type="text/javascript">
-$(document).ready(function(){
-    $("td:empty").parent().hide();
-    $("#01").click(function(){
-        // var testv = $("td:odd").text();
-        //  // alert(testv);
-        // if (testv == ""
-            var emptytd = $("td:empty");
-            // alert(emptytd.length);
-            $(emptytd).parent().toggle("slow");
-        /*testv.hide();*/
-  //       if ($('td:even:empty',this){ 
-  //       $(this).hide();
-  //       } else {
-  //       $(this).show();
-  // }
-});
-    });
-
-</script>
-{% endblock scripts %} -->
 
 {% block content %}
 
@@ -81,18 +59,6 @@ $(document).ready(function(){
                 <td>Geographical Coordinate Reference System</td>
                 <td>{{ object.gps_data_coordinate_system }}</td>
         </tr>
-        <!-- <tr>
-                <td>GPS data N</td>
-                <td>{{ object.gps_data_n }}</td>
-        </tr>
-        <tr>
-                <td>GPS data E</td>
-                <td>{{ object.gps_data_e }}</td>
-        </tr>
-        <tr>
-                <td>GPS data Z</td>
-                <td>{{ object.gps_data_z }}</td>
-        </tr> -->
         <tr>
                 <td>Latitude</td>
                 <td>{{ object.latitude }}</td>
@@ -145,19 +111,17 @@ $(document).ready(function(){
 </div>
 
 <script type="text/javascript">
-    var gps1 = 37.73167;
-    var gps2 = 23.49111;
+    var gps1 = {{ object.latitude|default_if_none:object.province.lat }} ;
+    var gps2 = {{ object.longitude|default_if_none:object.province.lng }};
     var siteName = "{{ object.name }}";
     var map = L.map('map').setView([gps1, gps2], 6);
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    //maxZoom: 5,
-    id: 'csae8092.npdoha49',
-    accessToken: 'pk.eyJ1IjoiY3NhZTgwOTIiLCJhIjoiY2lnM2FoZWpjMDJqZnY1a2gxdWl6a29kaiJ9.FQXlsKIu60WhiXLrfI59VA'
+    L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+        attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
+        maxZoom: 18
     }).addTo(map);
 
-    L.marker([48.306390000000, 14.286110000000]).addTo(map)
+    L.marker([{{ object.latitude|default_if_none:object.province.lat }}, {{ object.longitude|default_if_none:object.province.lng }}]).addTo(map)
     .bindPopup(siteName)
     .openPopup();
 
