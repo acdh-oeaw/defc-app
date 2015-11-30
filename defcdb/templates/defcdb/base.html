@@ -16,6 +16,25 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//clarin.oeaw.ac.at/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 11]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript>
+      <p>
+        <img src="//clarin.oeaw.ac.at/piwik/piwik.php?idsite=11" style="border:0;" alt="" />
+      </p>
+    </noscript>
+<!-- End Piwik Code -->
       {% include 'autocomplete_light/static.html' %}
       {% block scriptHeader %}
       {% endblock %}
@@ -222,6 +241,21 @@
       .ui-resizable-se { bottom: 18px; right: 25px; }
     </style>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//clarin.oeaw.ac.at/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 11]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+<noscript><p><img src="//clarin.oeaw.ac.at/piwik/piwik.php?idsite=11" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
         {% block scripts %}
         {% endblock %}
   </body>
