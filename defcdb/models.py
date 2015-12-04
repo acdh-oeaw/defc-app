@@ -354,10 +354,23 @@ class DC_period_datedby(GenericMethods):
  		null=True, help_text="please provide helptext")
 
 
+class DC_site_coordinatesource(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="please provide helptext")
+
 
 #####################################
 #		content tables				#
 #####################################
+
+class Name(TrackChanges):
+	name = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="The entities name")
+	language = models.CharField(max_length=100, blank=True,
+ 		null=True, help_text="The 'name´s' language. Controlled vocab will be provided.")
+
+	def __str__(self):
+		return self.name
 
 
 class Reference(TrackChanges):
@@ -384,13 +397,16 @@ class ResearchEvent(TrackChanges):
 		blank=True, 
 		help_text="Organisation that carried out a research project at the site.") #mandatory? default?
 	year_of_activity_start_year = models.IntegerField(blank=True, null=True,
-		help_text="Year when research started.") # DateField? optional?
+		help_text="Year when research started.",
+		verbose_name="Start year of research activity") 
 	year_of_activity_end_year = models.IntegerField(blank=True, null=True,
-		help_text="Year when research ended.")  # DateField? optional?
+		help_text="Year when research ended.",
+		verbose_name="End year of research activity") 
 	project_name = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Name of project.") #optional?
 	project_id = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Project unique identifier.") #optional?
+		null=True, help_text="Project unique identifier.",
+		verbose_name="Project ID") #optional?
 	project_leader = models.CharField(max_length=100, blank=True, null=True,
 		help_text="Leader of the research project.") #optional?
 	special_analysis = models.ManyToManyField(DC_researchevent_special_analysis,
@@ -417,7 +433,8 @@ class Period(TrackChanges):
 		("no", "no")
 		)
 	system = models.ForeignKey(DC_chronological_system, blank=True,
-		null=True, help_text="Name of the chronological system.")
+		null=True, help_text="chronological period.",
+		verbose_name="Period")
 	dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
 		help_text="Method used for dating the site.")
 	dated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
@@ -442,10 +459,12 @@ class Site(TrackChanges):
 		)
 	name = models.CharField(max_length=350, blank=True, null=True,
 		help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
-	alias_name = models.CharField(max_length=350, blank=True, null=True,
-		help_text="Alias name of the site.")
-	alternative_name = models.CharField(max_length=350, blank=True, null=True,
-		help_text="Alternative name of the site.")
+	alias_name = models.ForeignKey(Name, blank=True,
+		null=True, help_text="Other name of the site.",
+		related_name = "aliasName")
+	alternative_name = models.ForeignKey(Name, blank=True,
+		null=True, help_text="Different spelling of the name of the site.",
+		related_name="alternativeName")
 	province = models.ForeignKey(DC_province, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?
 	description = models.TextField(blank=True, null=True,
@@ -453,22 +472,19 @@ class Site(TrackChanges):
 	topography = models.CharField(max_length=400, blank=True, null=True,
 		help_text="Description of surface shape and features.") #optional?
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by www.GeoNames.org")
+		help_text="Identifier provided by www.GeoNames.org. E.g. the number in <a href='http://www.geonames.org/2772400/linz.html'>http://www.geonames.org/2772400/linz.html</a>.",
+		verbose_name="Authorityfile ID")
 	geographical_coordinate_reference_system = models.ForeignKey(DC_site_geographicalreferencesystem, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
 	latitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
 	longitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
-	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "yes")
-	# gps_data_n = models.CharField(max_length=50, blank=True, null=True,
-	# 	help_text="North value of coordinate.")
-	# gps_data_e = models.CharField(max_length=50, blank=True,
-	# 	null=True, help_text="East value of coordinate.")#optional?
-	# gps_data_z = models.CharField(max_length=50, blank=True, null=True, 
-	# 	help_text="Z value of coordinate (elevation).")#optional?
-	coordinate_source = models.CharField(max_length=100, blank=True, null=True,
+	elevation = models.IntegerField(blank=True, null=True, help_text="If available")
+	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "yes",
+		help_text="<strong>Yes</strong>: location of site is known and coordinates from the approximate center of the site have been entered.<br/> <strong>No</strong>: Only the region/province/ephorie approximate location of the site is known. Coordinates from the approximate center of the region/province/ ephorie have been entered.")
+	coordinate_source = models.ForeignKey(DC_site_coordinatesource, blank=True, null=True,
 		help_text="Source providing information about the global position of site.")#optional?
-	number_of_activity_periods = models.CharField(max_length=100, blank=True, null=True,
-		help_text="Number of times past activity was recorded at the site.")
+	number_of_activity_periods = models.IntegerField(blank=True, null=True,
+		help_text="How many past activities have been recorded on the site?")
 	reference = models.ManyToManyField(Book, blank=True,
 	 	help_text="Bibliographic and web-based references to publications and other relevant information on the site.")#optional?
 	comment = models.TextField(blank=True, null=True,
@@ -499,14 +515,8 @@ class Area(TrackChanges):
 	area_type = models.ForeignKey(DC_area_areatype, blank=True, null=True,
 		help_text = "The type of the area.")
 	area_nr = models.CharField(max_length=45, blank=True, null=True, 
-		help_text = "An established identifier for this area") #does something like this exist?
-	stratigraphical_unit_id = models.CharField(max_length=100, blank=True,
-		null=True, 
-		help_text="The identifier of the area´s stratigraphical unit")
-	geographical_reference = models.CharField(max_length=100, blank=True,
-		null=True, help_text="Locates the Area in the Site")
-	# period = models.ManyToManyField(Period, blank=True,      #what period is this: should be the one created
-	# 	help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text = "An established identifier for this area", 
+		verbose_name="Area ID")
 	period = models.ForeignKey(Period, blank = True, null =True, 
 		help_text="Period defined by the archaeologist")
 	c14_calibrated = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table

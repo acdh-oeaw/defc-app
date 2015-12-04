@@ -24,22 +24,7 @@ class AreaForm(autocomplete_light.ModelForm):
 	class Meta:
 		model = Area
 		#exclude =['reference', 'period_reference']
-		fields=["site", "area_type", "area_nr","stratigraphical_unit_id",
-		"geographical_reference", "period", "c14_calibrated",
-		"c14_absolute_from","c14_absolute_to","period_reference",
-		"period_comment","settlement_type","settlement_structure",
-		"settlement_construction_type", "settlement_building_technique",
-		"settlement_special_features", "settlement_human_remains",
-		"cave_rockshelters_type", "cave_rockshelters_evidence_of_graves_human_remains",
-		"cave_rockshelters_evidence_of_occupation","quarry_exploitation_type",
-		"quarry_raw_material", "cemetery_or_grave", "cemetery_or_graves_topography",
-		"cemetery_or_graves_mortuary_features", "grave_number_of_graves",
-		"grave_type", "grave_type_of_human_remains",
-		"grave_estimated_number_of_individuals", "grave_age_groups",
-		"grave_sexes", "grave_number_of_female_sex",
-		"grave_number_of_male_sex", "grave_number_of_not_specified_sex",
-		"grave_manipulations_of_graves", "reference", "description",
-		"comment"]
+		fields="__all__"
 
 
 class ResearcheventForm(autocomplete_light.ModelForm):
@@ -66,7 +51,9 @@ class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 class SiteForm(autocomplete_light.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
 		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
+		help_text="Bibliographic and web-based references to publications and other relevant information on the site."
+)
 
 	class Meta:
 		model = Site

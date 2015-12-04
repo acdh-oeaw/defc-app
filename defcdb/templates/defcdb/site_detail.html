@@ -111,8 +111,8 @@
 </div>
 
 <script type="text/javascript">
-    var gps1 = {{ object.latitude|default_if_none:object.province.lat }} ;
-    var gps2 = {{ object.longitude|default_if_none:object.province.lng }};
+    var gps1 = {{ object.latitude|default_if_none:"nix" }} ;
+    var gps2 = {{ object.longitude|default_if_none:"nix"}};
     var siteName = "{{ object.name }}";
     var map = L.map('map').setView([gps1, gps2], 6);
 
@@ -121,7 +121,7 @@
         maxZoom: 18
     }).addTo(map);
 
-    L.marker([{{ object.latitude|default_if_none:object.province.lat }}, {{ object.longitude|default_if_none:object.province.lng }}]).addTo(map)
+    L.marker([{{ object.latitude|default_if_none:"nix" }}, {{ object.longitude|default_if_none:"nix"}}]).addTo(map)
     .bindPopup(siteName)
     .openPopup();
 
