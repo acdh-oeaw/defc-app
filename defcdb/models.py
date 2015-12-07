@@ -622,58 +622,56 @@ class Finds(TrackChanges):
 		("5", "5"),
 		)
 	area = models.ForeignKey(Area, blank=True, null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="Location of the find.")
 	research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
-		help_text="Related research event.")
+		help_text="Project / Research the finds are related to.")
 	finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
-		help_text="Type of the finds.") 
+		help_text="Category of finds.") 
 # small finds properties
 	small_finds_category = models.ForeignKey(DC_finds_small_finds_category,
 		blank=True, null=True,
-		help_text="Either a tool, jewellery or figurines")
+		help_text="Superordinate class of small find.")
 	small_finds_type = models.ManyToManyField(DC_finds_small_finds_type,
-		blank=True, help_text="Type of small find.")
+		blank=True, help_text="What kind of small find is described.")
 # Botany
 	botany_species = models.ManyToManyField(DC_finds_botany_species,
-		blank=True, help_text="Species the botanical sample / find belongs to.")
+		blank=True, help_text="How the botanical sample / find is categorised.")
 # Animal remains
 	animal_remains_species = models.ManyToManyField(
 		DC_finds_animal_remains_species,
-		blank=True, help_text="Species the zoological sample / find belongs to.")
+		blank=True, help_text="How the zoological sample / find is categorised.")
 	animal_remains_completeness = models.ForeignKey(
 		DC_finds_animal_remains_completeness,
-		blank=True, null=True, help_text="Condition of the zoological sample / find (complete or part).")
+		blank=True, null=True, help_text="How much was present (complete or part).")
 	animal_remains_part = models.ManyToManyField(
 		DC_finds_animal_remains_part,
-		blank=True, help_text="Part of the species the sample / find belongs to.")
+		blank=True, help_text="Which part was present.")
 # Lithics
 	lithics_debitage = models.ManyToManyField(DC_finds_lithics_debitage,
-		blank=True, help_text="Which basic form used (for tools).")
+		blank=True, help_text="Basic form of the tool.")
 	lithics_modified_tools = models.ManyToManyField(
 		DC_finds_lithics_modified_tools,
 		blank=True,help_text="Kind of tool which was made out of the debitage.")
 	lithics_cores = models.ManyToManyField(DC_finds_lithics_core,
-		blank=True, help_text="Type of the cores.")
+		blank=True, help_text="Type of the core.")
 	lithics_technology = models.ManyToManyField(DC_finds_lithics_technology,
 		blank=True, help_text="Which technology was used to produce the debitage or tools.")
 # Pottery
-	# pottery_form = models.ManyToManyField(DC_finds_pottery_form,
-	# 	blank=True, help_text="Form of pottery.")  #it appears as 'shape' in definitions doc but i kept 'form'
 	pottery_form = models.ForeignKey(DC_finds_pottery_form,
-	 	blank=True, null = True, help_text="Form of pottery.")
+	 	blank=True, null = True, help_text="The form of the pottery.")
 	pottery_detail = models.ManyToManyField(DC_finds_pottery_detail,
-		blank=True, help_text="Pottery type.")
+		blank=True, help_text="Preserved part of the pottery.")
 	pottery_decoration = models.ManyToManyField(DC_finds_pottery_decoration,
-		blank=True, help_text="Type of decoration.")
+		blank=True, help_text="What the pottery was embellished with.")
 # common fields
 	amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
-		help_text="Amount of finds.")
+		help_text="Number of pieces within the category.")
 	material = models.ManyToManyField(DC_finds_material, blank=True,
-		help_text="Material used for find.")
+		help_text="What was the small find made of.")
 	confidence = models.CharField(max_length=50, blank=True, null=True,
-		help_text="Confidence in finds", choices = CONFIDENCE_CHOICES)
+		help_text="How reliable the information is that was entered.", choices = CONFIDENCE_CHOICES)
 	reference = models.ManyToManyField(Book, blank=True,
-		help_text="Relevant resources on the finds.")
+		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the selected small finds.")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information not covered in any other field.")
 
@@ -692,9 +690,9 @@ reversion.register(Finds)
 
 class Interpretation(TrackChanges):
 	area = models.ManyToManyField(Area, blank=True,   
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="The interpreted area(s).")
 	finds = models.ManyToManyField(Finds, blank=True,   
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+		help_text="The interpreted find(s).")
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on subsistence & production of the site.")
 	production_type = models.ManyToManyField(DC_interpretation_productiontype,
