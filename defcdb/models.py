@@ -374,8 +374,6 @@ class Name(TrackChanges):
 
 
 class Reference(TrackChanges):
-	# reference_type = models.ForeignKey(DC_reference_type, blank=True,
-	# 	null=True, help_text = "The type of the resource.")
 	title = models.CharField(max_length=100, blank=True, null=True,
 		help_text="The title of the ressource.")
 	creator = models.CharField(max_length=100, blank=True, null=True,
@@ -459,11 +457,11 @@ class Site(TrackChanges):
 		)
 	name = models.CharField(max_length=350, blank=True, null=True,
 		help_text="Name of a place in which evidence of past activity is preserved and which represents a part of the archaeological record.")
-	alias_name = models.ForeignKey(Name, blank=True,
-		null=True, help_text="Other name of the site.",
+	alias_name = models.ManyToManyField(Name, blank=True,
+		help_text="Other name of the site.",
 		related_name = "aliasName")
-	alternative_name = models.ForeignKey(Name, blank=True,
-		null=True, help_text="Different spelling of the name of the site.",
+	alternative_name = models.ManyToManyField(Name, blank=True,
+		help_text="Different spelling of the name of the site.",
 		related_name="alternativeName")
 	province = models.ForeignKey(DC_province, blank=True, null=True,
 		help_text = "Geographical area where the site is located.") #mandatory?

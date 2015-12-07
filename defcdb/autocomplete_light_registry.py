@@ -2,7 +2,7 @@
 import autocomplete_light
 import re
 from bib.models import Book
-from .models import DC_researchevent_institution, ResearchEvent
+from .models import DC_researchevent_institution, ResearchEvent, Name
 
 
 class BookAutocomplete(autocomplete_light.AutocompleteModelBase):
@@ -40,10 +40,18 @@ class ProjectleaderAutocomplete(autocomplete_light.AutocompleteModelBase):
 	attrs = {'placeholder': 'Start typing to get suggestions',}
 	def choice_label(self, choice):
  		return '{0.project_leader}'.format(choice)
- 		#return str(choice.project_leader)
 
 autocomplete_light.register(ResearchEvent,ProjectleaderAutocomplete)
 
+
+class NameAutocomplete(autocomplete_light.AutocompleteModelBase):
+
+	search_fields=['name',]
+	attrs = {'placeholder': 'Start typing to get suggestions',}
+	def choice_label(self, choice):
+ 		return '{0.name}'.format(choice)
+
+autocomplete_light.register(Name,NameAutocomplete)
 
 # class ProjectleaderAutocomplete(autocomplete_light.AutocompleteModelBase):
 # 	search_fields=['project_leader']

@@ -29,11 +29,17 @@
         </tr>
         <tr>
                 <td>Alias name</td>
-                <td>{{ object.alias_name }}</td>
+                <td>{% for x in aliasName_list %}
+                        {{ x.name }}<br/>
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Alternative name</td>
-                <td>{{ object.alternative_name }}</td>
+                <td>{% for x in alternativeName_list %}
+                        {{ x.name }}
+                    {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Province</td>

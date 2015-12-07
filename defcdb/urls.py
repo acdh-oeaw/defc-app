@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
 url(r'^$', views.start_view, name="start"),
+url(r'^name/create/$', views.create_name, name='name_create'),
 url(r'^site/$', views.SiteListView.as_view(), name='site_list'),
 url(r'^site/create/$', views.create_site, name='site_create'),
 url(r'^site/update/(?P<pk>[0-9]+)$', views.update_site, name='site_update'),

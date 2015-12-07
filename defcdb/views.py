@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect,HttpResponseForbidden
 from django.shortcuts import render, render_to_response, get_object_or_404, redirect
@@ -13,8 +12,8 @@ from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 from rest_framework import viewsets
 
-from .models import DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
-from .forms import form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
+from .models import Name, DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
+from .forms import NameForm, form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 from .serializers import *
 from bib.models import Book
 
@@ -296,6 +295,7 @@ class ResearchEventListView(generic.ListView):
 	def get_queryset(self):
 		return ResearchEvent.objects.order_by('id')
 
+
 @login_required
 def update_researchevent(request, pk):
 	instance = get_object_or_404(ResearchEvent, id=pk)
@@ -308,6 +308,7 @@ def update_researchevent(request, pk):
 		form = ResearcheventForm(instance=instance)
 		return render(request, 'defcdb/update_form.html', {'form': form, 'classname':"research event"})
 
+
 @login_required
 def create_researchevent(request):
 	if request.method == "POST":
@@ -318,25 +319,6 @@ def create_researchevent(request):
 	else:
 		form = ResearcheventForm()
 		return render(request, 'defcdb/create_researchevent.html', {'form':form})
-
-# class ResearchEventCreate(CreateView):
-# 	model = ResearchEvent
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_researchevent.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(ResearchEventCreate, self).dispatch(*args, **kwargs)
-
-
-# class ResearchEventUpdate(UpdateView):
-# 	model = ResearchEvent
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(ResearchEventUpdate, self).dispatch(*args, **kwargs)
 
 
 class ResearchEventDelete(DeleteView):
@@ -364,6 +346,7 @@ class ResearchEventDetail(DetailView):
 #################################################################
 #				views for Period								#
 #################################################################
+
 class PeriodListView(generic.ListView):
 	template_name = 'defcdb/period_list.html'
 	context_object_name = 'object_list' # use object_list instead of
@@ -438,6 +421,7 @@ def update_finds(request, pk):
 		form = FindsForm(instance=instance)
 		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"finds"})
 
+
 @login_required
 def create_finds(request):
 	if request.method == "POST":
@@ -450,27 +434,6 @@ def create_finds(request):
 		return render(request, 'defcdb/create_finds.html', {'form':form})
 
 
-
-# class FindsCreate(CreateView):
-# 	model = Finds
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_finds.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(FindsCreate, self).dispatch(*args, **kwargs)
-
-
-# class FindsUpdate(UpdateView):
-# 	model = Finds
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(FindsUpdate, self).dispatch(*args, **kwargs)
-
-
 class FindsDelete(DeleteView):
 	model = Finds
 	template_name = 'defcdb/confirm_delete.html'
@@ -479,6 +442,8 @@ class FindsDelete(DeleteView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(FindsDelete, self).dispatch(*args, **kwargs)
+
+
 class FindsDetail(DetailView):
 	model = Finds
 	def get_context_data(self, **kwargs):
@@ -504,16 +469,30 @@ class FindsDetail(DetailView):
 
 
 #################################################################
+#				views for Name								#
+#################################################################
+
+def create_name(request):
+	if request.method == "POST":
+		form = NameForm(request.POST)
+		if form.is_valid():
+			form.save()
+		return HttpResponse('<script type="text/javascript">window.close()</script>')
+	else:
+		form = NameForm()
+		return render(request, 'defcdb/create_name.html', {'form':form})
+
+
+#################################################################
 #				views for Site									#
 #################################################################
+
 class SiteListView(generic.ListView):
 	template_name = 'defcdb/list_list.html'
-	# context_object_name = 'object_list' # use object_list instead of
-	# # e.g. site_list so the template does not need to be changed so much
-	# #for each class. 
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
+
 
 @login_required
 def update_site(request, pk):
@@ -522,11 +501,11 @@ def update_site(request, pk):
 		form = SiteForm(request.POST, instance=instance)
 		if form.is_valid():
 			form.save()
-		#return redirect('../../area/detail/'+pk)
 		return redirect('defcdb:site_detail', pk=pk)
 	else:
 		form = SiteForm(instance=instance)
 		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"site"})
+
 
 @login_required
 def create_site(request):
@@ -538,26 +517,6 @@ def create_site(request):
 	else:
 		form = SiteForm()
 		return render(request, 'defcdb/create_site.html', {'form':form})
-
-
-# class SiteCreate(CreateView):
-# 	model = Site
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_site.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(SiteCreate, self).dispatch(*args, **kwargs)
-
-
-# class SiteUpdate(UpdateView):
-# 	model = Site
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(SiteUpdate, self).dispatch(*args, **kwargs)
 
 
 class SiteDelete(DeleteView):
@@ -577,6 +536,8 @@ class SiteDetail(DetailView):
 		current_site = self.object
 		context['areas_list'] = Area.objects.filter(site = current_site.id)
 		context['reference_list'] = current_site.reference.all()
+		context['aliasName_list'] = current_site.alias_name.all()
+		context['alternativeName_list'] = current_site.alternative_name.all()
 		return context
 
 		
@@ -617,26 +578,6 @@ def create_area(request):
 		return render(request, 'defcdb/create_area.html', {'form':form})
 
 
-# class AreaCreate(CreateView):
-# 	model = Area
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_area.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(AreaCreate, self).dispatch(*args, **kwargs)
-
-
-# class AreaUpdate(UpdateView):
-# 	model = Area
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(AreaUpdate, self).dispatch(*args, **kwargs)
-
-
 class AreaDelete(DeleteView):
 	model = Area
 	template_name = 'defcdb/confirm_delete.html'
@@ -655,8 +596,6 @@ class AreaDetail(DetailView):
 		context['period_reference_list'] = current_area.period_reference.all()
 		context['interpretations_list'] = Interpretation.objects.filter(area=current_area.id)
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
-		#context['period_list'] = Period.objects.filter(area=current_area.id)
-		#context['period_list'] = current_area.period.all()
 		context['reference_list'] = current_area.reference.all()
 		context['settlementtype_list'] = current_area.settlement_type.all()
 		context['settlementstructure_list'] = current_area.settlement_structure.all()
@@ -674,6 +613,7 @@ class AreaDetail(DetailView):
 		context['gravesexes_list'] = current_area.grave_sexes.all()
 		context['manipulationsofgraves_list'] = current_area.grave_manipulations_of_graves.all()
 		return context
+
 
 #################################################################
 #				views for Interpretation						#   #to be done
@@ -710,24 +650,6 @@ def create_interpretation(request):
 		form = InterpretationForm()
 		return render(request, 'defcdb/create_interpretation.html', {'form':form})
 		
-# class InterpretationCreate(CreateView):
-# 	model = Interpretation
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_interpretation.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(InterpretationCreate, self).dispatch(*args, **kwargs)
-
-
-# class InterpretationUpdate(UpdateView):
-# 	model = Interpretation
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(InterpretationUpdate, self).dispatch(*args, **kwargs)
 
 class InterpretationDelete(DeleteView):
 	model = Interpretation
@@ -742,9 +664,6 @@ class InterpretationDetail(DetailView):
 	model = Interpretation
 	def get_context_data(self, **kwargs):
 		context = super(InterpretationDetail, self).get_context_data(**kwargs)
-		#current_interpretation = self.object
-		#context = ['finds_list'] = Finds.objects.filter(interpretation=current_interpretation.id) 
-		#instead we are using ManytoMany so all finds will be in finds field
 		current_object = self.object
 		context['areas_list'] = current_object.area.all()
 		context['finds_list'] = current_object.finds.all()
@@ -752,6 +671,7 @@ class InterpretationDetail(DetailView):
 		context['subsistencetype_list'] = current_object.subsistence_type.all()
 		context['reference_list'] = current_object.reference.all()
 		return context
+
 
 #################################################################
 #				views for login/logout							#

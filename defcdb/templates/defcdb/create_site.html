@@ -9,7 +9,23 @@
         {{ form.as_table }}
         <tbody>
     </table>
-    <input class="btn btn-primary" type="submit" value="Create" />
+    <input class="btn btn-primary" type="submit" value="Create"/>
 </form>
 </div>
 {% endblock content %}
+{% block scripts %}
+<script type="text/javascript">
+	function popupCreateName() {
+		var url = "{% url 'defcdb:name_create' %}";
+		var MyWindow = window.open(url,"","width=300, height=500");
+	}
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#id_alias_name-autocomplete").after('<button id="add_aliasName" type="button" class="btn btn-sm btn-success" onclick="popupCreateName()"><span class="glyphicon glyphicon-plus" /></button>');
+	});
+	$(document).ready(function(){
+		$("#id_alternative_name-autocomplete").after('<button id="add_alternativeName" type="button" class="btn btn-sm btn-success" onclick="popupCreateName()"><span class="glyphicon glyphicon-plus"/></button>');
+	});
+</script>
+{% endblock %}
