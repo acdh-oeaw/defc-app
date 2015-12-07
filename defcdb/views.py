@@ -11,6 +11,7 @@ from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse, reverse_lazy
 from rest_framework import viewsets
+from reversion import revisions as reversion
 
 from .models import Name, DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import NameForm, form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
@@ -493,7 +494,7 @@ class SiteListView(generic.ListView):
 	def get_queryset(self):
 		return Site.objects.order_by('name')
 
-
+@reversion.create_revision()
 @login_required
 def update_site(request, pk):
 	instance = get_object_or_404(Site, id=pk)
@@ -508,6 +509,7 @@ def update_site(request, pk):
 
 
 @login_required
+@reversion.create_revision()
 def create_site(request):
 	if request.method == "POST":
 		form = SiteForm(request.POST)
@@ -553,6 +555,8 @@ class AreaListView(generic.ListView):
 	def get_queryset(self):
 		return Area.objects.order_by('area_type')
 
+
+@reversion.create_revision()
 @login_required
 def update_area(request, pk):
 	instance = get_object_or_404(Area, id=pk)
@@ -566,6 +570,8 @@ def update_area(request, pk):
 		form = AreaForm(instance=instance)
 		return render(request, 'defcdb/edit_area.html', {'form':form })
 
+
+@reversion.create_revision()
 @login_required
 def create_area(request):
 	if request.method == "POST":
@@ -626,6 +632,8 @@ class InterpretationListView(generic.ListView):
 		#return Interpretation.objects.order_by('finds')
 		return Interpretation.objects.all()
 
+
+@reversion.create_revision()
 @login_required
 def update_interpretation(request, pk):
 	instance = get_object_or_404(Interpretation, id=pk)
@@ -639,6 +647,8 @@ def update_interpretation(request, pk):
 		form = InterpretationForm(instance=instance)
 		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"interpretation"})
 
+
+@reversion.create_revision()
 @login_required
 def create_interpretation(request):
 	if request.method == "POST":
@@ -659,6 +669,7 @@ class InterpretationDelete(DeleteView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(InterpretationDelete, self).dispatch(*args, **kwargs)
+
 
 class InterpretationDetail(DetailView):
 	model = Interpretation

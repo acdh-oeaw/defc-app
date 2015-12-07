@@ -5,10 +5,10 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, render_to_response, redirect
 from django.forms import Textarea
 from bib.models import Book
-from audit_log.models import AuthStampedModel
+from reversion import revisions as reversion
 
 
-class TrackChanges(AuthStampedModel):
+class TrackChanges(models.Model):
 	"""
 	Abstract base class with a creation and modification date and time
 	"""
@@ -494,6 +494,8 @@ class Site(TrackChanges):
 	def get_absolute_url(self):
 		return reverse('defcdb:site_list')
 
+reversion.register(Site)
+
 
 class Area(TrackChanges):
 	YESNO = (
@@ -604,6 +606,8 @@ class Area(TrackChanges):
 	def get_absolute_url(self):
 		return reverse('defcdb:area_list')
 
+reversion.register(Area)
+
 
 class Finds(TrackChanges):
 	CONFIDENCE_CHOICES=(
@@ -677,10 +681,11 @@ class Finds(TrackChanges):
 
 	def __str__(self):
 		return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)
-	#maybe use Autoslug modul, see:
-	# https://pythonhosted.org/django-autoslug/
 
-#######new class Interpretation(this is a chosen name for Subsistence&Production)######
+
+reversion.register(Finds)
+
+
 class Interpretation(TrackChanges):
 	area = models.ManyToManyField(Area, blank=True,   
 		help_text="PLEASE PROVIDE SOME HELPTEX")
@@ -705,4 +710,5 @@ class Interpretation(TrackChanges):
 
 	def __str__(self):
 		return 'Interpretation'+'_'+str(self.finds)+'_'+str(self.id) 
-		#return 'Interpretation'+'_'+str(self.id)  
+
+reversion.register(Interpretation)

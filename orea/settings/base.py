@@ -48,11 +48,13 @@ INSTALLED_APPS = (
     'virtualgallery',
 	'geolocation',
     'webpage',
+    'reversion',
     #'django_extensions',
 
 )
 
 MIDDLEWARE_CLASSES = (
+    'reversion.middleware.RevisionMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
