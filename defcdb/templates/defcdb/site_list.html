@@ -59,13 +59,15 @@
 		</tr>
 	</tfoot>
 	<tbody>
-	 {% for object in  object_list %}
+	 {% for object in object_list %}
 	 <tr>
 	 	<td>
 	 		{{ object.name }}
 	 	</td>
 	 	<td>
-	 		{{ object.alternative_name }} 
+	 		{% for x in object.alias_name.all %}
+	 			{{ x.name }}<br/>
+	 		{% endfor %}
 	 	</td>
 	 	<td>
 	 		{{ object.province.region }} 

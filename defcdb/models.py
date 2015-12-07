@@ -424,6 +424,8 @@ class ResearchEvent(TrackChanges):
 	def get_absolute_url(self):
 		return reverse('defcdb:researchevent_list')
 
+reversion.register(ResearchEvent)
+
 
 class Period(TrackChanges):
 	YESNO = (
@@ -448,6 +450,8 @@ class Period(TrackChanges):
 	def __str__(self):
 		#return str(self.system)+'_'+str(self.dating_method)+'_'+str(self.dated_by)
 		return str(self.system)+'_'+str("/".join([str(x) for x in self.dating_method.all()])+"_"+"/".join([str(x) for x in self.dated_by.all()]))
+
+reversion.register(Period)
 
 
 class Site(TrackChanges):
