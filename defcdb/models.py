@@ -106,6 +106,11 @@ class DC_site_geographicalreferencesystem(GenericMethods):
 		null=True, help_text="Name of system uniquely determining the position of the site.")
 
 
+class DC_site_topography(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,
+		null=True, help_text="Description of surface shape and features.")
+
+
 class DC_area_areatype(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,
 		null=True, help_text="The type of the area.")
@@ -471,7 +476,7 @@ class Site(TrackChanges):
 		help_text = "Geographical area where the site is located.") #mandatory?
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the site.") #optional?
-	topography = models.CharField(max_length=400, blank=True, null=True,
+	topography = models.ForeignKey(DC_site_topography, blank=True, null=True,
 		help_text="Description of surface shape and features.") #optional?
 	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Identifier provided by www.GeoNames.org. E.g. the number in <a href='http://www.geonames.org/2772400/linz.html'>http://www.geonames.org/2772400/linz.html</a>.",

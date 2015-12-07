@@ -36,7 +36,9 @@ class AreaForm(autocomplete_light.ModelForm):
 
 
 class ResearcheventForm(autocomplete_light.ModelForm):
-	project_leader = forms.CharField(required=False, widget=autocomplete_light.TextWidget('ResearchEventProjectleaderAutocomplete'))
+	project_leader = forms.CharField(required=False,
+		widget=autocomplete_light.TextWidget('ResearchEventProjectleaderAutocomplete'),
+		help_text="Leader of the research project.")
 	# project_leader = autocomplete_light.ChoiceField(ResearchEvent.objects.all(),
 	# 	required = False,
 	# 	widget = autocomplete_light.TextWidget('ProjectleaderAutocomplete'))
@@ -50,8 +52,10 @@ class ResearcheventForm(autocomplete_light.ModelForm):
 class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
 		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
-	research_event = forms.ModelMultipleChoiceField(queryset=ResearchEvent.objects.all())
+		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
+		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the selected small finds.")
+	research_event = forms.ModelMultipleChoiceField(queryset=ResearchEvent.objects.all(),
+		help_text="Project/ Research the finds are related to.")
 
 	class Meta:
 		model = Finds
