@@ -448,7 +448,6 @@ class Period(TrackChanges):
 	class Meta:
 		ordering =( 'system',)
 	
-
 	def get_absolute_url(self):
 		return reverse('defcdb:period_list')
 
