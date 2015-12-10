@@ -74,6 +74,7 @@ urlpatterns = [
     url(r'^logout/$', views.user_logout, name='user_logout'),
     url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^', include('webpage.urls', namespace='webpage')),
+    url(r'^tryout/', include('tryout.urls', namespace='tryout')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': base.MEDIA_ROOT,}, name='media_root_url'),
 ]
 

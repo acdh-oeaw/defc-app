@@ -607,8 +607,6 @@ class Area(TrackChanges):
 		ordering =( 'site',)
 
 	def __str__(self):
-		"""changed to self.id to avoid dependency due to ForeignKey"""
-		#return self.area_type+'_'+str(self.id)
 		return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
 
 	def get_absolute_url(self):

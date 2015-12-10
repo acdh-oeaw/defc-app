@@ -1,0 +1,34 @@
+{% extends "defcdb/listBase.html" %} 
+
+{% block Titel %}See All Objects{% endblock %}
+
+{% block content %}
+
+<div class="container">
+{% if object_list %}
+
+<hr />
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h1> All Objects: 
+		{% with object_list|first as first_doc %}
+			{{ first_doc.get_classname|title }} 
+		{% endwith %}
+		</h1>
+		<div>
+			<a class ="btn btn-primary btn-lg"  href="{% url 'tryout:areatry_create' %}">create new Area</a>
+		</div>
+	</div>
+	<div class="panel-body">
+		<ul>
+			{% for area in object_list %}
+			<li> <a href="{% url 'tryout:areatry_detail' area.id %}"</a>{{ area }} </li>
+			{% endfor %}
+		</ul>
+{% else %}
+<p> There is no <i>object_list</i></p>
+{% endif %} 
+</div>
+</div>
+</div>
+{% endblock content %}

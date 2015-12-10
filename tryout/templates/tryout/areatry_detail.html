@@ -1,0 +1,47 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+    <!-- http://127.0.0.1:8000/tryout/areatry/detail/9 -->
+<h1>Area</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<table class="table table-striped">
+<ul>
+</ul>
+        <tr>
+            <td>Site</td>
+            <td>{{ object.site }}</td>
+        </tr>
+        <tr>
+            <td>Area ID</td>
+            <td>{{ object.area_nr }}</td>
+        </tr>
+        <tr>
+            <td>Period</td>
+            <td>system name: {{ object.period.cs_name }}<br/>
+                period_name: {{ object.period.period_name }} </br>
+            </td>
+        </tr>
+        <tr>
+            <td>Dating method</td>
+            <td>{% for x in DC_period_datingmethod_list %}
+                {{ x.name }} <br/>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Dated by</td>
+            <td>{% for x in DC_period_datedby_list %}
+                {{ x.name }} <br/>
+                {% endfor %}
+            </td>
+        </tr>
+
+       
+ 
+</table>
+</div>
+{% endblock content %}
+
+
+
