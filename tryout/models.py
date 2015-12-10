@@ -28,58 +28,60 @@ class AreaTry(TrackChanges):
 	period = models.ForeignKey(DC_chronological_system, blank = True, null =True, 
 		help_text="Chronological period. This contains information about the name, the period, start/enddate1/2, and the region.",
 		related_name="areatry_period")
-	radiocarbon_dated = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
- 		null=True, choices = YESNO, help_text="Radiocarbon dated?")
 	dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
 		help_text="Method used for dating the site.")
+	radiocarbon_dated = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO, help_text="Radiocarbon dated?")
 	earliest_date_lab_number = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
- 		null=True, help_text="pleaseProvideSomeHelptext",
+ 		null=True, help_text="The Laboratory number of 14C sample of the earliest date.",
  		verbose_name="Earliest date: Lab Number")
 	earliest_date_14C_age = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
-		verbose_name="Earliest date: 14C age (BC/BP)")
+		help_text = "The earliest date without calibration BP.",
+		verbose_name="Earliest date: 14C age (BP)")
 	earliest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
-		verbose_name="Earliest date: 14C age calibrated (BC/BP)")
+		help_text = "The earliest date with calibration BP.",
+		verbose_name="Earliest date: 14C age calibrated (BP)")
 	earliest_date_standard_deviation = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "The statistical reliability of the dating. Use +/-.",
 		verbose_name="Earliest date: Standard deviation (+/-)")
 	earliest_date_delta13 = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "Delta 13C information.",
 		verbose_name="Earliest date: delta 13C")
-	earliest_date_calibration = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+	earliest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
 		verbose_name="Earliest date: Calibration")
 	earliest_date_date_of_calibration = models.DateField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
 		verbose_name="Earliest date: Date of calibration")
 	earliest_datedated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
-		blank=True, help_text="Source providing information about date.",
+		blank=True, help_text="Dating source material.",
 		related_name="earliestDatedBy",
 		verbose_name="Earliest date: Dated by")
 	latest_date_lab_number = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
- 		null=True, help_text="pleaseProvideSomeHelptext",
+ 		null=True, help_text="The Laboratory number of 14C sample of the latest date.",
  		verbose_name="Latest date: Lab Number")
 	latest_date_14C_age = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
-		verbose_name="Latest date: 14C age (BC/BP")
+		help_text = "The latest date without calibration BP.",
+		verbose_name="Latest date: 14C age (BP")
 	latest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
-		verbose_name="Latest date: 14C age calibrated (BC/BP)")
+		help_text = "The latest date with calibration BP.",
+		verbose_name="Latest date: 14C age calibrated (BP)")
 	latest_date_standard_deviation = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "The statistical reliability of the dating. Use +/-.",
 		verbose_name="Latest date: Standard deviation (+/-)")
 	latest_date_delta13 = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "Delta 13C information.",
 		verbose_name="Latest date: delta 13C")
-	latest_date_calibration = models.IntegerField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+	latest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
 		verbose_name="Latest date: Calibration")
 	latest_date_date_of_calibration = models.DateField(null=True, blank=True,
-		help_text = "pleaseProvideSomeHelptext",
+		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
 		verbose_name="Latest date: Date of calibration")
 	latest_datedated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
-		blank=True, help_text="Source providing information about date.",
+		blank=True, help_text="Dating source material.",
 		related_name="latestDatedBy",
 		verbose_name="Latest date: Dated by")
 	period_reference = models.ManyToManyField(Book, blank=True,
