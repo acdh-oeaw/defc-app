@@ -22,6 +22,52 @@ $(document).ready(function(){
     });
 });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('tr:has(th:contains("Earliest"))').hide();
+        $('tr:has(th:contains("Latest"))').hide();
+    });
+    $('#id_radiocarbon_dated').change(function(){
+    var selected_option =  $('#id_radiocarbon_dated option:selected').text();
+    if(selected_option =="yes"){
+        $('tr:has(th:contains("Earliest"))').show();
+        $('tr:has(th:contains("Latest"))').show();
+    }
+    else if(selected_option =="no"){
+        $('tr:has(th:contains("Earliest"))').hide();
+        $('tr:has(th:contains("Latest"))').hide();
+    }
+    else if(selected_option =="---------"){
+        $('tr:has(th:contains("Earliest"))').hide();
+        $('tr:has(th:contains("Latest"))').hide();
+    }
+    });
+</script>
+
+<script type="text/javascript">
+    $('#id_cave_rockshelters_human_remains').change(function(){
+        var selected_option =  $('#id_cave_rockshelters_human_remains option:selected').text();
+        if(selected_option =="no"){
+             $('tr:has(th:contains("Grave"))').hide();
+         }
+        else if(selected_option =="yes"){
+            $('tr:has(th:contains("Grave"))').show();
+        }
+     });
+
+    $('#id_cave_rockshelters_evidence_of_graves_human_remains').change(function(){
+        var selected_option =  $('#id_cave_rockshelters_evidence_of_graves_human_remains option:selected').text();
+        if(selected_option =="no"){
+             $('tr:has(th:contains("Grave"))').hide();
+         }
+        else if(selected_option =="yes"){
+            $('tr:has(th:contains("Grave"))').show();
+        }
+     });
+</script>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
     $('tr:has(th:contains("yes"))').hide();

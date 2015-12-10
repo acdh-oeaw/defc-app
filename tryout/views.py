@@ -30,7 +30,6 @@ class AreaTryDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(AreaTryDetail, self).get_context_data(**kwargs)
 		current_area = self.object
-		context['DC_period_datingmethod_list'] = DC_period_datingmethod.objects.filter(areatry = current_area.id)
-		context['DC_period_datedby_list'] = DC_period_datedby.objects.filter(areatry = current_area.id)
+	
 
 		return context
