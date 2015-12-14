@@ -45,9 +45,51 @@ $(document).ready(function(){
     });
 </script>
 
+
+<script type ="text/javascript">
+    $('#id_earliest_date_calibration').change(function(){
+    var selected_option = $('#id_earliest_date_calibration option:selected').text();
+    if(selected_option =="no"){
+        $('tr:has(th:contains("Earliest date: 14C age calibrated"))').hide();
+        $('tr:has(th:contains("Earliest date: Date of calibration"))').hide();
+    }
+    else if(selected_option =="yes"){
+        $('tr:has(th:contains("Earliest date: 14C age calibrated"))').show();
+        $('tr:has(th:contains("Earliest date: Date of calibration"))').show();
+
+    }
+    else if(selected_option =="---------"){
+        $('tr:has(th:contains("Earliest date: 14C age calibrated"))').show();
+        $('tr:has(th:contains("Earliest date: Date of calibration"))').show();
+
+    }
+});
+</script> 
+
+<script type ="text/javascript">
+    $('#id_latest_date_calibration').change(function(){
+    var selected_option = $('#id_latest_date_calibration option:selected').text();
+    if(selected_option =="no"){
+        $('tr:has(th:contains("Latest date: 14C age calibrated"))').hide();
+        $('tr:has(th:contains("Latest date: Date of calibration"))').hide();
+    }
+    else if(selected_option =="yes"){
+        $('tr:has(th:contains("Latest date: 14C age calibrated"))').show();
+        $('tr:has(th:contains("Latest date: Date of calibration"))').show();
+
+    }
+    else if(selected_option =="---------"){
+        $('tr:has(th:contains("Latest date: 14C age calibrated"))').show();
+        $('tr:has(th:contains("Latest date: Date of calibration"))').show();
+
+    }
+});
+</script> 
+
+
 <script type="text/javascript">
     $('#id_cave_rockshelters_human_remains').change(function(){
-        var selected_option =  $('#id_cave_rockshelters_human_remains option:selected').text();
+        var selected_option = $('#id_cave_rockshelters_human_remains option:selected').text();
         if(selected_option =="no"){
              $('tr:has(th:contains("Grave"))').hide();
          }

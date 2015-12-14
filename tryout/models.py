@@ -38,6 +38,10 @@ class AreaTry(TrackChanges):
 	earliest_date_14C_age = models.IntegerField(null=True, blank=True,
 		help_text = "The earliest date without calibration BP.",
 		verbose_name="Earliest date: 14C age (BP)")
+	earliest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
+		verbose_name="Earliest date: Calibration")
 	earliest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
 		help_text = "The earliest date with calibration BP.",
 		verbose_name="Earliest date: 14C age calibrated (BP)")
@@ -47,10 +51,7 @@ class AreaTry(TrackChanges):
 	earliest_date_delta13 = models.IntegerField(null=True, blank=True,
 		help_text = "Delta 13C information.",
 		verbose_name="Earliest date: delta 13C")
-	earliest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
- 		null=True, choices = YESNO,
-		help_text = "Was the date calibrated or not?",
-		verbose_name="Earliest date: Calibration")
+	
 	earliest_date_date_of_calibration = models.DateField(null=True, blank=True,
 		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
 		verbose_name="Earliest date: Date of calibration")
@@ -64,6 +65,10 @@ class AreaTry(TrackChanges):
 	latest_date_14C_age = models.IntegerField(null=True, blank=True,
 		help_text = "The latest date without calibration BP.",
 		verbose_name="Latest date: 14C age (BP")
+	latest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
+		verbose_name="Latest date: Calibration")
 	latest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
 		help_text = "The latest date with calibration BP.",
 		verbose_name="Latest date: 14C age calibrated (BP)")
@@ -73,10 +78,7 @@ class AreaTry(TrackChanges):
 	latest_date_delta13 = models.IntegerField(null=True, blank=True,
 		help_text = "Delta 13C information.",
 		verbose_name="Latest date: delta 13C")
-	latest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
- 		null=True, choices = YESNO,
-		help_text = "Was the date calibrated or not?",
-		verbose_name="Latest date: Calibration")
+	
 	latest_date_date_of_calibration = models.DateField(null=True, blank=True,
 		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
 		verbose_name="Latest date: Date of calibration")
