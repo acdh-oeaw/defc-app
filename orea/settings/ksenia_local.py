@@ -21,9 +21,9 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kzaytseva', #defc
-        'USER': 'kzaytseva',
-        'PASSWORD': '6x3U3D29tH',
+        'NAME': 'defc', #defc
+        'USER': 'defc',
+        'PASSWORD': 'F7ffq5WUVp',
         'HOST': 'localhost',
         'PORT': '3306',
     }

@@ -171,21 +171,6 @@ class DC_finds_animal_remains_partSerializer(serializers.HyperlinkedModelSeriali
 		model = DC_finds_animal_remains_part
 
 
-class DC_finds_lithics_debitageSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = DC_finds_lithics_debitage
-
-
-class DC_finds_lithics_modified_toolsSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = DC_finds_lithics_modified_tools
-
-
-class DC_finds_lithics_coreSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = DC_finds_lithics_core
-
-
 class DC_finds_lithics_technologySerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = DC_finds_lithics_technology
@@ -241,27 +226,22 @@ class ResearchEventSerializer(serializers.HyperlinkedModelSerializer):
 		model = ResearchEvent
 
 
-class PeriodSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = Period
-
-
 class SiteSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Period
+		model = Site
 
 
 class AreaSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Period
+		model = Area
 
 
 class FindsSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Period
+		model = Finds
 
 
 class InterpretationSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Period
+		model = Interpretation
 

@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
 from django.utils.translation import ugettext_lazy as _
 from .autocomplete_light_registry import BookAutocomplete, InstitutionAutocomplete, ProjectleaderAutocomplete, NameAutocomplete
-from .models import Area, ResearchEvent, Site, Period, Finds, Interpretation, DC_researchevent_institution, Name
+from .models import Area, ResearchEvent, Site, Finds, Interpretation, DC_researchevent_institution, Name
 from bib.models import Book
 
 

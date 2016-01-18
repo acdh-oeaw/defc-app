@@ -15,6 +15,7 @@ class TrackChanges(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 	modified = models.DateTimeField(auto_now=True, blank=True, null=True)
+	#public = models.BooleanField(default=False, help_text="Make this record public or not?") #uncomment before next migrations
 
 	class Meta:
 		abstract = True
@@ -272,22 +273,27 @@ class DC_finds_animal_remains_part(GenericMethods):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
-class DC_finds_lithics_debitage(GenericMethods):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
-
-
-class DC_finds_lithics_modified_tools(GenericMethods):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
-
-
-class DC_finds_lithics_core(GenericMethods):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
-
-
 class DC_finds_lithics_technology(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
+class DC_finds_lithics_industry(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
+class DC_finds_lithics_core_shape(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
+class DC_finds_lithics_retouched_tools(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
+class DC_finds_lithics_raw_material(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
@@ -323,6 +329,7 @@ class DC_finds_pottery_decoration(GenericMethods):
 class DC_interpretation_productiontype(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="Types of production for which evidence was found.")
+
 
 class DC_interpretation_subsistencetype(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
@@ -432,32 +439,6 @@ class ResearchEvent(TrackChanges):
 reversion.register(ResearchEvent)
 
 
-class Period(TrackChanges):
-	YESNO = (
-		("yes", "yes"),
-		("no", "no")
-		)
-	system = models.ForeignKey(DC_chronological_system, blank=True,
-		null=True, help_text="chronological period.",
-		verbose_name="Period")
-	dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
-		help_text="Method used for dating the site.")
-	dated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
-		blank=True, help_text="Source providing information about date.")
-
-	class Meta:
-		ordering =( 'system',)
-	
-	def get_absolute_url(self):
-		return reverse('defcdb:period_list')
-
-	def __str__(self):
-		#return str(self.system)+'_'+str(self.dating_method)+'_'+str(self.dated_by)
-		return str(self.system)+'_'+str("/".join([str(x) for x in self.dating_method.all()])+"_"+"/".join([str(x) for x in self.dated_by.all()]))
-
-reversion.register(Period)
-
-
 class Site(TrackChanges):
 	EXACT_LOCATION_CHOICES = (
 		("yes", "yes"), 
@@ -472,7 +453,7 @@ class Site(TrackChanges):
 		help_text="Different spelling of the name of the site.",
 		related_name="alternativeName")
 	province = models.ForeignKey(DC_province, blank=True, null=True,
-		help_text = "Geographical area where the site is located.") #mandatory?
+		help_text = "Geographical area where the site is located.", verbose_name= "District") #mandatory?
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the site.") #optional?
 	topography = models.ForeignKey(DC_site_topography, blank=True, null=True,
@@ -525,26 +506,77 @@ class Area(TrackChanges):
 	area_nr = models.CharField(max_length=45, blank=True, null=True, 
 		help_text = "An established identifier for this area", 
 		verbose_name="Area ID")
-	period = models.ForeignKey(Period, blank = True, null =True, 
-		help_text="Period defined by the archaeologist")
-	c14_calibrated = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
- 		null=True, choices = YESNO, help_text="Date is a calibrated date.")
-	c14_absolute_from = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period started.")
-	c14_absolute_to = models.IntegerField(null=True, blank=True, help_text = "Year when archaeological period ended.")
+#Period fields
+	period = models.ManyToManyField(DC_chronological_system, blank = True, 
+		help_text="Chronological period. This contains information about the name, the period, start/enddate1/2, and the region.")
+	dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
+		help_text="Method used for dating the site.")
+	radiocarbon_dated = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO, help_text="Radiocarbon dated?")
+	earliest_date_lab_number = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
+ 		null=True, help_text="The Laboratory number of 14C sample of the earliest date.",
+ 		verbose_name="Earliest date: Lab Number")
+	earliest_date_14C_age = models.IntegerField(null=True, blank=True,
+		help_text = "The earliest date without calibration BP.",
+		verbose_name="Earliest date: 14C age (BP)")
+	earliest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
+		verbose_name="Earliest date: Calibration")
+	earliest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
+		help_text = "The earliest date with calibration in BC.",
+		verbose_name="Earliest date: 14C age calibrated (BC)")
+	earliest_date_date_of_calibration = models.DateField(null=True, blank=True,
+		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
+		verbose_name="Earliest date: Date of calibration")
+	earliest_date_standard_deviation = models.IntegerField(null=True, blank=True,
+		help_text = "The statistical reliability of the dating. Use +/-.",
+		verbose_name="Earliest date: Standard deviation (+/-)")
+	earliest_date_delta13 = models.IntegerField(null=True, blank=True,
+		help_text = "Delta 13C information.",
+		verbose_name="Earliest date: delta 13C")
+	earliest_datedated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
+		blank=True, help_text="Dating source material.",
+		verbose_name="Earliest date: Dated by", related_name="earliestdatedatedby")
+	latest_date_lab_number = models.CharField(max_length=100, blank=True,                          #moved these fields from Period table
+ 		null=True, help_text="The Laboratory number of 14C sample of the latest date.",
+ 		verbose_name="Latest date: Lab Number")
+	latest_date_14C_age = models.IntegerField(null=True, blank=True,
+		help_text = "The latest date without calibration BP (raw).",
+		verbose_name="Latest date: 14C age (BP)")
+	latest_date_calibration = models.CharField(max_length=5, blank=True,                          #moved these fields from Period table
+ 		null=True, choices = YESNO,
+		help_text = "Was the date calibrated or not?",
+		verbose_name="Latest date: Calibration")
+	latest_date_14C_age_calibrated = models.IntegerField(null=True, blank=True,
+		help_text = "The latest date with calibration in BC.",
+		verbose_name="Latest date: 14C age calibrated (BC)")
+	latest_date_date_of_calibration = models.DateField(null=True, blank=True,
+		help_text = "When was the date calibrated? If only year is specified, use the first day of the month/year.",
+		verbose_name="Latest date: Date of calibration")
+	latest_date_standard_deviation = models.IntegerField(null=True, blank=True,
+		help_text = "The statistical reliability of the dating. Use +/-.",
+		verbose_name="Latest date: Standard deviation (+/-)")
+	latest_date_delta13 = models.IntegerField(null=True, blank=True,
+		help_text = "Delta 13C information.",
+		verbose_name="Latest date: delta 13C")
+	latest_datedated_by = models.ManyToManyField(DC_period_datedby, max_length=100,
+		blank=True, help_text="Dating source material.",
+		verbose_name="Latest date: Dated by", related_name="latestdatedatedby")
 	period_reference = models.ManyToManyField(Book, blank=True,
 		help_text= "Bibliographic and web-based reference(s) to publications and other relevant resources on the period.",
-		related_name="referenceForPeriod")
+		related_name="periodreference")
 	period_comment = models.TextField(blank=True, null=True,
 		help_text = "Additional information on the period not covered in any other field.",)
 #settlement fields
-	settlement_type = models.ManyToManyField(DC_area_settlementtype, blank=True,
+	settlement_type = models.ForeignKey(DC_area_settlementtype, blank=True, null=True,
 		help_text="Classification of settlement.")
 	settlement_structure = models.ManyToManyField(DC_area_settlementstructure,
 		blank = True, help_text="Layout of settlement.")
 	settlement_construction_type = models.ManyToManyField(DC_area_constructiontype,
-		blank=True, help_text="Type of buildings.")
-	settlement_building_technique = models.ManyToManyField(DC_area_buildingtechnique,
 		blank=True, help_text="Method used for fabricating the buildings.")
+	settlement_building_technique = models.ManyToManyField(DC_area_buildingtechnique,
+		blank=True, help_text="Type of buildings.")
 	settlement_special_features = models.ManyToManyField(DC_area_specialfeatures,  #it was FK field
 		blank=True, help_text="Parts of the settlement other than buildings.")
 	settlement_human_remains = models.CharField(max_length=3, blank=True,
@@ -554,16 +586,15 @@ class Area(TrackChanges):
 	cave_rockshelters_type = models.ForeignKey(DC_area_caverockshelterstype, 
 		verbose_name="Cave/rockshelters type", 
 		blank=True, null=True,help_text="Type of cave/rockshelter.")
-	cave_rockshelters_evidence_of_graves_human_remains = models.ForeignKey(
-		DC_area_evidenceofgraveshumanremains, verbose_name="Cave/rockshelters: evidence of graves/human remains", 
-		blank=True, null=True,
-		help_text="Presence of graves and/or human remains.")
+	cave_rockshelters_human_remains = models.CharField(max_length=3, blank=True,
+		null=True, choices=HUMANREMAINS,
+		help_text = "Any human remains found in this cave or rockshelter?")
 	cave_rockshelters_evidence_of_occupation = models.ManyToManyField(
 		DC_area_evidenceofoccupation, verbose_name="Cave/rockshelters: evidence of occupation", blank=True,
 		help_text="Type of evidence indicating occupation found.")
 #quarry fields
-	quarry_exploitation_type = models.ManyToManyField(DC_area_exploitationtype,
-		blank=True, help_text="Type of extraction.")
+	quarry_exploitation_type = models.ForeignKey(DC_area_exploitationtype,
+		blank=True, null=True, help_text="Type of extraction.")
 	quarry_raw_material = models.ManyToManyField(DC_area_rawmaterial,
 		blank=True, help_text="Resource that was extracted.")
 #cemetery/graves fields
@@ -588,18 +619,20 @@ class Area(TrackChanges):
 	grave_sexes = models.ManyToManyField(DC_area_sexes, verbose_name="Grave: sexes", blank=True,
 		help_text="Sex.")
 	grave_number_of_female_sex = models.IntegerField(verbose_name="Grave: number of female sex", 
-		null=True, blank=True, help_text = "Helptext")
+		null=True, blank=True, help_text = "Number of female individuals in a grave/settlement.")
 	grave_number_of_male_sex = models.IntegerField(verbose_name="Grave: number of male sex", 
-		null=True, blank=True, help_text = "Helptext")
+		null=True, blank=True, help_text = "Number of male individuals in a grave/settlement.")
 	grave_number_of_not_specified_sex = models.IntegerField(verbose_name="Grave: number of not specified sex", 
-		null=True, blank=True, help_text = "Helptext")
+		null=True, blank=True, help_text = "Number of those individuals whose sex could not be determined.")
 	grave_manipulations_of_graves = models.ManyToManyField(
 		DC_area_manipulationofgraves, verbose_name="Grave: manipulations of graves", blank=True,
-		help_text="If and how the space with the graves is marked.")
-	#common fields
+		help_text="Post-depositional intervention of grave.")
+
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the settlement/cave&rockshelters/quarry/cemetery&graves")
-	reference = models.ManyToManyField(Book, blank=True, help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.")
+	reference = models.ManyToManyField(Book, blank=True,
+		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the settlement.",
+		related_name="referencereference")
 	comment = models.TextField(blank=True, null=True,
 		help_text="Additional information not covered in any other field.")
 
@@ -622,6 +655,10 @@ class Finds(TrackChanges):
 		("3", "3"),
 		("4", "4"),
 		("5", "5"),
+		)
+	OBSIDIAN_CHOICES=(
+		("Yes", "Yes"),
+		("No", "No"),
 		)
 	area = models.ForeignKey(Area, blank=True, null=True,
 		help_text="Location of the find.")
@@ -649,15 +686,22 @@ class Finds(TrackChanges):
 		DC_finds_animal_remains_part,
 		blank=True, help_text="Which part was present.")
 # Lithics
-	lithics_debitage = models.ManyToManyField(DC_finds_lithics_debitage,
-		blank=True, help_text="Basic form of the tool.")
-	lithics_modified_tools = models.ManyToManyField(
-		DC_finds_lithics_modified_tools,
-		blank=True,help_text="Kind of tool which was made out of the debitage.")
-	lithics_cores = models.ManyToManyField(DC_finds_lithics_core,
-		blank=True, help_text="Type of the core.")
 	lithics_technology = models.ManyToManyField(DC_finds_lithics_technology,
-		blank=True, help_text="Which technology was used to produce the debitage or tools.")
+		blank=True, help_text="Technology of lithic production.")
+	lithics_industry = models.ManyToManyField(DC_finds_lithics_industry,
+		blank=True, help_text="Blade/Flake/Microlithic industry.")
+	lithics_core_shape = models.ManyToManyField(DC_finds_lithics_core_shape,
+		blank=True, help_text="Type of the core of the tool.")
+	lithics_retouched_tools = models.ManyToManyField(DC_finds_lithics_retouched_tools,
+		blank=True, help_text="Type of the retouched tool.",
+		verbose_name="Lithics retouched tools (types)")
+	lithics_raw_material = models.ManyToManyField(DC_finds_lithics_raw_material,
+		blank=True, help_text="Material from which the tool was made.")
+	obsidian = models.CharField(max_length=50, blank=True, null=True,
+		help_text="Are there traces of obsidian in the tool?", choices = OBSIDIAN_CHOICES)
+	obsidian_amount = models.IntegerField(blank=True, null=True,
+		help_text="The percentage of obsidian in the tool.",
+		verbose_name="Obsidian amount (%)")
 # Pottery
 	pottery_form = models.ForeignKey(DC_finds_pottery_form,
 	 	blank=True, null = True, help_text="The form of the pottery.")

@@ -42,9 +42,6 @@ router.register(r'dc_finds_botany_species', views.DC_finds_botany_speciesViewSet
 router.register(r'dc_finds_animal_remains_species', views.DC_finds_animal_remains_speciesViewSet)
 router.register(r'dc_finds_animal_remains_completeness', views.DC_finds_animal_remains_completenessViewSet)
 router.register(r'dc_finds_animal_remains_part', views.DC_finds_animal_remains_partViewSet)
-router.register(r'dc_finds_lithics_debitage', views.DC_finds_lithics_debitageViewSet)
-router.register(r'dc_finds_lithics_modified_tools', views.DC_finds_lithics_modified_toolsViewSet)
-router.register(r'dc_finds_lithics_core', views.DC_finds_lithics_coreViewSet)
 router.register(r'dc_finds_lithics_technology', views.DC_finds_lithics_technologyViewSet)
 router.register(r'dc_finds_pottery_form', views.DC_finds_pottery_formViewSet)
 router.register(r'dc_finds_pottery_detail', views.DC_finds_pottery_detailViewSet)
@@ -55,12 +52,11 @@ router.register(r'dc_chronological_system', views.DC_chronological_systemViewSet
 router.register(r'dc_period_datingmethod', views.DC_period_datingmethodViewSet)
 router.register(r'dc_period_datedby', views.DC_period_datedbyViewSet)
 router.register(r'Reference', views.ReferenceViewSet)
-#router.register(r'ResearchEvent', views.ResearchEventViewSet)
-router.register(r'Period', views.PeriodViewSet)
-#router.register(r'Site', views.SiteViewSet)
-#router.register(r'Area', views.AreaViewSet)
-#router.register(r'Finds', views.FindsViewSet)
-#router.register(r'Interpretation', views.InterpretationViewSet)
+router.register(r'ResearchEvent', views.ResearchEventViewSet)
+router.register(r'Site', views.SiteViewSet)
+router.register(r'Area', views.AreaViewSet)
+router.register(r'Finds', views.FindsViewSet)
+router.register(r'Interpretation', views.InterpretationViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),

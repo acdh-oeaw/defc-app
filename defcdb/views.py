@@ -13,7 +13,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from rest_framework import viewsets
 from reversion import revisions as reversion
 
-from .models import Name, DC_province, DC_country, DC_region, Site, Area, Finds, Period, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
+from .models import Name, DC_province, DC_country, DC_region, Site, Area, Finds, ResearchEvent, Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
 from .forms import NameForm, form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 from .serializers import *
 from bib.models import Book
@@ -187,21 +187,6 @@ class DC_finds_animal_remains_partViewSet(viewsets.ModelViewSet):
 	serializer_class = DC_finds_animal_remains_partSerializer
 
 
-class DC_finds_lithics_debitageViewSet(viewsets.ModelViewSet):
-	queryset = DC_finds_lithics_debitage.objects.all()
-	serializer_class = DC_finds_lithics_debitageSerializer
-
-
-class DC_finds_lithics_modified_toolsViewSet(viewsets.ModelViewSet):
-	queryset = DC_finds_lithics_modified_tools.objects.all()
-	serializer_class = DC_finds_lithics_modified_toolsSerializer
-
-
-class DC_finds_lithics_coreViewSet(viewsets.ModelViewSet):
-	queryset = DC_finds_lithics_core.objects.all()
-	serializer_class = DC_finds_lithics_coreSerializer
-
-
 class DC_finds_lithics_technologyViewSet(viewsets.ModelViewSet):
 	queryset = DC_finds_lithics_technology.objects.all()
 	serializer_class = DC_finds_lithics_technologySerializer
@@ -255,11 +240,6 @@ class ReferenceViewSet(viewsets.ModelViewSet):
 class ResearchEventViewSet(viewsets.ModelViewSet):
 	queryset = ResearchEvent.objects.all()
 	serializer_class = ResearchEventSerializer
-
-
-class PeriodViewSet(viewsets.ModelViewSet):
-	queryset = Period.objects.all()
-	serializer_class = PeriodSerializer
 
 
 class SiteViewSet(viewsets.ModelViewSet):
@@ -348,54 +328,54 @@ class ResearchEventDetail(DetailView):
 #				views for Period								#
 #################################################################
 
-class PeriodListView(generic.ListView):
-	template_name = 'defcdb/period_list.html'
-	context_object_name = 'object_list' # use object_list instead of
-	# e.g. site_list so the template does not need to be changed so much
-	#for each class.
+# class PeriodListView(generic.ListView):
+# 	template_name = 'defcdb/period_list.html'
+# 	context_object_name = 'object_list' # use object_list instead of
+# 	# e.g. site_list so the template does not need to be changed so much
+# 	#for each class.
 
-	def get_queryset(self):
-		return Period.objects.order_by('system') #'name' changed for 'period_name'
+# 	def get_queryset(self):
+# 		return Period.objects.order_by('system') #'name' changed for 'period_name'
 
-class PeriodCreate(CreateView):
-	model = Period
-	fields = "__all__"
-	template_name = "defcdb/create_period.html"
+# class PeriodCreate(CreateView):
+# 	model = Period
+# 	fields = "__all__"
+# 	template_name = "defcdb/create_period.html"
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(PeriodCreate, self).dispatch(*args, **kwargs)
-
-
-class PeriodUpdate(UpdateView):
-	model = Period
-	fields = "__all__"
-	template_name = 'defcdb/update_form.html'
-
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(PeriodUpdate, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(PeriodCreate, self).dispatch(*args, **kwargs)
 
 
-class PeriodDelete(DeleteView):
-	model = Period
-	template_name = 'defcdb/confirm_delete.html'
-	success_url = reverse_lazy('defcdb:period_list')
+# class PeriodUpdate(UpdateView):
+# 	model = Period
+# 	fields = "__all__"
+# 	template_name = 'defcdb/update_form.html'
 
-	@method_decorator(login_required)
-	def dispatch(self, *args, **kwargs):
-		return super(PeriodDelete, self).dispatch(*args, **kwargs)
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(PeriodUpdate, self).dispatch(*args, **kwargs)
 
 
-class PeriodDetail(DetailView):
-	model = Period
-	def get_context_data(self, **kwargs):
-		context = super(PeriodDetail, self).get_context_data(**kwargs)
-		current_object = self.object
-		context['datedby_list'] = current_object.dated_by.all()
-		context['datingmethod_list'] = current_object.dating_method.all()
-		#context['reference_list'] = current_object.reference.all()
-		return context
+# class PeriodDelete(DeleteView):
+# 	model = Period
+# 	template_name = 'defcdb/confirm_delete.html'
+# 	success_url = reverse_lazy('defcdb:period_list')
+
+# 	@method_decorator(login_required)
+# 	def dispatch(self, *args, **kwargs):
+# 		return super(PeriodDelete, self).dispatch(*args, **kwargs)
+
+
+# class PeriodDetail(DetailView):
+# 	model = Period
+# 	def get_context_data(self, **kwargs):
+# 		context = super(PeriodDetail, self).get_context_data(**kwargs)
+# 		current_object = self.object
+# 		context['datedby_list'] = current_object.dated_by.all()
+# 		context['datingmethod_list'] = current_object.dating_method.all()
+# 		#context['reference_list'] = current_object.reference.all()
+# 		return context
 
 
 #################################################################
@@ -457,9 +437,6 @@ class FindsDetail(DetailView):
 		context['botanyspecies_list'] = current_find.botany_species.all()
 		context['animalremainsspecies_list'] = current_find.animal_remains_species.all()
 		context['animalremainspart_list'] = current_find.animal_remains_part.all()
-		context['lithicsdebitage_list'] = current_find.lithics_debitage.all()
-		context['lithicsmodifiedtools_list'] = current_find.lithics_modified_tools.all()
-		context['lithicscores_list'] = current_find.lithics_cores.all()
 		context['lithicstechnology_list'] = current_find.lithics_technology.all()
 		context['potterydetail_list'] = current_find.pottery_detail.all()
 		context['potterydecoration_list'] = current_find.pottery_decoration.all()
