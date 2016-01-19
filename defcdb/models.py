@@ -79,8 +79,8 @@ class DC_province(GenericMethods):
 		help_text="The name of the country")
 
 	def __str__(self):
-		return str(self.region)+'_'+self.name
-		#return str(self.name)+'_'+self.region
+		#return str(self.region)+'_'+self.name
+		return str(self.name)+'_'+str(self.region)
 
 
 class DC_reference_type(GenericMethods):
