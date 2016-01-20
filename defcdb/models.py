@@ -345,7 +345,7 @@ class DC_chronological_system(GenericMethods):
 	start_date2_BC = models.IntegerField(blank=True, null=True)
 	end_date1_BC = models.IntegerField(blank=True, null=True)
 	end_date2_BC = models.IntegerField(blank=True, null=True)
-	region = models.ForeignKey(DC_region, blank=True, null=True)
+	region = models.ManyToManyField(DC_region, blank=True)
 
 	class Meta:
 		ordering =( 'cs_name',)

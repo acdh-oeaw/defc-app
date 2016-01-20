@@ -49,8 +49,8 @@ INSTALLED_APPS = (
 	'geolocation',
     'webpage',
     'reversion',
-    'tryout'
-    #'django_extensions',
+    'tryout',
+    'django_extensions',
 
 )
 
