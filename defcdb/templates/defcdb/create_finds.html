@@ -26,69 +26,80 @@ $(document).ready(function(){
     });
 });
 </script>
-
 <script type="text/javascript">  
-// script managing the visibility of Fields-Fields
 $(document).ready(function(){
-    $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').hide();
-        $('tr:has(th:contains("Obsidian"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+    // $("#div_id_lithics_technology").hide("slow");
+    // $("form div").filter("#div_id_lithics").hide("slow");
+    $('div[id*="small"]').hide();
+    $('div[id*="botany"]').hide();
+    $('div[id*="animal"]').hide();
+    $('div[id*="lithics"]').hide();
+    $('div[id*="pottery"]').hide();
+    $('div[id*="material"]').hide();
+    $('div[id*="obsidian"]').hide();
+    $('#div_id_obsidian_amount').hide();
 })
 $('#id_finds_type').change(function(){
     var selected_option =  $("#id_finds_type option:selected").text();
     if(selected_option =="small finds"){
-        $('tr:has(th:contains("all finds"))').show("slow");
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').show("slow");
-        $('tr:has(th:contains("Obsidian"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('div[id*="small"]').show("slow");
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
     }
     else if(selected_option =="botany"){
-        $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').show("slow");
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').hide();
-        $('tr:has(th:contains("Obsidian"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').show("slow");
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
     }
     else if(selected_option =="animal remains"){
-        $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').show("slow");
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').hide();
-        $('tr:has(th:contains("Obsidian"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').show("slow");
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
     }
     else if(selected_option =="lithics"){
-        $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').show("slow");
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').show("slow");
-        $('tr:has(th:contains("Obsidian"))').show("slow");
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').show("slow");
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        // $('div[id*="obsidian"]').show("slow");
+        $('#div_id_obsidian').show("slow");
+        //  if($('#id_obsidian option:selected').text() == "yes"){
+        //     // $('#div_id_obsidian_amount').show("slow");
+        //     $('#div_id_obsidian_amount').show("slow");
+        // }
+        // else{
+        //      // $('#div_id_obsidian_amount').hide();
+        //      $('#div_id_obsidian_amount').hide();
+        // }
+        $('#div_id_obsidian_amount').hide();
+       
     }
-     else if(selected_option =="pottery"){
-        $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').show("slow");
-        $('tr:has(th:contains("Obsidian"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+    else if(selected_option =="pottery"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').show("slow");
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
         if($('#id_area option:selected').text() == "---------"){
             $('#id_pottery_form option').hide();
             $('#id_pottery_detail option').hide();
@@ -106,33 +117,143 @@ $('#id_finds_type').change(function(){
             $('#id_pottery_detail option:contains('+selected_area+')').show();
             $('#id_pottery_decoration option:contains('+selected_area+')').show();
         }
-        $('tr:has(th:contains("Material"))').hide();
     }
     else if(selected_option =="---------"){
-        $('tr:has(th:contains("all finds"))').hide();
-        $('tr:has(th:contains("otany"))').hide();
-        $('tr:has(th:contains("nimal re"))').hide();
-        $('tr:has(th:contains("ithics"))').hide();
-        $('tr:has(th:contains("ottery"))').hide();
-        $('tr:has(th:contains("Material"))').hide();
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
     }
-});
+    });
 </script>
 <script type ="text/javascript">
     $('#id_obsidian').change(function(){
     var selected_option = $('#id_obsidian option:selected').text();
     if(selected_option =="yes"){
-        $('tr:has(th:contains("Obsidian amount"))').show();
+        $('#div_id_obsidian_amount').show();
     }
     else if(selected_option =="no"){
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('#div_id_obsidian_amount').hide();
     }
     else if(selected_option =="---------"){
-        $('tr:has(th:contains("Obsidian amount"))').hide();
+        $('#div_id_obsidian_amount').hide();
     }
 });
-</script> 
+</script>
+
+<!-- Dont't delete the below code yet -->
+
+// <script type="text/javascript">  
+// // script managing the visibility of Fields-Fields
+// $(document).ready(function(){
+//     $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').hide();
+//         $('tr:has(th:contains("Obsidian"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+// })
+// $('#id_finds_type').change(function(){
+//     var selected_option =  $("#id_finds_type option:selected").text();
+//     if(selected_option =="small finds"){
+//         $('tr:has(th:contains("all finds"))').show("slow");
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').show("slow");
+//         $('tr:has(th:contains("Obsidian"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+//     else if(selected_option =="botany"){
+//         $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').show("slow");
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').hide();
+//         $('tr:has(th:contains("Obsidian"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+//     else if(selected_option =="animal remains"){
+//         $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').show("slow");
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').hide();
+//         $('tr:has(th:contains("Obsidian"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+//     else if(selected_option =="lithics"){
+//         $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').show("slow");
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').show("slow");
+//         $('tr:has(th:contains("Obsidian"))').show("slow");
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+//      else if(selected_option =="pottery"){
+//         $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').show("slow");
+//         $('tr:has(th:contains("Obsidian"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//         if($('#id_area option:selected').text() == "---------"){
+//             $('#id_pottery_form option').hide();
+//             $('#id_pottery_detail option').hide();
+//             $('#id_pottery_decoration option').hide();
+//             //console.log($('#id_area option:selected').text());
+//         }
+//         else {
+//             $('#id_pottery_form option').hide();
+//             $('#id_pottery_detail option').hide();
+//             $('#id_pottery_decoration option').hide();
+//             var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));
+//             //console.log($('#id_pottery_form option:contains("Southern/Central Greece, Cyclades")'));
+//             $('#id_pottery_form option:contains('+selected_area+')').show();
+//            // $('#id_pottery_form ('tr:has(option:contains("Southern and Central Greece, Cyclades"))').show();
+//             $('#id_pottery_detail option:contains('+selected_area+')').show();
+//             $('#id_pottery_decoration option:contains('+selected_area+')').show();
+//         }
+//         $('tr:has(th:contains("Material"))').hide();
+//     }
+//     else if(selected_option =="---------"){
+//         $('tr:has(th:contains("all finds"))').hide();
+//         $('tr:has(th:contains("otany"))').hide();
+//         $('tr:has(th:contains("nimal re"))').hide();
+//         $('tr:has(th:contains("ithics"))').hide();
+//         $('tr:has(th:contains("ottery"))').hide();
+//         $('tr:has(th:contains("Material"))').hide();
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+// });
+// </script>
+ 
+// <script type ="text/javascript">
+//     $('#id_obsidian').change(function(){
+//     var selected_option = $('#id_obsidian option:selected').text();
+//     if(selected_option =="yes"){
+//         $('tr:has(th:contains("Obsidian amount"))').show();
+//     }
+//     else if(selected_option =="no"){
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+//     else if(selected_option =="---------"){
+//         $('tr:has(th:contains("Obsidian amount"))').hide();
+//     }
+// });
+// </script> 
 <script type="text/javascript">
     $('#id_area').change(function(){
         $('#id_pottery_form option').hide();
