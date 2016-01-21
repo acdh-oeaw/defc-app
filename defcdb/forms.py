@@ -17,6 +17,11 @@ class NameForm(autocomplete_light.ModelForm):
 		model=Name
 		fields = "__all__"
 
+	def __init__(self, *args, **kwargs):
+			super(NameForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 class AreaForm(autocomplete_light.ModelForm):
 	period_reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
@@ -33,6 +38,11 @@ class AreaForm(autocomplete_light.ModelForm):
 		#exclude =['reference', 'period_reference']
 		fields="__all__"
 
+	def __init__(self, *args, **kwargs):
+			super(AreaForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 class ResearcheventForm(autocomplete_light.ModelForm):
 	project_leader = forms.CharField(required=False,
@@ -47,6 +57,11 @@ class ResearcheventForm(autocomplete_light.ModelForm):
 		model = ResearchEvent
 		fields = '__all__'
 
+	def __init__(self, *args, **kwargs):
+			super(ResearcheventForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
@@ -60,6 +75,11 @@ class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 		model = Finds
 		fields = '__all__'
 
+	def __init__(self, *args, **kwargs):
+			super(FindsForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 class SiteForm(autocomplete_light.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
@@ -71,6 +91,11 @@ class SiteForm(autocomplete_light.ModelForm):
 		model = Site
 		fields = '__all__'
 
+	def __init__(self, *args, **kwargs):
+			super(SiteForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 class InterpretationForm(autocomplete_light.ModelForm):
 	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
@@ -80,6 +105,12 @@ class InterpretationForm(autocomplete_light.ModelForm):
 	class Meta:
 		model = Interpretation
 		fields = '__all__'
+
+	def __init__(self, *args, **kwargs):
+			super(InterpretationForm, self).__init__(*args, **kwargs)
+			self.helper = FormHelper()
+			self.helper.add_input(Submit('submit','Create'))
+
 
 
 class form_user_login(forms.Form):
