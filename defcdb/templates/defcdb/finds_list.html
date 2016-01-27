@@ -5,7 +5,6 @@
 {% block content %}
 
 <div class="container">
-{% if object_list %}
 
 <hr />
 <div class="panel panel-default">
@@ -20,6 +19,8 @@
 		</div>
 	</div>
 	<div class="panel-body">
+		{% if object_list %}
+
 <table class="table table-striped">
 	<thead>
 		<th colspan="6" class="ts-pager form-horizontal">

@@ -55,28 +55,42 @@
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Lithics debitage</td>
-                <td>{% for lithics in lithicsdebitage_list %}
-                    {{ lithics }}<br/>
-                    {% endfor %}</td>
-        </tr>
-        <tr>
-                <td>Lithics modified tools</td>
-                <td>{% for lithics in lithicsmodifiedtools_list %}
-                    {{ lithics }}<br/>
-                    {% endfor %}</td>
-        </tr>
-        <tr>
-                <td>Lithics cores</td>
-                <td>{% for lithics in lithicscores_list %}
-                    {{ lithics }}<br/>
-                    {% endfor %}</td>
-        </tr>
-        <tr>
                 <td>Lithics technology</td>
                 <td>{% for lithics in lithicstechnology_list %}
                     {{ lithics }}<br/>
                     {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics industry</td>
+                <td>{% for lithics in lithicsindustry_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics core shape</td>
+                <td>{% for lithics in lithicscoreshape_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics retouched tools</td>
+                <td>{% for lithics in lithicsretouchedtools_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics raw material</td>
+                <td>{% for lithics in lithicsrawmaterial_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Obsidian</td>
+                <td>{{ object.obsidian }}</td>
+        </tr>
+        <tr>
+                <td>Obsidian amount</td>
+                <td>{{ object.obsidian_amount }}</td>
         </tr>
         <!-- <tr>
                 <td>Pottery form</td>
