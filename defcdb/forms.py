@@ -68,8 +68,8 @@ class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 		required = False,
 		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
 		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the selected small finds.")
-	research_event = forms.ModelMultipleChoiceField(queryset=ResearchEvent.objects.all(),
-		help_text="Project/ Research the finds are related to.")
+	research_event = forms.ModelChoiceField(queryset=ResearchEvent.objects.all(),
+		help_text="Project/ Research the finds are related to.", required=False)
 
 	class Meta:
 		model = Finds

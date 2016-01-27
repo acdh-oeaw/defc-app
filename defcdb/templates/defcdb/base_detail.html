@@ -4,6 +4,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("td:empty").parent().hide();
+    $("td:contains('None')").parent().hide();
     $("#01").click(function(){
         // var testv = $("td:odd").text();
         //  // alert(testv);
@@ -11,6 +12,8 @@ $(document).ready(function(){
             var emptytd = $("td:empty");
             // alert(emptytd.length);
             $(emptytd).parent().toggle("slow");
+            var nonetd = $("td:contains('None')");
+            $(nonetd).parent().toggle("slow");
         /*testv.hide();*/
   //       if ($('td:even:empty',this){ 
   //       $(this).hide();

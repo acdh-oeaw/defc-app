@@ -284,7 +284,7 @@ def update_researchevent(request, pk):
 		form = ResearcheventForm(request.POST, instance=instance)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:researchevent_detail', pk=pk)
+			return redirect('defcdb:researchevent_detail', pk=pk)
 	else:
 		form = ResearcheventForm(instance=instance)
 		return render(request, 'defcdb/update_form.html', {'form': form, 'classname':"research event"})
@@ -296,7 +296,9 @@ def create_researchevent(request):
 		form = ResearcheventForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:researchevent_list')
+			return redirect('defcdb:researchevent_list')
+		else:
+			return render(request, 'defcdb/create_researchevent.html', {'form':form})
 	else:
 		form = ResearcheventForm()
 		return render(request, 'defcdb/create_researchevent.html', {'form':form})
@@ -409,7 +411,9 @@ def create_finds(request):
 		form = FindsForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:finds_list')
+			return redirect('defcdb:finds_list')
+		else:
+			return render(request, 'defcdb/create_finds.html', {'form':form})
 	else:
 		form = FindsForm()
 		return render(request, 'defcdb/create_finds.html', {'form':form})
@@ -438,6 +442,10 @@ class FindsDetail(DetailView):
 		context['animalremainsspecies_list'] = current_find.animal_remains_species.all()
 		context['animalremainspart_list'] = current_find.animal_remains_part.all()
 		context['lithicstechnology_list'] = current_find.lithics_technology.all()
+		context['lithicsindustry_list'] = current_find.lithics_industry.all()
+		context['lithicscoreshape_list'] = current_find.lithics_core_shape.all()
+		context['lithicsretouchedtools_list'] = current_find.lithics_retouched_tools.all()
+		context['lithicsrawmaterial_list'] = current_find.lithics_raw_material.all()
 		context['potterydetail_list'] = current_find.pottery_detail.all()
 		context['potterydecoration_list'] = current_find.pottery_decoration.all()
 		context['material_list'] = current_find.material.all()
@@ -491,7 +499,9 @@ def create_site(request):
 		form = SiteForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:site_list')
+			return redirect('defcdb:site_list')
+		else:
+			return render(request, 'defcdb/create_site.html', {'form':form})
 	else:
 		form = SiteForm()
 		return render(request, 'defcdb/create_site.html', {'form':form})
@@ -554,7 +564,9 @@ def create_area(request):
 		form = AreaForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:area_list')
+			return redirect('defcdb:area_list')
+		else:
+			return render(request, 'defcdb/create_area.html', {'form':form})
 	else:
 		form = AreaForm()
 		return render(request, 'defcdb/create_area.html', {'form':form})
@@ -576,16 +588,20 @@ class AreaDetail(DetailView):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
 		context['period_reference_list'] = current_area.period_reference.all()
+		context['period_list'] = current_area.period.all()
+		context['dating_method_list'] = current_area.dating_method.all()
+		context['datedby_list'] = current_area.earliest_datedated_by.all()
+		context['datedby_list'] = current_area.latest_datedated_by.all()
 		context['interpretations_list'] = Interpretation.objects.filter(area=current_area.id)
 		context['finds_list'] = Finds.objects.filter(area=current_area.id)
 		context['reference_list'] = current_area.reference.all()
-		context['settlementtype_list'] = current_area.settlement_type.all()
+		# context['settlementtype_list'] = current_area.settlement_type.all()
 		context['settlementstructure_list'] = current_area.settlement_structure.all()
 		context['settlementconstructiontype_list'] = current_area.settlement_construction_type.all()
 		context['settlementbuildingtechnique_list'] = current_area.settlement_building_technique.all()
 		context['settlementspecialfeatures_list'] = current_area.settlement_special_features.all()
 		context['evidenceofoccupation_list'] = current_area.cave_rockshelters_evidence_of_occupation.all()
-		context['quarryexploitationtype_list'] = current_area.quarry_exploitation_type.all()
+		# context['quarryexploitationtype_list'] = current_area.quarry_exploitation_type.all()
 		context['quarryrawmaterial_list'] = current_area.quarry_raw_material.all()
 		context['topography_list'] = current_area.cemetery_or_graves_topography.all()
 		context['mortuaryfeatures_list'] = current_area.cemetery_or_graves_mortuary_features.all()
@@ -631,7 +647,9 @@ def create_interpretation(request):
 		form = InterpretationForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return redirect('defcdb:interpretation_list')
+			return redirect('defcdb:interpretation_list')
+		else:
+			return render(request, 'defcdb/create_interpretation.html', {'form':form})
 	else:
 		form = InterpretationForm()
 		return render(request, 'defcdb/create_interpretation.html', {'form':form})

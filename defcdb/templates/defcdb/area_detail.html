@@ -22,19 +22,87 @@
         
         <tr>
                 <td>Period</td>
-                <td>{{ object.period.system.period_name }}</td>
+                <td>{% for period in period_list %}
+                {{ period }}</br>
+                {% endfor %}</td>
         </tr>
         <tr>
-                <td>C14: calibrated</td>
-                <td>{{ object.c14_calibrated }}</td>
+                <td>Dating method</td>
+                <td>{% for method in dating_method_list %}
+                {{ method }}</br>
+                {% endfor %}</td>
         </tr>
         <tr>
-                <td>C14: absolute from</td>
-                <td>{{ object.c14_absolute_from }}</td>
+                <td>Radiocarbon dated</td>
+                <td>{{ object.radiocarbon_dated }}</td>
         </tr>
         <tr>
-                <td>C14: absolute to</td>
-                <td>{{ object.c14_absolute_to }}</td>
+                <td>Earliest date: Lab Number</td>
+                <td>{{ object.earliest_date_lab_number }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: 14C age (BP)</td>
+                <td>{{ object.earliest_date_14C_age }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Calibration</td>
+                <td>{{ object.earliest_date_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: 14C age calibrated (BC)</td>
+                <td>{{ object.earliest_date_14C_age_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Date of calibration</td>
+                <td>{{ object.earliest_date_date_of_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Standard deviation</td>
+                <td>{{ object.earliest_date_standard_deviation }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Delta 13C</td>
+                <td>{{ object.earliest_date_delta13 }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Dated by</td>
+                <td>{% for date in datedby_list %}
+                {{ date }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Lab Number</td>
+                <td>{{ object.latest_date_lab_number }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: 14C age (BP)</td>
+                <td>{{ object.latest_date_14C_age }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Calibration</td>
+                <td>{{ object.latest_date_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: 14C age calibrated (BC)</td>
+                <td>{{ object.latest_date_14C_age_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Date of calibration</td>
+                <td>{{ object.latest_date_date_of_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Standard deviation</td>
+                <td>{{ object.latest_date_standard_deviation }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Delta 13C</td>
+                <td>{{ object.latest_date_delta13 }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Dated by</td>
+                <td>{% for date in datedby_list %}
+                {{ date }}</br>
+                {% endfor %}</td>
         </tr>
         <tr>
                 <td>Period Reference</td>
@@ -43,10 +111,18 @@
                     {% endfor %}</td>
         </tr>
         <tr>
+                <td>Comment</td>
+                <td>{{ object.period_comment }}</td>
+        </tr>
+        <!-- <tr>
                 <td>Settlement type</td>
                 <td>{% for type in settlementtype_list %}
                     {{ type }}<br/>
                     {% endfor %}</td>
+        </tr> -->
+        <tr>
+                <td>Settlement type</td>
+                <td>{{ object.settlement_type }}</td>
         </tr>
         <tr>
                 <td>Settlement structure</td>
@@ -86,11 +162,15 @@
                     {{ evidence }}<br/>
                     {% endfor %}</td>
         </tr>
-        <tr>
+        <!-- <tr>
                 <td>Quarry exploitation type</td>
                 <td>{% for type in quarryexploitationtype_list %}
                     {{ type }}<br/>
                     {% endfor %}</td>
+        </tr> -->
+        <tr>
+                <td>Quarry exploitation type</td>
+                <td>{{ object.quarry_exploitation_type }}</td>
         </tr>
         <tr>
                 <td>Quarry raw material</td>
