@@ -301,7 +301,7 @@ class DC_finds_lithics_raw_material(GenericMethods):
 class DC_finds_pottery_form(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	region = models.ForeignKey(DC_region, blank=True,null=True)
+	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
 		return u'%s - %s' % (self.name, self.region.name)
@@ -310,7 +310,7 @@ class DC_finds_pottery_form(GenericMethods):
 class DC_finds_pottery_detail(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	region = models.ForeignKey(DC_region, blank=True,null=True)
+	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
 		return u'%s - %s' % (self.name, self.region.name)
@@ -319,7 +319,7 @@ class DC_finds_pottery_detail(GenericMethods):
 class DC_finds_pottery_decoration(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	region = models.ForeignKey(DC_region, blank=True,null=True)
+	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
 		return u'%s - %s' % (self.name, self.region)
