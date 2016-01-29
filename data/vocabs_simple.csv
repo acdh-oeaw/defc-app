@@ -1,4 +1,6 @@
 class name,fields name,field value,field name 2,second value
+DC_country,name,Turkey,original_name,Türkei
+DC_country,name,Greece,original_name,Griechenland
 DC_area_areatype,name,cave or rockshelter,,
 DC_area_areatype,name,cemetery or grave,,
 DC_area_areatype,name,quarry,,

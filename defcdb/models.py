@@ -339,7 +339,7 @@ class DC_interpretation_subsistencetype(GenericMethods):
 class DC_chronological_system(GenericMethods):
 	cs_name = models.CharField(max_length=100, blank=True,
  		null=True, help_text="Name of the chronological system.")
-	period_name = models.CharField(max_length=100, blank=True,
+	period_name = models.CharField(max_length=256, blank=True,
  		null=True, help_text="Name of archaeological period for which evidence was found.")
 	start_date1_BC = models.IntegerField(blank=True, null=True)
 	start_date2_BC = models.IntegerField(blank=True, null=True)
@@ -760,3 +760,8 @@ class Interpretation(TrackChanges):
 		return 'Interpretation'+'_'+str(self.finds)+'_'+str(self.id) 
 
 reversion.register(Interpretation)
+
+
+# class RegionRegion(TrackChanges):
+# 	region_A = models.ForeignKey(DC_region, related_name="region_A")
+# 	region_B = models.ForeignKey(Dc_region, related_name="region_B")
