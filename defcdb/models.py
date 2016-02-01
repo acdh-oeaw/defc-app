@@ -31,6 +31,7 @@ class TrackChanges(models.Model):
 
 
 class GenericMethods(models.Model):
+	description = models.TextField(blank=True, help_text="Short description.")
 
 	class Meta:
 		abstract = True
@@ -352,7 +353,7 @@ class DC_chronological_system(GenericMethods):
 
 	def __str__(self):
 		#return str(self.region)+'_'+str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)
-		return str(self.cs_name)+'_'+str(self.period_name)
+		return str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
 
 
 class DC_period_datingmethod(GenericMethods):
