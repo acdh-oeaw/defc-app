@@ -15,7 +15,7 @@ class TrackChanges(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 	modified = models.DateTimeField(auto_now=True, blank=True, null=True)
-	#public = models.BooleanField(default=False, help_text="Make this record public or not?") #uncomment before next migrations
+	public = models.BooleanField(default=False, help_text="Make this record public or not?") #uncomment before next migrations
 
 	class Meta:
 		abstract = True
