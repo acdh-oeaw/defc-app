@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     'webpage',
     'reversion',
     'tryout',
-    'django_extensions',
+#    'django_extensions',
 
 )
 
