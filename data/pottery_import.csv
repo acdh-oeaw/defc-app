@@ -1,0 +1,281 @@
+class name,field name 1,value,field name 2,value 2
+DC_finds_pottery_form,name,Anthropomorphic vessel,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Bag shaped vessel (hole mouthed vessel),region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Baking pan,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Bowl,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Box,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Carinated bowl,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Cheese pot,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Cup,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Dipper,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Dome-shaped shallow bowls,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Feeding bowl,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Fikirtepe box ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Fruit stand,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Globular jar,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Jug,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Mug,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Necked jars,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Shallow bowl ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Spoon,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Tulip shaped beaker,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Vessel,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_form,name,Askos,region,Thessaly
+DC_finds_pottery_form,name,Baking pan,region,Thessaly
+DC_finds_pottery_form,name,Basin,region,Thessaly
+DC_finds_pottery_form,name,Bowl,region,Thessaly
+DC_finds_pottery_form,name,Carinated bowl,region,Thessaly
+DC_finds_pottery_form,name,Cheese pot,region,Thessaly
+DC_finds_pottery_form,name,Collared jar,region,Thessaly
+DC_finds_pottery_form,name,"Deep, globular jar",region,Thessaly
+DC_finds_pottery_form,name,Dimini bowl ,region,Thessaly
+DC_finds_pottery_form,name,Kylix,region,Thessaly
+DC_finds_pottery_form,name,Fruitstand,region,Thessaly
+DC_finds_pottery_form,name,Handless cup,region,Thessaly
+DC_finds_pottery_form,name,Hole-mouthed jar,region,Thessaly
+DC_finds_pottery_form,name,Mug,region,Thessaly
+DC_finds_pottery_form,name,Pithos,region,Thessaly
+DC_finds_pottery_form,name,Scoop,region,Thessaly
+DC_finds_pottery_form,name,Skyphos,region,Thessaly
+DC_finds_pottery_form,name,Askos,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Baking pan,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Carinated bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Cheese pot,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Jar,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Collared bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Collared jar,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Deep bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Fruitstand,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Gouged bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Husking bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Medium bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Piriform jar,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Pithos,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Platter,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Rhyton,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Scoop,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Shoulder bowl,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_form,name,Amphora,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Bowl,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Cup,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Jar,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Jug,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Ladle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Lamp,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Lid,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Pitcher,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Pithos,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Plate,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Pyxis,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Scoop,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Strainer,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Rectangular vessel,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Stand,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Tripod,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_form,name,Baking pan,region,Crete
+DC_finds_pottery_form,name,Bottle,region,Crete
+DC_finds_pottery_form,name,Bowl,region,Crete
+DC_finds_pottery_form,name,Bucket-like vessel,region,Crete
+DC_finds_pottery_form,name,Carinated bowl,region,Crete
+DC_finds_pottery_form,name,Carinated incurved bowl,region,Crete
+DC_finds_pottery_form,name,Carinated jar,region,Crete
+DC_finds_pottery_form,name,Carinated shallow bowl,region,Crete
+DC_finds_pottery_form,name,Cheese pot,region,Crete
+DC_finds_pottery_form,name,Cup ,region,Crete
+DC_finds_pottery_form,name,Deep bowl,region,Crete
+DC_finds_pottery_form,name,Dipper,region,Crete
+DC_finds_pottery_form,name,Mug,region,Crete
+DC_finds_pottery_form,name,Funnel-necked jar,region,Crete
+DC_finds_pottery_form,name,Jar,region,Crete
+DC_finds_pottery_form,name,Hole-mouthed jar,region,Crete
+DC_finds_pottery_form,name,Incurved bowl,region,Crete
+DC_finds_pottery_form,name,Collared jar,region,Crete
+DC_finds_pottery_form,name,Medium bowl,region,Crete
+DC_finds_pottery_form,name,Chalice,region,Crete
+DC_finds_pottery_form,name,Rhyton,region,Crete
+DC_finds_pottery_form,name,Shallow bowl ,region,Crete
+DC_finds_pottery_form,name,Tray,region,Crete
+DC_finds_pottery_detail,name,Bar handle with lug,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Everted rim ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Flaring rim,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Foot,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Horned handle,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Inside bevelled and decorated rim ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Knobs,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Mushroom handle,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Narrow-mouthed rim,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Rim contracting heavily inward,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Rolled rim,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Vertical handles,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_detail,name,Elephant lug,region,Thessaly
+DC_finds_pottery_detail,name,Ledge lug,region,Thessaly
+DC_finds_pottery_detail,name,Leg,region,Thessaly
+DC_finds_pottery_detail,name,Rolled rim,region,Thessaly
+DC_finds_pottery_detail,name,Spout,region,Thessaly
+DC_finds_pottery_detail,name,Strap handle,region,Thessaly
+DC_finds_pottery_detail,name,Tab handle,region,Thessaly
+DC_finds_pottery_detail,name,Vertically perforated lug,region,Thessaly
+DC_finds_pottery_detail,name,Elephant lug,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Ledge lug,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Leg,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Round bar handle,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Spout,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Strap handle,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Tab handle,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Tubular lug,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Vertically perforated lug,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_detail,name,Ear handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,High strap handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Knobbed handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Ledge lug,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Leg,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Mushroom handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Prong handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Strap handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Stringhole lug,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Tab handle,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Tunnel lug,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Pedestal ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_detail,name,Bridge spout,region,Crete
+DC_finds_pottery_detail,name,Concave flat base,region,Crete
+DC_finds_pottery_detail,name,Curved tapered-up rim,region,Crete
+DC_finds_pottery_detail,name,Ear handle,region,Crete
+DC_finds_pottery_detail,name,Flaring rim,region,Crete
+DC_finds_pottery_detail,name,Horned handle,region,Crete
+DC_finds_pottery_detail,name,Knobbed wishbone handle,region,Crete
+DC_finds_pottery_detail,name,Ledge lug,region,Crete
+DC_finds_pottery_detail,name,Leg,region,Crete
+DC_finds_pottery_detail,name,Miniature strap handle,region,Crete
+DC_finds_pottery_detail,name,Pronged wishbone handle,region,Crete
+DC_finds_pottery_detail,name,Strap handle with round hole,region,Crete
+DC_finds_pottery_detail,name,Strap handle,region,Crete
+DC_finds_pottery_detail,name,Tubular lug,region,Crete
+DC_finds_pottery_detail,name,V-shaped spout,region,Crete
+DC_finds_pottery_detail,name,“winged” strap handle,region,Crete
+DC_finds_pottery_detail,name,Wishbone handle,region,Crete
+DC_finds_pottery_detail,name,Tapered-up rim,region,Crete
+DC_finds_pottery_detail,name,Fenestrated pedestal,region,Crete
+DC_finds_pottery_detail,name,Flat base,region,Crete
+DC_finds_pottery_detail,name,Offset rim,region,Crete
+DC_finds_pottery_detail,name,Pedestal,region,Crete
+DC_finds_pottery_detail,name,Rounded base,region,Crete
+DC_finds_pottery_detail,name,Thickened rim,region,Crete
+DC_finds_pottery_detail,name,Small foot,region,Crete
+DC_finds_pottery_decoration,name,Bead inlay,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Black burnished ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Black on red ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Brown burnished,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Crusted ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Grooved,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Impressed,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Incised  ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Mat-impressed,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Monochrome brown,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Pattern burnished,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Red on black ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Red slipped ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Unburnished,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,White ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,White on red ,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Yıldırım  motif,region,Turkish Thrace/Western Anatolia/Southeastern Anatolia/Eastern Anatolia/Central Anatolia/Eastern Aegean
+DC_finds_pottery_decoration,name,Black and red on cream (polychrome) (Β3β),region,Thessaly
+DC_finds_pottery_decoration,name,Black and red on white (polychrome) (Β3γ),region,Thessaly
+DC_finds_pottery_decoration,name,Black and white on red black (polychrome) (Β3β),region,Thessaly
+DC_finds_pottery_decoration,name,Black burnished “Larisa” (Γ1α; A5α/γ),region,Thessaly
+DC_finds_pottery_decoration,name,Black burnished with channeled decoration (Γ1α3),region,Thessaly
+DC_finds_pottery_decoration,name,Black burnished with white paint (Γ1α1),region,Thessaly
+DC_finds_pottery_decoration,name,Black on red (Β3α2b),region,Thessaly
+DC_finds_pottery_decoration,name,Black on white (B3α3),region,Thessaly
+DC_finds_pottery_decoration,name,Black pattern burnished (Γ1α2),region,Thessaly
+DC_finds_pottery_decoration,name,Brown on buff (matt painted) (Β3ε),region,Thessaly
+DC_finds_pottery_decoration,name,Brown on cream (B3α2a),region,Thessaly
+DC_finds_pottery_decoration,name,Crusted ,region,Thessaly
+DC_finds_pottery_decoration,name,Grey on grey (Γ1β),region,Thessaly
+DC_finds_pottery_decoration,name,Impressed  (A2),region,Thessaly
+DC_finds_pottery_decoration,name,Incised (B2),region,Thessaly
+DC_finds_pottery_decoration,name,Incised  (Γ2),region,Thessaly
+DC_finds_pottery_decoration,name,Monochrome red (A1),region,Thessaly
+DC_finds_pottery_decoration,name,Monochrome undecorated (B1),region,Thessaly
+DC_finds_pottery_decoration,name,Red burnished (B1),region,Thessaly
+DC_finds_pottery_decoration,name,Red on white (A3ß),region,Thessaly
+DC_finds_pottery_decoration,name,Red (A3γ),region,Thessaly
+DC_finds_pottery_decoration,name,Scraped (A3ε) ,region,Thessaly
+DC_finds_pottery_decoration,name,White on red (A3α),region,Thessaly
+DC_finds_pottery_decoration,name,White on red (Β3α1),region,Thessaly
+DC_finds_pottery_decoration,name,Black burnished ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Black on red ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Coarse Urfirnis ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Coarse ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Crusted ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Grooved ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Incised ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Matt painted ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Monochrome burnished ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Monochrome Urfirnis ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Pattern burnished,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Patterned Urfirnis ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Plastic ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Polychrome ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Red on white ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Rippled ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Stroke-and pattern burnished,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,White on red ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,White ,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,White on black,region,Cyclades/Central Greece/Epirus - Northwestern Greece/Ionian Islands/Peloponnese/Western Greece
+DC_finds_pottery_decoration,name,Barbotine ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Black on red ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Black topped ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Brown on buff ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Brown on red ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Brown on cream ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Burnished ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Channeled ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Coarse ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Excised ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Excised-with-graphite ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Galepsos ware,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Graphite painted,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Gray lustre ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Grooved ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Grooved with graphite ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Incised ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Matt brown on white ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Orange on orange ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Plastic ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Polychrome,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Red crusted ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Red on brown ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Red on white ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Red slipped ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Rippled ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Rusticated,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Shell stamped,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,White on red ,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Applied disc,region,Eastern Macedonia/Western Macedonia/Central Macedonia/Thrace
+DC_finds_pottery_decoration,name,Barbotine ,region,Crete
+DC_finds_pottery_decoration,name,Brushed ,region,Crete
+DC_finds_pottery_decoration,name,Burnished ,region,Crete
+DC_finds_pottery_decoration,name,Coarse ,region,Crete
+DC_finds_pottery_decoration,name,Granulata ware,region,Crete
+DC_finds_pottery_decoration,name,Grooved ,region,Crete
+DC_finds_pottery_decoration,name,Impressed ,region,Crete
+DC_finds_pottery_decoration,name,Incised ,region,Crete
+DC_finds_pottery_decoration,name,Incised-Pointillé decoration,region,Crete
+DC_finds_pottery_decoration,name,Monochrome ,region,Crete
+DC_finds_pottery_decoration,name,Painted ,region,Crete
+DC_finds_pottery_decoration,name,Pattern burnished ,region,Crete
+DC_finds_pottery_decoration,name,Pattern jabbed ,region,Crete
+DC_finds_pottery_decoration,name,Pellet decoration,region,Crete
+DC_finds_pottery_decoration,name,Plastic cordon decoration,region,Crete
+DC_finds_pottery_decoration,name,Plastic ,region,Crete
+DC_finds_pottery_decoration,name,Pointillé decoration,region,Crete
+DC_finds_pottery_decoration,name,Polished,region,Crete
+DC_finds_pottery_decoration,name,Punched,region,Crete
+DC_finds_pottery_decoration,name,Red on buff,region,Crete
+DC_finds_pottery_decoration,name,Rippled burnished,region,Crete
+DC_finds_pottery_decoration,name,Rippled ,region,Crete
+DC_finds_pottery_decoration,name,Scored ,region,Crete
+DC_finds_pottery_decoration,name,Scribble burnished ,region,Crete
+DC_finds_pottery_decoration,name,Single jabbed,region,Crete
+DC_finds_pottery_decoration,name,Wiped ,region,Crete

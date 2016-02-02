@@ -15,7 +15,7 @@ class TrackChanges(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 	modified = models.DateTimeField(auto_now=True, blank=True, null=True)
-	#public = models.BooleanField(default=False, help_text="Make this record public or not?") #uncomment before next migrations
+	public = models.BooleanField(default=False, help_text="Make this record public or not?") #uncomment before next migrations
 
 	class Meta:
 		abstract = True
@@ -31,6 +31,7 @@ class TrackChanges(models.Model):
 
 
 class GenericMethods(models.Model):
+	description = models.TextField(blank=True, help_text="Short description.")
 
 	class Meta:
 		abstract = True
@@ -339,7 +340,7 @@ class DC_interpretation_subsistencetype(GenericMethods):
 class DC_chronological_system(GenericMethods):
 	cs_name = models.CharField(max_length=100, blank=True,
  		null=True, help_text="Name of the chronological system.")
-	period_name = models.CharField(max_length=100, blank=True,
+	period_name = models.CharField(max_length=256, blank=True,
  		null=True, help_text="Name of archaeological period for which evidence was found.")
 	start_date1_BC = models.IntegerField(blank=True, null=True)
 	start_date2_BC = models.IntegerField(blank=True, null=True)
@@ -352,7 +353,7 @@ class DC_chronological_system(GenericMethods):
 
 	def __str__(self):
 		#return str(self.region)+'_'+str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)
-		return str(self.cs_name)+'_'+str(self.period_name)
+		return str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
 
 
 class DC_period_datingmethod(GenericMethods):
@@ -760,3 +761,8 @@ class Interpretation(TrackChanges):
 		return 'Interpretation'+'_'+str(self.finds)+'_'+str(self.id) 
 
 reversion.register(Interpretation)
+
+
+# class RegionRegion(TrackChanges):
+# 	region_A = models.ForeignKey(DC_region, related_name="region_A")
+# 	region_B = models.ForeignKey(Dc_region, related_name="region_B")

@@ -1,0 +1,161 @@
+class name,field name 1,value,field name 2,value 2,field name 3,value 3
+DC_region,name,Turkish Thrace,original_name,Türkisch Thrakien,country,Turkey
+DC_region,name,Western Anatolia,original_name,Westanatolien,country,Turkey
+DC_region,name,Southeastern Anatolia,original_name,Südostanatolien,country,Turkey
+DC_region,name,Eastern Anatolia,original_name,Ostanatolien,country,Turkey
+DC_region,name,Central Anatolia,original_name,Zentralanatolien,country,Turkey
+DC_region,name,Eastern Aegean,original_name,Ostägäis,country,Greece
+DC_region,name,Crete,original_name,Kreta,country,Greece
+DC_region,name,Cyclades,original_name,Kykladen,country,Greece
+DC_region,name,Central Greece,original_name,Zentralgriechenland,country,Greece
+DC_region,name,Epirus - Northwestern Greece,original_name,Epirus - Nordwestgriechenland,country,Greece
+DC_region,name,Ionian Islands,original_name,Ionische Inseln,country,Greece
+DC_region,name,Western Macedonia,original_name,Westmakedonien,country,Greece
+DC_region,name,Central Macedonia,original_name,Zentralmakedonien,country,Greece
+DC_region,name,Eastern Macedonia,original_name,Ostmakedonien,country,Greece
+DC_region,name,Peloponnese,original_name,Peloponnes,country,Greece
+DC_region,name,Thessaly,original_name,Thessalien,country,Greece
+DC_region,name,Thrace,original_name,Thrakien,country,Greece
+DC_region,name,Western Greece,original_name,Westgriechenland,country,Greece
+DC_province,name,Antalya,original_name,Antalya,region,Western Anatolia
+DC_province,name,Burdur,original_name,Burdur,region,Western Anatolia
+DC_province,name,Isparta,original_name,Isparta,region,Western Anatolia
+DC_province,name,Afyon,original_name,Afyonkarahisar,region,Western Anatolia
+DC_province,name,Aydin,original_name,Aydın,region,Western Anatolia
+DC_province,name,Denizli,original_name,Denizli,region,Western Anatolia
+DC_province,name,Izmir,original_name,İzmir,region,Western Anatolia
+DC_province,name,Kutahya,original_name,Kütahya,region,Western Anatolia
+DC_province,name,Manisa,original_name,Manisa,region,Western Anatolia
+DC_province,name,Mugla,original_name,Muğla,region,Western Anatolia
+DC_province,name,Usak,original_name,Uşak,region,Western Anatolia
+DC_province,name,Balikesir,original_name,Balıkesir,region,Western Anatolia
+DC_province,name,Bilecik,original_name,Bilecik,region,Western Anatolia
+DC_province,name,Bursa,original_name,Bursa,region,Western Anatolia
+DC_province,name,Canakkale,original_name,Çanakkale,region,Western Anatolia
+DC_province,name,Yalova,original_name,Yalova,region,Western Anatolia
+DC_province,name,Kocaeli,original_name,Kocaeli,region,Western Anatolia
+DC_province,name,Sakarya,original_name,Sakarya,region,Western Anatolia
+DC_province,name,Istanbul,original_name,İstanbul,region,Western Anatolia
+DC_province,name,Kirklareli,original_name,Kırklareli,region,Turkish Thrace
+DC_province,name,Tekirdag,original_name,Tekirdağ,region,Turkish Thrace
+DC_province,name,Edirne,original_name,Edirne,region,Turkish Thrace
+DC_province,name,Adiyaman,original_name,Adıyaman,region,Southeastern Anatolia
+DC_province,name,Batman,original_name,Batman,region,Southeastern Anatolia
+DC_province,name,Diyarbakir,original_name,Diyarbakır,region,Southeastern Anatolia
+DC_province,name,Gaziantep,original_name,Gaziantep,region,Southeastern Anatolia
+DC_province,name,Kilis,original_name,Kilis,region,Southeastern Anatolia
+DC_province,name,Mardin,original_name,Mardin,region,Southeastern Anatolia
+DC_province,name,Sanliurfa,original_name,Şanlıurfa,region,Southeastern Anatolia
+DC_province,name,Siirt,original_name,Siirt,region,Southeastern Anatolia
+DC_province,name,Sirnak,original_name,Şırnak,region,Southeastern Anatolia
+DC_province,name,Agri,original_name,Ağrı,region,Eastern Anatolia
+DC_province,name,Ardahan,original_name,Ardahan,region,Eastern Anatolia
+DC_province,name,Bingol,original_name,Bingöl,region,Eastern Anatolia
+DC_province,name,Bitlis,original_name,Bitlis,region,Eastern Anatolia
+DC_province,name,Elazig,original_name,Elazığ,region,Eastern Anatolia
+DC_province,name,Erzincan,original_name,Erzincan,region,Eastern Anatolia
+DC_province,name,Erzurum,original_name,Erzurum,region,Eastern Anatolia
+DC_province,name,Hakkari,original_name,Hakkari,region,Eastern Anatolia
+DC_province,name,Igdir,original_name,Iğdır,region,Eastern Anatolia
+DC_province,name,Kars,original_name,Kars,region,Eastern Anatolia
+DC_province,name,Malatya,original_name,Malatya,region,Eastern Anatolia
+DC_province,name,Mus,original_name,Muş,region,Eastern Anatolia
+DC_province,name,Tunceli,original_name,Tunceli,region,Eastern Anatolia
+DC_province,name,Van,original_name,Van,region,Eastern Anatolia
+DC_province,name,Artvin,original_name,Artvin,region,Eastern Anatolia
+DC_province,name,Rize,original_name,Rize,region,Eastern Anatolia
+DC_province,name,Bayburt,original_name,Bayburt,region,Eastern Anatolia
+DC_province,name,Trabzon,original_name,Trabzon,region,Eastern Anatolia
+DC_province,name,Gumushane,original_name,Gümüşhane,region,Eastern Anatolia
+DC_province,name,Aksaray,original_name,Aksaray,region,Central Anatolia
+DC_province,name,Ankara,original_name,Ankara,region,Central Anatolia
+DC_province,name,Cankiri,original_name,Çankırı,region,Central Anatolia
+DC_province,name,Eskisehir,original_name,Eskişehir,region,Central Anatolia
+DC_province,name,Karaman,original_name,Karaman,region,Central Anatolia
+DC_province,name,Kayseri,original_name,Kayseri,region,Central Anatolia
+DC_province,name,Kirikkale,original_name,Kırıkkale,region,Central Anatolia
+DC_province,name,Kirsehir,original_name,Kırşehir,region,Central Anatolia
+DC_province,name,Konya,original_name,Konya,region,Central Anatolia
+DC_province,name,Nevsehir,original_name,Nevşehir,region,Central Anatolia
+DC_province,name,Nigde,original_name,Niğde,region,Central Anatolia
+DC_province,name,Sivas,original_name,Sivas,region,Central Anatolia
+DC_province,name,Yozgat,original_name,Yozgat,region,Central Anatolia
+DC_province,name,Hatay,original_name,Hatay,region,Central Anatolia
+DC_province,name,Kahramanmaras,original_name,Kahramanmaraş,region,Central Anatolia
+DC_province,name,Osmaniye,original_name,Osmaniye,region,Central Anatolia
+DC_province,name,Mersin,original_name,Mersin,region,Central Anatolia
+DC_province,name,Adana,original_name,Adana,region,Central Anatolia
+DC_province,name,Amasya,original_name,Amasya,region,Central Anatolia
+DC_province,name,Bartin,original_name,Bartın,region,Central Anatolia
+DC_province,name,Bolu,original_name,Bolu,region,Central Anatolia
+DC_province,name,Corum,original_name,Çorum,region,Central Anatolia
+DC_province,name,Duzce,original_name,Düzce,region,Central Anatolia
+DC_province,name,Giresun,original_name,Giresun,region,Central Anatolia
+DC_province,name,Karabuk,original_name,Karabük,region,Central Anatolia
+DC_province,name,Kastamonu,original_name,Kastamonu,region,Central Anatolia
+DC_province,name,Ordu,original_name,Ordu,region,Central Anatolia
+DC_province,name,Samsun,original_name,Samsun,region,Central Anatolia
+DC_province,name,Sinop,original_name,Sinop,region,Central Anatolia
+DC_province,name,Tokat,original_name,Tokat,region,Central Anatolia
+DC_province,name,Zonguldak,original_name,Zonguldak,region,Central Anatolia
+DC_province,name,Dodecanese,original_name,Δωδεκανήσος,region,Eastern Aegean
+DC_province,name,Samos –  Ikaria,original_name,Σάμος - Ικαρία,region,Eastern Aegean
+DC_province,name,Chios,original_name,Χίος,region,Eastern Aegean
+DC_province,name,Lesbos,original_name,Λέσβος,region,Eastern Aegean
+DC_province,name,Karditsa,original_name,Καρδίτσα,region,Thessaly
+DC_province,name,Larissa,original_name,Λάρισα,region,Thessaly
+DC_province,name,Magnesia,original_name,Μαγνησία,region,Thessaly
+DC_province,name,Northern Sporades,original_name,Βόρειες Σποράδες,region,Thessaly
+DC_province,name,Trikala,original_name,Τρίκαλα,region,Thessaly
+DC_province,name,Messenia,original_name,Μεσσηνία,region,Peloponnese
+DC_province,name,Achaea,original_name,Αχαΐα,region,Peloponnese
+DC_province,name,Arcadia,original_name,Αρκαδία,region,Peloponnese
+DC_province,name,Argolid,original_name,Αργολίδα,region,Peloponnese
+DC_province,name,Corinthia,original_name,Κορινθία,region,Peloponnese
+DC_province,name,Eleia,original_name,Ηλεία,region,Peloponnese
+DC_province,name,Laconia,original_name,Λακωνία,region,Peloponnese
+DC_province,name,Cyclades,original_name,Κυκλάδες,region,Cyclades
+DC_province,name,Athens,original_name,Αθήνα,region,Central Greece
+DC_province,name,Boiotia,original_name,Βοιωτία,region,Central Greece
+DC_province,name,East Attica,original_name,Ανατολική Αττική,region,Central Greece
+DC_province,name,Euboia,original_name,Εύβοια,region,Central Greece
+DC_province,name,West Attica,original_name,Δυτική Αττική,region,Central Greece
+DC_province,name,Saronic Gulf,original_name,Σαρονικός Κόλπος,region,Central Greece
+DC_province,name,Piraeus,original_name,Πειραιάς,region,Central Greece
+DC_province,name,Phokis,original_name,Φωκίδα,region,Central Greece
+DC_province,name,Phthiotis ,original_name,Φθιώτιδα,region,Central Greece
+DC_province,name,Evrytania,original_name,Ευρυτανία,region,Central Greece
+DC_province,name,Ioannina,original_name,Ιωάννίνα,region,Epirus - Northwestern Greece
+DC_province,name,Preveza,original_name,Πρέβεζα,region,Epirus - Northwestern Greece
+DC_province,name,Thesprotia,original_name,Θεσπρωτία,region,Epirus - Northwestern Greece
+DC_province,name,Arta,original_name,Άρτα,region,Epirus - Northwestern Greece
+DC_province,name,Lefkada,original_name,Λευκάδα,region,Ionian Islands
+DC_province,name,Kerkyra,original_name,Κέρκυρα,region,Ionian Islands
+DC_province,name,Kefallonia,original_name,Κεφαλληνιά,region,Ionian Islands
+DC_province,name,Kythera,original_name,Κύθηρα,region,Ionian Islands
+DC_province,name,Zakynthos,original_name,Ζάκυνθος,region,Ionian Islands
+DC_province,name,Rethymnon,original_name,Ρέθυμνον,region,Crete
+DC_province,name,Central Crete (Heraklio),original_name,Ηράκλειο,region,Crete
+DC_province,name,Chania,original_name,Χανιά,region,Crete
+DC_province,name,Lasithi,original_name,Λασίθι,region,Crete
+DC_province,name,Florina,original_name,Φλώρινα,region,Western Macedonia
+DC_province,name,Grevena,original_name,Γρεβενά,region,Western Macedonia
+DC_province,name,Imathia,original_name,Ημαθία,region,Western Macedonia
+DC_province,name,Kastoria,original_name,Καστοριά,region,Western Macedonia
+DC_province,name,Pieria,original_name,Πιερία,region,Western Macedonia
+DC_province,name,Kozani,original_name,Κοζάνη,region,Western Macedonia
+DC_province,name,Kilkis,original_name,Κιλκίς,region,Central Macedonia
+DC_province,name,Pella ,original_name,Πέλλα,region,Central Macedonia
+DC_province,name,"Thessaloniki, surroundings",original_name,Θεσσαλονίκη,region,Central Macedonia
+DC_province,name,City of Thessaloniki,original_name,Πόλη Θεσσαλονίκης,region,Central Macedonia
+DC_province,name,Mount Athos,original_name,Άγιος Όρος,region,Central Macedonia
+DC_province,name,Chalkidiki,original_name,Χαλκιδική,region,Central Macedonia
+DC_province,name,Serres,original_name,Σέρρες,region,Eastern Macedonia
+DC_province,name,Drama,original_name,Δράμα,region,Eastern Macedonia
+DC_province,name,Kavalla,original_name,Καβάλα,region,Thrace
+DC_province,name,Thasos,original_name,Θάσος,region,Thrace
+DC_province,name,Evros,original_name,Έβρος,region,Thrace
+DC_province,name,Xanthi,original_name,Χάνθη,region,Thrace
+DC_province,name,Rhodope,original_name,Ροδόπη,region,Thrace
+DC_province,name,Aetolia,original_name,Αιτωλία,region,Western Greece
+DC_province,name,Acarnania,original_name,Ακαρνανία,region,Western Greece

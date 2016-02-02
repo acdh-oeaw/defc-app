@@ -23,9 +23,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'defc',
         'USER': 'defc',
-        'PASSWORD': 'F7ffq5WUVp',
-        #'HOST': 'helios.arz.oeaw.ac.at',
-		'HOST': 'localhost',
+        'PASSWORD': 'DBuyXLj22B',
+        'HOST': 'helios.arz.oeaw.ac.at',
+	#	'HOST': 'localhost',
         'PORT': '3306',
     }
 }

@@ -1,0 +1,15 @@
+Importing vocabularies in db: 
+
+All vocabularies are stored in csv files in format {classname}, {fieldname_01}, {fieldvalue_01}, {fieldname_02}, {value_02}
+
+1. Run python manage.py shell_plus --notebook --settings=orea.settings.yoursettingsfile.py
+
+2. run import_nofk_vocabs.ipynb (processing csv with simple vocabs, no FK, no ManyToMany)
+
+3. run import_regions_districts.ipynb (vocabs with FK)
+
+4. run pottery_import.ipynb (vocabs with ManyToMany)
+
+5. run chronology_import.ipynb (vocabs with ManyToMany)
+
+6. Check if all the values were imported: the final print number ('saved { number } entries') should be equal to the number of values in a vocabulary
