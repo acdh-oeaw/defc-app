@@ -67,6 +67,7 @@ class DC_region(GenericMethods):
 		help_text="The name of the country")
 
 
+
 class DC_province(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="The name of the province")
@@ -80,8 +81,8 @@ class DC_province(GenericMethods):
 		help_text="The name of the country")
 
 	def __str__(self):
-		#return str(self.region)+'_'+self.name
-		return str(self.name)+'_'+str(self.region)
+		return str(self.region)+'_'+self.name
+		#return str(self.name)+'_'+str(self.region)
 
 
 class DC_reference_type(GenericMethods):
@@ -305,7 +306,8 @@ class DC_finds_pottery_form(GenericMethods):
 	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
-		return u'%s - %s' % (self.name, self.region.name)
+		#return u'%s - %s' % (self.name, self.region.name)
+		return str(self.name)+'_'+str('_'.join([str(x) for x in self.region.all()]))
 
 
 class DC_finds_pottery_detail(GenericMethods):
@@ -314,7 +316,9 @@ class DC_finds_pottery_detail(GenericMethods):
 	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
-		return u'%s - %s' % (self.name, self.region.name)
+		#return u'%s - %s' % (self.name, self.region.name)
+		#return str(self.name)+'_'+str(self.region)
+		return str(self.name)+'_'+str('_'.join([str(x) for x in self.region.all()]))
 
 
 class DC_finds_pottery_decoration(GenericMethods):
@@ -323,7 +327,7 @@ class DC_finds_pottery_decoration(GenericMethods):
 	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
-		return u'%s - %s' % (self.name, self.region)
+		return str(self.name)+'_'+str('_'.join([str(x) for x in self.region.all()]))
 
 
 ######DCs for Interpretation######
