@@ -89,7 +89,8 @@ class SiteForm(autocomplete_light.ModelForm):
 
 	class Meta:
 		model = Site
-		fields = '__all__'
+		exclude=["alternative_name"]
+		#fields = '__all__'
 
 	def __init__(self, *args, **kwargs):
 			super(SiteForm, self).__init__(*args, **kwargs)

@@ -459,22 +459,22 @@ class Site(TrackChanges):
 		related_name="alternativeName")
 	province = models.ForeignKey(DC_province, blank=True, null=True,
 		help_text = "Geographical area where the site is located.", verbose_name= "District") #mandatory?
-	description = models.TextField(blank=True, null=True,
-		help_text="Free text summary account on the site.") #optional?
-	topography = models.ForeignKey(DC_site_topography, blank=True, null=True,
-		help_text="Description of surface shape and features.") #optional?
-	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
-		help_text="Identifier provided by www.GeoNames.org. E.g. the number in <a href='http://www.geonames.org/2772400/linz.html'>http://www.geonames.org/2772400/linz.html</a>.",
-		verbose_name="Authorityfile ID")
 	geographical_coordinate_reference_system = models.ForeignKey(DC_site_geographicalreferencesystem, blank=True,
 		null=True, help_text="Name of system uniquely determining the position of the site.")#optional?
+	coordinate_source = models.ForeignKey(DC_site_coordinatesource, blank=True, null=True,
+		help_text="Source providing information about the global position of site.")#optional?
 	latitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
 	longitude = models.DecimalField(max_digits = 20, decimal_places = 12, blank = True, null = True)
 	elevation = models.IntegerField(blank=True, null=True, help_text="If available")
+	authorityfile_id = models.CharField(max_length=100, blank=True,null=True,
+		help_text="Identifier provided by www.GeoNames.org. E.g. the number in <a href='http://www.geonames.org/2772400/linz.html'>http://www.geonames.org/2772400/linz.html</a>.",
+		verbose_name="Authorityfile ID")
+	topography = models.ForeignKey(DC_site_topography, blank=True, null=True,
+		help_text="Description of surface shape and features.") #optional?
+	description = models.TextField(blank=True, null=True,
+		help_text="Free text summary account on the site.") #optional?
 	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "yes",
 		help_text="<strong>Yes</strong>: location of site is known and coordinates from the approximate center of the site have been entered.<br/> <strong>No</strong>: Only the region/province/ephorie approximate location of the site is known. Coordinates from the approximate center of the region/province/ ephorie have been entered.")
-	coordinate_source = models.ForeignKey(DC_site_coordinatesource, blank=True, null=True,
-		help_text="Source providing information about the global position of site.")#optional?
 	number_of_activity_periods = models.IntegerField(blank=True, null=True,
 		help_text="How many past activities have been recorded on the site?")
 	reference = models.ManyToManyField(Book, blank=True,
