@@ -462,7 +462,7 @@ def create_name(request):
 		form = NameForm(request.POST)
 		if form.is_valid():
 			form.save()
-		return HttpResponse('<script type="text/javascript">window.close()</script>')
+		return HttpResponse('hansi')
 	else:
 		form = NameForm()
 		return render(request, 'defcdb/create_name.html', {'form':form})

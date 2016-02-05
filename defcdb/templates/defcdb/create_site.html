@@ -12,8 +12,11 @@
     </div>
 </div>
 </div>
+
+
 {% endblock content %}
 {% block scripts %}
+
 <script type="text/javascript">
 	function popupCreateName() {
 		var url = "{% url 'defcdb:name_create' %}";
@@ -28,4 +31,7 @@
 		$("#id_alternative_name-autocomplete").after('<button id="add_alternativeName" type="button" class="btn btn-sm btn-success" onclick="popupCreateName()"><span class="glyphicon glyphicon-plus"/></button>');
 	});
 </script>
+
+
+
 {% endblock %}

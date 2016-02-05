@@ -101,18 +101,18 @@
         </tr> -->
         <tr>
                 <td>Pottery form</td>
-                <td>{{ object.pottery_form }}</td>
+                <td>{{ object.pottery_form.name }}</td>
         </tr>
         <tr>
                 <td>Pottery detail</td>
                 <td>{% for detail in potterydetail_list %}
-                    {{ detail }}<br/>
+                    {{ detail.name }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
                 <td>Pottery decoration</td>
                 <td>{% for decoration in potterydecoration_list %}
-                    {{ decoration }}<br/>
+                    {{ decoration.name }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>

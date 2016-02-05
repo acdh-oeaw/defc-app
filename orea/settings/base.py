@@ -23,7 +23,7 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'd++gm(%f%uytj(p(61gq0k!h6b@2jk7qlx&%je8e(6a-k10t0i'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,26 +33,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = (
-    'autocomplete_light',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'crispy_forms',
-    'rest_framework',
-    'defcdb',
-    'bib',
-    'virtualgallery',
-	'geolocation',
-    'webpage',
-    'reversion',
-    #'tryout',
-    'django_extensions',
 
-)
 
 MIDDLEWARE_CLASSES = (
     'reversion.middleware.RevisionMiddleware',
