@@ -48,6 +48,12 @@ INSTALLED_APPS = (
     'django_extensions',
 )
 
+#zotero-setings
+
+Z_USER_ID = "2756275"
+Z_COLLECTION = "5XIKB2GS"
+Z_API_KEY = "msVF8qWsKGQNClDRrZ2vqNtt"
+
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
