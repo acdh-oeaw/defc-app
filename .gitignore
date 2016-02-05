@@ -8,3 +8,7 @@ db.sqlite3
 *.pyc
 __pycache__
 .ipynb_checkpoints
+/.gitignore_conflict-20150924-121416
+/Untitled.ipynb
+/Untitled02.ipynb
+/tryouts.ipynb
