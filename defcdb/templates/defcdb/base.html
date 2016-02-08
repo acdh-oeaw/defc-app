@@ -134,37 +134,39 @@
               </li>
             </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-               role="button" aria-haspopup="true" aria-expanded="false">Data Curation
-               <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-              <li>
-                <a href="{% url 'defcdb:site_list' %}">Sites</a>
-              </li>
-              <li>
-                <a href="{% url 'defcdb:researchevent_list' %}">Research Events</a>
-              </li>
-              <li>
-                <a href="{% url 'defcdb:area_list' %}">Areas</a>
-              </li>
-              <li>
-                <a href="{% url 'defcdb:finds_list' %}">Finds</a>
-              </li>
-              <li>
-                <a href="{% url 'defcdb:interpretation_list' %}">Interpretations</a>
-              </li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">georeferencing</li>
-              <li>
-                <a href="{% url 'geolocation:province_list' %}">GND-Provinces</a>
-              </li>
-              <li>
-                <a href="#">GND-Regions</a>
-              </li>
-          </ul>
-        </li>
+          {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">Data Curation
+                   <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <li>
+                    <a href="{% url 'defcdb:site_list' %}">Sites</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:researchevent_list' %}">Research Events</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:area_list' %}">Areas</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:finds_list' %}">Finds</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:interpretation_list' %}">Interpretations</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">georeferencing</li>
+                  <li>
+                    <a href="{% url 'geolocation:province_list' %}">GND-Provinces</a>
+                  </li>
+                  <li>
+                    <a href="#">GND-Regions</a>
+                  </li>
+              </ul>
+            </li>
+          {% endif %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                role="button" aria-haspopup="true" aria-expanded="false">Data Exploration
