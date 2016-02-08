@@ -60,7 +60,7 @@ router.register(r'Interpretation', views.InterpretationViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include(router.urls, namespace="api")),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^defcdb/', include('defcdb.urls', namespace='defcdb')),
     url(r'^virtualgallery/', include('virtualgallery.urls', namespace="virtualgallery")),
