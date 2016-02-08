@@ -7,12 +7,17 @@ from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
 from django.utils.translation import ugettext_lazy as _
-from .autocomplete_light_registry import BookAutocomplete, InstitutionAutocomplete, ProjectleaderAutocomplete, NameAutocomplete
+from .autocomplete_light_registry import (BookAutocomplete, InstitutionAutocomplete,
+	ProjectleaderAutocomplete, NameAutocomplete, ISOAutocomplete)
 from .models import Area, ResearchEvent, Site, Finds, Interpretation, DC_researchevent_institution, Name
 from bib.models import Book
 
 
 class NameForm(autocomplete_light.ModelForm):
+	language = forms.CharField(required=True,
+		widget=autocomplete_light.TextWidget('ISOAutocomplete'),
+		label = "ISO 639-3")
+
 	class Meta:
 		model=Name
 		fields = "__all__"

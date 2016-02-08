@@ -383,7 +383,7 @@ class DC_site_coordinatesource(GenericMethods):
 class Name(TrackChanges):
 	name = models.CharField(max_length=100, blank=True,
  		null=True, help_text="The entities name")
-	language = models.CharField(max_length=100, blank=True,
+	language = models.CharField(max_length=3, blank=True,
  		null=True, help_text="The 'name´s' language. Controlled vocab will be provided.")
 
 	def __str__(self):
