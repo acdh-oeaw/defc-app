@@ -14,7 +14,7 @@ from bib.models import Book
 
 
 class NameForm(autocomplete_light.ModelForm):
-	language = forms.CharField(required=True,
+	language = forms.CharField(required=False,
 		widget=autocomplete_light.TextWidget('ISOAutocomplete'),
 		label = "ISO 639-3")
 
@@ -94,8 +94,8 @@ class SiteForm(autocomplete_light.ModelForm):
 
 	class Meta:
 		model = Site
-		exclude=["alternative_name"]
-		#fields = '__all__'
+		#exclude=["alternative_name"]
+		fields = '__all__'
 
 	def __init__(self, *args, **kwargs):
 			super(SiteForm, self).__init__(*args, **kwargs)
