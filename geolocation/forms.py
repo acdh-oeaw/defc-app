@@ -1,6 +1,7 @@
 from django import forms 
 from defcdb.models import DC_country, DC_region, DC_province, Site, DC_chronological_system
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
+from crispy_forms.helper import FormHelper
 
 
 def getChoices(allregions):
@@ -32,9 +33,14 @@ class SearchForm(forms.Form):
 
 
 class DC_provinceForm(forms.ModelForm):
-	class Meta:
-		model = DC_province
-		fields = "__all__"
+    class Meta:
+        model = DC_province
+        fields = ['authorityfile_id','lat', 'lng']
+
+    def __init__(self, *args, **kwargs):
+        super(DC_provinceForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_tag = False
 
 
 # class SiteForm(ModelForm):
