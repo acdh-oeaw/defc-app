@@ -159,10 +159,7 @@
                   <li role="separator" class="divider"></li>
                   <li class="dropdown-header">georeferencing</li>
                   <li>
-                    <a href="{% url 'geolocation:province_list' %}">GND-Provinces</a>
-                  </li>
-                  <li>
-                    <a href="#">GND-Regions</a>
+                    <a href="{% url 'geolocation:province_list' %}">Districts</a>
                   </li>
               </ul>
             </li>
@@ -211,10 +208,10 @@
     </div>
     </div>
   </nav>
-  <div class="alert alert-danger" style="text-align:center">
+  <div class="alert alert-warning" style="text-align:center">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
     <strong>Attention!</strong>
-    <br/>Work in Progress. Everything can change anytime.
+    <br/>Still Work in Progress. But entered data will be preserved.
   </div>
   <div>
     {% block content %}
