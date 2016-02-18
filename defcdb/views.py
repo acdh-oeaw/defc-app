@@ -722,3 +722,6 @@ def start_view(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/index.html', context)
 
+def turkey_map_view(request):
+	context = RequestContext
+	return render(request, 'defcdb/turkey_map.html')

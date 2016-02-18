@@ -41,6 +41,10 @@
 
 </head>
   <style>
+    /*.map_panel > .panel-body > img {
+      width: 100%;
+      height: 100%;
+    }*/
     body {padding-top: 50px;}
 
     a.navlink:link {color: black;}
@@ -170,6 +174,9 @@
                <span class="caret"></span>
           </a>
             <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'defcdb:turkey_map' %}">Explore regions and districts of Turkey</a>
+              </li>
               <li>
                 <a href="{% url 'geolocation:showplaces' %}">Show Sites</a>
               </li>
