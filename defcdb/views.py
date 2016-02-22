@@ -482,6 +482,7 @@ def create_name(request):
 
 class SiteListView(generic.ListView):
 	template_name = 'defcdb/list_list.html'
+	#template_name = 'defcdb/test_list_site.html'
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')

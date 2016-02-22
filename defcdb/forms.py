@@ -91,6 +91,7 @@ class SiteForm(autocomplete_light.ModelForm):
 		required = False,
 		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
 		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")
+	
 
 	class Meta:
 		model = Site
