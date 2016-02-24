@@ -20,6 +20,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     var fetchedParameter = "{{ request.GET.site }}";
+    // alert(decodeURI(fetchedParameter));
    $("#id_site option").each(function() {
         if($(this).text() == fetchedParameter) {
             $(this).attr('selected', 'selected');

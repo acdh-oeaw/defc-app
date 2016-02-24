@@ -232,6 +232,8 @@ class DC_finds_amount(GenericMethods):
 class DC_finds_small_finds_type(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	german_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_small_finds_category(GenericMethods):
@@ -303,6 +305,8 @@ class DC_finds_lithics_raw_material(GenericMethods):
 class DC_finds_pottery_form(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	german_name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
 	region = models.ManyToManyField(DC_region, blank=True)
 
 	def __str__(self):
@@ -312,6 +316,8 @@ class DC_finds_pottery_form(GenericMethods):
 
 class DC_finds_pottery_detail(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	german_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	region = models.ManyToManyField(DC_region, blank=True)
 
@@ -323,6 +329,8 @@ class DC_finds_pottery_detail(GenericMethods):
 
 class DC_finds_pottery_decoration(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
+	german_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	region = models.ManyToManyField(DC_region, blank=True)
 

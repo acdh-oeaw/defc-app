@@ -1,0 +1,75 @@
+classname,field name 1,value,field name 2,value
+DC_finds_small_finds_type,name,Fire dog,german_name,“Feuerbock”
+DC_finds_small_finds_type,name,Sharpener,german_name,Schärfer
+DC_finds_small_finds_type,name,Mace head,german_name,Keulenkopf
+DC_finds_small_finds_type,name,Fish hook,german_name,Angelhacken
+DC_finds_small_finds_type,name,Hammer,german_name,Hammer
+DC_finds_small_finds_type,name,Net weight,german_name,Netzgewicht
+DC_finds_small_finds_type,name,Spoon,german_name,Löffel 
+DC_finds_small_finds_type,name,Mortar,german_name,Mörser
+DC_finds_small_finds_type,name,Needle,german_name,Nadel
+DC_finds_small_finds_type,name,Net sinker,german_name,Netzsenker
+DC_finds_small_finds_type,name,Grinding stone,german_name,Reibstein
+DC_finds_small_finds_type,name,Slingstone,german_name,Schleudergeschoss (bikonisch)
+DC_finds_small_finds_type,name,Belt hook,german_name,Gürtelhaken
+DC_finds_small_finds_type,name,Spatula,german_name,Spatula
+DC_finds_small_finds_type,name,Spindle whorl,german_name,Spinnwirtel
+DC_finds_small_finds_type,name,Axe,german_name,Axt
+DC_finds_small_finds_type,name,Grindstone,german_name,Schleifstein
+DC_finds_small_finds_type,name,Stamp/pintadera,german_name,Stempel/Pintadera
+DC_finds_small_finds_type,name,Pestle,german_name,Stößel
+DC_finds_small_finds_type,name,Table,german_name,Tisch
+DC_finds_small_finds_type,name,Seal,german_name,Siegel
+DC_finds_small_finds_type,name,Disc,german_name,Scheibe
+DC_finds_small_finds_type,name,Smoother,german_name,Glättstein
+DC_finds_small_finds_type,name,Burnisher,german_name,Polierer
+DC_finds_small_finds_type,name,Adze,german_name,Krummaxt
+DC_finds_small_finds_type,name,Crucible,german_name,Schmelztiegel
+DC_finds_small_finds_type,name,Blade,german_name,Klinge
+DC_finds_small_finds_type,name,Chisel,german_name,Meisel
+DC_finds_small_finds_type,name,Arrowhead,german_name,Pfeilspitze
+DC_finds_small_finds_type,name,“Skull crusher”,german_name,“Skull Crusher”
+DC_finds_small_finds_type,name,Loom weight,german_name,Webgewicht
+DC_finds_small_finds_type,name,Dagger,german_name,Dolch
+DC_finds_small_finds_type,name,Plaque,german_name,Platte
+DC_finds_small_finds_type,name,Scraper,german_name,Schaber
+DC_finds_small_finds_type,name,Shuttle,german_name,Weberschiffchen
+DC_finds_small_finds_type,name,Pendant,german_name,Anhänger
+DC_finds_small_finds_type,name,Bracelet,german_name,Armreif
+DC_finds_small_finds_type,name,Bead,german_name,Perle
+DC_finds_small_finds_type,name,Ear plug,german_name,Ohrstecker
+DC_finds_small_finds_type,name,Necklace,german_name,Halskette
+DC_finds_small_finds_type,name,Earring,german_name,Ohrring
+DC_finds_small_finds_type,name,Stone figurine,german_name,Steinfigur
+DC_finds_small_finds_type,name,Zoomorphic figurine,german_name,Zoomorphe Figur
+DC_finds_small_finds_type,name,Anthropomorphic figurine,german_name,Anthropomorphe Figur
+DC_finds_small_finds_type,name,Male figurine,german_name,Männliche Figur
+DC_finds_small_finds_type,name,Female figurine,german_name,Weibliche Figur
+DC_finds_small_finds_type,name,Awl,german_name,Ahle/Pfriem
+DC_finds_small_finds_type,name,House Model,german_name,Hausmodell
+DC_finds_small_finds_type,name,Phallus,german_name,Phallus
+DC_area_constructiontype,name,retangular-apsidal,,
+DC_area_buildingtechnique,name, timber-frame construction,,
+DC_area_buildingtechnique,name,straw,,
+DC_area_buildingtechnique,name,plastered threshold,,
+DC_area_buildingtechnique,name,timber,,
+DC_area_buildingtechnique,name,stone,,
+DC_area_buildingtechnique,name,stone lining,,
+DC_area_buildingtechnique,name,foundation trenches,,
+DC_area_buildingtechnique,name,wall painting,,
+DC_area_specialfeatures,name,tank,,
+DC_area_specialfeatures,name,paved way/road/area,,
+DC_area_specialfeatures,name,terrace walls,,
+DC_area_specialfeatures,name,fireplace,,
+DC_area_specialfeatures,name,box-like installations of clay,,
+DC_area_specialfeatures,name,stairway,,
+DC_area_specialfeatures,name,wall,,
+DC_area_specialfeatures,name,stone platform,,
+DC_area_gravetype,name,shaft grave,,
+DC_finds_botany_species,name,olive,,
+DC_finds_botany_species,name,fig,,
+DC_finds_botany_species,name,pistachio,,
+DC_finds_animal_remains_species,name,water vole,latin_name,Aarvicola
+DC_finds_animal_remains_species,name,mouse,latin_name,Muridae
+DC_finds_animal_remains_species,name,donkey,,
+DC_finds_animal_remains_part,name,tooth,,
