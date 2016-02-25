@@ -1,5 +1,17 @@
 from django.contrib import admin
-from .models import Name
+from .models import *
 
 
-admin.site.register(Name)
+
+allClasses = [Name, DC_country, DC_region, DC_province, DC_researchevent_researchtype, DC_researchevent_institution, DC_researchevent_special_analysis, 
+DC_site_geographicalreferencesystem, DC_site_topography, DC_area_areatype, DC_area_settlementtype, DC_area_settlementstructure, DC_area_constructiontype,
+DC_area_buildingtechnique, DC_area_specialfeatures, DC_area_evidenceofgraveshumanremains, DC_area_evidenceofoccupation, DC_area_caverockshelterstype, 
+DC_area_rawmaterial, DC_area_exploitationtype, DC_area_topography, DC_area_mortuaryfeatures, DC_area_gravetype,
+DC_area_typeofhumanremains, DC_area_agegroups, DC_area_sexes, DC_area_manipulationofgraves, DC_finds_type, DC_finds_material,
+DC_finds_amount, DC_finds_small_finds_type, DC_finds_small_finds_category, DC_finds_botany_species, DC_finds_animal_remains_species,
+DC_finds_animal_remains_completeness, DC_finds_animal_remains_part, DC_finds_lithics_technology, DC_finds_lithics_industry, 
+DC_finds_lithics_core_shape, DC_finds_lithics_retouched_tools, DC_finds_lithics_raw_material, DC_finds_pottery_form, 
+DC_finds_pottery_detail, DC_finds_pottery_decoration, DC_interpretation_productiontype, DC_interpretation_subsistencetype, 
+DC_chronological_system, DC_period_datingmethod,DC_period_datedby, DC_site_coordinatesource]
+
+admin.site.register(allClasses)
