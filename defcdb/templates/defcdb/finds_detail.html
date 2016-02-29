@@ -3,10 +3,10 @@
 
 <div class="container">
 <h1>Finds</h1>
-<button id="01" class="btn btn-default">Show all fields</button><br/>
-<table class="table table-striped">
-<ul>
-</ul>
+<button id="01" class="btn btn-default">Show all fields</button>
+<p></p>
+<div class="panel panel-default">
+<table class="table table-bordered table-striped">
         <tr>
                 <td>Area</td>
                 <td>{% for area in area_list %}
@@ -142,14 +142,9 @@
                         </a>
                         {% endfor %}</td>
         </tr>
-        <tr>
-                <td>
-                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-                </td>
-                <td>
-                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
-                </td>
-            </tr>
 </table>
+</div>
+<a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
+<a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
 </div>
 {% endblock content %}
