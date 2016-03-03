@@ -45,7 +45,7 @@ INSTALLED_APPS = (
 	'geolocation',
     'webpage',
     'reversion',
-    'django_extensions',
+    #'django_extensions',
 )
 
 #zotero-setings
