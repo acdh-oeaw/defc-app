@@ -1,0 +1,48 @@
+{% extends "defcdb/base.html" %} 
+{% block content %}
+<div class="container">
+	<h1>Results</h1>
+	<table class="table table-hover">
+		<tr>
+			<th>status</th>
+			<td>{{ error }}<td>
+		</tr>
+		<tr>
+			<th>books in db before update operation:</th>
+			<td>{{ books_before }}<td>
+		</tr>
+		<tr>
+			<th>books in db after update operation:</th>
+			<td>{{ books_after }}<td>
+		</tr>
+		<tr>
+			<th>updated</th>
+			<td>
+				<table class="table table-hover table-condensed">
+					<tr>
+						<th>Zotero Key</th>
+						<th>Title</th>
+						<th>Date modified</th>
+					</tr>
+					{% for x in saved %}
+					<tr>
+						<td><a href="https://www.zotero.org/defc-orea-oeaw/items/collectionKey/5XIKB2GS/itemKey/{{ x.key }}" target="_blank">{{ x.key }}</a></td>
+						<td>{{ x.title }}</td>
+						<td>{{ x.dateModified }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th>failed</th>
+			<td>{% for x in failed %}
+				{{ x.title }}
+				{% endfor %}
+			</td>
+		</tr>
+
+	</table>
+</div>
+
+{% endblock %}

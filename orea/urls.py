@@ -71,6 +71,7 @@ urlpatterns = [
     url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^', include('webpage.urls', namespace='webpage')),
     url(r'^tryout/', include('tryout.urls', namespace='tryout')),
+    url(r'^bib/', include('bib.urls', namespace='bib')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': base.MEDIA_ROOT,}, name='media_root_url'),
 ]
 

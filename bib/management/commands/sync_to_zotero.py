@@ -3,7 +3,7 @@ from django.core.management.base import NoArgsCommand
 
 import requests, json, sys
 from bib.models import Book
-from orea.settings.ksenia_local import Z_USER_ID, Z_COLLECTION, Z_API_KEY
+from orea.settings.server import Z_USER_ID, Z_COLLECTION, Z_API_KEY
 
 
 class Command(NoArgsCommand):
@@ -20,9 +20,6 @@ class Command(NoArgsCommand):
 		    sys.exit("aa! errors! The API didn´t response with a proper json-file")
 
 		response = r.json()
-
-
-		# In[95]:
 
 		failed = []
 		saved = []

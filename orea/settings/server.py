@@ -13,20 +13,51 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from .base import *
-
-
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'd++gm(%f%uytj(p(61gq0k!h6b@2jk7qlx&%je8e(6a-k10t0i'
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'defc',
+        'NAME': 'defc', #defc
         'USER': 'defc',
         'PASSWORD': 'DBuyXLj22B',
         'HOST': 'helios.arz.oeaw.ac.at',
-	#	'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+INSTALLED_APPS = (
+    'autocomplete_light',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'crispy_forms',
+    'rest_framework',
+    'defcdb',
+    'bib',
+    'virtualgallery',
+	'geolocation',
+    'webpage',
+    'reversion',
+    'django_extensions',
+)
+
+#zotero-setings
+
+Z_USER_ID = "2756275"
+Z_COLLECTION = "5XIKB2GS"
+Z_API_KEY = "msVF8qWsKGQNClDRrZ2vqNtt"
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
