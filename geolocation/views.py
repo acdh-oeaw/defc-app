@@ -33,6 +33,12 @@ def showplaces(request):
 			return render(request, 'geolocation/showplaces.html', context)
 
 
+def showplaces_test(request):
+	context = {}
+	context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
+	return render(request,'geolocation/showplaces_test.html', context)
+
+
 
 #################################################################
 #		list Views												#

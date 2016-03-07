@@ -18,7 +18,7 @@ def sync_zotero(request):
 def sync_zotero_action(request):
 	root = "https://api.zotero.org/users/"
 	params = "{}/collections/{}/items/top?v=3&key={}".format(Z_USER_ID,Z_COLLECTION,Z_API_KEY)
-	url = root+params+"&sort=dateModified&limit=10"
+	url = root+params+"&sort=dateModified&limit=100"
 	books_before = len(Book.objects.all())
 	try:
 		r = requests.get(url)
@@ -31,25 +31,28 @@ def sync_zotero_action(request):
 	saved = []
 	for x in response:
 		try:
-			x["data"]["creators"][0]["name"]
-			NewBook = Book(zoterokey = x["data"]["key"],
-		                      item_type =x["data"]["itemType"],
-		                      author=x["data"]["creators"][0]["name"],
-		                      title =x["data"]["title"],
-		                      short_title = x["data"]["shortTitle"])
+			x["data"]["creators"][0]
+			try:
+				x["data"]["creators"][0]["name"]
+				name = x["data"]["creators"][0]["name"]
+			except:
+				firstname = x["data"]["creators"][0]["firstName"]
+				lastname = x["data"]["creators"][0]["lastName"]
+				name = "{}, {}".format(lastname, firstname)
 		except:
-			x["data"]["creators"] = "no author provided"
+			name = "no name provided"
 
-			NewBook = Book(zoterokey = x["data"]["key"],
-		                      item_type =x["data"]["itemType"],
-		                      author=x["data"]["creators"],
-		                      title =x["data"]["title"],
-		                      short_title = x["data"]["shortTitle"])
+		NewBook = Book(zoterokey = x["data"]["key"],
+			item_type =x["data"]["itemType"],
+			author=name,
+			title =x["data"]["title"],
+			short_title = x["data"]["shortTitle"])
+
 		try:
-		    NewBook.save()
-		    saved.append(x['data'])
+			NewBook.save()
+			saved.append(x["data"])
 		except:
-		    failed.append(x['data'])
+			failed(x['data'])
 	books_after = len(Book.objects.all())
 	context = {}
 	context["error"] = error
