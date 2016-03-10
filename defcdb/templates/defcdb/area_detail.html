@@ -9,9 +9,16 @@
 
 <table class="table table-bordered table-striped">
 
-        <tr>
+       <!--  <tr>
                 <td>Site</td>
                 <td>{{ object.site }}</td>
+        </tr> -->
+        <tr>
+                <td>Site</td>
+                <td>{% for site in sites_list %}
+                <a href="/defcdb/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site }} <br/>
+                </a>
+                {% endfor %}</td>
         </tr>
         <tr>
                 <td>Area type</td>
@@ -259,13 +266,13 @@
         <tr>
                 <td>Interpretation</td>
                 <td>{% for interpretation in interpretations_list %}
-                        <a href="/defcdb/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> See interpretation: {{ interpretation }} <br/></a>
+                        <a href="/defcdb/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/></a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-                        <a href="/defcdb/{{ find.get_classname }}/detail/{{ find.id }}"> See find: {{ find }} <br/></a>
+                        <a href="/defcdb/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/></a>
                         {% endfor %}</td>
         </tr>
         <!-- <tr>

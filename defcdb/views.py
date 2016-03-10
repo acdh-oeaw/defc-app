@@ -435,6 +435,7 @@ class FindsDetail(DetailView):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
 		current_find = self.object
 		context['area_list'] = Area.objects.filter(finds=current_find.id)
+		context['researchevent_list'] = ResearchEvent.objects.filter(finds=current_find.id)
 		current_find_2 = self.object
 		context['interpretation_list'] = Interpretation.objects.filter(finds=current_find_2.id)
 		context['smallfindstype_list'] = current_find.small_finds_type.all()
@@ -482,7 +483,7 @@ def create_name(request):
 
 class SiteListView(generic.ListView):
 	template_name = 'defcdb/list_list.html'
-	#template_name = 'defcdb/test_list_site.html'
+	# template_name = 'defcdb/test_list_site.html'
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
@@ -596,6 +597,7 @@ class AreaDetail(DetailView):
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
 		current_area = self.object
+		context['sites_list'] = Site.objects.filter(area=current_area.id)
 		context['period_reference_list'] = current_area.period_reference.all()
 		context['period_list'] = current_area.period.all()
 		context['dating_method_list'] = current_area.dating_method.all()
@@ -726,3 +728,7 @@ def start_view(request):
 def turkey_map_view(request):
 	context = RequestContext
 	return render(request, 'defcdb/turkey_map.html')
+
+def bibliography_view(request):
+	context = RequestContext
+	return render(request, 'defcdb/bibliography.html')

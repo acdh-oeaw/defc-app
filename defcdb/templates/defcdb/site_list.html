@@ -1,4 +1,4 @@
-{% extends "defcdb/listBase.html" %} 
+{% extends "defcdb/listBase.html" %}
 
 {% block Titel %}See All Objects{% endblock %}
 
@@ -23,7 +23,7 @@
 		{% if object_list %}
 <table class="table table-striped">
 	<thead>
-				<th colspan="7" class="ts-pager form-horizontal">
+		<th colspan="7" class="ts-pager form-horizontal">
         <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
         <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
         <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
@@ -38,7 +38,8 @@
         </select>
         <select class="pagenum input-mini" title="Select page number"></select>
       </th>
-		<tr>
+		
+			<tr>
 			<th>Name</th>
 			<th>Alternative name</th>
 			<th>Region</th>

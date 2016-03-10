@@ -99,7 +99,7 @@
          <tr>
                 <td>Areas</td>
                 <td>{% for area in areas_list %}
-                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/></a>
+                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
                         {% endfor %}</td>
         </tr>
         </table>

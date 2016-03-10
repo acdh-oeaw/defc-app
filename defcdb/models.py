@@ -365,7 +365,7 @@ class DC_chronological_system(GenericMethods):
 
 	def __str__(self):
 		#return str(self.region)+'_'+str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)
-		return str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)
+		return str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)+'_'+str(self.end_date1_BC)+'_'+str('_'.join([str(x) for x in self.region.all()]))
 
 
 class DC_period_datingmethod(GenericMethods):
@@ -444,7 +444,7 @@ class ResearchEvent(TrackChanges):
 		ordering =( 'id',)
 
 	def __str__(self):
-		return str("/".join([str(x) for x in self.research_type.all()])+"_"+"/".join([str(x) for x in self.institution.all()]))
+		return str("/".join([str(x) for x in self.research_type.all()])+"_"+str(self.project_name)+'_'+"/".join([str(x) for x in self.institution.all()]))+'_'+str(self.year_of_activity_start_year)
 
 	def get_absolute_url(self):
 		return reverse('defcdb:researchevent_list')

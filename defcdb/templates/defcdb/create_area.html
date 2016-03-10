@@ -29,6 +29,25 @@ $(document).ready(function(){
 });
 </script>
 
+<!--condition for Period field visibility-->
+<script type="text/javascript">
+    $('#id_site').change(function(){
+         var selected_option = $('#id_site option:selected').text();
+
+        if(selected_option == "---------"){
+            $('#div_id_period option').show();
+        }
+        else{
+            var selected_site = $('#id_site option:selected').text().substring(0, $('#id_site option:selected').text().indexOf('_'));
+            $('#div_id_period option:contains('+selected_site+')').show();
+            $('#div_id_period option:not(:contains('+selected_site+'))').hide();
+            
+        }
+    });
+</script>
+
+
+<!--condition for Area type field visibility-->
 <script type="text/javascript">
     $(document).ready(function(){
         $('div[id*="quarry"]').hide();

@@ -10,13 +10,15 @@
         <tr>
                 <td>Area</td>
                 <td>{% for area in areas_list %}
-                    {{ area }}<br/>
-                    {% endfor %}</td>
+                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        </a>
+                        {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-                    {{ find }}<br/>
+                    <a href="/defcdb/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/>
+                    </a>
                     {% endfor %}</td>
         </tr>
         <tr>

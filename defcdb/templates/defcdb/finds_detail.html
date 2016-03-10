@@ -10,13 +10,16 @@
         <tr>
                 <td>Area</td>
                 <td>{% for area in area_list %}
-                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> See area: {{ area }} <br/>
+                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Research event</td>
-                <td>{{ object.research_event }}</td>
+                <td>{% for researchevent in researchevent_list %}
+                        <a href="/defcdb/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}"> {{ researchevent }} <br/>
+                        </a>
+                        {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds type</td>
