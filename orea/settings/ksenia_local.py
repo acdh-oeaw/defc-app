@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'webpage',
     'reversion',
     'django_extensions',
+    'images_metadata',
 )
 
 #zotero-setings

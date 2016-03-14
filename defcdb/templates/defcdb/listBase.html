@@ -1,16 +1,82 @@
-{% extends "defcdb/base.html" %} 
+{% extends "defcdb/base.html" %}
 {% block Titel %}See All Objects{% endblock %}
 {% block scriptHeader %}
-   <!--tablesorter-->
+<!--tablesorter-->
     <link rel="stylesheet" href="https://mottie.github.io/tablesorter/css/theme.bootstrap.css"/>
     <script src ="https://mottie.github.io/tablesorter/js/jquery.tablesorter.js"></script> 
     <script src="https://mottie.github.io/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <script src="https://rawgit.com/Mottie/tablesorter/master/js/widgets/widget-output.js"></script>
+    <script src="https://mottie.github.io/tablesorter/js/parsers/parser-input-select.js"></script>
+    <!-- tables extra stuff -->
+    <script src="https://mottie.github.io/tablesorter/docs/js/docs.js"></script>
+    <link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/prettify.css"/>
+    <script src="https://mottie.github.io/tablesorter/docs/js/prettify.js"></script>
+    <link rel="stylesheet" href="https://mottie.github.io/tablesorter/docs/css/tipsy.css"/>
+    <script src="https://mottie.github.io/tablesorter/docs/js/jquery.tipsy.min.js"></script>
     <!--pager plugin-->
     <link rel="stylesheet" href="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.css"/>
     <script src="https://mottie.github.io/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+    <style>
+  table.tablesorter > * {
+    font-family: arial;
+  }
+  .ts-pager, select.btn-sm {
+    display: inline-block;
+  }
+  select.btn-sm {
+    width: 50px;
+    height: 30px;
+    vertical-align: top; 
+  }
+  .dropdown-menu {
+    min-width: 320px;
+    font-size: 12px;
+    padding: 10px;
+  }
+  .dropdown-menu h5 {
+    text-align: right;
+    margin-right: 4px;
+  }
+  div.output-download-popup {
+    margin-bottom: 5px;
+  }
+  .output-separator, .output-replacequotes, .output-quotes {
+    font-family: arial;
+    min-width: 18px;
+    height: 22px;
+  }
+  .output-separator-input, .output-replacequotes {
+    width: 26px;
+  }
+  pre {
+    /* override bootstrap setting */
+    overflow-y: hidden !important;
+  }
+      </style>
+  <style id="css">
 
-    <script>
-      $(function() {
+  table.tablesorter tbody tr.odd.checked td {
+  background: #8080c0;
+  color: #fff;
+  }
+  table.tablesorter tbody tr.even.checked td {
+  background: #a0a0e0;
+  color: #fff;
+  }
+  </style>
+  <style id="css">
+
+  table.tablesorter tbody tr.odd.checked td {
+  background: #8080c0;
+  color: #fff;
+  }
+  table.tablesorter tbody tr.even.checked td {
+  background: #a0a0e0;
+  color: #fff;
+  }
+  </style>
+  <script>
+           $(function() {
 
   // NOTE: $.tablesorter.theme.bootstrap is ALREADY INCLUDED in the jquery.tablesorter.widgets.js
   // file; it is included here to show how you can modify the default classes
@@ -50,7 +116,7 @@
 
     // widget code contained in the jquery.tablesorter.widgets.js file
     // use the zebra stripe widget if you plan on hiding any rows (filter widget)
-    widgets : [ "uitheme", "filter", "zebra", "resizable" ],
+    widgets : [ "uitheme", "filter", "zebra", "resizable", "output" ],
 
     widgetOptions : {
       resizable: true,
@@ -91,7 +157,227 @@
   });
 
 });
-    </script> 
+</script>
+</script>
+        <script id="js">
+           $(function() {
+
+  $('.group1 table').tablesorter({
+    theme: 'bootstrap',
+    checkboxClass : 'checked', // default setting
+    widthFixed : true,
+    headerTemplate : '{content} {icon}',
+    widgets: ["zebra", "filter", "uitheme", "output"],
+    widgetOptions : {
+      filter_filteredRow  : 'filtered',
+      filter_reset        : '.group1 .reset',
+      output_separator     : ',',         // ',' 'json', 'array' or separator (e.g. ';')
+      output_ignoreColumns : [0],          // columns to ignore [0, 1,... ] (zero-based index)
+      output_hiddenColumns : false,       // include hidden columns in the output
+      output_includeFooter : true,        // include footer rows in the output
+      output_dataAttrib    : 'data-name', // data-attribute containing alternate cell text
+      output_headerRows    : true,        // output all header rows (multiple rows)
+      output_delivery      : 'p',         // (p)opup, (d)ownload
+      output_saveRows      : 'f',         // (a)ll, (v)isible, (f)iltered or jQuery filter selector (string only)
+      output_duplicateSpans: true,        // duplicate output data in tbody colspan/rowspan
+      output_replaceQuote  : '\u201c;',   // change quote to left double quote
+      output_includeHTML   : true,        // output includes all cell HTML (except the header cells)
+      output_trimSpaces    : false,       // remove extra white-space characters from beginning & end
+      output_wrapQuotes    : false,       // wrap every cell output in quotes
+      output_popupStyle    : 'width=580,height=310',
+      output_saveFileName  : 'mytable.csv',
+      // callbackJSON used when outputting JSON & any header cells has a colspan - unique names required
+      output_callbackJSON  : function($cell, txt, cellIndex) { return txt + '(' + cellIndex + ')'; },
+      // callback executed when processing completes
+      output_callback      : function(config, data) {
+        // return false to stop delivery & do something else with the data
+        // return true OR modified data (v2.25.1) to continue download/output
+        return true;
+      },
+
+      // the need to modify this for Excel no longer exists
+      output_encoding      : 'data:application/octet-stream;charset=utf8,'
+
+    }
+  }).tablesorterPager({
+    container: $('.ts-pager'),
+    output: '{startRow} - {endRow} / {filteredRows} ({totalRows})',
+    size: 5
+  });
+
+  // set up download buttons for two table groups
+  var demos = ['.group1', '.group2'];
+
+  $.each(demos, function(groupIndex){
+    var $this = $(demos[groupIndex]);
+
+    $this.find('.dropdown-toggle').click(function(e){
+      // this is needed because clicking inside the dropdown will close
+      // the menu with only bootstrap controlling it.
+      $this.find('.dropdown-menu').toggle();
+      return false;
+    });
+    // make separator & replace quotes buttons update the value
+    $this.find('.output-separator').click(function(){
+      $this.find('.output-separator').removeClass('active');
+      var txt = $(this).addClass('active').html()
+      $this.find('.output-separator-input').val( txt );
+      $this.find('.output-filename').val(function(i, v){
+        // change filename extension based on separator
+        var filetype = (txt === 'json' || txt === 'array') ? 'js' :
+          txt === ',' ? 'csv' : 'txt';
+        return v.replace(/\.\w+$/, '.' + filetype);
+      });
+      return false;
+    });
+    $this.find('.output-quotes').click(function(){
+      $this.find('.output-quotes').removeClass('active');
+      $this.find('.output-replacequotes').val( $(this).addClass('active').text() );
+      return false;
+    });
+
+    // clicking the download button; all you really need is to
+    // trigger an "output" event on the table
+    $this.find('.download').click(function(){
+      var typ,
+        $table = $this.find('table'),
+        wo = $table[0].config.widgetOptions,
+        saved = $this.find('.output-filter-all :checked').attr('class');
+      wo.output_separator    = $this.find('.output-separator-input').val();
+      wo.output_delivery     = $this.find('.output-download-popup :checked').attr('class') === 'output-download' ? 'd' : 'p';
+      wo.output_saveRows     = saved === 'output-filter' ? 'f' :
+        saved === 'output-visible' ? 'v' :
+        saved === 'output-selected' ? '.checked' : // checked class name, see table.config.checkboxClass
+        saved === 'output-sel-vis' ? '.checked:visible' : 
+        // saved === 'output-not-selected' ? ':not(.checked)' : // to output rows without an active checkbox
+        'a';
+      wo.output_replaceQuote = $this.find('.output-replacequotes').val();
+      wo.output_trimSpaces   = $this.find('.output-trim').is(':checked');
+      wo.output_includeHTML  = $this.find('.output-html').is(':checked');
+      wo.output_wrapQuotes   = $this.find('.output-wrap').is(':checked');
+      wo.output_headerRows   = $this.find('.output-headers').is(':checked');
+      wo.output_saveFileName = $this.find('.output-filename').val();
+      $table.trigger('outputTable');
+      return false;
+    });
+
+    // add tooltip
+    $this.find('.dropdown-menu [title]').tipsy({ gravity: 's' });
+
+  });
+
+});
+</script>
 {% endblock %}
 {% block content %}
-{% endblock content %}
+<div class="container">
+  <div class="group1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {% block allobjects %}
+        <h1> All Objects: 
+        {% with object_list|first as first_doc %}
+        {{ first_doc.get_classname|title }} 
+        {% endwith %}
+        </h1>
+        {% endblock allobjects %}
+        {% block panelhead %}
+        {% endblock panelhead %}
+      </div> <!-- panel heading -->
+      <div class="panel-body">
+        {% if object_list %}
+    <div class="btn-group">
+    <button type="button" class="btn btn-default reset">Reset</button> <!-- targeted by the "filter_reset" option -->
+
+    <!-- Split button -->
+    <div class="btn-group">
+      <button type="button" class="btn btn-default download">Download</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><h5 style="text-align:left"><strong>Output options</strong></h5></li>
+        <li>
+          <label>Separator: <input class="output-separator-input btn btn-default btn-xs" type="text" size="2" value=","/></label>
+          <button type="button" class="output-separator btn btn-default btn-xs active" title="comma">,</button>
+          <button type="button" class="output-separator btn btn-default btn-xs" title="semi-colon">;</button>
+          <button type="button" class="output-separator btn btn-default btn-xs" title="tab">  </button>
+          <button type="button" class="output-separator btn btn-default btn-xs" title="space"> </button>
+          <button type="button" class="output-separator btn btn-default btn-xs" title="output JSON">json</button>
+          <button type="button" class="output-separator btn btn-default btn-xs" title="output Array">array</button>
+        </li>
+        <li>
+          <div class="btn-group output-download-popup" data-toggle="buttons" title="Download file or open in Popup window">
+            <form>
+            <label>
+              <input type="radio" name="delivery1" class="output-download" checked=""> Download
+            </label>
+            <label>
+              <input type="radio" name="delivery1" class="output-popup"> Popup
+            </label>
+          </form>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group output-filter-all" data-toggle="buttons" title="Output only filtered, visible, selected, selected+visible or all rows">
+            <form>
+            <label>
+              <input type="radio" name="getrows1" class="output-all" checked="checked"> All
+            </label>
+            <label>
+              <input type="radio" name="getrows1" class="output-filter"> Filtered
+            </label>
+            <label>
+              <input type="radio" name="getrows1" class="output-visible"> Visible
+            </label>
+            <label>
+              <input type="radio" name="getrows1" class="output-selected"> Selected
+            </label>
+            <label>
+              <input type="radio" name="getrows1" class="output-sel-vis"> Sel+Vis
+            </label>
+          </form>
+          </div>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <label>Replace quotes: <input class="output-replacequotes btn btn-default btn-xs" type="text" size="2" value="'"/>
+          </label>
+          <button type="button" class="output-quotes btn btn-default btn-xs active" title="single quote">'</button>
+          <button type="button" class="output-quotes btn btn-default btn-xs" title="left double quote">“</button>
+          <button type="button" class="output-quotes btn btn-default btn-xs" title="escaped quote">\"</button>
+        </li>
+        <li><label title="Remove extra white space from each cell">Trim spaces: <input class="output-trim" type="checkbox" checked=""></label></li>
+        <li><label title="Include HTML from cells in output">Include HTML: <input class="output-html" type="checkbox"></label></li>
+        <li><label title="Wrap all values in quotes">Wrap in Quotes: <input class="output-wrap" type="checkbox"></label></li>
+        <li><label title="Choose a download filename">Filename: <input class="output-filename btn btn-default btn-xs" type="text" size="15" value="mytable.csv"></label></li>
+      </ul>
+          </div> <!-- split button btn-group (2) -->
+        </div> <!-- btn-group (1) -->
+        <div class="ts-pager form-horizontal">
+          <button type="button" class="btn btn-default btn-sm first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+          <button type="button" class="btn btn-default btn-sm prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+          <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+          <button type="button" class="btn btn-default btn-sm next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+          <button type="button" class="btn btn-default btn-sm last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+          <select class="pagesize form-control btn-sm input-mini" title="Select page size">
+            <option selected="selected" value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="1000">all</option>
+          </select>
+          <select class="gotoPage form-control btn-sm" title="Select page number"></select>
+        </div> <!-- ts-pager form-horizontal --> 
+        {% block tablebody %}
+        {% endblock tablebody %}
+      </div> <!-- panel body -->
+      {% else %}
+      <p> There is no <i>object_list</i></p>
+      {% endif %} 
+    </div> <!-- panel panel default -->
+  </div> <!-- group1 -->
+</div> <!-- container -->
+{% endblock %}
+

@@ -268,7 +268,7 @@ class InterpretationViewSet(viewsets.ModelViewSet):
 #################################################################
 class ResearchEventListView(generic.ListView):
 	model = ResearchEvent
-	template_name = 'defcdb/researchevent_list.html'
+	template_name = 'defcdb/researchevent_list.html'        
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -384,7 +384,7 @@ class ResearchEventDetail(DetailView):
 #				views for Finds									#
 #################################################################
 class FindsListView(generic.ListView):
-	template_name = 'defcdb/finds_list.html'
+	template_name = 'defcdb/finds_list.html' 
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -482,8 +482,7 @@ def create_name(request):
 #################################################################
 
 class SiteListView(generic.ListView):
-	template_name = 'defcdb/list_list.html'
-	# template_name = 'defcdb/test_list_site.html'
+	template_name = 'defcdb/site_list.html'
 
 	def get_queryset(self):
 		return Site.objects.order_by('name')
@@ -543,7 +542,7 @@ class SiteDetail(DetailView):
 #				views for Area									#
 #################################################################
 class AreaListView(generic.ListView):
-	template_name = 'defcdb/area_list.html'
+	template_name = 'defcdb/area_list.html'     
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -628,7 +627,7 @@ class AreaDetail(DetailView):
 #				views for Interpretation						#   #to be done
 #################################################################
 class InterpretationListView(generic.ListView):
-	template_name = 'defcdb/interpretation_list.html'
+	template_name = 'defcdb/interpretation_list.html'       
 	context_object_name = 'object_list'
 
 	def get_queryset(self):
