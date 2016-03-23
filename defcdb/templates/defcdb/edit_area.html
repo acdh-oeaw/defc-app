@@ -14,4 +14,120 @@
 		</div>
 	</div>
 </div>
+<!--condition for Area type field visibility-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('div[id*="quarry"]').hide();
+        $('div[id*="settlement"]').hide();
+        $('div[id*="cave"]').hide();
+        $('div[id*="cemetery"]').hide();
+        $('div[id*="grave"]').hide();
+    })
+    $('#id_area_type').change(function(){
+    var selected_option =  $('#id_area_type option:selected').text();
+    if(selected_option =="quarry"){
+        $('div[id*="quarry"]').show("slow");
+        $('div[id*="settlement"]').hide();
+        $('div[id*="cave"]').hide();
+        $('div[id*="cemetery"]').hide();
+        $('div[id*="grave"]').hide();
+    }
+    else if(selected_option == "settlement"){
+        $('div[id*="quarry"]').hide();
+        $('div[id*="settlement"]').show("slow");
+        $('div[id*="cave"]').hide();
+        $('div[id*="grave"]').show("slow");
+        $('#div_id_cemetery_or_grave').hide();
+        $('#div_id_cemetery_or_graves_topography').hide();
+        $('#div_id_cemetery_or_graves_mortuary_features').hide();
+        
+    }
+    else if(selected_option == "cave or rockshelter"){
+        $('div[id*="quarry"]').hide();
+        $('div[id*="settlement"]').hide();
+        $('div[id*="cave"]').show("slow");
+        $('div[id*="cemetery"]').hide();
+        $('div[id*="grave"]').show("slow");
+        $('#div_id_cemetery_or_grave').hide();
+        $('#div_id_cemetery_or_graves_topography').hide();
+        $('#div_id_cemetery_or_graves_mortuary_features').hide();
+    }
+    else if(selected_option == "cemetery or grave"){
+        $('div[id*="quarry"]').hide();
+        $('div[id*="settlement"]').hide();
+        $('div[id*="cave"]').hide();
+        $('div[id*="cemetery"]').show("slow");
+        $('div[id*="grave"]').show("slow");
+    }
+    else if(selected_option == "---------"){
+        $('div[id*="quarry"]').hide();
+        $('div[id*="settlement"]').hide();
+        $('div[id*="cave"]').hide();
+        $('div[id*="cemetery"]').hide();
+        $('div[id*="grave"]').hide();
+    }
+    });        
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('div[id*="earliest"]').hide();
+        $('div[id*="latest"]').hide();
+    });
+    $('#id_radiocarbon_dated').change(function(){
+    var selected_option =  $('#id_radiocarbon_dated option:selected').text();
+    if(selected_option =="yes"){
+        $('div[id*="earliest"]').show("slow");
+        $('div[id*="latest"]').show("slow");
+        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_date_of_calibration').hide();
+        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_date_of_calibration').hide();
+    }
+    else if(selected_option =="no"){
+        $('div[id*="earliest"]').hide();
+        $('div[id*="latest"]').hide();
+    }
+    else if(selected_option =="---------"){
+        $('div[id*="earliest"]').hide();
+        $('div[id*="latest"]').hide();
+    }
+
+    });
+</script>
+<script type="text/javascript">
+    $('#id_earliest_date_calibration').change(function(){
+    var selected_option = $('#id_earliest_date_calibration option:selected').text();
+    if(selected_option =="yes"){
+        $('#div_id_earliest_date_14C_age_calibrated').show("slow");
+        $('#div_id_earliest_date_date_of_calibration').show("slow");
+    }
+    else if(selected_option =="no"){
+        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_date_of_calibration').hide();
+    }
+    else if(selected_option == "---------"){
+        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_date_of_calibration').hide();
+    }
+});
+
+</script>
+<script type="text/javascript">
+    $('#id_latest_date_calibration').change(function(){
+    var selected_option = $('#id_latest_date_calibration option:selected').text();
+    if(selected_option =="yes"){
+        $('#div_id_latest_date_14C_age_calibrated').show("slow");
+        $('#div_id_latest_date_date_of_calibration').show("slow");
+    }
+    else if(selected_option =="no"){
+        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_date_of_calibration').hide();
+    }
+    else if(selected_option == "---------"){
+        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_date_of_calibration').hide();
+    }
+});
+
+</script>
 {% endblock content %}

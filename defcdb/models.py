@@ -224,9 +224,13 @@ class DC_finds_amount(GenericMethods):
 	name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 
-
 	def __str__(self):
 		return self.name
+
+
+class DC_finds_small_finds_category(GenericMethods):
+	name = models.CharField(max_length=100, blank=True,null=True,
+		help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_small_finds_type(GenericMethods):
@@ -234,11 +238,11 @@ class DC_finds_small_finds_type(GenericMethods):
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	german_name = models.CharField(max_length=100, blank=True,null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
+	category = models.ForeignKey(DC_finds_small_finds_category, blank=True,
+		null=True)
 
-
-class DC_finds_small_finds_category(GenericMethods):
-	name = models.CharField(max_length=100, blank=True,null=True,
-		help_text="PLEASE PROVIDE SOME HELPTEX")
+	def __str__(self):
+		return str(self.name)+' - '+str(self.category)
 
 
 class DC_finds_botany_species(GenericMethods):
