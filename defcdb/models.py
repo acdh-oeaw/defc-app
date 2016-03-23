@@ -242,7 +242,11 @@ class DC_finds_small_finds_type(GenericMethods):
 		null=True)
 
 	def __str__(self):
-		return str(self.name)+' - '+str(self.category)
+		try:
+			return str(self.name)+' - '+str(self.category)
+		except:
+			return str(self.name)
+		#return str(self.name)+' - '+str(self.category)
 
 
 class DC_finds_botany_species(GenericMethods):

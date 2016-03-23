@@ -6,7 +6,8 @@
 <div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h1>Edit Area</h1>
+				<h1>Edit area</h1>
+				<!-- <button id="02" class="btn btn-default">Show/Hide all fields</button> -->
 			</div>
 			<div class="panel-body">
 				{% crispy form %}
@@ -16,33 +17,25 @@
 </div>
 <!--condition for Area type field visibility-->
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('div[id*="quarry"]').hide();
+    $('#id_area_type').ready(function(){
+    var selected_option = $('#id_area_type option:selected').text();
+    if(selected_option == "quarry"){
+    	$('div[id*="quarry"]').show("slow");
         $('div[id*="settlement"]').hide();
         $('div[id*="cave"]').hide();
         $('div[id*="cemetery"]').hide();
         $('div[id*="grave"]').hide();
-    })
-    $('#id_area_type').change(function(){
-    var selected_option =  $('#id_area_type option:selected').text();
-    if(selected_option =="quarry"){
-        $('div[id*="quarry"]').show("slow");
-        $('div[id*="settlement"]').hide();
-        $('div[id*="cave"]').hide();
-        $('div[id*="cemetery"]').hide();
-        $('div[id*="grave"]').hide();
-    }
+    	}
     else if(selected_option == "settlement"){
-        $('div[id*="quarry"]').hide();
+    	$('div[id*="quarry"]').hide();
         $('div[id*="settlement"]').show("slow");
         $('div[id*="cave"]').hide();
         $('div[id*="grave"]').show("slow");
         $('#div_id_cemetery_or_grave').hide();
         $('#div_id_cemetery_or_graves_topography').hide();
         $('#div_id_cemetery_or_graves_mortuary_features').hide();
-        
-    }
-    else if(selected_option == "cave or rockshelter"){
+    	}
+    	else if(selected_option == "cave or rockshelter"){
         $('div[id*="quarry"]').hide();
         $('div[id*="settlement"]').hide();
         $('div[id*="cave"]').show("slow");
@@ -56,7 +49,7 @@
         $('div[id*="quarry"]').hide();
         $('div[id*="settlement"]').hide();
         $('div[id*="cave"]').hide();
-        $('div[id*="cemetery"]').show("slow");
+        $('div[id*="cemetery"]').show("slow"); 
         $('div[id*="grave"]').show("slow");
     }
     else if(selected_option == "---------"){
@@ -66,8 +59,75 @@
         $('div[id*="cemetery"]').hide();
         $('div[id*="grave"]').hide();
     }
-    });        
-</script>
+    // $("#02").click(function(){                    ##not sure you need to use this!
+    // 	$('div[id*="quarry"]').toggle("slow");
+    //     $('div[id*="settlement"]').toggle("slow");
+    //     $('div[id*="cave"]').toggle("slow");
+    //     $('div[id*="cemetery"]').toggle("slow");
+    //     $('div[id*="grave"]').toggle("slow");
+    //  	var selected_option = $('#id_area_type option:selected').text();
+    // 	$('div[id*= '+selected_option+']').toggle("slow");
+    //  });
+    });
+</script> 
+
+
+<!--Maybe it is better do not have the following code because then user can change the area type anytime
+	but might forget to remove the values for the old area type. It contradicts with the defined workflow: when user wants to create new type of area he has to start from 'create area'-->
+<script type="text/javascript">
+//     $('#id_area_type').change(function(){
+//     var selected_option =  $('#id_area_type option:selected').text();
+//     if(selected_option =="quarry"){
+//         $('div[id*="quarry"]').show("slow");
+//         $('div[id*="settlement"]').hide();
+//         $('div[id*="cave"]').hide();
+//         $('div[id*="cemetery"]').hide();
+//         $('div[id*="grave"]').hide();
+//     }
+//     else if(selected_option == "settlement"){
+//         $('div[id*="quarry"]').hide();
+//         $('div[id*="settlement"]').show("slow");
+//         $('div[id*="cave"]').hide();
+//         $('div[id*="grave"]').show("slow");
+//         $('#div_id_cemetery_or_grave').hide();
+//         $('#div_id_cemetery_or_graves_topography').hide();
+//         $('#div_id_cemetery_or_graves_mortuary_features').hide();
+        
+//     }
+//     else if(selected_option == "cave or rockshelter"){
+//         $('div[id*="quarry"]').hide();
+//         $('div[id*="settlement"]').hide();
+//         $('div[id*="cave"]').show("slow");
+//         $('div[id*="cemetery"]').hide();
+//         $('div[id*="grave"]').show("slow");
+//         $('#div_id_cemetery_or_grave').hide();
+//         $('#div_id_cemetery_or_graves_topography').hide();
+//         $('#div_id_cemetery_or_graves_mortuary_features').hide();
+//     }
+//     else if(selected_option == "cemetery or grave"){
+//         $('div[id*="quarry"]').hide();
+//         $('div[id*="settlement"]').hide();
+//         $('div[id*="cave"]').hide();
+//         $('div[id*="cemetery"]').show("slow");
+//         $('div[id*="grave"]').show("slow");
+//     }
+//     else if(selected_option == "---------"){
+//         $('div[id*="quarry"]').hide();
+//         $('div[id*="settlement"]').hide();
+//         $('div[id*="cave"]').hide();
+//         $('div[id*="cemetery"]').hide();
+//         $('div[id*="grave"]').hide();
+//     }
+//     else if(selected_option == "undefined"){
+//         $('div[id*="quarry"]').hide();
+//         $('div[id*="settlement"]').hide();
+//         $('div[id*="cave"]').hide();
+//         $('div[id*="cemetery"]').hide();
+//         $('div[id*="grave"]').hide();
+//     }
+//     });        
+// </script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('div[id*="earliest"]').hide();

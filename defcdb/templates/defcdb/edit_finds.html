@@ -1,0 +1,140 @@
+{% extends "defcdb/base.html" %} 
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1>Edit finds</h1>
+				<!-- <button id="02" class="btn btn-default">Show/Hide all fields</button> -->
+			</div>
+			<div class="panel-body">
+				{% crispy form %}
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">  
+$('#id_finds_type').ready(function(){
+    var selected_option =  $("#id_finds_type option:selected").text();  //condition for every selected option
+    if(selected_option =="small finds"){
+        $('div[id*="small"]').show("slow");
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('#div_id_material').show("slow");
+        $('div[id*="obsidian"]').hide();
+        // $('div[id*="obsidian amount"]').hide();
+    }
+    else if(selected_option =="botany"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').show("slow");
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        // $('div[id*="obsidian amount"]').hide();
+    }
+    else if(selected_option =="animal remains"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').show("slow");
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        // $('div[id*="obsidian amount"]').hide();
+    }
+    else if(selected_option =="lithics"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').show("slow");
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').show("slow");
+        $('#div_id_obsidian').show("slow");  //accessing directly div because two divs contain word 'obsidian'
+        $('#div_id_obsidian_amount').hide();
+       
+    }
+    else if(selected_option =="pottery"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').show("slow");
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+        $('div[id*="obsidian amount"]').hide();
+    }
+    else if(selected_option =="---------"){
+        $('div[id*="small"]').hide();
+        $('div[id*="botany"]').hide();
+        $('div[id*="animal"]').hide();
+        $('div[id*="lithics"]').hide();
+        $('div[id*="pottery"]').hide();
+        $('div[id*="material"]').hide();
+        $('div[id*="obsidian"]').hide();
+    }
+    });
+</script>
+<script type ="text/javascript">
+    $('#id_obsidian').change(function(){
+    var selected_option = $('#id_obsidian option:selected').text();
+    if(selected_option == "Yes"){
+        $('#div_id_obsidian_amount').show("slow");
+    }
+    else if(selected_option == "No"){
+        $('#div_id_obsidian_amount').hide();
+    }
+    else if(selected_option == "---------"){
+        $('#div_id_obsidian_amount').hide();
+    }
+});
+</script>
+
+ <!-- Conditions for pottery vocabs -->
+ <!-- When a specific area selected, the options of pottery vocabs must contain just values for this area  -->
+ <script type ="text/javascript"> 
+//     $('#id_area').change(function(){
+//     var selected_option = $('#id_area option:selected').text();   
+
+//     if(selected_option == "---------"){      //if area is not selected, hide all pottery vocabs
+//         $('#div_id_pottery_form option').hide();   //to access option in div
+//         $('#div_id_pottery_detail option').hide();
+//         $('#div_id_pottery_decoration option').hide();
+//     }
+//     else{
+//         var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));  //selected area starts from index 0 and ends on index of the first '_'
+//         $('#div_id_pottery_form option:contains('+selected_area+')').show();
+//         $('#div_id_pottery_form option:not(:contains('+selected_area+'))').hide();  //when selected area has been changed, hide options of previously selected area
+//         $('#div_id_pottery_detail option:contains('+selected_area+')').show();
+//         $('#div_id_pottery_detail option:not(:contains('+selected_area+'))').hide();  
+//         $('#div_id_pottery_decoration option:contains('+selected_area+')').show();
+//         $('#div_id_pottery_decoration option:not(:contains('+selected_area+'))').hide();
+//     }
+//     // alert(selected_option);
+// });
+// </script>  
+<script type ="text/javascript">
+    $('#id_small_finds_category').ready(function(){
+    var selected_option = $('#id_small_finds_category option:selected').text();
+
+    if(selected_option == "---------"){
+       $('#div_id_small_finds_type option').hide(); 
+    }
+    else{
+        $('#div_id_small_finds_type option:contains('+selected_option+')').show();
+    	$('#div_id_small_finds_type option:not(:contains('+selected_option+'))').hide();
+    } 
+})
+	$('#id_small_finds_category').change(function(){
+    var selected_option = $('#id_small_finds_category option:selected').text();
+    	$('#div_id_small_finds_type option:contains('+selected_option+')').show();
+    	$('#div_id_small_finds_type option:not(:contains('+selected_option+'))').hide();
+ });
+</script>
+{% endblock content %}

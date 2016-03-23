@@ -5,7 +5,7 @@ import autocomplete_light
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, Field
 from django.utils.translation import ugettext_lazy as _
 from .autocomplete_light_registry import (BookAutocomplete, InstitutionAutocomplete,
 	ProjectleaderAutocomplete, NameAutocomplete, ISOAutocomplete)
@@ -83,7 +83,9 @@ class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 			super(FindsForm, self).__init__(*args, **kwargs)
 			self.helper = FormHelper()
-			self.helper.add_input(Submit('submit','Create'))
+			self.helper.add_input(Submit('submit','Create'))  #http://stackoverflow.com/questions/21559380/django-crispy-forms-readonly
+			# self.helper.layout = Layout('email', Field('area', disabled =True),
+   #  )
 
 
 class SiteForm(autocomplete_light.ModelForm):

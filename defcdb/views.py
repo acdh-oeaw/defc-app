@@ -402,7 +402,7 @@ def update_finds(request, pk):
 		return redirect('defcdb:finds_detail', pk=pk)
 	else:
 		form = FindsForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"finds"})
+		return render(request, 'defcdb/edit_finds.html', {'form':form, 'classname':"finds"})
 
 
 @login_required
@@ -563,7 +563,7 @@ def update_area(request, pk):
 		return redirect('defcdb:area_detail', pk=pk)
 	else:
 		form = AreaForm(instance=instance)
-		return render(request, 'defcdb/update_form.html', {'form':form, 'classname':"area" })
+		return render(request, 'defcdb/edit_area.html', {'form':form, 'classname':"area" })
 
 
 @reversion.create_revision()
