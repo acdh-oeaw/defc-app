@@ -70,64 +70,22 @@
     //  });
     });
 </script> 
-
-
-<!--Maybe it is better do not have the following code because then user can change the area type anytime
-	but might forget to remove the values for the old area type. It contradicts with the defined workflow: when user wants to create new type of area he has to start from 'create area'-->
+<!--condition for Period field visibility-->
 <script type="text/javascript">
-//     $('#id_area_type').change(function(){
-//     var selected_option =  $('#id_area_type option:selected').text();
-//     if(selected_option =="quarry"){
-//         $('div[id*="quarry"]').show("slow");
-//         $('div[id*="settlement"]').hide();
-//         $('div[id*="cave"]').hide();
-//         $('div[id*="cemetery"]').hide();
-//         $('div[id*="grave"]').hide();
-//     }
-//     else if(selected_option == "settlement"){
-//         $('div[id*="quarry"]').hide();
-//         $('div[id*="settlement"]').show("slow");
-//         $('div[id*="cave"]').hide();
-//         $('div[id*="grave"]').show("slow");
-//         $('#div_id_cemetery_or_grave').hide();
-//         $('#div_id_cemetery_or_graves_topography').hide();
-//         $('#div_id_cemetery_or_graves_mortuary_features').hide();
-        
-//     }
-//     else if(selected_option == "cave or rockshelter"){
-//         $('div[id*="quarry"]').hide();
-//         $('div[id*="settlement"]').hide();
-//         $('div[id*="cave"]').show("slow");
-//         $('div[id*="cemetery"]').hide();
-//         $('div[id*="grave"]').show("slow");
-//         $('#div_id_cemetery_or_grave').hide();
-//         $('#div_id_cemetery_or_graves_topography').hide();
-//         $('#div_id_cemetery_or_graves_mortuary_features').hide();
-//     }
-//     else if(selected_option == "cemetery or grave"){
-//         $('div[id*="quarry"]').hide();
-//         $('div[id*="settlement"]').hide();
-//         $('div[id*="cave"]').hide();
-//         $('div[id*="cemetery"]').show("slow");
-//         $('div[id*="grave"]').show("slow");
-//     }
-//     else if(selected_option == "---------"){
-//         $('div[id*="quarry"]').hide();
-//         $('div[id*="settlement"]').hide();
-//         $('div[id*="cave"]').hide();
-//         $('div[id*="cemetery"]').hide();
-//         $('div[id*="grave"]').hide();
-//     }
-//     else if(selected_option == "undefined"){
-//         $('div[id*="quarry"]').hide();
-//         $('div[id*="settlement"]').hide();
-//         $('div[id*="cave"]').hide();
-//         $('div[id*="cemetery"]').hide();
-//         $('div[id*="grave"]').hide();
-//     }
-//     });        
-// </script>
+    $('#id_site').ready(function(){
+         var selected_option = $('#id_site option:selected').text();
 
+        if(selected_option == "---------"){
+            $('#div_id_period option').show();
+        }
+        else{
+            var selected_site = $('#id_site option:selected').text().substring(0, $('#id_site option:selected').text().indexOf('_'));
+            $('#div_id_period option:contains('+selected_site+')').show();
+            $('#div_id_period option:not(:contains('+selected_site+'))').hide();
+            
+        }
+    });
+</script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('div[id*="earliest"]').hide();

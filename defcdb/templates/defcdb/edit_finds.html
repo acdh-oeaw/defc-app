@@ -99,26 +99,26 @@ $('#id_finds_type').ready(function(){
  <!-- Conditions for pottery vocabs -->
  <!-- When a specific area selected, the options of pottery vocabs must contain just values for this area  -->
  <script type ="text/javascript"> 
-//     $('#id_area').change(function(){
-//     var selected_option = $('#id_area option:selected').text();   
+    $('#id_area').ready(function(){
+    var selected_option = $('#id_area option:selected').text();   
 
-//     if(selected_option == "---------"){      //if area is not selected, hide all pottery vocabs
-//         $('#div_id_pottery_form option').hide();   //to access option in div
-//         $('#div_id_pottery_detail option').hide();
-//         $('#div_id_pottery_decoration option').hide();
-//     }
-//     else{
-//         var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));  //selected area starts from index 0 and ends on index of the first '_'
-//         $('#div_id_pottery_form option:contains('+selected_area+')').show();
-//         $('#div_id_pottery_form option:not(:contains('+selected_area+'))').hide();  //when selected area has been changed, hide options of previously selected area
-//         $('#div_id_pottery_detail option:contains('+selected_area+')').show();
-//         $('#div_id_pottery_detail option:not(:contains('+selected_area+'))').hide();  
-//         $('#div_id_pottery_decoration option:contains('+selected_area+')').show();
-//         $('#div_id_pottery_decoration option:not(:contains('+selected_area+'))').hide();
-//     }
-//     // alert(selected_option);
-// });
-// </script>  
+    if(selected_option == "---------"){      //if area is not selected, hide all pottery vocabs
+        $('#div_id_pottery_form option').hide();   //to access option in div
+        $('#div_id_pottery_detail option').hide();
+        $('#div_id_pottery_decoration option').hide();
+    }
+    else{
+        var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));  //selected area starts from index 0 and ends on index of the first '_'
+        $('#div_id_pottery_form option:contains('+selected_area+')').show();
+        $('#div_id_pottery_form option:not(:contains('+selected_area+'))').hide();  //when selected area has been changed, hide options of previously selected area
+        $('#div_id_pottery_detail option:contains('+selected_area+')').show();
+        $('#div_id_pottery_detail option:not(:contains('+selected_area+'))').hide();  
+        $('#div_id_pottery_decoration option:contains('+selected_area+')').show();
+        $('#div_id_pottery_decoration option:not(:contains('+selected_area+'))').hide();
+    }
+    // alert(selected_option);
+});
+</script>  
 <script type ="text/javascript">
     $('#id_small_finds_category').ready(function(){
     var selected_option = $('#id_small_finds_category option:selected').text();
