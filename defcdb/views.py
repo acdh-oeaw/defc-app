@@ -392,6 +392,7 @@ class FindsListView(generic.ListView):
 	def get_queryset(self):
 		return Finds.objects.order_by('finds_type')
 
+
 @login_required
 def update_finds(request, pk):
 	instance = get_object_or_404(Finds, id=pk)

@@ -336,9 +336,9 @@ class DC_finds_pottery_detail(GenericMethods):
 
 
 class DC_finds_pottery_decoration(GenericMethods):
-	name = models.CharField(max_length=100, blank=True,null=True,
+	name = models.CharField(max_length=100, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
-	german_name = models.CharField(max_length=100, blank=True,null=True,
+	german_name = models.CharField(max_length=100, blank=True, null=True,
 		help_text="PLEASE PROVIDE SOME HELPTEX")
 	region = models.ManyToManyField(DC_region, blank=True)
 

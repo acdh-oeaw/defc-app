@@ -4,6 +4,7 @@ orea/settings/server.py
 orea/settings/pandorfer_local.py
 orea/settings/ksenia_local.py
 orea/settings_db.pyc
+orea/media/static/images/*.jpg
 db.sqlite3
 *.pyc
 __pycache__
@@ -13,3 +14,4 @@ __pycache__
 /Untitled02.ipynb
 /tryouts.ipynb
 __try.html
+/pottery
