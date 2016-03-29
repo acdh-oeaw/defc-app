@@ -49,7 +49,7 @@ def showplaces(request):
 
 def showplaces_test(request):
 	context = {}
-	context["province_list"] = DC_province.objects.exclude(latitude__isnull=True)
+	context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
 	return render(request,'geolocation/showplaces_test.html', context)
 
 
