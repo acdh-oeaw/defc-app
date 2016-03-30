@@ -59,10 +59,12 @@
                         {% endfor %}
                     </td>
                     <td>
-                        {{ object.page }}
+                      <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ object.literature.zoterokey }}"> {{object.literature }}</a>, {{ object.page }}
                     </td>
                     <td>
-                        <img src="http://{{ request.get_host }}/media/{{ object.image}}" style="width:75%;">
+                        <a href="http://{{ request.get_host }}/media/{{ object.image}}">
+                            <img src="http://{{ request.get_host }}/media/{{ object.image}}" style="width:75%;">
+                        </a>
                     </td>
                     <td>
                         <a class ="btn btn-danger btn-sm" href="{% url 'image_gallery:update_file' pk=object.id %}">update</a>

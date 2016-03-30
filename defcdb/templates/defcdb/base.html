@@ -170,6 +170,11 @@
                   <li>
                     <a href="{% url 'bib:synczotero' %}">SyncZotero</a>
                   </li>
+                   <li role="separator" class="divider"></li>
+                   <li class="dropdown-header">Image Gallery</li>
+                  <li>
+                    <a href="{% url 'image_gallery:object_list' %}">View/Edit Images</a>
+                  </li>
               </ul>
             </li>
           {% endif %}
