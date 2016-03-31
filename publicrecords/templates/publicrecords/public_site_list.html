@@ -1,0 +1,66 @@
+{% extends "defcdb/listBase.html" %}
+{% block Titel %}See All Objects{% endblock %}
+
+{% block allobjects %}
+<h1>Site records</h1>
+{% endblock allobjects %}
+{% block tablebody %}
+<table class="table table-striped">
+  <thead> 
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Name</th>
+      <th>Alternative name</th>
+      <th>Region</th>
+      <th>District</th>
+      <th>Topography</th>
+      <th>Areas (area type)</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Name</th>
+      <th>Alternative name</th>
+      <th>Region</th>
+      <th>District</th>
+      <th>Topography</th>
+      <th>Areas (area type)</th>
+    </tr>
+  </tfoot>
+  <tbody>
+   {% for object in object_list %}
+   <tr>
+    <td>
+        <input type="checkbox">
+        </td>
+    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+      {{ object.name }}</a>
+    </td>
+    <td>
+      {% for x in object.alias_name.all %}
+        {{ x.name }}<br/>
+      {% endfor %}
+    </td>
+    <td>
+      {{ object.province.region }} 
+    </td>
+    <td>
+      {{ object.province.name }} 
+    </td>
+    <td>
+      {{ object.topography }} 
+    </td>
+    <td>
+      {% if object.area_set.all %}
+      {% for x in object.area_set.all %}
+        <a href="/publicrecords/area/detail/{{ x.id }}">
+          {{ x.area_type }}
+        </a><br/>
+      {% endfor %}
+      {% endif %}
+    </td>
+   </tr>  
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock tablebody %}

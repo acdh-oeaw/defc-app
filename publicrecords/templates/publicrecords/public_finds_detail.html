@@ -1,0 +1,144 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Finds</h1>
+<button id="01" class="btn btn-default">Show all fields</button>
+<p></p>
+<div class="panel panel-default">
+<table class="table table-bordered table-striped">
+        <tr>
+                <td>Area</td>
+                <td>{% for area in area_list %}
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        </a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Research event</td>
+                <td>{% for researchevent in researchevent_list %}
+                        <a href="/publicrecords/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}"> {{ researchevent }} <br/>
+                        </a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Finds type</td>
+                <td>{{ object.finds_type }}</td>
+        </tr>
+        <tr>
+                <td>Small finds category</td>
+                <td>{{ object.small_finds_category }}</td>
+        </tr>
+        <tr>
+                <td>Small finds type</td>
+                <td>{% for find in smallfindstype_list %}
+                    {{ find.name }}<br/> <!-- find.name -->
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Botany species</td>
+                <td>{% for species in botanyspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Animal remains species</td>
+                <td>{% for species in animalremainsspecies_list %}
+                    {{ species }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Animal remains completeness</td>
+                <td>{{ object.animal_remains_completeness }}</td>
+        </tr>
+        <tr>
+                <td>Animal remains part</td>
+                <td>{% for part in animalremainspart_list %}
+                    {{ part }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics technology</td>
+                <td>{% for lithics in lithicstechnology_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics industry</td>
+                <td>{% for lithics in lithicsindustry_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics core shape</td>
+                <td>{% for lithics in lithicscoreshape_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics retouched tools</td>
+                <td>{% for lithics in lithicsretouchedtools_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Lithics raw material</td>
+                <td>{% for lithics in lithicsrawmaterial_list %}
+                    {{ lithics }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Obsidian</td>
+                <td>{{ object.obsidian }}</td>
+        </tr>
+        <tr>
+                <td>Obsidian amount</td>
+                <td>{{ object.obsidian_amount }}</td>
+        </tr>
+        <tr>
+                <td>Pottery form</td>
+                <td>{{ object.pottery_form.name }}</td>
+        </tr>
+        <tr>
+                <td>Pottery detail</td>
+                <td>{% for detail in potterydetail_list %}
+                    {{ detail.name }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Pottery decoration</td>
+                <td>{% for decoration in potterydecoration_list %}
+                    {{ decoration.name }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Material</td>
+                <td>{% for material in material_list %}
+                    {{ material }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Confidence</td>
+                <td>{{ object.confidence }}</td>
+        </tr>
+        <tr>
+            <td>Reference</td>
+            <td>{% for ref in reference_list %}
+                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretation_list %}
+                        <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
+                        </a>
+                        {% endfor %}</td>
+        </tr>
+</table>
+</div>
+</div>
+{% endblock content %}

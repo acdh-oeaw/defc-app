@@ -1,5 +1,6 @@
-from django.shortcuts import render
 # -*- coding: utf-8 -*-
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.template import RequestContext
 from django.views import generic
 from django.views.generic.detail import DetailView
@@ -15,7 +16,7 @@ from bib.models import Book
 #################################################################
 class ResearchEventListView(generic.ListView):
 	model = ResearchEvent
-	template_name = 'defcdb/researchevent_list.html'        
+	template_name = 'publicrecords/public_researchevent_list.html'        
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -25,6 +26,7 @@ class ResearchEventListView(generic.ListView):
 
 
 class ResearchEventDetail(DetailView):
+	template_name = 'publicrecords/public_researchevent_detail.html'
 	model = ResearchEvent
 	def get_context_data(self, **kwargs):
 		context = super(ResearchEventDetail, self).get_context_data(**kwargs)
@@ -40,7 +42,7 @@ class ResearchEventDetail(DetailView):
 #				views for Finds									#
 #################################################################
 class FindsListView(generic.ListView):
-	template_name = 'defcdb/finds_list.html' 
+	template_name = 'publicrecords/public_finds_list.html' 
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -50,6 +52,7 @@ class FindsListView(generic.ListView):
 
 
 class FindsDetail(DetailView):
+	template_name = 'publicrecords/public_finds_detail.html'
 	model = Finds
 	def get_context_data(self, **kwargs):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
@@ -79,13 +82,16 @@ class FindsDetail(DetailView):
 #################################################################
 
 class SiteListView(generic.ListView):
-	template_name = 'defcdb/site_list.html'
+	template_name = 'publicrecords/public_site_list.html'
+	context_object_name = 'object_list'
 
 	def get_queryset(self):
 		return Site.objects.filter(public=True).order_by('name')
+		# return Site.objects.filter(public=True).order_by('name')
 
 
 class SiteDetail(DetailView):
+	template_name = 'publicrecords/public_site_detail.html'
 	model = Site
 	def get_context_data(self, **kwargs):
 		context = super(SiteDetail, self).get_context_data(**kwargs)
@@ -101,7 +107,7 @@ class SiteDetail(DetailView):
 #				views for Area									#
 #################################################################
 class AreaListView(generic.ListView):
-	template_name = 'defcdb/area_list.html'     
+	template_name = 'publicrecords/public_area_list.html'     
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
@@ -111,6 +117,7 @@ class AreaListView(generic.ListView):
 
 
 class AreaDetail(DetailView):
+	template_name = 'publicrecords/public_area_detail.html'
 	model = Area
 	def get_context_data(self, **kwargs):
 		context = super(AreaDetail, self).get_context_data(**kwargs)
@@ -146,7 +153,7 @@ class AreaDetail(DetailView):
 #				views for Interpretation						#   #to be done
 #################################################################
 class InterpretationListView(generic.ListView):
-	template_name = 'defcdb/interpretation_list.html'       
+	template_name = 'publicrecords/public_interpretation_list.html'       
 	context_object_name = 'object_list'
 
 	def get_queryset(self):
@@ -155,6 +162,7 @@ class InterpretationListView(generic.ListView):
 
 
 class InterpretationDetail(DetailView):
+	template_name = 'publicrecords/public_interpretation_detail.html'
 	model = Interpretation
 	def get_context_data(self, **kwargs):
 		context = super(InterpretationDetail, self).get_context_data(**kwargs)

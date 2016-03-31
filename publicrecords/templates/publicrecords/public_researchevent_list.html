@@ -1,0 +1,65 @@
+{% extends "defcdb/listBase.html" %}
+{% block Titel %}See All Objects{% endblock %}
+
+{% block allobjects %}
+<h1>Research Event records</h1>
+{% endblock allobjects %}
+
+{% block tablebody %}
+<table class="table table-striped">
+  <thead>  
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Name</th>
+      <th>Institution</th>
+      <th>Starting year</th>
+      <th>Ending year</th>
+      <th>Project name</th>
+      <th>Finds</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Name</th>
+      <th>Institution</th>
+      <th>Starting year</th>
+      <th>Ending year</th>
+      <th>Project name</th>
+      <th>Finds</th>
+    </tr>
+  </tfoot>
+  <tbody>
+   {% for object in object_list %}
+   <tr>
+    <td>
+    <input type="checkbox">
+    </td>
+    <td>
+      {% for x in object.research_type.all %}
+      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ x.name }}</a><br/>
+      {% endfor %}
+    </td>
+    <td>
+      {% for x in object.institution.all %}
+      {{ x.name }} <br/>
+      {% endfor %} 
+    </td>
+    <td>
+      {{ object.year_of_activity_start_year }} 
+    </td>
+    <td>
+      {{ object.year_of_activity_end_year }} 
+    </td>
+    <td>
+      {{ object.project_name }} 
+    </td>
+    <td>
+      {% for y in object.finds_set.all %}
+      <a href="/publicrecords/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+      {% endfor %}
+    </td>
+   </tr>  
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock tablebody %}

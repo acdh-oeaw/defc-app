@@ -1,0 +1,70 @@
+{% extends "defcdb/listBase.html" %}
+{% block Titel %}See All Objects{% endblock %}
+
+{% block allobjects %}
+<h1>Interpretation records</h1>
+{% endblock allobjects %}
+
+{% block tablebody %}
+<table class="table table-striped">
+  <thead>
+        
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Area</th>
+      <th>Area type</th>
+      <th>Finds</th>
+      <th>Production type</th>
+      <th>Subsistence type</th>
+      <th>View full record</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Area</th>
+      <th>Area type</th>
+      <th>Finds</th>
+      <th>Production type</th>
+      <th>Subsistence type</th>
+      <th>View full record</th>
+    </tr>
+  </tfoot>
+  <tbody>
+   {% for object in object_list %}
+   <tr>
+    <td>
+        <input type="checkbox">
+    </td>
+    <td>
+      {% for x in object.area.all %}
+      {{ x.site }} <br/>
+      {% endfor %}
+    </td>
+    <td>
+      {% for x in object.area.all %}
+      {{ x.area_type }} <br/>
+      {% endfor %}
+    </td>
+    <td>
+      {% for x in object.finds.all %}
+      {{ x.finds_type }} <br/>
+      {% endfor %} 
+    </td>
+    <td>
+      {% for x in object.production_type.all %}
+      {{ x }} <br/>
+      {% endfor %} 
+    </td>
+    <td>
+      {% for x in object.subsistence_type.all %}
+      {{ x }} <br/>
+      {% endfor %} 
+    </td>
+    <td>
+      <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+    </td>
+   </tr>  
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock tablebody %}

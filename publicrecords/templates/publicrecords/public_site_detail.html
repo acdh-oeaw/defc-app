@@ -20,8 +20,7 @@
 <p></p>
 
 <div class="row col-md-7">
-    
-        <div class="panel panel-default">
+    <div class="panel panel-default">
         <table class="table table-bordered table-striped">
        
         <tr>
@@ -93,14 +92,12 @@
          <tr>
                 <td>Areas</td>
                 <td>{% for area in areas_list %}
-                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
                         {% endfor %}</td>
         </tr>
         </table>
     </div>
-    <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-    <a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
-    </div>
+</div>
     <div class="col-md-5">
         <div id="map"></div>
     </div>
@@ -139,4 +136,3 @@ $(document).ready(function(){
 
 </div>
 {% endblock content %}
-

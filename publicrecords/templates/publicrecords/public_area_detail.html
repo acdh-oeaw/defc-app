@@ -1,0 +1,294 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Area</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+ <p></p>
+<div class="panel panel-default">
+
+<table class="table table-bordered table-striped">
+        <tr>
+                <td>Site</td>
+                <td>{% for site in sites_list %}
+                <a href="/publicrecords/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site }} <br/>
+                </a>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Area type</td>
+                <td>{{ object.area_type }}</td>
+        </tr>
+        <tr>
+                <td>Area NR</td>
+                <td>{{ object.area_nr }}</td>
+        </tr>
+        
+        <tr>
+                <td>Period</td>
+                <td>{% for period in period_list %}
+                {{ period }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Dating method</td>
+                <td>{% for method in dating_method_list %}
+                {{ method }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Radiocarbon dated</td>
+                <td>{{ object.radiocarbon_dated }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Lab Number</td>
+                <td>{{ object.earliest_date_lab_number }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: 14C age (BP)</td>
+                <td>{{ object.earliest_date_14C_age }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Calibration</td>
+                <td>{{ object.earliest_date_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: 14C age calibrated (BC)</td>
+                <td>{{ object.earliest_date_14C_age_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Date of calibration</td>
+                <td>{{ object.earliest_date_date_of_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Standard deviation</td>
+                <td>{{ object.earliest_date_standard_deviation }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Delta 13C</td>
+                <td>{{ object.earliest_date_delta13 }}</td>
+        </tr>
+        <tr>
+                <td>Earliest date: Dated by</td>
+                <td>{% for date in datedby_list %}
+                {{ date }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Lab Number</td>
+                <td>{{ object.latest_date_lab_number }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: 14C age (BP)</td>
+                <td>{{ object.latest_date_14C_age }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Calibration</td>
+                <td>{{ object.latest_date_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: 14C age calibrated (BC)</td>
+                <td>{{ object.latest_date_14C_age_calibrated }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Date of calibration</td>
+                <td>{{ object.latest_date_date_of_calibration }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Standard deviation</td>
+                <td>{{ object.latest_date_standard_deviation }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Delta 13C</td>
+                <td>{{ object.latest_date_delta13 }}</td>
+        </tr>
+        <tr>
+                <td>Latest date: Dated by</td>
+                <td>{% for date in datedby_list %}
+                {{ date }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Period Reference</td>
+                <td>{% for ref in period_reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.period_comment }}</td>
+        </tr>
+        <tr>
+                <td>Settlement type</td>
+                <td>{{ object.settlement_type }}</td>
+        </tr>
+        <tr>
+                <td>Settlement structure</td>
+                <td>{% for structure in settlementstructure_list %}
+                    {{ structure }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Settlement construction type</td>
+                <td>{% for type in settlementconstructiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Settlement building technique</td>
+                <td>{% for tech in settlementbuildingtechnique_list %}
+                    {{ tech }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Settlement special features</td>
+                <td>{% for feature in settlementspecialfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters type</td>
+                <td>{{ object.cave_rockshelters_type }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of graves/human remains</td>
+                <td>{{ object.cave_rockshelters_evidence_of_graves_human_remains }}</td>
+        </tr>
+        <tr>
+                <td>Cave/rockshelters: Evidence of occupation</td>
+                <td>{% for evidence in evidenceofoccupation_list %}
+                    {{ evidence }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Quarry exploitation type</td>
+                <td>{{ object.quarry_exploitation_type }}</td>
+        </tr>
+        <tr>
+                <td>Quarry raw material</td>
+                <td>{% for material in quarryrawmaterial_list %}
+                    {{ material }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves topography</td>
+                <td>{% for topography in topography_list %}
+                    {{ topography }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Cemetery/graves mortuary features</td>
+                <td>{% for feature in mortuaryfeatures_list %}
+                    {{ feature }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of graves</td>
+                <td>{{ object.grave_number_of_graves }}</td>
+        </tr>
+        <tr>
+                <td>Grave type</td>
+                <td>{% for type in gravetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Grave: type of human remains</td>
+                <td>{% for type in typeofhumanremains_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Grave: estimated number of individuals</td>
+                <td>{{ object.grave_estimated_number_of_individuals }}</td>
+        </tr>
+        <tr>
+                <td>Grave: age groups</td>
+                <td>{% for age in graveagegroups_list %}
+                    {{ age }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Grave: sexes</td>
+                <td>{% for sex in gravesexes_list %}
+                    {{ sex }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of female sex</td>
+                <td>{{ object.grave_number_of_female_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of male sex</td>
+                <td>{{ object.grave_number_of_male_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: number of not specified sex</td>
+                <td>{{ object.grave_number_of_not_specified_sex }}</td>
+        </tr>
+        <tr>
+                <td>Grave: manipulations of graves</td>
+                <td>{% for manipulation in manipulationsofgraves_list %}
+                    {{ manipulation }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+        <tr>
+                <td>Interpretation</td>
+                <td>{% for interpretation in interpretations_list %}
+                        <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/></a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td>{% for find in finds_list %}
+                        <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/></a>
+                        {% endfor %}</td>
+        </tr>
+</table>
+</div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("td:empty").parent().hide();
+    $('tr:has(td:contains("Earliest"))').hide();
+    $('tr:has(td:contains("Latest"))').hide();
+    $("td").filter(function(){
+      return $(this).text() === "None";
+    }).parent().hide();
+    $("#01").click(function(){
+            var emptytd = $("td:empty");
+            $(emptytd).parent().toggle("slow");
+            $('tr:has(td:contains("Earliest"))').hide();
+            $('tr:has(td:contains("Latest"))').hide();
+            var nonetd = $("td").filter(function(){
+            return $(this).text() === "None"});
+            $(nonetd).parent().toggle("slow");
+            $('tr:has(td:contains("Earliest"))').hide();
+            $('tr:has(td:contains("Latest"))').hide();
+});
+    });
+
+</script>
+{% endblock scripts %}
+
+
+
+

@@ -1,0 +1,53 @@
+{% extends "defcdb/base_detail.html" %}
+{% block content %}
+
+<div class="container">
+<h1>Interpretation</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<p></p>
+<div class="panel panel-default">
+<table class="table table-bordered table-striped">
+        <tr>
+                <td>Area</td>
+                <td>{% for area in areas_list %}
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        </a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td>{% for find in finds_list %}
+                    <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/>
+                    </a>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Description</td>
+                <td>{{ object.description }}</td>
+        </tr>
+        <tr>
+                <td>Production type</td>
+                <td>{% for type in productiontype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Subsistence type</td>
+                <td>{% for type in subsistencetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+</table>
+</div>
+</div>
+{% endblock content %}
