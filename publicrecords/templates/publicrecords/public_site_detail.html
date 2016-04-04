@@ -15,14 +15,22 @@
 
 <div class="container">
 <h1>Site</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Sites</a></li>
+  <li class="active">Site {{ object.name }}</li>
+</ol>
 
 <button id="01" class="btn btn-default">Show all fields</button>
 <p></p>
 
-<div class="row col-md-7">
+<!-- <div class="row col-md-7"> -->
     <div class="panel panel-default">
         <table class="table table-bordered table-striped">
-       
+            <tr>
+                <td>Site ID</td>
+                <td>{{ object.id }}</td>
+        </tr>
         <tr>
                 <td>Name of the site </td>
                 <td>{{ object.name }}</td>
@@ -97,11 +105,11 @@
         </tr>
         </table>
     </div>
-</div>
-    <div class="col-md-5">
+<!-- </div> -->
+    <!-- <div class="col-md-5"> -->
         <div id="map"></div>
     </div>
-</div>
+<!-- </div> -->
 
 <script type="text/javascript">
     var gps1 = {{ object.latitude|default_if_none:"nix" }} ;

@@ -10,6 +10,7 @@
         
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Area ID</th>
       <th>Site</th>
       <th>District</th>
       <th>Area type</th>
@@ -19,6 +20,7 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Area ID</th>
       <th>Site</th>
       <th>District</th>
       <th>Area type</th>
@@ -31,7 +33,10 @@
    <tr>
     <td>
         <input type="checkbox">
-        </td>
+      </td>
+      <td>
+      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a> 
+    </td>
     <td>
       <a href="/publicrecords/site/detail/{{ object.site.id }}"> {{ object.site.name }} </a>
     </td>

@@ -10,6 +10,7 @@
   <thead>  
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Finds ID</th>
       <th>Area</th>
       <th>Area type</th>
       <th>Research Event</th>
@@ -20,6 +21,7 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Finds ID</th>
       <th>Area</th>
       <th>Area type</th>
       <th>Research Event</th>
@@ -33,6 +35,10 @@
    <tr>
     <td>
         <input type="checkbox">
+    </td>
+    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+      {{ object.id }}
+      </a> 
     </td>
     <td>
       <a href="/publicrecords/area/detail/{{ object.area.id }}"> {{ object.area.site }} </a> 

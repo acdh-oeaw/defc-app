@@ -11,6 +11,7 @@
         
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Interpretation ID</th>
       <th>Area</th>
       <th>Area type</th>
       <th>Finds</th>
@@ -21,6 +22,7 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Interpretation ID</th>
       <th>Area</th>
       <th>Area type</th>
       <th>Finds</th>
@@ -34,6 +36,10 @@
    <tr>
     <td>
         <input type="checkbox">
+    </td>
+    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+      {{ object.id }}
+      </a> 
     </td>
     <td>
       {% for x in object.area.all %}

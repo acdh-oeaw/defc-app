@@ -10,6 +10,7 @@
   <thead>  
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Research Event ID</th>
       <th>Name</th>
       <th>Institution</th>
       <th>Starting year</th>
@@ -20,6 +21,7 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
+      <th>Research Event ID</th>
       <th>Name</th>
       <th>Institution</th>
       <th>Starting year</th>
@@ -33,6 +35,9 @@
    <tr>
     <td>
     <input type="checkbox">
+    </td>
+    <td>
+      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a>
     </td>
     <td>
       {% for x in object.research_type.all %}

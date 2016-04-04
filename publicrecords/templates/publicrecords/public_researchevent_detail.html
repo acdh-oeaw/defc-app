@@ -7,11 +7,20 @@
 
 <div class="container">
 <h1>Research Event</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Research Events</a></li>
+  <li class="active">Research Event {{ object.id }}</li>
+</ol>
 
 <button id="01" class="btn btn-default">Show all fields</button>
 <p></p>
 <div class="panel panel-default">
 <table class="table table-bordered table-striped">
+        <tr>
+            <td>Research Event ID</td>
+            <td>{{ object.id }}</td>
+        </tr>
         <tr>
             <td>Research type</td>
             <td>{% for type in researchtype_list %}

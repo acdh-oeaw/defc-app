@@ -3,11 +3,20 @@
 
 <div class="container">
 <h1>Area</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Areas</a></li>
+  <li class="active">Area {{ object.id }}</li>
+</ol>
 <button id="01" class="btn btn-default">Show all fields</button><br/>
  <p></p>
 <div class="panel panel-default">
 
 <table class="table table-bordered table-striped">
+        <tr>
+                <td>Area ID</td>
+                <td>{{ object.id }}</td>
+        </tr>
         <tr>
                 <td>Site</td>
                 <td>{% for site in sites_list %}
