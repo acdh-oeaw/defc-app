@@ -7,6 +7,10 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
         <style>
             #map { height: 500px; }
+            #info-panel { 
+                padding: 7px;
+                background-color: #dbedec; 
+            }
         </style>
 
 {% endblock %}
@@ -19,99 +23,145 @@
   <li><a href="/">DEFC</a></li>
   <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Sites</a></li>
   <li class="active">Site {{ object.name }}</li>
-</ol>
+</ol>  
 
 <button id="01" class="btn btn-default">Show all fields</button>
 <p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 
 <!-- <div class="row col-md-7"> -->
     <div class="panel panel-default">
         <table class="table table-bordered table-striped">
             <tr>
-                <td>Site ID</td>
+                <td class="col-sm-2">Site ID</td>
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
-                <td>Name of the site </td>
+                <td class="col-sm-2">Name of the site </td>
                 <td>{{ object.name }}</td>
         </tr>
         <tr>
-                <td>Alias name</td>
+                <td class="col-sm-2">Alias name</td>
                 <td>{% for x in aliasName_list %}{{ x.name }}<br/>{% endfor %}</td>
         </tr>
         <tr>
-                <td>Alternative name</td>
+                <td class="col-sm-2">Alternative name</td>
                 <td>{% for x in alternativeName_list %}{{ x.name }}<br/>{% endfor %}</td>
         </tr>
         <tr>
-                <td>District</td>
+                <td class="col-sm-2">District</td>
                 <td>{{ object.province.name }}</td>
         </tr>
         <tr>
-                <td>Region</td>
+                <td class="col-sm-2">Region</td>
                 <td>{{ object.province.region.name }}</td>
         </tr>
         <tr>
-                <td>Country</td>
+                <td class="col-sm-2">Country</td>
                 <td>{{ object.province.region.country }}</td>
         </tr>
         <tr>
-                <td>Description</td>
+                <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
         </tr>
         <tr>
-                <td>Topography</td>
+                <td class="col-sm-2">Topography</td>
                 <td>{{ object.topography }}</td>
         </tr>
         <tr>
-                <td>Geographical Coordinate Reference System</td>
+                <td class="col-sm-2">Geographical Coordinate Reference System</td>
                 <td>{{ object.gps_data_coordinate_system }}</td>
         </tr>
         <tr>
-                <td>Latitude</td>
+                <td class="col-sm-2">Latitude</td>
                 <td>{{ object.latitude }}</td>
         </tr>
         <tr>
-                <td>Longitude</td>
+                <td class="col-sm-2">Longitude</td>
                 <td>{{ object.longitude }}</td>
         </tr>
         <tr>
-                <td>Exact location</td>
+                <td class="col-sm-2">Exact location</td>
                 <td>{{ object.exact_location }}</td>
         </tr>
         <tr>
-                <td>Coordinate source</td>
+                <td class="col-sm-2">Coordinate source</td>
                 <td>{{ object.coordinate_source }}</td>
         </tr>
         <tr>
-                <td>Number of activity periods</td>
+                <td class="col-sm-2">Number of activity periods</td>
                 <td>{{ object.number_of_activity_periods }}</td>
         </tr>
+       <!--  <tr>
+                <td class="col-sm-2">Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }},{{ ref.title }},{{ ref.publication_year }},{{ ref.place }}</a><br/>
+                    {% endfor %}</td>
+        </tr> -->
         <tr>
-                <td>Reference</td>
+                <td class="col-sm-2">Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr>
+         <!-- <tr>
+                <td class="col-sm-2">Areas</td>
+                <td>{% for area in areas_list %}
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
+                        {% endfor %}</td>
+        </tr> -->
+        </table>
+    </div>
+{% if site.latitude != None %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-globe"></span> Location of the Site
+  </div>
+</div>
+<div id="map"></div><br/>
+
+{% endif %}
+{% if reference_list %}
+    <div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-book"></span> Bibliography
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td class="col-sm-2">Reference</td>
                 <td>{% for ref in reference_list %}
                     <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }},{{ ref.title }},{{ ref.publication_year }},{{ ref.place }}</a><br/>
                     {% endfor %}</td>
         </tr>
+    </table>
+</div>
+{% endif %}
+{% if areas_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-tent"></span>
+    Areas in this Site
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
         <tr>
-                <td>Comment</td>
-                <td>{{ object.comment }}</td>
+            <td class="col-sm-2">Areas</td>
+            <td>{% for area in areas_list %}
+            <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area.area_type }} ID {{ area.id }}<br/></a>{% endfor %}
+            </td>
         </tr>
-         <tr>
-                <td>Areas</td>
-                <td>{% for area in areas_list %}
-                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
-                        {% endfor %}</td>
-        </tr>
-        </table>
-    </div>
-<!-- </div> -->
-    <!-- <div class="col-md-5"> -->
-        <div id="map"></div>
-    </div>
-<!-- </div> -->
+</table>
+</div>
+{% endif %}
 
+</div>
+{% if site.latitude != None %}
 <script type="text/javascript">
+    var nix = "nix";
     var gps1 = {{ object.latitude|default_if_none:"nix" }} ;
     var gps2 = {{ object.longitude|default_if_none:"nix"}};
     var siteName = "{{ object.name }}";
@@ -127,6 +177,7 @@
     .openPopup();
 
 </script>
+{% endif %}
 <script type="text/javascript">
 $(document).ready(function(){
     $("button").click(function(){

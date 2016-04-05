@@ -21,6 +21,7 @@ class ResearchEventListView(generic.ListView):
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
 
+
 	def get_queryset(self):
 		return ResearchEvent.objects.filter(public=True).order_by('id')
 
@@ -35,6 +36,7 @@ class ResearchEventDetail(DetailView):
 		context['institution_list'] = current_object.institution.all()
 		context['specialanalysis_list'] = current_object.special_analysis.all()
 		context['reference_list'] = current_object.reference.all()
+		context['finds_list'] = Finds.objects.filter(research_event=current_object.id)
 		return context
 
 
@@ -46,7 +48,6 @@ class FindsListView(generic.ListView):
 	context_object_name = 'object_list' # use object_list instead of
 	# e.g. site_list so the template does not need to be changed so much
 	#for each class. 
-
 	def get_queryset(self):
 		return Finds.objects.filter(public=True).order_by('finds_type')
 

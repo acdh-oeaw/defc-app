@@ -1,6 +1,12 @@
 {% extends "defcdb/base_detail.html" %}
 
 {% block scriptHeader %}
+<style>
+    #info-panel { 
+    padding: 7px;
+    background-color: #dbedec; 
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -15,61 +21,101 @@
 
 <button id="01" class="btn btn-default">Show all fields</button>
 <p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 <div class="panel panel-default">
 <table class="table table-bordered table-striped">
         <tr>
-            <td>Research Event ID</td>
+            <td class="col-sm-2">Research Event ID</td>
             <td>{{ object.id }}</td>
         </tr>
         <tr>
-            <td>Research type</td>
+            <td class="col-sm-2">Research type</td>
             <td>{% for type in researchtype_list %}
                 {{ type }}</br>
                 {% endfor %}</td>
         </tr>
         <tr>
-            <td>Institution</td>
+            <td class="col-sm-2">Institution</td>
             <td>{% for institution in institution_list %}
                 {{ institution }}</br>
                 {% endfor %}</td>
         </tr>
         <tr>
-            <td>Year of activity: start year</td>
+            <td class="col-sm-2">Year of activity: start year</td>
             <td>{{ object.year_of_activity_start_year }}</td>
         </tr>
         <tr>
-            <td>Year of activity: end year</td>
+            <td class="col-sm-2">Year of activity: end year</td>
             <td>{{ object.year_of_activity_end_year }}</td>
         </tr>
         <tr>
-            <td>Project name</td>
+            <td class="col-sm-2">Project name</td>
             <td>{{ object.project_name }}</td>
         </tr>
         <tr>
-            <td>Project id</td>
+            <td class="col-sm-2">Project id</td>
             <td>{{ object.project_id }}</td>
         </tr>
         <tr>
-            <td>Project leader</td>
+            <td class="col-sm-2">Project leader</td>
             <td>{{ object.project_leader }}</td>
         </tr>
         <tr>
-            <td>Special analysis</td>
+            <td class="col-sm-2">Special analysis</td>
             <td>{% for analysis in specialanalysis_list %}
                 {{ analysis }}</br>
                 {% endfor %}</td>
         </tr>
-        <tr>
-            <td>Reference</td>
+        <!-- <tr>
+            <td class="col-sm-2">Reference</td>
             <td>{% for ref in reference_list %}
                 <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
                 {% endfor %}</td>
-        </tr>
+        </tr> -->
         <tr>
-            <td>Comment</td>
+            <td class="col-sm-2">Comment</td>
             <td>{{ object.comment }}</td>
         </tr>
 </table>
 </div>
+{% if reference_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-book"></span> Bibliography
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td class="col-sm-2">Reference</td>
+               <td>{% for ref in reference_list %}
+                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                {% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% endif %}
+{% if finds_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-flag"></span>
+    Finds related to this Research Event
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+        <tr>
+            <td class="col-sm-2">Finds</td>
+            <td>{% for find in finds_list %}
+                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find.finds_type }} ID {{ find.id }}<br/></a>
+                {% endfor %}
+            </td>
+        </tr>
+</table>
+</div>
+{% endif %}
 </div>
 {% endblock content %}>

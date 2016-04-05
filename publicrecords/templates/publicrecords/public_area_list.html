@@ -12,6 +12,7 @@
       <th class="sorter-checkbox"></th>
       <th>Area ID</th>
       <th>Site</th>
+      <th>Region</th>
       <th>District</th>
       <th>Area type</th>
       <th>Finds type</th>
@@ -22,6 +23,7 @@
       <th class="sorter-checkbox"></th>
       <th>Area ID</th>
       <th>Site</th>
+      <th>Region</th>
       <th>District</th>
       <th>Area type</th>
       <th>Finds type</th>
@@ -38,10 +40,13 @@
       <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a> 
     </td>
     <td>
-      <a href="/publicrecords/site/detail/{{ object.site.id }}"> {{ object.site.name }} </a>
+      {{ object.site.name }}
     </td>
     <td>
-      {{ object.site.province }} 
+      {{ object.site.province.region }}
+    </td>
+    <td>
+      {{ object.site.province.name }} 
     </td>
     <td>
       {{ object.area_type }} 
@@ -50,7 +55,7 @@
       {% if object.finds_set.all %}
       {% for x in object.finds_set.all %}
           <a href="/publicrecords/finds/detail/{{ x.id }}">
-              {{ x.finds_type }}
+              {{ x.finds_type }} ID {{ x.id }}
           </a> 
        <br />
       {% endfor %}

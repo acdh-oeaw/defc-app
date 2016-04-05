@@ -1,4 +1,18 @@
 {% extends "defcdb/base_detail.html" %}
+{% block scriptHeader %}
+<!--leafletjs -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+        <style>
+            #map { height: 500px; }
+            #info-panel { 
+                padding: 7px;
+                background-color: #dbedec; 
+            }
+        </style>
+
+{% endblock %}
 {% block content %}
 
 <div class="container">
@@ -10,270 +24,368 @@
 </ol>
 <button id="01" class="btn btn-default">Show all fields</button><br/>
  <p></p>
+ <div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 <div class="panel panel-default">
 
 <table class="table table-bordered table-striped">
         <tr>
-                <td>Area ID</td>
+                <td class="col-sm-2">Area ID</td>
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
-                <td>Site</td>
+                <td class="col-sm-2">Site</td>
                 <td>{% for site in sites_list %}
-                <a href="/publicrecords/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site }} <br/>
+                <a href="/publicrecords/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site.name }} <br/>
                 </a>
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Area type</td>
+                <td class="col-sm-2">Area type</td>
                 <td>{{ object.area_type }}</td>
         </tr>
         <tr>
-                <td>Area NR</td>
+                <td class="col-sm-2">Area NR</td>
                 <td>{{ object.area_nr }}</td>
         </tr>
-        
         <tr>
-                <td>Period</td>
-                <td>{% for period in period_list %}
-                {{ period }}</br>
+                <td class="col-sm-2">Period</td>
+                
+                <td>{% for period in period_list %}{{ period.cs_name }}: {{ period.period_name }} 
+                    {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
+                    {{ period.start_date1_BC }} - {{ period.end_date1_BC }}</br>
+                    {% else %}</br>
+                    {% endif %}
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Dating method</td>
+                <td class="col-sm-2">Dating method</td>
                 <td>{% for method in dating_method_list %}
                 {{ method }}</br>
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Radiocarbon dated</td>
+                <td class="col-sm-2">Radiocarbon dated</td>
                 <td>{{ object.radiocarbon_dated }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Lab Number</td>
+                <td class="col-sm-2">Earliest date: Lab Number</td>
                 <td>{{ object.earliest_date_lab_number }}</td>
         </tr>
         <tr>
-                <td>Earliest date: 14C age (BP)</td>
+                <td class="col-sm-2">Earliest date: 14C age (BP)</td>
                 <td>{{ object.earliest_date_14C_age }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Calibration</td>
+                <td class="col-sm-2">Earliest date: Calibration</td>
                 <td>{{ object.earliest_date_calibration }}</td>
         </tr>
         <tr>
-                <td>Earliest date: 14C age calibrated (BC)</td>
+                <td class="col-sm-2">Earliest date: 14C age calibrated (BC)</td>
                 <td>{{ object.earliest_date_14C_age_calibrated }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Date of calibration</td>
+                <td class="col-sm-2">Earliest date: Date of calibration</td>
                 <td>{{ object.earliest_date_date_of_calibration }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Standard deviation</td>
+                <td class="col-sm-2">Earliest date: Standard deviation</td>
                 <td>{{ object.earliest_date_standard_deviation }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Delta 13C</td>
+                <td class="col-sm-2">Earliest date: Delta 13C</td>
                 <td>{{ object.earliest_date_delta13 }}</td>
         </tr>
         <tr>
-                <td>Earliest date: Dated by</td>
+                <td class="col-sm-2">Earliest date: Dated by</td>
                 <td>{% for date in datedby_list %}
                 {{ date }}</br>
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Latest date: Lab Number</td>
+                <td class="col-sm-2">Latest date: Lab Number</td>
                 <td>{{ object.latest_date_lab_number }}</td>
         </tr>
         <tr>
-                <td>Latest date: 14C age (BP)</td>
+                <td class="col-sm-2">Latest date: 14C age (BP)</td>
                 <td>{{ object.latest_date_14C_age }}</td>
         </tr>
         <tr>
-                <td>Latest date: Calibration</td>
+                <td class="col-sm-2">Latest date: Calibration</td>
                 <td>{{ object.latest_date_calibration }}</td>
         </tr>
         <tr>
-                <td>Latest date: 14C age calibrated (BC)</td>
+                <td class="col-sm-2">Latest date: 14C age calibrated (BC)</td>
                 <td>{{ object.latest_date_14C_age_calibrated }}</td>
         </tr>
         <tr>
-                <td>Latest date: Date of calibration</td>
+                <td class="col-sm-2">Latest date: Date of calibration</td>
                 <td>{{ object.latest_date_date_of_calibration }}</td>
         </tr>
         <tr>
-                <td>Latest date: Standard deviation</td>
+                <td class="col-sm-2">Latest date: Standard deviation</td>
                 <td>{{ object.latest_date_standard_deviation }}</td>
         </tr>
         <tr>
-                <td>Latest date: Delta 13C</td>
+                <td class="col-sm-2">Latest date: Delta 13C</td>
                 <td>{{ object.latest_date_delta13 }}</td>
         </tr>
         <tr>
-                <td>Latest date: Dated by</td>
+                <td class="col-sm-2"Latest date: Dated by</td>
                 <td>{% for date in datedby_list %}
                 {{ date }}</br>
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Period Reference</td>
+                <td class="col-sm-2">Period Reference</td>
                 <td>{% for ref in period_reference_list %}
                     <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Comment</td>
+                <td class="col-sm-2">Comment</td>
                 <td>{{ object.period_comment }}</td>
         </tr>
         <tr>
-                <td>Settlement type</td>
+                <td class="col-sm-2">Settlement type</td>
                 <td>{{ object.settlement_type }}</td>
         </tr>
         <tr>
-                <td>Settlement structure</td>
+                <td class="col-sm-2">Settlement structure</td>
                 <td>{% for structure in settlementstructure_list %}
                     {{ structure }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Settlement construction type</td>
+                <td class="col-sm-2">Settlement construction type</td>
                 <td>{% for type in settlementconstructiontype_list %}
                     {{ type }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Settlement building technique</td>
+                <td class="col-sm-2">Settlement building technique</td>
                 <td>{% for tech in settlementbuildingtechnique_list %}
                     {{ tech }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Settlement special features</td>
+                <td class="col-sm-2">Settlement special features</td>
                 <td>{% for feature in settlementspecialfeatures_list %}
                     {{ feature }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Cave/rockshelters type</td>
+                <td class="col-sm-2">Cave/rockshelters type</td>
                 <td>{{ object.cave_rockshelters_type }}</td>
         </tr>
         <tr>
-                <td>Cave/rockshelters: Evidence of graves/human remains</td>
+                <td class="col-sm-2">Cave/rockshelters: Evidence of graves/human remains</td>
                 <td>{{ object.cave_rockshelters_evidence_of_graves_human_remains }}</td>
         </tr>
         <tr>
-                <td>Cave/rockshelters: Evidence of occupation</td>
+                <td class="col-sm-2">Cave/rockshelters: Evidence of occupation</td>
                 <td>{% for evidence in evidenceofoccupation_list %}
                     {{ evidence }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Quarry exploitation type</td>
+                <td class="col-sm-2">Quarry exploitation type</td>
                 <td>{{ object.quarry_exploitation_type }}</td>
         </tr>
         <tr>
-                <td>Quarry raw material</td>
+                <td class="col-sm-2">Quarry raw material</td>
                 <td>{% for material in quarryrawmaterial_list %}
                     {{ material }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Cemetery/graves topography</td>
+                <td class="col-sm-2">Cemetery/graves topography</td>
                 <td>{% for topography in topography_list %}
                     {{ topography }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Cemetery/graves mortuary features</td>
+                <td class="col-sm-2">Cemetery/graves mortuary features</td>
                 <td>{% for feature in mortuaryfeatures_list %}
                     {{ feature }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Grave: number of graves</td>
+                <td class="col-sm-2">Grave: number of graves</td>
                 <td>{{ object.grave_number_of_graves }}</td>
         </tr>
         <tr>
-                <td>Grave type</td>
+                <td class="col-sm-2">Grave type</td>
                 <td>{% for type in gravetype_list %}
                     {{ type }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Grave: type of human remains</td>
+                <td class="col-sm-2">Grave: type of human remains</td>
                 <td>{% for type in typeofhumanremains_list %}
                     {{ type }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Grave: estimated number of individuals</td>
+                <td class="col-sm-2">Grave: estimated number of individuals</td>
                 <td>{{ object.grave_estimated_number_of_individuals }}</td>
         </tr>
         <tr>
-                <td>Grave: age groups</td>
+                <td class="col-sm-2">Grave: age groups</td>
                 <td>{% for age in graveagegroups_list %}
                     {{ age }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Grave: sexes</td>
+                <td class="col-sm-2">Grave: sexes</td>
                 <td>{% for sex in gravesexes_list %}
                     {{ sex }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Grave: number of female sex</td>
+                <td class="col-sm-2">Grave: number of female sex</td>
                 <td>{{ object.grave_number_of_female_sex }}</td>
         </tr>
         <tr>
-                <td>Grave: number of male sex</td>
+                <td class="col-sm-2">Grave: number of male sex</td>
                 <td>{{ object.grave_number_of_male_sex }}</td>
         </tr>
         <tr>
-                <td>Grave: number of not specified sex</td>
+                <td class="col-sm-2">Grave: number of not specified sex</td>
                 <td>{{ object.grave_number_of_not_specified_sex }}</td>
         </tr>
         <tr>
-                <td>Grave: manipulations of graves</td>
+                <td class="col-sm-2">Grave: manipulations of graves</td>
                 <td>{% for manipulation in manipulationsofgraves_list %}
                     {{ manipulation }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Description</td>
+                <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
         </tr>
-        <tr>
-                <td>Reference</td>
+        <!-- <tr>
+                <td class="col-sm-2">Reference</td>
                 <td>{% for ref in reference_list %}
                     <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
                     {% endfor %}</td>
-        </tr>
+        </tr> -->
         <tr>
-                <td>Comment</td>
+                <td class="col-sm-2">Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-        <tr>
-                <td>Interpretation</td>
+        <!-- <tr>
+                <td class="col-sm-2">Interpretation</td>
                 <td>{% for interpretation in interpretations_list %}
                         <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/></a>
                         {% endfor %}</td>
-        </tr>
-        <tr>
-                <td>Finds</td>
+        </tr> -->
+        <!-- <tr>
+                <td class="col-sm-2">Finds</td>
                 <td>{% for find in finds_list %}
                         <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/></a>
                         {% endfor %}</td>
+        </tr> -->
+</table>
+</div>
+{% for site in sites_list %}
+{% if site.latitude %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-globe"></span> Location of the Site
+  </div>
+</div>
+<div id="map"></div><br/>
+
+{% endif %}
+{% endfor %}
+
+{% if reference_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-book"></span> Bibliography
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td class="col-sm-2">Reference</td>
+               <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% endif %}
+
+{% if finds_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-flag"></span>
+    Finds in this Area
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+        <tr>
+            <td class="col-sm-2">Finds</td>
+            <td>{% for find in finds_list %}
+                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find.finds_type }} ID {{ find.id }}<br/></a>
+                {% endfor %}
+            </td>
         </tr>
 </table>
 </div>
+{% endif %}
+
+{% if interpretations_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-list-alt"></span>
+    Interpretations related to this Area
+  </div>
 </div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+        <tr>
+            <td class="col-sm-2">Interpretation</td>
+            <td>{% for interpretation in interpretations_list %}
+            <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}">ID {{ interpretation.id }} <br/>
+            </a>
+            {% endfor %}
+        </td>
+        </tr>
+</table>
+</div>
+{% endif %}
+</div>
+
 
 {% endblock content %}
 
 {% block scripts %}
+<script type="text/javascript">
+    {% for site in sites_list %}
+    var gps1 = {{ site.latitude }};
+    var gps2 = {{ site.longitude }};
+    var siteName = "{{ site.name }}";
+    {% endfor %}
+    var nix = "nix";
+
+    
+    var map = L.map('map').setView([gps1, gps2], 6);
+
+    L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+        attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
+        maxZoom: 18
+    }).addTo(map);
+
+    L.marker([gps1 , gps2]).addTo(map)
+    .bindPopup(siteName)
+    .openPopup();
+
+</script>
 <script type="text/javascript">
 $(document).ready(function(){
     $("td:empty").parent().hide();

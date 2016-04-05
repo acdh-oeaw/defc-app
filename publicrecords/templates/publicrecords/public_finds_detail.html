@@ -1,4 +1,12 @@
 {% extends "defcdb/base_detail.html" %}
+{% block scriptHeader %}
+<style>
+    #info-panel { 
+    padding: 7px;
+    background-color: #dbedec; 
+}
+</style>
+{% endblock %}
 {% block content %}
 
 <div class="container">
@@ -10,48 +18,61 @@
 </ol>
 <button id="01" class="btn btn-default">Show all fields</button>
 <p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 <div class="panel panel-default">
 <table class="table table-bordered table-striped">
         <tr>
-                <td>Finds ID</td>
+                <td class="col-sm-2">Finds ID</td>
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
-                <td>Area</td>
+                <td class="col-sm-2">Area</td>
                 <td>{% for area in area_list %}
-                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ object.area.area_type }} area type located in {{ object.area.site.name }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
-                <td>Research event</td>
+                <td class="col-sm-2">Research event</td>
                 <td>{% for researchevent in researchevent_list %}
-                        <a href="/publicrecords/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}"> {{ researchevent }} <br/>
+                        <a href="/publicrecords/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}">
+                        {{ researchevent }}
+                        <!-- {% if year_of_activity_start_year != None %}
+                        , {{ researchevent.year_of_activity_start_year }}
+                        {% endif %}
+                        {% if year_of_activity_end_year != None %}
+                         - {{ researchevent.year_of_activity_send_year }}
+                         {% endif %}  -->
+                        <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
-                <td>Finds type</td>
+                <td class="col-sm-2">Finds type</td>
                 <td>{{ object.finds_type }}</td>
         </tr>
         <tr>
-                <td>Small finds category</td>
+                <td class="col-sm-2">Small finds category</td>
                 <td>{{ object.small_finds_category }}</td>
         </tr>
         <tr>
-                <td>Small finds type</td>
+                <td class="col-sm-2">Small finds type</td>
                 <td>{% for find in smallfindstype_list %}
                     {{ find.name }}<br/> <!-- find.name -->
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Botany species</td>
+                <td class="col-sm-2">Botany species</td>
                 <td>{% for species in botanyspecies_list %}
                     {{ species }}<br/>
                     {% endfor %}</td>
         </tr>
         <tr>
-                <td>Animal remains species</td>
+                <td class="col-sm-2">Animal remains species</td>
                 <td>{% for species in animalremainsspecies_list %}
                     {{ species }}<br/>
                     {% endfor %}</td>
@@ -130,24 +151,61 @@
                 <td>Confidence</td>
                 <td>{{ object.confidence }}</td>
         </tr>
-        <tr>
+        <!-- <tr>
             <td>Reference</td>
             <td>{% for ref in reference_list %}
                 <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
                 {% endfor %}</td>
-        </tr>
+        </tr> -->
         <tr>
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-        <tr>
+        <!-- <tr>
                 <td>Interpretation</td>
                 <td>{% for interpretation in interpretation_list %}
                         <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
                         </a>
                         {% endfor %}</td>
+        </tr> -->
+</table>
+</div>
+{% if reference_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-book"></span> Bibliography
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td class="col-sm-2">Reference</td>
+               <td>{% for ref in reference_list %}
+                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                {% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% endif %}
+{% if interpretation_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-list-alt"></span>
+    Interpretations related to these Finds
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+        <tr>
+            <td class="col-sm-2">Interpretation</td>
+            <td>{% for interpretation in interpretation_list %}
+            <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}">ID {{ interpretation.id }}
+            <br/>
+            </a>
+            {% endfor %}
+            </td>
         </tr>
 </table>
 </div>
+{% endif %}
 </div>
 {% endblock content %}

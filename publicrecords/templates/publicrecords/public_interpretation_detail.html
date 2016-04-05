@@ -1,4 +1,12 @@
 {% extends "defcdb/base_detail.html" %}
+{% block scriptHeader %}
+<style>
+    #info-panel { 
+    padding: 7px;
+    background-color: #dbedec; 
+}
+</style>
+{% endblock %}
 {% block content %}
 
 <div class="container">
@@ -10,10 +18,15 @@
 </ol>
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 <div class="panel panel-default">
 <table class="table table-bordered table-striped">
         <tr>
-                <td>Interpretation ID</td>
+                <td class="col-sm-2">Interpretation ID</td>
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
@@ -46,17 +59,34 @@
                     {{ type }}<br/>
                     {% endfor %}</td>
         </tr>
-        <tr>
+       <!--  <tr>
                 <td>Reference</td>
                 <td>{% for ref in reference_list %}
                     <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
                     {% endfor %}</td>
-        </tr>
+        </tr> -->
         <tr>
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
 </table>
 </div>
+{% if reference_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-book"></span> Bibliography
+  </div>
+</div>
+<div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td class="col-sm-2">Reference</td>
+               <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+    </table>
+</div>
+{% endif %}
 </div>
 {% endblock content %}
