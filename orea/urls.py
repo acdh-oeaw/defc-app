@@ -74,5 +74,6 @@ urlpatterns = [
     url(r'^bib/', include('bib.urls', namespace='bib')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': base.MEDIA_ROOT,}, name='media_root_url'),
     url(r'^image_gallery/', include('images_metadata.urls', namespace="image_gallery")),
+    url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
 ]
 

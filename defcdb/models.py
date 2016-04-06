@@ -489,7 +489,7 @@ class Site(TrackChanges):
 		help_text="Description of surface shape and features.") #optional?
 	description = models.TextField(blank=True, null=True,
 		help_text="Free text summary account on the site.") #optional?
-	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "yes",
+	exact_location = models.CharField(max_length = 50, choices = EXACT_LOCATION_CHOICES, default = "no",
 		help_text="<strong>Yes</strong>: location of site is known and coordinates from the approximate center of the site have been entered.<br/> <strong>No</strong>: Only the region/province/ephorie approximate location of the site is known. Coordinates from the approximate center of the region/province/ ephorie have been entered.")
 	number_of_activity_periods = models.IntegerField(blank=True, null=True,
 		help_text="How many past activities have been recorded on the site?")

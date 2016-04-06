@@ -1,0 +1,71 @@
+{% extends "defcdb/listBase.html" %}
+{% block Titel %}See All Objects{% endblock %}
+
+{% block allobjects %}
+<h1>Area records</h1>
+{% endblock allobjects %}
+{% block tablebody %}
+<table class="table table-striped">
+  <thead>
+        
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Area ID</th>
+      <th>Site</th>
+      <th>Region</th>
+      <th>District</th>
+      <th>Area type</th>
+      <th>Finds type</th>
+      <th>View full record</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Area ID</th>
+      <th>Site</th>
+      <th>Region</th>
+      <th>District</th>
+      <th>Area type</th>
+      <th>Finds type</th>
+      <th>View full record</th>
+    </tr>
+  </tfoot>
+  <tbody>
+   {% for object in object_list %}
+   <tr>
+    <td>
+        <input type="checkbox">
+      </td>
+      <td>
+      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a> 
+    </td>
+    <td>
+      {{ object.site.name }}
+    </td>
+    <td>
+      {{ object.site.province.region }}
+    </td>
+    <td>
+      {{ object.site.province.name }} 
+    </td>
+    <td>
+      {{ object.area_type }} 
+    </td>
+    <td>
+      {% if object.finds_set.all %}
+      {% for x in object.finds_set.all %}
+          <a href="/publicrecords/finds/detail/{{ x.id }}">
+              {{ x.finds_type }} ID {{ x.id }}
+          </a> 
+       <br />
+      {% endfor %}
+      {% endif %}
+    </td>
+    <td>
+      <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+    </td>
+   </tr>  
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock tablebody %}

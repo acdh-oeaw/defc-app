@@ -1,0 +1,76 @@
+{% extends "defcdb/listBase.html" %}
+{% block Titel %}See All Objects{% endblock %}
+
+{% block allobjects %}
+<h1>Finds records</h1>
+{% endblock allobjects %}
+
+{% block tablebody %}
+<table class="table table-striped">
+  <thead>  
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Finds ID</th>
+      <th>Area</th>
+      <!-- <th>Area type</th> -->
+      <th>Research Event</th>
+      <th>Finds type</th>
+      <!-- <th>Interpretation</th> -->
+      <th>View full record</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th class="sorter-checkbox"></th>
+      <th>Finds ID</th>
+      <th>Area</th>
+      <!-- <th>Area type</th> -->
+      <th>Research Event</th>
+      <th>Finds type</th>
+      <!-- <th>Interpretation</th> -->
+      <th>View full record</th>
+    </tr>
+  </tfoot>
+  <tbody>
+   {% for object in object_list %}
+   <tr>
+    <td>
+        <input type="checkbox">
+    </td>
+    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+      {{ object.id }}
+      </a> 
+    </td>
+    <td>
+      <a href="/publicrecords/area/detail/{{ object.area.id }}"> {{ object.area.area_type }} area type located in {{ object.area.site.name }} </a> 
+    </td>
+    <!-- <td>
+      {{ object.area.area_type }}
+    </td> -->
+    <!-- <td>
+      {{ object.research_event }}
+    </td> -->
+    <td>
+      {{ object.research_event }}
+    </td>
+    <td>
+      {% if object.finds_type.name == "pottery" %}
+        {{ object.finds_type }} ({{ object.pottery_form.name|default_if_none:"" }})
+      {% elif object.finds_type.name == "small finds" %}
+        {{ object.finds_type }} ({{ object.small_finds_category|default_if_none:"" }})
+      {% else %}
+        {{ object.finds_type }}
+      {% endif %}
+    </td>
+    <!-- <td>
+      {% for y in object.interpretation_set.all %}
+      <a href="/defcdb/interpretation/detail/{{ y.id }}">{{ y }}</a> <br/>
+      {% endfor %}
+    </td> -->
+    <td>
+      <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+    </td>
+   </tr>  
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock tablebody %}

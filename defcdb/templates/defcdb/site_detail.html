@@ -30,17 +30,11 @@
         </tr>
         <tr>
                 <td>Alias name</td>
-                <td>{% for x in aliasName_list %}
-                        {{ x.name }}<br/>
-                    {% endfor %}
-                </td>
+                <td>{% for x in aliasName_list %}{{ x.name }}<br/>{% endfor %}</td>
         </tr>
         <tr>
                 <td>Alternative name</td>
-                <td>{% for x in alternativeName_list %}
-                        {{ x.name }}
-                    {% endfor %}
-                </td>
+                <td>{% for x in alternativeName_list %}{{ x.name }}<br/>{% endfor %}</td>
         </tr>
         <tr>
                 <td>District</td>

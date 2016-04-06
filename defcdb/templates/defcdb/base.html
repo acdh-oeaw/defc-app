@@ -45,15 +45,39 @@
       width: 100%;
       height: 100%;
     }*/
-    body {padding-top: 50px;}
+    html {
+    height: 100%;
+    }
+    body {
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
     a.navlink:link {color: black;}
     a.navlink:visited {color: black;}
     a.navlink:hover {
       color: black;
-      text-decoration: underline;
+      text-decoration: underline; 
     }
-
+    header {
+      flex: 0 0 auto;
+    }
+    .main-content {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex: 0 0 auto;
+      background-color: #F8F8F8;
+      padding: 40px;
+    }
+   /* .footer-right {
+      text-align: right;
+    }
+    .footer-left {
+      text-align: left;
+    }*/
     .jumbotron {
       background-color: #F8F8F8b; /* Green */
       color: #333;
@@ -112,6 +136,7 @@
     }
   </style>
 <body role="document">
+<header>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -184,17 +209,37 @@
                <span class="caret"></span>
           </a>
             <ul class="dropdown-menu">
+              <li class="dropdown-header">Excavations Data</li>
+              <li>
+                <a href="{% url 'publicrecords:site_list' %}">Sites</a>
+              </li>
+              <li>
+                <a href="{% url 'publicrecords:researchevent_list' %}">Research Events</a>
+              </li>
+              <li>
+                <a href="{% url 'publicrecords:area_list' %}">Areas</a>
+              </li>
+              <li>
+                  <a href="{% url 'publicrecords:finds_list' %}">Finds</a>
+              </li>
+              <li>
+                  <a href="{% url 'publicrecords:interpretation_list' %}">Interpretations</a>
+              </li>
+              <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'defcdb:turkey_map' %}">Explore regions and districts of Turkey</a>
               </li>
+              <li role="separator" class="divider"></li>
               <li>
-                <a href="{% url 'geolocation:showplaces' %}">Show Sites</a>
+                <a href="{% url 'geolocation:showplaces' %}">Excavations Map</a>
               </li>
+              <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'virtualgallery:list' %}">Browse 3D-Models</a>
               </li>
+              <li role="separator" class="divider"></li>
               <li>
-                  <a href="{% url 'defcdb:bibliography' %}">Bibliography</a>
+                <a href="{% url 'defcdb:bibliography' %}">Bibliography</a>
                 </li>
             </ul>
           </li>
@@ -228,6 +273,8 @@
     </div>
     </div>
   </nav>
+</header>
+<section class="main-content">
   <div class="alert alert-warning" style="text-align:center">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
     <strong>Attention!</strong>
@@ -237,10 +284,23 @@
     {% block content %}
     {% endblock %}
   </div>
-    <div class="container" id="footer">
+</section>
+    <!-- <div id="footer">
       <br>
       <p>{% now "M. Y" %}</p>      
+    </div> -->
+<footer>
+  <div class="container">
+    <div class="footer-limiter">
+
+      <div class="footer-left">
+        <p class="footer-links">ÖAW</p>
+        <p>DEFC © {% now "M. Y" %}</p>
+      </div>
+
     </div>
+  </div>
+</footer>
     </div>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
