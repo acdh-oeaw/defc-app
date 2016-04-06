@@ -15,7 +15,7 @@
       <th>Region</th>
       <th>District</th>
       <th>Topography</th>
-      <th>Areas (area type)</th>
+      <th>Areas</th>
   </thead>
   <tfoot>
     <tr>
@@ -26,7 +26,7 @@
       <th>Region</th>
       <th>District</th>
       <th>Topography</th>
-      <th>Areas (area type)</th>
+      <th>Areas</th>
     </tr>
   </tfoot>
   <tbody>
@@ -59,7 +59,7 @@
       {% if object.area_set.all %}
       {% for x in object.area_set.all %}
         <a href="/publicrecords/area/detail/{{ x.id }}">
-          {{ x.area_type }}
+          ID {{ x.id }} {{ x.area_type }}
         </a><br/>
       {% endfor %}
       {% endif %}

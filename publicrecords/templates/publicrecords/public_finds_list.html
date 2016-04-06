@@ -11,22 +11,20 @@
     <tr>
       <th class="sorter-checkbox"></th>
       <th>Finds ID</th>
-      <th>Area</th>
-      <!-- <th>Area type</th> -->
-      <th>Research Event</th>
       <th>Finds type</th>
-      <!-- <th>Interpretation</th> -->
+      <th>Area</th>
+      <th>Site</th>
+      <th>Research Event</th>
       <th>View full record</th>
   </thead>
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
       <th>Finds ID</th>
-      <th>Area</th>
-      <!-- <th>Area type</th> -->
-      <th>Research Event</th>
       <th>Finds type</th>
-      <!-- <th>Interpretation</th> -->
+      <th>Area</th>
+      <th>Site</th>
+      <th>Research Event</th>      
       <th>View full record</th>
     </tr>
   </tfoot>
@@ -41,18 +39,6 @@
       </a> 
     </td>
     <td>
-      <a href="/publicrecords/area/detail/{{ object.area.id }}"> {{ object.area.area_type }} area type located in {{ object.area.site.name }} </a> 
-    </td>
-    <!-- <td>
-      {{ object.area.area_type }}
-    </td> -->
-    <!-- <td>
-      {{ object.research_event }}
-    </td> -->
-    <td>
-      {{ object.research_event }}
-    </td>
-    <td>
       {% if object.finds_type.name == "pottery" %}
         {{ object.finds_type }} ({{ object.pottery_form.name|default_if_none:"" }})
       {% elif object.finds_type.name == "small finds" %}
@@ -61,16 +47,37 @@
         {{ object.finds_type }}
       {% endif %}
     </td>
-    <!-- <td>
-      {% for y in object.interpretation_set.all %}
-      <a href="/defcdb/interpretation/detail/{{ y.id }}">{{ y }}</a> <br/>
+    <td>
+      <a href="/publicrecords/area/detail/{{ object.area.id }}">
+        ID {{ object.area.id }} {{ object.area.area_type }}
+      </a>
+    </td>
+    <td>
+      <a href="/publicrecords/site/detail/{{ object.area.site.id }}">
+        {{ object.area.site.name }}
+      </a>
+    </td>
+    <td>
+      {% for x in object.research_event.research_type.all %}
+      <a href="/publicrecords/researchevent/detail/{{ object.research_event.id }}">
+      {{ x }}</a><br/>
       {% endfor %}
-    </td> -->
+      {{ object.research_event.project_name }}<br/>
+      {% if object.research_event.year_of_activity_start_year and object.research_event.year_of_activity_end_year %}
+      {{ object.research_event.year_of_activity_start_year }} - {{ object.research_event.year_of_activity_end_year }}
+      {% elif object.research_event.year_of_activity_start_year %}
+      {{ object.research_event.year_of_activity_start_year }}
+      {% elif object.research_event.year_of_activity_end_year %}
+      {{ object.research_event.year_of_activity_end_year }}
+      {% else %}
+
+      {% endif %}
+    </td>
     <td>
       <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
     </td>
    </tr>  
-    {% endfor %}
+  {% endfor %}
   </tbody>
 </table>
 {% endblock tablebody %}

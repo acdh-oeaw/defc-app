@@ -11,23 +11,23 @@
         
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Interpretation ID</th>
-      <th>Area</th>
-      <th>Area type</th>
-      <th>Finds</th>
+      <th>ID</th>
       <th>Production type</th>
       <th>Subsistence type</th>
+      <th>Site</th>
+      <th>Area</th>
+      <th>Finds</th>
       <th>View full record</th>
   </thead>
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Interpretation ID</th>
-      <th>Area</th>
-      <th>Area type</th>
-      <th>Finds</th>
+      <th>ID</th>
       <th>Production type</th>
       <th>Subsistence type</th>
+      <th>Site</th>
+      <th>Area</th>
+      <th>Finds</th>
       <th>View full record</th>
     </tr>
   </tfoot>
@@ -42,21 +42,6 @@
       </a> 
     </td>
     <td>
-      {% for x in object.area.all %}
-      {{ x.site }} <br/>
-      {% endfor %}
-    </td>
-    <td>
-      {% for x in object.area.all %}
-      {{ x.area_type }} <br/>
-      {% endfor %}
-    </td>
-    <td>
-      {% for x in object.finds.all %}
-      {{ x.finds_type }} <br/>
-      {% endfor %} 
-    </td>
-    <td>
       {% for x in object.production_type.all %}
       {{ x }} <br/>
       {% endfor %} 
@@ -64,6 +49,23 @@
     <td>
       {% for x in object.subsistence_type.all %}
       {{ x }} <br/>
+      {% endfor %} 
+    </td>
+    <td>
+      {% for x in object.area.all %}
+      <a href="/publicrecords/site/detail/{{ x.site.id }}">
+      {{ x.site.name }}
+      </a><br/>
+      {% endfor %}
+    </td>
+    <td>
+      {% for x in object.area.all %}<a href="/publicrecords/area/detail/{{ x.id }}">
+      ID {{ x.id }} {{ x.area_type }}</a><br/>
+      {% endfor %}
+    </td>
+    <td>
+      {% for x in object.finds.all %}<a href="/publicrecords/finds/detail/{{ x.id }}">
+      ID {{ x.id }} {{ x.finds_type }}</a><br/>
       {% endfor %} 
     </td>
     <td>

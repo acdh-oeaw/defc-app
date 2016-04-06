@@ -59,6 +59,7 @@ class FindsDetail(DetailView):
 		context = super(FindsDetail, self).get_context_data(**kwargs)
 		current_find = self.object
 		context['area_list'] = Area.objects.filter(finds=current_find.id)
+		# context['sites_list'] = Site.objects.filter(finds=current_find.id)
 		context['researchevent_list'] = ResearchEvent.objects.filter(finds=current_find.id)
 		current_find_2 = self.object
 		context['interpretation_list'] = Interpretation.objects.filter(finds=current_find_2.id)

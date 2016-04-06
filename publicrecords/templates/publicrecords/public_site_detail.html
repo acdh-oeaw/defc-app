@@ -25,7 +25,7 @@
   <li class="active">Site {{ object.name }}</li>
 </ol>  
 
-<button id="01" class="btn btn-default">Show all fields</button>
+<button id="01" class="btn btn-default">Show / Hide all fields</button>
 <p></p>
 <div class="panel panel-info">
   <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
@@ -151,7 +151,7 @@
         <tr>
             <td class="col-sm-2">Areas</td>
             <td>{% for area in areas_list %}
-            <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area.area_type }} ID {{ area.id }}<br/></a>{% endfor %}
+            <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}">ID {{ area.id }} {{ area.area_type }}<br/></a>{% endfor %}
             </td>
         </tr>
 </table>

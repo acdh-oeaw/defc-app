@@ -22,7 +22,7 @@
   <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Areas</a></li>
   <li class="active">Area {{ object.id }}</li>
 </ol>
-<button id="01" class="btn btn-default">Show all fields</button><br/>
+<button id="01" class="btn btn-default">Show / Hide all fields</button><br/>
  <p></p>
  <div class="panel panel-info">
   <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
@@ -134,7 +134,7 @@
                 <td>{{ object.latest_date_delta13 }}</td>
         </tr>
         <tr>
-                <td class="col-sm-2"Latest date: Dated by</td>
+                <td class="col-sm-2">Latest date: Dated by</td>
                 <td>{% for date in datedby_list %}
                 {{ date }}</br>
                 {% endfor %}</td>
@@ -267,28 +267,10 @@
                 <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
         </tr>
-        <!-- <tr>
-                <td class="col-sm-2">Reference</td>
-                <td>{% for ref in reference_list %}
-                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                    {% endfor %}</td>
-        </tr> -->
         <tr>
                 <td class="col-sm-2">Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-        <!-- <tr>
-                <td class="col-sm-2">Interpretation</td>
-                <td>{% for interpretation in interpretations_list %}
-                        <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/></a>
-                        {% endfor %}</td>
-        </tr> -->
-        <!-- <tr>
-                <td class="col-sm-2">Finds</td>
-                <td>{% for find in finds_list %}
-                        <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/></a>
-                        {% endfor %}</td>
-        </tr> -->
 </table>
 </div>
 {% for site in sites_list %}
@@ -332,7 +314,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find.finds_type }} ID {{ find.id }}<br/></a>
+                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>

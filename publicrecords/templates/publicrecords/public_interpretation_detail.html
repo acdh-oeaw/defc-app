@@ -32,14 +32,15 @@
         <tr>
                 <td>Area</td>
                 <td>{% for area in areas_list %}
-                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}">
+                        ID {{ area.id }} {{ area.area_type }}<br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-                    <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/>
+                    <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}">ID {{ find.id }} {{ find.finds_type }}<br/>
                     </a>
                     {% endfor %}</td>
         </tr>

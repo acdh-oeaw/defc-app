@@ -19,7 +19,7 @@
   <li class="active">Research Event {{ object.id }}</li>
 </ol>
 
-<button id="01" class="btn btn-default">Show all fields</button>
+<button id="01" class="btn btn-default">Show / Hide all fields</button>
 <p></p>
 <div class="panel panel-info">
   <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
@@ -110,7 +110,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find.finds_type }} ID {{ find.id }}<br/></a>
+                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>

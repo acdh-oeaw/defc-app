@@ -50,7 +50,7 @@
       {% endfor %} 
     </td>
     <td>
-      {{ object.year_of_activity_start_year }} 
+      {{ object.year_of_activity_start_year }}
     </td>
     <td>
       {{ object.year_of_activity_end_year }} 
@@ -59,8 +59,8 @@
       {{ object.project_name }} 
     </td>
     <td>
-      {% for y in object.finds_set.all %}
-      <a href="/publicrecords/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+      {% for x in object.finds_set.all %}
+      <a href="/publicrecords/finds/detail/{{ x.id }}">ID {{ x.id }} {{ x.finds_type }}</a><br/>
       {% endfor %}
     </td>
    </tr>  
