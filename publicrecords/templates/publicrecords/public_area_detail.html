@@ -372,21 +372,30 @@
 <script type="text/javascript">
 $(document).ready(function(){
     $("td:empty").parent().hide();
-    $('tr:has(td:contains("Earliest"))').hide();
-    $('tr:has(td:contains("Latest"))').hide();
+    $('tr:has(td:contains("Lab Number"))').hide();
+    $('tr:has(td:contains("14C age (BP)"))').hide();
+    $('tr:has(td:contains("Calibration"))').hide();
+    $('tr:has(td:contains("Date of calibration"))').hide();
+    $('tr:has(td:contains("Delta 13C"))').hide();
     $("td").filter(function(){
       return $(this).text() === "None";
     }).parent().hide();
     $("#01").click(function(){
             var emptytd = $("td:empty");
             $(emptytd).parent().toggle("slow");
-            $('tr:has(td:contains("Earliest"))').hide();
-            $('tr:has(td:contains("Latest"))').hide();
+            $('tr:has(td:contains("Lab Number"))').hide();
+            $('tr:has(td:contains("14C age (BP)"))').hide();
+            $('tr:has(td:contains("Calibration"))').hide();
+            $('tr:has(td:contains("Date of calibration"))').hide();
+            $('tr:has(td:contains("Delta 13C"))').hide();
             var nonetd = $("td").filter(function(){
             return $(this).text() === "None"});
             $(nonetd).parent().toggle("slow");
-            $('tr:has(td:contains("Earliest"))').hide();
-            $('tr:has(td:contains("Latest"))').hide();
+            $('tr:has(td:contains("Lab Number"))').hide();
+            $('tr:has(td:contains("14C age (BP)"))').hide();
+            $('tr:has(td:contains("Calibration"))').hide();
+            $('tr:has(td:contains("Date of calibration"))').hide();
+            $('tr:has(td:contains("Delta 13C"))').hide();
 });
     });
 
