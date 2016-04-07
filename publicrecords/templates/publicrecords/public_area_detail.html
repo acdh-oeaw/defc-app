@@ -351,8 +351,9 @@
     {% for site in sites_list %}
     var gps1 = {{ site.latitude }};
     var gps2 = {{ site.longitude }};
-    var siteName = "{{ site.name }}";
-    {% endfor %}
+    // var siteName = "{{ site.name }}";
+
+    
     var nix = "nix";
 
     
@@ -364,9 +365,9 @@
     }).addTo(map);
 
     L.marker([gps1 , gps2]).addTo(map)
-    .bindPopup(siteName)
+    .bindPopup('<a href="/publicrecords/site/detail/{{ site.id }}" target="_blank">{{ site.name }}</a>')
     .openPopup();
-
+    {% endfor %}
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
