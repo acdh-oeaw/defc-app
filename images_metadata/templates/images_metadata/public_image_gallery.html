@@ -1,0 +1,65 @@
+{% extends "defcdb/base_detail.html" %}
+{% block scriptHeader %}
+<style>
+#info-panel { 
+    padding: 7px;
+    background-color: #dbedec; 
+}
+#mainimage {
+    display: block;
+    margin: 0 auto;
+    
+}
+.image {
+    width: 100%;
+    height: 100%;    
+}
+img:hover {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+img:hover {
+    -webkit-transform:scale(1.75); /* Safari and Chrome */
+    -moz-transform:scale(1.75); /* Firefox */
+    -ms-transform:scale(1.75); /* IE 9 */
+    -o-transform:scale(1.75); /* Opera */
+     transform:scale(1.75);
+}
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+<h1>Image</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li class="active">Image gallery</li>
+</ol>
+
+<p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-camera"></span>
+    Image
+  </div>
+</div>
+
+<div> 
+{% for object in object_list %}
+
+    <a href="/image_gallery/detail/{{ object.id }}">
+        
+        <img class="image" src="http://{{ request.get_host }}/media/{{ object.image}}" style="width:15%;">
+        
+    </a>
+
+
+{% endfor %}
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,113 @@
+{% extends "defcdb/base_detail.html" %}
+{% block scriptHeader %}
+<style>
+#info-panel { 
+    padding: 7px;
+    background-color: #dbedec; 
+}
+#mainimage {
+    display: block;
+    margin: 0 auto;
+    
+}
+.image {
+    width: 100%;
+    height: 100%;    
+}
+.image img {
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.image:hover img {
+    -webkit-transform:scale(1.75); /* Safari and Chrome */
+    -moz-transform:scale(1.75); /* Firefox */
+    -ms-transform:scale(1.75); /* IE 9 */
+    -o-transform:scale(1.75); /* Opera */
+     transform:scale(1.75);
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="container">
+<h1>Image</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li><a href="/image_gallery/">Image gallery</a></li>
+  <li class="active">Image ID {{ object.id }}</li>
+</ol>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<p></p>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-camera"></span>
+    Image
+  </div>
+</div>
+<div class="image">
+    <a href="http://{{ request.get_host }}/media/{{ object.image}}">
+        <img id="mainimage" src="http://{{ request.get_host }}/media/{{ object.image}}" style="width:40%;">
+    </a><br/>
+</div>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
+
+
+<div class="panel panel-default">
+<table class="table table-bordered table-striped">
+        <tr>
+                <td class="col-sm-2">Image ID</td>
+                <td>{{ object.id }}</td>
+        </tr>
+        <tr>
+                <td>Name</td>
+                <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+                <td>Pottery decoration</td>
+                <td>{{ object.pottery_decoration }}</td>
+        </tr>
+        <tr>
+                <td>Pottery detail</td>
+                <td>{{ object.pottery_detail }}</td>
+        </tr>
+        <tr>
+                <td>Pottery form</td>
+                <td>{{ object.pottery_form }}</td>
+        </tr>
+        <tr>
+                <td>Small finds</td>
+                <td>{{ object.small_finds }}</td>
+               
+        </tr>
+
+
+        <tr>
+               <td>Region</td>
+                <td>{% for x in object.imagethesaurus.region.all %}
+                    {{ x.name }}<br/>
+                    </a>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Creator</td>
+                <td>{{ object.creator }}</td>
+        </tr>
+        <tr>
+                <td>Literature</td>
+                <td>{{ object.literature }}</td>
+        </tr>
+        <tr>
+                <td>Page</td>
+                <td>{{ object.page }}</td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock content %}
