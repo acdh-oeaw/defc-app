@@ -22,6 +22,17 @@ class ImageThesaurusListView(generic.ListView):
     def get_queryset(self):
         return ImageThesaurus.objects.all()
 
+
+class ImageThesaurusPublicListView(generic.ListView):
+    model = ImageThesaurus
+    # template_name = 'images_metadata/image_gallery.html'
+    template_name = 'images_metadata/public_image_gallery.html'
+    context_object_name = 'object_list'
+
+    def get_queryset(self):
+        return ImageThesaurus.objects.all()
+
+
 class ImageThesaurusDetail(DetailView):
     model = ImageThesaurus
     template_name = 'images_metadata/image_detail.html'

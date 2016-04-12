@@ -327,60 +327,6 @@ class ResearchEventDetail(DetailView):
 
 
 #################################################################
-#				views for Period								#
-#################################################################
-
-# class PeriodListView(generic.ListView):
-# 	template_name = 'defcdb/period_list.html'
-# 	context_object_name = 'object_list' # use object_list instead of
-# 	# e.g. site_list so the template does not need to be changed so much
-# 	#for each class.
-
-# 	def get_queryset(self):
-# 		return Period.objects.order_by('system') #'name' changed for 'period_name'
-
-# class PeriodCreate(CreateView):
-# 	model = Period
-# 	fields = "__all__"
-# 	template_name = "defcdb/create_period.html"
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(PeriodCreate, self).dispatch(*args, **kwargs)
-
-
-# class PeriodUpdate(UpdateView):
-# 	model = Period
-# 	fields = "__all__"
-# 	template_name = 'defcdb/update_form.html'
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(PeriodUpdate, self).dispatch(*args, **kwargs)
-
-
-# class PeriodDelete(DeleteView):
-# 	model = Period
-# 	template_name = 'defcdb/confirm_delete.html'
-# 	success_url = reverse_lazy('defcdb:period_list')
-
-# 	@method_decorator(login_required)
-# 	def dispatch(self, *args, **kwargs):
-# 		return super(PeriodDelete, self).dispatch(*args, **kwargs)
-
-
-# class PeriodDetail(DetailView):
-# 	model = Period
-# 	def get_context_data(self, **kwargs):
-# 		context = super(PeriodDetail, self).get_context_data(**kwargs)
-# 		current_object = self.object
-# 		context['datedby_list'] = current_object.dated_by.all()
-# 		context['datingmethod_list'] = current_object.dating_method.all()
-# 		#context['reference_list'] = current_object.reference.all()
-# 		return context
-
-
-#################################################################
 #				views for Finds									#
 #################################################################
 class FindsListView(generic.ListView):

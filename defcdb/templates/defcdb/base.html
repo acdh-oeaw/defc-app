@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <!-- Piwik -->
     <script type="text/javascript">
       var _paq = _paq || [];
@@ -232,6 +233,10 @@
               <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'geolocation:showplaces' %}">Excavations Map</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="{% url 'image_gallery:public_object_list' %}">Pottery image gallery</a>
               </li>
               <li role="separator" class="divider"></li>
               <li>

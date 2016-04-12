@@ -10,11 +10,11 @@
     margin: 0 auto;
     
 }
-.image {
+#mainimage {
     width: 100%;
     height: 100%;    
 }
-.image img {
+#mainimage {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
     -ms-transition: all 1s ease; /* IE 9 */
@@ -22,7 +22,7 @@
     transition: all 1s ease;
 }
 
-.image:hover img {
+#mainimage:hover {
     -webkit-transform:scale(1.75); /* Safari and Chrome */
     -moz-transform:scale(1.75); /* Firefox */
     -ms-transform:scale(1.75); /* IE 9 */
@@ -37,11 +37,10 @@
 <h1>Image</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
-  <li><a href="/image_gallery/">Image gallery</a></li>
+  <li><a href="/image_gallery/public/">Image gallery</a></li>
   <li class="active">Image ID {{ object.id }}</li>
 </ol>
-<button id="01" class="btn btn-default">Show all fields</button><br/>
-<p></p>
+
 <div class="panel panel-info">
   <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-camera"></span>
     Image
@@ -57,42 +56,42 @@
     Main Information
   </div>
 </div>
-
-
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<p></p>
 <div class="panel panel-default">
 <table class="table table-bordered table-striped">
         <tr>
                 <td class="col-sm-2">Image ID</td>
                 <td>{{ object.id }}</td>
         </tr>
-        <tr>
-                <td>Name</td>
-                <td>{{ object.name }}</td>
-        </tr>
+        {% if object.pottery_decoration != None  %}
         <tr>
                 <td>Pottery decoration</td>
-                <td>{{ object.pottery_decoration }}</td>
+                <td>{{ object.pottery_decoration.name }}</td>
         </tr>
+        {% elif object.pottery_detail != None %}
         <tr>
                 <td>Pottery detail</td>
-                <td>{{ object.pottery_detail }}</td>
+                <td>{{ object.pottery_detail.name }}</td>
         </tr>
+        {% elif object.pottery_form != None %}
         <tr>
                 <td>Pottery form</td>
-                <td>{{ object.pottery_form }}</td>
+                <td>{{ object.pottery_form.name }}</td>
         </tr>
+        {% else %}
         <tr>
                 <td>Small finds</td>
-                <td>{{ object.small_finds }}</td>
+                <td>{{ object.small_finds.name }}</td>
                
         </tr>
-
+        {% endif %}
 
         <tr>
                <td>Region</td>
-                <td>{% for x in object.imagethesaurus.region.all %}
+                <td>{% for x in object.region.all %}
                     {{ x.name }}<br/>
-                    </a>
+
                     {% endfor %}</td>
         </tr>
         <tr>
@@ -100,8 +99,10 @@
                 <td>{{ object.creator }}</td>
         </tr>
         <tr>
-                <td>Literature</td>
-                <td>{{ object.literature }}</td>
+                <td>Reference</td>
+                <td>
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ object.literature.zoterokey }}" target="_blank"> {{object.literature }}</a>
+                </td>
         </tr>
         <tr>
                 <td>Page</td>
