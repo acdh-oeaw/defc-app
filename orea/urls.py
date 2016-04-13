@@ -75,5 +75,6 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': base.MEDIA_ROOT,}, name='media_root_url'),
     url(r'^image_gallery/', include('images_metadata.urls', namespace="image_gallery")),
     url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
+    url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),
 ]
 
