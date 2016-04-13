@@ -41,6 +41,7 @@ class ImageThesaurusDetail(DetailView):
         current_object = self.object
         #context['region_list'] = current_object.region.all()
         context['region_list'] = DC_region.objects.filter(imagethesaurus=current_object.id)
+        # context['potteryform_list'] = DC_finds_pottery_form.objects.filter(imagethesaurus=current_object.id)
         # context['institution_list'] = current_object.institution.all()
         # context['specialanalysis_list'] = current_object.special_analysis.all()
         # context['reference_list'] = current_object.reference.all()

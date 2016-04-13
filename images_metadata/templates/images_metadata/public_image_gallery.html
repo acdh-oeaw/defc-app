@@ -3,7 +3,11 @@
 <style>
 #info-panel { 
     padding: 7px;
-    background-color: #dbedec; 
+    background-color: #dbedec;
+    text-align: center;
+}
+.active {
+  outline-color: black;
 }
 
 .img {
@@ -48,18 +52,18 @@
 {% block content %}
 
 <div class="container">
-<h1>Image</h1>
+<h1>Pottery Image gallery</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li class="active">Image gallery</li>
 </ol>
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-camera"></span>
-    Image
+    <div class="panel-header" id="info-panel">
+    <h4>Pottery form</h4>
   </div>
 </div>
-<h2>Pottery form</h2>
+<!-- <h2>Pottery form</h2> -->
 <div class="grid">
 {% for object in object_list %}
 {% if object.pottery_form %}
@@ -74,7 +78,13 @@
 {% endif %}
 {% endfor %}
 </div>
-<h2>Pottery decoration</h2>
+<br/>
+<div class="panel panel-info">
+    <div class="panel-header" id="info-panel">
+    <h4>Pottery decoration</h4>
+  </div>
+</div>
+<!-- <h2>Pottery decoration</h2> -->
 <div class="grid">
 {% for object in object_list %}
 {% if object.pottery_decoration %}
@@ -89,7 +99,13 @@
 {% endif %}
 {% endfor %}
 </div>
-<h2>Pottery detail</h2>
+<br/>
+<!-- <h2>Pottery detail</h2> -->
+<div class="panel panel-info">
+    <div class="panel-header" id="info-panel">
+    <h4>Pottery detail</h4>
+  </div>
+</div>
 <div class="grid">
 {% for object in object_list %}
 {% if object.pottery_detail %}
@@ -104,6 +120,7 @@
 {% endif %}
 {% endfor %}
 </div>
+<br/>
 </div>
 {% endblock content %}
 
