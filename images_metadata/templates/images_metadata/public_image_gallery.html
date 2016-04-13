@@ -104,15 +104,19 @@
 {% endif %}
 {% endfor %}
 </div>
-
+</div>
 {% endblock content %}
 
 {% block scripts %}
 <script type="text/javascript">
+
+$(window).on('load resize', function (){
+// $('.content .right').width( $(this).width() - 480 );
 $('.grid').masonry({
   // options
   itemSelector: '.img',
   // columnWidth: 200
+});
 });
 </script>
 {% endblock %}
