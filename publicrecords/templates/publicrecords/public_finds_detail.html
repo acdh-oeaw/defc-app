@@ -5,6 +5,26 @@
     padding: 7px;
     background-color: #dbedec; 
 }
+.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    /*float: left;*/
+    width: 180px;
+}
+
+.img:hover {
+    border: 1px solid #777;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
 </style>
 {% endblock %}
 {% block content %}
@@ -150,25 +170,53 @@
                 <td>Confidence</td>
                 <td>{{ object.confidence }}</td>
         </tr>
-        <!-- <tr>
-            <td>Reference</td>
-            <td>{% for ref in reference_list %}
-                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                {% endfor %}</td>
-        </tr> -->
         <tr>
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-        <!-- <tr>
-                <td>Interpretation</td>
-                <td>{% for interpretation in interpretation_list %}
-                        <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
-                        </a>
-                        {% endfor %}</td>
-        </tr> -->
 </table>
 </div>
+{% if pottery_form_list or pottery_detail_list or pottery_decoration_list %}
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel">
+    <span class="glyphicon glyphicon-camera"></span> Pottery Images
+  </div>
+</div>
+<div class="panel panel-default">
+     {% for x in pottery_form_list %}
+     <div class="img">
+        <a href="/image_gallery/detail/{{ x.id }}">
+        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        </a>
+        <div class="desc">
+        {{ x.pottery_form.name }}
+    </div>
+    </div>
+    {% endfor %}
+    {% for x in pottery_detail_list %}
+    <div class="img">
+        <a href="/image_gallery/detail/{{ x.id }}">
+        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        </a>
+        <div class="desc">
+        {{ x.pottery_detail.name }}
+    </div>
+    </div>
+    {% endfor %}
+    {% for x in pottery_decoration_list %}
+    <div class="img">
+        <a href="/image_gallery/detail/{{ x.id }}">
+        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        </a>
+        <div class="desc">
+        {{ x.pottery_decoration.name }}
+    </div>
+    </div>
+    {% endfor %}
+</div>
+<p></p>
+{% endif %}
+
 {% if reference_list %}
 <div class="panel panel-info">
   <div class="panel-header" id="info-panel">

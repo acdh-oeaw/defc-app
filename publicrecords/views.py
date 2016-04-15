@@ -9,6 +9,7 @@ from defcdb.models import Site, Area, ResearchEvent, Finds, Interpretation
 
 from defcdb.forms import AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 from bib.models import Book
+from images_metadata.models import ImageThesaurus
 
 
 #################################################################
@@ -76,6 +77,12 @@ class FindsDetail(DetailView):
 		context['potterydecoration_list'] = current_find.pottery_decoration.all()
 		context['material_list'] = current_find.material.all()
 		context['reference_list'] = current_find.reference.all()
+		if current_find.pottery_form != None:
+			context['pottery_form_list'] = ImageThesaurus.objects.filter(pottery_form=current_find.pottery_form)
+		if current_find.pottery_detail != None:
+			context['pottery_detail_list'] = ImageThesaurus.objects.filter(pottery_detail=current_find.pottery_detail.all)
+		if current_find.pottery_decoration != None:
+			context['pottery_decoration_list'] = ImageThesaurus.objects.filter(pottery_decoration=current_find.pottery_decoration.all)
 		return context
 
 

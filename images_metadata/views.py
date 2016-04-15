@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse, reverse_lazy
 from .models import ImageThesaurus
-from defcdb.models import DC_region
+from defcdb.models import DC_region, Finds
 from .forms import ImageThesaurusForm
 
 
@@ -41,6 +41,13 @@ class ImageThesaurusDetail(DetailView):
         current_object = self.object
         #context['region_list'] = current_object.region.all()
         context['region_list'] = DC_region.objects.filter(imagethesaurus=current_object.id)
+        
+        if current_object.pottery_form != None:
+            context['form_finds_list'] = Finds.objects.filter(pottery_form=current_object.pottery_form)
+        if current_object.pottery_detail != None:
+            context['detail_finds_list'] = Finds.objects.filter(pottery_detail=current_object.pottery_detail)
+        if current_object.pottery_decoration != None:
+            context['decoration_finds_list'] = Finds.objects.filter(pottery_decoration=current_object.pottery_decoration)
         # context['potteryform_list'] = DC_finds_pottery_form.objects.filter(imagethesaurus=current_object.id)
         # context['institution_list'] = current_object.institution.all()
         # context['specialanalysis_list'] = current_object.special_analysis.all()

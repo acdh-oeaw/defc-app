@@ -37,7 +37,7 @@
         <input type="checkbox">
       </td>
       <td>
-      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a> 
+      <a href="{% url 'publicrecords:area_detail' pk=object.id %}">{{ object.id }}</a> 
     </td>
     <td>
       {{ object.area_type }}

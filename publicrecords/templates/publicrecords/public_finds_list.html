@@ -40,7 +40,7 @@
     </td>
     <td>
       {% if object.finds_type.name == "pottery" %}
-        {{ object.finds_type }} ({{ object.pottery_form.name|default_if_none:"" }})
+        {{ object.finds_type }} {{ object.pottery_form.name|default_if_none:"" }}
       {% elif object.finds_type.name == "small finds" %}
         {{ object.finds_type }} ({{ object.small_finds_category|default_if_none:"" }})
       {% else %}

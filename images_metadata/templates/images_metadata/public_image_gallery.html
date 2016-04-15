@@ -68,7 +68,7 @@
 {% for object in object_list %}
 {% if object.pottery_form %}
 <div class="img">
-  <a target="_blank" href="/image_gallery/detail/{{ object.id }}">
+  <a href="/image_gallery/detail/{{ object.id }}">
     <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
@@ -89,7 +89,7 @@
 {% for object in object_list %}
 {% if object.pottery_decoration %}
 <div class="img">
-  <a target="_blank" href="/image_gallery/detail/{{ object.id }}">
+  <a href="/image_gallery/detail/{{ object.id }}">
     <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
@@ -110,7 +110,7 @@
 {% for object in object_list %}
 {% if object.pottery_detail %}
 <div class="img">
-  <a target="_blank" href="/image_gallery/detail/{{ object.id }}">
+  <a href="/image_gallery/detail/{{ object.id }}">
     <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
