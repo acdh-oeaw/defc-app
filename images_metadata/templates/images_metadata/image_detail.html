@@ -122,17 +122,17 @@
                 <td class="col-sm-2">Finds ID / Site name</td>
                <td>
                     {% for x in form_finds_list %}
-                    <a href="/publicrecords/{{ x.get_classname }}/detail/{{ x.id }}">
+                    <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
                     ID {{ x.id }}</a> in {{ x.area.site.name }}
                     <br/>
                     {% endfor %}
                     {% for x in detail_finds_list %}
-                    <a href="/publicrecords/{{ x.get_classname }}/detail/{{ x.id }}">
+                    <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
                     ID {{ x.id }}</a> in {{ x.area.site.name }}
                     <br/>
                     {% endfor %}
                     {% for x in decoration_finds_list %}
-                    <a href="/publicrecords/{{ x.get_classname }}/detail/{{ x.id }}">
+                    <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
                     ID {{ x.id }}</a> in {{ x.area.site.name }}
                     <br/>
                     {% endfor %}
