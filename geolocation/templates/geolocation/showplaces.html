@@ -24,22 +24,6 @@
     </div>
 </div>
 </div>
-<script type="text/javascript">
-    $( document ).ready(function() {
-        var fetchedParameterPeriod = "{{ request.GET.period }}";
-        var fetchedParameterRegion = "{{ request.GET.region }}";
-        $("#id_region option").each(function() {
-            if($(this).text() == fetchedParameterRegion) {
-                $(this).attr('selected', 'selected');
-            }                        
-        });
-        $("#id_period option").each(function() {
-            if($(this).text() == fetchedParameterPeriod) {
-                $(this).attr('selected', 'selected');
-            }                        
-        });
-    });
-</script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 <script src="http://kartena.github.io/Proj4Leaflet/lib/proj4-compressed.js"></script>
 <script src="http://kartena.github.io/Proj4Leaflet/src/proj4leaflet.js"></script>
