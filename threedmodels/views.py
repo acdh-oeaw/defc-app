@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.views import generic
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -10,6 +10,7 @@ from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse, reverse_lazy
 from .models import Contact, Project, Threedmodel
 from defcdb.models import Finds
+from .forms import ThreedmodelForm
 # Create your views here.
 
 class ThreedmodelListView(generic.ListView):
@@ -37,3 +38,30 @@ class ThreedmodelDetail(DetailView):
         return context
 
 
+@login_required
+def upload_file(request):
+    if request.method == 'POST':
+        form = ThreedmodelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('threedmodels:object_list')
+        else:
+            return render(request, 'threedmodels/create_virtualobject.html', {'form': form})
+    else:
+        form = ThreedmodelForm()
+    return render(request, 'threedmodels/create_virtualobject.html', {'form': form})
+
+
+@login_required
+def update_file(request, pk):
+    instance = get_object_or_404(Threedmodel, id=pk)
+    if request.method == 'POST':
+        form = ThreedmodelForm(request.POST, request.FILES, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('threedmodels:object_list')
+        else:
+            return render(request, 'threedmodels/create_virtualobject.html', {'form': form})
+    else:
+        form = ThreedmodelForm(instance=instance)
+    return render(request, 'threedmodels/create_virtualobject.html', {'form': form})

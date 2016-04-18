@@ -11,7 +11,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!--CSS Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css"/> -->
 <!-- CSS jQuery UI -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
 <!-- jQuery -->
@@ -55,12 +57,23 @@
       flex-direction: column;
       height: 100%;
     }
+    .breadcrumb {
+      border-radius: 0 !important;
+    }
+   /* .navbar {
+      background-color:#009688;
+    }*/
 
     a.navlink:link {color: black;}
     a.navlink:visited {color: black;}
     a.navlink:hover {
       color: black;
       text-decoration: underline; 
+    }
+    #info-panel { 
+      padding: 7px;
+      background-color: #009688;
+      color:white;
     }
     header {
       flex: 0 0 auto;
@@ -70,7 +83,7 @@
     }
     footer {
       flex: 0 0 auto;
-      background-color: #F8F8F8;
+      /*background-color: #F8F8F8;*/
       padding: 40px;
     }
    /* .footer-right {
@@ -80,14 +93,14 @@
       text-align: left;
     }*/
     .breadcrumb {
-    background-color: white;
+    /*background-color: white;*/
     border: 1px solid #ccc;
     }
-    .jumbotron {
-      background-color: #F8F8F8b; /* Green */
+    /*.jumbotron {
+      background-color: #F8F8F8b;  Green 
       color: #333;
       padding: 100px 25px;
-    }
+    }*/
     .container-fluid {padding: 60px 50px;/**/}
     .logo {font-size: 200px;}
     @media screen and (max-width: 768px) {
@@ -284,11 +297,11 @@
   </nav>
 </header>
 <section class="main-content">
-  <div class="alert alert-warning" style="text-align:center">
+  <!-- <div class="alert alert-warning" style="text-align:center">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
     <strong>Attention!</strong>
     <br/>Still Work in Progress. But entered data will be preserved.
-  </div>
+  </div> -->
   <div>
     {% block content %}
     {% endblock %}
@@ -301,12 +314,10 @@
 <footer>
   <div class="container">
     <div class="footer-limiter">
-
       <div class="footer-left">
         <p class="footer-links">ÖAW</p>
         <p>DEFC © {% now "M. Y" %}</p>
       </div>
-
     </div>
   </div>
 </footer>
