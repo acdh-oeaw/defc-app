@@ -15,3 +15,5 @@ __pycache__
 /tryouts.ipynb
 __try.html
 /pottery
+/orea/settings/pandorfer_local.py
+/orea/settings/server.py
