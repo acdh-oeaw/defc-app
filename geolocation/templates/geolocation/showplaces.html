@@ -13,79 +13,59 @@
 {% block content %}
 <div class="fluid" style="padding:50px;">
 <div class="panel panel-default">
-	<div class="panel-heading">
-		<h1>Geolocation of Sites</h1>
-	</div>
-	<div class="panel-body">
-	<div class="row">
-	<div class="col-md-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3>Filters</h3>
-			</div>
-			<div class="panel-body">
-				<h3>Region</h3>
-				<form role="form" action="" method="get">
-  			 		{{ form.region }}
-  			 	<h3>Period</h3>
-  			 		{{ form.period }}
-  			 		<button type="submit" class="btn btn-default btn-block">Filter</button>
-  					<a class="btn btn-primary btn-block" href="{% url 'geolocation:showplaces' %}">reset</a>
-				</form>
-				<hr/>
-			</div>
-		</div>
-	</div>
+    <div class="panel-heading">
+        <h1>Geolocation of Sites</h1>
+    </div>
+    <div class="panel-body">
+ 
+        <div id="parentMap"></div>
 
-	<div class ="col-md-10">
-		<div id="parentMap"></div>
-	</div>
-	</div>
-	</div>
+    </div>
+    </div>
 </div>
 </div>
 <script type="text/javascript">
-	$( document ).ready(function() {
-		var fetchedParameterPeriod = "{{ request.GET.period }}";
-		var fetchedParameterRegion = "{{ request.GET.region }}";
-		$("#id_region option").each(function() {
-        	if($(this).text() == fetchedParameterRegion) {
-            	$(this).attr('selected', 'selected');
-        	}                        
-    	});
-    	$("#id_period option").each(function() {
-        	if($(this).text() == fetchedParameterPeriod) {
-            	$(this).attr('selected', 'selected');
-        	}                        
-    	});
-	});
+    $( document ).ready(function() {
+        var fetchedParameterPeriod = "{{ request.GET.period }}";
+        var fetchedParameterRegion = "{{ request.GET.region }}";
+        $("#id_region option").each(function() {
+            if($(this).text() == fetchedParameterRegion) {
+                $(this).attr('selected', 'selected');
+            }                        
+        });
+        $("#id_period option").each(function() {
+            if($(this).text() == fetchedParameterPeriod) {
+                $(this).attr('selected', 'selected');
+            }                        
+        });
+    });
 </script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 <script src="http://kartena.github.io/Proj4Leaflet/lib/proj4-compressed.js"></script>
 <script src="http://kartena.github.io/Proj4Leaflet/src/proj4leaflet.js"></script>
 <script type="text/javascript">
-	$( document ).ready(function() {
- 		$("#map").remove();
- 		$("#parentMap").append("<div id='map'></div>");
-    	var map = L.map('map').setView([38.901338, 30.434664], 6);
+    $( document ).ready(function() {
+        $("#map").remove();
+        $("#parentMap").append("<div id='map'></div>");
+        var map = L.map('map').setView([38.901338, 30.434664], 6);
 
-    	L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
-    	attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
-    	maxZoom: 18
-		}).addTo(map);
-		var imageUrl = "{% static 'webpage/turkey_regions_borders.png' %}";
-    	imageBounds = [[42.097404, 25.658806], [35.800831, 44.736830]];
+        L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+        attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
+        maxZoom: 18
+        }).addTo(map);
+        var imageUrl = "{% static 'webpage/turkey_regions_borders.png' %}";
+        imageBounds = [[42.097404, 25.658806], [35.800831, 44.736830]];
 
-		L.imageOverlay(imageUrl, imageBounds).addTo(map);
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
 
-		{% for site in site_list %}
-			L.marker([{{ site.latitude }}, {{ site.longitude }}])
-			.addTo(map)
-			.bindPopup("<h1>{{ site.name }}</h1> <table class='table table-striped'> <tr> <td>Name: </td> <td>{{ site.name }}</td> </tr> <tr> <td>District: </td> <td>{{ site.province.name }}</td> </tr><tr> <td>Region: </td> <td>{{ site.province.region }}</td> </tr> <tr> <td>Country: </td> <td>{{ site.province.region.country.name }}</td> </tr> <tr> <td>Areas</td> <td> {% for x in site.area_set.all %} <a href='{% url "defcdb:area_detail" pk=x.id %}'> {{ x }} </a><br/> {% endfor %} </td> </table>");
-		{% endfor %}
+        {% for site in site_list %}
+            L.marker([{{ site.latitude }}, {{ site.longitude }}])
+            .addTo(map)
+            .bindPopup("<h1>{{ site.name }}</h1> <table class='table table-striped'> <tr> <td>Name: </td> <td>{{ site.name }}</td> </tr> <tr> <td>District: </td> <td>{{ site.province.name }}</td> </tr><tr> <td>Region: </td> <td>{{ site.province.region }}</td> </tr> <tr> <td>Country: </td> <td>{{ site.province.region.country.name }}</td> </tr> <tr> <td>Areas</td> <td> {% for x in site.area_set.all %} {%if x.public == 1 %}<a href='{% url "publicrecords:area_detail" pk=x.id %}'> {{ x }} </a><br/>{% endif %} {% endfor %} </td> </table>");
+        {% endfor %}
 
 
 
-		});
+        });
 </script>
 {% endblock content %}

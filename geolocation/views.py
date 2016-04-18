@@ -2,76 +2,40 @@ import requests
 import json
 from django.shortcuts import render, redirect
 from django.views import generic
-
-
 from django.contrib.auth.decorators import login_required
 
-from .forms import DC_provinceForm, SearchForm
-from defcdb.models import DC_province, DC_region, DC_country, Site
-
-#################################################################
-#		geovisualization										#
-#################################################################
+from .forms import DC_provinceForm
+from defcdb.models import DC_province, Site
 
 
 def showplaces(request):
+    """ a view to dispay all site objects on a leaflet map"""
     if request.method == "GET":
         context = {}
-        parameterRegion = request.GET.get('region')
-        parameterPeriod = request.GET.get('period')
-        context["form"] = SearchForm
         context["site_list"] = Site.objects.exclude(latitude__isnull=True)
-        return render(request, 'geolocation/showplaces_noFilter.html', context)
+        return render(request, 'geolocation/showplaces.html', context)
     else:
         pass
 
 
-# def showplaces(request):
-#     if request.method == "GET":
-#         context = {}
-#         parameterRegion = request.GET.get('region')
-#         parameterPeriod = request.GET.get('period')
-#         context["form"] = SearchForm
-#         if parameterRegion is None:
-#             context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
-#             return render(request, 'geolocation/showplaces.html', context)
-#         else:
-#             context["parameterRegion"] = parameterRegion
-# 			if parameterPeriod =="":
-# 				context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameterRegion)
-# 			elif parameterRegion =="":
-# 				context["province_list"] = DC_province.objects.exclude(lat__isnull=True).filter(site__area__period__system__period_name=parameterPeriod)
-# 			else:
-# 				regionFilterd = DC_province.objects.exclude(lat__isnull=True).filter(region__name=parameterRegion)
-# 				context["province_list"] = regionFilterd.filter(region__name=parameterRegion).filter(site__area__period__system__period_name=parameterPeriod)
-# 			return render(request, 'geolocation/showplaces.html', context)
+def showdistricts(request):
+    """ a view to generate a highmaps maps of districts in turkey"""
+    context = {}
+    context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
+    return render(request, 'geolocation/districts_highmaps.html', context)
 
-
-def showplaces_test(request):
-	context = {}
-	context["province_list"] = DC_province.objects.exclude(lat__isnull=True)
-	return render(request,'geolocation/showplaces_test.html', context)
-
-
-
-#################################################################
-#		list Views												#
-#################################################################
 
 class DC_provinceListView(generic.ListView):
-	template_name = 'geolocation/list.html'
-	context_object_name = 'object_list'
+    template_name = 'geolocation/list.html'
+    context_object_name = 'object_list'
 
-	def get_queryset(self):
-		return DC_province.objects.all()
+    def get_queryset(self):
+        return DC_province.objects.all()
 
-
-#################################################################
-#		fetch GeoNamesView										#
-#################################################################
 
 @login_required
 def edit_DC_provinceForm(request, pk):
+    """this view fetech geonames ID matching the districts/province´s name"""
     f = DC_province.objects.get(id=pk)
     if request.method == "GET":
         placeName = f.name
