@@ -41,11 +41,12 @@ def sync_zotero_action(request):
         except:
             name = "no name provided"
 
-        NewBook = Book(zoterokey=x["data"]["key"], item_type=x["data"]["itemType"],
+        NewBook = Book(
+            zoterokey=x["data"]["key"], item_type=x["data"]["itemType"],
             author=name,
-			title=x["data"]["title"],
-			short_title=x["data"]["shortTitle"]
-            )
+            title=x["data"]["title"],
+            short_title=x["data"]["shortTitle"]
+        )
 
         try:
             NewBook.save()
