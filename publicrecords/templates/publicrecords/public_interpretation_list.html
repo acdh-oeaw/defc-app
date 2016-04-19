@@ -37,7 +37,7 @@
     <td>
         <input type="checkbox">
     </td>
-    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+    <td><a href="{% url 'publicrecords:interpretation_detail' pk=object.id %}">
       {{ object.id }}
       </a> 
     </td>
@@ -53,23 +53,25 @@
     </td>
     <td>
       {% for x in object.area.all %}
-      <a href="/publicrecords/site/detail/{{ x.site.id }}">
+      <a href="{% url 'publicrecords:site_detail' pk=x.site.id %}">
       {{ x.site.name }}
       </a><br/>
       {% endfor %}
     </td>
     <td>
-      {% for x in object.area.all %}<a href="/publicrecords/area/detail/{{ x.id }}">
+      {% for x in object.area.all %}
+      <a href="{% url 'publicrecords:area_detail' pk=x.id %}">
       ID {{ x.id }} {{ x.area_type }}</a><br/>
       {% endfor %}
     </td>
     <td>
-      {% for x in object.finds.all %}<a href="/publicrecords/finds/detail/{{ x.id }}">
+      {% for x in object.finds.all %}
+      <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
       ID {{ x.id }} {{ x.finds_type }}</a><br/>
       {% endfor %} 
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:interpretation_detail' pk=object.id %}">view</a> 
     </td>
    </tr>  
     {% endfor %}
