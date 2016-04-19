@@ -37,11 +37,11 @@
     <input type="checkbox">
     </td>
     <td>
-      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ object.id }}</a>
+      <a href="{% url 'publicrecords:researchevent_detail' pk=object.id %}">{{ object.id }}</a>
     </td>
     <td>
       {% for x in object.research_type.all %}
-      <a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">{{ x.name }}</a><br/>
+      <a href="{% url 'publicrecords:researchevent_detail' pk=object.id %}">{{ x.name }}</a><br/>
       {% endfor %}
     </td>
     <td>
@@ -60,7 +60,7 @@
     </td>
     <td>
       {% for x in object.finds_set.all %}
-      <a href="/publicrecords/finds/detail/{{ x.id }}">ID {{ x.id }} {{ x.finds_type }}</a><br/>
+      <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">ID {{ x.id }} {{ x.finds_type }}</a><br/>
       {% endfor %}
     </td>
    </tr>  

@@ -19,7 +19,7 @@
 <h1>Area</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
-  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Areas</a></li>
+  <li><a href="{% url 'publicrecords:area_list' %}">Data Exploration - Areas</a></li>
   <li class="active">Area {{ object.id }}</li>
 </ol>
 <button id="01" class="btn btn-default">Show / Hide all fields</button><br/>
@@ -39,7 +39,7 @@
         <tr>
                 <td class="col-sm-2">Site</td>
                 <td>{% for site in sites_list %}
-                <a href="/publicrecords/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site.name }} <br/>
+                <a href="{% url 'publicrecords:site_detail' pk=site.id %}"> {{ site.name }} <br/>
                 </a>
                 {% endfor %}</td>
         </tr>
@@ -314,7 +314,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
+                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>
@@ -333,7 +333,7 @@
         <tr>
             <td class="col-sm-2">Interpretation</td>
             <td>{% for interpretation in interpretations_list %}
-            <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}">ID {{ interpretation.id }} <br/>
+            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">ID {{ interpretation.id }} <br/>
             </a>
             {% endfor %}
         </td>
@@ -365,7 +365,7 @@
     }).addTo(map);
 
     L.marker([gps1 , gps2]).addTo(map)
-    .bindPopup('<a href="/publicrecords/site/detail/{{ site.id }}" target="_blank">{{ site.name }}</a>')
+    .bindPopup('<a href="{% url 'publicrecords:site_detail' pk=site.id %}" target="_blank">{{ site.name }}</a>')
     .openPopup();
     {% endfor %}
 </script>

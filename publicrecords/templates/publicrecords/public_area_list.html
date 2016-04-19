@@ -43,7 +43,7 @@
       {{ object.area_type }}
     </td>
     <td>
-      <a href="/publicrecords/site/detail/{{ object.site.id }}">
+      <a href="{% url 'publicrecords:site_detail' pk=object.site.id %}">
       {{ object.site.name }}
     </a>
     </td>
@@ -56,7 +56,7 @@
     <td>
       {% if object.finds_set.all %}
       {% for x in object.finds_set.all %}
-          <a href="/publicrecords/finds/detail/{{ x.id }}">
+          <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
             ID {{ x.id }} {{ x.finds_type }}
           </a> 
        <br />
@@ -64,7 +64,7 @@
       {% endif %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
+      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:area_detail' pk=object.id %}">view</a> 
     </td>
    </tr>  
     {% endfor %}

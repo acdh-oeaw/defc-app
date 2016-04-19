@@ -15,7 +15,7 @@
 <h1>Research Event</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
-  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Research Events</a></li>
+  <li><a href="{% url 'publicrecords:researchevent_list' %}">Data Exploration - Research Events</a></li>
   <li class="active">Research Event {{ object.id }}</li>
 </ol>
 
@@ -70,12 +70,6 @@
                 {{ analysis }}</br>
                 {% endfor %}</td>
         </tr>
-        <!-- <tr>
-            <td class="col-sm-2">Reference</td>
-            <td>{% for ref in reference_list %}
-                <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                {% endfor %}</td>
-        </tr> -->
         <tr>
             <td class="col-sm-2">Comment</td>
             <td>{{ object.comment }}</td>
@@ -110,7 +104,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="/publicrecords/{{ find.get_classname }}/detail/{{ find.id }}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
+                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>
