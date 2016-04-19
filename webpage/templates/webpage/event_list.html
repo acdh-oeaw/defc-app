@@ -4,8 +4,6 @@
 
 <div class="container">
 {% if object_list %}
-
-<hr />
 <div class="container">
 <h1> Events </h1>
 	<table class="table-responsive">
@@ -16,7 +14,7 @@
 	 			{{ object }} 
 	 		</td>
 	 		<td>
-	 			<a class ="btn btn-danger btn-sm" href="/delete/event/{{ object.id }}">  Delete </a> 
+	 			<a class ="btn btn-danger btn-sm" href="{% url 'webpage:event_delete' pk=object.id %}">  Delete </a> 
 	 		</td>
 	 	</tr>	
     	{% endfor %}
@@ -25,3 +23,4 @@
 </div>
   
 {% endblock %}
+<!-- 2016-04-24 - 2016-04-29 10th ICAANE Conference Vienna, Austria http://www.orea.oeaw.ac.at/10icaane.html  -->

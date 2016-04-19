@@ -49,7 +49,7 @@
                     </td>
                     <td>
                     <a class ="btn btn-danger btn-sm" href="{% url 'image_gallery:update_file' pk=object.id %}">update</a>
-                    <a class ="btn btn-primary btn-sm" href="/image_gallery/detail/{{ object.id }}">view</a>
+                    <a class ="btn btn-primary btn-sm" href="{% url 'image_gallery:detail' pk=object.id %}">view</a>
                     </td>
                 </tr>
                 {% endfor %}

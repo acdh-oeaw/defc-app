@@ -43,7 +43,7 @@ class EventCreate(CreateView):
 
 class EventDelete(DeleteView):
 	model = Event
-	template_name = 'defcdb/confirm_delete.html'
+	template_name = 'webpage/confirm_delete.html'
 	success_url = reverse_lazy('webpage:event_list')
 
 	@method_decorator(login_required)
