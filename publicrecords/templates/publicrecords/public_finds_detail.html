@@ -33,7 +33,7 @@
 <h1>Finds</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
-  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Finds</a></li>
+  <li><a href="{% url 'publicrecords:finds_list' %}">Data Exploration - Finds</a></li>
   <li class="active">Find {{ object.id }}</li>
 </ol>
 <button id="01" class="btn btn-default">Show / Hide all fields</button>
@@ -52,7 +52,7 @@
         <tr>
                 <td class="col-sm-2">Area</td>
                 <td>{% for area in area_list %}
-                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}">
+                        <a href="{% url 'publicrecords:area_detail' pk=area.id %}">
                         ID {{ object.area.id }} {{ object.area.area_type }}<br/>
                         </a>
                         {% endfor %}</td>
@@ -60,7 +60,7 @@
         <tr>
                 <td class="col-sm-2">Site</td>
                 <td>{% for area in area_list %}
-                        <a href="/publicrecords/site/detail/{{ object.area.site.id }}">
+                        <a href="{% url 'publicrecords:site_detail' pk=object.area.site.id %}">
                         {{ object.area.site.name }}<br/>
                         </a>
                         {% endfor %}</td>
@@ -68,7 +68,7 @@
         <tr>
                 <td class="col-sm-2">Research event</td>
                 <td>{% for x in object.research_event.research_type.all %}
-                <a href="/publicrecords/researchevent/detail/{{ object.research_event.id }}">{{ x }} </a>{% endfor %}{{ object.research_event.project_name }}{% if object.research_event.year_of_activity_start_year and object.research_event.year_of_activity_end_year %} {{ object.research_event.year_of_activity_start_year }} - {{ object.research_event.year_of_activity_end_year }}{% elif object.research_event.year_of_activity_start_year %} {{ object.research_event.year_of_activity_start_year }}{% elif object.research_event.year_of_activity_end_year %} {{ object.research_event.year_of_activity_end_year }}{% else %}{% endif %}</td>
+                <a href="{% url 'publicrecords:researchevent_detail' pk=object.research_event.id %}">{{ x }} </a>{% endfor %}{{ object.research_event.project_name }}{% if object.research_event.year_of_activity_start_year and object.research_event.year_of_activity_end_year %} {{ object.research_event.year_of_activity_start_year }} - {{ object.research_event.year_of_activity_end_year }}{% elif object.research_event.year_of_activity_start_year %} {{ object.research_event.year_of_activity_start_year }}{% elif object.research_event.year_of_activity_end_year %} {{ object.research_event.year_of_activity_end_year }}{% else %}{% endif %}</td>
         </tr>
         <tr>
                 <td class="col-sm-2">Finds type</td>
@@ -185,7 +185,7 @@
 <div class="panel panel-default">
      {% for x in pottery_form_list %}
      <div class="img">
-        <a href="/image_gallery/detail/{{ x.id }}">
+        <a href="{% url 'image_gallery:detail' pk=x.id %}">
         <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
@@ -195,7 +195,7 @@
     {% endfor %}
     {% for x in pottery_detail_list %}
     <div class="img">
-        <a href="/image_gallery/detail/{{ x.id }}">
+        <a href="{% url 'image_gallery:detail' pk=x.id %}">
         <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
@@ -205,7 +205,7 @@
     {% endfor %}
     {% for x in pottery_decoration_list %}
     <div class="img">
-        <a href="/image_gallery/detail/{{ x.id }}">
+        <a href="{% url 'image_gallery:detail' pk=x.id %}">
         <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
@@ -245,7 +245,7 @@
         <tr>
             <td class="col-sm-2">Interpretation</td>
             <td>{% for interpretation in interpretation_list %}
-            <a href="/publicrecords/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}">ID {{ interpretation.id }}
+            <a href="{% url 'publicrecords:interpretation_detail' interpretation.id %}">ID {{ interpretation.id }}
             <br/>
             </a>
             {% endfor %}
