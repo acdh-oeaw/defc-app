@@ -31,7 +31,6 @@
       <th>Topography</th>
           <th>Areas (area type)</th>
       <th>view | modify | delete</th>
-      <!-- <th>description</th> -->
     </tr>
   </tfoot>
   <tbody>
@@ -60,22 +59,22 @@
     <td>
       {% if object.area_set.all %}
       {% for x in object.area_set.all %}
-        <a href="/defcdb/area/detail/{{ x.id }}">
+        <a href="{% url 'defcdb:area_detail' pk=x.id %}">
           {{ x.area_type }}
         </a><br/>
       {% endfor %}
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/area/create/?site={{ object }}">
-                create another area </a>
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:area_create' %}?site={{ object }}">
+      create another area </a>
       {% else %}
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/area/create/?site={{ object }}">
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:area_create' %}?site={{ object }}">
         create a new area
       </a>
       {% endif %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
-      <a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
-      <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:site_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm" href="{% url 'defcdb:site_update' pk=object.id %}">edit</a>
+      <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:site_delete' pk=object.id %}">delete</a>
     </td>
    </tr>  
     {% endfor %}

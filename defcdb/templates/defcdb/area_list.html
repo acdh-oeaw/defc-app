@@ -52,12 +52,11 @@
           </a> 
        <br />
       {% endfor %}
-
- <a class ="btn btn-primary btn-sm"  href="/defcdb/finds/create/?area={{ object }}">
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:finds_create' %}?area={{ object }}">
         create another find
       </a>
       {% else %}
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/finds/create/?area={{ object }}">
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:finds_create' %}?area={{ object }}">
         create a new find
       </a>
       {% endif %}

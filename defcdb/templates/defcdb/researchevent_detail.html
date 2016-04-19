@@ -50,13 +50,6 @@
                 {{ analysis }}</br>
                 {% endfor %}</td>
         </tr>
-        <!-- <tr>
-                <td>Reference</td>
-                <td>{% for ref in reference_list %}
-                    {{ ref }}<br/>
-                    {% endfor %}
-                </td>
-        </tr> -->
         <tr>
             <td>Reference</td>
             <td>{% for ref in reference_list %}
@@ -69,7 +62,7 @@
         </tr>
 </table>
 </div>
-<a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-<a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+<a class ="btn btn-primary btn-sm" href="{% url 'defcdb:researchevent_update' pk=object.id %}">Edit</a>
+<a class ="btn btn-danger btn-sm" href="{% url 'defcdb:researchevent_delete' pk=object.id %}">Delete</a>
 </div>
 {% endblock content %}>

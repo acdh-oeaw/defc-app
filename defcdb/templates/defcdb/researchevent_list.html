@@ -63,13 +63,13 @@
     </td>
     <td>
       {% for y in object.finds_set.all %}
-      <a href="/defcdb/finds/detail/{{ y.id }}">{{ y.finds_type }}</a> <br/>
+      <a href="{% url 'defcdb:finds_detail' pk=y.id %}">{{ y.finds_type }}</a> <br/>
       {% endfor %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
-      <a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
-      <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:researchevent_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm" href="{% url 'defcdb:researchevent_update' pk=object.id %}">edit</a>
+      <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:researchevent_delete' pk=object.id %}">delete</a>
     </td>
    </tr>  
     {% endfor %}

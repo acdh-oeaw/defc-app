@@ -10,14 +10,14 @@
         <tr>
                 <td>Area</td>
                 <td>{% for area in areas_list %}
-                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        <a href="{% url 'defcdb:area_detail' pk=area.id %}"> {{ area }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-                    <a href="/defcdb/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/>
+                    <a href="{% url 'defcdb:finds_detail' pk=find.id %}"> {{ find }} <br/>
                     </a>
                     {% endfor %}</td>
         </tr>
@@ -49,7 +49,7 @@
         </tr>
 </table>
 </div>
-<a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-<a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+<a class ="btn btn-primary btn-sm" href="{% url 'defcdb:interpretation_update' pk=object.id %}">Edit</a>
+<a class ="btn btn-danger btn-sm" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">Delete</a>
 </div>
 {% endblock content %}

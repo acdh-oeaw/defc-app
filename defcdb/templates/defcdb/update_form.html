@@ -3,18 +3,10 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-<!-- <h1> Edit {{ classname }} {{ object.get_classname }}</h1>
-    <form action="" method="post">{% csrf_token %}
-    <table class="table table-striped">
-        {{ form.as_table }}
-    </table>
-        <input class="btn btn-primary" type="submit" value="Save" />
-	</form> -->
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h1> Edit {{ classname }} {{ object.get_classname }}</h1>
-				<!-- <button id="01" class="btn btn-default">Show all fields</button><br/> -->
 			</div>
 			<div class="panel-body">
 				{% crispy form %}
@@ -24,76 +16,6 @@
 </div>
 {% endblock content %}
 {% block scripts %}
-<script>
-	// $(document).ready(function(){
-		// if($(('input:text').val() != None).parent().show();
-			// var bla = $('input:text').val();
-			// alert(bla);
-
-
-
-			////Check this out////
-			// var bla = $('input:text').val();
-			// if(bla.length != 0 ){
-			// 	// $("input").parents().show();
-			// 	// alert(bla);
-			// 	$('input:text').parent().hide();
-			// }
-			// else{
-			// 	alert("not working");
-			// }
-			//////////////////////////////////
-
-
-
-			// var bla2 = $('input:text').attr('value');
-			// if(bla2.length == 0){
-			// 	$('input:text').parent().hide();
-
-			// }
-			// else{
-			// 	alert("notworking");
-			// }
-
-
-
-			// $("01").click(function(){
-			// 	var newvar = $(('input:text').val() == '');
-   //          // alert(emptytd.length);
-   //          	$(newvar).parent().toggle("slow");
-			// });
-			// if(bla == ''){
-			// 	// $("input").parents().show();
-			// 	// alert(bla);
-			// 	$("input:text").parent().hide();
-			// }
-	// });
-</script>
- <script type="text/javascript">
-// $(document).ready(function(){
-//     $("value:empty").parent().hide();
-//     $("td:contains('None')").parent().hide();
-//     $("#01").click(function(){
-//         // var testv = $("td:odd").text();
-//         //  // alert(testv);
-//         // if (testv == ""
-//             var emptytd = $("value:empty");
-//             // alert(emptytd.length);
-//             $(emptytd).parent().toggle("slow");
-//             var nonetd = $("value:contains('None')");
-//             $(nonetd).parent().toggle("slow");
-//         /*testv.hide();*/
-//   //       if ($('td:even:empty',this){ 
-//   //       $(this).hide();
-//   //       } else {
-//   //       $(this).show();
-//   // }
-// });
-//     });
-
-// </script>
-
-
 
 <script type="text/javascript">
 	function popupCreateName() {
@@ -108,9 +30,6 @@
 	$(document).ready(function(){
 		$("#id_alternative_name-autocomplete").after('<button id="add_alternativeName" type="button" class="btn btn-sm btn-success" onclick="popupCreateName()"><span class="glyphicon glyphicon-plus"/></button>');
 	});
-</script>
-
-<!--copypaste from create_area-->
 </script>
 
 <!--condition for Period field visibility-->
@@ -129,12 +48,5 @@
         }
     });
 </script>
-
-
-
-
-
-
-
 
 {% endblock %}

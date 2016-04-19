@@ -63,9 +63,11 @@
       {% endfor %} 
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
-      <a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
-      <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:interpretation_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm" href="{% url 'defcdb:interpretation_update' pk=object.id %}">edit</a>
+      <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">delete</a>
+      
+      
     </td>
    </tr>  
     {% endfor %}
