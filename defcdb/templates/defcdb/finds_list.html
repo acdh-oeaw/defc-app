@@ -37,7 +37,7 @@
         <input type="checkbox">
     </td>
     <td>
-      <a href="/defcdb/area/detail/{{ object.area.id }}"> {{ object.area.site }} </a> 
+      <a href="{% url 'defcdb:area_detail' pk=object.area.id %}"> {{ object.area.site }} </a> 
     </td>
     <td>
       {{ object.area.area_type }}
@@ -56,13 +56,13 @@
     </td>
     <td>
       {% for y in object.interpretation_set.all %}
-      <a href="/defcdb/interpretation/detail/{{ y.id }}">{{ y }}</a> <br/>
+      <a href="{% url 'defcdb:interpretation_detail' pk=y.id %}">{{ y }}</a> <br/>
       {% endfor %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="/defcdb/{{ object.get_classname }}/detail/{{ object.id }}">view</a> 
-      <a class ="btn btn-primary btn-sm" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}">edit</a>
-      <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}">delete</a>
+      <a class ="btn btn-primary btn-sm"  href="{% url 'defcdb:finds_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm" href="{% url 'defcdb:finds_update' pk=object.id %}">edit</a>
+      <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:finds_delete' pk=object.id %}">delete</a>
     </td>
    </tr>  
     {% endfor %}

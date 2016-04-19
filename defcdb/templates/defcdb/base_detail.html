@@ -8,18 +8,13 @@ $(document).ready(function(){
       return $(this).text() === "None";
     }).parent().hide();
     $("#01").click(function(){
-        // var testv = $("td:odd").text();
-        //  // alert(testv);
-        // if (testv == ""
             var emptytd = $("td:empty");
-            // alert(emptytd.length);
             $(emptytd).parent().toggle("slow");
             var nonetd = $("td").filter(function(){
             return $(this).text() === "None"});
             $(nonetd).parent().toggle("slow");
 });
     });
-
 </script>
 
 {% endblock scripts %}

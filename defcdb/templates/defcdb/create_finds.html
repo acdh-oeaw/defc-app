@@ -93,20 +93,6 @@ $('#id_finds_type').change(function(){
         $('div[id*="material"]').hide();
         $('div[id*="obsidian"]').hide();
         $('div[id*="obsidian amount"]').hide();
-        // if($('#id_area option:selected').text() == "---------"){
-        //     $('div[id*="id_pottery_form"]').hide();
-        //     $('div[id*="id_pottery_decoration"]').hide();
-        //     $('div[id*="id_pottery_detail"]').hide();
-        //     //console.log($('#id_area option:selected').text());
-        // }
-        // else{
-        //     var selected_area = $('#id_area option:selected').text().substring(0, $('#id_area option:selected').text().indexOf('_'));
-        //     //console.log($('#id_pottery_form option:contains("Southern/Central Greece, Cyclades")'));
-        //     $('#id_pottery_form option:contains('+selected_area+')').show();
-        //    // $('#id_pottery_form ('tr:has(option:contains("Southern and Central Greece, Cyclades"))').show();
-        //     $('#id_pottery_detail option:contains('+selected_area+')').show();
-        //     $('#id_pottery_decoration option:contains('+selected_area+')').show();
-        // }
     }
     else if(selected_option =="---------"){
         $('div[id*="small"]').hide();
@@ -158,10 +144,8 @@ $('#id_finds_type').change(function(){
         $('#div_id_pottery_decoration option:contains('+selected_area+')').show();
         $('#div_id_pottery_decoration option:not(:contains('+selected_area+'))').hide();
     }
-    // alert(selected_option);
 });
 </script>
-
 <script type ="text/javascript">
     $(document).ready(function(){
     $('#div_id_small_finds_type option').hide(); 
@@ -186,13 +170,10 @@ $('#id_finds_type').change(function(){
         $('#div_id_small_finds_type option:contains("figurines")').hide();
         $('#div_id_small_finds_type option:contains("jewellery")').hide();
         $('#div_id_small_finds_type option:contains("tool")').show();  
-    }
-
-    
+    }  
 });
 
 </script>
-
 </div>
 
 {% endblock scripts %}

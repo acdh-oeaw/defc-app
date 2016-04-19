@@ -1,15 +1,12 @@
 {% extends "defcdb/base_plain.html" %}
 {% block content %}
 
-<!-- Launch modal on page load http://stackoverflow.com/questions/10233550/launch-bootstrap-modal-on-page-load -->
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
         <h3 class="modal-title">Confirm delete</h3>
       </div>
       <div class="modal-body">
@@ -38,6 +35,5 @@ $(window).load(function(){
         $('#myModal').modal('show');
     });
 </script>
-
 
 {% endblock scripts %}

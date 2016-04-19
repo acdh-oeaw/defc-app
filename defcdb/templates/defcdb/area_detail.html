@@ -8,15 +8,10 @@
 <div class="panel panel-default">
 
 <table class="table table-bordered table-striped">
-
-       <!--  <tr>
-                <td>Site</td>
-                <td>{{ object.site }}</td>
-        </tr> -->
         <tr>
                 <td>Site</td>
                 <td>{% for site in sites_list %}
-                <a href="/defcdb/{{ site.get_classname }}/detail/{{ site.id }}"> {{ site }} <br/>
+                <a href="{% url 'defcdb:site_detail' pk=site.id %}"> {{ site }} <br/>
                 </a>
                 {% endfor %}</td>
         </tr>
@@ -123,12 +118,6 @@
                 <td>Comment</td>
                 <td>{{ object.period_comment }}</td>
         </tr>
-        <!-- <tr>
-                <td>Settlement type</td>
-                <td>{% for type in settlementtype_list %}
-                    {{ type }}<br/>
-                    {% endfor %}</td>
-        </tr> -->
         <tr>
                 <td>Settlement type</td>
                 <td>{{ object.settlement_type }}</td>
@@ -171,12 +160,6 @@
                     {{ evidence }}<br/>
                     {% endfor %}</td>
         </tr>
-        <!-- <tr>
-                <td>Quarry exploitation type</td>
-                <td>{% for type in quarryexploitationtype_list %}
-                    {{ type }}<br/>
-                    {% endfor %}</td>
-        </tr> -->
         <tr>
                 <td>Quarry exploitation type</td>
                 <td>{{ object.quarry_exploitation_type }}</td>
@@ -266,27 +249,19 @@
         <tr>
                 <td>Interpretation</td>
                 <td>{% for interpretation in interpretations_list %}
-                        <a href="/defcdb/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/></a>
+                        <a href="{% url 'defcdb:interpretation_detail' pk=interpretation.id %}"> ID {{ interpretation.id }} <br/></a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Finds</td>
                 <td>{% for find in finds_list %}
-                        <a href="/defcdb/{{ find.get_classname }}/detail/{{ find.id }}"> {{ find }} <br/></a>
+                        <a href="{% url 'defcdb:finds_detail' pk=find.id %}"> ID {{ find.id }} {{ find.finds_type }}<br/></a>
                         {% endfor %}</td>
         </tr>
-        <!-- <tr>
-                <td>
-                        <a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-                </td>
-                <td>
-                        <a class ="btn btn-danger btn-sm" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
-                </td>
-        </tr> -->
 </table>
 </div>
-<a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-<a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+<a class ="btn btn-primary btn-sm" href="{% url 'defcdb:area_update' pk=object.id %}">Edit</a>
+<a class ="btn btn-danger btn-sm" href="{% url 'defcdb:area_delete' pk=object.id %}">Delete</a>
 </div>
 
 {% endblock content %}

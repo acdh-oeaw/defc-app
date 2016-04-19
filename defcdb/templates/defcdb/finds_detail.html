@@ -10,14 +10,14 @@
         <tr>
                 <td>Area</td>
                 <td>{% for area in area_list %}
-                        <a href="/defcdb/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/>
+                        <a href="{% url 'defcdb:area_detail' pk=area.id %}"> {{ area }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
         <tr>
                 <td>Research event</td>
                 <td>{% for researchevent in researchevent_list %}
-                        <a href="/defcdb/{{ researchevent.get_classname }}/detail/{{ researchevent.id }}"> {{ researchevent }} <br/>
+                        <a href="{% url 'defcdb:researchevent_detail' pk=researchevent.id %}"> {{ researchevent }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
@@ -141,13 +141,13 @@
         <tr>
                 <td>Interpretation</td>
                 <td>{% for interpretation in interpretation_list %}
-                        <a href="/defcdb/{{ interpretation.get_classname }}/detail/{{ interpretation.id }}"> {{ interpretation }} <br/>
+                        <a href="{% url 'defcdb:interpretation_detail' pk=interpretation.id %}"> {{ interpretation }} <br/>
                         </a>
                         {% endfor %}</td>
         </tr>
 </table>
 </div>
-<a class ="btn btn-primary" href="/defcdb/{{ object.get_classname }}/update/{{ object.id }}"> Edit </a>
-<a class ="btn btn-danger" href="/defcdb/{{ object.get_classname }}/delete/{{ object.id }}"> Delete </a>
+    <a class ="btn btn-primary btn-sm" href="{% url 'defcdb:finds_update' pk=object.id %}">Edit</a>
+    <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:finds_delete' pk=object.id %}">Delete</a>
 </div>
 {% endblock content %}
