@@ -225,7 +225,7 @@
                <span class="caret"></span>
           </a>
             <ul class="dropdown-menu">
-              <li class="dropdown-header">Excavations Data</li>
+              <!-- <li class="dropdown-header">Excavations Data</li> -->
               <li>
                 <a href="{% url 'publicrecords:site_list' %}">Sites</a>
               </li>
@@ -241,22 +241,23 @@
               <li>
                   <a href="{% url 'publicrecords:interpretation_list' %}">Interpretations</a>
               </li>
+              
               <li role="separator" class="divider"></li>
               <li>
-                <a href="{% url 'defcdb:turkey_map' %}">Explore regions and districts of Turkey</a>
+                <a href="{% url 'geolocation:showplaces' %}">Site map</a>
               </li>
               <li role="separator" class="divider"></li>
               <li>
-                <a href="{% url 'geolocation:showplaces' %}">Excavations Map</a>
+                <a href="{% url 'defcdb:turkey_map' %}">Regions and districts of Turkey</a>
               </li>
               <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'image_gallery:public_object_list' %}">Pottery image gallery</a>
               </li>
-              <li role="separator" class="divider"></li>
+              <!-- <li role="separator" class="divider"></li>
               <li>
-                <a href="{% url '3Dmodels:object_list' %}">Browse 3D-Models</a>
-              </li>
+                <a href="{% url '3Dmodels:object_list' %}">Browse 3D Models</a>
+              </li> -->
               <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'defcdb:bibliography' %}">Bibliography</a>
