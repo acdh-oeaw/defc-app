@@ -1,1 +1,147 @@
 {% extends "defcdb/base_detail.html" %}
+
+{% block content %}
+
+<div class="container">
+<h1>3D Model</h1>
+<button id="01" class="btn btn-default">Show all fields</button><br/>
+<p></p>
+<div class="panel panel-default">
+<table class="table table-bordered table-striped">
+        <tr>
+                <td>Model ID</td>
+                <td>{{ object.model_id }}</td>
+        </tr>
+        <tr>
+                <td>Finds</td>
+                <td></td>
+        </tr>
+        <tr>
+                <td>Part</td>
+                <td>{{ object.part }}</td>
+        </tr>
+        <tr>
+                <td>Diameter</td>
+                <td>{{ object.diameter }}</td>
+        </tr>
+        <tr>
+                <td>Wall thickness</td>
+                <td>{{ object.wall_thickness }}</td>
+        </tr>
+        <tr>
+                <td>Surface Treatment i</td>
+                <td>{{ object.surface_treatment_i }}</td>
+        </tr>
+        <tr>
+                <td>Surface Treatment o</td>
+                <td>{{ object.surface_treatment_o }}</td>
+        </tr>
+        <tr>
+                <td>Surface Color i</td>
+                <td>{{ object.surface_color_i }}</td>
+        </tr>
+        <tr>
+                <td>Surface Color o</td>
+                <td>{{ object.surface_color_o }}</td>
+        </tr>
+        <tr>
+                <td>Decoration color</td>
+                <td>{{ object.decoration_color }}</td>
+        </tr>
+        <tr>
+                <td>Decoration description</td>
+                <td>{{ object.decoration_description }}</td>
+        </tr>
+        <tr>
+                <td>Fabric color</td>
+                <td>{{ object.fabric_color }}</td>
+        </tr>
+        <tr>
+                <td>Hardness</td>
+                <td>{{ object.hardness }}</td>
+        </tr>
+        <tr>
+                <td>Sorting</td>
+                <td>{{ object.sorting }}</td>
+        </tr>
+        <tr>
+                <td>Density</td>
+                <td>{{ object.density }}</td>
+        </tr>
+        <tr>
+                <td>Pores</td>
+                <td>{{ object.pores }}</td>
+        </tr>
+        <tr>
+                <td>Core form</td>
+                <td>{{ object.core_form }}</td>
+        </tr>
+        <tr>
+                <td>Core color</td>
+                <td>{{ object.core_color }}</td>
+        </tr>
+        <tr>
+                <td>Inclusion type</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_type }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Inclusion color</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_color }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Inclusion form</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_form }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Inclusion particle size</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_particle_size }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Inclusion frequency</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_frequency }}</br>
+                {% endfor %}</td>
+        </tr>
+        
+        <tr>
+                <td>Inclusion hardness</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_hardness }}</br>
+                {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Inclusion</td>
+            	<td>{% for x in inclusion_list %}
+                {{ x.inclusion_type }} {{ x.inclusion_color }} {{ x.inclusion_form }} {{ x.inclusion_particle_size }} {{ x.inclusion_frequency }} {{ x.inclusion_hardness }}</br>
+                {% endfor %}</td>
+        </tr>
+        <!-- <tr>
+                <td>Subsistence type</td>
+                <td>{% for type in subsistencetype_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Reference</td>
+                <td>{% for ref in reference_list %}
+                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
+                <td>Comment</td>
+                <td>{{ object.comment }}</td>
+        </tr> -->
+</table>
+<!-- </div>
+<a class ="btn btn-primary btn-sm" href="{% url 'defcdb:interpretation_update' pk=object.id %}">Edit</a>
+<a class ="btn btn-danger btn-sm" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">Delete</a>
+</div> -->
+{% endblock content %}

@@ -21,8 +21,23 @@ class Project(models.Model):
 	access_rights = models.CharField(blank=True, null=True, max_length=500)
 
 
+class Inclusion(models.Model):
+	inclusion_id = models.CharField(blank=True, null=True, max_length=100)
+	inclusion_type = models.CharField(blank=True, null=True, max_length=500)
+	inclusion_color = models.CharField(blank=True, null=True, max_length=500)
+	inclusion_form = models.CharField(blank=True, null=True, max_length=500)
+	inclusion_particle_size = models.CharField(blank=True, null=True, max_length=500)
+	inclusion_frequency = models.CharField(blank=True, null=True, max_length=500)
+	inclusion_hardness = models.CharField(blank=True, null=True, max_length=500)
+
+	def __str__(self):
+		return str(self.inclusion_id)+'_'+self.inclusion_type+'_'+self.inclusion_color
+
+
+
 class Threedmodel(models.Model):
 	""" in an 1:1 relation to class Finds"""
+	model_id = models.CharField(blank=True, null=True, max_length=100)
 	finds = models.ForeignKey(Finds, blank=True, null=True)
 	part = models.CharField(blank=True, null=True, max_length=500)
 	diameter = models.CharField(blank=True, null=True, max_length=500)
@@ -40,13 +55,11 @@ class Threedmodel(models.Model):
 	pores = models.CharField(blank=True, null=True, max_length=500)
 	core_form = models.CharField(blank=True, null=True, max_length=500)
 	core_color = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_type = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_color = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_form = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_particle_size = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_frequency = models.CharField(blank=True, null=True, max_length=500)
-	inclusion_hardness = models.CharField(blank=True, null=True, max_length=500)
+	inclusion = models.ManyToManyField(Inclusion, blank=True)
 	resource_metadata = models.ForeignKey(Project, blank=True, null=True)
+	model_file = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
+	model_thumbnail = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
+	model_metadata = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
 
 
 

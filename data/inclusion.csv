@@ -1,0 +1,275 @@
+FabricID,InclusionID,InclType,InclColour,InclForm,InclParticleSize,InclFrequency,InclHardness,realInclusionID
+27,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,1
+35,1,Mica,Silver,Spherical,"0,03 cm",2%,Hard,2
+64,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,3
+34,1,Black,5YR 2.5/1,Sphercal,"0,5 cm",2%,Medium,4
+65,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,5
+33,1,Black,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,6
+66,1,Black,5YR 2.5/1,Spherical,"0,2 cm",27%,Hard,7
+32,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,8
+67,1,Black,5YR 2.5/1,Spherical,"0,5-0,2 cm","2,5%",Hard,9
+31,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,10
+29,1,Mica,Silver,Spherical,"0,03 cm",2%,Hard,11
+68,1,Mica,Silver,Spherical,"0,03 cm","1,5%",Hard,12
+76,1,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",5%,Hard,13
+69,1,Black,5YR 2.5/1,Moderately oblong,"0,1-0,2 cm","7,5%",Hard,14
+62,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,15
+70,1,Mica,Gold,Spherical,"0,03 cm","1,5%",Hard,16
+26,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,17
+71,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,18
+25,1,Mica,Gold,Spherical,"0,03 cm",2%,Hard,19
+48,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,20
+24,1,Mica,Gold,Spherical,"0,03 cm",2%,Hard,21
+73,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,22
+23,1,Mica,Silver,Spherical,"0,03 cm",2%,Hard,23
+75,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,24
+22,1,Mica,Silver,Spherical,"0,03 cm",2%,Hard,25
+21,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,26
+28,1,Mica,Gold,Spherical,"0,03 cm",2%,Hard,27
+56,1,Mica,Gold,Spherical,"0,03-0,05 cm",5%,Hard,28
+49,1,White,5YR 8/1,Spherical,"0,1 cm","1,5%",Hard,29
+1,1,Black,5YR 2.5/1,Spherical,"0,1 cm","2,5%",Hard,30
+50,1,White,5YR 8/1,Spherical,"0,8 cm","1,5%",Hard,31
+47,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,32
+51,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,33
+46,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,34
+52,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,35
+45,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,36
+53,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,37
+54,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,38
+44,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,39
+63,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,40
+43,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,41
+36,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,42
+42,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,43
+57,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,44
+41,1,Black,5YR 2.5/1,Spherical,"0,1 cm",3%,Medium,45
+58,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,46
+40,1,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",3%,Medium,47
+59,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,48
+39,1,Light gray,7.5YR 7/2,Moderate oblong,"0,1 cm",15%,Hard,49
+60,1,Mica,Gold,Moderate oblong,"0,05-0,3 cm",3%,Hard,50
+38,1,Mica,Gold,Spherical,"0,05 cm",2%,Hard,51
+61,1,Mica,Silver,Spherical,"0,03 cm","1,5%",Hard,52
+37,1,White,5YR 8/1,Spherical,"0,1 cm",10%,Hard,53
+72,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,54
+55,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,55
+9,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,56
+15,1,Pinkish white,5YR 8/2,Spherical,"0,1 cm","2,5%",Hard,57
+83,1,White,5YR 8/1,Spherical,"0,2-0,2 cm",3%,Hard,58
+14,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,59
+84,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,60
+13,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,61
+0,1,Mica,,Spherical,"0,03 cm",1%,Hard,62
+12,1,Mica,Gold,Spherical,"0,03-0,05 cm",5%,Hard,63
+86,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,64
+11,1,Dark gray,5YR 4/1,Oblong,"0,1 cm",1%,Medium,65
+87,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,66
+82,1,Mica,Silver,Spherical,"0,03 cm","1,5%",Hard,67
+88,1,Mica,Gold,Spherical,"0,03 cm",3%,Hard,68
+85,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,69
+89,1,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,70
+8,1,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,71
+90,1,Mica,Silver,Spherical,"0,03 cm","7,5%",Hard,72
+30,1,White,5YR 8/1,Spherical,"0,1 cm",2%,Hard,73
+7,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,74
+6,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,75
+5,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,76
+4,1,Mica,Silver,Spherical,"0,05 cm",2%,Hard,77
+3,1,Pinkish Gray,5YR 6/2,Spherical,"0,1 cm",1%,Hard,78
+2,1,Dark reddish brown,5YR 3/4,Spherical,"0,1 cm",1%,Hard,79
+74,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,80
+10,1,Mica,Gold,Spherical,"0,03 cm",2%,Hard,81
+81,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,82
+19,1,White,5YR 8/1,Spherical,"0,05-0,08 cm",15%,Hard,83
+78,1,Mica,Gold,Spherical,"0,03 cm",1%,Hard,84
+20,1,Very dark grey,5YR 3/1,Spherical,"0,1 cm",5%,Hard,85
+17,1,Mica,Silver,Spherical,"0,03 cm",2%,Hard,86
+80,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,87
+18,1,Mica,Gold,Spherical,"0,03-0,05 cm","2,5%",Hard,88
+79,1,Mica,Gold,Spherical,"0,03 cm","2,5%",Hard,89
+77,1,Mica,Silver,Spherical,"0,03 cm",1%,Hard,90
+16,1,Mica,Gold,Spherical,"0,03 cm",2%,Hard,91
+19,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,92
+41,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,93
+23,2,Light Gray,10YR 7/1,Spherical,"0,1 cm",5%,Hard,94
+8,2,Very dark grey,5YR 3/1,Moderate oblong,"0,1 - 0,05 cm",5%,Hard,95
+7,2,White,5YR 8/1,Spherical,"0,1 cm",5%,Hard,96
+1,2,White,5YR 8/1,Spherical,"0,1 - 0,05 cm","2,5%",Hard,97
+40,2,White,5YR 8/1,Spherical,"0,1 cm",3%,Hard,98
+22,2,White,5YR 8/1,Spherical,"0,3-0,5 cm","12,5%",Hard,99
+42,2,Black,5YR 2.5/1,Oblong,"0,1 cm",3 cm,Medium,100
+43,2,White,5YR 8/1,Spherical,"0,1 cm",6%,Hard,101
+6,2,Reddish yellow,5YR 6/8,Moderate oblong,"0,3 cm",> 1%,Medium,102
+5,2,Very dark grey,5YR 3/1,Moderate oblong,"0,1 cm",1%,Medium,103
+45,2,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,104
+4,2,Reddish yellow,5YR 7/8,Spherical,"0,1 cm",1%,Hard,105
+21,2,Black,5YR 2.5/1,Spherical,"0,05 cm",5%,Medium,106
+46,2,Black,5YR 2.5/1,Spherical,"0,05 cm","2,5%",Medium,107
+3,2,Black,"5YR 2,5/1",Spherical,"0,05 cm",1%,Hard,108
+20,2,Mica,Gold,Spherical,"0,03 cm",2%,Hard,109
+2,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm","7,5%",Medium,110
+0,2,White,5YR 8/1,Spherical,"0,1 cm",1%,Medium,111
+44,2,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Medium,112
+24,2,White,5YR 8/1,Spherical,"0,2-0,1 cm",10%,Medium,113
+29,2,White,5TY 8/1,Spherical,"0,1 cm","2,5%",Hard,114
+14,2,Black,5YR 2.5/1,Moderate oblong,"0,4-0,05 cm",5%,Hard,115
+31,2,Black,5YR 2.5/1,Spherical,"0,1-0,05 cm",2%,Medium,116
+16,2,Black,5YR 2.5/1,Spherical,"0,1 cm",10%,Hard,117
+27,2,Black,5YR 2.5/1,Spherical,"0,1 cm","2,5%",Medium,118
+32,2,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,119
+13,2,White,5YR 8/1,Spherical,"0,05-0,1 cm",5%,Hard,120
+33,2,Reddish yellow,5YR 6/8,Moderate oblong,"0,2-0,1 cm","1,5%",Medium,121
+12,2,White,5YR 8/1,Spherical,"0,1 cm",10%,Hard,122
+34,2,Pinkish gray,5YR 7/2,Spherical,"0,1 cm",5%,Hard,123
+39,2,Black,7.5YR 2/0,Moderate oblong,"0,05 cm",5%,Medium,124
+17,2,Black,5YR 2.5/1,Spherical,"0,05 cm",5%,Hard,125
+35,2,Black,5YR 2.5/1,Spherical,"0,05 cm",2%,Medium,126
+11,2,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,127
+36,2,Pinkish gray,5YR 7/2,Spherical,"0,1 cm","2,5%",Hard,128
+25,2,Pinkish white,7.5YR 8/2,Spherical,"0,1 cm",5%,Hard,129
+10,2,Pink,5YR 7/4,Spherical,"0,1 cm",1%,Hard,130
+37,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,131
+47,2,Black,5YR 2.5/1,Spherical,"0,1cm",3%,Hard,132
+38,2,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,133
+18,2,Black,5YR 2.5/1,Spherical,"0,1 cm",6%,Medium,134
+28,2,White,5YR 8/1,Spherical,"0,1 cm",3%,Hard,135
+9,2,Black,5YR 2.5/1,Spherical,"0,04 cm",1%,Medium,136
+26,2,Black,2.5YR 2.5/0,Moderate oblong,"0,1 cm","2,5%",Medium,137
+67,2,White,5YR 8/1,Spherical,"0,1 cm",5%,Hard,138
+86,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm","2,5%",Medium,139
+85,2,Black,5YR 2.5/1,Spherical,"0,05 cm","2,5%",Medium,140
+61,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm","2,5%",Medium,141
+72,2,Black,5YR 2.5/1,Spherical,"0,05 cm",5%,Hard,142
+84,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm",1%,Medium,143
+75,2,Black,5YR 2.5/1,Spherical,"0,1 cm",15%,Hard,144
+63,2,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",3%,Medium,145
+83,2,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",2%,Medium,146
+64,2,White,5YR 8/1,Moderate oblong,"0,1 cm",4%,Hard,147
+65,2,White,5YR 8/2,Spherical,"0,1 cm","7,5%",Hard,148
+82,2,White,5YR 8/1,Spherical,"0,2-0,1 cm","7,5%",Hard,149
+60,2,White,5YR 8/3,Spherical,"0,3-0,1 cm",8%,Hard,150
+81,2,Black,5YR 2.5/1,Spherical,"0,05 cm","2,5%",Medium,151
+62,2,Pinkish gray,7.5YR 6/2,Spherical,"0,05 cm",5%,Hard,152
+80,2,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",2%,Medium,153
+78,2,White,5YR 8/1,Spherical,"0,1 cm",10%,Hard,154
+68,2,Black,5YR 2.5/1,Moderately oblong,"0,05 cm","7,5%",Hard,155
+69,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,156
+79,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm",5%,Hard,157
+70,2,Black,5YR 2.5/1,Moderate oblong,"0,1 cm","2,5%",Medium,158
+71,2,Gray,7.5YR 5/0,Oblong,"1,3-0,5 cm",20%,Hard,159
+74,2,White,5YR 8/1,Spherical,"0,05 cm",5%,Hard,160
+77,2,Black,5YR 2.5/1,Oblong,"0,4 cm",5%,Medium,161
+76,2,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,162
+73,2,Black,5YR 2.5/1,Moderate oblong,"0,05 cm",5%,Hard,163
+66,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,164
+30,2,Mica,Silver,Spherical,"0,3 cm",5%,Hard,165
+53,2,Black,5YR 2.5/1,Spherical,"0,5 cm","2,5%",Medium,166
+59,2,White,5YR 8/1,Moderate oblong,"0,3-0,1 cm",8%,Hard,167
+52,2,Black,5YR 2.5/1,Spherical,"0,5cm",1%,Medium,168
+55,2,White,5YR 8/1,Spherical,"0,1 cm",1%,Hard,169
+56,2,White,5YR 8/1,Spherical,"0,1 cm",2%,Hard,170
+51,2,Black,5YR 2.5/1,Spherical,"0,1 cm",5%,Medium,171
+54,2,Reddish yellow,7.5YR 6/8,Moderate oblong,"0,1 cm","1,5%",Hard,172
+90,2,Black,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,173
+57,2,White,5YR 8/1,Spherical,"0,1 cm",1%,Hard,174
+88,2,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",3%,Hard,175
+50,2,Mica,Silver,Spherical,"0,03 cm",1%,Hard,176
+58,2,White,5YR 8/1,Spherical,"0,1 cm",5%,Hard,177
+49,2,Black,5YR 2.5/1,Spherical,"0,08 cm",1%,Medium,178
+89,2,White,10YR 8/1,Moderately oblong,"0,3-0,1 cm","7,5%",Hard,179
+87,2,Black,5YR 2.5/1,Spherical,"0,03 cm","1,5%",Medium,180
+21,3,White,5YR 8/1,Spherical,"0,1 -0,05 cm","2,5%",Hard,181
+34,3,Mica,Gold,Spherical,"0,03 cm",3%,Hard,182
+2,3,White,5YR 8/1,Spherical,"0,05 cm",1%,Medium,183
+1,3,Dark reddish brown,5YR 3/4,Spherical,"0,05 cm",1%,Soft,184
+75,3,White,5YR 8/1,Spherical,"0,3-0,1 cm",10%,Hard,185
+8,3,Yellowih red,5YR 5/6,Spherical,"0,1 cm",1%,Hard,186
+73,3,White,5YR 8/1,Spherical,"0,05 cm","2,5%",Hard,187
+49,3,Mica,Silver,Spherical,"0,03 cm",1%,Hard,188
+77,3,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,189
+79,3,White,5YR 8/1,Spherical,"0,05 cm","7,5%",Hard,190
+0,3,Black,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,191
+76,3,Yellowish red,5YR 5/6,Spherical,"0,1 cm","2,5%",Medium,192
+20,3,White,5YR 8/1,Spherical,"0,2 - 0,05 cm","1,5%",Hard,193
+19,3,Black,5YR 2.5/1,Spherical,"0,1 cm","2,5%",Medium,194
+14,3,White,5YR 8/1,Spherical,"0,1 cm",1%,Hard,195
+86,3,White,5YR 8/1,Spherical,"0,05 cm","2,5%",Hard,196
+10,3,Black,5YR 2.5/1,Moderate oblong,"0,05 cm","2,5%",Hard,197
+85,3,White,5YR 8/1,Spherical,"0,1cm","1,5%",Hard,198
+88,3,Light brownish grey,10Y 6/2,Spherical,"0,1 cm",2%,Hard,199
+84,3,White,5YR 8/1,Spherical,"0,05 cm",3%,Hard,200
+12,3,Black,5YR 2.5/1,Spherical,"0,1 cm",1%,Hard,201
+89,3,Mica,Silver,Spherical,"0,03 cm","2,5%",Hard,202
+80,3,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,203
+82,3,Black,5YR 2.5/1,Spherical,"0,1 cm",1%,Medium,204
+18,3,White,5YR 2.5/1,Spherical,"0,1 cm",1%,Hard,205
+30,3,Dark Gray,5YR 4/1,Spherical,"0,05 cm",3%,Medium,206
+81,3,White,5YR 8/1,Spherical,"0,1 cm",5%,Hard,207
+3,3,Mica,Silver,Spherical,"0,03 cm",1%,Hard,208
+4,3,Dark gray,5YR 4/1,Spherical,"0,2 cm",1%,Hard,209
+16,3,White,5YR 8/1,Moderate oblong,"0,3 cm",>1%,Hard,210
+83,3,Mica,Silver,Spherical,"0,03 cm",1%,Hard,211
+78,3,Black,5YR 2.5/1,Spherical,"0,1 cm","2,5%",Medium,212
+33,3,Mica,Gold,Spherical,"0,03 cm",1%,Hard,213
+6,3,Pink,5YR 8/3,Spherical,"0,1 cm",> 1%,Hard,214
+57,3,Black,5YR 2.5/1,Moderate obong,"0,1 cm","1,5%",Medium,215
+64,3,Black,5YR 2/1,Moderate oblong,"0,3-0,1 cm",5%,Medium,216
+63,3,White,5YR 8/1,Spherical,"0,1 cm",2%,Hard,217
+62,3,Black,5YR 2.5/1,Oblong,"0,1 cm",4%,Medium,218
+74,3,Black,5YR 2.5/1,Moderate oblong,"0,05 cm",1%,Medium,219
+61,3,White,5YR 8/1,Moderate oblong,"0,1-0,05 cm",1%,Hard,220
+71,3,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,221
+60,3,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",5%,Medium,222
+37,3,Black,5YR 2.5/1,Spherical,"0,05",2%,Medium,223
+59,3,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",5%,Medium,224
+38,3,Blacke,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,225
+32,3,Black,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,226
+39,3,Glimmer,Gold,Spherical,"0,03 cm",1%,Hard,227
+35,3,White,5YR 8/1,Spherical,"0,1 cm",2%,Hard,228
+40,3,Glimmer,Silver,Spherical,"0,03 cm",1%,Hard,229
+41,3,White,5YR 8/2,Spherical,"0,1 cm","3,5%",Hard,230
+56,3,Black,5YR 2.5/1,Moderate oblong,"0,1 cm",2%,Medium,231
+42,3,White,5YR 8/1,Spherical,"0,1 cm",3 cm,Hard,232
+54,3,White,5YR 8/1,Spherical,"0,1 cm",1%,Hard,233
+43,3,Black,5YR 2.5/1,Spherical,"0,05 cm",3%,Medium,234
+44,3,Pinkish gray,7.5YR 6/2,Spherical,"0,2-0,1 cm",6%,Medium,235
+52,3,Light gray,5YR 7/1,Spherical,"0,3 cm","0,5%",Hard,236
+45,3,Black,5YR 2.5/1,Spherical,"0,05 cm","2,5%",Medium,237
+51,3,White,5YR 8/1,Spherical,"0,1 cm","1,5%",Hard,238
+58,3,Black,5YR 2.5/1,Spherical,"0,1 cm","2,5%",Medium,239
+25,3,Black,7.5YR 2/0,Spherical,"0,05 cm",2%,Medium,240
+22,3,Black,5YR 2.5/1,Moderate oblong,"0,1 cm","7,5%",Medium,241
+72,3,White,5YR 8/1,Spherical,"0,05 cm",2.5%,Hard,242
+23,3,Very pale brown,10YR 7/2,Spherical,"0,1 cm",10%,Hard,243
+47,3,White,5YR 8/1,Spherical,"0,1cm",1%,Hard,244
+24,3,Black,5YR 2.5/1,Spherical,"0,05 cm","2,5%",Medium,245
+36,3,Black,5YR 2.5/1,Spherical,"0,1 cm","1,5%",Medium,246
+70,3,White,5YR 8/1,Spherical,"0,1 cm",1%,Hard,247
+65,3,Black,5YR 2.5/1,Spherical,"0,1 cm","7,5%",Medium,248
+69,3,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,249
+26,3,White,5YR 8/1,Spherical,"0,1 cm","1,5%",Hard,250
+31,3,White,5YR 8/1,Spherical,"0,05 cm",1%,Hard,251
+66,3,Pink,5YR 7/6,Spherical,"0,1 cm",2%,Hard,252
+27,3,White,5YR 8/1,Spherical,"0,1 cm","2,5%",Hard,253
+29,3,Black,5YR 2.5/1,Spherical,"0,05 cm",1%,Medium,254
+28,3,Black,5YR 2.5/1,Spherical,"0,05 cm","1,5%",Medium,255
+67,3,Mica,Silver,Spherical,"0,03 cm",1%,Hard,256
+68,3,White,5YR 8/1,Spherical,"0,05 cm","2,5%",Hard,257
+68,4,Mica,Gold,Spherical,"0,03 cm",1%,Hard,258
+75,4,Red,2.5YR 4/6,Spherical,"0,1 cm",4%,Hard,259
+44,4,Black,5YR 2.5/1,Spherical,"0,1 cm",4%,Medium,260
+8,4,Mica,Silver,Spherical,"0,03 cm",1%,Hard,261
+23,4,Black,10YR 8/1,Spherical,"0,1 cm","2,5%",Medium,262
+56,4,Yellowish red,5YR 5/8,Spherical,"0,1 cm",2%,Medium,263
+74,4,Mica,Gold,Spherical,"0,03 cm",>1%,Hard,264
+67,4,Red,2.5YR 5/8,Spherical,"0,1-0,05 cm","2,5%",Hard,265
+24,4,Yellow,10YR 8/6,Spherical,"0,1 cm",1%,Medium,266
+6,4,Very dark grey,5YR 3/1,Spherical,"0,05 cm",1%,Hard,267
+37,4,Yellowish red,5YR 5/6,Moderate oblong,"0,1 cm",2%,Medium,268
+39,4,White,5YR (71,Moderate oblong,"0,1 cm",4%,Hard,269
+79,4,Dark gray,10YR 4/1,Spherical,"0,1 cm",15%,Hard,270
+3,4,Pink,5YR 8/3,Spherical,"0,1 cm",1%,Hard,271
+4,4,Mica,Gold,Spherical,"0,03 cm",1%,Hard,272
+24,5,Mica,Silver,Spherical,"0,03 cm",1%,Hard,273
+67,5,Reddish yellow,5YR 7/6,Spherical,"0,1 cm",5%,Medium,274

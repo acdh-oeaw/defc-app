@@ -29,6 +29,7 @@ class ThreedmodelDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ThreedmodelDetail, self).get_context_data(**kwargs)
         current_object = self.object
+        context['inclusion_list'] = current_object.inclusion.all()
         #context['region_list'] = current_object.region.all()
         #context['region_list'] = DC_region.objects.filter(imagethesaurus=current_object.id)
         # context['institution_list'] = current_object.institution.all()

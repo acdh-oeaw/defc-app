@@ -1,1 +1,8 @@
 {% extends "defcdb/listBase.html" %}
+{% block tablebody %}
+<ul>
+	{% for x in object_list %}
+	<li><a href="{% url '3Dmodels:update_file' pk=x.id %}">{{ x.model_id }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock tablebody %}
