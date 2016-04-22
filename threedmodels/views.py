@@ -30,11 +30,6 @@ class ThreedmodelDetail(DetailView):
         context = super(ThreedmodelDetail, self).get_context_data(**kwargs)
         current_object = self.object
         context['inclusion_list'] = current_object.inclusion.all()
-        #context['region_list'] = current_object.region.all()
-        #context['region_list'] = DC_region.objects.filter(imagethesaurus=current_object.id)
-        # context['institution_list'] = current_object.institution.all()
-        # context['specialanalysis_list'] = current_object.special_analysis.all()
-        # context['reference_list'] = current_object.reference.all()
         # context['finds_list'] = Finds.objects.filter(research_event=current_object.id)
         return context
 

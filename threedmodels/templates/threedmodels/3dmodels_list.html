@@ -2,7 +2,42 @@
 {% block tablebody %}
 <ul>
 	{% for x in object_list %}
-	<li><a href="{% url '3Dmodels:update_file' pk=x.id %}">{{ x.model_id }}</a></li>
+	<!-- <li><a href="{% url '3Dmodels:update_file' pk=x.id %}">{{ x.model_id }}</a></li> -->
+
+
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 thumbnail-item">
+    <div class="thumbnail">
+        <a class="thumbnail-img" href="{% url '3Dmodels:update_file' pk=x.id %}">
+            <img class="img-responsive " src="{{ x.model_thumbnail }}" title="3d Model">
+        </a>
+        
+    </div>
+    <div class="caption">
+                <h5 class="title">ID {{ x.model_id }}</h5>
+                <h5>Add finds here</h5>
+                <h5>Add site here</h5>
+            <!-- <div class="thumbnail-footer">
+                <p class="community-info pull-right">
+				Add some info here
+                </p>
+            </div> -->
+        </div>
+</div>
+
+
+<!--like in pottery gallery -->
+<!-- <div class="thumbnail">
+  <a href="{% url '3Dmodels:detail' pk=x.id %}">
+    <img class="img-responsive " src="{{ x.model_thumbnail }}" title="3d Model">
+  </a>
+  <div class="desc">
+    ID {{ x.model_id }}<br/>
+    {{ x.finds }}<br/>
+    {{ x.finds.site.region }}<br/>
+  </div>
+</div><br/> -->
+
+
 	{% endfor %}
 </ul>
 {% endblock tablebody %}
