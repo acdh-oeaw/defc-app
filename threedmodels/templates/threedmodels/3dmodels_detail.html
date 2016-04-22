@@ -1,12 +1,46 @@
 {% extends "defcdb/base_detail.html" %}
+{% load staticfiles %}
+ {% block scriptHeader %}
+ <!--STYLESHEET-->
+<link type="text/css" rel="stylesheet" href="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/stylesheet/3dhop.css"/>  
+<!--SPIDERGL-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/spidergl.js"></script>
+<!--JQUERY-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/jquery.js"></script>
+<!--PRESENTER-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/presenter.js"></script>
+<!--3D MODELS LOADING AND RENDERING-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/nexus.js"></script>
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/ply.js"></script>
+<!--TRACKBALLS-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_sphere.js"></script>
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_turntable.js"></script>
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_turntable_pan.js"></script>
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_pantilt.js"></script>
+<!--UTILITY-->
+<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/init.js"></script>
+ {% endblock %}
 
 {% block content %}
 
 <div class="container">
-<h1>3D Model</h1>
+<div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
+            <div id="toolbar">
+                <img id="home"     title="Home"                  src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/home.png"   /><br/>
+                <img id="zoomin"   title="Zoom In"               src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/zoomin.png" /><br/>
+                <img id="zoomout"  title="Zoom Out"              src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/zoomout.png"/><br/>
+                <img id="light_on" title="Disable Light Control" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/light_on.png" style="position:absolute; visibility:hidden;"/>
+                <img id="light"    title="Enable Light Control"  src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/light.png"/><br/>
+                <img id="full_on"  title="Exit Full Screen"      src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/full_on.png" style="position:absolute; visibility:hidden;"/>
+                <img id="full"     title="Full Screen"           src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/full.png"   />
+            </div>
+        <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
+            <canvas id="draw-canvas"/>
+        </div>
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
 <div class="panel panel-default">
+
 <table class="table table-bordered table-striped">
         <tr>
                 <td>Model ID</td>
@@ -145,3 +179,36 @@
 <a class ="btn btn-danger btn-sm" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">Delete</a>
 </div> -->
 {% endblock content %}
+{% block scripts %}
+<script type="text/javascript">
+    var presenter = null;
+    function setup3dhop() { 
+        presenter = new Presenter("draw-canvas");
+        var meshUrl = "http://{{ request.get_host }}/media/{{ object.model_file }}";
+        presenter.setScene({
+            meshes: {
+                "3dmodel" : { url: meshUrl }
+            },
+            modelInstances : {
+                "Model1" : { mesh : "3dmodel" } 
+            }
+        });
+    }
+
+    function actionsToolbar(action) {
+        if(action=='home') presenter.resetTrackball(); 
+        else if(action=='zoomin') presenter.zoomIn();
+        else if(action=='zoomout') presenter.zoomOut(); 
+        else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
+        else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+    }
+
+    $(document).ready(function(){
+        init3dhop();
+        setup3dhop();
+        resizeCanvas(1200,800);
+        moveToolbar(2,2);
+    });
+</script>
+
+{% endblock scripts %}
