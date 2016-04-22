@@ -1,18 +1,77 @@
-{% extends "defcdb/listBase.html" %}
-{% block tablebody %}
-<ul>
+{% extends "defcdb/base_detail.html" %}
+
+{% block scriptHeader %}
+<style>
+.thumbnail_model {
+	margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    background-color: white;
+    /*margin-bottom: 20px;
+    padding: 0;
+    position: relative;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;*/
+    }
+.thumbnail_model:hover {
+    border: 1px solid #777;
+}
+.caption {
+	text-align: center;
+}
+.desc {
+    padding: 15px;
+    text-align: center;
+    height: auto;
+
+}
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+<h1>3D Models gallery</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li class="active">Data Exploration - Browse 3D Models</li>
+</ol>
+<p></p>
+<!-- <div class="panel panel-info">
+    <div class="panel-header" id="info-panel">
+    <h4>3D Models</h4>
+  </div>
+</div> -->
+
+<!-- <h1>3D Models</h1> -->
+
+
+	
 	{% for x in object_list %}
+
 	<!-- <li><a href="{% url '3Dmodels:update_file' pk=x.id %}">{{ x.model_id }}</a></li> -->
 
 
-<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 thumbnail-item">
-    <div class="thumbnail">
-        <a class="thumbnail-img" href="{% url '3Dmodels:update_file' pk=x.id %}">
-            <img class="img-responsive " src="{{ x.model_thumbnail }}" title="3d Model">
+<div class="col-md-3 thumbnail_model">
+    
+
+        <a class="thumbnail-img" href="{% url '3Dmodels:detail' pk=x.id %}">
+            <img class="img-responsive " src="http://{{ request.get_host }}/media/{{ x.model_thumbnail }}" title="3D Model ID {{ x.model_id }}">
         </a>
+
         
-    </div>
-    <div class="caption">
+    
+    <div class="desc">
                 <h5 class="title">ID {{ x.model_id }}</h5>
                 <h5>Add finds here</h5>
                 <h5>Add site here</h5>
@@ -21,23 +80,15 @@
 				Add some info here
                 </p>
             </div> -->
-        </div>
+        {% if user.is_authenticated %}
+        <a class ="btn btn-danger btn-sm" href="{% url '3Dmodels:update_file' pk=x.id %}">update</a>
+        {% endif %}
+     </div><br/>
+     
 </div>
 
-
-<!--like in pottery gallery -->
-<!-- <div class="thumbnail">
-  <a href="{% url '3Dmodels:detail' pk=x.id %}">
-    <img class="img-responsive " src="{{ x.model_thumbnail }}" title="3d Model">
-  </a>
-  <div class="desc">
-    ID {{ x.model_id }}<br/>
-    {{ x.finds }}<br/>
-    {{ x.finds.site.region }}<br/>
-  </div>
-</div><br/> -->
-
-
 	{% endfor %}
-</ul>
-{% endblock tablebody %}
+	
+
+</div>
+{% endblock content %}
