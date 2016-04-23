@@ -40,7 +40,7 @@ def upload_file(request):
         form = ThreedmodelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('threedmodels:object_list')
+            return redirect('3Dmodels:object_list')
         else:
             return render(request, 'threedmodels/create_virtualobject.html', {'form': form})
     else:
@@ -55,7 +55,7 @@ def update_file(request, pk):
         form = ThreedmodelForm(request.POST, request.FILES, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('threedmodels:object_list')
+            return redirect('3Dmodels:object_list')
         else:
             return render(request, 'threedmodels/create_virtualobject.html', {'form': form})
     else:
