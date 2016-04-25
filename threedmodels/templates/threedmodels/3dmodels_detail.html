@@ -50,12 +50,16 @@
 
 <table class="table table-bordered table-striped">
         <tr>
-                <td >Model ID</td>
+                <td class="col-sm-2">Model ID</td>
                 <td>{{ object.model_id }}</td>
         </tr>
         <tr>
                 <td>Finds</td>
-                <td></td>
+                <td>
+                    {% if object.finds %}
+                    <a href="{% url 'publicrecords:finds_detail' pk=object.finds.id %}">ID  {{ object.finds.id }} {{ object.finds.finds_type }}</a>
+                    {% endif %}
+                </td>
         </tr>
         <tr>
                 <td>Part</td>
@@ -163,6 +167,16 @@
             	<td>{% for x in inclusion_list %}
                 {{ x.inclusion_type }} {{ x.inclusion_color }} {{ x.inclusion_form }} {{ x.inclusion_particle_size }} {{ x.inclusion_frequency }} {{ x.inclusion_hardness }}</br>
                 {% endfor %}</td>
+        </tr>
+         <tr>
+                <td>Model metadata</td>
+                <td><a href="http://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br>
+                </td>
+        </tr>
+        <tr>
+                <td>Model parameters</td>
+                <td><a href="http://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br>
+                </td>
         </tr>
 </table>
 

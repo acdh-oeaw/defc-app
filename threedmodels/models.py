@@ -58,8 +58,9 @@ class Threedmodel(models.Model):
 	inclusion = models.ManyToManyField(Inclusion, blank=True)
 	resource_metadata = models.ForeignKey(Project, blank=True, null=True)
 	model_file = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
-	model_thumbnail = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
-	model_metadata = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
+	model_thumbnail = models.FileField(upload_to='static/threedmodels/thumbnails', blank=True, null=True)
+	model_metadata = models.FileField(upload_to='static/threedmodels/metadata', blank=True, null=True)
+	model_parameters = models.FileField(upload_to='static/threedmodels/parameters', blank=True, null=True)
 
 
 

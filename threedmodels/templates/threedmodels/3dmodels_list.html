@@ -4,14 +4,15 @@
 <style>
 .thumbnail_model {
 	margin: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #009688;
     float: left;
-    width: 180px;
+    width: 275px; 
     background-color: white;
     padding: 0;
     padding-bottom: 0;
     margin-bottom: 20px;
     display: block;
+    
     /*margin-bottom: 20px;
     padding: 0;
     position: relative;
@@ -27,23 +28,25 @@
     transition: all 0.2s ease-in-out;*/
     }
 .thumbnail_model:hover {
-    border: 1px solid #777;
+    border: 2px solid #222222;
 }
 .thumbnail_model img {
     width: 100%;
     height: auto;
-    border: 1px solid #ccc;
+    border-bottom: 2px solid #009688;
 }
 
 .desc {
     padding: 1px;
     text-align: center;
     height: auto;
-    /*background-color: #009688;
-    color:white;*/
+    background-color: #009688;
+    color:white;
+    /*opacity: 0.7;*/
     /*border: 1px solid #ccc;*/
 
 }
+
 </style>
 
 {% endblock %}
@@ -84,11 +87,11 @@
     <div class="desc">
                 <h5 class="title">ID {{ x.model_id }}</h5>
                 <h5>Finds ID  {{ x.finds.id }} {{ x.finds.finds_type }}</h5>
-                <h5>Site {{ x.finds.area.site }}</h5>    
+                <h5>Site {{ x.finds.area.site.name }}</h5>    
 
                 <!-- add links to public detail records of site and finds -->
 
-                
+
             <!-- <div class="thumbnail-footer">
                 <p class="community-info pull-right">
 				Add some info here
@@ -97,7 +100,7 @@
         {% if user.is_authenticated %}
         <a class ="btn btn-danger btn-sm" href="{% url '3Dmodels:update_file' pk=x.id %}">update</a>
         {% endif %}
-     </div><br/>
+     </div>
      
 </div>
 
