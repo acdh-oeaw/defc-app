@@ -8,6 +8,10 @@
     float: left;
     width: 180px;
     background-color: white;
+    padding: 0;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    display: block;
     /*margin-bottom: 20px;
     padding: 0;
     position: relative;
@@ -25,13 +29,19 @@
 .thumbnail_model:hover {
     border: 1px solid #777;
 }
-.caption {
-	text-align: center;
+.thumbnail_model img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
 }
+
 .desc {
-    padding: 15px;
+    padding: 1px;
     text-align: center;
     height: auto;
+    /*background-color: #009688;
+    color:white;*/
+    /*border: 1px solid #ccc;*/
 
 }
 </style>
@@ -73,8 +83,12 @@
     
     <div class="desc">
                 <h5 class="title">ID {{ x.model_id }}</h5>
-                <h5>Add finds here</h5>
-                <h5>Add site here</h5>
+                <h5>Finds ID  {{ x.finds.id }} {{ x.finds.finds_type }}</h5>
+                <h5>Site {{ x.finds.area.site }}</h5>    
+
+                <!-- add links to public detail records of site and finds -->
+
+                
             <!-- <div class="thumbnail-footer">
                 <p class="community-info pull-right">
 				Add some info here

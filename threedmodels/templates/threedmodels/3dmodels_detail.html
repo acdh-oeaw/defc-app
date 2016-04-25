@@ -24,6 +24,13 @@
 {% block content %}
 
 <div class="container">
+    <h1>3D Models gallery</h1>
+<ol class="breadcrumb">
+  <li><a href="/">DEFC</a></li>
+  <li><a href="{% url '3Dmodels:object_list' %}">Data Exploration - Browse 3D Models</a></li>
+  <li class="active">3D Model {{ object.model_id }}</li>
+</ol>
+<p></p>
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
             <div id="toolbar">
                 <img id="home"     title="Home"                  src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/home.png"   /><br/>
@@ -36,14 +43,14 @@
             </div>
         <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
             <canvas id="draw-canvas"/>
-        </div>
+        </div><br/>
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
 <div class="panel panel-default">
 
 <table class="table table-bordered table-striped">
         <tr>
-                <td>Model ID</td>
+                <td >Model ID</td>
                 <td>{{ object.model_id }}</td>
         </tr>
         <tr>
@@ -152,34 +159,30 @@
                 {% endfor %}</td>
         </tr>
         <tr>
-                <td>Inclusion</td>
+                <td>Inclusion (full record)</td>
             	<td>{% for x in inclusion_list %}
                 {{ x.inclusion_type }} {{ x.inclusion_color }} {{ x.inclusion_form }} {{ x.inclusion_particle_size }} {{ x.inclusion_frequency }} {{ x.inclusion_hardness }}</br>
                 {% endfor %}</td>
         </tr>
-        <!-- <tr>
-                <td>Subsistence type</td>
-                <td>{% for type in subsistencetype_list %}
-                    {{ type }}<br/>
-                    {% endfor %}</td>
-        </tr>
-        <tr>
-                <td>Reference</td>
-                <td>{% for ref in reference_list %}
-                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }}, {{ ref.title }}, {{ ref.publication_year }}, {{ ref.place }} </a><br/>
-                    {% endfor %}</td>
-        </tr>
-        <tr>
-                <td>Comment</td>
-                <td>{{ object.comment }}</td>
-        </tr> -->
 </table>
-<!-- </div>
-<a class ="btn btn-primary btn-sm" href="{% url 'defcdb:interpretation_update' pk=object.id %}">Edit</a>
-<a class ="btn btn-danger btn-sm" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">Delete</a>
-</div> -->
+
 {% endblock content %}
 {% block scripts %}
+<script type="text/javascript">
+$(document).ready(function(){
+    $("td:empty").parent().hide();
+    $("td").filter(function(){
+      return $(this).text() === "None";
+    }).parent().hide();
+    $("#01").click(function(){
+            var emptytd = $("td:empty");
+            $(emptytd).parent().toggle("slow");
+            var nonetd = $("td").filter(function(){
+            return $(this).text() === "None"});
+            $(nonetd).parent().toggle("slow");
+});
+    });
+</script>
 <script type="text/javascript">
     var presenter = null;
     function setup3dhop() { 
