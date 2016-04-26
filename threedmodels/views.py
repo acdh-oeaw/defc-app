@@ -32,6 +32,9 @@ class ThreedmodelDetail(DetailView):
         context = super(ThreedmodelDetail, self).get_context_data(**kwargs)
         current_object = self.object
         context['inclusion_list'] = current_object.inclusion.all()
+        # if current_object.finds.pottery_decoration is not None:
+        #     context['pottery_decoration_list'] = Finds.objects.filter(
+        #         pottery_decoration=current_object.finds.pottery_decoration.all) #umcomment when there are finds
         # context['finds_list'] = Finds.objects.filter(research_event=current_object.id)
         return context
 
