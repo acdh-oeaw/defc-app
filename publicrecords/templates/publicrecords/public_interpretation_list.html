@@ -11,7 +11,6 @@
         
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>ID</th>
       <th>Production type</th>
       <th>Subsistence type</th>
       <th>Site</th>
@@ -22,7 +21,6 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>ID</th>
       <th>Production type</th>
       <th>Subsistence type</th>
       <th>Site</th>
@@ -36,10 +34,6 @@
    <tr>
     <td>
         <input type="checkbox">
-    </td>
-    <td><a href="{% url 'publicrecords:interpretation_detail' pk=object.id %}">
-      {{ object.id }}
-      </a> 
     </td>
     <td>
       {% for x in object.production_type.all %}
@@ -71,7 +65,7 @@
       {% endfor %} 
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:interpretation_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:interpretation_detail' pk=object.id %}">view ID {{ object.id }}</a> 
     </td>
    </tr>  
     {% endfor %}
