@@ -10,21 +10,23 @@
   <thead>  
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Finds ID</th>
+      <!-- <th>Finds ID</th> -->
       <th>Finds type</th>
-      <th>Area</th>
       <th>Site</th>
+      <th>Area</th>
+      <th>Period</th>
       <th>Research Event</th>
       <th>View full record</th>
   </thead>
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Finds ID</th>
+      <!-- <th>Finds ID</th> -->
       <th>Finds type</th>
-      <th>Area</th>
       <th>Site</th>
-      <th>Research Event</th>      
+      <th>Area</th>
+      <th>Period</th>
+      <th>Research Event</th>
       <th>View full record</th>
     </tr>
   </tfoot>
@@ -34,10 +36,10 @@
     <td>
         <input type="checkbox">
     </td>
-    <td><a href="{% url 'publicrecords:finds_detail' pk=object.id %}">
+<!--     <td><a href="{% url 'publicrecords:finds_detail' pk=object.id %}">
       {{ object.id }}
       </a> 
-    </td>
+    </td> -->
     <td>
       {% if object.finds_type.name == "pottery" %}
         {{ object.finds_type }} {{ object.pottery_form.name|default_if_none:"" }}
@@ -47,15 +49,20 @@
         {{ object.finds_type }}
       {% endif %}
     </td>
+     <td>
+      <a href="{% url 'publicrecords:site_detail' pk=object.area.site.id %}">
+        {{ object.area.site.name }}
+      </a>
+    </td>
     <td>
       <a href="{% url 'publicrecords:area_detail' pk=object.area.id %}">
         ID {{ object.area.id }} {{ object.area.area_type }}
       </a>
     </td>
     <td>
-      <a href="{% url 'publicrecords:site_detail' pk=object.area.site.id %}">
-        {{ object.area.site.name }}
-      </a>
+      {% for period in object.area.period.all %}
+      <li>{{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})</li>
+      {% endfor %}
     </td>
     <td>
       {% for x in object.research_event.research_type.all %}
