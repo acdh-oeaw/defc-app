@@ -64,6 +64,18 @@
                 <td class="col-sm-2">Country</td>
                 <td>{{ object.province.region.country }}</td>
         </tr>
+        {% for area in object.area_set.all %}
+        {% if area.period.all %}
+        <tr>
+            <td>Period</td>
+            <td>
+           {% for period in area.period.all %}
+           {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
+           {% endfor %}
+            </td>
+       </tr>
+      {% endif %}
+      {% endfor %}
         <tr>
                 <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
@@ -142,7 +154,7 @@
 {% endif %}
 {% if areas_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-tent"></span>
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-record"></span>
     Areas in this Site
   </div>
 </div>
