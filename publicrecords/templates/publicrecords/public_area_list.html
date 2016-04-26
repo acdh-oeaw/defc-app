@@ -10,22 +10,24 @@
         
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Area ID</th>
+      <!-- <th>Area ID</th> -->
       <th>Area type</th>
       <th>Site</th>
       <th>Region</th>
-      <th>District</th>  
+      <th>District</th>
+      <th>Period</th>  
       <th>Finds type</th>
       <th>View full record</th>
   </thead>
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Area ID</th>
+      <!-- <th>Area ID</th> -->
       <th>Area type</th>
       <th>Site</th>
       <th>Region</th>
-      <th>District</th>  
+      <th>District</th>
+      <th>Period</th>  
       <th>Finds type</th>
       <th>View full record</th>
     </tr>
@@ -36,9 +38,9 @@
     <td>
         <input type="checkbox">
       </td>
-      <td>
+     <!--  <td>
       <a href="{% url 'publicrecords:area_detail' pk=object.id %}">{{ object.id }}</a> 
-    </td>
+    </td> -->
     <td>
       {{ object.area_type }}
     </td>
@@ -54,6 +56,11 @@
       {{ object.site.province.name }} 
     </td>
     <td>
+      {% for period in object.period.all %}
+      <li>{{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})</li>
+      {% endfor %}
+    </td>
+    <td>
       {% if object.finds_set.all %}
       {% for x in object.finds_set.all %}
           <a href="{% url 'publicrecords:finds_detail' pk=x.id %}">
@@ -64,7 +71,7 @@
       {% endif %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:area_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:area_detail' pk=object.id %}">view ID {{ object.id }}</a> 
     </td>
    </tr>  
     {% endfor %}

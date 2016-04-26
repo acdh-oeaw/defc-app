@@ -13,6 +13,7 @@ from defcdb.models import Finds
 from .forms import ThreedmodelForm
 # Create your views here.
 
+
 class ThreedmodelListView(generic.ListView):
     model = Threedmodel
     template_name = 'threedmodels/3dmodels_list.html'
@@ -26,6 +27,7 @@ class ThreedmodelListView(generic.ListView):
 class ThreedmodelDetail(DetailView):
     model = Threedmodel
     template_name = 'threedmodels/3dmodels_detail.html'
+
     def get_context_data(self, **kwargs):
         context = super(ThreedmodelDetail, self).get_context_data(**kwargs)
         current_object = self.object

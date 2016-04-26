@@ -22,6 +22,10 @@ class ImageThesaurusListView(generic.ListView):
     def get_queryset(self):
         return ImageThesaurus.objects.all()
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ImageThesaurusListView, self).dispatch(*args, **kwargs)
+
 
 class ImageThesaurusPublicListView(generic.ListView):
     model = ImageThesaurus
@@ -31,6 +35,10 @@ class ImageThesaurusPublicListView(generic.ListView):
 
     def get_queryset(self):
         return ImageThesaurus.objects.all()
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ImageThesaurusPublicListView, self).dispatch(*args, **kwargs)
 
 
 class ImageThesaurusDetail(DetailView):
