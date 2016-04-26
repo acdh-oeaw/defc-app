@@ -40,7 +40,7 @@
        <!--  <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
         {{ object.id }}</a>
         </td> -->
-    <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+    <td><a href="{% url 'publicrecords:site_detail' pk=object.id %}">
       {{ object.name }}</a>
     </td>
     <td>
@@ -62,7 +62,7 @@
     <td>
       {% if object.area_set.all %}
       {% for x in object.area_set.all %}
-        <a href="/publicrecords/area/detail/{{ x.id }}">
+        <a href="{% url 'publicrecords:area_detail' pk=x.id %}">
           ID {{ x.id }} {{ x.area_type }}
         </a><br/>
       {% endfor %}
