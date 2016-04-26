@@ -61,7 +61,7 @@
     </td>
     <td>
       {% for period in object.area.period.all %}
-      <li>{{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})</li>
+      {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
       {% endfor %}
     </td>
     <td>
@@ -81,7 +81,7 @@
       {% endif %}
     </td>
     <td>
-      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:finds_detail' pk=object.id %}">view</a> 
+      <a class ="btn btn-primary btn-sm"  href="{% url 'publicrecords:finds_detail' pk=object.id %}">view {{ object.id }}</a> 
     </td>
    </tr>  
   {% endfor %}
