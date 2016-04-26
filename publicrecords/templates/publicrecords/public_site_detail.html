@@ -64,18 +64,25 @@
                 <td class="col-sm-2">Country</td>
                 <td>{{ object.province.region.country }}</td>
         </tr>
-        {% for area in object.area_set.all %}
-        {% if area.period.all %}
         <tr>
             <td>Period</td>
             <td>
-           {% for period in area.period.all %}
-           {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
-           {% endfor %}
+            {% if object.area_set.all %}
+            {% for area in object.area_set.all %}
+            {% for period in area.period.all %}
+            {{ period.period_name }} 
+                    {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
+                    {{ period.start_date1_BC }} - {{ period.end_date1_BC }}<br/>
+                    {% else %}</br>
+                    {% endif %}
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
+        
             </td>
+            
        </tr>
-      {% endif %}
-      {% endfor %}
+      
         <tr>
                 <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
@@ -108,22 +115,10 @@
                 <td class="col-sm-2">Number of activity periods</td>
                 <td>{{ object.number_of_activity_periods }}</td>
         </tr>
-       <!--  <tr>
-                <td class="col-sm-2">Reference</td>
-                <td>{% for ref in reference_list %}
-                    <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ ref.zoterokey }}" target="_blank">{{ ref.author }},{{ ref.title }},{{ ref.publication_year }},{{ ref.place }}</a><br/>
-                    {% endfor %}</td>
-        </tr> -->
         <tr>
                 <td class="col-sm-2">Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
-         <!-- <tr>
-                <td class="col-sm-2">Areas</td>
-                <td>{% for area in areas_list %}
-                        <a href="/publicrecords/{{ area.get_classname }}/detail/{{ area.id }}"> {{ area }} <br/></a>
-                        {% endfor %}</td>
-        </tr> -->
         </table>
     </div>
 {% if site.latitude != None %}
@@ -133,8 +128,8 @@
   </div>
 </div>
 <div id="map"></div><br/>
-
 {% endif %}
+
 {% if reference_list %}
     <div class="panel panel-info">
   <div class="panel-header" id="info-panel">

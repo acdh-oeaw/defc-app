@@ -333,7 +333,7 @@
         <tr>
             <td class="col-sm-2">Interpretation</td>
             <td>{% for interpretation in interpretations_list %}
-            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">{{ interpretation.id }} 
+            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">ID {{ interpretation.id }} 
                 <br/>
             </a>
             {% endfor %}
