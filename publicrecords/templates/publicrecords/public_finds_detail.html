@@ -50,18 +50,18 @@
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
-                <td class="col-sm-2">Area</td>
-                <td>{% for area in area_list %}
-                        <a href="{% url 'publicrecords:area_detail' pk=area.id %}">
-                        ID {{ object.area.id }} {{ object.area.area_type }}<br/>
-                        </a>
-                        {% endfor %}</td>
-        </tr>
-        <tr>
                 <td class="col-sm-2">Site</td>
                 <td>{% for area in area_list %}
                         <a href="{% url 'publicrecords:site_detail' pk=object.area.site.id %}">
                         {{ object.area.site.name }}<br/>
+                        </a>
+                        {% endfor %}</td>
+        </tr>
+        <tr>
+                <td class="col-sm-2">Area</td>
+                <td>{% for area in area_list %}
+                        <a href="{% url 'publicrecords:area_detail' pk=area.id %}">
+                        ID {{ object.area.id }} {{ object.area.area_type }}<br/>
                         </a>
                         {% endfor %}</td>
         </tr>

@@ -10,10 +10,9 @@
   <thead>  
     <tr>
       <th class="sorter-checkbox"></th>
-      <!-- <th>Finds ID</th> -->
-      <th>Finds type</th>
       <th>Site</th>
       <th>Area</th>
+      <th>Finds type</th>
       <th>Period</th>
       <th>Research Event</th>
       <th>View full record</th>
@@ -21,10 +20,9 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <!-- <th>Finds ID</th> -->
-      <th>Finds type</th>
       <th>Site</th>
       <th>Area</th>
+      <th>Finds type</th>
       <th>Period</th>
       <th>Research Event</th>
       <th>View full record</th>
@@ -35,19 +33,6 @@
    <tr>
     <td>
         <input type="checkbox">
-    </td>
-<!--     <td><a href="{% url 'publicrecords:finds_detail' pk=object.id %}">
-      {{ object.id }}
-      </a> 
-    </td> -->
-    <td>
-      {% if object.finds_type.name == "pottery" %}
-        {{ object.finds_type }} {{ object.pottery_form.name|default_if_none:"" }}
-      {% elif object.finds_type.name == "small finds" %}
-        {{ object.finds_type }} ({{ object.small_finds_category|default_if_none:"" }})
-      {% else %}
-        {{ object.finds_type }}
-      {% endif %}
     </td>
      <td>
       <a href="{% url 'publicrecords:site_detail' pk=object.area.site.id %}">
@@ -60,10 +45,20 @@
       </a>
     </td>
     <td>
+      {% if object.finds_type.name == "pottery" %}
+        {{ object.finds_type }} {{ object.pottery_form.name|default_if_none:"" }}
+      {% elif object.finds_type.name == "small finds" %}
+        {{ object.finds_type }} ({{ object.small_finds_category|default_if_none:"" }})
+      {% else %}
+        {{ object.finds_type }}
+      {% endif %}
+    </td>
+    <td>
       {% for period in object.area.period.all %}
       {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
       {% endfor %}
     </td>
+
     <td>
       {% for x in object.research_event.research_type.all %}
       <a href="{%url 'publicrecords:researchevent_detail' pk=object.research_event.id %}">object.research_event.id
