@@ -46,7 +46,7 @@
     <td>
       {% for area in object.area_set.all %}
         {% for period in area.period.all %}
-        <li>{{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})</li>
+       {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
         {% endfor %}
       {% endfor %}
     </td>

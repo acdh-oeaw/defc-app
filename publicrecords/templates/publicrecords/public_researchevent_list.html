@@ -10,23 +10,25 @@
   <thead>  
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Research Event ID</th>
+<!--       <th>Research Event ID</th> -->
       <th>Name</th>
       <th>Institution</th>
       <th>Starting year</th>
       <th>Ending year</th>
       <th>Project name</th>
+      <th>Site</th>
       <th>Finds</th>
   </thead>
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Research Event ID</th>
+<!--       <th>Research Event ID</th> -->
       <th>Name</th>
       <th>Institution</th>
       <th>Starting year</th>
       <th>Ending year</th>
       <th>Project name</th>
+      <th>Site</th>
       <th>Finds</th>
     </tr>
   </tfoot>
@@ -36,12 +38,12 @@
     <td>
     <input type="checkbox">
     </td>
-    <td>
+<!--     <td>
       <a href="{% url 'publicrecords:researchevent_detail' pk=object.id %}">{{ object.id }}</a>
-    </td>
+    </td> -->
     <td>
       {% for x in object.research_type.all %}
-      <a href="{% url 'publicrecords:researchevent_detail' pk=object.id %}">{{ x.name }}</a><br/>
+      <a href="{% url 'publicrecords:researchevent_detail' pk=object.id %}">{{ x.name }} (ID: {{ object.id }})</a><br/>
       {% endfor %}
     </td>
     <td>
@@ -57,6 +59,13 @@
     </td>
     <td>
       {{ object.project_name }} 
+    </td>
+    <td>
+      {% for find in object.finds_set.all %}
+        <a href="{% url 'publicrecords:site_detail' pk=find.area.site.id %}">{{ find.area.site.name }}</a><br/>
+      
+      {% endfor %}
+    </td>
     </td>
     <td>
       {% for x in object.finds_set.all %}
