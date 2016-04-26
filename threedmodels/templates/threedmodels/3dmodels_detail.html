@@ -61,6 +61,33 @@
                     {% endif %}
                 </td>
         </tr>
+        <!-- <tr>
+                <td>Decoration</td>
+                <td>
+                    {% if object.finds %}
+                    {% for decoration in pottery_decoration_list %}
+                    {{ object.finds.pottery_decoration.name }}<br/>
+                    {% endfor %}
+                    
+                    {% endif %}
+                </td>
+        </tr> -->
+        <tr>
+                <td>Form</td>
+                <td>
+                    {% if object.finds %}
+                    {{ object.finds.pottery_form.name }}
+                    {% endif %}
+                </td>
+        </tr>
+       <!--  <tr>
+                <td>Research event</td>
+                <td>
+                    {% if object.finds %}
+                    <a href="{% url 'publicrecords:researchevent_detail' pk=object.finds.research_event.id %}"> {{ object.finds.research_event.researc_type }}</a>
+                    {% endif %}
+                </td>
+        </tr> -->
         <tr>
                 <td>Part</td>
                 <td>{{ object.part }}</td>
