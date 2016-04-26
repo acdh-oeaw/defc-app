@@ -314,7 +314,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
+                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">{{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>
@@ -333,7 +333,8 @@
         <tr>
             <td class="col-sm-2">Interpretation</td>
             <td>{% for interpretation in interpretations_list %}
-            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">ID {{ interpretation.id }} <br/>
+            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">{{ interpretation.id }} 
+                <br/>
             </a>
             {% endfor %}
         </td>
