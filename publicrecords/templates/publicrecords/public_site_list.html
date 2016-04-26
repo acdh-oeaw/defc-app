@@ -9,9 +9,10 @@
   <thead> 
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Site ID</th>
+      <!-- <th>Site ID</th> -->
       <th>Name</th>
-      <th>Alternative name</th>
+      <!-- <th>Alternative name</th> -->
+      <th>Period</th>
       <th>Region</th>
       <th>District</th>
       <th>Topography</th>
@@ -20,9 +21,10 @@
   <tfoot>
     <tr>
       <th class="sorter-checkbox"></th>
-      <th>Site ID</th>
+      <!-- <th>Site ID</th> -->
       <th>Name</th>
-      <th>Alternative name</th>
+      <!-- <th>Alternative name</th> -->
+      <th>Period</th>
       <th>Region</th>
       <th>District</th>
       <th>Topography</th>
@@ -35,15 +37,17 @@
     <td>
         <input type="checkbox">
         </td>
-        <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
+       <!--  <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
         {{ object.id }}</a>
-        </td>
+        </td> -->
     <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
       {{ object.name }}</a>
     </td>
     <td>
-      {% for x in object.alias_name.all %}
-        {{ x.name }}<br/>
+      {% for area in object.area_set.all %}
+        {% for period in area.period.all %}
+        <li>{{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})</li>
+        {% endfor %}
       {% endfor %}
     </td>
     <td>
