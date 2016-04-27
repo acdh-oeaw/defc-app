@@ -34,7 +34,7 @@
   <tbody>
    {% for object in object_list %}
    <tr>
-    <td>
+    <td >
         <input type="checkbox">
         </td>
        <!--  <td><a href="/publicrecords/{{ object.get_classname }}/detail/{{ object.id }}">
@@ -43,7 +43,7 @@
     <td><a href="{% url 'publicrecords:site_detail' pk=object.id %}">
       {{ object.name }}</a>
     </td>
-    <td>
+    <td class="col-sm-4">
       {% for area in object.area_set.all %}
         {% for period in area.period.all %}
         {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>

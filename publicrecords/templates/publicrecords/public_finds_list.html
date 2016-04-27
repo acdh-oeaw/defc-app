@@ -53,7 +53,7 @@
         {{ object.finds_type }}
       {% endif %}
     </td>
-    <td>
+    <td class="col-sm-4">
       {% for period in object.area.period.all %}
       {{ period.period_name }} ({{ period.start_date1_BC }} - {{ period.end_date1_BC }})<br/>
       {% endfor %}
