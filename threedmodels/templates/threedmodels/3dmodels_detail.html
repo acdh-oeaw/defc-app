@@ -42,19 +42,22 @@
                 <img id="full"     title="Full Screen"           src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/full.png"   />
             </div>
         <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
+            
             <canvas id="draw-canvas"/>
+
         </div>
-        <div class="alert alert-info">
-            3D models rendered with: <strong><a href="http://dx.doi.org/10.1016/j.cag.2015.07.001" style="color:#ffffff;" target="_blank">3DHOP: 3D Heritage Online Presenter</a></strong><br/>
-Marco Potenziani, Marco Callieri, Matteo Dellepiane, Massimiliano Corsini, Federico Ponchio, Roberto Scopigno
-Computers & Graphics, Volume 52, November 2015, Pages 129-141, ISSN 0097-8493
-        </div>
+        
 
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
-<div class="panel panel-default">
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Main Information
+  </div>
+</div>
 
-<table class="table table-bordered table-striped">
+<div class="panel panel-default">
+    <table class="table table-bordered table-striped">
         <tr>
                 <td class="col-sm-2">Model ID</td>
                 <td>{{ object.model_id }}</td>
@@ -201,17 +204,100 @@ Computers & Graphics, Volume 52, November 2015, Pages 129-141, ISSN 0097-8493
                 {{ x.inclusion_type }} {{ x.inclusion_color }} {{ x.inclusion_form }} {{ x.inclusion_particle_size }} {{ x.inclusion_frequency }} {{ x.inclusion_hardness }}</br>
                 {% endfor %}</td>
         </tr>
-         <tr>
+    </table>
+</div>
+
+    <div class="panel panel-info">
+        <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+            General Metadata
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>
+                    Project
+                </td>
+                <td>
+                    {{ object.resource_metadata.name }} | {{ object.resource_metadata.title }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Source | Publisher
+                </td>
+                <td>
+                    {{ object.resource_metadata.source }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Contact
+                </td>
+                <td>
+                    {% for contact in object.resource_metadata.contact.all %}
+                    {{ contact.last_name }}, {{ contact.first_name }} ({% for inst in contact.institution.all %} {{ inst.name }} {% endfor %}) <br/>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Language
+                </td>
+                <td>
+                    {{ object.resource_metadata.language }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Keywords
+                </td>
+                <td>
+                    {{ object.resource_metadata.keywords }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    License | Access Rights
+                </td>
+                <td>
+                    {{ object.resource_metadata.license }} | {{ object.resource_metadata.access_rights }}
+                </td>
+            </tr>
+
+            <tr>
                 <td>Model metadata</td>
-                <td><a href="http://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br>
-                </td>
-        </tr>
-        <tr>
+                <td><a href="http://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td>
+            </tr>
+            <tr>
                 <td>Model parameters</td>
-                <td><a href="http://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br>
-                </td>
-        </tr>
-</table>
+                <td><a href="http://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+            Credits
+        </div>
+    </div>
+     <div class="panel panel-default">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>3D Models</td>
+                <td>3D model created by Seta Stuhec and Eva Alram in the project "Digitizing Early Farming Cultures" and are published CC-BY.</td>
+            <tr>
+                <td class="col-sm-3">3D Viewer</td>
+                <td>3DHOP: 3D Heritage Online Presenter<br/>
+Marco Potenziani, Marco Callieri, Matteo Dellepiane, Massimiliano Corsini, Federico Ponchio, Roberto Scopigno
+Computers & Graphics, Volume 52, November 2015, Pages 129-141, ISSN 0097-8493</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
 
 {% endblock content %}
 {% block scripts %}
