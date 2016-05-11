@@ -1,0 +1,16 @@
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+<div class="panel panel-default map_panel">
+            <div class="panel-heading">
+                <h1>MAP OF REGIONS AND DISTRICTS IN GREECE</h1>
+                <p>The present map of regions and districts in Greece was created by the AAPP research group on the basis of division used by the British School at Athens.</p>
+            </div>
+            <div class="panel-body">
+               <a href="{% static "defcdb/greece_map.jpg" %}"><img src="{% static "defcdb/greece_map.jpg" %}" class="img-responsive center-block"  alt="greece_map"></a> <!-- style="height: 900px; width: 1200px;" -->
+            </div>
+        </div> 
+    </div>
+{% endblock content %}

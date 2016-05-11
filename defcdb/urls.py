@@ -6,7 +6,8 @@ from . import views
 urlpatterns = [
 url(r'^$', views.start_view, name="start"),
 url(r'^name/create/$', views.create_name, name='name_create'),
-url(r'^explore/$', views.turkey_map_view, name='turkey_map'),
+url(r'^exploreturkey/$', views.turkey_map_view, name='turkey_map'),
+url(r'^exploregreece/$', views.greece_map_view, name='greece_map'),
 url(r'^bibliography/$', views.bibliography_view, name='bibliography'),
 url(r'^site/$', views.SiteListView.as_view(), name='site_list'),
 url(r'^site/create/$', views.create_site, name='site_create'),
