@@ -10,6 +10,11 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from .models import Event
 
 # Create your views here.
+def imprint(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/imprint.html', context)
+
+
 def homepage(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/index.html', context)
