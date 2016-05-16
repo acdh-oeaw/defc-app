@@ -5,7 +5,9 @@ django-audit-log==0.7.0
 django-autocomplete-light==2.2.10
 django-crispy-forms==1.5.2
 django-extensions==1.5.9
+django-filter==0.13.0
 django-reversion==1.10.0
+django-tables2==1.2.1
 djangorestframework==3.2.4
 ipykernel==4.1.1
 ipython==4.0.0
@@ -26,6 +28,7 @@ notebook==4.0.6
 path.py==8.1.2
 pickleshare==0.5
 Pygments==2.0.2
+pyparsing==2.1.1
 pyzmq==15.0.0
 qtconsole==4.1.0
 requests==2.8.1

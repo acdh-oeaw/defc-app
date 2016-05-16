@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-#from __future__ import str_literals
+
 from django.db import models
 from django.core.urlresolvers import reverse
-from django.shortcuts import render, render_to_response, redirect
-from django.forms import Textarea
 from bib.models import Book
 from reversion import revisions as reversion
 

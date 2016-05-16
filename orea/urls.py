@@ -63,7 +63,7 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^defcdb/', include('defcdb.urls', namespace='defcdb')),
-	url(r'^geolocation/', include('geolocation.urls', namespace="geolocation")),
+    url(r'^geolocation/', include('geolocation.urls', namespace="geolocation")),
     url(r'^login/$', views.user_login, name='user_login'),
     url(r'^accounts/login/$', views.user_login, name='user_login'),
     url(r'^logout/$', views.user_logout, name='user_logout'),
@@ -74,5 +74,6 @@ urlpatterns = [
     url(r'^image_gallery/', include('images_metadata.urls', namespace="image_gallery")),
     url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
     url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),
+    url(r'^browsing/', include('browsing.urls', namespace='browsing')),
 ]
 
