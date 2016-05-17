@@ -1,0 +1,90 @@
+{% extends "defcdb/base.html" %}
+{% load staticfiles %}
+{% block scriptHeader %}<!--leafletjs -->
+   <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet/leaflet.css' %}"/></link>
+   <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet.markercluster/dist/MarkerCluster.css' %}"/></link>
+   <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet.markercluster/dist/MarkerCluster.Default.css' %}"/></link>
+
+    <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
+        <style>
+            #map { height: 500px; }
+        </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+<h1>customized filtering</h1>
+<div id="map"></div>
+</div>
+<script>
+     function filterSet(e, filter) {
+        if (e.className === 'btn btn-success') {
+        e.className = 'btn btn-default';
+        var lg = mapLayerGroups[filter];
+        markers.removeLayer(lg);
+        //mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
+        } else {
+           e.className = 'btn btn-success';
+           var lg = mapLayerGroups[filter];
+            markers.addLayer(lg);
+            mymap.fitBounds(lg.getBounds(), {'maxZoom': 12});
+        } };
+    //var weissbrot = document.getElementById('filter-weissbrot');
+    var mapLayerGroups = [];
+    var markers = L.markerClusterGroup({
+    });
+
+    function onEachFeature(feature, layer) {
+            var lg = mapLayerGroups[feature.relation_type];
+            if (lg === undefined) {
+                lg = new L.layerGroup();
+                mapLayerGroups[feature.relation_type] = lg;
+                $('#filter-menu').append('<a class="btn btn-success" href="#" role="button" onclick="filterSet(this, \''+feature.relation_type+'\')">'+feature.relation_type+'</a>')
+            }
+
+
+            //add the feature to the layer
+            lg.addLayer(layer); 
+            //mymap.fitBounds(lg.getBounds(), {'maxZoom': 12});
+
+            if (feature.properties && feature.properties.popupContent) {
+                popupContent = feature.properties.popupContent;
+            }
+
+            layer.bindPopup(feature.properties.popupContent);
+
+        };
+        var whgt = $(window).height();
+        var wwdt = $(window).width();
+        if (wwdt > 1420) {wwdt = 1400;}
+        else {wwdt = wwdt-50}
+        $('#map').css({'height':whgt-90+'px',
+                        'width': wwdt});
+        var mymap = L.map('map', {
+          fullscreenControl: true,
+          }).setView([47.394167, 13.689167], 8);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.light',
+    accessToken: 'pk.eyJ1Ijoic2VubmllcmVyIiwiYSI6ImNpbHk1YWV0bDAwZnB2dW01d2l1Y3phdmkifQ.OljQLEhqeAygai2y6VoSwQ'
+}).addTo(mymap);
+    $.ajax({
+                type: 'GET',
+                url: '{% url 'geolocation:getGeoJson' %}',
+                dataType: 'json',
+                'data': {'relation': 'PersonPlace'},
+                success: function(data) {
+                    
+
+                    //L.geoJson(data, {onEachFeature: onEachFeature});
+                    
+                    var geoJsonLayer = L.geoJson(data, {onEachFeature: onEachFeature});
+                    markers.addLayer(geoJsonLayer);
+                    mymap.addLayer(markers);
+                    mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
+                }
+            });
+</script>
+{% endblock %}

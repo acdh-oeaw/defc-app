@@ -1,11 +1,34 @@
 import requests
 import json
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 
 from .forms import DC_provinceForm
 from defcdb.models import DC_province, Site
+
+
+def getGeoJson(request):
+    lst_json = []
+    sites = Site.objects.filter(latitude__isnull=False)
+    for x in sites:
+        r = {"geometry": {"type": "Point", "coordinates": [
+            float(x.longitude),
+            float(x.latitude)
+        ]},
+            "type": "Feature",
+            "properties": {
+            "popupContent": "<strong>{}</strong>".format(x.name)
+        },
+            "id": x.pk}
+        lst_json.append(r)
+
+    return HttpResponse(json.dumps(lst_json), content_type='application/json')
+
+
+def site_map(request):
+    return render(request, 'geolocation/site_map.html')
 
 
 def showplaces(request):
@@ -42,7 +65,7 @@ def edit_DC_provinceForm(request, pk):
         root = "http://api.geonames.org/searchJSON?q="
         username = "&username=digitalarchiv"
         params = "&fuzzy=1&lang=de&maxRows=100"
-        url = root+placeName+params+username
+        url = root + placeName + params + username
         try:
             r = requests.get(url)
         except requests.exceptions.RequestException as e:
@@ -51,7 +74,8 @@ def edit_DC_provinceForm(request, pk):
         responseJSON = json.loads(response)
         responseJSON = responseJSON['geonames']
         form = DC_provinceForm(instance=f)
-        return render(request, 'geolocation/edit_place.html',
+        return render(
+            request, 'geolocation/edit_place.html',
             {'object': f, 'form': form, 'responseJSON': responseJSON}
         )
     else:
