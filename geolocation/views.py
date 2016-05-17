@@ -4,31 +4,54 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from django_tables2 import SingleTableView, RequestConfig
 
 from .forms import DC_provinceForm
 from defcdb.models import DC_province, Site
+from browsing.tables import SiteTable
+from browsing.filters import SiteListFilter
+from browsing.forms import GenericFilterFormHelper
+from browsing.views import GenericListView
 
 
-def getGeoJson(request):
-    lst_json = []
-    sites = Site.objects.filter(latitude__isnull=False)
-    for x in sites:
-        r = {"geometry": {"type": "Point", "coordinates": [
-            float(x.longitude),
-            float(x.latitude)
-        ]},
-            "type": "Feature",
-            "properties": {
-            "popupContent": "<strong>{}</strong>".format(x.name)
-        },
-            "id": x.pk}
-        lst_json.append(r)
+class SiteListFilterView(GenericListView):
+    model = Site
+    table_class = SiteTable
+    template_name = 'geolocation/site_map.html'
+    filter_class = SiteListFilter
+    formhelper_class = GenericFilterFormHelper
 
-    return HttpResponse(json.dumps(lst_json), content_type='application/json')
+    def get_queryset(self, **kwargs):
+        qs = Site.objects.filter(latitude__isnull=False)
+        self.filter = self.filter_class(self.request.GET, queryset=qs)
+        self.filter.form.helper = self.formhelper_class()
+        return self.filter.qs
+
+    def get_context_data(self, **kwargs):
+        context = super(GenericListView, self).get_context_data()
+        context[self.context_filter_name] = self.filter
+        lst_json = []
+        sites = SiteListFilter(
+            self.request.GET, queryset=Site.objects.filter(latitude__isnull=False)
+        )
+        for x in sites:
+            r = {"geometry": {"type": "Point", "coordinates": [
+                float(x.longitude),
+                float(x.latitude)
+            ]},
+                "type": "Feature",
+                "properties": {
+                "popupContent": "<strong>{}</strong>".format(x.name)
+            },
+                "id": x.pk}
+            lst_json.append(r)
+        context["GeoJson"] = json.dumps(lst_json)
+        return context
 
 
 def site_map(request):
-    return render(request, 'geolocation/site_map.html')
+    site_filter = SiteListFilter(request.GET, queryset=Site.objects.exclude(latitude__isnull=True))
+    return render(request, 'geolocation/site_map.html', {'filter': site_filter})
 
 
 def showplaces(request):

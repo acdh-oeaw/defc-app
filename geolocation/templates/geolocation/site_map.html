@@ -8,31 +8,62 @@
     <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
     <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
         <style>
-            #map { height: 500px; }
+            #map { height: 800px; }
         </style>
 {% endblock %}
 {% block content %}
-<div class="container">
-<h1>customized filtering</h1>
-<div id="map"></div>
+<div class="panel panel-default panel-fixed" style="padding:2%; text-align:center;">
+<div class="panel-heading">
+    <h1> Filter and Visualize </h1>
 </div>
+<div class="panel-body">
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default panel-fixed" >
+            <div class="panel-heading">
+                <h3>Filter</h3>
+            </div>
+            <div class="panel-body">
+            {% load django_tables2 crispy_forms_tags %}
+            {% crispy filter.form filter.form.helper %}
+            <hr/>
+            Results:  <br/>
+            {% for obj in filter %}
+                {{ obj.name }}<br />
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default panel-fixed" >
+            <div class="panel-heading">
+                <h3>GeoVisualize</h3>
+            </div>
+            <div class="panel-body">
+                <div id="map"></div>
+            </div>    
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
 <script>
      function filterSet(e, filter) {
         if (e.className === 'btn btn-success') {
         e.className = 'btn btn-default';
         var lg = mapLayerGroups[filter];
         markers.removeLayer(lg);
-        //mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
         } else {
            e.className = 'btn btn-success';
            var lg = mapLayerGroups[filter];
             markers.addLayer(lg);
             mymap.fitBounds(lg.getBounds(), {'maxZoom': 12});
         } };
-    //var weissbrot = document.getElementById('filter-weissbrot');
-    var mapLayerGroups = [];
-    var markers = L.markerClusterGroup({
-    });
+        var mapLayerGroups = [];
+        var markers = L.markerClusterGroup({
+        });
 
     function onEachFeature(feature, layer) {
             var lg = mapLayerGroups[feature.relation_type];
@@ -54,37 +85,23 @@
             layer.bindPopup(feature.properties.popupContent);
 
         };
-        var whgt = $(window).height();
-        var wwdt = $(window).width();
-        if (wwdt > 1420) {wwdt = 1400;}
-        else {wwdt = wwdt-50}
-        $('#map').css({'height':whgt-90+'px',
-                        'width': wwdt});
+        $('#map')
         var mymap = L.map('map', {
           fullscreenControl: true,
           }).setView([47.394167, 13.689167], 8);
 
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.light',
-    accessToken: 'pk.eyJ1Ijoic2VubmllcmVyIiwiYSI6ImNpbHk1YWV0bDAwZnB2dW01d2l1Y3phdmkifQ.OljQLEhqeAygai2y6VoSwQ'
-}).addTo(mymap);
-    $.ajax({
-                type: 'GET',
-                url: '{% url 'geolocation:getGeoJson' %}',
-                dataType: 'json',
-                'data': {'relation': 'PersonPlace'},
-                success: function(data) {
-                    
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.light',
+        accessToken: 'pk.eyJ1Ijoic2VubmllcmVyIiwiYSI6ImNpbHk1YWV0bDAwZnB2dW01d2l1Y3phdmkifQ.OljQLEhqeAygai2y6VoSwQ'
+        }).addTo(mymap);
 
-                    //L.geoJson(data, {onEachFeature: onEachFeature});
-                    
-                    var geoJsonLayer = L.geoJson(data, {onEachFeature: onEachFeature});
-                    markers.addLayer(geoJsonLayer);
-                    mymap.addLayer(markers);
-                    mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
-                }
-            });
+        var build_data =  JSON.parse(['[{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong> {{ obj.name }}</strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% endfor %}']);
+        var geoJsonLayer = L.geoJson( build_data, {onEachFeature: onEachFeature});
+        markers.addLayer(geoJsonLayer);
+        mymap.addLayer(markers);
+        mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
+
 </script>
 {% endblock %}
