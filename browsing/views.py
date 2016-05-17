@@ -12,6 +12,12 @@ class GenericListView(SingleTableView):
     context_filter_name = 'filter'
     paginate_by = 25
 
+    def get_queryset(self, **kwargs):
+        qs = super(GenericListView, self).get_queryset()
+        self.filter = self.filter_class(self.request.GET, queryset=qs)
+        self.filter.form.helper = self.formhelper_class()
+        return self.filter.qs
+
     def get_table(self, **kwargs):
         table = super(GenericListView, self).get_table()
         RequestConfig(self.request, paginate={
