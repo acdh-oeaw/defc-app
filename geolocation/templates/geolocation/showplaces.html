@@ -4,7 +4,8 @@
 {% load crispy_forms_tags %}
 
 {% block scriptHeader %}<!--leafletjs -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet/leaflet.css' %}"/></link>
+    <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
         <style>
             #map { height: 600px; }
         </style>

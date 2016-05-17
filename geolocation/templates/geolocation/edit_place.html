@@ -1,9 +1,10 @@
 {% extends "defcdb/base.html" %}
+{% load staticfiles %}
 {% block Titel %}Ask GeoNames{% endblock %}
 
 {% block scriptHeader %}<!--leafletjs -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+   <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet/leaflet.css' %}"/></link>
+    <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
         <style>
             #map { height: 500px; }
         </style>
