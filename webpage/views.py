@@ -35,6 +35,10 @@ class EventListViewAdmin(generic.ListView):
 	def get_queryset(self):
 		return Event.objects.all()
 
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(EventListViewAdmin, self).dispatch(*args, **kwargs)
+
 
 class EventCreate(CreateView):
 	model = Event
@@ -44,6 +48,16 @@ class EventCreate(CreateView):
 	@method_decorator(login_required)
 	def dispatch(self, *args, **kwargs):
 		return super(EventCreate, self).dispatch(*args, **kwargs)
+
+
+class EventUpdate(UpdateView):
+	model = Event
+	fields = "__all__"
+	template_name =  "webpage/update_event.html"
+
+	@method_decorator(login_required)
+	def dispatch(self, *args, **kwargs):
+		return super(EventUpdate, self).dispatch(*args, **kwargs)
 
 
 class EventDelete(DeleteView):

@@ -3,21 +3,46 @@
 {% block content %}
 
 <div class="container">
-{% if object_list %}
-<div class="container">
 <h1> Events </h1>
-	<table class="table-responsive">
+<div>
+    <a class ="btn btn-default btn-md"  href="{% url 'webpage:event_create' %}">create new Event</a>
+</div>
+</br>
+{% if object_list %}
+	<table class="table-bordered responsive" >
+		<thead>
+			<th style="padding:5px;">Dates</th>
+      		<th>Name</th>
+      		<th>Place</th>
+      		<th>Webpage</th>
+      		<th>Update</th>
+      		<th>Delete</th>
+		</thead>
+		<tbody>
 
 	 	{% for object in  object_list %}
 	 	<tr>
-	 		<td>
-	 			{{ object }} 
+	 		<td style="padding:5px;">
+	 			{{ object.start_date }} - {{ object.end_date }}
 	 		</td>
 	 		<td>
-	 			<a class ="btn btn-danger btn-sm" href="{% url 'webpage:event_delete' pk=object.id %}">  Delete </a> 
+	 			{{ object.name }} 
+	 		</td>
+	 		<td>
+	 			{{ object.place }} 
+	 		</td>
+	 		<td>
+	 			{{ object.webpage }} 
+	 		</td>
+	 		<td>
+	 			<a class ="btn btn-primary btn-sm" href="{% url 'webpage:event_update' pk=object.id %}">Update</a>
+	 		</td>
+	 		<td>
+	 			<a class ="btn btn-danger btn-sm" href="{% url 'webpage:event_delete' pk=object.id %}">  Delete </a>
 	 		</td>
 	 	</tr>	
     	{% endfor %}
+    </tbody>
 	</table>
 {% endif %}
 </div>

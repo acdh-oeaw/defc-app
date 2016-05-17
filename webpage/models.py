@@ -3,8 +3,8 @@ from django.core.urlresolvers import reverse
 
 # Create your models here.
 class Event(models.Model):
-	start_date = models.DateField(blank=True, null=True, max_length=200)
-	end_date = models.DateField(blank=True, null=True, max_length=200)
+	start_date = models.DateField(blank=True, null=True, max_length=200, help_text="In format 'year-month-day', e.g. 2016-04-24")
+	end_date = models.DateField(blank=True, null=True, max_length=200, help_text="In format 'year-month-day', e.g. 2016-04-24")
 	name = models.CharField(blank=True, null=True, max_length=500)
 	place = models.CharField(blank=True, null=True, max_length=200)
 	webpage = models.URLField(blank=True, null=True, max_length=200)
