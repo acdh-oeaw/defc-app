@@ -75,5 +75,6 @@ urlpatterns = [
     url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
     url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),
     url(r'^browsing/', include('browsing.urls', namespace='browsing')),
+    url(r'^datamodel/', include('django_spaghetti.urls', namespace="datamodel")),
 ]
 

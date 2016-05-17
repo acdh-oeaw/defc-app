@@ -15,6 +15,12 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SPAGHETTI_SAUCE = {
+    'apps': ['defcdb', 'threedmodels', 'bib', 'images_metadata'],
+    'show_fields': False,
+    'exclude': {'auth': ['user']}
+}
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 

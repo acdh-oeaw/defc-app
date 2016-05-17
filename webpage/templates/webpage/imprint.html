@@ -1,4 +1,7 @@
-<div class="imprint">
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block content %}
+<div class="imprint container">
     <h1>Impressum | imprint</h1>
     <div lang="ger">
         <h2>Offenlegung gemäß §§ 24, 25 Mediengesetz und § 5 E-Commerce-Gesetz</h2>
@@ -80,3 +83,4 @@
         The contact data published in the context of the imprint duty may not be used to send promotional or informational material not explicitly requested. We explicitly disagree with this usage. 
     </p>
 </div>
+{% endblock %}
