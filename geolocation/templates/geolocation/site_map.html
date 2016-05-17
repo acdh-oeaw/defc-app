@@ -29,7 +29,7 @@
             <hr/>
             Results:  <br/>
             {% for obj in filter %}
-                {{ obj.name }}<br />
+                <a href="{% url 'publicrecords:site_detail' pk=obj.id %}">{{ obj.name }}</a><br />
             {% endfor %}
             </div>
         </div>
@@ -97,7 +97,9 @@
         accessToken: 'pk.eyJ1Ijoic2VubmllcmVyIiwiYSI6ImNpbHk1YWV0bDAwZnB2dW01d2l1Y3phdmkifQ.OljQLEhqeAygai2y6VoSwQ'
         }).addTo(mymap);
 
-        var build_data =  JSON.parse(['[{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong> {{ obj.name }}</strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% endfor %}']);
+
+
+        var build_data =  [{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong><a href='{%url 'publicrecords:site_detail' pk=obj.id %}''>{{ obj.name }}</a></strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% empty %}]{% endfor %} 
         var geoJsonLayer = L.geoJson( build_data, {onEachFeature: onEachFeature});
         markers.addLayer(geoJsonLayer);
         mymap.addLayer(markers);
