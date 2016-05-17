@@ -2,9 +2,8 @@
 
 {% block scriptHeader %}
 <!--leafletjs -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-    
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
         <style>
             #map { height: 500px; }
             #info-panel { 
