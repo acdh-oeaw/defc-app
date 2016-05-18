@@ -1,7 +1,7 @@
 import autocomplete_light
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
-from defcdb.models import Site
+from defcdb.models import Site, Area
 from .autocomplete_light_registry import SiteAutocomplete
 
 

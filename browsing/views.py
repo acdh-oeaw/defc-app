@@ -1,9 +1,9 @@
 from django_tables2 import SingleTableView, RequestConfig
-from defcdb.models import Site
+from defcdb.models import Site, Area
 
-from .filters import SiteListFilter
+from .filters import SiteListFilter, AreaListFilter
 from .forms import GenericFilterFormHelper
-from .tables import SiteTable
+from .tables import SiteTable, AreaTable
 
 
 class GenericListView(SingleTableView):
@@ -35,4 +35,12 @@ class SiteListView(GenericListView):
     table_class = SiteTable
     template_name = 'browsing/site_list_generic.html'
     filter_class = SiteListFilter
+    formhelper_class = GenericFilterFormHelper
+
+
+class AreaListView(GenericListView):
+    model = Area
+    table_class = AreaTable
+    template_name = 'browsing/area_list_generic.html'
+    filter_class = AreaListFilter
     formhelper_class = GenericFilterFormHelper

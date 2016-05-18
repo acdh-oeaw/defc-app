@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     url(r'sites/$', views.SiteListView.as_view(), name='browse_sites'),
+    url(r'areas/$', views.AreaListView.as_view(), name='browse_areas'),
 ]
