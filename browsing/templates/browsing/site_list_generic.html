@@ -1,2 +1,14 @@
 {% extends "browsing/generic_list.html" %}
 {% block list_title %}All Sites{% endblock %}
+{% block customScripts %}
+<script>
+
+var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}]
+
+    $(function() {
+        $("#id_name").autocomplete({
+            source:site_names
+        }); 
+});
+</script>
+{% endblock %}

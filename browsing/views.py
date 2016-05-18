@@ -36,3 +36,12 @@ class SiteListView(GenericListView):
     template_name = 'browsing/site_list_generic.html'
     filter_class = SiteListFilter
     formhelper_class = GenericFilterFormHelper
+
+    def get_context_data(self, **kwargs):
+        context = super(GenericListView, self).get_context_data()
+        context[self.context_filter_name] = self.filter
+        site_names = []
+        for x in Site.objects.all():
+            site_names.append(x.name)
+        context["site_names"] = set(site_names)
+        return context
