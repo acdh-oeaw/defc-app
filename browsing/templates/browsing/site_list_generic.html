@@ -3,12 +3,20 @@
 {% block customScripts %}
 <script>
 
-var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}]
+var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}];
+var cs_names = [{% for name in cs_names %} "{{ name }}", {% endfor %}];
+var period_names = [{% for period in period_names %} "{{ period }}", {% endfor %}]
 
     $(function() {
         $("#id_name").autocomplete({
             source:site_names
         }); 
-});
+    });
+
+    $(function() {
+        $("#id_period").autocomplete({
+            source:period_names
+        }); 
+    });
 </script>
 {% endblock %}

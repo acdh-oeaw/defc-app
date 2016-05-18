@@ -1,5 +1,5 @@
 from django_tables2 import SingleTableView, RequestConfig
-from defcdb.models import Site
+from defcdb.models import Site, DC_chronological_system
 
 from .filters import SiteListFilter
 from .forms import GenericFilterFormHelper
@@ -44,4 +44,11 @@ class SiteListView(GenericListView):
         for x in Site.objects.all():
             site_names.append(x.name)
         context["site_names"] = set(site_names)
+        cs_names = []
+        period_names = []
+        for x in DC_chronological_system.objects.all():
+            cs_names.append(x.cs_name)
+            period_names.append(x.period_name)
+        context["cs_names"] = set(cs_names)
+        context["period_names"] = set(period_names)
         return context
