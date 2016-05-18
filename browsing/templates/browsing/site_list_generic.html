@@ -1,5 +1,10 @@
 {% extends "browsing/generic_list.html" %}
 {% block list_title %}All Sites{% endblock %}
+
+{% block reset_button %}
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_sites' %}">Reset search</a>      
+{% endblock %}
+
 {% block customScripts %}
 <script>
 

@@ -60,3 +60,20 @@ class AreaListView(GenericListView):
     filter_class = AreaListFilter
     formhelper_class = GenericFilterFormHelper
 
+    def get_context_data(self, **kwargs):
+        context = super(GenericListView, self).get_context_data()
+        context[self.context_filter_name] = self.filter
+        site_names = []
+        for x in Site.objects.all():
+            site_names.append(x.name)
+        context["site_names"] = set(site_names)
+        cs_names = []
+        period_names = []
+        for x in DC_chronological_system.objects.all():
+            cs_names.append(x.cs_name)
+            period_names.append(x.period_name)
+        context["cs_names"] = set(cs_names)
+        context["period_names"] = set(period_names)
+        return context
+
+

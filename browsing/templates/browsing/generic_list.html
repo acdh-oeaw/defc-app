@@ -21,6 +21,8 @@
             <div class="col-md-4">
                 {% load django_tables2 crispy_forms_tags %}
                 {% crispy filter.form filter.form.helper %}
+                {% block reset_button %}
+                {% endblock %}
             </div>
             <div class="col-md-8">
                 {% render_table table %}

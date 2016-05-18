@@ -21,7 +21,7 @@
 <h1>Site</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
-  <li><a href="/publicrecords/{{ object.get_classname }}/">Data Exploration - Sites</a></li>
+  <li><a href="{% url 'browsing:browse_sites' %}">Data Exploration - Sites</a></li>
   <li class="active">Site {{ object.name }}</li>
 </ol>  
 
