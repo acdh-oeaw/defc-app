@@ -72,7 +72,7 @@ img {
 {% if object.pottery_form %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
     {{ object.pottery_form.name }}
@@ -92,7 +92,7 @@ img {
 {% if object.pottery_decoration %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
     {{ object.pottery_decoration.name }}
@@ -112,7 +112,7 @@ img {
 {% if object.pottery_detail %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="http://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
   </a>
   <div class="desc">
     {{ object.pottery_detail.name }}

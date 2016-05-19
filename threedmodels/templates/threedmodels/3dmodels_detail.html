@@ -2,23 +2,23 @@
 {% load staticfiles %}
  {% block scriptHeader %}
  <!--STYLESHEET-->
-<link type="text/css" rel="stylesheet" href="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/stylesheet/3dhop.css"/>  
+<link type="text/css" rel="stylesheet" href="{% static 'webpage/libraries/3dhop/minimal/stylesheet/3dhop.css' %}"/>  
 <!--SPIDERGL-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/spidergl.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/spidergl.js' %}"></script>
 <!--JQUERY-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/jquery.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/jquery.js' %}"></script>
 <!--PRESENTER-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/presenter.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/presenter.js' %}"></script>
 <!--3D MODELS LOADING AND RENDERING-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/nexus.js"></script>
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/ply.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/nexus.js' %}"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/ply.js' %}"></script>
 <!--TRACKBALLS-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_sphere.js"></script>
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_turntable.js"></script>
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_turntable_pan.js"></script>
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/trackball_pantilt.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/trackball_sphere.js' %}"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/trackball_turntable.js' %}"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/trackball_turntable_pan.js' %}"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/trackball_pantilt.js' %}"></script>
 <!--UTILITY-->
-<script type="text/javascript" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/js/init.js"></script>
+<script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/init.js' %}"></script>
  {% endblock %}
 
 {% block content %}
@@ -33,13 +33,13 @@
 <p></p>
 <div id="3dhop" class="tdhop" onmousedown="if (event.preventDefault) event.preventDefault()">
             <div id="toolbar">
-                <img id="home"     title="Home"                  src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/home.png"   /><br/>
-                <img id="zoomin"   title="Zoom In"               src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/zoomin.png" /><br/>
-                <img id="zoomout"  title="Zoom Out"              src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/zoomout.png"/><br/>
-                <img id="light_on" title="Disable Light Control" src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/light_on.png" style="position:absolute; visibility:hidden;"/>
-                <img id="light"    title="Enable Light Control"  src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/light.png"/><br/>
-                <img id="full_on"  title="Exit Full Screen"      src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/full_on.png" style="position:absolute; visibility:hidden;"/>
-                <img id="full"     title="Full Screen"           src="http://{{ request.get_host }}/media/static/libs/3dhop/minimal/skins/dark/full.png"   />
+                <img id="home"     title="Home"                  src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/home.png' %}"   /><br/>
+                <img id="zoomin"   title="Zoom In"               src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/zoomin.png' %}" /><br/>
+                <img id="zoomout"  title="Zoom Out"              src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/zoomout.png' %}"/><br/>
+                <img id="light_on" title="Disable Light Control" src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/light_on.png' %}" style="position:absolute; visibility:hidden;"/>
+                <img id="light"    title="Enable Light Control"  src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/light.png' %}"/><br/>
+                <img id="full_on"  title="Exit Full Screen"      src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/full_on.png' %}" style="position:absolute; visibility:hidden;"/>
+                <img id="full"     title="Full Screen"           src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/full.png' %}"   />
             </div>
         <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
             
@@ -268,11 +268,11 @@
 
             <tr>
                 <td>Model metadata</td>
-                <td><a href="http://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td>
+                <td><a href="https://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td>
             </tr>
             <tr>
                 <td>Model parameters</td>
-                <td><a href="http://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br></td>
+                <td><a href="https://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br></td>
             </tr>
         </table>
     </div>
@@ -320,7 +320,7 @@ $(document).ready(function(){
     var presenter = null;
     function setup3dhop() { 
         presenter = new Presenter("draw-canvas");
-        var meshUrl = "http://{{ request.get_host }}/media/{{ object.model_file }}";
+        var meshUrl = "https://{{ request.get_host }}/media/{{ object.model_file }}";
         presenter.setScene({
             meshes: {
                 "3dmodel" : { url: meshUrl }
