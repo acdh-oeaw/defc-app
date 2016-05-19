@@ -1,6 +1,7 @@
 import django_filters
 from defcdb.models import Site, DC_site_topography, DC_region, DC_province, Area, DC_area_areatype
 from defcdb.models import Finds,DC_finds_type,DC_researchevent_researchtype, ResearchEvent, Interpretation, DC_researchevent_institution
+from defcdb.models import DC_interpretation_productiontype, DC_interpretation_subsistencetype
 from .forms import SiteFilterForm
 
 
@@ -127,6 +128,21 @@ class ResearchEventListFilter(django_filters.FilterSet):
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(institution__name__icontains=value).distinct()
+
+
+class InterpretationListFilter(django_filters.FilterSet):
+    production_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_interpretation_productiontype.objects.all(), help_text=False
+        )
+    subsistence_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_interpretation_subsistencetype.objects.all(), help_text=False
+        )
+    area__site__name = django_filters.CharFilter(lookup_expr='icontains',
+        label='Site name',help_text=False)
+
+    class Meta:
+        model = Interpretation
+        fields = ['production_type']
 
 
 

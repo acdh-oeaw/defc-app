@@ -1,0 +1,18 @@
+{% extends "browsing/generic_list.html" %}
+{% block list_title %}All Interpretations{% endblock %}
+
+{% block reset_button %}
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_interpretations' %}">Reset search</a>     
+{% endblock %}
+{% block customScripts %}
+<script>
+
+var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}];
+
+     $(function() {
+        $("#id_area__site__name").autocomplete({
+            source:site_names
+        }); 
+    });
+</script>
+{% endblock %}
