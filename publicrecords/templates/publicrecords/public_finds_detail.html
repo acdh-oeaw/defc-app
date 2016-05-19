@@ -186,7 +186,7 @@
      {% for x in pottery_form_list %}
      <div class="img">
         <a href="{% url 'image_gallery:detail' pk=x.id %}">
-        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        <img src="https://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
         {{ x.pottery_form.name }}
@@ -196,7 +196,7 @@
     {% for x in pottery_detail_list %}
     <div class="img">
         <a href="{% url 'image_gallery:detail' pk=x.id %}">
-        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        <img src="https://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
         {{ x.pottery_detail.name }}
@@ -206,7 +206,7 @@
     {% for x in pottery_decoration_list %}
     <div class="img">
         <a href="{% url 'image_gallery:detail' pk=x.id %}">
-        <img src="http://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
+        <img src="https://{{ request.get_host }}/media/{{ x.image }}" width="300" height="200"/>
         </a>
         <div class="desc">
         {{ x.pottery_decoration.name }}
