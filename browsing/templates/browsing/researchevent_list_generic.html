@@ -1,0 +1,35 @@
+{% extends "browsing/generic_list.html" %}
+{% block list_title %}All Research events{% endblock %}
+
+{% block reset_button %}
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_researchevents' %}">Reset search</a>     
+{% endblock %}
+
+{% block customScripts %}
+<script>
+
+var institution_names = [{% for name in institution_names %} "{{ name }}", {% endfor %}];
+var project_names = [{% for name in project_names %} "{{ name }}", {% endfor %}];
+var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}];
+
+
+
+    $(function() {
+        $("#id_institution").autocomplete({
+            source:institution_names
+        }); 
+    });
+
+    $(function() {
+        $("#id_project_name").autocomplete({
+            source:project_names
+        }); 
+    });
+
+     $(function() {
+        $("#id_finds__area__site__name").autocomplete({
+            source:site_names
+        }); 
+    });
+</script>
+{% endblock %}

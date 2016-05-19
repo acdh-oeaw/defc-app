@@ -1,9 +1,8 @@
 from django_tables2 import SingleTableView, RequestConfig
-from defcdb.models import Site, Area, Finds, DC_chronological_system
-from .filters import SiteListFilter, AreaListFilter, FindsListFilter
+from defcdb.models import Site, Area, Finds, DC_chronological_system, ResearchEvent, DC_researchevent_institution, DC_researchevent_researchtype
+from .filters import SiteListFilter, AreaListFilter, FindsListFilter, ResearchEventListFilter
 from .forms import GenericFilterFormHelper
-from .tables import SiteTable, AreaTable, FindsTable
-
+from .tables import SiteTable, AreaTable, FindsTable, ResearchEventTable
 
 class GenericListView(SingleTableView):
     filter_class = None
@@ -98,3 +97,29 @@ class FindsListView(GenericListView):
         context["cs_names"] = set(cs_names)
         context["period_names"] = set(period_names)
         return context
+
+
+class ResearchEventListView(GenericListView):
+    model = ResearchEvent
+    table_class = ResearchEventTable
+    template_name = 'browsing/researchevent_list_generic.html'
+    filter_class = ResearchEventListFilter
+    formhelper_class = GenericFilterFormHelper
+
+    def get_context_data(self, **kwargs):
+        context = super(GenericListView, self).get_context_data()
+        context[self.context_filter_name] = self.filter
+        institution_names = []
+        for x in DC_researchevent_institution.objects.all():
+            institution_names.append(x.name)
+        context["institution_names"] = set(institution_names)
+        project_names = []
+        for x in ResearchEvent.objects.all():
+            project_names.append(x.project_name)
+        context["project_names"] = set(project_names)
+        site_names = []
+        for x in Site.objects.all():
+            site_names.append(x.name)
+        context["site_names"] = set(site_names)
+        return context
+
