@@ -1,8 +1,8 @@
 from django_tables2 import SingleTableView, RequestConfig
-from defcdb.models import Site, Area, DC_chronological_system
-from .filters import SiteListFilter, AreaListFilter
+from defcdb.models import Site, Area, Finds, DC_chronological_system
+from .filters import SiteListFilter, AreaListFilter, FindsListFilter
 from .forms import GenericFilterFormHelper
-from .tables import SiteTable, AreaTable
+from .tables import SiteTable, AreaTable, FindsTable
 
 
 class GenericListView(SingleTableView):
@@ -58,6 +58,29 @@ class AreaListView(GenericListView):
     table_class = AreaTable
     template_name = 'browsing/area_list_generic.html'
     filter_class = AreaListFilter
+    formhelper_class = GenericFilterFormHelper
+
+    def get_context_data(self, **kwargs):
+        context = super(GenericListView, self).get_context_data()
+        context[self.context_filter_name] = self.filter
+        site_names = []
+        for x in Site.objects.all():
+            site_names.append(x.name)
+        context["site_names"] = set(site_names)
+        cs_names = []
+        period_names = []
+        for x in DC_chronological_system.objects.all():
+            cs_names.append(x.cs_name)
+            period_names.append(x.period_name)
+        context["cs_names"] = set(cs_names)
+        context["period_names"] = set(period_names)
+        return context
+
+class FindsListView(GenericListView):
+    model = Finds
+    table_class = FindsTable
+    template_name = 'browsing/finds_list_generic.html'
+    filter_class = FindsListFilter
     formhelper_class = GenericFilterFormHelper
 
     def get_context_data(self, **kwargs):

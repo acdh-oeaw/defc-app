@@ -1,5 +1,5 @@
 import django_filters
-from defcdb.models import Site, DC_site_topography, DC_region, DC_province, Area, DC_area_areatype
+from defcdb.models import Site, DC_site_topography, DC_region, DC_province, Area, DC_area_areatype, Finds,DC_finds_type,DC_researchevent_researchtype
 from .forms import SiteFilterForm
 
 
@@ -76,4 +76,37 @@ class AreaListFilter(django_filters.FilterSet):
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(period__period_name__icontains=value).distinct()
+
+
+class FindsListFilter(django_filters.FilterSet):
+    finds_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_type.objects.all(), help_text=False
+        )
+    area__site__province = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_province.objects.all(), label='District', help_text=False
+    )
+    area__site__name = django_filters.CharFilter(lookup_expr='icontains',
+        label='Site name',help_text=False)
+    area__area_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_areatype.objects.all(),
+        label='Area type', help_text=False
+        )
+    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
+    research_event__research_type__name = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_researchevent_researchtype.objects.all(),
+        label='Research type', help_text=False
+        )
+
+    class Meta:
+        model = Finds
+        fields = ['finds_type']
+
+    def my_custom_filter(self, queryset, value):
+        return queryset.filter(area__period__period_name__icontains=value).distinct()
+
+
+
+
+
+
 
