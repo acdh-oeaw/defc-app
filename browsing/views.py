@@ -75,5 +75,3 @@ class AreaListView(GenericListView):
         context["cs_names"] = set(cs_names)
         context["period_names"] = set(period_names)
         return context
-
-

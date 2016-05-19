@@ -36,4 +36,3 @@ simplegeneric==0.8.1
 six==1.10.0
 tornado==4.3
 traitlets==4.0.0
-wheel==0.26.0
