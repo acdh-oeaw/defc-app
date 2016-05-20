@@ -70,7 +70,7 @@
             {% if object.area_set.all %}
             {% for area in object.area_set.all %}
             {% for period in area.period.all %}
-            {{ period.period_name }} 
+            <abbr title ="Name of the chronological system">{{ period.cs_name }}</abbr> {{ period.period_name }} 
                     {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
                     {{ period.start_date1_BC }} - {{ period.end_date1_BC }}<br/>
                     {% else %}</br>

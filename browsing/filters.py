@@ -44,6 +44,16 @@ class SiteListFilter(django_filters.FilterSet):
     #reference__author = django_filters.CharFilter(lookup_expr='icontains')
     #reference__title = django_filters.CharFilter(lookup_expr='icontains')
     period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
+    period__cs_name = django_filters.MethodFilter(action='my_custom_filter_csname', help_text=False)
+    # area__period__start_date1_BC = django_filters.NumberFilter(
+    #     lookup_expr='gte', help_text=False
+    #     )
+    # period__end_date1_BC = django_filters.MethodFilter(action='my_custom_filter_enddate', help_text=False)
+
+
+    # year_of_activity_start_year = django_filters.NumberFilter(
+    #     lookup_expr='exact', help_text=False, label='Start year of research activity'
+    #     )
 
     class Meta:
         model = Site
@@ -55,7 +65,16 @@ class SiteListFilter(django_filters.FilterSet):
         #     )
 
     def my_custom_filter(self, queryset, value):
-            return queryset.filter(area__period__period_name__icontains=value).distinct()
+        return queryset.filter(area__period__period_name__icontains=value).distinct()
+
+    def my_custom_filter_csname(self, queryset, value):
+        return queryset.filter(area__period__cs_name__icontains=value).distinct()
+
+    # def my_custom_filter_startdate(self, queryset, value):
+    #     return queryset.filter(area__period__start_date1_BC__gte=value).distinct()
+
+    # def my_custom_filter_enddate(self, queryset, value):
+    #     return queryset.filter(area__period__end_date1_BC__gte=value).distinct()
 
 
 class AreaListFilter(django_filters.FilterSet):
@@ -139,6 +158,14 @@ class InterpretationListFilter(django_filters.FilterSet):
         )
     area__site__name = django_filters.CharFilter(lookup_expr='icontains',
         label='Site name',help_text=False)
+
+    area__site__province__region__name = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_region.objects.all(), label='Region', help_text=False
+    )
+
+    area__site__province = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_province.objects.all(), label='District', help_text=False
+    )
 
     class Meta:
         model = Interpretation

@@ -23,5 +23,11 @@ var period_names = [{% for period in period_names %} "{{ period }}", {% endfor %
             source:period_names
         }); 
     });
+
+    $(function() {
+        $("#id_period__cs_name").autocomplete({
+            source:cs_names
+        }); 
+    });
 </script>
 {% endblock %}

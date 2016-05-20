@@ -51,16 +51,22 @@ class InterpretationTable(tables.Table):
     interpretation_id = tables.LinkColumn('publicrecords:interpretation_detail', args=[A('pk')], accessor='id')
     production_type = tables.Column(empty_values=())
     subsistence_type = tables.Column(empty_values=())
+    # area__site__name = tables.Column(empty_values=(), verbose_name='Site') #not sure we need to present it in the table, repetitive information
 
     def render_production_type(self, record):
         if record.production_type.all():
             return ', '.join([ptype.name for ptype in record.production_type.all()])
-        return
+        return '-'
 
     def render_subsistence_type(self, record):
         if record.subsistence_type.all():
             return ', '.join([stype.name for stype in record.subsistence_type.all()])
-        return
+        return '-'
+
+    # def render_area__site__name(self, record):
+    #     if record.area.all():
+    #         return ', '.join([area.site.name for area in record.area.all()])
+    #     return '-'
 
     class Meta:
         model = Interpretation
