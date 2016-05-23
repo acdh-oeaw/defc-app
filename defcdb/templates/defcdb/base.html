@@ -20,9 +20,7 @@
     <link rel="stylesheet" href="/static/defcdb/css/ap-scroll-top.min.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<!-- JS scroll to top -->
-    <script type="text/javascript" src="/static/defcdb/js/ap-scroll-top.min.js"></script>
-    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
       window.cookieconsent_options = {"message":"This website uses cookies. // Diese Website verwendet Cookies.","dismiss":"OK","learnMore":"More // Mehr ...","link":"/imprint/","theme":"dark-top"};
     </script>
@@ -348,16 +346,7 @@
 </div>
 </footer>
     </div>
-    <script type="text/javascript">
-    // Setup plugin with default settings
-            $(document).ready(function() {
-                $.apScrollTop({
-                    'onInit': function(evt) {
-                        console.log('apScrollTop: init');
-                    }
-                });
-            });
-    </script>
+    
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->
@@ -378,5 +367,17 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         {% block scripts %}
         {% endblock %}
+      <!-- JS scroll to top -->
+    <script type="text/javascript" src="/static/defcdb/js/ap-scroll-top.min.js"></script>
+    <script type="text/javascript">
+    // Setup plugin with default settings
+            $(document).ready(function() {
+                $.apScrollTop({
+                    'onInit': function(evt) {
+                        console.log('apScrollTop: init');
+                    }
+                });
+            });
+    </script>
   </body>
 </html>
