@@ -4,30 +4,34 @@ from defcdb.models import Site, Area, Finds, ResearchEvent, Interpretation
 
 
 class SiteTable(tables.Table):
-    name = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')])
+    name = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], verbose_name='site name')
+    province_name = tables.Column(accessor='province.name', verbose_name='district')
 
     class Meta:
         model = Site
-        fields = ['name', 'province']
+        fields = ['name', 'province.region', 'province_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class AreaTable(tables.Table):
     area_type = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')])
+    area_id = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')], accessor='id')
+    site_name = tables.Column(accessor='site.name', verbose_name='site name')
 
     class Meta:
         model = Area
-        fields = ['id', 'area_type', 'site']
+        fields = ['area_id', 'area_type', 'site_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class FindsTable(tables.Table):
     finds_type = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')])
     finds_id = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')], accessor='id')
+    site_name = tables.Column(accessor='area.site.name', verbose_name='site name')
 
     class Meta:
         model = Finds
-        fields = ['finds_id', 'finds_type', 'area.site']
+        fields = ['finds_id', 'finds_type', 'site_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
