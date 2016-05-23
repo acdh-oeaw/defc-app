@@ -152,6 +152,16 @@
       width: 240px;
       height: 90px;
     }
+    #githublogo {
+      margin-right: 8px;
+      width:3%;
+      border:0;
+    }
+    #twitterlogo {
+      margin-left: 8px;
+      width:3%;
+      border:0;
+    }
    .carousel-inner img {
       width: 1200px; /* Set width to 100% */
       height: 400px;
@@ -341,6 +351,15 @@
     </div>
     <div class="footer-left">
         <a href="{% url 'webpage:imprint' %}" id="imprint_link">Imprint</a>
+        <p></p>
+    </div>
+    <div class="footer-left">
+      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank">
+        <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
+      </a>
+      <a href="https://twitter.com/OREA_digArch" target="_blank">
+        <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
+      </a>   
     </div>
   </div>
 </div>
