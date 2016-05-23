@@ -10,15 +10,24 @@
   <meta name="author" content="ACDH">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!--CSS Bootstrap -->
+<!--CSS Bootstrap -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/> -->
     <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css"/>
     <!-- <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css"/> -->
 <!-- CSS jQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+<!-- CSS scroll to top -->
+    <link rel="stylesheet" href="/static/defcdb/css/ap-scroll-top.min.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
+<!-- JS scroll to top -->
+    <script type="text/javascript" src="/static/defcdb/js/ap-scroll-top.min.js"></script>
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies. // Diese Website verwendet Cookies.","dismiss":"OK","learnMore":"More // Mehr ...","link":"/imprint/","theme":"dark-top"};
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
 <!-- Piwik -->
     <script type="text/javascript">
       var _paq = _paq || [];
@@ -87,15 +96,20 @@
     }
     footer {
       flex: 0 0 auto;
-      /*background-color: #F8F8F8;*/
+      background-color: #333; /*#F8F8F8*/
+      color: #ffffff;
+      font-size: 13px;
       padding: 40px;
     }
-   /* .footer-right {
+    .footer-right {
       text-align: right;
     }
     .footer-left {
       text-align: left;
-    }*/
+    }
+    #imprint_link {
+      color: #ffffff;
+    }
     .breadcrumb {
     /*background-color: white;*/
     border: 1px solid #ccc;
@@ -319,17 +333,31 @@
     {% endblock %}
   </div>
 </section>
+<p></p>
 <footer>
 <div class="row footer-bottom">
-    <div class="col-xs-6">
+  <div class="container">
+    <div class="footer-left">
         © Copyright OEAW
+        <p></p>
     </div>
-    <div class="col-xs-6">
-        <a href="{% url 'webpage:imprint' %}">Imprint</a>
+    <div class="footer-left">
+        <a href="{% url 'webpage:imprint' %}" id="imprint_link">Imprint</a>
     </div>
+  </div>
 </div>
 </footer>
     </div>
+    <script type="text/javascript">
+    // Setup plugin with default settings
+            $(document).ready(function() {
+                $.apScrollTop({
+                    'onInit': function(evt) {
+                        console.log('apScrollTop: init');
+                    }
+                });
+            });
+    </script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->
