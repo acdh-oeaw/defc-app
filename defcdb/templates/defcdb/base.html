@@ -75,11 +75,20 @@
       background-color:#009688;
     }*/
 
-    a.navlink:link {color: black;}
-    a.navlink:visited {color: black;}
+    a.navlink:link {
+      color: black;
+      outline: 0;
+    }
+    a.navlink:visited {
+      color: black;
+    }
     a.navlink:hover {
       color: black;
       text-decoration: underline; 
+    }
+    a img {
+      outline: 0;
+      border
     }
     #info-panel { 
       padding: 7px;
@@ -153,14 +162,16 @@
       height: 90px;
     }
     #githublogo {
+      border:none;
+      outline: 0;
       margin-right: 8px;
       width:3%;
-      border:0;
     }
     #twitterlogo {
+      border:none;
+      outline: 0;
       margin-left: 8px;
       width:3%;
-      border:0;
     }
    .carousel-inner img {
       width: 1200px; /* Set width to 100% */
@@ -354,10 +365,10 @@
         <p></p>
     </div>
     <div class="footer-left">
-      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank">
+      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
         <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
       </a>
-      <a href="https://twitter.com/OREA_digArch" target="_blank">
+      <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
         <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
       </a>   
     </div>
