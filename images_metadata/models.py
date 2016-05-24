@@ -14,7 +14,7 @@ class ImageThesaurus(models.Model):
     small_finds = models.ForeignKey(DC_finds_small_finds_type, blank=True, null=True)
     region = models.ManyToManyField(DC_region, blank=True)
     creator = models.CharField(blank=True, null=True, max_length=500)
-    image = models.FileField(upload_to='static/images', blank=True, null=True)
+    image = models.FileField(upload_to='images', blank=True, null=True)
     literature = models.ForeignKey(Book, blank=True, null=True)
     page = models.CharField(blank=True, null=True, max_length=100)
     filename = models.CharField(blank=True, null=True, max_length=500)
