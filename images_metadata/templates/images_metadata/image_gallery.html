@@ -1,4 +1,5 @@
 {% extends "defcdb/listBase.html" %}
+{% load staticfiles %}
 {% block Titel %}See All Objects{% endblock %}
  {% block allobjects %}
  <h1>All Objects: Pottery collection</h1>
@@ -43,8 +44,8 @@
                       <a href="https://www.zotero.org/defc-orea-oeaw/items/itemKey/{{ object.literature.zoterokey }}"> {{object.literature }}</a>, {{ object.page }}
                     </td>
                     <td>
-                        <a href="https://{{ request.get_host }}/media/{{ object.image}}">
-                            <img src="https://{{ request.get_host }}/media/{{ object.image}}" style="width:75%;">
+                        <a href="{% static "images_metadata/" %}{{ object.image }}">
+                            <img src="{% static "images_metadata/" %}{{ object.image }}" style="width:75%;">
                         </a>
                     </td>
                     <td>
