@@ -8,6 +8,12 @@ import autocomplete_light.shortcuts as al
 al.autodiscover()
 
 router = routers.DefaultRouter()
+router.register(r'dc_finds_lithics_raw_material', views.DC_finds_lithics_raw_materialViewSet)
+router.register(r'dc_finds_lithics_retouched_tools', views.DC_finds_lithics_retouched_toolsViewSet)
+router.register(r'dc_finds_lithics_core_shape', views.DC_finds_lithics_core_shapeViewSet)
+router.register(r'dc_finds_lithics_industry', views.DC_finds_lithics_industryViewSet)
+router.register(r'dc_area_agegroups', views.DC_area_agegroupsViewSet)
+router.register(r'name', views.NameViewSet)
 router.register(r'dc_country', views.DC_countryViewSet)
 router.register(r'dc_region', views.DC_regionViewSet)
 router.register(r'dc_province', views.DC_provinceViewSet)

@@ -27,6 +27,36 @@ from bib.models import Book
 #####################################################
 #               RESTApi views                       #
 #####################################################
+class DC_finds_lithics_raw_materialViewSet(viewsets.ModelViewSet):
+    queryset = DC_finds_lithics_raw_material.objects.all()
+    serializer_class = DC_finds_lithics_raw_materialSerializer
+
+
+class DC_finds_lithics_retouched_toolsViewSet(viewsets.ModelViewSet):
+    queryset = DC_finds_lithics_retouched_tools.objects.all()
+    serializer_class = DC_finds_lithics_retouched_toolsSerializer
+
+
+class DC_finds_lithics_core_shapeViewSet(viewsets.ModelViewSet):
+    queryset = DC_finds_lithics_core_shape.objects.all()
+    serializer_class = DC_finds_lithics_core_shapeSerializer
+
+
+class DC_finds_lithics_industryViewSet(viewsets.ModelViewSet):
+    queryset = DC_finds_lithics_industry.objects.all()
+    serializer_class = DC_finds_lithics_industrySerializer
+
+
+class DC_area_agegroupsViewSet(viewsets.ModelViewSet):
+    queryset = DC_area_agegroups.objects.all()
+    serializer_class = DC_area_agegroupsSerializer
+
+
+class NameViewSet(viewsets.ModelViewSet):
+    queryset = Name.objects.all()
+    serializer_class = NameSerializer
+
+
 class DC_site_topographyViewSet(viewsets.ModelViewSet):
     queryset = DC_site_topography.objects.all()
     serializer_class = DC_site_topographySerializer

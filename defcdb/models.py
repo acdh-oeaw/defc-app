@@ -251,7 +251,7 @@ class DC_finds_material(GenericMethods):
 
 
 class DC_finds_amount(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
 
     def __str__(self):
@@ -259,14 +259,14 @@ class DC_finds_amount(GenericMethods):
 
 
 class DC_finds_small_finds_category(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_small_finds_type(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
-    german_name = models.CharField(max_length=100, blank=True,null=True,
+    german_name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     category = models.ForeignKey(DC_finds_small_finds_category, blank=True,
         null=True)
@@ -280,9 +280,9 @@ class DC_finds_small_finds_type(GenericMethods):
 
 
 class DC_finds_botany_species(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
-    latin_name = models.CharField(max_length=100, blank=True,null=True,
+    latin_name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
 
     class Meta:
@@ -293,10 +293,10 @@ class DC_finds_botany_species(GenericMethods):
 
 
 class DC_finds_animal_remains_species(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
-    latin_name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+    latin_name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
     class Meta:
         ordering = ('name', )
@@ -306,44 +306,46 @@ class DC_finds_animal_remains_species(GenericMethods):
 
 
 class DC_finds_animal_remains_completeness(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(
+        max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_animal_remains_part(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(
+        max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_lithics_technology(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_lithics_industry(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_lithics_core_shape(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_lithics_retouched_tools(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_lithics_raw_material(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
-        help_text="PLEASE PROVIDE SOME HELPTEX")
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
 class DC_finds_pottery_form(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
-    german_name = models.CharField(max_length=100, blank=True,null=True,
+    german_name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     region = models.ManyToManyField(DC_region, blank=True)
 
@@ -353,9 +355,9 @@ class DC_finds_pottery_form(GenericMethods):
 
 
 class DC_finds_pottery_detail(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
-    german_name = models.CharField(max_length=100, blank=True,null=True,
+    german_name = models.CharField(max_length=100, blank=True, null=True,
         help_text="PLEASE PROVIDE SOME HELPTEX")
     region = models.ManyToManyField(DC_region, blank=True)
 
@@ -378,12 +380,12 @@ class DC_finds_pottery_decoration(GenericMethods):
 
 ######DCs for Interpretation######
 class DC_interpretation_productiontype(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="Types of production for which evidence was found.")
 
 
 class DC_interpretation_subsistencetype(GenericMethods):
-    name = models.CharField(max_length=100, blank=True,null=True,
+    name = models.CharField(max_length=100, blank=True, null=True,
         help_text="Types of livelihood for which evidence was found.")
 
 

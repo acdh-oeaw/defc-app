@@ -4,6 +4,36 @@ from .models import *
 from bib.models import Book
 
 
+class DC_finds_lithics_raw_materialSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_finds_lithics_raw_material
+
+
+class DC_finds_lithics_retouched_toolsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_finds_lithics_retouched_tools
+
+
+class DC_finds_lithics_core_shapeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_finds_lithics_core_shape
+
+
+class DC_finds_lithics_industrySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_finds_lithics_industry
+
+
+class DC_area_agegroupsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_area_agegroups
+
+
+class NameSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Name
+
+
 class DC_site_topographySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DC_site_topography
