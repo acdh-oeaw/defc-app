@@ -1,28 +1,34 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import include, url
-import autocomplete_light.shortcuts as al
-al.autodiscover()
 from rest_framework import routers
 from django.contrib import admin
 from orea.settings import base
-
 from defcdb import views
+import autocomplete_light.shortcuts as al
+al.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'dc_country', views.DC_countryViewSet)
 router.register(r'dc_region', views.DC_regionViewSet)
 router.register(r'dc_province', views.DC_provinceViewSet)
+router.register(r'dc_site_topography', views.DC_site_topographyViewSet)
 router.register(r'dc_researchevent_researchtype', views.DC_researchevent_researchtypeViewSet)
 router.register(r'dc_researchevent_institution', views.DC_researchevent_institutionViewSet)
-router.register(r'dc_researchevent_special_analysis', views.DC_researchevent_special_analysisViewSet)
-router.register(r'dc_site_geographicalreferencesystem', views.DC_site_geographicalreferencesystemViewSet)
+router.register(
+    r'dc_researchevent_special_analysis', views.DC_researchevent_special_analysisViewSet
+)
+router.register(
+    r'dc_site_geographicalreferencesystem', views.DC_site_geographicalreferencesystemViewSet
+)
 router.register(r'dc_area_areatype', views.DC_area_areatypeViewSet)
 router.register(r'dc_area_settlementtype', views.DC_area_settlementtypeViewSet)
 router.register(r'dc_area_settlementstructure', views.DC_area_settlementstructureViewSet)
 router.register(r'dc_area_constructiontype', views.DC_area_constructiontypeViewSet)
 router.register(r'dc_area_buildingtechnique', views.DC_area_buildingtechniqueViewSet)
 router.register(r'dc_area_specialfeatures', views.DC_area_specialfeaturesViewSet)
-router.register(r'dc_area_evidenceofgraveshumanremains', views.DC_area_evidenceofgraveshumanremainsViewSet)
+router.register(
+    r'dc_area_evidenceofgraveshumanremains', views.DC_area_evidenceofgraveshumanremainsViewSet
+)
 router.register(r'dc_area_evidenceofoccupation', views.DC_area_evidenceofoccupationViewSet)
 router.register(r'dc_area_caverockshelterstype', views.DC_area_caverockshelterstypeViewSet)
 router.register(r'dc_area_rawmaterial', views.DC_area_rawmaterialViewSet)
@@ -40,18 +46,23 @@ router.register(r'dc_finds_small_finds_type', views.DC_finds_small_finds_typeVie
 router.register(r'dc_finds_small_finds_category', views.DC_finds_small_finds_categoryViewSet)
 router.register(r'dc_finds_botany_species', views.DC_finds_botany_speciesViewSet)
 router.register(r'dc_finds_animal_remains_species', views.DC_finds_animal_remains_speciesViewSet)
-router.register(r'dc_finds_animal_remains_completeness', views.DC_finds_animal_remains_completenessViewSet)
+router.register(
+    r'dc_finds_animal_remains_completeness', views.DC_finds_animal_remains_completenessViewSet
+)
 router.register(r'dc_finds_animal_remains_part', views.DC_finds_animal_remains_partViewSet)
 router.register(r'dc_finds_lithics_technology', views.DC_finds_lithics_technologyViewSet)
 router.register(r'dc_finds_pottery_form', views.DC_finds_pottery_formViewSet)
 router.register(r'dc_finds_pottery_detail', views.DC_finds_pottery_detailViewSet)
 router.register(r'dc_finds_pottery_decoration', views.DC_finds_pottery_decorationViewSet)
 router.register(r'dc_interpretation_productiontype', views.DC_interpretation_productiontypeViewSet)
-router.register(r'dc_interpretation_subsistencetype', views.DC_interpretation_subsistencetypeViewSet)
+router.register(
+    r'dc_interpretation_subsistencetype', views.DC_interpretation_subsistencetypeViewSet
+)
 router.register(r'dc_chronological_system', views.DC_chronological_systemViewSet)
 router.register(r'dc_period_datingmethod', views.DC_period_datingmethodViewSet)
 router.register(r'dc_period_datedby', views.DC_period_datedbyViewSet)
-router.register(r'Reference', views.ReferenceViewSet)
+router.register(r'dc_site_coordinatesource', views.DC_site_coordinatesource)
+router.register(r'Book', views.BookViewSet)
 router.register(r'ResearchEvent', views.ResearchEventViewSet)
 router.register(r'Site', views.SiteViewSet)
 router.register(r'Area', views.AreaViewSet)
@@ -70,11 +81,14 @@ urlpatterns = [
     url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^', include('webpage.urls', namespace='webpage')),
     url(r'^bib/', include('bib.urls', namespace='bib')),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': base.MEDIA_ROOT,}, name='media_root_url'),
+    url(
+        r'^media/(?P<path>.*)$',
+        'django.views.static.serve',
+        {'document_root': base.MEDIA_ROOT, }, name='media_root_url'
+    ),
     url(r'^image_gallery/', include('images_metadata.urls', namespace="image_gallery")),
     url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
     url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),
     url(r'^browsing/', include('browsing.urls', namespace='browsing')),
     url(r'^datamodel/', include('django_spaghetti.urls', namespace="datamodel")),
 ]
-
