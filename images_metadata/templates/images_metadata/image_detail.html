@@ -1,4 +1,5 @@
 {% extends "defcdb/base_detail.html" %}
+{% load staticfiles %}
 {% block scriptHeader %}
 <style>
 #info-panel { 
@@ -47,8 +48,8 @@
   </div>
 </div>
 <div class="image">
-    <a href="https://{{ request.get_host }}/media/{{ object.image}}">
-        <img id="mainimage" src="https://{{ request.get_host }}/media/{{ object.image}}" style="width:40%;">
+    <a href="{% static "images_metadata/" %}{{ object.image }}">
+        <img id="mainimage" src="{% static "images_metadata/" %}{{ object.image }}" style="width:40%;">
     </a><br/>
 </div>
 <div class="panel panel-info">

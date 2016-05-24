@@ -1,4 +1,5 @@
 {% extends "defcdb/base_detail.html" %}
+{% load staticfiles %}
 {% block scriptHeader %}
 <style>
 #info-panel { 
@@ -72,7 +73,7 @@ img {
 {% if object.pottery_form %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="{% static "images_metadata/" %}{{ object.image }}" >
   </a>
   <div class="desc">
     {{ object.pottery_form.name }}
@@ -92,7 +93,7 @@ img {
 {% if object.pottery_decoration %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="{% static "images_metadata/" %}{{ object.image }}" >
   </a>
   <div class="desc">
     {{ object.pottery_decoration.name }}
@@ -112,7 +113,7 @@ img {
 {% if object.pottery_detail %}
 <div class="img">
   <a href="/image_gallery/detail/{{ object.id }}">
-    <img id="smallimage" src="https://{{ request.get_host }}/media/{{ object.image}}" >
+    <img id="smallimage" src="{% static "images_metadata/" %}{{ object.image }}" >
   </a>
   <div class="desc">
     {{ object.pottery_detail.name }}
