@@ -268,11 +268,12 @@
 
             <tr>
                 <td>Model metadata</td>
-                <td><a href="https://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td>
+                <!-- <td><a href="https://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td> -->
+                <td><a href="{% static "threedmodels/" %}{{object.model_metadata}}">Download metadata file</a></br></td> 
             </tr>
             <tr>
                 <td>Model parameters</td>
-                <td><a href="https://{{ request.get_host }}/media/{{ object.model_parameters }}">Download parameters file</a></br></td>
+                <td><a href="{% static "threedmodels/" %}{{object.model_parameters}}">Download parameters file</a></br></td>
             </tr>
         </table>
     </div>
@@ -320,7 +321,7 @@ $(document).ready(function(){
     var presenter = null;
     function setup3dhop() { 
         presenter = new Presenter("draw-canvas");
-        var meshUrl = "https://{{ request.get_host }}/media/{{ object.model_file }}";
+        var meshUrl = "{% static "threedmodels/" %}{{object.model_file}}";
         presenter.setScene({
             meshes: {
                 "3dmodel" : { url: meshUrl }

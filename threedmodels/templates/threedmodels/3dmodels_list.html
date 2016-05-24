@@ -1,5 +1,5 @@
 {% extends "defcdb/base_detail.html" %}
-
+{% load staticfiles %}
 {% block scriptHeader %}
 <style>
 .thumbnail_model {
@@ -83,7 +83,7 @@
     
 
         <a class="thumbnail-img" href="{% url '3Dmodels:detail' pk=x.id %}">
-            <img class="img-responsive " src="https://{{ request.get_host }}/media/{{ x.model_thumbnail }}" title="3D Model ID {{ x.model_id }}">
+            <img class="img-responsive " src="{% static "threedmodels/" %}{{ x.model_thumbnail }}" title="3D Model ID {{ x.model_id }}">
         </a>
 
         

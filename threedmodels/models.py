@@ -56,10 +56,10 @@ class Threedmodel(models.Model):
     core_color = models.CharField(blank=True, null=True, max_length=500)
     inclusion = models.ManyToManyField(Inclusion, blank=True)
     resource_metadata = models.ForeignKey(Project, blank=True, null=True)
-    model_file = models.FileField(upload_to='static/threedmodels', blank=True, null=True)
+    model_file = models.FileField(upload_to='models', blank=True, null=True)
     model_thumbnail = models.FileField(
-        upload_to='static/threedmodels/thumbnails', blank=True, null=True)
+        upload_to='thumbnails', blank=True, null=True)
     model_metadata = models.FileField(
-        upload_to='static/threedmodels/metadata', blank=True, null=True)
+        upload_to='metadata', blank=True, null=True)
     model_parameters = models.FileField(
-        upload_to='static/threedmodels/parameters', blank=True, null=True)
+        upload_to='parameters', blank=True, null=True)
