@@ -1,6 +1,8 @@
 import django_filters
 from defcdb.models import Site, DC_site_topography, DC_region, DC_province, Area, DC_area_areatype
-from defcdb.models import Finds,DC_finds_type,DC_researchevent_researchtype, ResearchEvent, Interpretation, DC_researchevent_institution
+from defcdb.models import (
+    Finds, DC_finds_type, DC_researchevent_researchtype, ResearchEvent,
+    Interpretation)
 from defcdb.models import DC_interpretation_productiontype, DC_interpretation_subsistencetype
 from .forms import SiteFilterForm
 
@@ -41,18 +43,16 @@ class SiteListFilter(django_filters.FilterSet):
     topography__name = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_site_topography.objects.all(), label='Topography', help_text=False
     )
-    #reference__author = django_filters.CharFilter(lookup_expr='icontains')
-    #reference__title = django_filters.CharFilter(lookup_expr='icontains')
     period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
     period__cs_name = django_filters.MethodFilter(
         action='my_custom_filter_csname', label='Period Chronological system', help_text=False
-        )
+    )
     area__period__start_date1_BC = django_filters.NumberFilter(
         lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to'
-        )
+    )
     area__period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to'
-        )
+    )
 
     class Meta:
         model = Site
@@ -145,18 +145,16 @@ class FindsListFilter(django_filters.FilterSet):
 
 class ResearchEventListFilter(django_filters.FilterSet):
     research_type = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_researchevent_researchtype.objects.all(), help_text=False
-        )
+        queryset=DC_researchevent_researchtype.objects.all(), help_text=False)
     institution = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
     year_of_activity_start_year = django_filters.NumberFilter(
-        lookup_expr='exact', help_text=False, label='Start year of research activity'
-        )
+        lookup_expr='exact', help_text=False, label='Start year of research activity')
     year_of_activity_end_year = django_filters.NumberFilter(
-        lookup_expr='exact', help_text=False, label='End year of research activity'
-        )
-    project_name = django_filters.CharFilter(lookup_expr='icontains',help_text=False)
-    finds__area__site__name = django_filters.CharFilter(lookup_expr='icontains',
-        label='Site name',help_text=False)
+        lookup_expr='exact', help_text=False, label='End year of research activity')
+    project_name = django_filters.CharFilter(lookup_expr='icontains', help_text=False)
+    finds__area__site__name = django_filters.CharFilter(
+        lookup_expr='icontains', label='Site name', help_text=False
+    )
 
     class Meta:
         model = ResearchEvent
@@ -168,14 +166,11 @@ class ResearchEventListFilter(django_filters.FilterSet):
 
 class InterpretationListFilter(django_filters.FilterSet):
     production_type = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_interpretation_productiontype.objects.all(), help_text=False
-        )
+        queryset=DC_interpretation_productiontype.objects.all(), help_text=False)
     subsistence_type = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_interpretation_subsistencetype.objects.all(), help_text=False
-        )
-    area__site__name = django_filters.CharFilter(lookup_expr='icontains',
-        label='Site name',help_text=False)
-
+        queryset=DC_interpretation_subsistencetype.objects.all(), help_text=False)
+    area__site__name = django_filters.CharFilter(
+        lookup_expr='icontains', label='Site name', help_text=False)
     area__site__province__region__name = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_region.objects.all(), label='Region', help_text=False
     )
@@ -187,15 +182,3 @@ class InterpretationListFilter(django_filters.FilterSet):
     class Meta:
         model = Interpretation
         fields = ['production_type']
-
-
-
-
-
-
-
-
-
-
-
-

@@ -85,7 +85,7 @@ router.register(r'Interpretation', api_views.InterpretationViewSet)
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^defcdb/', include('defcdb.urls', namespace='defcdb')),
     url(r'^geolocation/', include('geolocation.urls', namespace="geolocation")),
     url(r'^login/$', views.user_login, name='user_login'),
