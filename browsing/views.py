@@ -1,9 +1,14 @@
 from django_tables2 import SingleTableView, RequestConfig
-from defcdb.models import Site, Area, Finds, DC_chronological_system, ResearchEvent, DC_researchevent_institution, DC_researchevent_researchtype
-from defcdb.models import Interpretation, DC_interpretation_productiontype, DC_interpretation_subsistencetype
-from .filters import SiteListFilter, AreaListFilter, FindsListFilter, ResearchEventListFilter, InterpretationListFilter
+from defcdb.models import (
+    Site, Area, Finds, DC_chronological_system, ResearchEvent,
+    DC_researchevent_institution)
+from defcdb.models import Interpretation
+from .filters import (
+    SiteListFilter, AreaListFilter, FindsListFilter, ResearchEventListFilter,
+    InterpretationListFilter)
 from .forms import GenericFilterFormHelper
 from .tables import SiteTable, AreaTable, FindsTable, ResearchEventTable, InterpretationTable
+
 
 class GenericListView(SingleTableView):
     filter_class = None
