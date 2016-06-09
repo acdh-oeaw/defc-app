@@ -17,7 +17,7 @@ def sync_zotero_action(request):
     """ fetches the last n items form zoter and syncs it with the bib entries in defc-db"""
     root = "https://api.zotero.org/users/"
     params = "{}/collections/{}/items/top?v=3&key={}".format(Z_USER_ID, Z_COLLECTION, Z_API_KEY)
-    url = root+params+"&sort=dateModified&limit=10"
+    url = root + params + "&sort=dateModified&limit=10"
     books_before = len(Book.objects.all())
     try:
         r = requests.get(url)
