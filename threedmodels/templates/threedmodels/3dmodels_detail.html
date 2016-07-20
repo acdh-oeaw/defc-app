@@ -44,10 +44,8 @@
         <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
             
             <canvas id="draw-canvas"/>
-
-        </div>
+</div>
         
-
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
 <div class="panel panel-info">
@@ -125,8 +123,20 @@
                 <td>Decoration description</td>
                 <td>{{ object.decoration_description }}</td>
         </tr>
+    </table>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Fabric
+  </div>
+</div>
+
+<div>
+    <table class="table table-bordered table-striped">
+
         <tr>
-                <td>Fabric color</td>
+                <td class="col-sm-2">Fabric color</td>
                 <td>{{ object.fabric_color }}</td>
         </tr>
         <tr>
@@ -153,8 +163,19 @@
                 <td>Core color</td>
                 <td>{{ object.core_color }}</td>
         </tr>
+
+</table>
+</div>
+<div class="panel panel-info">
+  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    Inclusion
+  </div>
+</div>
+
+<div>
+    <table class="table table-bordered table-striped">
         <tr>
-                <td>Inclusion type</td>
+                <td class="col-sm-2">Inclusion type</td>
             	<td>{% for x in inclusion_list %}
                 {{ x.inclusion_type }}</br>
                 {% endfor %}</td>
@@ -199,13 +220,13 @@
     </table>
 </div>
 
-    <div class="panel panel-info">
-        <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
-            General Metadata
-        </div>
+<div class="panel panel-info">
+    <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+        General Metadata
     </div>
+</div>
 
-    <div class="panel panel-default">
+<div class="panel panel-default">
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="col-sm-2">
@@ -268,13 +289,13 @@
                 <td><a href="{% static "threedmodels/" %}{{object.model_parameters}}">Download parameters file</a></br></td>
             </tr>
         </table>
-    </div>
+</div>
 
-    <div class="panel panel-info">
-        <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
-            Credits
-        </div>
+<div class="panel panel-info">
+    <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+        Credits
     </div>
+</div>
      <div class="panel panel-default">
         <table class="table table-bordered table-striped">
             <tr>
