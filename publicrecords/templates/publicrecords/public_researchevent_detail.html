@@ -21,6 +21,13 @@
 
 <button id="01" class="btn btn-default">Show / Hide all fields</button>
 <p></p>
+{% if user.is_authenticated %}
+ <div>
+    <a class ="btn btn-primary btn-md" href="{% url 'defcdb:researchevent_update' pk=object.id %}">Edit</a>
+    <a class ="btn btn-danger btn-md" href="{% url 'defcdb:researchevent_delete' pk=object.id %}">Delete</a>
+</div>  
+{% endif %}
+<p></p>
 <div class="panel panel-info">
   <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information

@@ -40,7 +40,7 @@ def update_researchevent(request, pk):
         form = ResearcheventForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:researchevent_detail', pk=pk)
+            return redirect('publicrecords:researchevent_detail', pk=pk)
     else:
         form = ResearcheventForm(instance=instance)
         return render(
@@ -54,7 +54,7 @@ def create_researchevent(request):
         form = ResearcheventForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:researchevent_list')
+            return redirect('browsing:browse_researchevents')
         else:
             return render(request, 'defcdb/create_researchevent.html', {'form': form})
     else:
@@ -65,7 +65,7 @@ def create_researchevent(request):
 class ResearchEventDelete(DeleteView):
     model = ResearchEvent
     template_name = 'defcdb/confirm_delete.html'
-    success_url = reverse_lazy('defcdb:researchevent_list')
+    success_url = reverse_lazy('browsing:browse_researchevents')
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -103,7 +103,7 @@ def update_finds(request, pk):
         form = FindsForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-        return redirect('defcdb:finds_detail', pk=pk)
+        return redirect('publicrecords:finds_detail', pk=pk)
     else:
         form = FindsForm(instance=instance)
         return render(
@@ -116,7 +116,7 @@ def create_finds(request):
         form = FindsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:finds_list')
+            return redirect('browsing:browse_finds')
         else:
             return render(request, 'defcdb/create_finds.html', {'form': form})
     else:
@@ -127,7 +127,7 @@ def create_finds(request):
 class FindsDelete(DeleteView):
     model = Finds
     template_name = 'defcdb/confirm_delete.html'
-    success_url = reverse_lazy('defcdb:finds_list')
+    success_url = reverse_lazy('browsing:browse_finds')
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -202,7 +202,7 @@ def update_site(request, pk):
         form = SiteForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-        return redirect('defcdb:site_detail', pk=pk)
+        return redirect('publicrecords:site_detail', pk=pk)
     else:
         form = SiteForm(instance=instance)
         return render(request, 'defcdb/update_form.html', {'form': form, 'classname': "site"})
@@ -215,7 +215,7 @@ def create_site(request):
         form = SiteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:site_list')
+            return redirect('browsing:browse_sites')
         else:
             return render(request, 'defcdb/create_site.html', {'form': form})
     else:
@@ -226,7 +226,7 @@ def create_site(request):
 class SiteDelete(DeleteView):
     model = Site
     template_name = 'defcdb/confirm_delete.html'
-    success_url = reverse_lazy('defcdb:site_list')
+    success_url = reverse_lazy('browsing:browse_sites')
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -265,7 +265,7 @@ def update_area(request, pk):
         form = AreaForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-        return redirect('defcdb:area_detail', pk=pk)
+        return redirect('publicrecords:area_detail', pk=pk)
     else:
         form = AreaForm(instance=instance)
         return render(request, 'defcdb/edit_area.html', {'form': form, 'classname': "area"})
@@ -278,7 +278,7 @@ def create_area(request):
         form = AreaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:area_list')
+            return redirect('browsing:browse_areas')
         else:
             return render(request, 'defcdb/create_area.html', {'form': form})
     else:
@@ -289,7 +289,7 @@ def create_area(request):
 class AreaDelete(DeleteView):
     model = Area
     template_name = 'defcdb/confirm_delete.html'
-    success_url = reverse_lazy('defcdb:area_list')
+    success_url = reverse_lazy('browsing:browse_areas')
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -346,7 +346,7 @@ def update_interpretation(request, pk):
         form = InterpretationForm(request.POST, instance=instance)
         if form.is_valid():
             form.save()
-        return redirect('defcdb:interpretation_detail', pk=pk)
+        return redirect('publicrecords:interpretation_detail', pk=pk)
     else:
         form = InterpretationForm(instance=instance)
         return render(
@@ -361,7 +361,7 @@ def create_interpretation(request):
         form = InterpretationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('defcdb:interpretation_list')
+            return redirect('browsing:browse_interpretations')
         else:
             return render(request, 'defcdb/create_interpretation.html', {'form': form})
     else:
@@ -372,7 +372,7 @@ def create_interpretation(request):
 class InterpretationDelete(DeleteView):
     model = Interpretation
     template_name = 'defcdb/confirm_delete.html'
-    success_url = reverse_lazy('defcdb:interpretation_list')
+    success_url = reverse_lazy('browsing:browse_interpretations')
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):

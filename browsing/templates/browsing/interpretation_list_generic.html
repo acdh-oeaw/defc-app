@@ -1,6 +1,14 @@
 {% extends "browsing/generic_list.html" %}
 {% block list_title %}All Interpretations{% endblock %}
 
+{% block create_button %}
+{% if user.is_authenticated %}
+ <div>
+    <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:interpretation_create' %}">create new Interpretation</a>
+</div>  
+{% endif %}     
+{% endblock %}
+
 {% block reset_button %}
  <a class ="btn btn-default"  href="{% url 'browsing:browse_interpretations' %}">Reset search</a>     
 {% endblock %}
