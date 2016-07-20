@@ -26,6 +26,14 @@
                 <td>{{ object.id }}</td>
         </tr>
         <tr>
+                <td>Site</td>
+                <td>{% for area in areas_list|slice:":1" %}
+                        <a href="{% url 'publicrecords:site_detail' pk=area.site.id %}">
+                        {{ area.site.name }}</a>
+                    {% endfor %}
+                </td>
+        </tr>
+        <tr>
                 <td>Area</td>
                 <td>{% for area in areas_list %}
                         <a href="{% url 'publicrecords:area_detail' pk=area.id %}">
