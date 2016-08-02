@@ -106,7 +106,7 @@
       background-color: #333; /*#F8F8F8*/
       color: #ffffff;
       font-size: 13px;
-      padding: 15px;
+      padding: 16px;
     }
     .footer-right {
       text-align: right;
@@ -165,13 +165,13 @@
       border:none;
       outline: 0;
       margin-right: 8px;
-      width:3%;
+      width:10%;
     }
     #twitterlogo {
       border:none;
       outline: 0;
       margin-left: 8px;
-      width:3%;
+      width:10%;
     }
    .carousel-inner img {
       width: 1200px; /* Set width to 100% */
@@ -309,6 +309,10 @@
               </li>
               <li role="separator" class="divider"></li>
               <li>
+                <a href="{% url 'webpage:movie_teaser' %}">Çukuriçi Höyük movie</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
                 <a href="{% url 'defcdb:bibliography' %}">Bibliography</a>
                 </li>
             </ul>
@@ -353,27 +357,29 @@
   </div>
 </section>
 <p></p>
-<footer>
-<div class="row footer-bottom">
-  <div class="container">
-    <div class="footer-left">
-        © Copyright OEAW
-    </div>
-    <div class="footer-left">
-        <a href="{% url 'webpage:imprint' %}" id="imprint_link">Imprint</a>
-        <p></p>
-    </div>
-    <div class="footer-left">
-      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
-        <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
-      </a>
-      <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
-        <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
-      </a>   
-    </div>
-  </div>
-</div>
+
+
+  <footer>
+     <div class="container">
+        <div class="row text-center">
+        <div class="col-sm-4">
+          © Copyright OEAW</br>
+          <a href="{% url 'webpage:imprint' %}" id="imprint_link">Imprint</a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
+              <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo" width="25%"/>
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
+            <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo" width="25%"/>
+          </a> 
+        </div>
+      </div>
+    </div>  
 </footer>
+
     </div>
     
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>

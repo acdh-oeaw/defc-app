@@ -26,6 +26,10 @@ def about(request):
 	context["event_list"] = Event.objects.all()
 	return render(request, 'webpage/about.html', context)
 
+def movie_teaser(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/movie_teaser.html', context)
+
 
 
 class EventListViewAdmin(generic.ListView):
