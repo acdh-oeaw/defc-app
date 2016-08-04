@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/static/defcdb/css/ap-scroll-top.min.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--CSS custom for blog-->
+    <link rel="stylesheet" href="/static/webpage/css/defc_blog.css"/>
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
       window.cookieconsent_options = {"message":"This website uses cookies. // Diese Website verwendet Cookies.","dismiss":"OK","learnMore":"More // Mehr ...","link":"/imprint/","theme":"dark-top"};
@@ -214,6 +216,9 @@
               </li>
               <li>
                 <a href="{% url 'webpage:about' %}">About</a>
+              </li>
+              <li>
+                <a href="{% url 'webpage:blog_main' %}">Building the defc app</a>
               </li>
               <li>
                 <a href="{% url 'datamodel:plate' %}">Data Model</a>

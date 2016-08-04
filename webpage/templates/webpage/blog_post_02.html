@@ -1,0 +1,106 @@
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block Titel %} Building the defc app {% endblock %}
+{% block content %}
+
+<div class="jumbotron text-center" id="blogjumbo">
+  <h1 class="blog-name">Implementation and future plans</h1>
+  <h2 class="subheading">Opening and linking data</h2>
+  <span class="meta">Posted by <a href="http://www.orea.oeaw.ac.at/aspoeck.html" target="_blank">Edeltraud Aspöck</a>, Anja Masur, <a href="http://www.orea.oeaw.ac.at/stuhec.html" target="_blank">Seta Štuhec</a> on August 2, 2016</span>
+</div>
+<article>
+<div class="container" style="text-align: justify;">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<!-- <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1"> -->
+
+<h2 class="section-heading">Development of data management system</h2>
+<h3>Arches</h3>
+
+<p>In spring 2015, the analysis of different data management systems resulted in choosing <a href="http://archesproject.org/" target="_blank">Arches</a>, an open source software system designed for the heritage sector to inventorize and manage all types of immovable cultural heritage. A new version of Arches was just being launched (April 2015). The new Arches version (v3.0) appeared to be a graph database with the ontology CIDOC CRM integrated. It was possible to customize the Arches application ‘Heritage Inventory Package’ (HIP) according to user needs and Arches also includes a tool for creating thesauri, mapping features and a timeline. This allows publishing data online according to internationally accepted standards. Hence, Arches provided most features that we needed for our system to achieve DEFC project objectives. We therefore decided to customize Arches for our project. For this we got technical support by the <a href="https://acdh.oeaw.ac.at/acdh/" target="_blank">ACDH</a>. 
+<p>At this stage (when) we submitted a paper to the Digital Heritage conference, where we introduced the project and announced to use Arches for implementation.</p>
+<p><a href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7419549&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7419549" target="_blank">Aspöck, Edeltraud; Masur, Anja (2015). Digitizing Early Farming Cultures. Customizing the Arches Heritage Inventory and Management System. Proceedings of Digital Heritage International Congress 2015, 28. Sept. - 2. Oct., Granada, Spain. DOI: 10.1109/DigitalHeritage.2015.7419549.</a></p>
+<p>However, setting up Arches, we experienced problems which showed that Arches version (v3.0) was not a practical solution for our project requirements:
+	<ul>
+<li>the documentation was not finished at this time</li>
+<li>SKOS import of thesauri was not working properly</li>
+<li>we missed semantic richness and the use of the CIDOC CRM extensions CRMarchaeo and CRMsci</li>
+<li>the mapping of the Arches data model did not always fit our requirements</li>
+<li>our data model was too specific and not all concepts were covered by Arches</li>
+<li>one of the most problematic issues was that the user interface did not adapt to modifications in the data model, and we would have had to create a new user interface.</li>
+</ul>
+For these reasons we decided not to use Arches, but to find another solution. 
+</p>
+<h3>DEFC app (site database)</h3>
+<p>In summer 2015 after experiencing all this problems it has been decided to develop a new site database from scratch. Peter Andorfer and Ksenia Zaytseva (ACDH) created a Django-based database which we now call DEFC app. The database set up took around 6 months. In this time many meetings between Digital Archaeology research group and ACDH technical developers took place to make sure all requirements will be implemented. AAPP research group has been involved in the process through several workshops and has given regular feedback after testing each version of the app.</p>
+<p>The data model of DEFC app consists of all our previously defined components: Sites, Research Event, Area, Finds, and Interpretation. Data is entered into each component individually, while the components and the data are linked to each other. Most of the entry fields consist of (interdependent) dropdown lists filled with controlled vocabulary to minimize data entry mistakes and ensure better querying conditions.</p>
+<p>The database features a map interface with all entered sites (where coordinates are available) and views of the 3D scanned potsherds of the Schachermeyr collection. Additionally, DEFC App is linked to the <a href="https://www.zotero.org/defc-orea-oeaw" target="_blank">Zotero online bibliography database</a> that is combines several bibliographic databases of AAPP research group. </p>
+</p>
+<h2 class="section-heading">Data entry</h2>
+<p>The database allows different levels of access. Everyone with internet access can browse the published data, but to insure data credibility a login account is necessary to add new data to the database.</p>  
+<p>As first data to be entered in DEFC app (spring 2015) the following publications and other resources have been selected:
+<ul>
+<li>ALRAM-STERN, E., 1996. Die Ägäische Frühzeit“. Band 1: Das Neolithikum in Griechenland. Veröffentlichungen der Mykenischen Kommission 16.</li>
+<li>SCHACHERMEYR, F. (†),1991. Sammlung Fritz Schachermeyr: Die neolithische Keramik Thessaliens. Aus dem Nachlaß bearbeitet von Eva Alram-Stern. Veröffentlichungen der Mykenischen Kommission 13.</li>
+<li>ÖZDOĞAN, M.; BAŞGELEN, N.; KUNIHOLM, P. (ed.), The Neolithic in Turkey. New Excavations & New Research. Volume 1 - The Tigris Basin, 2011, Istanbul.</li>
+<li>ÖZDOĞAN, M.; BAŞGELEN, N.; KUNIHOLM, P. (ed.), The Neolithic in Turkey. New Excavations & New Research. Volume 2 - The Euphrates Basin, 2011, Istanbul.</li>
+</ul>
+</p>
+<p>
+As help for the data entry the following tools have been created:
+<ul>
+<li>Pottery image gallery that provides visual examples of different types of pottery form, decoration and detail from different regions in Greece and Anatolia (due to copyright issues this tool is only visible to users who register an account)</li>
+<li>A map of regions and districts of Turkey and Greece differentiated by the AAPP research group and DEFC app. The regions of Turkey are a result of research of AAPP research group, whereas the districts correspond to the official districts of Turkey. The map of Greece and its regions has been created based on the resources used by the British School of Athens.</li>
+</ul>
+</p>
+<h2 class="section-heading">3D Models</h2>
+<p>90 most representative sherds were selected from the Schachermeyr pottery collection and 3D digitized using Breuckmann smart Scan HE 5 Megapixel Color 3D Scanner. The 3D models were added to the DEFC app homepage using <a href="http://3dhop.net/" target="_blank">3DHOP</a> (3D Heritage Online Presenter). The 3D models are not going to be presented as a plain collection of separate 3D models, but will be incorporated within the DEFC App database as a part of a rich dataset providing the archaeological information.
+</p> 
+<p>In order to ensure a certain technical reliability the 3D model provenance metadata were added to the 3D models. When deciding on which data to include with the digital Schachermeyr models, we considered the standards recommended by <a href="http://3dicons-project.eu/eng" target="_blank">3D ICONS</a>, the <a href="http://guides.archaeologydataservice.ac.uk/" target="_blank">Archaeological Data Service (ADS) Guides to Good Practice</a> and the <a href="http://www.ianus-fdz.de/" target="_blank">IANUS project</a>. Additionally, the <a href="http://www.ics.forth.gr/isl/index_main.php?l=e&c=656" target="_blank">CIDOC CRMdig</a> extension has been taken into account, since it is planned to map all datasets to CIDOC CRM and its extensions. The provenance metadata are divided into three groups:
+<ul>
+<li>Administrative metadata
+<ul>
+<li>Project name: the name of the scanning project;</li>
+<li>Actor: the person who captured 3D data and the person who did the post-processing;</li>
+<li>Time of capture: when were the data captured and when were they processed;</li>
+<li>Copyright;</li>
+<li>Digital asset ID: the file name;</li>
+<li>File format;</li>
+<li>URI/ID.</li>
+</ul>
+</li>
+<li>Activity (capture)
+<ul>   
+<li>Type of activity: which 3D acquisition method was applied (e.g. 3D structure light scanning);</li>
+<li>Digital device: the hardware for the 3D capturing. In the case of 3D scanning, the metadata that should be recorded are;</li>
+<li>Scanning device;</li>
+<li>Texturing device: scanner camera or external camera;</li>
+<li>Computer device;</li>
+<li>Accompanying software (and pre-set parameters);</li>
+<li>Capture conditions record of any external activities that might have influenced the 3D capture procedure (e.g. weather).</li>
+</ul>
+</li>
+<li>Activity (processing)
+<ul>
+<li>Software: the post-processing software and its version;</li>
+<li>Action: the processing steps that have been carried out (e. g. hole filling, polishing, texture-colour conversion, decimation, compression);</li>
+<li>Import/export file format.</li>
+</ul>
+</li>
+</p>
+<h2 class="section-heading">Public view</h2>
+<p>At this time all published data is accessible for viewing and downloading. Additionally, geo-visualization of sites is available as well as customized filtering and ordering of separate entries. In the future more advanced query interface will be set up.
+</p>
+<p>The code of the database is available via API on the project website (application program interface) and <a href="https://github.com/acdh-oeaw/defc-app" target="_blank">GitHub</a> page.
+</p>
+<h2 class="section-heading">Linked Open Data</h2>
+<p>DEFC app is an open access database. Everyone can browse and query the data. In order to enable integrating other databases or linking to those, we map our database to the ontology CIDOC CRM. This work will be completed in 2016.</p>
+<p>
+In 2016, we will integrate several databases containing data about Greek pottery from different sites by mapping those to CIDOC CRM and storing these in a triple store. This use case will show how integrating of different data resources into our site database can work.
+</p>
+</div>
+</div>
+</div>
+</article>
+
+{% endblock content %}

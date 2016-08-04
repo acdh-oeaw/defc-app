@@ -1,0 +1,73 @@
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block Titel %} Building the defc app {% endblock %}
+{% block content %}
+
+<div class="jumbotron text-center" id="blogjumbo">
+  <h1 class="blog-name">Resources, user requirements and data modeling</h1>
+  <h2 class="subheading">Pooling data together</h2>
+  <span class="meta">Posted by <a href="http://www.orea.oeaw.ac.at/aspoeck.html" target="_blank">Edeltraud Aspöck</a>, Anja Masur, <a href="http://www.orea.oeaw.ac.at/stuhec.html" target="_blank">Seta Štuhec</a> on July 31, 2016</span>
+</div>
+<article>
+<div class="container" style="text-align: justify;">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<!-- <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1"> -->
+<h2 class="section-heading">Introduction</h2>
+<p>Digitizing Early Farming Cultures aims to create standardized and integrated research data of Neolithic and Chalcolithic sites and finds of Greece and Anatolia (c. 7000–3000 BC according to Greek terminology). The bases for the project are non-digital and digital sources from a series of research projects from the new ÖAW research group Anatolian Aegean Prehistoric Phenomena (AAPP) at the OREA Institute. AAPP studies archaeological sites and finds from the Neolithic to the Bronze Age in Greece and Western Anatolia, two neighbouring and archaeologically closely related regions usually studied in isolation of each other. The group focusses on research questions concerning technological and social changes, settlement patterns, exchange and sourcing of raw materials.
+Research across the area currently suffers from fragmented data organized according to differing knowledge schemes, which developed independently in the two different research traditions. Independent terminologies and chronologies have developed, hindering collaborative research. To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of research data is required.
+The aim of this project is to harmonize existing datasets, digitize analogue data from publications and integrate metadata for easy access and data reuse. The data will be made available in an open access archaeological data management system, which complies with standards of data sharing and interoperability with related initiatives. The present text describes how the project evolved.
+</p>
+<h2 class="section-heading">Our resources</h2>
+<p>The resources of the DEFC project include digital and analogue/non-digital resources from different research projects lead by the members of AAPP research group.</p>
+<p><a href="http://www.orea.oeaw.ac.at/prehistoric-anatolia.html" target="_blank">PREHISTORIC ANATOLIA</a> is an ERC Starting Grant project (263339) led by Dr. Barbara Horejs. The main focus of the project are the period of the first permanent settlements (sedentism) from Neolithic to Early Chalcolithic times, and the development of proto-urban centers from Late Chalcolithic to Early Bronze Age period in Western Anatolia. To achieve an integrated picture and to concentrate the broad spectrum of studies the focus is set on the following three research topics:
+<ul> 
+<li>Archaeological periods and definitions of cultures</li>
+<li>Societies in changing environments</li>
+<li>Communication, exchange and interregional Relationships</li>
+</ul>
+The project included new excavations at Çukuriçi Höyük, archaeological and environmental surveys in Kaykos and Kaystros valleys (micro-regions of Pergamon and Ephesos) that produced modern documented data. Two databases produced in the course of the project were used as a data resource in DEFC project:
+<ul>
+<li>The Microsoft Access database „Sites and Modelling“(by Christoph Schwall) containing data about Neolithic and Chalcolithic Anatolian sites as well as an overview about the most important finds and their context.</li>
+<li>The Microsoft Access database „Çukuriçi Höyük“ with data about all finds and features from the Anatolian Neolithic/Bronze Age tell Çukuriçi Höyük.</li>
+</ul>
+The research in Neolithic settlement <a href="http://www.orea.oeaw.ac.at/aigeira-achaia.html" target="_blank">AIGEIRA IN ACHAIA</a> conducted by Dr. Eva Aram-Stern resulted in a Microsoft Access database “Aegeira”, which contains information about Neolithic pottery from Aegeira, Greece.  Furthermore, research in Neolithic settlement <a href="http://www.orea.oeaw.ac.at/visviki-magula.html" target="_blank">VISVIKI MAGULA</a> also conducted by Dr. Eva Alram-Stern resulted in another Microsoft Access database “Visviki”, which contains data about Neolithic pottery from Visviki, Greece.
+</p>
+	<p><a href="http://verlag.oeaw.ac.at/Die-Aegaeische-Fruehzeit-2.-Serie-Forschungsbericht-1975-1993" target="_blank">ÄGÄISCHE FRÜHZEIT: DAS NEOLITHIKUM IN GRIECHENLAND</a> mit Ausnahme von Kreta und Zypern is the first of two volumes of “Ägäische Frühzeit, 2. Serie” publication by Eva Alram-Stern. The publication deals with the Neolithic period in Greece including the research reports from 1975 to 1993. It includes an analysis and a site gazetteer of important information about Neolithic Aegean sites and has been as such used as a resource in the DEFC project. </p>
+	<p><a href="http://www.orea.oeaw.ac.at/kreta-neolitisch.html" target="_blank">ÄGÄISCHE FRÜHZEIT: DAS NEOLITHISCHE UND VORPALATIALE KRETA</a> is the second of two volumes of „Ägäische Frühzeit, 2. Serie“ publication by Eva Alram-Stern. It deals with new research conducted on Neolithic, early Bronze Age and beginning of middle Bronze Age (from ca. 7000 to 2000 BC) sites in Crete. </p>
+	<p><a href="http://www.orea.oeaw.ac.at/schaermeyr.html" target="_blank">SCHACHERMEYR POTTERY COLLECTION</a> is a pottery assemblage consisting of all relevant types of Neolithic pottery that was collected by Fritz Schachermeyr (†) who left it to the Austrian Academy of Sciences so that it could serve researchers, students and all parties interested in studying the Neolithic pottery of Greece. The collection was published by Dr. Eva-Alram Stern in the publication <a href="http://verlag.oeaw.ac.at/Die-neolithische-Keramik-Thessaliens" target="_blank">SCHACHERMEYR, F. (†), 1991.</a> Sammlung Fritz Schachermeyr: Die neolithische Keramik Thessaliens. Aus dem Nachlass bearbeitet von Eva Alram-Stern. Veröffentlichungen der Mykenischen Kommission 13. “Die neolithische Keramik Thessaliens” by Fritz Schachermeyr (†). Additionally, most representative sherds were selected to be digitized in 3D, which would finally allow them to become available to the broadest possible audience.</p>
+	 <h2 class="section-heading">Resources analysis</h2>
+	 <p>The first step to achieve standardized and integrated research data of Neolithic and Chalcolithic sites and finds of Greece and Anatolia was to analyze the data resources. 
+The result of the analysis: weight of digital datasets is on pottery while most of the site information is contained in publications, in particular the ‘Ägäische Frühzeit’. Therefore, we will need to digitize the information on sites – create a database of archaeological sites in the Aegean and Anatolia which we can link to our information on finds and the digital information on pottery and excavations.
+</p>
+<h2 class="section-heading">User Requirements for a site database</h2>
+<p>In regular focus group meetings with the AAPP research group we discussed requirements for both the new data structure and the technical implementation:
+	<ul>
+<li>a site database that provides more detail on finds and archaeological evidence than existing online open access site databases for the region;</li>
+<li>an online research resource for students and researchers that shows typical finds, in particular pottery characteristic for the period and region;</li> 
+<li>a map interface that allows searching for both Greek and Anatolian sites;</li>
+<li>3D models of selected pottery sherds of the Schachermeyr collection;</li>
+<li>enable extending this database or linking it with other relevant databases;</li>
+<li>online and open access publication of all data.</li>
+</ul>
+</p>
+<h2 class="section-heading">Conceptual data model</h2>
+<p>The mindmap with all existing database fields, as well as information from some analogue resources (see data analysis above) formed the basis for the creation a conceptual data model.</p> 
+<p>The DEFC App data model meets the particular requirements of dealing with data of different granularity. This means that some data sets are very detailed containing many sub-levels (such as the documentation of modern archaeological excavations and pottery databases), whereas other data sets comprise of broad archaeological data (e.g. old excavation reports and other legacy data). The data model therefore connects different levels of information about excavation processes, finds and chronological periodization. To meet the needs of all possible users, a clear conceptual data model that is based on the most probable relationships between archaeological objects has been defined with the following main model classes:
+<ul> 
+<li>Site (location where archaeological research took place/observations were made);</li>
+<li>Research event (project and type of archaeological research that was carried out);</li>
+<li>Area (particular part of the site within a certain time span – period, e.g. excavation trench, a part of a settlement in a certain period);</li>
+<li>Finds (artefacts, human-, animal- and plant remains found in a certain area);</li>
+<li>Interpretation (archaeologist's interpretation of areas/finds etc.).</li>
+</ul>
+</p>
+
+<img class="img-responsive" src="{% static "webpage/datamodel.png" %}" alt="conceptual data model">
+
+</div>
+</div>
+</div>
+</article>
+
+{% endblock content %}

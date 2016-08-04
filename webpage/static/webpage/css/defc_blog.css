@@ -1,0 +1,91 @@
+/*css for blog */
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}
+#blogjumbo {
+    background-color: #009688; /* Orange */
+    color: #ffffff;
+    /*margin-bottom: 10px;*/
+}
+.blog-name {
+  font-weight: bold;
+}
+.post-preview > a {
+  color: #333333;
+}
+.post-preview > a:hover,
+.post-preview > a:focus {
+  text-decoration: none;
+  /*color: #0085A1;*/
+  color: #808080;
+}
+.post-preview > a > .post-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+.post-preview > a > .post-subtitle {
+  margin: 0;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+  color: #777777;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+}
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: #333333;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+  color: #0085A1;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+}
+.subheading, .meta {
+  line-height: 0.7;
+  display: block;
+}
+.subheading {
+  font-size: 24px;
+  margin: 10px 0 30px;
+  
+}
+.meta {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-style: italic;
+  /*font-weight: 300;*/
+  font-size: 20px;
+}
+.meta a {
+  color: white;
+}
+.section-heading {
+  font-size: 36px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+article {
+  margin-bottom: 60px;
+}
+article a {
+  color: black;
+  border-bottom: 1px solid black;
+}
+article a:hover {
+  color: #0085a1;
+  text-decoration: none;
+  border-bottom: 1px solid #0085a1;
+}
