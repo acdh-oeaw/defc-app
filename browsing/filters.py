@@ -35,7 +35,7 @@ class SiteListFilter(django_filters.FilterSet):
     topography__name = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_site_topography.objects.all(), label='Topography', help_text=False
     )
-    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
+    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False) 
     period__cs_name = django_filters.MethodFilter(
         action='my_custom_filter_csname', label='Period Chronological system', help_text=False
     )
@@ -45,6 +45,7 @@ class SiteListFilter(django_filters.FilterSet):
     area__period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to'
     )
+ 
 
     class Meta:
         model = Site
