@@ -36,7 +36,11 @@
         <input type="checkbox">
         </td>
     <td>
-      <a href="{% url 'defcdb:site_detail' pk=object.site.id %}"> {{ object.site.name }} </a>
+        {% if object.site.id %}
+            <a href="{% url 'defcdb:site_detail' pk=object.site.id %}"> {{ object.site.name }}</a>
+        {% else %}
+         no Site related to this Area 
+        {% endif %}
     </td>
     <td>
       {{ object.site.province }} 
