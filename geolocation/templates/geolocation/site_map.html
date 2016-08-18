@@ -26,6 +26,7 @@
             <div class="panel-body">
             {% load django_tables2 crispy_forms_tags %}
             {% crispy filter.form filter.form.helper %}
+             <a class ="btn btn-default"  href="{% url 'geolocation:filter_sites' %}">Reset search</a>    
             <hr/>
             Results:  <br/>
             {% for obj in filter %}
