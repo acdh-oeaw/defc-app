@@ -1,15 +1,16 @@
 import django_tables2 as tables
 from django_tables2.utils import A
-from defcdb.models import Site, Area, Finds, ResearchEvent, Interpretation
+from defcdb.models import Site, Area, Finds, Interpretation
 
 
 class SiteTable(tables.Table):
+    site_id = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], accessor='id')
     name = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], verbose_name='site name')
     province_name = tables.Column(accessor='province.name', verbose_name='district')
 
     class Meta:
         model = Site
-        fields = ['name', 'province.region', 'province_name']
+        fields = ['site_id', 'name', 'province.region', 'province_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
@@ -36,8 +37,10 @@ class FindsTable(tables.Table):
 
 
 class ResearchEventTable(tables.Table):
-    researchevent_id = tables.LinkColumn('publicrecords:researchevent_detail', args=[A('pk')], accessor='id')
-    research_type = tables.LinkColumn('publicrecords:researchevent_detail', args=[A('pk')], empty_values=())
+    researchevent_id = tables.LinkColumn(
+        'publicrecords:researchevent_detail', args=[A('pk')], accessor='id')
+    research_type = tables.LinkColumn(
+        'publicrecords:researchevent_detail', args=[A('pk')], empty_values=())
     # research_type = tables.LinkColumn(empty_values=())
 
     def render_research_type(self, record):
@@ -47,15 +50,16 @@ class ResearchEventTable(tables.Table):
 
     class Meta:
         model = Finds
-        fields = ['researchevent_id','research_type', 'project_name']
+        fields = ['researchevent_id', 'research_type', 'project_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class InterpretationTable(tables.Table):
-    interpretation_id = tables.LinkColumn('publicrecords:interpretation_detail', args=[A('pk')], accessor='id')
+    interpretation_id = tables.LinkColumn(
+        'publicrecords:interpretation_detail', args=[A('pk')], accessor='id')
     production_type = tables.Column(empty_values=())
     subsistence_type = tables.Column(empty_values=())
-    # area__site__name = tables.Column(empty_values=(), verbose_name='Site') #not sure we need to present it in the table, repetitive information
+    area__site__name = tables.Column(empty_values=(), verbose_name='Site')
 
     def render_production_type(self, record):
         if record.production_type.all():
@@ -67,16 +71,14 @@ class InterpretationTable(tables.Table):
             return ', '.join([stype.name for stype in record.subsistence_type.all()])
         return '-'
 
-    # def render_area__site__name(self, record):
-    #     if record.area.all():
-    #         return ', '.join([area.site.name for area in record.area.all()])
-    #     return '-'
+    def render_area__site__name(self, record):
+        if record.area.all():
+            first_site = record.area.all()[0].site
+            return first_site.name
+        #     return ', '.join([area.site.name for area in record.area.all()])
+        # return '-'
 
     class Meta:
         model = Interpretation
         fields = ['interpretation_id', 'production_type', 'subsistence_type']
         attrs = {"class": "table table-hover table-striped table-condensed"}
-
-    
-
-   

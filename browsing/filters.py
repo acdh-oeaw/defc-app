@@ -35,7 +35,7 @@ class SiteListFilter(django_filters.FilterSet):
     topography__name = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_site_topography.objects.all(), label='Topography', help_text=False
     )
-    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False) 
+    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
     period__cs_name = django_filters.MethodFilter(
         action='my_custom_filter_csname', label='Period Chronological system', help_text=False
     )
@@ -43,14 +43,12 @@ class SiteListFilter(django_filters.FilterSet):
         lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to'
     )
     area__period__end_date1_BC = django_filters.NumberFilter(
-        lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to'
-    )
- 
+        lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to')
 
     class Meta:
         model = Site
         form = SiteFilterForm
-        fields = ['province']
+        fields = ['id', 'province']
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(area__period__period_name__icontains=value).distinct()
@@ -84,7 +82,7 @@ class AreaListFilter(django_filters.FilterSet):
 
     class Meta:
         model = Area
-        fields = ['area_type']
+        fields = ['id', 'area_type']
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(period__period_name__icontains=value).distinct()
@@ -125,7 +123,7 @@ class FindsListFilter(django_filters.FilterSet):
 
     class Meta:
         model = Finds
-        fields = ['finds_type']
+        fields = ['id', 'finds_type']
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(area__period__period_name__icontains=value).distinct()
@@ -149,7 +147,7 @@ class ResearchEventListFilter(django_filters.FilterSet):
 
     class Meta:
         model = ResearchEvent
-        fields = ['research_type']
+        fields = ['id', 'research_type']
 
     def my_custom_filter(self, queryset, value):
         return queryset.filter(institution__name__icontains=value).distinct()
@@ -171,4 +169,4 @@ class InterpretationListFilter(django_filters.FilterSet):
 
     class Meta:
         model = Interpretation
-        fields = ['production_type']
+        fields = ['id', 'production_type']
