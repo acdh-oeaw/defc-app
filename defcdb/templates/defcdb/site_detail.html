@@ -107,21 +107,26 @@
 </div>
 
 <script type="text/javascript">
+    var nix = "nix";
     var gps1 = {{ object.latitude|default_if_none:"nix" }} ;
     var gps2 = {{ object.longitude|default_if_none:"nix"}};
     var siteName = "{{ object.name }}";
     var map = L.map('map').setView([gps1, gps2], 6);
 
-    L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
-        attribution: 'Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#3a._I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F>',
-        maxZoom: 18
-    }).addTo(map);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.light',
+        accessToken: 'pk.eyJ1Ijoic2VubmllcmVyIiwiYSI6ImNpbHk1YWV0bDAwZnB2dW01d2l1Y3phdmkifQ.OljQLEhqeAygai2y6VoSwQ'
+        }).addTo(map);
 
     L.marker([{{ object.latitude|default_if_none:"nix" }}, {{ object.longitude|default_if_none:"nix"}}]).addTo(map)
     .bindPopup(siteName)
     .openPopup();
 
 </script>
+
+
 <script type="text/javascript">
 $(document).ready(function(){
     $("button").click(function(){
