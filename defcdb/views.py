@@ -32,6 +32,10 @@ class ResearchEventListView(generic.ListView):
     def get_queryset(self):
         return ResearchEvent.objects.order_by('id')
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ResearchEventListView, self).dispatch(*args, **kwargs)
+
 
 @login_required
 def update_researchevent(request, pk):
@@ -84,6 +88,10 @@ class ResearchEventDetail(DetailView):
         context['reference_list'] = current_object.reference.all()
         return context
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(ResearchEventDetail, self).dispatch(*args, **kwargs)
+
 
 #################################################################
 #               views for Finds                                 #
@@ -94,6 +102,10 @@ class FindsListView(generic.ListView):
 
     def get_queryset(self):
         return Finds.objects.order_by('finds_type')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(FindsListView, self).dispatch(*args, **kwargs)
 
 
 @login_required
@@ -159,11 +171,15 @@ class FindsDetail(DetailView):
         context['reference_list'] = current_find.reference.all()
         return context
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(FindsDetail, self).dispatch(*args, **kwargs)
+
 
 #################################################################
 #               views for Name                              #
 #################################################################
-
+@login_required
 def create_name(request):
     if request.method == "POST":
         form = NameForm(request.POST)
@@ -192,6 +208,10 @@ class SiteListView(generic.ListView):
 
     def get_queryset(self):
         return Site.objects.order_by('name')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(SiteListView, self).dispatch(*args, **kwargs)
 
 
 @reversion.create_revision()
@@ -245,6 +265,10 @@ class SiteDetail(DetailView):
         context['alternativeName_list'] = current_site.alternative_name.all()
         return context
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(SiteDetail, self).dispatch(*args, **kwargs)
+
 
 #################################################################
 #               views for Area                                  #
@@ -255,6 +279,10 @@ class AreaListView(generic.ListView):
 
     def get_queryset(self):
         return Area.objects.order_by('area_type')
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(AreaListView, self).dispatch(*args, **kwargs)
 
 
 @reversion.create_revision()
@@ -337,6 +365,10 @@ class InterpretationListView(generic.ListView):
     def get_queryset(self):
         return Interpretation.objects.all()
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(InterpretationListView, self).dispatch(*args, **kwargs)
+
 
 @reversion.create_revision()
 @login_required
@@ -392,6 +424,9 @@ class InterpretationDetail(DetailView):
         context['reference_list'] = current_object.reference.all()
         return context
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(InterpretationDetail, self).dispatch(*args, **kwargs)
 
 #################################################################
 #               views for login/logout                          #
