@@ -705,7 +705,7 @@ class Area(TrackChanges):
         return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
 
     def get_absolute_url(self):
-        return reverse('defcdb:area_list')
+        return reverse('defcdb:area_detail', kwargs={'pk': self.id})
 
 reversion.register(Area)
 
