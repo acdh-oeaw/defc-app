@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+WHOOSH_BASE = os.path.dirname(os.path.dirname(os.path.abspath(os.path.join(__file__, '../'))))
 
 SPAGHETTI_SAUCE = {
     'apps': ['defcdb', 'threedmodels', 'bib', 'images_metadata'],
@@ -38,6 +39,42 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+INSTALLED_APPS = (
+    'autocomplete_light',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_extensions',
+    'django_filters',
+    'django_tables2',
+    'django_spaghetti',
+    'crispy_forms',
+    'rest_framework',
+    'defcdb',
+    'bib',
+    'geolocation',
+    'webpage',
+    'reversion',
+    'images_metadata',
+    'threedmodels',
+    'publicrecords',
+    'browsing',
+    'whoosh',
+    'haystack',
+)
+
+WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': WHOOSH_INDEX,
+    },
+}
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +101,7 @@ ROOT_URLCONF = 'orea.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(WHOOSH_BASE, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

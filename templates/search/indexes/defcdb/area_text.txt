@@ -1,0 +1,9 @@
+{{ object.site.name }}
+{{ object.area_type.name }}
+{% for x in object.period.all %}
+{{ x.cs_name }}
+{{ x.period_name }}
+{% endfor %}
+{{ object.dating_method.name }}
+{{ object.settlement_type.name }}
+{{ object.settlement_structure.name }}

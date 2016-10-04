@@ -11,6 +11,7 @@ from django.views.generic.edit import DeleteView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse_lazy
 from reversion import revisions as reversion
+from haystack.query import SearchQuerySet
 
 from .models import Site, Area, Finds, ResearchEvent, Interpretation
 from .forms import (
@@ -22,6 +23,21 @@ from .serializers import *
 #################################################################
 #               views for ResearchEvent                         #
 #################################################################
+
+def search_all(request):
+    context = {}
+    if 'q' in request.GET:
+        searchstring = request.GET.get('q', '')
+        results = SearchQuerySet().filter(content=searchstring).load_all()
+        total_results = results.count()
+    else:
+        searchstring = None
+        total_results = None
+        results = None
+    context['searchstring'] = searchstring
+    context['total_results'] = total_results
+    context['results'] = results
+    return render(request, 'defcdb/search_all.html', context)
 
 
 class ResearchEventListView(generic.ListView):

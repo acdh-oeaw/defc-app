@@ -1,0 +1,29 @@
+{% extends "defcdb/base_detail.html" %}
+{% block Titel %}
+    {% if 'q' in request.GET %}
+        results for "{{ searchstring }}""
+    {% else %}
+        nothing searched for
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% if 'q' in request.GET %}
+<h2>{{ total_results }} Hit{{ total_results|pluralize }} for <strong>{{ searchstring }}</strong></h2>
+
+{% for result in results %}
+    {% with object=result.object %}
+    <div>
+        <h4>
+            <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+        </h4>
+        {{ object.summary }}
+    </div>
+    {% endwith %}
+{% endfor %}
+
+{% else %}
+    <h2> no search </h2>
+{% endif %}
+   
+{% endblock %}
