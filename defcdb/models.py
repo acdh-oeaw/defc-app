@@ -787,7 +787,7 @@ class Finds(TrackChanges):
         ordering =( 'area',)
 
     def get_absolute_url(self):
-        return reverse('defcdb:finds_list')
+        return reverse('defcdb:finds_detail', kwargs={'pk': self.id})
 
     def __str__(self):
         return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)

@@ -8,22 +8,37 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
 {% if 'q' in request.GET %}
-<h2>{{ total_results }} Hit{{ total_results|pluralize }} for <strong>{{ searchstring }}</strong></h2>
-
-{% for result in results %}
-    {% with object=result.object %}
-    <div>
-        <h4>
-            <a href="{{ object.get_absolute_url }}">{{ object }}</a>
-        </h4>
-        {{ object.summary }}
-    </div>
-    {% endwith %}
-{% endfor %}
+    <h2>
+        {{ total_results }} Hit{{ total_results|pluralize }} for <strong>{{ searchstring }}</strong>
+    </h2>
+    <div class="results">
+<table>
+    <tr>
+        <th>Score</th>
+        <th>Class</th>
+        <th>actual object</th>
+    </tr>
+    {% for result in results %}
+        <tr>
+            <td>
+                {{ result.score|floatformat  }}
+            </td>
+            <td>
+                <a href="{{ result.object.get_absolute_url }}">{{ result.model_name }}</a>
+            </td>
+            <td>
+                {{result.object }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
 
 {% else %}
     <h2> no search </h2>
 {% endif %}
+</div>
    
 {% endblock %}

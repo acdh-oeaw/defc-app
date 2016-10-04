@@ -1,0 +1,7 @@
+{{ object.area }}
+{{ object.finds_type.name }}
+{{ object.small_finds_category.name }}
+{% for x in object.small_finds_type.all %}
+{{ x.name }}
+{% endfor %}
+{{ object.pottery_form.name }}

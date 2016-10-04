@@ -19,3 +19,4 @@ __try.html
 /orea/settings/pandorfer_local.py
 /orea/settings/server.py
 *.nxs
+orea/whoosh/*

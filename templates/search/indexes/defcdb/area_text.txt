@@ -7,3 +7,4 @@
 {{ object.dating_method.name }}
 {{ object.settlement_type.name }}
 {{ object.settlement_structure.name }}
+{{ object.description }}
