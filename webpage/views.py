@@ -37,6 +37,11 @@ def movie_content(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/movie_content.html', context)
 
+@login_required
+def movie_content_scroll(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/movie_content_scrollspy.html', context)
+
 
 def blog_main(request):
 	context = RequestContext(request)
