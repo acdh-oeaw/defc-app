@@ -1,0 +1,620 @@
+{% extends "defcdb/base.html" %} 
+{% load staticfiles %}
+{% block content %}
+<style>
+ body {
+      position: relative;
+  }
+  .affix {
+      top: 400px;
+  }
+  div.col-sm-9 div {
+      /*height: 250px;*/
+      text-align: justify;
+  }
+  
+  
+  @media screen and (max-width: 810px) {
+    #introduction, 
+    #neolithic_period, 
+    #chalcolithic_period, 
+    #bronze_age, 
+    #visualization_process,
+    #further_reading  {
+        margin-left: 150px;
+    }
+  }
+
+
+
+
+
+
+.movie-header {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-bottom: 30px;
+	
+}
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%;
+}
+.movie-header {
+	/*background-image: url('{% static "webpage/movie_images/M1.jpg" %}');
+	background-size: 100%;
+	height: 500px;*/
+}
+.standard-image {
+  width:50%;
+  height: auto;
+  padding: 30px;
+}
+.row-image {
+  max-width:100%;
+  /*vertical-align: middle;*/
+  height: auto;
+  width: auto;
+  padding: 30px;
+  /*display: inline-block;*/
+}
+#img-plan-cross-section {
+  padding-top: 80px;
+}
+#img-figurine_v02 {
+  padding-top: 40px;
+  max-width:65%;
+}
+#img-raum-18 {
+ 
+  max-width: 40%;
+}
+#img-pottery-01 {
+  /*max-width:100%;*/
+/*padding-top: 177px;
+display: inline-block;*/
+}
+#img-pottery-02 {
+  max-width:80%;
+ /* display: inline-block;*/
+}
+
+#img-pottery-03 {
+  /*max-width:100%;*/
+/*padding-top: 144px;
+display: inline-block;*/
+}
+.imgWrapper {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#image-room41 {
+  padding-top: 150px;
+}
+</style>
+<div class="container" >
+
+
+	<div class="movie-header">
+		<h2>Çukuriçi Höyük Movie</h2>
+		<span>The world Heritage Site Through Time</span>
+	</div>
+	<div class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/1VQ_3sBZEm0" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+
+<div class="row">
+
+	<!--scroll spy-->
+<nav class="col-sm-3" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="300">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#neolithic_period">Neolithic Period (6700-5900 BC)</a></li>
+        <li><a href="#chalcolithic_period">Late Chalcolithic Period (3300-3000 BC)</a></li>
+        <li><a href="#bronze_age">Early Bronze Age (3000-2750 BC)</a></li>
+        <li><a href="#visualization_process">Visualization process</a></li>
+        <li><a href="#further_reading">Further Reading</a></li>
+        
+      </ul>
+ </nav>
+    <!--scroll spy ends-->
+ 	<!--Content here-->
+ <div class="col-sm-9">
+ 	<div id="introduction">    
+        <h1>Introduction</h1>
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-35-49]Figure15.jpg" %}">
+      	<img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-35-49]Figure15.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>Neolithisation of Western Anatolia with supposed routes of colonization from the Neolithic core zone of the Fertile Crescent. A model of maritime colonization is based on different material studies of pioneer sites in Western Anatolia (i.e. Çukuriçi Höyük and Ulucak Höyük).
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-35-49]g.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-35-49]g.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>Nowadays, the prehistoric site Çukuriçi Höyük is situated in the southern vicinity of the ancient city of Ephesos and is surrounded by fertile fields.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-36-33].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-36-33].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-36-40].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-36-40].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+        Systematic archaeological investigations of the tell site were started by the excavator Prof. Dr. Barbara Horejs in 2006. The model with the different trenches was created at the end of the excavation season 2014.
+      </p>
+      <a href="{% static "webpage/movie_images/018_01.jpg" %}">
+        <img src="{% static "webpage/movie_images/018_01.jpg" %}" class="standard-image img-responsive center-block"  alt="map" 
+        title="Photo 1 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Photo 2 by Ch. Schwall/ERC Prehistoric Anatolia; Photo 3 by F. Ostmann/ERC Prehistoric Anatolia; Photo 4 by M. Börner/ERC Prehistoric Anatolia; Photos 5, 6, 7, 8 by N. Gail/ÖAI">
+      </a>
+      <p>
+        [1] Overview of the settlement Çukuriçi Höyük from the western mountain (Bülbüldağ) taken in 2014 (photo by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH).
+      </p>
+    </p>
+        [2] Trench M1 upon the mound before starting the excavation in 2012 (photo by Ch. Schwall/ERC Prehistoric Anatolia).
+    </p>
+    <p>
+        [3] Trench N6 located in the fields before starting the excavation in 2011 (photo by F. Ostmann/ERC Prehistoric Anatolia).
+    </p>
+    <p>
+        [4] Overview of trench N6 after removing the first soil in 2011 (photo by M. Börner/ERC Prehistoric Anatolia).
+    </p>
+    <p>
+        [5] The excavated Early Bronze Age remains of the southern trenches S1–2 at the end of the excavation season 2008 (photo by N. Gail/ÖAI).
+    </p>
+    <p>
+        [6] Overview of the Early Bronze Age excavation of trenches S1–4 at the end of the excavation season 2009 (photo by N. Gail/ÖAI).
+    </p>
+    <p> 
+        [7] Trench N6 showing Neolithic settlement remains after excavation in 2011 (photo by N. Gail/ÖAI).
+    </p>
+    <p>
+        [8] Overview of the Neolithic and Chalcolithic settlement remains of trenches N6–7 after the excavation in 2011 (photo by N. Gail/ÖAI).
+    </p>
+     </div>
+     <div id="neolithic_period"> 
+        <h1>Neolithic Period (6700-5900 BC)</h1>
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-39-16]1.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-39-16]1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by F. Ostamann/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+        Profile at the northern part of Çukuriçi Höyük showing the different settlement phases. The settlement phase ÇuHö X is being presented exemplarily for the Neolithic period.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-39-30].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-39-30].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+        The palaeogeographic reconstruction shows that the Neolithic settlement of Çukuriçi Höyük is situated in a fertile basin close to the seashore. Another Neolithic settlement, Arvalya Höyük, was detected in the western neighbor valley.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-11-53].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-11-53].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+        Exotic goods like obsidian from the Aegean island Melos as well as a high amount of maritime nutrition revealed that seafaring must have been an important sector of the inhabitants of Çukuriçi Höyük.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]1.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+        The reconstruction of the paleoenvironment attests that the landscape of the Neolithic settlement was mainly dominated by oak trees and small rivers. This formed the perfect basis for early farmers and herders.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]1Cuk13_Pläne_N6_CuHöX.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]1Cuk13_Pläne_N6_CuHöX.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+        The plan of the excavated Neolithic settlement phase ÇuHö X in trench N6 shows different free standing rectangular buildings and associated activity zones on the court in the south of the houses, which are called complexes.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-20].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-20].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+       The Neolithic houses were built on stone socles with a superstructure of pisé walls. Beams in between the walls were supporting the roof construction.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]_circle.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-00]_circle.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+        Several activities in the Neolithic settlement are attested by different find categories. A closer look will be taken at the finds of the marked area.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-33].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-13-33].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by F. Ostmann/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+       In Complex 10 various finds were uncovered, which provide us with important information of the everyday life of the Neolithic inhabitants. Beside ceramic vessels and different tools also weapons like sling missiles made of stone and clay were found.
+      </p>
+       <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-16-34].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-16-34].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="SfM by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+       A sling missile depot containing numerous projectiles was stored inside the settlement.
+      </p>
+       <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-18-50].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-18-50].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="SfM by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+       An extraordinary depot of long obsidian blades and a shaft straightener were found inside a building.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-18-50]122.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-18-50]122.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by N. Gail/ÖAI">
+      </a>
+      <p>
+       These so far unique finds of a cache of long obsidian blades show impressively the supra-regional connections of the settlement inhabitants. The raw material originates from the Aegean island Melos.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-19-26].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-19-26].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by H. Natho/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+       The Neolithic period is characterized by thin-walled high quality pottery made mainly for consumption and storage of food.
+      </p>
+       <a href="{% static "webpage/movie_images/IMG_1700.jpg" %}">
+        <img src="{% static "webpage/movie_images/IMG_1700.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by H. Natho/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+       Maritime resources were an important part of the subsistence strategy of the Neolithic community. This is demonstrated by several fish bones like the remains of a tuna filet on a floor.
+      </p>
+      <a href="{% static "webpage/movie_images/1766-3-1.jpg" %}">
+        <img src="{% static "webpage/movie_images/1766-3-1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Scan by H. Natho/ERC Prehistoric Anatolia; Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+       Rare depictions of human beings, animals and enigmatical creatures give an insight into transcendent and ritual practices of the Neolithic inhabitants. For documentation of selected finds a Breuckmann 3D Streifenlichtscanner was used.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-21-11].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-21-11].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Everyday life of the Neolithic inhabitants took place outside the house in open courtyards and was characterized by farming, herding, processing crafts and the procurement of raw materials.
+      </p>
+      </div>
+
+      <div id="chalcolithic_period">
+        <h1>Late Chalcolithic Period (3300-3000 BC)</h1>
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-03]Cuk14_M1_chalk.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-03]Cuk14_M1_chalk.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      After a hiatus of more than 2500 years Çukuriçi Höyük was resettled in the Late Chalcolithic Period. The plan including the excavated remains and the results of the geophysical prospection show a settlement structure of free standing buildings. Additionally, the earliest Late Chalcolithic settlement phase ÇuHö VII was surrounded by a large ditch.
+      </p>
+      <div class="row">
+      <div class="col-md-6">
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-54].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-54].jpg" %}" class="row-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia" id="img-plan-cross-section">
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-54]graben2.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-22-54]graben2.jpg" %}" class="row-image img-responsive center-block"  alt="map" title="Photo by F. Ostmann/ERC Prehistoric Anatolia">
+      </a>
+      </div>
+    </div>
+    <p>
+      The impressive ditch was excavated in trench N7. The certainly collectively built construction is measuring 6 m in width and 2.5 m in depth and was backfilled with numerous stones due to the extension of the settlement area in the next settlement phase.
+    </p>
+    <a href="{% static "webpage/movie_images/CuHö14_M1_Chalk_ohne_FBZ_Mauern.jpg" %}">
+        <img src="{% static "webpage/movie_images/CuHö14_M1_Chalk_ohne_FBZ_Mauern.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Several architectural remains of the following settlement phase ÇuHö VI and V were detected in trench M1 upon the mound directly underneath the Early Bronze Age architecture of ÇuHö IV.
+      </p>
+    <a href="{% static "webpage/movie_images/figurine.jpg" %}">
+        <img src="{% static "webpage/movie_images/figurine.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by N. Gail/ÖAI">
+      </a>
+    <p>
+      A special marble figurine found at Çukuriçi Höyük attests that the inhabitants of the late 4th millennium BC were integrated in broad communication and exchange networks.
+      </p>
+       <a href="{% static "webpage/movie_images/5533-5-1.jpg" %}">
+        <img src="{% static "webpage/movie_images/5533-5-1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Scan by M. Börner/ERC Prehistoric Anatolia; Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Beside objects related to textile production, several metallurgical products like a chisel made of arsenic copper attest that specialized craft activities were conducted in the Late Chalcolithic settlements.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-24-57].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-24-57].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; M. Klein/7reasons Medien GmbH">
+      </a>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-10].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-10].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+      Different domestic architecture like dwellings, storage buildings and ‘stone row structures’, which were used for drying fruits, point to intensive agricultural activities in the settlement. The question of the shape of the roof construction, whether conical or flat, remains open.
+      </p>
+      </div>
+
+      <div id="bronze_age">
+        <h1>Early Bronze Age (3000-2750 BC)</h1>
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-32]1.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-32]1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Extensive excavations and geophysical prospections of the Early Bronze Age settlement phases ÇuHö IV and III revealed that the settlement mound was densely settled.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-34].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-34].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      In contrast to the previous periods the agglutinating architecture is represented by north-south aligned multi-roomed buildings, which are separated by ways and open courtyards.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-34]Cuk13_Pläne_Kart-Metallurgie_S1-4_CuHöI-IV_Schema.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-25-34]Cuk13_Pläne_Kart-Metallurgie_S1-4_CuHöI-IV_Schema.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      About 50 ovens and numerous metallurgical finds proof that Çukuriçi Höyük was an important metallurgical center at the beginning of the Early Bronze Age 1 period.
+      </p>
+      <a href="{% static "webpage/movie_images/Raum_18.jpg" %}">
+        <img src="{% static "webpage/movie_images/Raum_18.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia" id="img-raum-18">
+      </a>
+      <p>
+      Plan of room 18 with metallurgical ovens, installations and finds found on a using horizon. The objects give an insight into the everyday life of the specialized craftsmen.
+      </p>
+      <a href="{% static "webpage/movie_images/012_992_Dama.jpg" %}">
+        <img src="{% static "webpage/movie_images/012_992_Dama.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by A. Galik/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Stag antlers found in the houses are indicating prestige hunting of huge deer, probably as special social activity.
+      </p>
+
+      <div class="row">
+      <div class="col-md-4 imgWrapper">
+        <a href="{% static "webpage/movie_images/Stamnos.jpg" %}">
+        <img src="{% static "webpage/movie_images/Stamnos.jpg" %}" class="row-image center-block"  alt="map" title="Image by Th. Urban/ERC Prehistoric Anatolia" id="img-pottery-01">
+      </a>
+      </div>
+      <div class="col-md-4 imgWrapper">
+        <a href="{% static "webpage/movie_images/pottery_02_v02.jpg" %}">
+        <img src="{% static "webpage/movie_images/pottery_02_v02.jpg" %}" class="row-image center-block"  alt="map" title="Image by N. Gail/ÖAI" id="img-pottery-02">
+      </a>
+      </div>
+      <div class="col-md-4 imgWrapper">
+        <a href="{% static "webpage/movie_images/5304-1-2.jpg" %}">
+        <img src="{% static "webpage/movie_images/5304-1-2.jpg" %}" class="row-image center-block"  alt="map" title="Scan by M. Börner/ERC Prehistoric Anatolia" id="img-pottery-03">
+      </a>
+      </div>
+    </div>
+    <p>
+      Pottery like beak-spouted jugs or storage vessels were used for consumption and storing of food.
+      </p>
+      <a href="{% static "webpage/movie_images/5184-5-6_01.jpg" %}">
+        <img src="{% static "webpage/movie_images/5184-5-6_01.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Scan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Moreover, a copper dagger indicate impressively the high production quality of the metallurgical workshops of the Early Bronze Age settlements.
+      </p>
+      <a href="{% static "webpage/movie_images/5606-3-2.jpg" %}">
+        <img src="{% static "webpage/movie_images/5606-3-2.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Scan by M. Börner/ERC Prehistoric Anatolia; Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Several tools related to metallurgical activities, like a crucible, clarify the way of metal production in Early Bronze Age Çukuriçi Höyük.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-06].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-06].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Photo by N. Gail/ÖAI">
+      </a>
+      <p>
+      The equipment of metallurgical objects demonstrates that products for local as well as for external trade (rod ingots) were produced.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-21].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-21].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      The ovens and hearths were used for metallurgy as well as partially also for cooking activities.
+      </p>
+      <a href="{% static "webpage/movie_images/test01.jpg" %}">
+        <img src="{% static "webpage/movie_images/test01.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Installations and remains of other different crafts like bone tool production and leather processing indicate the multifunctional craftsmanship.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-59]1.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-29-59]1.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Craftsmen sitting around an oven and processing metal. A mould is lying in the ember.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-21]CuHö13_M1_FBZ_Grundrisse.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-21]CuHö13_M1_FBZ_Grundrisse.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Plan with Early Bronze Age ovens and hearths excavated in trench M1 representing metallurgical workshops. Their high number supports the assumption of intensive metal working in the entire Early Bronze Age settlement.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-21]d.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-21]d.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Maritime resources were still an important part of the subsistence strategy of the Early Bronze Age inhabitants. Various perforated ceramic discs, interpreted as net-sinkers, indicate the use of nets for fishing.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-35].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-35].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="SfM by J. Schlegel/ERC Prehistoric Anatolia; Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Besides fishing, the collection and consumption of mussels is demonstrated by accumulations of shells in the direct vicinity of hearths.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-50].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-30-50].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      The faunal remains confirm that seafood like fish, cuttlefish and especially edible cockles were found in high numbers in the Early Bronze Age.
+      </p>
+      <div class="row">
+        <div class="col-md-6">
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-28]closeup04.png" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-28]closeup04.png" %}" class="row-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH" id="image-room41">
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-28]Sketch_v02.png" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-28]Sketch_v02.png" %}" class="row-image img-responsive center-block"  alt="map" title="Plan by St. Grasböck/ERC Prehistoric Anatolia, M. Börner/ERC Prehistoric Anatolia">
+      </a>
+    </div>
+      </div>
+      <p>
+      A further important economic sector is represented by textile production. Several finds of loom weights were excavated in room 41 in trench M1.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-45]Loom-Weights.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-31-45]Loom-Weights.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plate by Ch. Britsch/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Different types of loom weights, oval or cylindrical-shaped were found in high numbers in the Early Bronze Age.
+      </p>
+      <a href="{% static "webpage/movie_images/363-3-401.jpg" %}">
+        <img src="{% static "webpage/movie_images/363-3-401.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Scan by M. Börner/ERC Prehistoric Anatolia">
+      </a>
+      <p>
+      Beside loom weights also numerous spindle whorls of different sizes indicated a specialized degree of textile production.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-32-14].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-32-14].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH, M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+      The installation of a loom can be reconstructed in room 41 based on post-holes and the high number of loom weights found on the floor.
+      </p>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015[18-32-31].jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015[18-32-31].jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH, M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+      Reconstruction of the loom situated inside room 41 and other inventory of everyday life.
+      </p>
+      <a href="{% static "webpage/movie_images/vlcsnap-8957-04-21-20h22m20s807.png" %}">
+        <img src="{% static "webpage/movie_images/vlcsnap-8957-04-21-20h22m20s807.png" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+      Two multi-roomed buildings excavated in trench M1 were separated by a small way.
+      </p>
+      <a href="{% static "webpage/movie_images/test02.jpg" %}">
+        <img src="{% static "webpage/movie_images/test02.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH, M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+      Reconstruction of the Early Bronze Age settlement based on the excavation results, geophysical prospections and palaeogeographic drillings. The early proto-urban structure of the settlement with a distinct spatial organization is visible. Specialized craft activities are attested inside the settlement. Farming and herding took place outside in the wider surrounding of the settlement. 
+      </p>
+      </div>
+
+      <div id="visualization_process"> 
+        <h1>Visualization process</h1>
+        <a href="{% static "webpage/movie_images/collage01.jpg" %}">
+        <img src="{% static "webpage/movie_images/collage01.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image 1, 2, 4 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Plan 3 by A. Buhlke/ERC Prehistoric Anatolia" >
+      </a>
+      <p>
+        The wider landscape area is obtained from publicly available Digital Elevation Model (DEM) and the tell area from the DEM made by the OREA team.
+      </p>
+      <a href="{% static "webpage/movie_images/collage02.jpg" %}">
+        <img src="{% static "webpage/movie_images/collage02.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Images by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH" >
+      </a>
+      <p>
+        In September 2014 around 1500 pictures were collected on the site in order to create a Structure from Motion (SfM) 3d model of the excavation area.
+      </p>
+      <a href="{% static "webpage/movie_images/collage03.jpg" %}">
+        <img src="{% static "webpage/movie_images/collage03.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Images by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH" >
+      </a>
+      <p>
+        The models of the wider and the excavation area were combined to a joint terrain mesh.
+      </p>
+      <a href="{% static "webpage/movie_images/collage06.jpg" %}">
+        <img src="{% static "webpage/movie_images/collage06.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Plan 1 by M. Börner/ERC Prehistoric Anatolia; Image 2 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Image 3 by M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+        For paleo terrain visualization natural processes filters (e.g. erosion; image [2]) were added to the existing terrain model and sea was raised to the former water levels.
+      </p>
+      <a href="{% static "webpage/movie_images/collage07.jpg" %}">
+        <img src="{% static "webpage/movie_images/collage07.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Images by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+        For ancient architecture CAD models were created first based on excavation results and analogies. Later an appropriate uniquely designed texture was applied.
+      </p>
+      <a href="{% static "webpage/movie_images/screen01.jpg" %}">
+        <img src="{% static "webpage/movie_images/screen01.jpg" %}" class="standard-image img-responsive center-block"  alt="map" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH">
+      </a>
+      <p>
+       The assessment of the distribution of the houses on the tell was extrapolated from the known excavated and/or prospected area. The pink area is known and the green area is extrapolated.
+      </p>
+      <a href="{% static "webpage/movie_images/collage04.png" %}">
+        <img src="{% static "webpage/movie_images/collage04.png" %}" class="standard-image img-responsive center-block"  alt="map" title="Images 1, 2 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Image 3 by by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH, M. Klein/7reasons Medien GmbH">
+      </a>
+      <p>
+       Selected finds were scanned for documentation with a Breuckmann structured-light 3D scanner or SfM models were created or they were recreated from the excavation documentation. Afterwards they were implemented in the scene; often as a part of a reconstructed tool or weapon. Here an example of a loom weight, prototypes of a suggested loom (with dummy loom weights) and implementation of the loom in the scene.
+      </p>
+
+      </div>
+
+      <div id="further_reading">    
+        <h1>Further Reading</h1>
+        <p>
+  Selected bibliography (for further literature and information see <a href="http://www.orea.oeaw.ac.at/prehistoric-anatolia.html">ERC Prehistoric Anatolia)</a>.
+</p>
+<p>
+  <a href="http://www.orea.oeaw.ac.at/fileadmin/user_upload/Publikationen_diverse_und_vor_2010/FGPublikationslisten/AAPP_Publikationen_2016.pdf">Bibliography Anatolian Aegean Prehistoric Phenomena (AAPP)</a>
+</p>
+
+<p>
+  B. Horejs – A. Galik – U. Thanheiser – S. Wiesinger, Aktivitäten und Subsistenz in den Siedlungen des Çukuriçi Höyük. Der Forschungsstand nach den Ausgrabungen 2006–2009, Prähistorische Zeitschrift 86, 2011, 1, 31–66.
+</p>
+
+<p>
+  B. Horejs, Çukuriçi Höyük. A Neolithic and Bronze Age Settlement in the Region of Ephesos, in: M. Özdoğan et al. (eds.), The Neolithic in Turkey. New Excavations & New Research. Western Turkey (Istanbul 2012) 117–131.
+</p>
+<p>
+B. Horejs, Proto-Urbanisation without Urban Centres? A Model of Transformation for the Izmir Region in the 4th Millennium BC, in: B. Horejs – M. Mehofer (eds.), Western Anatolia before Troy. Proto-Urbanisation in 4th Millennium BC? Proceedings of the International Symposium held at the Kunsthistorisches Museum Wien, Vienna, Austria, 21th-24th November 2012, OREA 1 (Vienna 2014) 15–41.
+</p>
+<p>
+M. Mehofer, Metallurgy during the Chalcolithic and the Beginning of the Early Bronze Age in Western Anatolia, in: B. Horejs – M. Mehofer (eds.), Western Anatolia before Troy. Proto-Urbanisation in 4th Millennium BC? Proceedings of the International Symposium held at the Kunsthistorisches Museum Wien, Vienna, Austria, 21th-24th November 2012, OREA 1 (Vienna 2014) 463–489.
+</p>
+<p>
+Ch. Britsch – B. Horejs, The Role of Textile Production and Fishing in the EBA Metallurgical Centre of Çukuriçi Höyük, Egypt and Levant 24, 2014, 229–242.
+</p>
+<p>
+B. Horejs – M. Mehofer, Early Bronze Age Metal Workshops at Çukuriçi Höyük. Production of arsenical copper at the beginning of the 3rd mill. BC., in: A. Hauptmann – D. Modarressi-Tehrani (eds.), Archaeometallurgy in Europe III. Proceedings of the 3rd International Conference, Deutsches Bergbau-Museum Bochum, 29th of June – 1st of July 2011, Der Anschnitt Beih. 26 (Bochum 2015) 165–176.
+</p>
+<p>
+B. Horejs – Ch. Schwall, New Light on a Nebulous Period – Western Anatolia in the 4th Millennium BC: Architecture and Settlement Structures as Cultural Patterns?, in: S. Hansen – P. Raczky – A. Anders – A. Reingruber (eds.), Neolithic and Copper Age between the Carpathians and the Aegean Sea. Chronologies and Technologies from the 6th to the 4th Millennium BCE, Archäologie in Eurasien 31 (Bonn 2015) 457–474.
+</p>
+<p>
+B. Horejs – B. Milić – F. Ostmann – U. Thanheiser – B. Weninger – A. Galik, The Aegean in the Early 7th Millennium BC: Maritime Networks and Colonization, Journal of World Prehistory 28, 4, 289–230.
+</p>
+<p>
+B. Horejs, Aspects of Connectivity on the Centre of the Anatolian Aegean Coast in 7th Millennium BC, in: B. P.C. Molloy (eds.), Of Odysseys and Oddities. Scales and modes of interaction between prehistoric Aegean societies and their neighbours (Oxford 2016) 143–167.
+</p>
+<p>
+B. Horejs, Neue Gewichtssysteme und metallurgischer Aufschwung im frühen 3. Jahrtausend – ein Zufall?, in: M. Bartelheim – B. Horejs – R. Krauß (eds.), Von Baden bis Troia. Ressourcennutzung, Metallurgie und Wissenstransfer. Eine Jubiläumsschrift für Ernst Pernicka, OREA 3 (Rahden/Westf. 2016) 251–272.
+</p>
+<p>
+N. Lužnik and M. Klein, Interdisciplinary workflow for Virtual Archaeology, 2015 Digital Heritage, Granada, 2015, 177-180.
+</p>
+<p>
+M. Mehofer, Çukuriçi Höyük – Ein Metallurgiezentrum des frühen 3. Jts. V. Chr. in der Westtürkei in: M. Bartelheim – B. Horejs – R. Krauß (eds.), Von Baden bis Troia. Ressourcennutzung, Metallurgie und Wissenstransfer. Eine Jubiläumsschrift für Ernst Pernicka, OREA 3 (Rahden/Westf. 2016) 359–373.
+</p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+ 	<!--Content ends here-->
+
+
+
+
+
+
+
+
+</div> <!--class row for scroll spy and contetn-->
+
+<div> <!--Container ends-->
+
+
+
+{% endblock %}

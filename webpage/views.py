@@ -32,6 +32,12 @@ def movie_teaser(request):
 	return render(request, 'webpage/movie_teaser.html', context)
 
 
+@login_required
+def movie_content(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/movie_content.html', context)
+
+
 def blog_main(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/blog_main.html', context)

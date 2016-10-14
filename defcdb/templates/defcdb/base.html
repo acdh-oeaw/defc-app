@@ -192,7 +192,7 @@
       }
     }
   </style>
-<body role="document">
+<body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
 <header>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -330,6 +330,11 @@
                 </li>
               </ul>
           </li>
+          {% if user.is_authenticated %}
+          <li >
+            <a href="{% url 'webpage:movie_content' %}" >Movie</a>
+          </li>
+          {% endif %}
       </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
