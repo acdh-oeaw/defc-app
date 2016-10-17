@@ -21,11 +21,7 @@
 	width: 100%; 
 	height: 100%;
 }
-.movie-header {
-	/*background-image: url('{% static "webpage/movie_images/M1.jpg" %}');
-	background-size: 100%;
-	height: 500px;*/
-}
+
 .standard-image {
   width:50%;
   height: auto;
@@ -33,11 +29,10 @@
 }
 .row-image {
   max-width:100%;
-  /*vertical-align: middle;*/
   height: auto;
   width: auto;
   padding: 30px;
-  /*display: inline-block;*/
+ 
 }
 #img-plan-cross-section {
   padding-top: 80px;
@@ -50,21 +45,12 @@
  
   max-width: 40%;
 }
-#img-pottery-01 {
-  /*max-width:100%;*/
-/*padding-top: 177px;
-display: inline-block;*/
-}
+
 #img-pottery-02 {
   max-width:80%;
- /* display: inline-block;*/
+ 
 }
 
-#img-pottery-03 {
-  /*max-width:100%;*/
-/*padding-top: 144px;
-display: inline-block;*/
-}
 .imgWrapper {
   display: block;
     margin-left: auto;
@@ -74,34 +60,109 @@ display: inline-block;*/
   padding-top: 150px;
 }
 
+.nav-pills >li > a {
+	padding-left: 2px;
+	padding-right: 2px;
+	font-weight: bold;
+}
+.nav-pills li  a {
+	color: black;
+	
+}
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus {
+background-color: white;
+}
+
+
+.nav-pills >li.active,
+.nav-pills > li.active >a,
+.nav-pills > li.hover > a,
+.nav-pills > li.focus > a  {
+	background-color:#009688;
+}
+
+.nav-pills>li.active>a, 
+.nav-pills>li.active>a:hover, 
+.nav-pills>li.active>a:focus {
+	background-color:#009688;
+}
+
+#myList {
+	padding-top: 70px;
+	border-bottom: 3px solid #009688;
+
+}
+.tabs-title {
+	font-weight: bold;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.tabs-content {
+	padding-bottom: 40px;
+}
+.movie-header h2 {
+	font-weight: bold;
+
+}
+
+
+
+
 </style>
 
-
-
 <div class="container">
-<div class="movie-header">
+	<div class="movie-header">
 		<h2>Çukuriçi Höyük - The World Heritage Site through Time</h2>
 </div>
 	
 	<div class="video-container">
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/EbBFq07lQwM" frameborder="0" allowfullscreen></iframe>
 	</div>
-	<div id="movie-description">
+<div id="movie-description">
 
-<!--Accordion-->
- <div class="panel-group" id="accordion">
-  <!--Introduction-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#introduction">
-        Introduction</a>
-      </h4>
-    </div>
-    <div id="introduction" class="panel-collapse collapse">
-      <div class="panel-body">
-        <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-35-49_Figure15.jpg" %}">
-      	<img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-35-49_Figure15.jpg" %}" class="standard-image img-responsive center-block"  alt="Map of the neolithisation of Western Anatolia with supposed routes of colonization from the Neolithic core zone of the Fertile Crescent" title="Map by Horejs et al. 2015">
+
+<ul class="nav nav-pills nav-justified" id="myList">
+
+    <li class="active">    	
+    <a data-toggle="pill" href="#introduction">Introduction</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#neolithic_period">   		
+    		Neolithic Period (6700-5900 BC)   		
+    	</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#late_chalcolithic_period">   		
+    		Late Chalcolithic Period (3300-3000 BC)		
+    	</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#early_bronze_age">	
+    		Early Bronze Age (3000-2750 BC)
+    	</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#visualization_process">    		
+    		Visualization process
+    	</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#further_reading">   		
+    		Further Reading
+    	</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#credits">
+    		Credits
+    	</a>
+    </li>
+ </ul>
+ <div class="tab-content">
+ 	<div id="introduction" class="tab-pane fade in active tabs-content">
+      <h3 class="tabs-title">Introduction</h3>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-35-49_Figure15.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-35-49_Figure15.jpg" %}" class="standard-image img-responsive center-block"  alt="Map of the neolithisation of Western Anatolia with supposed routes of colonization from the Neolithic core zone of the Fertile Crescent" title="Map by Horejs et al. 2015">
       </a>
       <p>Neolithisation of Western Anatolia with supposed routes of colonization from the Neolithic core zone of the Fertile Crescent. A model of maritime colonization is based on different material studies of pioneer sites in Western Anatolia (i.e. Çukuriçi Höyük and Ulucak Höyük).
       </p>
@@ -147,23 +208,16 @@ display: inline-block;*/
     <p>
         [8] Overview of the Neolithic and Chalcolithic settlement remains of trenches N6–7 after the excavation in 2011 (photo by N. Gail/ÖAI).
     </p>
-      </div>
+
+     
     </div>
-  </div>
 
 
-<!--Neolithic period-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#neolithic_period">
-        Neolithic Period (6700-5900 BC)</a>
-      </h4>
-    </div>
-    <div id="neolithic_period" class="panel-collapse collapse">
-      <div class="panel-body">
-        <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-39-16_1.jpg" %}">
-        <img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-39-16_1.jpg" %}" class="standard-image img-responsive center-block"  alt="Profile at the northern part of Çukuriçi Höyük" title="Photo by F. Ostamann/ERC Prehistoric Anatolia">
+
+    <div id="neolithic_period" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Neolithic Period (6700-5900 BC)</h3>
+     <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-39-16_1.jpg" %}">
+        <img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-39-16_1.jpg" %}" class="standard-image img-responsive center-block"  alt="Profile at the northern part of Çukuriçi Höyük" title="Photo by F. Ostmann/ERC Prehistoric Anatolia">
       </a>
       <p>
         Profile at the northern part of Çukuriçi Höyük showing the different settlement phases. The settlement phase ÇuHö X is being presented exemplarily for the Neolithic period.
@@ -252,24 +306,13 @@ display: inline-block;*/
       <p>
       Everyday life of the Neolithic inhabitants took place outside the house in open courtyards and was characterized by farming, herding, processing crafts and the procurement of raw materials.
       </p>
-
-      </div>
     </div>
-  </div>
 
 
 
-<!--Late Chalcolithic period-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#chalcolithic_period">
-        Late Chalcolithic Period (3300-3000 BC)</a>
-      </h4>
-    </div>
-    <div id="chalcolithic_period" class="panel-collapse collapse">
-      <div class="panel-body">
-        <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-22-03_Cuk14_M1_chalk.jpg" %}">
+   <div id="late_chalcolithic_period" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Late Chalcolithic Period (3300-3000 BC)</h3>
+      <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-22-03_Cuk14_M1_chalk.jpg" %}">
         <img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-22-03_Cuk14_M1_chalk.jpg" %}" class="standard-image img-responsive center-block"  alt="Plan of the Late Chalcolithic Period remains" title="Plan by M. Börner/ERC Prehistoric Anatolia">
       </a>
       <p>
@@ -317,22 +360,13 @@ display: inline-block;*/
       <p>
       Different domestic architecture like dwellings, storage buildings and ‘stone row structures’, which were used for drying fruits, point to intensive agricultural activities in the settlement. The question of the shape of the roof construction, whether conical or flat, remains open.
       </p>
-
-      </div>
     </div>
-  </div>
 
-  <!--Early Bronze Age-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#bronze_age">
-        Early Bronze Age (3000-2750 BC)</a>
-      </h4>
-    </div>
-    <div id="bronze_age" class="panel-collapse collapse">
-      <div class="panel-body">
-      <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-25-32_1.jpg" %}">
+
+
+     <div id="early_bronze_age" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Early Bronze Age (3000-2750 BC)</h3>
+        <a href="{% static "webpage/movie_images/cukurici_10_12_2015_18-25-32_1.jpg" %}">
         <img src="{% static "webpage/movie_images/cukurici_10_12_2015_18-25-32_1.jpg" %}" class="standard-image img-responsive center-block"  alt="Extensive excavations and geophysical prospections of the Early Bronze Age settlement phases ÇuHö IV and III" title="Plan by M. Börner/ERC Prehistoric Anatolia">
       </a>
       <p>
@@ -494,22 +528,11 @@ display: inline-block;*/
       <p>
       A visualization of the Early Bronze Age settlement based on the excavation results, geophysical prospections and paleo-geographic drillings. The early proto-urban structure of the settlement with a distinct spatial organization is visible. Specialized craft activities are attested inside the settlement. Farming and herding took place outside in the wider surrounding of the settlement. 
       </p>
-
-
-      </div>
     </div>
-  </div>
-    <!--Visualization process-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#visualization_process">
-        Visualization process</a>
-      </h4>
-    </div>
-    <div id="visualization_process" class="panel-collapse collapse">
-      <div class="panel-body">
 
+
+    <div id="visualization_process" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Visualization process</h3>
       <a href="{% static "webpage/movie_images/collage01.jpg" %}">
         <img src="{% static "webpage/movie_images/collage01.jpg" %}" class="standard-image img-responsive center-block"  alt="wider lanscape area" title="Image 1, 2, 4 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Plan 3 by A. Buhlke/ERC Prehistoric Anatolia" >
       </a>
@@ -570,28 +593,14 @@ display: inline-block;*/
       <p>
        In absence of knowledge of the ancient clothing and appearance of the inhabitants, the animals (e.g. goats and sheep) and people are depicted as shadowy figures.
       </p>
-
-      </div>
     </div>
-  </div>
 
-  <!--Further reading-->
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#further_reading">
-        Further Reading</a>
-      </h4>
-    </div>
-    <div id="further_reading" class="panel-collapse collapse">
-      <div class="panel-body">
-
-<p>
+    <div id="further_reading" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Further Reading</h3>
+       <p>
   Selected bibliography (for further literature and information see <a href="http://www.orea.oeaw.ac.at/prehistoric-anatolia.html">ERC Prehistoric Anatolia</a>).
 </p>
-<p>
-  <a href="http://www.orea.oeaw.ac.at/fileadmin/user_upload/Publikationen_diverse_und_vor_2010/FGPublikationslisten/AAPP_Publikationen_2016.pdf">Bibliography Anatolian Aegean Prehistoric Phenomena (AAPP).</a>
-</p>
+
 
 <p>
   B. Horejs – A. Galik – U. Thanheiser – S. Wiesinger, Aktivitäten und Subsistenz in den Siedlungen des Çukuriçi Höyük. Der Forschungsstand nach den Ausgrabungen 2006–2009, Prähistorische Zeitschrift 86, 2011, 1, 31–66.
@@ -630,29 +639,22 @@ N. Lužnik and M. Klein, Interdisciplinary workflow for Virtual Archaeology, 201
 <p>
 M. Mehofer, Çukuriçi Höyük – Ein Metallurgiezentrum des frühen 3. Jts. V. Chr. in der Westtürkei in: M. Bartelheim – B. Horejs – R. Krauß (eds.), Von Baden bis Troia. Ressourcennutzung, Metallurgie und Wissenstransfer. Eine Jubiläumsschrift für Ernst Pernicka, OREA 3 (Rahden/Westf. 2016) 359–373.
 </p>
-
-
-
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#credits">
-        Credits</a>
-      </h4>
-    </div>
-    <div id="credits" class="panel-collapse collapse">
-      <div class="panel-body">
 <p>
+  <a href="http://www.orea.oeaw.ac.at/fileadmin/user_upload/Publikationen_diverse_und_vor_2010/FGPublikationslisten/AAPP_Publikationen_2016.pdf">Bibliography Anatolian Aegean Prehistoric Phenomena (AAPP).</a>
+</p>
+    </div>
+
+
+    <div id="credits" class="tab-pane fade tabs-content">
+      <h3 class="tabs-title">Credits</h3>
+      <p>
   B. Horejs & team of the ERC Project Prehistoric Anatolia; Institute for Oriental and European Archaeology (OREA); Austrian Academy of Sciences (AAS)
 </p>
 <p>
   Cooperation partners: </p>
 <ul>
 <li>Vienna Institute for Archaeological Sciences (VIAS)</li>
-<li>Veterinärmedizinische Universtät Wien, Institut für Anatomie</li>
+<li>Veterinärmedizinische Universität Wien, Institut für Anatomie</li>
 <li>Österreichisches Archäologisches Institut (ÖAI), Ausgrabung Ephesos</li>
 </ul>
 
@@ -661,15 +663,31 @@ M. Mehofer, Çukuriçi Höyük – Ein Metallurgiezentrum des frühen 3. Jts. V.
   <li>N. Lužnik Jancsary/ The Ludwig Boltzmann Institute for Archaeological Prospection and Virtual Archaeology – LBI ArchPro/7reasons Medien GmbH</li>
   <li>M. Klein/7reasons Medien GmbH</li>
 </ul>
-
-   </div>
     </div>
-  </div>
 
-</div> <!--end of Accordion-->
 
-	</div>
-        
+ </div>
+
+
+</div> 
+
+
 </div>
+<!--Keep active tab on page refresh-->
+<script>
+ $(document).ready(function() {
+    if(location.hash) {
+        $('a[href=' + location.hash + ']').tab('show');
+    }
+    $(document.body).on("click", "a[data-toggle]", function(event) {
+        location.hash = this.getAttribute("href");
+    });
+});
+$(window).on('popstate', function() {
+    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+    $('a[href=' + anchor + ']').tab('show');
+});
 
-{% endblock content %}
+</script>
+
+{% endblock %}
