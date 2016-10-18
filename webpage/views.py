@@ -27,6 +27,11 @@ def about(request):
 	return render(request, 'webpage/about.html', context)
 
 
+def terms_of_use(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/terms_of_use.html', context)
+
+
 def movie_teaser(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/movie_teaser.html', context)
