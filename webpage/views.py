@@ -42,6 +42,11 @@ def movie_content(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/movie_content_tabs.html', context)
 
+@login_required
+def movie_german_version(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/movie_german_version.html', context)
+
 
 def blog_main(request):
 	context = RequestContext(request)
