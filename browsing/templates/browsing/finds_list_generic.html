@@ -10,6 +10,8 @@
 {% endblock %}
 
 {% block reset_button %}
+<a class ="btn btn-default"  id="01">Show/Hide Advanced search options</a></br>
+ <p></p>
  <a class ="btn btn-default"  href="{% url 'browsing:browse_finds' %}">Reset search</a>     
 {% endblock %}
 
@@ -36,5 +38,13 @@ var period_names = [{% for period in period_names %} "{{ period }}", {% endfor %
             source:cs_names
         }); 
     });
+</script>
+<script type="text/javascript">
+// $(document).ready(function(){
+//     $("#advanced_search_fields").hide();
+//     $("#01").click(function(){
+//         $("#advanced_search_fields").toggle();
+//     });
+// });
 </script>
 {% endblock %}
