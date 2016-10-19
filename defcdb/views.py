@@ -447,6 +447,8 @@ class InterpretationDetail(DetailView):
 #################################################################
 #               views for login/logout                          #
 #################################################################
+
+
 def user_login(request):
     if request.method == 'POST':
         form = form_user_login(request.POST)
