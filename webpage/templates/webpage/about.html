@@ -4,12 +4,12 @@
 
 <div class="container text-center">
       <h2 class="bs-docs-featurette-title">Digitizing Early Farming Cultures (DEFC)</h2><br>
-      <ul class="nav nav-tabs nav-justified">
-          <li class="active"><a data-toggle="pill" href="#project" style="color:#686868 ">Project</a></li>
+      <ul class="nav nav-tabs nav-justified" id="myTab">
+          <li class="active"><a data-toggle="tab" href="#project" style="color:#686868 ">Project</a></li>
           <!-- <li><a data-toggle="pill" href="#partners" style="color:#686868 ">Partners</a></li> -->
-          <li><a data-toggle="pill" href="#team" style="color:#484848">Team</a></li>
-          <li><a data-toggle="pill" href="#events" style="color:#484848">Events</a></li>
-          <li><a data-toggle="pill" href="#contact" style="color:#484848">Contact</a></li>
+          <li><a data-toggle="tab" href="#team" style="color:#484848">Team</a></li>
+          <li><a data-toggle="tab" href="#events" style="color:#484848">Events</a></li>
+          <li><a data-toggle="tab" href="#contact" style="color:#484848">Contact</a></li>
     </ul>
     <div class="tab-content" style="text-align:justify">
     <div id="project" class="tab-pane fade in active row">
@@ -116,6 +116,26 @@
   </div>
 
   </div>
-  <!-- Place this tag right after the last button or just before your close body tag. -->
+
+<!--Keep active tab on page refresh-->
+<script>
+ $(document).ready(function() {
+    if(location.hash) {
+        $('a[href=' + location.hash + ']').tab('show');
+    }
+    $(document.body).on("click", "a[data-toggle]", function(event) {
+        location.hash = this.getAttribute("href");
+    });
+});
+$(window).on('popstate', function() {
+    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+    $('a[href=' + anchor + ']').tab('show');
+});
+
+</script>
+
+
+<!-- Place this tag right after the last button or just before your close body tag. -->
+  
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 {% endblock %}

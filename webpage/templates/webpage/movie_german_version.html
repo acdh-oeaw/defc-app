@@ -1,0 +1,10 @@
+{% extends "webpage/movie_content_tabs.html" %} 
+{% load staticfiles %}
+{% block video_container %}
+	<div class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/EbBFq07lQwM" frameborder="0" allowfullscreen></iframe>
+	</div>
+  <div class="switch_language">
+    <a href="{% url 'webpage:movie_content' %}" class="btn btn-default movie-btn" role="button">English version</a>
+  </div>
+{% endblock video_container %}

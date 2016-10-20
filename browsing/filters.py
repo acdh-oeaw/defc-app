@@ -1,9 +1,5 @@
 import django_filters
-from defcdb.models import Site, DC_site_topography, DC_region, DC_province, Area, DC_area_areatype
-from defcdb.models import (
-    Finds, DC_finds_type, DC_researchevent_researchtype, ResearchEvent,
-    Interpretation)
-from defcdb.models import DC_interpretation_productiontype, DC_interpretation_subsistencetype
+from defcdb.models import *
 from .forms import SiteFilterForm
 
 
@@ -23,6 +19,26 @@ django_filters.filters.LOOKUP_TYPES = [
     ('not_contains', 'Does not contain'),
 ]
 
+YESNO_CHOICES = (
+        ('', '---------'),
+        ("yes", "yes"),
+        ("no", "no"),
+    )
+
+GRAVE_OR_CEMETERY_CHOICES = (
+        ('', '---------'),
+        ("cemetery", "cemetery"),
+        ("grave", "grave")
+        )
+
+CONFIDENCE_CHOICES=(
+         ("---------", "---------"),
+        ("1", "1"),
+        ("2", "2"),
+        ("3", "3"),
+        ("4", "4"),
+        ("5", "5"),
+        )
 
 class SiteListFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(lookup_expr='icontains', label='Site name', help_text=False)
@@ -79,6 +95,89 @@ class AreaListFilter(django_filters.FilterSet):
     period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to'
     )
+    dating_method = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_period_datingmethod.objects.all(), help_text=False
+        )
+
+    radiocarbon_dated = django_filters.ChoiceFilter(choices=YESNO_CHOICES, help_text=False)
+
+#settlement fields
+
+    settlement_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_settlementtype.objects.all(), help_text=False)
+
+    settlement_structure = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_settlementstructure.objects.all(), help_text=False)
+
+    settlement_construction_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_constructiontype.objects.all(), help_text=False)
+
+    settlement_building_technique = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_buildingtechnique.objects.all(), help_text=False)
+
+    settlement_special_features = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_specialfeatures.objects.all(), help_text=False)
+        #help_text=Area._meta.get_field('settlement_special_features').help_text
+    settlement_human_remains = django_filters.ChoiceFilter(choices=YESNO_CHOICES, help_text=False)
+
+#cave/rockshelters fields
+
+    cave_rockshelters_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_caverockshelterstype.objects.all(), help_text=False
+        )
+
+    cave_rockshelters_human_remains = django_filters.ChoiceFilter(choices=YESNO_CHOICES, help_text=False)
+
+    cave_rockshelters_evidence_of_occupation = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_evidenceofoccupation.objects.all(), help_text=False
+        )
+
+#quarry fields
+
+    quarry_exploitation_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_exploitationtype.objects.all(), help_text=False
+        )
+
+    quarry_raw_material = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_rawmaterial.objects.all(), help_text=False
+        )
+
+#cemetery/graves fields
+
+    cemetery_or_grave = django_filters.ChoiceFilter(choices=GRAVE_OR_CEMETERY_CHOICES, help_text=False)
+
+    cemetery_or_graves_topography = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_topography.objects.all(), help_text=False)
+
+    cemetery_or_graves_mortuary_features = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_mortuaryfeatures.objects.all(), help_text=False
+        )
+    grave_number_of_graves = django_filters.CharFilter(lookup_expr='exact', help_text=False)
+
+    grave_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_gravetype.objects.all(), help_text=False
+        )
+    grave_type_of_human_remains = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_typeofhumanremains.objects.all(), help_text=False
+        )
+    grave_estimated_number_of_individuals = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
+
+    grave_age_groups = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_agegroups.objects.all(), help_text=False
+        )
+    grave_sexes = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_sexes.objects.all(), help_text=False
+        )
+    grave_number_of_female_sex = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
+
+    grave_number_of_male_sex = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
+
+    grave_number_of_not_specified_sex = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
+
+    grave_manipulations_of_graves = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_manipulationofgraves.objects.all(), help_text=False
+        )
+
 
     class Meta:
         model = Area
@@ -120,6 +219,74 @@ class FindsListFilter(django_filters.FilterSet):
     area__period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to'
     )
+    amount = django_filters.ModelChoiceFilter(
+        queryset=DC_finds_amount.objects.all(), help_text=False
+        )
+    material = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_material.objects.all(), help_text=False
+        )
+    confidence = django_filters.ChoiceFilter(
+        choices=CONFIDENCE_CHOICES, help_text=False
+        )
+
+# small finds fields
+
+    small_finds_category = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_small_finds_category.objects.all(), help_text=False
+        )
+
+    small_finds_type = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_small_finds_type.objects.all(), help_text=False
+        )
+# Botany fields
+    
+    botany_species = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_botany_species.objects.all(), help_text=False
+        )
+# Animal remains fields
+
+    animal_remains_species = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_animal_remains_species.objects.all(), help_text=False
+        )
+    animal_remains_completeness = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_animal_remains_completeness.objects.all(), help_text=False
+        )
+    animal_remains_part = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_animal_remains_part.objects.all(), help_text=False
+        )
+# Lithics fields
+    
+    lithics_technology = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_technology.objects.all(), help_text=False
+        )
+    lithics_industry = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_industry.objects.all(), help_text=False
+        )
+    lithics_core_shape = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_core_shape.objects.all(), help_text=False
+        )
+    lithics_retouched_tools = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_retouched_tools.objects.all(), help_text=False
+        )
+    lithics_raw_material = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_raw_material.objects.all(), help_text=False
+        )
+    obsidian = django_filters.ChoiceFilter(choices=YESNO_CHOICES, help_text=False)
+
+    obsidian_amount = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
+
+# Pottery fields
+    
+    pottery_form = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_pottery_form.objects.all(), help_text=False
+        )
+    pottery_detail = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_pottery_detail.objects.all(), help_text=False
+        )
+    pottery_decoration = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_pottery_decoration.objects.all(), help_text=False
+        )
+
 
     class Meta:
         model = Finds

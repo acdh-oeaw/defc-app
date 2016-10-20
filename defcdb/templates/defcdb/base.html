@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="/static/defcdb/css/ap-scroll-top.min.css"/>
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- SCrollto -->
+    
 <!--CSS custom for blog-->
     <link rel="stylesheet" href="/static/webpage/css/defc_blog.css"/>
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -116,7 +118,12 @@
     .footer-left {
       text-align: left;
     }
-    #imprint_link {
+    .footer_link {
+      color: #ffffff;
+    }
+    .footer_link:hover,
+    .footer_link:active,
+    .footer_link:focus {
       color: #ffffff;
     }
     .breadcrumb {
@@ -192,7 +199,7 @@
       }
     }
   </style>
-<body role="document">
+<body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
 <header>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -330,6 +337,9 @@
                 </li>
               </ul>
           </li>
+          <li>
+              <a href="{% url 'webpage:movie_content' %}">Çukuriçi Höyük Movie</a>
+          </li>
       </ul>
       <div class="pull-right">
                     <form method="get" action="{% url 'defcdb:search_all' %}" class="navbar-form" id="pageform">
@@ -380,8 +390,8 @@
      <div class="container">
         <div class="row text-center">
         <div class="col-sm-4">
-          © Copyright OEAW</br>
-          <a href="{% url 'webpage:imprint' %}" id="imprint_link">Imprint</a>
+          <a href="{% url 'webpage:terms_of_use' %}" class="footer_link">Terms of Use / License</a></br>
+          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a>
         </div>
         <div class="col-sm-4">
           <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
@@ -403,15 +413,15 @@
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->
     <script>
-      $(function() {
-      $('[multiple=multiple]')
-      .not(document.getElementById( "id_period_reference" ))
-      .not(document.getElementById( "id_reference" ))
-      .not(document.getElementById( "id_institution" ))
-      .not(document.getElementById( "id_alias_name" ))
-      .not(document.getElementById( "id_alternative_name" ))
-      .resizable();
-      });
+      // $(function() {
+      // $('[multiple=multiple]')
+      // .not(document.getElementById( "id_period_reference" ))
+      // .not(document.getElementById( "id_reference" ))
+      // .not(document.getElementById( "id_institution" ))
+      // .not(document.getElementById( "id_alias_name" ))
+      // .not(document.getElementById( "id_alternative_name" ))
+      // .resizable();
+      // });
     </script>
     <style>
       .ui-resizable-se { bottom: 18px; right: 25px; }
