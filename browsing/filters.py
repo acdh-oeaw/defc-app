@@ -160,7 +160,7 @@ class AreaListFilter(django_filters.FilterSet):
     grave_type_of_human_remains = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_area_typeofhumanremains.objects.all(), help_text=False
         )
-    grave_estimated_number_of_individuals = django_filters.CharFilter(lookup_expr='exact', help_text=False)
+    grave_estimated_number_of_individuals = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
 
     grave_age_groups = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_area_agegroups.objects.all(), help_text=False
