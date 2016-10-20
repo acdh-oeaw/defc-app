@@ -6,7 +6,7 @@ from defcdb.models import Interpretation
 from .filters import (
     SiteListFilter, AreaListFilter, FindsListFilter, ResearchEventListFilter,
     InterpretationListFilter)
-from .forms import GenericFilterFormHelper
+from .forms import GenericFilterFormHelper, SpecificAreaForm, SpecificFindsForm
 from .tables import SiteTable, AreaTable, FindsTable, ResearchEventTable, InterpretationTable
 
 
@@ -63,7 +63,7 @@ class AreaListView(GenericListView):
     table_class = AreaTable
     template_name = 'browsing/area_list_generic.html'
     filter_class = AreaListFilter
-    formhelper_class = GenericFilterFormHelper
+    formhelper_class = SpecificAreaForm
 
     def get_context_data(self, **kwargs):
         context = super(GenericListView, self).get_context_data()
@@ -86,7 +86,7 @@ class FindsListView(GenericListView):
     table_class = FindsTable
     template_name = 'browsing/finds_list_generic.html'
     filter_class = FindsListFilter
-    formhelper_class = GenericFilterFormHelper
+    formhelper_class = SpecificFindsForm
 
     def get_context_data(self, **kwargs):
         context = super(GenericListView, self).get_context_data()
