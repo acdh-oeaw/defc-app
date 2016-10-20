@@ -540,7 +540,7 @@ class Site(TrackChanges):
         return str(self.province) + '_' + str(self.name)
 
     def get_absolute_url(self):
-        return reverse('defcdb:site_list')
+        return reverse('publicrecords:site_detail', kwargs={'pk': self.id})
 
     class Meta:
         unique_together = ('name', 'province')
@@ -705,7 +705,7 @@ class Area(TrackChanges):
         return str(self.site)+'_'+str(self.area_type)+'_'+str(self.id)
 
     def get_absolute_url(self):
-        return reverse('defcdb:area_detail', kwargs={'pk': self.id})
+        return reverse('publicrecords:area_detail', kwargs={'pk': self.id})
 
 reversion.register(Area)
 
@@ -787,7 +787,7 @@ class Finds(TrackChanges):
         ordering =( 'area',)
 
     def get_absolute_url(self):
-        return reverse('defcdb:finds_detail', kwargs={'pk': self.id})
+        return reverse('publicrecords:finds_detail', kwargs={'pk': self.id})
 
     def __str__(self):
         return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)

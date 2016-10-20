@@ -9,7 +9,7 @@ class AreaIndex(indexes.SearchIndex, indexes.Indexable):
         return Area
 
     def index_queryset(self, using=None):
-        return self.get_model().objects.all()
+        return self.get_model().objects.filter(public=True)
 
 
 class FindsIndex(indexes.SearchIndex, indexes.Indexable):
@@ -19,4 +19,4 @@ class FindsIndex(indexes.SearchIndex, indexes.Indexable):
         return Finds
 
     def index_queryset(self, using=None):
-        return self.get_model().objects.all()
+        return self.get_model().objects.filter(public=True)

@@ -20,3 +20,4 @@ __try.html
 /orea/settings/server.py
 *.nxs
 orea/whoosh/*
+/images_metadata/templates/images_metadata/*.bak
