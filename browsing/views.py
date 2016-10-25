@@ -81,6 +81,7 @@ class AreaListView(GenericListView):
         context["period_names"] = set(period_names)
         return context
 
+
 class FindsListView(GenericListView):
     model = Finds
     table_class = FindsTable
@@ -145,4 +146,3 @@ class InterpretationListView(GenericListView):
             site_names.append(x.name)
         context["site_names"] = set(site_names)
         return context
-
