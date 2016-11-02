@@ -32,11 +32,6 @@ def terms_of_use(request):
 	return render(request, 'webpage/terms_of_use.html', context)
 
 
-def movie_teaser(request):
-	context = RequestContext(request)
-	return render(request, 'webpage/movie_teaser.html', context)
-
-
 def movie_content(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/movie_content_tabs.html', context)
@@ -60,6 +55,11 @@ def blog_post_01(request):
 def blog_post_02(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/blog_post_02.html', context)
+
+
+def defc2rdf_demo(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/defc2rdf_demo.html', context)
 
 
 class EventListViewAdmin(generic.ListView):

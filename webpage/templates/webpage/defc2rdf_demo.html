@@ -1,0 +1,28 @@
+{% extends "defcdb/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+	<div class="alert alert-warning">
+    <strong><h3>Warning!</h3> <h4>This is work in progress. The endpoint might be not working, or cause your browser to crash.</h4></strong> 
+  </div>
+<h1>DEFC2RDF demo page</h1>
+<br/>
+<p>This is a demo page for providing an access to experimental SPARQL endpoind to query DEFC database with <a href="http://ontop.inf.unibz.it/">-ontop-</a> and query sample RDF export created with <a href="http://usc-isi-i2.github.io/karma/">Karma</a>.</p>
+<p><a href="http://ontop4obda.eos.arz.oeaw.ac.at/openrdf-workbench/repositories/defc/repositories">OpenRDF Workbench</a> contains two repositories:
+	<ul>
+		<li>defc</li>
+		<li>karma export</li>
+	</ul>
+<p>Choose the one you want to query.</p>
+<P>Go to Explore > Saved Queries and execute examples of SPARQL queries.</p>
+<P>If you want to write your own query go to Explore > Query.</p> 
+<P><strong>Note</strong> that this is a preliminary mapping of a small subset of DEFC data to CIDOC CRM.</p>
+
+
+</p>
+</div>
+
+
+
+{% endblock %}
