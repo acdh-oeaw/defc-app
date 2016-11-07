@@ -180,27 +180,27 @@ $('#id_finds_type').change(function(){
     if(selected_option == "---------"){
        $('#div_id_small_finds_type option').hide(); 
     }
-    else if(selected_option == "figurines"){
-        $('#div_id_small_finds_type option:contains("figurines")').show();
+    else if(selected_option == "figurine"){
+        $('#div_id_small_finds_type option:contains("figurine")').show();
         $('#div_id_small_finds_type option:contains("jewellery")').hide();
         $('#div_id_small_finds_type option:contains("tool")').hide(); 
         $('#div_id_small_finds_type option:contains("other")').hide(); 
     }
     else if(selected_option == "jewellery"){
-        $('#div_id_small_finds_type option:contains("figurines")').hide();
+        $('#div_id_small_finds_type option:contains("figurine")').hide();
         $('#div_id_small_finds_type option:contains("jewellery")').show();
         $('#div_id_small_finds_type option:contains("tool")').hide();
         $('#div_id_small_finds_type option:contains("other")').hide();  
     }
     else if(selected_option == "tool"){
-        $('#div_id_small_finds_type option:contains("figurines")').hide();
+        $('#div_id_small_finds_type option:contains("figurine")').hide();
         $('#div_id_small_finds_type option:contains("jewellery")').hide();
         $('#div_id_small_finds_type option:contains("tool")').show();
         $('#div_id_small_finds_type option:contains("other")').hide(); 
     }
     else if(selected_option == "other"){
         $('#div_id_small_finds_type option:contains("other")').show();
-        $('#div_id_small_finds_type option:contains("figurines")').hide();
+        $('#div_id_small_finds_type option:contains("figurine")').hide();
         $('#div_id_small_finds_type option:contains("jewellery")').hide();
         $('#div_id_small_finds_type option:contains("tool")').hide();  
     } 
