@@ -118,8 +118,17 @@ background-color: white;
 	font-weight: bold;
 
 }
+
 #howtocite-btn {
   outline: 0 !important;
+  margin-bottom: 30px;
+}
+
+.movie_logo {
+  padding: 20px;
+}
+#h2020_logo {
+  margin-top: 30px;
 }
 /*rework all button on the website*/
 
@@ -719,8 +728,8 @@ M. Mehofer, Çukuriçi Höyük – Ein Metallurgiezentrum des frühen 3. Jts. V.
 <!-- <a href="#howtocite" class="btn btn-default movie-btn" role="button" data-toggle="collapse" data-target="#howtocite" id="testhowto">How to cite</a> -->
  <button  type="button" class="btn btn-default" data-toggle="collapse" data-target="#howtocite" id="howtocite-btn">How to cite</button>
 
+
 <div id="howtocite" class="collapse">
-	<br/>
 <p><b>
 Movie: 
 </b></p>
@@ -732,7 +741,19 @@ Documentation:
 </p>
 <p>N. Lužnik Jancsary – B. Horejs – F. Ostmann – Ch. Schwall – M. Klein, Documentation of the movie ‘Çukuriçi Höyük. The World Heritage Site Through Time’.  < http://defc.digital-humanities.at/movie/ > (last access {% now "jS F Y H:i" %}).
 </p>
+<br/>
 </div>
+
+
+  <p><b>The research leading to these results has received funding from the European Research Council under the European Union's Seventh Framework Programme (FP7/2007-2013) / ERC grant agreement n° 263339.</b></p>
+  <div class="col-md-6">
+     <img class="img-responsive movie_logo center-block" id="h2020_logo" src="{% static "webpage/EC-H2020.jpg" %}" style="width:70%">
+  </div>
+  <div class="col-md-6">
+     <img class="img-responsive movie_logo center-block" id="erc_logo" src="{% static "webpage/erc.jpg" %}" style="width:32%">
+  </div>
+
+  
     </div>
 
 
