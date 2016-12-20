@@ -66,6 +66,7 @@ class FindsDetail(DetailView):
         context['lithicsindustry_list'] = current_find.lithics_industry.all()
         context['lithicscoreshape_list'] = current_find.lithics_core_shape.all()
         context['lithicsretouchedtools_list'] = current_find.lithics_retouched_tools.all()
+        context['lithicsunretouchedtools_list'] = current_find.lithics_unretouched_tools.all()
         context['lithicsrawmaterial_list'] = current_find.lithics_raw_material.all()
         context['potterydetail_list'] = current_find.pottery_detail.all()
         context['potterydecoration_list'] = current_find.pottery_decoration.all()
