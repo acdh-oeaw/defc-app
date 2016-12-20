@@ -116,7 +116,7 @@ class AreaListFilter(django_filters.FilterSet):
         queryset=DC_area_buildingtechnique.objects.all(), help_text=False)
 
     settlement_special_features = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_area_specialfeatures.objects.all(), help_text=False)
+        queryset=DC_area_specialfeatures.objects.all(), help_text=False, label="Settlement archaeological features")
         #help_text=Area._meta.get_field('settlement_special_features').help_text
     settlement_human_remains = django_filters.ChoiceFilter(choices=YESNO_CHOICES, help_text=False)
 
@@ -175,8 +175,8 @@ class AreaListFilter(django_filters.FilterSet):
     grave_number_of_not_specified_sex = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
 
     grave_manipulations_of_graves = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_area_manipulationofgraves.objects.all(), help_text=False
-        )
+        queryset=DC_area_manipulationofgraves.objects.all(), help_text=False,
+        label="Grave disturbance of graves")
 
 
     class Meta:
@@ -263,10 +263,14 @@ class FindsListFilter(django_filters.FilterSet):
         queryset=DC_finds_lithics_industry.objects.all(), help_text=False
         )
     lithics_core_shape = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_finds_lithics_core_shape.objects.all(), help_text=False
+        queryset=DC_finds_lithics_core_shape.objects.all(), help_text=False,
+        label="Lithics cores and preparation"
         )
     lithics_retouched_tools = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_lithics_retouched_tools.objects.all(), help_text=False
+        )
+    lithics_unretouched_tools = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_finds_lithics_unretouched_tools.objects.all(), help_text=False
         )
     lithics_raw_material = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_lithics_raw_material.objects.all(), help_text=False
@@ -286,6 +290,10 @@ class FindsListFilter(django_filters.FilterSet):
     pottery_decoration = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_pottery_decoration.objects.all(), help_text=False
         )
+    pottery_type = django_filters.CharFilter(
+        lookup_expr='icontains',
+        help_text=False
+    )
 
 
     class Meta:

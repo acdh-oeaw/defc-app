@@ -119,12 +119,14 @@ class SpecificFindsForm(FormHelper):
                 'lithics_industry',
                 'lithics_core_shape',
                 'lithics_retouched_tools',
+                'lithics_unretouched_tools',
                 'lithics_raw_material',
                 'obsidian',
                 'obsidian_amount',
                 'pottery_form',
                 'pottery_detail',
                 'pottery_decoration',
+                'pottery_type',
                 css_id="advanced_search_fields"
                 ),
         )

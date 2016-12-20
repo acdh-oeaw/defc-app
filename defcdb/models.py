@@ -152,6 +152,12 @@ class DC_area_constructiontype(GenericMethods):
         null=True, help_text="Type of buildings.")
 
 
+class DC_area_constructionshape(GenericMethods):
+    name = models.CharField(
+        max_length=100, blank=True,
+        null=True, help_text="Shape of building.")
+
+
 class DC_area_buildingtechnique(GenericMethods):
     name = models.CharField(
         max_length=100, blank=True,
@@ -641,11 +647,16 @@ class Area(TrackChanges):
     settlement_structure = models.ManyToManyField(DC_area_settlementstructure,
         blank=True, help_text="Layout of settlement.")
     settlement_construction_type = models.ManyToManyField(DC_area_constructiontype,
-        blank=True, help_text="Method used for fabricating the buildings.")
+        blank=True, help_text="Method used for fabricating the buildings.",
+        verbose_name="Building type")
+    settlement_construction_shape = models.ManyToManyField(DC_area_constructionshape,
+        blank=True, help_text="Shape of the building.",
+        verbose_name="Building shape")
     settlement_building_technique = models.ManyToManyField(DC_area_buildingtechnique,
         blank=True, help_text="Type of buildings.")
     settlement_special_features = models.ManyToManyField(DC_area_specialfeatures,  #it was FK field
-        blank=True, help_text="Parts of the settlement other than buildings.")
+        blank=True, help_text="Parts of the settlement other than buildings.",
+        verbose_name="Settlement archaeological features")
     settlement_human_remains = models.CharField(max_length=3, blank=True,
         null=True, choices=HUMANREMAINS,
         help_text="Any human remains found in this Settlement?")
@@ -692,7 +703,7 @@ class Area(TrackChanges):
     grave_number_of_not_specified_sex = models.IntegerField(verbose_name="Grave: number of not specified sex", 
         null=True, blank=True, help_text="Number of those individuals whose sex could not be determined.")
     grave_manipulations_of_graves = models.ManyToManyField(
-        DC_area_manipulationofgraves, verbose_name="Grave: manipulations of graves", blank=True,
+        DC_area_manipulationofgraves, verbose_name="Grave: disturbance of graves", blank=True,
         help_text="Post-depositional intervention of grave.")
 
     description = models.TextField(blank=True, null=True,
@@ -758,7 +769,8 @@ class Finds(TrackChanges):
     lithics_industry = models.ManyToManyField(DC_finds_lithics_industry,
         blank=True, help_text="Blade/Flake/Microlithic industry.")
     lithics_core_shape = models.ManyToManyField(DC_finds_lithics_core_shape,
-        blank=True, help_text="Type of the core of the tool.")
+        blank=True, help_text="Type of the core of the tool.",
+        verbose_name="Lithics cores and preparation")
     lithics_retouched_tools = models.ManyToManyField(DC_finds_lithics_retouched_tools,
         blank=True, help_text="Type of the retouched tool.",
         verbose_name="Lithics retouched tools (types)")
