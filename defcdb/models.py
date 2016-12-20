@@ -337,6 +337,11 @@ class DC_finds_lithics_retouched_tools(GenericMethods):
         max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
 
 
+class DC_finds_lithics_unretouched_tools(GenericMethods):
+    name = models.CharField(
+        max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
+
+
 class DC_finds_lithics_raw_material(GenericMethods):
     name = models.CharField(
         max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX")
@@ -757,6 +762,8 @@ class Finds(TrackChanges):
     lithics_retouched_tools = models.ManyToManyField(DC_finds_lithics_retouched_tools,
         blank=True, help_text="Type of the retouched tool.",
         verbose_name="Lithics retouched tools (types)")
+    lithics_unretouched_tools = models.ManyToManyField(DC_finds_lithics_unretouched_tools,
+        blank= True, help_text="", verbose_name="Lithics unretouched tools (types)")
     lithics_raw_material = models.ManyToManyField(DC_finds_lithics_raw_material,
         blank=True, help_text="Material from which the tool was made.")
     obsidian = models.CharField(max_length=50, blank=True, null=True,
@@ -771,6 +778,8 @@ class Finds(TrackChanges):
         blank=True, help_text="Preserved part of the pottery.")
     pottery_decoration = models.ManyToManyField(DC_finds_pottery_decoration,
         blank=True, help_text="What the pottery was embellished with.")
+    pottery_type = models.CharField(max_length=500, blank=True, null=True,
+        help_text="")
 # common fields
     amount = models.ForeignKey(DC_finds_amount, blank=True, null=True,
         help_text="Number of pieces within the category.")
