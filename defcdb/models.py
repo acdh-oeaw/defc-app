@@ -648,10 +648,10 @@ class Area(TrackChanges):
         blank=True, help_text="Layout of settlement.")
     settlement_construction_type = models.ManyToManyField(DC_area_constructiontype,
         blank=True, help_text="Method used for fabricating the buildings.",
-        verbose_name="Building type")
+        verbose_name="Settlement building type")
     settlement_construction_shape = models.ManyToManyField(DC_area_constructionshape,
         blank=True, help_text="Shape of the building.",
-        verbose_name="Building shape")
+        verbose_name="Settlement building shape")
     settlement_building_technique = models.ManyToManyField(DC_area_buildingtechnique,
         blank=True, help_text="Type of buildings.")
     settlement_special_features = models.ManyToManyField(DC_area_specialfeatures,  #it was FK field

@@ -110,7 +110,12 @@ class AreaListFilter(django_filters.FilterSet):
         queryset=DC_area_settlementstructure.objects.all(), help_text=False)
 
     settlement_construction_type = django_filters.ModelMultipleChoiceFilter(
-        queryset=DC_area_constructiontype.objects.all(), help_text=False)
+        queryset=DC_area_constructiontype.objects.all(), help_text=False,
+        label="Settlement building type")
+
+    settlement_construction_shape = django_filters.ModelMultipleChoiceFilter(
+        queryset=DC_area_constructionshape.objects.all(), help_text=False,
+        label="Settlement building shape")
 
     settlement_building_technique = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_area_buildingtechnique.objects.all(), help_text=False)

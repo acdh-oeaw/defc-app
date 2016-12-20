@@ -176,6 +176,12 @@
                     {% endfor %}</td>
         </tr>
         <tr>
+                <td class="col-sm-2">Settlement building shape</td>
+                <td>{% for type in settlementconstructionshape_list %}
+                    {{ type }}<br/>
+                    {% endfor %}</td>
+        </tr>
+        <tr>
                 <td class="col-sm-2">Settlement building technique</td>
                 <td>{% for tech in settlementbuildingtechnique_list %}
                     {{ tech }}<br/>
@@ -324,7 +330,7 @@
         <tr>
             <td class="col-sm-2">Finds</td>
             <td>{% for find in finds_list %}
-                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">{{ find.finds_type }}<br/></a>
+                <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
                 {% endfor %}
             </td>
         </tr>

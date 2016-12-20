@@ -56,6 +56,7 @@ class SpecificAreaForm(FormHelper):
                 'settlement_type',
                 'settlement_structure',
                 'settlement_construction_type',
+                'settlement_construction_shape',
                 'settlement_building_technique',
                 'settlement_special_features',
                 'settlement_human_remains',

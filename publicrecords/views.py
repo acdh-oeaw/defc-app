@@ -140,6 +140,7 @@ class AreaDetail(DetailView):
         context['reference_list'] = current_area.reference.all()
         context['settlementstructure_list'] = current_area.settlement_structure.all()
         context['settlementconstructiontype_list'] = current_area.settlement_construction_type.all()
+        context['settlementconstructionshape_list'] = current_area.settlement_construction_shape.all()
         context['settlementbuildingtechnique_list'] = current_area.settlement_building_technique.all()
         context['settlementspecialfeatures_list'] = current_area.settlement_special_features.all()
         context['evidenceofoccupation_list'] = current_area.cave_rockshelters_evidence_of_occupation.all()
