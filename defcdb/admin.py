@@ -5,6 +5,7 @@ from .models import *
 
 allClasses = [Name, DC_country, DC_region, DC_province, DC_researchevent_researchtype, DC_researchevent_institution, DC_researchevent_special_analysis, 
 DC_site_geographicalreferencesystem, DC_site_topography, DC_area_areatype, DC_area_settlementtype, DC_area_settlementstructure, DC_area_constructiontype,
+DC_area_constructionshape,
 DC_area_buildingtechnique, DC_area_specialfeatures, DC_area_evidenceofgraveshumanremains, DC_area_evidenceofoccupation, DC_area_caverockshelterstype, 
 DC_area_rawmaterial, DC_area_exploitationtype, DC_area_topography, DC_area_mortuaryfeatures, DC_area_gravetype,
 DC_area_typeofhumanremains, DC_area_agegroups, DC_area_sexes, DC_area_manipulationofgraves, DC_finds_type, DC_finds_material,
