@@ -1,166 +1,8 @@
-{% extends "defcdb/base.html" %} 
+{% extends "webpage/movie_content_generic.html" %}
 {% load staticfiles %}
-{% block content %}
-<style>
-.movie-header {
-	padding-top: 10px;
-	padding-bottom: 20px;
-}
-.video-container {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-	margin-bottom: 30px;
-	
-}
-.video-container iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%; 
-	height: 100%;
-}
-
-.standard-image {
-  width:50%;
-  height: auto;
-  padding: 30px;
-}
-.row-image {
-  max-width:100%;
-  height: auto;
-  width: auto;
-  padding: 30px;
- 
-}
-#img-plan-cross-section {
-  padding-top: 80px;
-}
-#img-figurine_v02 {
-  padding-top: 40px;
-  max-width:65%;
-}
-#img-raum-18 {
- 
-  max-width: 40%;
-}
-
-#img-pottery-02 {
-  max-width:80%;
- 
-}
-
-.imgWrapper {
-  display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-#image-room41 {
-  padding-top: 150px;
-}
-/*.nav-pills.nav-justified > li {
- width: calc(94%/7);
-}*/
-
-.nav-pills >li > a {
-	padding-left: 6px;
-	padding-right: 6px;
-	font-weight: bold;
-}
-.nav-pills li  a {
-	color: black;
-	
-}
-.nav-pills > li > a:hover,
-.nav-pills > li > a:focus {
-background-color: white;
-}
 
 
-.nav-pills >li.active,
-.nav-pills > li.active >a,
-.nav-pills > li.hover > a,
-.nav-pills > li.focus > a  {
-	background-color:#009688;
-}
-
-.nav-pills>li.active>a, 
-.nav-pills>li.active>a:hover, 
-.nav-pills>li.active>a:focus {
-	background-color:#009688;
-}
-
-#myList {
-	padding-top: 70px;
-	border-bottom: 3px solid #009688;
-
-}
-.tabs-title {
-	font-weight: bold;
-	padding-top: 30px;
-	padding-bottom: 20px;
-}
-.tabs-content {
-	padding-bottom: 40px;
-}
-.tabs-content a {
-  color: black;
-  border-bottom: 1px solid black;
-}
-.tabs-content a:hover {
-  color: #0085A1;
-  text-decoration: none;
-  border-bottom: 1px solid #0085A1;
-}
-
-.movie-header h2 {
-	font-weight: bold;
-
-}
-
-#howtocite-btn {
-  outline: 0 !important;
-  margin-bottom: 30px;
-}
-
-.movie_logo {
-  padding: 20px;
-}
-#h2020_logo {
-  margin-top: 30px;
-}
-/*rework all button on the website*/
-
-/*.movie-btn,
-#howtocite-btn {
-  background-color: #ffffff;
-  color:black;
-  border: 1px solid black;
-  display: inline-block;
-  cursor: pointer;
-}
-.movie-btn:hover,
-.movie-btn:focus,
-.movie-btn:active,
-.movie-btn:active:focus,
-#howtocite-btn {
-  background-color: #ffffff;
-  color:black;
-  border: 1px solid black;
-  -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: none;
-    transition: none;
-    outline: 0 !important;
-}
-*/
-
-
-
-
-</style>
-
+{% block movie %}
 <div class="container">
 	<div class="movie-header">
 		<h2>Çukuriçi Höyük - The World Heritage Site through Time</h2>
@@ -171,7 +13,7 @@ background-color: white;
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/_LvaGrLjGuA" frameborder="0" allowfullscreen></iframe>
 	</div>
   <div class="switch_language">
-    <a href="{% url 'webpage:movie_german_version' %}" class="btn btn-default movie-btn" role="button">German version</a>
+    <a href="{% url 'webpage:cukurici_movie_german_version' %}" class="btn btn-default movie-btn" role="button">Switch to German version</a>
   </div>
 {% endblock video_container %}
 
@@ -179,31 +21,31 @@ background-color: white;
 
 <ul class="nav nav-pills nav-justified" id="myList">
 
-    <li class="active">    	
+    <li class="active">
     <a data-toggle="pill" href="#introduction">Introduction</a>
     </li>
     <li>
-    	<a data-toggle="pill" href="#neolithic_period">   		
-    		Neolithic Period (6700-5900 BC)   		
+    	<a data-toggle="pill" href="#neolithic_period">
+    		Neolithic Period (6700-5900 BC)
     	</a>
     </li>
     <li>
-    	<a data-toggle="pill" href="#late_chalcolithic_period">   		
-    		Late Chalcolithic Period (3300-3000 BC)		
+    	<a data-toggle="pill" href="#late_chalcolithic_period">
+    		Late Chalcolithic Period (3300-3000 BC)
     	</a>
     </li>
     <li>
-    	<a data-toggle="pill" href="#early_bronze_age">	
+    	<a data-toggle="pill" href="#early_bronze_age">
     		Early Bronze Age (3000-2750 BC)
     	</a>
     </li>
     <li>
-    	<a data-toggle="pill" href="#visualization_process">    		
+    	<a data-toggle="pill" href="#visualization_process">
     		Visualization process
     	</a>
     </li>
     <li>
-    	<a data-toggle="pill" href="#further_reading">   		
+    	<a data-toggle="pill" href="#further_reading">
     		Further Reading
     	</a>
     </li>
@@ -236,7 +78,7 @@ background-color: white;
         Systematic archaeological investigations of the tell site were started by the excavator Prof. Dr. Barbara Horejs in 2006. The model with the different trenches was created at the end of the excavation season 2014.
       </p>
       <a href="{% static "webpage/movie_images/018_01.jpg" %}">
-        <img src="{% static "webpage/movie_images/018_01.jpg" %}" class="standard-image img-responsive center-block"  alt="Çukuriçi Höyük" 
+        <img src="{% static "webpage/movie_images/018_01.jpg" %}" class="standard-image img-responsive center-block"  alt="Çukuriçi Höyük"
         title="Photo 1 by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH; Photo 2 by Ch. Schwall/ERC Prehistoric Anatolia; Photo 3 by F. Ostmann/ERC Prehistoric Anatolia; Photo 4 by M. Börner/ERC Prehistoric Anatolia; Photos 5, 6, 7, 8 by N. Gail/ÖAI">
       </a>
       <p>
@@ -257,14 +99,14 @@ background-color: white;
     <p>
         [6] Overview of the Early Bronze Age excavation of trenches S1–4 at the end of the excavation season 2009 (photo by N. Gail/ÖAI).
     </p>
-    <p> 
+    <p>
         [7] Trench N6 showing Neolithic settlement remains after excavation in 2011 (photo by N. Gail/ÖAI).
     </p>
     <p>
         [8] Overview of the Neolithic and Chalcolithic settlement remains of trenches N6–7 after the excavation in 2011 (photo by N. Gail/ÖAI).
     </p>
 
-     
+
     </div>
 
 
@@ -581,7 +423,7 @@ background-color: white;
         <img src="{% static "webpage/movie_images/test02.jpg" %}" class="standard-image img-responsive center-block"  alt="A visualization of the Early Bronze Age settlement at Çukuriçi Höyük" title="Image by N. Lužnik Jancsary/LBI ArchPro/7reasons Medien GmbH, M. Klein/7reasons Medien GmbH">
       </a>
       <p>
-      A visualization of the Early Bronze Age settlement based on the excavation results, geophysical prospections and paleo-geographic drillings. The early proto-urban structure of the settlement with a distinct spatial organization is visible. Specialized craft activities are attested inside the settlement. Farming and herding took place outside in the wider surrounding of the settlement. 
+      A visualization of the Early Bronze Age settlement based on the excavation results, geophysical prospections and paleo-geographic drillings. The early proto-urban structure of the settlement with a distinct spatial organization is visible. Specialized craft activities are attested inside the settlement. Farming and herding took place outside in the wider surrounding of the settlement.
       </p>
     </div>
 
@@ -597,10 +439,10 @@ background-color: white;
           [1] The color shaded relief of the wider landscape area surrounding Çukuriçi Höyük.
         </p>
         <p>
-          [2] 3D model of the wider landscape area surrounding Çukuriçi Höyük. 
+          [2] 3D model of the wider landscape area surrounding Çukuriçi Höyük.
           </p>
           <p>
-          [3] Topographical map of the tell Çukuriçi Höyük tell. 
+          [3] Topographical map of the tell Çukuriçi Höyük tell.
           </p>
           <p>
           [4] Gradient shader applied to the 3d model of the Çukuriçi Höyük tell.
@@ -731,7 +573,7 @@ M. Mehofer, Çukuriçi Höyük – Ein Metallurgiezentrum des frühen 3. Jts. V.
 
 <div id="howtocite" class="collapse">
 <p><b>
-Movie: 
+Movie:
 </b></p>
 <p>OREA – 7Reasons, Çukuriçi Höyük. The World Heritage Site Through Time. < http://defc.digital-humanities.at/movie/ > (last access {% now "jS F Y H:i" %}).</p>
 <p>
@@ -753,32 +595,11 @@ Documentation:
      <img class="img-responsive movie_logo center-block" id="erc_logo" src="{% static "webpage/erc.jpg" %}" style="width:32%">
   </div>
 
-  
     </div>
-
-
  </div>
-
-
-</div> 
-
-
 </div>
-<!--Keep active tab on page refresh-->
-<script>
- $(document).ready(function() {
-    if(location.hash) {
-        $('a[href=' + location.hash + ']').tab('show');
-    }
-    $(document.body).on("click", "a[data-toggle]", function(event) {
-        location.hash = this.getAttribute("href");
-    });
-});
-$(window).on('popstate', function() {
-    var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
-    $('a[href=' + anchor + ']').tab('show');
-});
+</div>
 
-</script>
+
 
 {% endblock %}

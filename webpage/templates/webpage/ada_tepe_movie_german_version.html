@@ -1,0 +1,33 @@
+{% extends "webpage/ada_tepe_movie_content.html" %}
+{% load staticfiles %}
+{% block video_container %}
+<div class="container">
+	<div class="movie-header">
+		<h2>ADA TEPE: Das erste Gold</h2>
+</div>
+	<div class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/ciyE1LLDA9o" frameborder="0" allowfullscreen></iframe>
+	</div>
+  <div class="switch_language">
+    <a href="{% url 'webpage:ada_tepe_movie_content' %}" class="btn btn-default movie-btn" role="button">Switch to English version</a>
+  </div>
+{% endblock video_container %}
+{% block intro %}
+<div id="introduction" class="tab-pane fade in active tabs-content">
+  <h3 class="tabs-title">Introduction</h3>
+  <p>Das Forschungsprojekt zum bronzezeitlichen Goldbergwerk auf dem Ada Tepe in den Ostrhodopen
+     Bulgariens ist eine Kooperation zwischen dem Institut für Orientalische und Ägäische Archäologie (OREA)
+     der Österreichischen Akademie der Wissenschaften
+     und dem Nationalen Institut für Archäologie mit Museum (NIAM) der Bulgarischen Akademie der Wissenschaften
+     sowie zahlreichen weiteren nationalen und internationalen Kooperationspartnern.</p>
+   <p>Beim Ada Tepe handelt es sich um das älteste bislang in Europa identifizierte und wissenschaftlich
+     erforschte Goldbergwerk, das im zweiten Jahrtausend v.u.Z. – genauer ab ca. 1500 – in Betrieb war.
+     Auf dem Gipfel des Hügels und an seinen Hängen wurde mit der Methode des Feuersetzens goldhaltiges Quarzgestein abgebaut.
+     Dieses wurde anschließend zermahlen, so dass im letzten Schritt schließlich Gold ausgewaschen werden konnte.
+     Auf dem Hügel konnte aber auch eine Siedlung der ehemals im Bergbau tätigen Menschen ausgegraben werden.
+     Beides – die Prozesse des Goldabbaus und der Goldgewinnung sowie die Siedlungsaktivitäten –
+     zeigt dieses von der Firma 7 Reasons in Zusammenarbeit mit den Archäologinnen und Archäologen des Ada-Tepe-Teams erstellte Video.</p>
+   <p>Der Film zu den Forschungsergebnissen wurde unter anderem auch für die Ausstellung „Das erste Gold“ im Kunsthistorischen Museum Wien (KHM) (7. 3. - 25. 6. 2017) produziert.
+     Die Ausstellung wurde gemeinsam von KHM, NAIM und OREA konzipiert und von H. Popov, B. Horejs, G. Plattner und St. Alexandrov kuratiert.</p>
+</div>
+{% endblock intro %}

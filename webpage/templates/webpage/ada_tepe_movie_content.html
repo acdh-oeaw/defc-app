@@ -1,0 +1,89 @@
+{% extends "webpage/movie_content_generic.html" %}
+{% load staticfiles %}
+
+{% block movie %}
+{% block video_container %}
+<div class="container">
+	<div class="movie-header">
+		<h2>ADA TEPE: The first Gold</h2>
+</div>
+	<div class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/ciyE1LLDA9o" frameborder="0" allowfullscreen></iframe>
+	</div>
+  <div class="switch_language">
+    <a href="{% url 'webpage:ada_tepe_movie_german_version' %}" class="btn btn-default movie-btn" role="button">Switch to German version</a>
+  </div>
+{% endblock video_container %}
+
+<div id="movie-description">
+
+<ul class="nav nav-pills nav-justified" id="myList">
+
+    <li class="active">
+    <a data-toggle="pill" href="#introduction">Introduction</a>
+    </li>
+    <li>
+    	<a data-toggle="pill" href="#credits">
+    		Credits
+    	</a>
+    </li>
+ </ul>
+ <div class="tab-content">
+   {% block intro %}
+   <div id="introduction" class="tab-pane fade in active tabs-content">
+     <h3 class="tabs-title">Introduction</h3>
+     <p>The research project centred on the gold mine on the Ada Tepe in the eastern Rhodopes of
+       Bulgaria is a cooperation between the Institute for Oriental and European Archaeology (OREA)
+       of the Austrian Academy of Sciences and the National Institute for Archaeology with Museum (NIAM)
+       of the Bulgarian Academy of Sciences as well as numerous other national and international cooperation partners. </p>
+      <p>Ada Tepe is the earliest identified and scientifically investigated gold mine in Europe. Its use period dates to the second millennium BCE and started around 1500.
+        The Bronze Age miners excavated quartz rocks containing the gold by the method of fire-setting, both on the top of the hill and along its slopes.
+        Then they grinded the quartz, and in a last stage they washed out the gold. On the hill the archaeologists have also excavated a settlement of the ancient miners.
+        The video produced by the company 7 Reasons shows both, the processes of gold mining and extraction, and the settlement activities.</p>
+      <p>The video on the research results was also produced for the exhibition “The first Gold” at the Kunsthistorisches Museum Wien (KHM) opened on 7. 3. - 25. 6. 2017.
+        The concept of the exhibition was designed in a joint effort of KHM, NAIM and OREA and curated by H. Popov, B. Horejs, G. Plattner and St Alexandrov.</p>
+   </div>
+   {% endblock intro %}
+   <div id="credits" class="tab-pane fade tabs-content">
+     <h3 class="tabs-title">Credits</h3>
+     <p>B. Horejs, R. Jung, S. Horvath, S. Molla-Djafari, “The Gold Road of the Balkans – Ada Tepe Mining: Producers and Consumer” Project.</p>
+     <p>
+       Cooperation partners: </p>
+     <ul>
+     <li>Institute for Oriental and European Archaeology (OREA) of the Austrian Academy of Sciences</li>
+     <li>National Institute for Archaeology with Museum (NAIM) of the Bulgarian Academy of Sciences</li>
+     </ul>
+
+     <p>Visualization: </p>
+     <ul>
+       <li>M. Klein/7 Reasons Media GmbH in cooperation with B. Horejs, H.  Popov and Ada Tepe Team</li>
+     </ul>
+     <p>Developers:</p>
+     <ul>
+       <li>P. Andorfer</li>
+       <li>K. Zaytseva</li>
+     </ul>
+     <p><b>
+     	The content of this page is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">cc by-nc-nd</a> license.
+     </b></p>
+
+     <br/>
+     <!-- <a href="#howtocite" class="btn btn-default movie-btn" role="button" data-toggle="collapse" data-target="#howtocite" id="testhowto">How to cite</a> -->
+      <button  type="button" class="btn btn-default" data-toggle="collapse" data-target="#howtocite" id="howtocite-btn">How to cite</button>
+
+     <div id="howtocite" class="collapse">
+     <p>7 Reasons – OREA – NAIM, The First Gold. Ada Tepe: Europe´s Oldest Gold Mine.  < http://defc.digital-humanities.at/ada-tepe-movie/ > (last access {% now "jS F Y H:i" %}).</p>
+     <br/>
+     </div>
+       <p><b>The research leading to these results has been financed by the Austrian Science Fund (project 28451-G25).</b></p>
+       <div class="row">
+       <div class="col-md-6">
+          <img class="img-responsive movie_logo center-block" id="fwf_logo" src="{% static "webpage/fwf_logo.jpg" %}" style="width:50%">
+       </div>
+       </div>
+
+
+   </div>
+ </div> <!--tab content-->
+ </div><!--movie_desc-->
+{% endblock %}

@@ -32,14 +32,24 @@ def terms_of_use(request):
 	return render(request, 'webpage/terms_of_use.html', context)
 
 
-def movie_content(request):
+def cukurici_movie_content(request):
 	context = RequestContext(request)
-	return render(request, 'webpage/movie_content_tabs.html', context)
+	return render(request, 'webpage/cukurici_movie_content.html', context)
 
 
-def movie_german_version(request):
+def cukurici_movie_german_version(request):
 	context = RequestContext(request)
-	return render(request, 'webpage/movie_german_version.html', context)
+	return render(request, 'webpage/cukurici_movie_german_version.html', context)
+
+
+def ada_tepe_movie_content(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/ada_tepe_movie_content.html', context)
+
+
+def ada_tepe_movie_german_version(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/ada_tepe_movie_german_version.html', context)
 
 
 def blog_main(request):

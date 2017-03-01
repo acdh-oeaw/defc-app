@@ -21,7 +21,7 @@
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- SCrollto -->
-    
+
 <!--CSS custom for blog-->
     <link rel="stylesheet" href="/static/webpage/css/defc_blog.css"/>
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -88,13 +88,13 @@
     }
     a.navlink:hover {
       color: black;
-      text-decoration: underline; 
+      text-decoration: underline;
     }
     a img {
       outline: 0;
       border
     }
-    #info-panel { 
+    #info-panel {
       padding: 7px;
       background-color: #009688;
       color:white;
@@ -131,7 +131,7 @@
     border: 1px solid #ccc;
     }
     /*.jumbotron {
-      background-color: #F8F8F8b;  Green 
+      background-color: #F8F8F8b;  Green
       color: #333;
       padding: 100px 25px;
     }*/
@@ -299,7 +299,7 @@
               <li>
                   <a href="{% url 'browsing:browse_interpretations' %}">Interpretations</a>
               </li>
-              
+
               <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'geolocation:filter_sites' %}">Site map</a>
@@ -337,7 +337,10 @@
               </ul>
           </li>
           <li>
-              <a href="{% url 'webpage:movie_content' %}">Çukuriçi Höyük Movie</a>
+              <a href="{% url 'webpage:cukurici_movie_content' %}">Çukuriçi Höyük Movie</a>
+          </li>
+          <li>
+              <a href="{% url 'webpage:ada_tepe_movie_content' %}">Ada Tepe Movie</a>
           </li>
       </ul>
       <div class="pull-right">
@@ -400,14 +403,14 @@
         <div class="col-sm-4">
           <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
             <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo" width="25%"/>
-          </a> 
+          </a>
         </div>
       </div>
-    </div>  
+    </div>
 </footer>
 
     </div>
-    
+
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->
