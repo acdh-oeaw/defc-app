@@ -34,7 +34,7 @@
      <h3 class="tabs-title">Introduction</h3>
      <p>The research project centred on the gold mine on the Ada Tepe in the eastern Rhodopes of
        Bulgaria is a cooperation between the Institute for Oriental and European Archaeology (OREA)
-       of the Austrian Academy of Sciences and the National Institute for Archaeology with Museum (NIAM)
+       of the Austrian Academy of Sciences and the National Institute for Archaeology with Museum (NAIM)
        of the Bulgarian Academy of Sciences as well as numerous other national and international cooperation partners. </p>
       <p>Ada Tepe is the earliest identified and scientifically investigated gold mine in Europe. Its use period dates to the second millennium BCE and started around 1500.
         The Bronze Age miners excavated quartz rocks containing the gold by the method of fire-setting, both on the top of the hill and along its slopes.
@@ -44,15 +44,25 @@
         The concept of the exhibition was designed in a joint effort of KHM, NAIM and OREA and curated by H. Popov, B. Horejs, G. Plattner and St Alexandrov.</p>
    </div>
    {% endblock intro %}
+	 {% block credits %}
    <div id="credits" class="tab-pane fade tabs-content">
      <h3 class="tabs-title">Credits</h3>
-     <p>B. Horejs, R. Jung, S. Horvath, S. Molla-Djafari, “The Gold Road of the Balkans – Ada Tepe Mining: Producers and Consumer” Project.</p>
-     <p>
-       Cooperation partners: </p>
+     <p><b>The research leading to these results has been financed by the Austrian Science Fund (project 28451-G25) (project leader: Barbara Horejs).</b></p>
+		 <div class="row">
+		 <div class="col-md-6">
+				<img class="img-responsive movie_logo center-block" id="fwf_logo" src="{% static "webpage/fwf_logo.jpg" %}" style="width:50%">
+		 </div>
+		 </div>
+     <p>Cooperation partners: </p>
      <ul>
      <li>Institute for Oriental and European Archaeology (OREA) of the Austrian Academy of Sciences</li>
      <li>National Institute for Archaeology with Museum (NAIM) of the Bulgarian Academy of Sciences</li>
      </ul>
+		 <p>Excavation:</p>
+		 <ul>
+			 <li>The archaeological site Ada Tepe was excavated by the team of archaeologist from
+				 the National Institute for Archaeology with Museum (NAIM) of the Bulgarian Academy of Sciences under the leadership of Hristo Popov.</li>
+		 </ul>
 
      <p>Visualization: </p>
      <ul>
@@ -75,15 +85,9 @@
      <p>7 Reasons – OREA – NAIM, The First Gold. Ada Tepe: Europe´s Oldest Gold Mine.  < http://defc.digital-humanities.at/ada-tepe-movie/ > (last access {% now "jS F Y H:i" %}).</p>
      <br/>
      </div>
-       <p><b>The research leading to these results has been financed by the Austrian Science Fund (project 28451-G25).</b></p>
-       <div class="row">
-       <div class="col-md-6">
-          <img class="img-responsive movie_logo center-block" id="fwf_logo" src="{% static "webpage/fwf_logo.jpg" %}" style="width:50%">
-       </div>
-       </div>
-
 
    </div>
+	 {% endblock credits %}
  </div> <!--tab content-->
  </div><!--movie_desc-->
 {% endblock %}

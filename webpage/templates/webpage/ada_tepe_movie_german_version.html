@@ -18,7 +18,7 @@
   <p>Das Forschungsprojekt zum bronzezeitlichen Goldbergwerk auf dem Ada Tepe in den Ostrhodopen
      Bulgariens ist eine Kooperation zwischen dem Institut für Orientalische und Ägäische Archäologie (OREA)
      der Österreichischen Akademie der Wissenschaften
-     und dem Nationalen Institut für Archäologie mit Museum (NIAM) der Bulgarischen Akademie der Wissenschaften
+     und dem Nationalen Institut für Archäologie mit Museum (NAIM) der Bulgarischen Akademie der Wissenschaften
      sowie zahlreichen weiteren nationalen und internationalen Kooperationspartnern.</p>
    <p>Beim Ada Tepe handelt es sich um das älteste bislang in Europa identifizierte und wissenschaftlich
      erforschte Goldbergwerk, das im zweiten Jahrtausend v.u.Z. – genauer ab ca. 1500 – in Betrieb war.
@@ -31,3 +31,48 @@
      Die Ausstellung wurde gemeinsam von KHM, NAIM und OREA konzipiert und von H. Popov, B. Horejs, G. Plattner und St. Alexandrov kuratiert.</p>
 </div>
 {% endblock intro %}
+{% block credits %}
+
+<div id="credits" class="tab-pane fade tabs-content">
+	<h3 class="tabs-title">Credits</h3>
+	<p><b>Das Projekt wird durch den Fonds zu Förderung der Wissenschaftlichen Forschung finanziert (Projekt 28451-G25) (Projektleiterin Barbara Horejs).</b></p>
+	<div class="row">
+	<div class="col-md-6">
+		 <img class="img-responsive movie_logo center-block" id="fwf_logo" src="{% static "webpage/fwf_logo.jpg" %}" style="width:50%">
+	</div>
+	</div>
+	<p>Projektpartner:</p>
+	<ul>
+	<li>Institut für Orientalische und Ägäische Archäologie (OREA) der Österreichischen Akademie der Wissenschaften</li>
+	<li>Nationales Institut für Archäologie mit Museum (NAIM) der Bulgarischen Akademie der Wissenschaften</li>
+	</ul>
+	<p>Ausgrabung:</p>
+	<ul>
+		<li>Der Ada Tepe wurde von einem Team von NAIM (Bulgarische Akademie der Wissenschaften) unter der Leitung von Hristo Popov ausgegraben.</li>
+	</ul>
+
+	<p>Visualisierung:</p>
+	<ul>
+		<li>M. Klein/7 Reasons Media GmbH im Kooperation mit B. Horejs, H. Popov und Ada Tepe Team</li>
+	</ul>
+	<p>Entwiklung:</p>
+	<ul>
+		<li>P. Andorfer</li>
+		<li>K. Zaytseva</li>
+	</ul>
+	<p><b>
+	 Der Inhalt dieser Seite ist unter <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/">cc by-nc-nd</a> Lizenz lizenziert.
+	</b></p>
+
+	<br/>
+	<!-- <a href="#howtocite" class="btn btn-default movie-btn" role="button" data-toggle="collapse" data-target="#howtocite" id="testhowto">How to cite</a> -->
+	 <button  type="button" class="btn btn-default" data-toggle="collapse" data-target="#howtocite" id="howtocite-btn">Zitieren</button>
+
+	<div id="howtocite" class="collapse">
+	<p>7 Reasons – OREA – NAIM, Das erste Gold. Ada Tepe: Das älteste Goldbergwerk Europas.  < http://defc.digital-humanities.at/ada-tepe-movie-de/ > (last access {% now "jS F Y H:i" %}).</p>
+	<br/>
+	</div>
+
+</div>
+
+{% endblock credits %}
