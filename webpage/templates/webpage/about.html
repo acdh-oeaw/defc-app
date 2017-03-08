@@ -1,4 +1,4 @@
-{% extends "defcdb/base.html" %} 
+{% extends "defcdb/base.html" %}
 {% load staticfiles %}
 {% block content %}
 
@@ -23,10 +23,29 @@
         </p>
         <p>Project duration: 01.11.2014 - 31.10.2016</p>
         <h3>Publications</h3>
-        
-        <p>Štuhec, Seta; Aspöck, Edeltraud; Masur, Anja; Andorfer, Peter; Zaytseva, Ksenia, (2016). Putting 3D models into context - the Schachermeyr pottery collection and the DEFC app. Proceedings of the 8th International Congress on Archaeology, Computer Graphics, Cultural Heritage and Innovation ‘ARQUEOLÓGICA 2.0’, 5. – 7. Sept. 2016, Valencia, Spain. - URL: <a href="http://ocs.editorial.upv.es/index.php/arqueologica20/arqueologica8/paper/viewFile/4155/2288">http://ocs.editorial.upv.es/index.php/arqueologica20/arqueologica8/paper/viewFile/4155/2288</a></p>
-        <p>Andorfer, P., Aspöck, E., Ďurčo, M., Masur, A., Zaytseva, K. (2016). The DEFC-App: A Web-based Archaeological Data Management System for ‘Digitizing Early Farming Cultures’. In Digital Humanities 2016: Conference Abstracts. Jagiellonian University & Pedagogical University, Kraków, pp. 726-728. - URL: <a href="http://dh2016.adho.org/abstracts/27">http://dh2016.adho.org/abstracts/27</a></p>
-        <p>Aspöck, Edeltraud; Masur, Anja (2015). Digitizing Early Farming Cultures. Customizing the Arches Heritage Inventory and Management System. Proceedings of Digital Heritage International Congress 2015, 28. Sept. - 2. Oct., Granada, Spain. </p>
+
+        <p>Štuhec, Seta; Aspöck, Edeltraud; Masur, Anja; Andorfer, Peter; Zaytseva, Ksenia, (2016).
+           Putting 3D models into context - the Schachermeyr pottery collection and the DEFC app.
+            Proceedings of the 8th International Congress on Archaeology, Computer Graphics, Cultural Heritage and Innovation ‘ARQUEOLÓGICA 2.0’,
+             5. – 7. Sept. 2016, Valencia, Spain. URL:
+           </p>
+           <p><a href="http://ocs.editorial.upv.es/index.php/arqueologica20/arqueologica8/paper/viewFile/4155/2288">
+             http://ocs.editorial.upv.es/index.php/arqueologica20/arqueologica8/paper/viewFile/4155/2288
+           </a></p>
+         </br>
+        <p>Andorfer, P., Aspöck, E., Ďurčo, M., Masur, A., Zaytseva, K. (2016).
+           The DEFC-App: A Web-based Archaeological Data Management System for ‘Digitizing Early Farming Cultures’.
+            In Digital Humanities 2016: Conference Abstracts. Jagiellonian University & Pedagogical University, Kraków, pp. 726-728.
+             URL:</p>
+             <p><a href="http://dh2016.adho.org/abstracts/27">
+               http://dh2016.adho.org/abstracts/27
+             </a></p>
+           </br>
+        <p>Aspöck, Edeltraud; Masur, Anja (2015). Digitizing Early Farming Cultures.
+           Customizing the Arches Heritage Inventory and Management System.
+            Proceedings of Digital Heritage International Congress 2015, 28. Sept. - 2. Oct., Granada, Spain.
+          </p>
+          <br>
       </div>
       <div class="col-sm-4" style="text-align:center">
         <div class="thumbnail">
@@ -38,7 +57,7 @@
           <p><strong>Austrian Academy of Sciences Initiative GO!DIGITAL (ACDH 2014/22)</strong></p>
         </div><br>
         <div class="thumbnail">
-          <img class="img-responsive" id="oeawlogo" src="{% static "webpage/OEAW_en_Logo_cmyk_text.jpg" %}" alt="OEAW">   
+          <img class="img-responsive" id="oeawlogo" src="{% static "webpage/OEAW_en_Logo_cmyk_text.jpg" %}" alt="OEAW">
         </div>
         </a><br>
         <a href="http://www.ariadne-infrastructure.eu/" class="navlink" target="_blank">
@@ -46,7 +65,7 @@
           <p><strong>ARIADNE EU-funded project (FP7-313193)</strong></p>
         </div><br>
         <div class="thumbnail">
-          <img class="img-responsive" id="ariadnelogo" src="{% static "webpage/Ariadne_logo.jpg" %}" alt="ARIADNE">   
+          <img class="img-responsive" id="ariadnelogo" src="{% static "webpage/Ariadne_logo.jpg" %}" alt="ARIADNE">
         </div>
         </a>
       </div>
@@ -60,8 +79,8 @@
       <p>Developers: <a href="http://www.oeaw.ac.at/acdh/en/andorfer" target="_blank">Peter Andorfer</a>, Ksenia Zaytseva</p>
     </div>
     <div id="events" class="tab-pane fade">
-        <h3></h3>     
-    {% if event_list %}  
+        <h3></h3>
+    {% if event_list %}
     <div class="panel panel-default">
     <table class="table table-bordered table-hover">
       <thead>
@@ -92,7 +111,7 @@
         <td>
           {{ object.place }}
         </td>
-      </tr> 
+      </tr>
       {% endfor %}
     </tbody>
     </table>
@@ -139,6 +158,6 @@ $(window).on('popstate', function() {
 
 
 <!-- Place this tag right after the last button or just before your close body tag. -->
-  
+
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 {% endblock %}

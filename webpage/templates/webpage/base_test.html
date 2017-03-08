@@ -1,0 +1,513 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block Titel %} DEFC Digitizing Early Farming Cultures {% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A web-based archaeological data management system">
+  <meta name="author" content="ACDH">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--CSS Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/> -->
+    <link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css"/>
+    <!-- <link rel="stylesheet" href="http://bootswatch.com/flatly/bootstrap.min.css"/> -->
+<!-- CSS jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+<!-- CSS scroll to top -->
+    <link rel="stylesheet" href="/static/defcdb/css/ap-scroll-top.min.css"/>
+<!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- SCrollto -->
+
+<!--CSS custom for blog-->
+    <link rel="stylesheet" href="/static/webpage/css/defc_blog.css"/>
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies. // Diese Website verwendet Cookies.","dismiss":"OK","learnMore":"More // Mehr ...","link":"/imprint/","theme":"dark-top"};
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+<!-- Piwik -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//clarin.oeaw.ac.at/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', 11]);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript>
+      <p>
+        <img src="//clarin.oeaw.ac.at/piwik/piwik.php?idsite=11" style="border:0;" alt="" />
+      </p>
+    </noscript>
+<!-- End Piwik Code -->
+      {% include 'autocomplete_light/static.html' %}
+      {% block scriptHeader %}
+      {% endblock %}
+
+</head>
+  <style>
+    /*.map_panel > .panel-body > img {
+      width: 100%;
+      height: 100%;
+    }*/
+    html {
+    height: 100%;
+    }
+    body {
+      font-family: Arial; /*just comment out if decide to go back to Open Sans*/
+      padding-top: 45px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-family: Arial; /*just comment out if decide to go back to Open Sans*/
+    }
+    .breadcrumb {
+      border-radius: 0 !important;
+    }
+   /* .navbar {
+      background-color:#009688;
+    }*/
+
+    a.navlink:link {
+      color: black;
+      outline: 0;
+    }
+    a.navlink:visited {
+      color: black;
+    }
+    a.navlink:hover {
+      color: black;
+      text-decoration: underline;
+    }
+    a img {
+      outline: 0;
+      border
+    }
+    #info-panel {
+      padding: 7px;
+      background-color: #009688;
+      color:white;
+    }
+    header {
+      flex: 0 0 auto;
+    }
+    .main-content {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex: 0 0 auto;
+      background-color: #333; /*#F8F8F8*/
+      color: #ffffff;
+      font-size: 13px;
+      padding: 16px;
+    }
+    .footer-right {
+      text-align: right;
+    }
+    .footer-left {
+      text-align: left;
+    }
+    .footer_link {
+      color: #ffffff;
+    }
+    .footer_link:hover,
+    .footer_link:active,
+    .footer_link:focus {
+      color: #ffffff;
+    }
+    .breadcrumb {
+    border: 1px solid #ccc;
+    }
+
+    .container-fluid {padding: 60px 50px;/**/}
+    .logo {font-size: 200px;}
+    @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+      }
+    }
+    .thumbnail {
+      padding: 0 0 10px 0;
+      border: none;
+      border-radius: 0;
+    }
+    .thumbnail img {
+      /*width: 80; */
+      height: 80px;
+      margin-bottom: 20px;
+    }
+    #oeawlogo {
+      width: 200px;
+    }
+    #ariadnelogo {
+      width: 411px;  /*or a bit smaller 274px*/
+      height: auto;
+    }
+    #orealogo {
+      padding-top: 15px;
+      padding-bottom: 15px;
+     ;
+    }
+    #defclogo {
+      padding-top: 40px;
+      width: 240px;
+      height: 90px;
+    }
+    #f-orea-logo {
+      border:none;
+      outline: 0;
+      /*margin-right: 8px;*/
+      width:40%;
+      max-width: 150px;
+      padding: 10px;
+    }
+    #f-acdh-logo {
+      border:none;
+      outline: 0;
+      /*margin-left: 8px;*/
+      width:40%;
+      max-width: 150px;
+      padding: 10px;
+    }
+    #githublogo {
+      border:none;
+      outline: 0;
+      margin-right: 8px;
+      width:8%;
+    }
+    #twitterlogo {
+      border:none;
+      outline: 0;
+      margin-left: 8px;
+      width:8%;
+    }
+    .glyphicon-envelope {
+      /*font-size: 20px;*/
+      padding: 5px;
+    }
+   .carousel-inner img {
+      width: 1200px; /* Set width to 100% */
+      height: 400px;
+      margin: auto;
+    }
+    .carousel-caption h3 {
+      color: #EFEFEF;
+    }
+    .carousel-caption p {
+      color: #EFEFEF;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+      }
+    }
+  </style>
+<body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation!</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">  <!--navbar-right-->
+        <li>
+            <a href="{% url 'webpage:homepage' %}">
+                HOME
+            </a>
+        </li>
+        <li class="dropdown"><a href="{% url 'webpage:homepage' %}" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">About
+               <span class="caret"></span>
+             </a>
+             <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'webpage:about' %}">General</a>
+              </li>
+              <li>
+                <a href="{% url 'webpage:blog_main' %}">Building the defc app</a>
+              </li>
+              <li>
+                <a href="{% url 'datamodel:plate' %}">Data Model</a>
+              </li>
+            </ul>
+        </li>
+          {% if user.is_authenticated %}
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="false">Data Curation
+                   <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                  <li>
+                    <a href="{% url 'defcdb:site_list' %}">Sites</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:researchevent_list' %}">Research Events</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:area_list' %}">Areas</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:finds_list' %}">Finds</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'defcdb:interpretation_list' %}">Interpretations</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">georeferencing</li>
+                  <li>
+                    <a href="{% url 'geolocation:province_list' %}">Districts</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Bibliography</li>
+                  <li>
+                    <a href="{% url 'bib:synczotero' %}">SyncZotero</a>
+                  </li>
+                   <li role="separator" class="divider"></li>
+                   <li class="dropdown-header">Image Gallery</li>
+                  <li>
+                    <a href="{% url 'image_gallery:object_list' %}">View/Edit Images</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                   <li class="dropdown-header">3D Models</li>
+                  <li>
+                    <a href="{% url '3Dmodels:object_list' %}">View/Edit 3D Models</a>
+                  </li>
+              </ul>
+            </li>
+          {% endif %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">Data Exploration
+               <span class="caret"></span>
+          </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{% url 'browsing:browse_sites' %}">Sites</a>
+              </li>
+              <li>
+                <a href="{% url 'browsing:browse_researchevents' %}">Research Events</a>
+              </li>
+              <li>
+                <a href="{% url 'browsing:browse_areas' %}">Areas</a>
+              </li>
+              <li>
+                  <a href="{% url 'browsing:browse_finds' %}">Finds</a>
+              </li>
+              <li>
+                  <a href="{% url 'browsing:browse_interpretations' %}">Interpretations</a>
+              </li>
+
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Maps</li>
+              <li>
+                <a href="{% url 'geolocation:filter_sites' %}">Map of acrhaeological sites</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:turkey_map' %}">Regions and districts of Turkey</a>
+              </li>
+              <li>
+                <a href="{% url 'defcdb:greece_map' %}">Regions and districts of Greece</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="{% url '3Dmodels:object_list' %}">3D Pottery Gallery</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="{% url 'defcdb:bibliography' %}">Bibliography</a>
+                </li>
+            </ul>
+          </li>
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Retrieval<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="{% url 'api-root' %}">API</a>
+                </li>
+              <li>
+                <a href="{% url 'webpage:defc2rdf_demo' %}">SPARQL demo</a>
+              </li>
+              </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movies<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li>
+              <a href="{% url 'webpage:cukurici_movie_content' %}">Çukuriçi Höyük Movie</a>
+          </li>
+          <li>
+              <a href="{% url 'webpage:ada_tepe_movie_content' %}">Ada Tepe Movie</a>
+          </li>
+        </ul>
+      </li>
+
+      </ul>
+      <div class="pull-right">
+                    <form method="get" action="{% url 'defcdb:search_all' %}" class="navbar-form" id="pageform">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q" placeholder="Search DEFC"/>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true" title="fulltext search over all documents"/>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+          <li>
+            <a href="{% url 'user_logout' %}">Log Out</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="{% url 'user_login' %}">Log In</a>
+          </li>
+          {% endif %}
+          </ul>
+    </div>
+    </div>
+  </nav>
+</header>
+<section class="main-content">
+  <!-- <div class="alert alert-warning" style="text-align:center">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+    <strong>Attention!</strong>
+    <br/>Still Work in Progress. But entered data will be preserved.
+  </div> -->
+  <div id="spacebeforecarousel">
+    {% block content %}
+    {% endblock %}
+  </div>
+</section>
+<p></p>
+
+
+  <footer>
+     <div class="container">
+
+        <div class="row text-center">
+        <div class="col-sm-4">
+          <a href="http://www.orea.oeaw.ac.at/" target="_blank" style="outline: 0;">
+              <img src="{% static "webpage/OREA_white.png" %}" id="f-orea-logo" title="Institute for Oriental and European Archaeology" />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="http://www.oeaw.ac.at/acdh/" target="_blank" style="outline: 0;">
+            <img src="{% static "webpage/acdh_logo_02.png" %}" id="f-acdh-logo" title="Austrian Centre for Digital Humanities" />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="{% url 'webpage:terms_of_use' %}" class="footer_link">Terms of Use / License</a></br>
+          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a></br>
+          <!-- <p></p>
+          <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
+              <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
+          </a>
+          <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
+            <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
+          </a> -->
+        </div>
+      </div>
+
+
+
+
+<hr>
+<div class="row text-center">
+  <!-- <div class="col-md-4">
+      <p>Fan? Drop a note.</p>
+      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
+          <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
+      </a>
+      <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
+        <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
+      </a>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Vienna, Austria</p>
+
+      <p><span class="glyphicon glyphicon-envelope"></span> Contact</p>
+    </div> -->
+            <div class="col-sm-4">
+
+
+            <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;" class="footer_link">
+                <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/> DEFC source code
+            </a>
+
+          </div>
+          <div class="col-sm-4">
+            <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;" class="footer_link">
+              <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>  Twitter @OREA_digArch
+            </a>
+
+          </div>
+          <div class="col-sm-4">
+              <a href="{% url 'webpage:about' %}#contact" class="footer_link"><p><span class="glyphicon glyphicon-envelope"></span> Contact</p></a>
+          </div>
+</div>
+
+
+
+
+
+    </div>
+</footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<!-- jQuery UI -->
+<!-- jQuery UI resizable multiple select fields -->
+
+    <script>
+      // $(function() {
+      // $('[multiple=multiple]')
+      // .not(document.getElementById( "id_period_reference" ))
+      // .not(document.getElementById( "id_reference" ))
+      // .not(document.getElementById( "id_institution" ))
+      // .not(document.getElementById( "id_alias_name" ))
+      // .not(document.getElementById( "id_alternative_name" ))
+      // .resizable();
+      // });
+    </script>
+    <style>
+      .ui-resizable-se { bottom: 18px; right: 25px; }
+    </style>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+        {% block scripts %}
+        {% endblock %}
+      <!-- JS scroll to top -->
+    <script type="text/javascript" src="/static/defcdb/js/ap-scroll-top.min.js"></script>
+    <script type="text/javascript">
+    // Setup plugin with default settings
+            $(document).ready(function() {
+                $.apScrollTop({
+                    'onInit': function(evt) {
+                        console.log('apScrollTop: init');
+                    }
+                });
+            });
+    </script>
+  </body>
+</html>
