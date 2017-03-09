@@ -7,10 +7,6 @@
     <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
         <style>
             #map { height: 500px; }
-            #info-panel { 
-                padding: 7px;
-                background-color: #dbedec; 
-            }
         </style>
 
 {% endblock %}
@@ -18,12 +14,12 @@
 {% block content %}
 
 <div class="container">
-<h1>Site</h1>
+<h1>Site {{ object.name }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url 'browsing:browse_sites' %}">Data Exploration - Sites</a></li>
   <li class="active">Site {{ object.name }}</li>
-</ol>  
+</ol>
 
 <button id="01" class="btn btn-default">Show / Hide all fields</button>
 <p></p>
@@ -32,12 +28,12 @@
     <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:area_create' %}?site={{ object.name }}">Create new Area in this Site</a>
     <a class ="btn btn-primary btn-md" href="{% url 'defcdb:site_update' pk=object.id %}">Edit</a>
     <a class ="btn btn-danger btn-md" href="{% url 'defcdb:site_delete' pk=object.id %}">Delete</a>
-</div>  
-{% endif %} 
+</div>
+{% endif %}
 
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -79,19 +75,21 @@
             {% if object.area_set.all %}
             {% for area in object.area_set.all %}
             {% for period in area.period.all %}
-            <abbr title ="Name of the chronological system">{{ period.cs_name }}</abbr> {{ period.period_name }} 
+            <abbr title ="Name of the chronological system">{{ period.cs_name }}</abbr>
+            <abbr title ="Period name">  {{ period.period_name }}</abbr>
                     {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
-                    {{ period.start_date1_BC }} - {{ period.end_date1_BC }}<br/>
+              <abbr title ="Period start date"> {{ period.start_date1_BC }}</abbr>
+               - <abbr title ="Period end date"> {{ period.end_date1_BC }}</abbr><br/>
                     {% else %}</br>
                     {% endif %}
             {% endfor %}
             {% endfor %}
             {% endif %}
-        
+
             </td>
-            
+
        </tr>
-      
+
         <tr>
                 <td class="col-sm-2">Description</td>
                 <td>{{ object.description }}</td>
@@ -132,7 +130,7 @@
     </div>
 {% if site.latitude != None %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-globe"></span> Location of the Site
   </div>
 </div>
@@ -141,7 +139,7 @@
 
 {% if reference_list %}
     <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-book"></span> Bibliography
   </div>
 </div>
@@ -158,7 +156,7 @@
 {% endif %}
 {% if areas_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-record"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-record"></span>
     Areas in this Site
   </div>
 </div>
@@ -200,7 +198,7 @@
 $(document).ready(function(){
     $("button").click(function(){
         $("tr").hide;
-  //       if ($('td:even:empty',this){ 
+  //       if ($('td:even:empty',this){
   //       $(this).hide();
   //       } else {
   //       $(this).show();

@@ -1,16 +1,16 @@
 {% extends "browsing/generic_list.html" %}
-{% block list_title %}All Research events{% endblock %}
+{% block list_title %}Search all Research events{% endblock %}
 
 {% block create_button %}
 {% if user.is_authenticated %}
  <div>
     <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:researchevent_create' %}">create new Research Event</a>
-</div>  
-{% endif %}     
+</div>
+{% endif %}
 {% endblock %}
 
 {% block reset_button %}
- <a class ="btn btn-default"  href="{% url 'browsing:browse_researchevents' %}">Reset search</a>     
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_researchevents' %}">Reset search</a>
 {% endblock %}
 
 {% block customScripts %}
@@ -25,19 +25,19 @@ var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}];
     $(function() {
         $("#id_institution").autocomplete({
             source:institution_names
-        }); 
+        });
     });
 
     $(function() {
         $("#id_project_name").autocomplete({
             source:project_names
-        }); 
+        });
     });
 
      $(function() {
         $("#id_finds__area__site__name").autocomplete({
             source:site_names
-        }); 
+        });
     });
 </script>
 {% endblock %}

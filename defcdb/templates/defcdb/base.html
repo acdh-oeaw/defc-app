@@ -75,9 +75,6 @@
     .breadcrumb {
       border-radius: 0 !important;
     }
-   /* .navbar {
-      background-color:#009688;
-    }*/
 
     a.navlink:link {
       color: black;
@@ -94,10 +91,24 @@
       outline: 0;
       border
     }
-    #info-panel {
+    .info-panel {
       padding: 7px;
       background-color: #009688;
-      color:white;
+      color:#ffffff;
+      /*border-color: #009688;*/
+    }
+    .panel-info {
+      border-color: #009688;
+    }
+    .panel-default {
+      margin-top: 30px;
+    }
+    .panel-browsing {
+
+      border: none;
+    }
+    .panel-browsing > .panel-browsing-heading {
+      background-color: #ffffff;
     }
     header {
       flex: 0 0 auto;
@@ -130,11 +141,6 @@
     /*background-color: white;*/
     border: 1px solid #ccc;
     }
-    /*.jumbotron {
-      background-color: #F8F8F8b;  Green
-      color: #333;
-      padding: 100px 25px;
-    }*/
     .container-fluid {padding: 60px 50px;/**/}
     .logo {font-size: 200px;}
     @media screen and (max-width: 768px) {
@@ -152,6 +158,12 @@
       /*width: 80; */
       height: 80px;
       margin-bottom: 20px;
+    }
+    .btn {
+      margin-bottom: 2px;
+    }
+    .btn-default {
+      background-color: #ffffff;
     }
     #oeawlogo {
       width: 200px;
@@ -193,6 +205,7 @@
     .carousel-caption p {
       color: #EFEFEF;
     }
+
     @media (max-width: 600px) {
       .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */

@@ -6,13 +6,13 @@
 	margin: 5px;
     border: 2px solid #009688;
     float: left;
-    width: 275px; 
+    width: 275px;
     background-color: white;
     padding: 0;
     padding-bottom: 0;
     margin-bottom: 20px;
     display: block;
-    
+
     /*margin-bottom: 20px;
     padding: 0;
     position: relative;
@@ -61,7 +61,7 @@
 </ol>
 <p></p>
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel">
+    <div class="panel-header info-panel">
         <h2>Schachermeyr pottery collection</h2>
     </div>
     <div class="panel-body">
@@ -73,25 +73,25 @@
 <!-- <h1>3D Models</h1> -->
 
 
-	
+
 	{% for x in object_list %}
 
 	<!-- <li><a href="{% url '3Dmodels:update_file' pk=x.id %}">{{ x.model_id }}</a></li> -->
 
 
 <div class="col-md-3 thumbnail_model">
-    
+
 
         <a class="thumbnail-img" href="{% url '3Dmodels:detail' pk=x.id %}">
             <img class="img-responsive " src="{% static "threedmodels/" %}{{ x.model_thumbnail }}" title="3D Model ID {{ x.model_id }}">
         </a>
 
-        
-    
+
+
     <div class="desc">
                 <h5 class="title">ID {{ x.model_id }}</h5>
                 <h5>Finds ID  {{ x.finds.id }} {{ x.finds.finds_type }}</h5>
-                <h5>Site {{ x.finds.area.site.name }}</h5>    
+                <h5>Site {{ x.finds.area.site.name }}</h5>
 
                 <!-- add links to public detail records of site and finds -->
 
@@ -105,11 +105,11 @@
         <a class ="btn btn-danger btn-sm" href="{% url '3Dmodels:update_file' pk=x.id %}">update</a>
         {% endif %}
      </div>
-     
+
 </div>
 
 	{% endfor %}
-	
+
 
 </div>
 {% endblock content %}

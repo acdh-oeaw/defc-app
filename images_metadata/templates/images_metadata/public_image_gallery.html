@@ -2,9 +2,9 @@
 {% load staticfiles %}
 {% block scriptHeader %}
 <style>
-#info-panel { 
+.info-panel {
     padding: 7px;
-    background-color: #dbedec;
+    /*background-color: #dbedec;*/
     text-align: center;
 }
 .active {
@@ -64,7 +64,7 @@ img {
 </ol>
 <p></p>
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel">
+    <div class="panel-header info-panel">
     <h4>Pottery form</h4>
   </div>
 </div>
@@ -84,7 +84,7 @@ img {
 </div>
 <br/>
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel">
+    <div class="panel-header info-panel">
     <h4>Pottery decoration</h4>
   </div>
 </div>
@@ -104,9 +104,9 @@ img {
 </div>
 <br/>
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel">
+    <div class="panel-header info-panel">
     <h4>Pottery detail</h4>
-  </div>    
+  </div>
 </div>
 <div class="grid">
 {% for object in object_list %}

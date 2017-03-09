@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="container">
-<h1>Interpretation</h1>
+<h1>Interpretation {{ object.id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
 
@@ -18,12 +18,12 @@
  <div>
     <a class ="btn btn-primary btn-md" href="{% url 'defcdb:interpretation_update' pk=object.id %}">Edit</a>
     <a class ="btn btn-danger btn-md" href="{% url 'defcdb:interpretation_delete' pk=object.id %}">Delete</a>
-</div>  
-{% endif %} 
+</div>
+{% endif %}
 
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -80,7 +80,7 @@
 </div>
 {% if reference_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-book"></span> Bibliography
   </div>
 </div>

@@ -1,16 +1,16 @@
 {% extends "browsing/generic_list.html" %}
-{% block list_title %}All Interpretations{% endblock %}
+{% block list_title %}Search all Interpretations{% endblock %}
 
 {% block create_button %}
 {% if user.is_authenticated %}
  <div>
     <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:interpretation_create' %}">create new Interpretation</a>
-</div>  
-{% endif %}     
+</div>
+{% endif %}
 {% endblock %}
 
 {% block reset_button %}
- <a class ="btn btn-default"  href="{% url 'browsing:browse_interpretations' %}">Reset search</a>     
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_interpretations' %}">Reset search</a>
 {% endblock %}
 {% block customScripts %}
 <script>
@@ -20,7 +20,7 @@ var site_names = [{% for name in site_names %} "{{ name }}", {% endfor %}];
      $(function() {
         $("#id_area__site__name").autocomplete({
             source:site_names
-        }); 
+        });
     });
 </script>
 {% endblock %}

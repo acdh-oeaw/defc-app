@@ -2,7 +2,7 @@
 {% load staticfiles %}
  {% block scriptHeader %}
  <!--STYLESHEET-->
-<link type="text/css" rel="stylesheet" href="{% static 'webpage/libraries/3dhop/minimal/stylesheet/3dhop.css' %}"/>  
+<link type="text/css" rel="stylesheet" href="{% static 'webpage/libraries/3dhop/minimal/stylesheet/3dhop.css' %}"/>
 <!--SPIDERGL-->
 <script type="text/javascript" src="{% static 'webpage/libraries/3dhop/minimal/js/spidergl.js' %}"></script>
 <!--JQUERY-->
@@ -24,7 +24,7 @@
 {% block content %}
 
 <div class="container">
-    <h1>3D Models gallery</h1>
+    <h1>3D Model {{ object.model_id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url '3Dmodels:object_list' %}">Data Exploration - Browse 3D Models</a></li>
@@ -42,14 +42,14 @@
                 <img id="full"     title="Full Screen"           src="{% static 'webpage/libraries/3dhop/minimal/skins/dark/full.png' %}"   />
             </div>
         <!-- <canvas id="draw-canvas" style="background-image: url({% static 'skins/backgrounds/light.jpg' %})"/> -->
-            
+
             <canvas id="draw-canvas"/>
 </div>
-        
+
 <button id="01" class="btn btn-default">Show all fields</button><br/>
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -75,7 +75,7 @@
                     {% for decoration in pottery_decoration_list %}
                     {{ object.finds.pottery_decoration.name }}<br/>
                     {% endfor %}
-                    
+
                     {% endif %}
                 </td>
         </tr> -->
@@ -127,7 +127,7 @@
 </div>
 
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Fabric
   </div>
 </div>
@@ -167,7 +167,7 @@
 </table>
 </div>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Inclusion
   </div>
 </div>
@@ -204,7 +204,7 @@
                 {{ x.inclusion_frequency }}</br>
                 {% endfor %}</td>
         </tr>
-        
+
         <tr>
                 <td>Inclusion hardness</td>
             	<td>{% for x in inclusion_list %}
@@ -221,7 +221,7 @@
 </div>
 
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
         General Metadata
     </div>
 </div>
@@ -282,7 +282,7 @@
             <tr>
                 <td>Model metadata</td>
                 <!-- <td><a href="https://{{ request.get_host }}/media/{{ object.model_metadata }}">Download metadata file</a></br></td> -->
-                <td><a href="{% static "threedmodels/" %}{{object.model_metadata}}">Download metadata file</a></br></td> 
+                <td><a href="{% static "threedmodels/" %}{{object.model_metadata}}">Download metadata file</a></br></td>
             </tr>
             <tr>
                 <td>Model parameters</td>
@@ -292,7 +292,7 @@
 </div>
 
 <div class="panel panel-info">
-    <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+    <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
         Credits
     </div>
 </div>
@@ -332,7 +332,7 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
     var presenter = null;
-    function setup3dhop() { 
+    function setup3dhop() {
         presenter = new Presenter("draw-canvas");
         var meshUrl = "{% static "threedmodels/" %}{{object.model_file}}";
         presenter.setScene({
@@ -340,17 +340,17 @@ $(document).ready(function(){
                 "3dmodel" : { url: meshUrl }
             },
             modelInstances : {
-                "Model1" : { mesh : "3dmodel" } 
+                "Model1" : { mesh : "3dmodel" }
             }
         });
     }
 
     function actionsToolbar(action) {
-        if(action=='home') presenter.resetTrackball(); 
+        if(action=='home') presenter.resetTrackball();
         else if(action=='zoomin') presenter.zoomIn();
-        else if(action=='zoomout') presenter.zoomOut(); 
-        else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); } 
-        else if(action=='full'  || action=='full_on') fullscreenSwitch(); 
+        else if(action=='zoomout') presenter.zoomOut();
+        else if(action=='light' || action=='light_on') { presenter.enableLightTrackball(!presenter.isLightTrackballEnabled()); lightSwitch(); }
+        else if(action=='full'  || action=='full_on') fullscreenSwitch();
     }
 
     $(document).ready(function(){

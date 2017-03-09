@@ -2,18 +2,18 @@
 {% load staticfiles %}
 {% block scriptHeader %}
 <style>
-#info-panel { 
+#info-panel {
     padding: 7px;
-    background-color: #dbedec; 
+    background-color: #dbedec;
 }
 #mainimage {
     display: block;
     margin: 0 auto;
-    
+
 }
 #mainimage {
     width: 100%;
-    height: 100%;    
+    height: 100%;
 }
 #mainimage {
     -webkit-transition: all 1s ease; /* Safari and Chrome */
@@ -35,15 +35,15 @@
 {% block content %}
 
 <div class="container">
-<h1>Image</h1>
+<h1>Image {{ object.id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url 'image_gallery:public_object_list' %}">Data Exploration - Pottery Image gallery</a></li>
-  <li class="active">Image ID {{ object.id }}</li>
+  <li class="active">Image {{ object.id }}</li>
 </ol>
 
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-camera"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-camera"></span>
     Image
   </div>
 </div>
@@ -53,7 +53,7 @@
     </a><br/>
 </div>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -84,7 +84,7 @@
         <tr>
                 <td>Small finds</td>
                 <td>{{ object.small_finds.name }}</td>
-               
+
         </tr>
         {% endif %}
 
@@ -113,7 +113,7 @@
 </div>
 <!-- {% if form_finds_list or detail_finds_list or decoration_finds_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-flag"></span> Related Finds
   </div>
 </div>

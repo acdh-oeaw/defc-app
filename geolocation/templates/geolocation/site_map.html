@@ -12,9 +12,9 @@
         </style>
 {% endblock %}
 {% block content %}
-<div class="panel panel-default panel-fixed" style="padding:2%; text-align:center;">
-<div class="panel-heading">
-    <h1> Filter and Visualize </h1>
+<div class="panel panel-fixed" style="padding:2%; text-align:center;">
+<div class="panel-heading info-panel">
+    <h2> Map of archaeological sites </h2>
 </div>
 <div class="panel-body">
 <div class="row">
@@ -26,7 +26,7 @@
             <div class="panel-body">
             {% load django_tables2 crispy_forms_tags %}
             {% crispy filter.form filter.form.helper %}
-             <a class ="btn btn-default"  href="{% url 'geolocation:filter_sites' %}">Reset search</a>    
+             <a class ="btn btn-default"  href="{% url 'geolocation:filter_sites' %}">Reset search</a>
             <hr/>
             Results:  <br/>
             {% for obj in filter %}
@@ -42,7 +42,7 @@
             </div>
             <div class="panel-body">
                 <div id="map"></div>
-            </div>    
+            </div>
         </div>
     </div>
 </div>
@@ -76,7 +76,7 @@
 
 
             //add the feature to the layer
-            lg.addLayer(layer); 
+            lg.addLayer(layer);
             //mymap.fitBounds(lg.getBounds(), {'maxZoom': 12});
 
             if (feature.properties && feature.properties.popupContent) {
@@ -100,7 +100,7 @@
 
 
 
-        var build_data =  [{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong><a href='{%url 'publicrecords:site_detail' pk=obj.id %}''>{{ obj.name }}</a></strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% empty %}]{% endfor %} 
+        var build_data =  [{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong><a href='{%url 'publicrecords:site_detail' pk=obj.id %}''>{{ obj.name }}</a></strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% empty %}]{% endfor %}
         var geoJsonLayer = L.geoJson( build_data, {onEachFeature: onEachFeature});
         markers.addLayer(geoJsonLayer);
         mymap.addLayer(markers);

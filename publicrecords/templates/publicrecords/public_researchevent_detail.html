@@ -2,9 +2,9 @@
 
 {% block scriptHeader %}
 <style>
-    /*#info-panel { 
+    /*#info-panel {
     padding: 7px;
-    background-color: #dbedec; 
+    background-color: #dbedec;
 }*/
 </style>
 {% endblock %}
@@ -12,7 +12,7 @@
 {% block content %}
 
 <div class="container">
-<h1>Research Event</h1>
+<h1>Research Event {{ object.id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url 'browsing:browse_researchevents' %}">Data Exploration - Research Events</a></li>
@@ -25,11 +25,11 @@
  <div>
     <a class ="btn btn-primary btn-md" href="{% url 'defcdb:researchevent_update' pk=object.id %}">Edit</a>
     <a class ="btn btn-danger btn-md" href="{% url 'defcdb:researchevent_delete' pk=object.id %}">Delete</a>
-</div>  
+</div>
 {% endif %}
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -85,7 +85,7 @@
 </div>
 {% if reference_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-book"></span> Bibliography
   </div>
 </div>
@@ -102,7 +102,7 @@
 {% endif %}
 {% if finds_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-flag"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-flag"></span>
     Finds related to this Research Event
   </div>
 </div>

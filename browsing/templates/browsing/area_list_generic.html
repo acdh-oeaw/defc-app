@@ -1,18 +1,18 @@
 {% extends "browsing/generic_list.html" %}
-{% block list_title %}All Areas{% endblock %}
+{% block list_title %}Search all Areas{% endblock %}
 
 {% block create_button %}
 {% if user.is_authenticated %}
  <div>
     <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:area_create' %}">create new Area</a>
-</div>  
-{% endif %}     
+</div>
+{% endif %}
 {% endblock %}
 
 {% block reset_button %}
 <a class ="btn btn-default"  id="01">Show/Hide Advanced search options</a></br>
  <p></p>
- <a class ="btn btn-default"  href="{% url 'browsing:browse_areas' %}">Reset search</a>     
+ <a class ="btn btn-default"  href="{% url 'browsing:browse_areas' %}">Reset search</a>
 {% endblock %}
 
 {% block customScripts %}
@@ -25,18 +25,18 @@ var period_names = [{% for period in period_names %} "{{ period }}", {% endfor %
     $(function() {
         $("#id_site__name").autocomplete({
             source:site_names
-        }); 
+        });
     });
 
     $(function() {
         $("#id_period").autocomplete({
             source:period_names
-        }); 
+        });
     });
     $(function() {
         $("#id_period__cs_name").autocomplete({
             source:cs_names
-        }); 
+        });
     });
 </script>
 <script type="text/javascript">

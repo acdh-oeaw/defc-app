@@ -7,17 +7,13 @@
     <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
         <style>
             #map { height: 500px; }
-            /*#info-panel { 
-                padding: 7px;
-                background-color: #dbedec; 
-            }*/
         </style>
 
 {% endblock %}
 {% block content %}
 
 <div class="container">
-<h1>Area</h1>
+<h1>Area {{ object.id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url 'browsing:browse_areas' %}">Data Exploration - Areas</a></li>
@@ -30,12 +26,12 @@
     <a class ="btn btn-primary btn-md"  href="{% url 'defcdb:finds_create' %}?area={{ object }}">Create new Finds in this Area</a>
     <a class ="btn btn-primary btn-md" href="{% url 'defcdb:area_update' pk=object.id %}">Edit</a>
     <a class ="btn btn-danger btn-md" href="{% url 'defcdb:area_delete' pk=object.id %}">Delete</a>
-</div>  
-{% endif %} 
+</div>
+{% endif %}
 
 <p></p>
  <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -63,8 +59,8 @@
         </tr>
         <tr>
                 <td class="col-sm-2">Period</td>
-                
-                <td>{% for period in period_list %}{{ period.cs_name }}: {{ period.period_name }} 
+
+                <td>{% for period in period_list %}{{ period.cs_name }}: {{ period.period_name }}
                     {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
                     {{ period.start_date1_BC }} - {{ period.end_date1_BC }}</br>
                     {% else %}</br>
@@ -292,7 +288,7 @@
 {% for site in sites_list %}
 {% if site.latitude %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-globe"></span> Location of the Site
   </div>
 </div>
@@ -303,7 +299,7 @@
 
 {% if reference_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-book"></span> Bibliography
   </div>
 </div>
@@ -321,7 +317,7 @@
 
 {% if finds_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-flag"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-flag"></span>
     Finds in this Area
   </div>
 </div>
@@ -340,7 +336,7 @@
 
 {% if interpretations_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-list-alt"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-list-alt"></span>
     Interpretations related to this Area
   </div>
 </div>
@@ -349,7 +345,7 @@
         <tr>
             <td class="col-sm-2">Interpretation</td>
             <td>{% for interpretation in interpretations_list %}
-            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">ID {{ interpretation.id }} 
+            <a href="{% url 'publicrecords:interpretation_detail' pk=interpretation.id %}">ID {{ interpretation.id }}
                 <br/>
             </a>
             {% endfor %}
@@ -415,7 +411,3 @@ $(document).ready(function(){
 
 </script>
 {% endblock scripts %}
-
-
-
-

@@ -1,10 +1,6 @@
 {% extends "defcdb/base_detail.html" %}
 {% block scriptHeader %}
 <style>
-    /*#info-panel { 
-    padding: 7px;
-    background-color: #dbedec; 
-}*/
 .img {
     margin: 5px;
     border: 1px solid #ccc;
@@ -30,11 +26,11 @@
 {% block content %}
 
 <div class="container">
-<h1>Finds</h1>
+<h1>Finds {{ object.id }}</h1>
 <ol class="breadcrumb">
   <li><a href="/">DEFC</a></li>
   <li><a href="{% url 'browsing:browse_finds' %}">Data Exploration - Finds</a></li>
-  <li class="active">Find {{ object.id }}</li>
+  <li class="active">Finds {{ object.id }}</li>
 </ol>
 <button id="01" class="btn btn-default">Show / Hide all fields</button>
 <p></p>
@@ -42,12 +38,12 @@
  <div>
     <a class ="btn btn-primary btn-md" href="{% url 'defcdb:finds_update' pk=object.id %}">Edit</a>
     <a class ="btn btn-danger btn-md" href="{% url 'defcdb:finds_delete' pk=object.id %}">Delete</a>
-</div>  
-{% endif %} 
+</div>
+{% endif %}
 
 <p></p>
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-info-sign"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-info-sign"></span>
     Main Information
   </div>
 </div>
@@ -196,11 +192,19 @@
                 <td>Comment</td>
                 <td>{{ object.comment }}</td>
         </tr>
+        {% if threedmodel %}
+        <tr>
+            <td class="col-sm-2">3D Model</td>
+           <td>{% for x in  threedmodel %}
+        <a href="{% url '3Dmodels:detail' x.id %}"> ID {{ x.model_id }}
+            {% endfor %}</td>
+    </tr>
+    {% endif %}
 </table>
 </div>
 <!-- {% if pottery_form_list or pottery_detail_list or pottery_decoration_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-camera"></span> Pottery Images
   </div>
 </div>
@@ -241,7 +245,7 @@
 
 {% if reference_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel">
+  <div class="panel-header info-panel">
     <span class="glyphicon glyphicon-book"></span> Bibliography
   </div>
 </div>
@@ -258,7 +262,7 @@
 {% endif %}
 {% if interpretation_list %}
 <div class="panel panel-info">
-  <div class="panel-header" id="info-panel"><span class="glyphicon glyphicon-list-alt"></span>
+  <div class="panel-header info-panel"><span class="glyphicon glyphicon-list-alt"></span>
     Interpretations related to these Finds
   </div>
 </div>
