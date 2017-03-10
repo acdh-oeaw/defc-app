@@ -218,11 +218,79 @@
       color: #EFEFEF;
     }
 
+    .navbar-form {
+     /*margin-top: 3px;
+     margin-bottom: 2px;*/
+}
+#search-btn {
+  background: grey;
+  height: 30px;
+  margin-bottom: 0px;
+  border-color: grey;
+}
+input {
+	outline: none;
+}
+input[type=text]#searchbox {
+	-webkit-appearance: textfield;
+
+   -moz-box-sizing: border-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-text-decoration,
+input::-webkit-text-cancel-button {
+	display: none;
+}
+
+
+input[type=text]#searchbox {
+	background: #ffffff;
+	border: none;
+	padding: 9px 10px 9px 10px;
+	width: 65px;
+  height:30px;
+  line-height: 0.5;
+
+
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=text]#searchbox:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: none;
+
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
     @media (max-width: 600px) {
       .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
       }
     }
+    @media (max-width: 768px) {
+        .pull-right {
+            float: none !important;
+        }
+    }
+
   </style>
 <body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
 <header>
@@ -376,9 +444,9 @@
                     <form method="get" action="{% url 'defcdb:search_all' %}" class="navbar-form" id="pageform">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="q" placeholder="Search DEFC"/>
+                                <input id="searchbox" type="text" class="form-control" name="q" placeholder="search..."/>
                             </div>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" id="search-btn">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true" title="fulltext search over all documents"/>
                             </button>
                         </div>
@@ -390,6 +458,7 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <span class="glyphicon glyphicon-user" aria-hidden="true"/>&nbsp;{{ user.get_username }}
+              <span class="caret"></span>
             </a>
           <ul class="dropdown-menu">
             <li>
