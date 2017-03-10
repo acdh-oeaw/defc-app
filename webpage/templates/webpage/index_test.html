@@ -43,10 +43,12 @@
   padding-bottom: 10px;
   position: relative;
   text-align: justify;
+
 }
 #about-panel {
   padding-left: 10px;
   padding-right: 10px;
+
 
 }
 /*.about02 {
@@ -130,6 +132,18 @@ img {
     }
 }
 
+.testdiv {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /*border: solid 5px  rgb(0, 150, 136);*/
+  /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
+}
+.separator {
+border-top: 5px solid rgb(0, 150, 136);
+  height: 10px;
+  border-color: rgb(0, 150, 136);
+}
 </style>
 <!--Mansory JS-->
 <script type="text/javascript" src="https://npmcdn.com/masonry-layout@4.0.0/dist/masonry.pkgd.min.js"></script>
@@ -212,9 +226,45 @@ img {
   </div>
 
 
+<!--DATABASE DIRECT -->
+  <div class="procustom-search-wrapper testdiv">
+
+    <div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Explore DEFC Database</h4>
+        </div>
+      <div class="panel-body">
+        <p>DEFC Database contains records of more than 700 archaeological sites and more than 2000 corresponding finds.</p>
+        <p>Start searching for archaeological sites.</p>
+        <br>
+
+         <!-- <a href="{% url 'webpage:about' %}" class="btn btn-default" role="button">Learn More</a> -->
+         <form action="/browsing/sites/?name=name" class="procustom-form">
+                     <div class="form-group">
+                         <input type="search" class="form-control" name="name" placeholder="Enter name of the Site..." required/>
+                       </br>
+                         <span class="text-muted">e.g. Athens</span>
+                     </div>
+                     <div class="form-group">
+                         <input class="btn btn-primary" type="submit" value="search" />
+
+                     </div>
+
+         </form>
+      </div>
+    </div>
+    </div>
+
+    </div>
+    <!--DATABASE DIRECT END-->
+
+
+  <!-- <hr class="separator"> -->
+
 <div class="grid">
 
-  <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
+  <!-- <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4>Explore DEFC Database</h4>
@@ -226,7 +276,7 @@ img {
       <a href="{% url 'browsing:browse_sites' %}" class="btn btn-default" role="button">Learn More</a>
     </div>
   </div>
-  </div>
+  </div> -->
 
   <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
     <div class="panel panel-default">
