@@ -19,7 +19,7 @@ def homepage(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/index.html', context)
 
-# @login_required
+@login_required
 def index_test(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/index_test.html', context)

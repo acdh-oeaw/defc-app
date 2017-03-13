@@ -1,150 +1,8 @@
 {% extends "webpage/base_test.html" %}
 {% load staticfiles %}
 {% block content %}
-<style>
-
-  .wrap {
-  white-space: pre-wrap;      /* CSS3 */
-  white-space: -moz-pre-wrap; /* Firefox */
-  white-space: -pre-wrap;     /* Opera <7 */
-  white-space: -o-pre-wrap;   /* Opera 7 */
-  word-wrap: break-word;      /* IE */
-
-
-}
-#index-container {
-/*background-color: #ffeadc;*/
-
-}
-#myCarousel {
-  /*padding-top: 10px;*/
-  padding-left: 10px;
-  padding-right: 10px;
-  /*margin-top: 1px;
-  border: 5px solid;*/
-}
-
-.carousel-caption {
-
-
-
-}
-/*.test01 {
-  background: rgba(0, 0, 0, 0.79);
-  padding: 10px;
-}*/
-
-.grid-item {
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  padding-top: 10px;
-  padding-bottom: 10px;
-  position: relative;
-  text-align: justify;
-
-}
-#about-panel {
-  padding-left: 10px;
-  padding-right: 10px;
-
-
-}
-/*.about02 {
-  background-color: rgba(0, 0, 0, 0.79);
-  color: white;
-}*/
-.panel > .panel-heading {
-  background-color: #ffffff;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.79);
-  /*font-size: 24px;*/
-}
-.panel > .panel-heading > h4 {
-  font-weight: bold;
-}
-img {
-  width: 100%;
-  /*width: auto;*/
-}
-.panel, .panel-default, .panel-heading, .panel-body {
-  border: 0;
-  box-shadow: none;
-  outline: none;
-  text-align: justify;
-}
-/*#project-title {
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(0, 150, 136, 0.79);
-  color: #ffffff;
-}
-.controller-container {
-
-
-}*/
-.carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 25px 25px;
-  color: #fff;
-  text-align: center;
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: -20px;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0px 25px 25px 30px;
-  text-align: center;
-}
-/*.btn-default {
-  background-color: #ffffff;
-  border: 1px solid;
-}*/
-/*.btn-default:hover {
-  background-color: rgb(0, 150, 136);
-  color:white;
-  border: 1px solid rgb(0, 150, 136);
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}*/
-
-@-moz-document url-prefix() {
-    img{
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-     img{
-        max-width: 100%;
-    }
-}
-
-.testdiv {
-  padding-left: 10px;
-  padding-right: 10px;
-
-  /*border: solid 5px  rgb(0, 150, 136);*/
-  /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);*/
-}
-.separator {
-border-top: 5px solid rgb(0, 150, 136);
-  height: 10px;
-  border-color: rgb(0, 150, 136);
-}
-</style>
+<!-- CSS custom for base -->
+<link rel="stylesheet" href="/static/webpage/css/index.css"/>
 <!--Mansory JS-->
 <script type="text/javascript" src="https://npmcdn.com/masonry-layout@4.0.0/dist/masonry.pkgd.min.js"></script>
 <div class="container" id="index-container">
@@ -205,78 +63,70 @@ border-top: 5px solid rgb(0, 150, 136);
 </div>
 <br>
 
-  <div id="about-panel">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>About the project</h4>
-      </div>
-    <div class="panel-body">
-      <p>The objective of <b>Digitizing Early Farming Cultures (DEFC)</b>
-   is the standardization and integration of archaeological research data from the Neolithic and Copper Age (7000 – 3000 BC)
-    in Greece and Western Anatolia.</p>
-    <p>Greece and Western Anatolia are two neighbouring and archaeologically closely related regions.
-       However, they have usually been studied in isolation from each other, resulting in fragmented data organized according to different knowledge schemes.
-       Independent terminologies and chronologies have developed, hindering collaborative research.
-       To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of
-       research data is required. The aim of this project is to harmonize existing datasets,
-       digitize analogue data from publications and integrate metadata for easy access and data reuse.</p>
-       <a href="{% url 'webpage:about' %}" class="btn btn-default" role="button">Learn More</a>
-    </div>
-  </div>
-  </div>
+
 
 
 <!--DATABASE DIRECT -->
   <div class="procustom-search-wrapper testdiv">
-
-    <div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4>Explore DEFC Database</h4>
-        </div>
+      <div class="panel panel-default" id="hp-search-panel">
       <div class="panel-body">
-        <p>DEFC Database contains records of more than 700 archaeological sites and more than 2000 corresponding finds.</p>
-        <p>Start searching for archaeological sites.</p>
-        <br>
 
-         <!-- <a href="{% url 'webpage:about' %}" class="btn btn-default" role="button">Learn More</a> -->
-         <form action="/browsing/sites/?name=name" class="procustom-form">
-                     <div class="form-group">
-                         <input type="search" class="form-control" name="name" placeholder="Enter name of the Site..." required/>
-                       </br>
-                         <span class="text-muted">e.g. Athens</span>
-                     </div>
-                     <div class="form-group">
-                         <input class="btn btn-primary" type="submit" value="search" />
+        <div class="col-md-8 col-md-offset-2">
+<!-- <div class="col-md-10 col-md-offset-1"> -->
+        <form action="/browsing/sites/?name=name" class="procustom-form" id="searchForm">
+            <h3><b>DEFC Database </b></h3>
+                  <h4>
+                  Start searching <a href="{% url 'browsing:browse_sites' %}">730 archaeological sites</a>
+                   containing <a href="{% url 'browsing:browse_areas' %}">830 excavation areas</a> with corresponding
+                    <a href="{% url 'browsing:browse_finds' %}">2045 finds</a>,
+                    <a href="{% url 'browsing:browse_researchevents' %}">288 research events</a> and
+                    <a href="{% url 'browsing:browse_interpretations' %}">103 interpretations</a>.
 
-                     </div>
+                  </h4>
+                  <br>
+                  <div class="input-group" id="inputGroup">
+                    <input id="searchInput" type="search" class="form-control" name="name" placeholder="Enter name of the Site, e.g. Athens" required/>
+                    <span class="input-group-btn">
+                      <button class="btn btn-danger" type="submit" id="submitSearchBtn">
+                        <span class=" glyphicon glyphicon-search">
+                        </span>
+                      </button>
+                    </span>
+                  </div>
+          </form>
+        </div>
 
-         </form>
       </div>
     </div>
-    </div>
+
 
     </div>
     <!--DATABASE DIRECT END-->
 
 
+    <div id="about-panel">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>About the project</h4>
+        </div>
+      <div class="panel-body">
+        <p>The objective of <b>Digitizing Early Farming Cultures (DEFC)</b>
+     is the standardization and integration of archaeological research data from the Neolithic and Copper Age (7000 – 3000 BC)
+      in Greece and Western Anatolia.</p>
+      <p>Greece and Western Anatolia are two neighbouring and archaeologically closely related regions.
+         However, they have usually been studied in isolation from each other, resulting in fragmented data organized according to different knowledge schemes.
+         Independent terminologies and chronologies have developed, hindering collaborative research.
+         To provide a basis for studying archaeological phenomena collaboratively across the whole region, standardization of
+         research data is required. The aim of this project is to harmonize existing datasets,
+         digitize analogue data from publications and integrate metadata for easy access and data reuse.</p>
+         <a href="{% url 'webpage:about' %}" class="btn btn-default" role="button">Learn More</a>
+      </div>
+    </div>
+    </div>
+
   <!-- <hr class="separator"> -->
 
 <div class="grid">
-
-  <!-- <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4>Explore DEFC Database</h4>
-      </div>
-    <div class="panel-body">
-      <p>
-        DEFC Database contains records of more than 700 archaeological sites and more than 2000 corresponding finds.
-      </p>
-      <a href="{% url 'browsing:browse_sites' %}" class="btn btn-default" role="button">Learn More</a>
-    </div>
-  </div>
-  </div> -->
 
   <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
     <div class="panel panel-default">
@@ -294,7 +144,7 @@ border-top: 5px solid rgb(0, 150, 136);
          With this legacy we are bound to make the collection accessible to the (professional) public.
       </p>
 
-        <a href="{% url 'webpage:about' %}" class="btn btn-default" role="button">Learn More</a>
+        <a href="{% url '3Dmodels:object_list' %}" class="btn btn-default" role="button">Learn More</a>
     </div>
   </div>
   </div>
