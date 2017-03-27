@@ -468,14 +468,14 @@ class ResearchEvent(TrackChanges):
     research_type = models.ManyToManyField(DC_researchevent_researchtype,
         blank=True, help_text="Methods used for researching the site.") #mandatory? default?
     institution = models.ManyToManyField(DC_researchevent_institution,
-        blank=True, 
+        blank=True,
         help_text="Organisation that carried out a research project at the site.") #mandatory? default?
     year_of_activity_start_year = models.IntegerField(blank=True, null=True,
         help_text="Year when research started.",
-        verbose_name="Start year of research activity") 
+        verbose_name="Start year of research activity")
     year_of_activity_end_year = models.IntegerField(blank=True, null=True,
         help_text="Year when research ended.",
-        verbose_name="End year of research activity") 
+        verbose_name="End year of research activity")
     project_name = models.CharField(max_length=100, blank=True, null=True,
         help_text="Name of project.") #optional?
     project_id = models.CharField(max_length=100, blank=True,
@@ -576,11 +576,11 @@ class Area(TrackChanges):
         help_text="The site where this area is located.")
     area_type = models.ForeignKey(DC_area_areatype, blank=True, null=True,
         help_text="The type of the area.")
-    area_nr = models.CharField(max_length=45, blank=True, null=True, 
-        help_text="An established identifier for this area", 
+    area_nr = models.CharField(max_length=45, blank=True, null=True,
+        help_text="An established identifier for this area",
         verbose_name="Area ID")
 #Period fields
-    period = models.ManyToManyField(DC_chronological_system, blank=True, 
+    period = models.ManyToManyField(DC_chronological_system, blank=True,
         help_text="Chronological period. This contains information about the name, the period, start/enddate1/2, and the region.")
     dating_method = models.ManyToManyField(DC_period_datingmethod, blank=True,
         help_text="Method used for dating the site.")
@@ -661,8 +661,8 @@ class Area(TrackChanges):
         null=True, choices=HUMANREMAINS,
         help_text="Any human remains found in this Settlement?")
 #cave&rockshelters fields
-    cave_rockshelters_type = models.ForeignKey(DC_area_caverockshelterstype, 
-        verbose_name="Cave/rockshelters type", 
+    cave_rockshelters_type = models.ForeignKey(DC_area_caverockshelterstype,
+        verbose_name="Cave/rockshelters type",
         blank=True, null=True,help_text="Type of cave/rockshelter.")
     cave_rockshelters_human_remains = models.CharField(max_length=3, blank=True,
         null=True, choices=HUMANREMAINS,
@@ -689,18 +689,18 @@ class Area(TrackChanges):
     grave_type_of_human_remains = models.ManyToManyField(
         DC_area_typeofhumanremains, verbose_name="Grave: type of human remains", blank=True,
         help_text="How the humans were treated after death and buried.")
-    grave_estimated_number_of_individuals = models.CharField(verbose_name="Grave: estimated number of individuals", 
+    grave_estimated_number_of_individuals = models.CharField(verbose_name="Grave: estimated number of individuals",
         max_length=100, blank=True, null=True,
         help_text="minimum and or maximum")
-    grave_age_groups = models.ManyToManyField(DC_area_agegroups, verbose_name="Grave: age groups", 
+    grave_age_groups = models.ManyToManyField(DC_area_agegroups, verbose_name="Grave: age groups",
         blank=True, help_text="Age.")
     grave_sexes = models.ManyToManyField(DC_area_sexes, verbose_name="Grave: sexes", blank=True,
         help_text="Sex.")
-    grave_number_of_female_sex = models.IntegerField(verbose_name="Grave: number of female sex", 
+    grave_number_of_female_sex = models.IntegerField(verbose_name="Grave: number of female sex",
         null=True, blank=True, help_text="Number of female individuals in a grave/settlement.")
-    grave_number_of_male_sex = models.IntegerField(verbose_name="Grave: number of male sex", 
+    grave_number_of_male_sex = models.IntegerField(verbose_name="Grave: number of male sex",
         null=True, blank=True, help_text="Number of male individuals in a grave/settlement.")
-    grave_number_of_not_specified_sex = models.IntegerField(verbose_name="Grave: number of not specified sex", 
+    grave_number_of_not_specified_sex = models.IntegerField(verbose_name="Grave: number of not specified sex",
         null=True, blank=True, help_text="Number of those individuals whose sex could not be determined.")
     grave_manipulations_of_graves = models.ManyToManyField(
         DC_area_manipulationofgraves, verbose_name="Grave: disturbance of graves", blank=True,
@@ -743,7 +743,7 @@ class Finds(TrackChanges):
     research_event = models.ForeignKey(ResearchEvent, blank=True, null=True,
         help_text="Project / Research the finds are related to.")
     finds_type = models.ForeignKey(DC_finds_type, blank=True, null=True,
-        help_text="Category of finds.") 
+        help_text="Category of finds.")
 # small finds properties
     small_finds_category = models.ForeignKey(DC_finds_small_finds_category,
         blank=True, null=True,
@@ -818,9 +818,9 @@ reversion.register(Finds)
 
 
 class Interpretation(TrackChanges):
-    area = models.ManyToManyField(Area, blank=True,   
+    area = models.ManyToManyField(Area, blank=True,
         help_text="The interpreted area(s).")
-    finds = models.ManyToManyField(Finds, blank=True,   
+    finds = models.ManyToManyField(Finds, blank=True,
         help_text="The interpreted find(s).")
     description = models.TextField(blank=True, null=True,
         help_text="Free text summary account on subsistence & production of the site.")
@@ -840,7 +840,7 @@ class Interpretation(TrackChanges):
         return reverse('defcdb:interpretation_list')
 
     def __str__(self):
-        return 'Interpretation'+'_'+str(self.finds)+'_'+str(self.id) 
+        return 'Interpretation'+'_'+str(self.finds)+'_'+str(self.id)
 
 reversion.register(Interpretation)
 

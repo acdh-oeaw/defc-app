@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{% block Titel %} DEFC App home {% endblock %}</title>
+  <title>{% block Titel %} DEFC Digitizing Early Farming Cultures {% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A web-based archaeological data management system">
   <meta name="author" content="ACDH">
@@ -21,7 +21,8 @@
 <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <!-- SCrollto -->
-
+<!--CSS custom for base-->
+    <!-- <link rel="stylesheet" href="/static/webpage/css/base.css"/> -->
 <!--CSS custom for blog-->
     <link rel="stylesheet" href="/static/webpage/css/defc_blog.css"/>
 <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
@@ -75,7 +76,6 @@
     .breadcrumb {
       border-radius: 0 !important;
     }
-
     a.navlink:link {
       color: black;
       outline: 0;
@@ -104,7 +104,6 @@
       margin-top: 30px;
     }
     .panel-browsing {
-
       border: none;
       box-shadow: none;
     }
@@ -139,9 +138,9 @@
       color: #ffffff;
     }
     .breadcrumb {
-    /*background-color: white;*/
     border: 1px solid #ccc;
     }
+
     .container-fluid {padding: 60px 50px;/**/}
     .logo {font-size: 200px;}
     @media screen and (max-width: 768px) {
@@ -183,17 +182,37 @@
       width: 240px;
       height: 90px;
     }
+    #f-orea-logo {
+      border:none;
+      outline: 0;
+      /*margin-right: 8px;*/
+      width:40%;
+      max-width: 150px;
+      padding: 10px;
+    }
+    #f-acdh-logo {
+      border:none;
+      outline: 0;
+      /*margin-left: 8px;*/
+      width:40%;
+      max-width: 150px;
+      padding: 10px;
+    }
     #githublogo {
       border:none;
       outline: 0;
       margin-right: 8px;
-      width:10%;
+      width:8%;
     }
     #twitterlogo {
       border:none;
       outline: 0;
       margin-left: 8px;
-      width:10%;
+      width:8%;
+    }
+    .glyphicon-envelope {
+      /*font-size: 20px;*/
+      padding: 5px;
     }
    .carousel-inner img {
       width: 1200px; /* Set width to 100% */
@@ -207,11 +226,79 @@
       color: #EFEFEF;
     }
 
+    .navbar-form {
+     /*margin-top: 3px;
+     margin-bottom: 2px;*/
+}
+#search-btn {
+  background: grey;
+  height: 30px;
+  margin-top: 2px;
+  border-color: grey;
+}
+input {
+	outline: none;
+}
+input[type=text]#searchbox {
+	-webkit-appearance: textfield;
+
+   -moz-box-sizing: border-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-text-decoration,
+input::-webkit-text-cancel-button {
+	display: none;
+}
+
+
+input[type=text]#searchbox {
+	background: #ffffff;
+	border: none;
+	padding: 9px 10px 9px 10px;
+	width: 65px;
+  height:30px;
+  line-height: 0.5;
+
+
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=text]#searchbox:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: none;
+
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
     @media (max-width: 600px) {
       .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
       }
     }
+    @media (max-width: 768px) {
+        .pull-right {
+            float: none !important;
+        }
+    }
+
   </style>
 <body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
 <header>
@@ -227,16 +314,18 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">  <!--navbar-right-->
+        <li>
+            <a href="{% url 'webpage:homepage' %}">
+                HOME
+            </a>
+        </li>
         <li class="dropdown"><a href="{% url 'webpage:homepage' %}" class="dropdown-toggle" data-toggle="dropdown"
-               role="button" aria-haspopup="true" aria-expanded="false">DEFC
+               role="button" aria-haspopup="true" aria-expanded="false">About
                <span class="caret"></span>
              </a>
              <ul class="dropdown-menu">
               <li>
-                <a href="{% url 'webpage:homepage' %}">Home</a>
-              </li>
-              <li>
-                <a href="{% url 'webpage:about' %}">About</a>
+                <a href="{% url 'webpage:about' %}">General</a>
               </li>
               <li>
                 <a href="{% url 'webpage:blog_main' %}">Building the defc app</a>
@@ -297,7 +386,6 @@
                <span class="caret"></span>
           </a>
             <ul class="dropdown-menu">
-              <!-- <li class="dropdown-header">Excavations Data</li> -->
               <li>
                 <a href="{% url 'browsing:browse_sites' %}">Sites</a>
               </li>
@@ -315,23 +403,19 @@
               </li>
 
               <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Maps</li>
               <li>
-                <a href="{% url 'geolocation:filter_sites' %}">Site map</a>
+                <a href="{% url 'geolocation:filter_sites' %}">Map of the acrhaeological sites</a>
               </li>
-              <li role="separator" class="divider"></li>
               <li>
                 <a href="{% url 'defcdb:turkey_map' %}">Regions and districts of Turkey</a>
               </li>
               <li>
                 <a href="{% url 'defcdb:greece_map' %}">Regions and districts of Greece</a>
               </li>
-             <!--  <li role="separator" class="divider"></li>
-              <li>
-                <a href="{% url 'image_gallery:public_object_list' %}">Pottery image gallery</a>
-              </li> -->
               <li role="separator" class="divider"></li>
               <li>
-                <a href="{% url '3Dmodels:object_list' %}">Browse 3D Models</a>
+                <a href="{% url '3Dmodels:object_list' %}">3D Pottery gallery</a>
               </li>
               <li role="separator" class="divider"></li>
               <li>
@@ -340,7 +424,7 @@
             </ul>
           </li>
            <li class="dropdown">
-            <a href="#interpretation" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Retrieval<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Retrieval<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'api-root' %}">API</a>
@@ -350,40 +434,52 @@
               </li>
               </ul>
           </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movies<span class="caret"></span></a>
+          <ul class="dropdown-menu">
           <li>
               <a href="{% url 'webpage:cukurici_movie_content' %}">Çukuriçi Höyük Movie</a>
           </li>
           <li>
               <a href="{% url 'webpage:ada_tepe_movie_content' %}">Ada Tepe Movie</a>
           </li>
+        </ul>
+      </li>
+
       </ul>
       <div class="pull-right">
                     <form method="get" action="{% url 'defcdb:search_all' %}" class="navbar-form" id="pageform">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="q"/>
+                                <input id="searchbox" type="text" class="form-control" name="q" placeholder="search..."/>
                             </div>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary" id="search-btn">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true" title="fulltext search over all documents"/>
                             </button>
                         </div>
                     </form>
-                </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                 aria-haspopup="true" aria-expanded="false">LogIn/Logout<span class="caret"/></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="{% url 'user_login' %}">Log In</a>
-                </li>
-                <li>
-                  <a href="{% url 'user_logout' %}">Log Out</a>
-                </li>
-              </ul>
+        </div>
+
+      <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"/>&nbsp;{{ user.get_username }}
+              <span class="caret"></span>
+            </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="{% url 'user_logout' %}">Log Out</a>
             </li>
           </ul>
+        </li>
+          {% else %}
+        <li>
+            <a href="{% url 'user_login' %}">Log In</a>
+        </li>
+          {% endif %}
+      </ul>
     </div>
     </div>
   </nav>
@@ -404,22 +500,71 @@
 
   <footer>
      <div class="container">
+
         <div class="row text-center">
         <div class="col-sm-4">
+          <a href="http://www.orea.oeaw.ac.at/" target="_blank" style="outline: 0;">
+              <img src="{% static "webpage/OREA_white.png" %}" id="f-orea-logo" title="Institute for Oriental and European Archaeology" />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="http://www.oeaw.ac.at/acdh/" target="_blank" style="outline: 0;">
+            <img src="{% static "webpage/acdh_logo_02.png" %}" id="f-acdh-logo" title="Austrian Centre for Digital Humanities" />
+          </a>
+        </div>
+        <div class="col-sm-4">
           <a href="{% url 'webpage:terms_of_use' %}" class="footer_link">Terms of Use / License</a></br>
-          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a>
-        </div>
-        <div class="col-sm-4">
+          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a></br>
+          <!-- <p></p>
           <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
-              <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo" width="25%"/>
+              <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
           </a>
-        </div>
-        <div class="col-sm-4">
           <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
-            <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo" width="25%"/>
-          </a>
+            <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
+          </a> -->
         </div>
       </div>
+
+
+
+
+<hr>
+<div class="row text-center">
+  <!-- <div class="col-md-4">
+      <p>Fan? Drop a note.</p>
+      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
+          <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
+      </a>
+      <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
+        <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
+      </a>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Vienna, Austria</p>
+
+      <p><span class="glyphicon glyphicon-envelope"></span> Contact</p>
+    </div> -->
+            <div class="col-sm-4">
+
+
+            <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;" class="footer_link">
+                <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/> DEFC source code
+            </a>
+
+          </div>
+          <div class="col-sm-4">
+            <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;" class="footer_link">
+              <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>  Twitter @OREA_digArch
+            </a>
+
+          </div>
+          <div class="col-sm-4">
+              <a href="{% url 'webpage:about' %}#contact" class="footer_link"><p><span class="glyphicon glyphicon-envelope"></span> Contact</p></a>
+          </div>
+</div>
+
+
+
+
+
     </div>
 </footer>
 
@@ -428,6 +573,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- jQuery UI -->
 <!-- jQuery UI resizable multiple select fields -->
+
     <script>
       // $(function() {
       // $('[multiple=multiple]')
