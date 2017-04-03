@@ -1,0 +1,26 @@
+1. All english terms are lowercase.
+
+3. All concepts are in Finds Schema and in a pacticular Schema which corresponds to the name of DC class in database.
+
+2. URIs structure: 
+after base URI comes the name of the concept with underscores instead of whitespaces, followed by slash, number of concept order in hierarchy, dot, and ID from database.
+E.g.:
+https://acdh.oeaw.ac.at/vocabs/defcthesaurus/deep_bowl/5.178
+
+2.1 There are 40 concepts in Finds thesaurus which are not in database, they belong to schema 'NotInDatabase' and they don't have a matching database ID, so they assigned with IDs starting from 0:
+E.g.:
+https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mammal/4.020
+
+3. skos:editorialNote contains name of database table where the term comes from, semicolon, and database ID
+E.g.:
+<skos:editorialNote>dc_finds_animal_remains_completness;2</skos:editorialNote>
+
+when terms are not in database:
+E.g.:
+<skos:editorialNote>dc_not_in_database;020</skos:editorialNote>
+
+
+4. All schemas are TitleCase:
+E.g.:
+https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema
+
