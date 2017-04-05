@@ -1,0 +1,180 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the class Interpretation in the database" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the particular Interpretation properties." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the particular Interpretation properties." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> a skos:Concept ;
+	skos:prefLabel "production"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database;042" ;
+	skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/textile_production/2.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/textile_production/2.1> a skos:Concept ;
+	skos:prefLabel "textile production"@en , "Textilproduktion"@de ;
+	skos:definition "The activity of making cloth or wover fabric." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;1" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_production/2.2> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_production/2.2> a skos:Concept ;
+	skos:prefLabel "metal production"@en , "Metallproduktion"@de ;
+	skos:definition "The activity of mining and removing valuable metals from an ore and refining extracted metals into a purer form or production of alloy" ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;2" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chipped_stone_tool_production/2.3> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chipped_stone_tool_production/2.3> a skos:Concept ;
+	skos:prefLabel "chipped stone tool production"@en , "Produktion geschlagener Steinwekzeuge"@de ;
+	skos:definition "The activity of making tools of cryptocrystalline materials by lithic reduction such as striking stone flakes from a core." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;3" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_tool_production/2.4> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_tool_production/2.4> a skos:Concept ;
+	skos:prefLabel "stone tool production"@en , "Steinwerkzeugherstellung"@de ;
+	skos:definition "The activity of making physical items of stone that can be afterwards used to achive a certain goal." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;4" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/shell_production/2.5> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/shell_production/2.5> a skos:Concept ;
+	skos:prefLabel "shell production"@en , "Muschelverarbeitung"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;5" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bone_tool_production/2.6> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bone_tool_production/2.6> a skos:Concept ;
+	skos:prefLabel "bone tool production"@en , "Produktion von Knochenwekzeugen"@de ;
+	skos:definition "The activity of making physical items of bone that can be afterwards used to achive a certain goal." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;6" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_production/2.7> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_production/2.7> a skos:Concept ;
+	skos:prefLabel "pottery production"@en , "Keramikproduktion"@de ;
+	skos:definition "The activity of making objects of clay and hardened with heat." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;7" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_tool_production/2.8> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_tool_production/2.8> a skos:Concept ;
+	skos:prefLabel "pottery tool production"@en , "Keramikwerkzeugproduktion"@de ;
+	skos:definition "The activity of making physical items of burnt clay that can be afterwards used to achive a certain goal." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;8" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/jewellery_production/2.9> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/jewellery_production/2.9> a skos:Concept ;
+	skos:prefLabel "jewellery production"@en , "Schmukproduktion"@de ;
+	skos:definition "The activity of making physical items used as personal ornament." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationProductiontype> ;
+	skos:editorialNote "dc_interpretation_productiontype;9" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/production/1.042> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> a skos:Concept ;
+	skos:prefLabel "subsistence"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database;043" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the particular Interpretation properties." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fishing/2.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fishing/2.1> a skos:Concept ;
+	skos:prefLabel "fishing"@en , "Fischen"@de ;
+	skos:definition "The activity of catching fish as a source of food." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;1" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/farming/2.2> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/farming/2.2> a skos:Concept ;
+	skos:prefLabel "farming"@en , "Ackerbau"@de ;
+	skos:definition "The activity of cultivating the land by growing crops." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;2" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/animal_husbandry/2.3> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/animal_husbandry/2.3> a skos:Concept ;
+	skos:prefLabel "animal husbandry"@en , "Viehzucht"@de ;
+	skos:definition "The care and raising of animals." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;3" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hunting/2.4> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hunting/2.4> a skos:Concept ;
+	skos:prefLabel "hunting"@en , "Jagd"@de ;
+	skos:definition "The activity of hunting wild animals or game for food, fur, bone (for bone tool production) etc." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;4" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/gathering/2.5> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/gathering/2.5> a skos:Concept ;
+	skos:prefLabel "gathering"@en , "Sammeln"@de ;
+	skos:definition "The activity of collecting wild plants and their fruits." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;5" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_systems/2.6> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_systems/2.6> a skos:Concept ;
+	skos:prefLabel "storage systems"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSubsistencetype> ;
+	skos:editorialNote "dc_interpretation_subsistencetype;6" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subsistence/1.043> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual_activity/1.044> a skos:Concept ;
+	skos:prefLabel "ritual activity"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/InterpretationSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database;044" .
