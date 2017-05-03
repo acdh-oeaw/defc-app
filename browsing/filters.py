@@ -51,26 +51,28 @@ class SiteListFilter(django_filters.FilterSet):
     topography__name = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_site_topography.objects.all(), label='Topography', help_text=False
     )
-    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
-    period__cs_name = django_filters.MethodFilter(
-        action='my_custom_filter_csname', label='Period Chronological system', help_text=False
+    period = django_filters.CharFilter(
+        label='Period', name='area__period__period_name', distinct=True,
+        lookup_expr='icontains', help_text=False
+    )
+    period__cs_name = django_filters.CharFilter(
+        label='Period Chronological system', help_text=False,
+        name='area__period__cs_name', distinct=True,
+        lookup_expr='icontains'
     )
     area__period__start_date1_BC = django_filters.NumberFilter(
-        lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to'
+        lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to',
+        name='area__period__start_date1_BC', distinct=True
     )
     area__period__end_date1_BC = django_filters.NumberFilter(
-        lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to')
+        lookup_expr='gte', label='Period end date 1 BC', help_text='Greater than or equal to',
+        name='area__period__end_date1_BC', distinct=True
+        )
 
     class Meta:
         model = Site
         form = SiteFilterForm
         fields = ['id', 'province']
-
-    def my_custom_filter(self, queryset, value):
-        return queryset.filter(area__period__period_name__icontains=value).distinct()
-
-    def my_custom_filter_csname(self, queryset, value):
-        return queryset.filter(area__period__cs_name__icontains=value).distinct()
 
 
 class AreaListFilter(django_filters.FilterSet):
@@ -244,7 +246,7 @@ class FindsListFilter(django_filters.FilterSet):
         queryset=DC_finds_small_finds_type.objects.all(), help_text=False
         )
 # Botany fields
-    
+
     botany_species = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_botany_species.objects.all(), help_text=False
         )
@@ -260,7 +262,7 @@ class FindsListFilter(django_filters.FilterSet):
         queryset=DC_finds_animal_remains_part.objects.all(), help_text=False
         )
 # Lithics fields
-    
+
     lithics_technology = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_lithics_technology.objects.all(), help_text=False
         )
@@ -285,7 +287,7 @@ class FindsListFilter(django_filters.FilterSet):
     obsidian_amount = django_filters.NumberFilter(lookup_expr='exact', help_text=False)
 
 # Pottery fields
-    
+
     pottery_form = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_finds_pottery_form.objects.all(), help_text=False
         )
