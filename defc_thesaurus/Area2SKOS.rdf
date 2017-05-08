@@ -1,0 +1,2836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to class Area in database.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">area type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grabungsareal Kategorie</skos:prefLabel>
+	<skos:definition>A type of an archaeological site: settlement, cave or rockshelter, grave and cemetery, quarry, undefined.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;064</skos:editorialNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cave or rockshelter</skos:prefLabel>
+	<skos:definition>A cave or a rockshelter used by early humans.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType"/>
+	<skos:editorialNote>dc_area_type;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaCaverockshelterstype">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave/3.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cave</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Höhle</skos:prefLabel>
+	<skos:definition>A subterranean feature entered from a hillside, cliff face, etc. A cave may have been used for occupation, storage, burial, refuse, or as a hide-away.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/pastscape_term.asp?thes_no=1&amp;term_no=70384</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaCaverockshelterstype"/>
+	<skos:editorialNote>dc_area_caverockshelterstype;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave/3.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rock_shelter/3.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">rock shelter</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Felsdach</skos:prefLabel>
+	<skos:definition>A natural cave with a roof of overlying rock, which extends beyond the sides of the cave; a cave that is formed by a ledge of overhanging rock. Such a shallow cave or cliff overhang was used by humans as shelter from the elements, especially among hunters</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 483.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaCaverockshelterstype"/>
+	<skos:editorialNote>dc_area_caverockshelterstype;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave_or_rockshelter/2.1">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rock_shelter/3.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cemetery_or_grave/2.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cemetery or grave</skos:prefLabel>
+	<skos:definition>An archaeological site consisting of a grave or a complete cemetery.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType"/>
+	<skos:editorialNote>dc_area_type;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cemetery_or_grave/2.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">quarry</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Steinbruch</skos:prefLabel>
+	<skos:altLabel xml:lang="en">mining site</skos:altLabel>
+	<skos:altLabel xml:lang="en">mining</skos:altLabel>
+	<skos:definition>An excavation form which stone for building and other functions, is obtained by cutting, blasting, etc.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=1&amp;term_no=69068</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType"/>
+	<skos:editorialNote>dc_area_type;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">settlement</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Siedlung</skos:prefLabel>
+	<skos:definition>A small concentration of dwellings.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=1&amp;term_no=68977</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType"/>
+	<skos:editorialNote>dc_area_type;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/undefined/2.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">undefined</skos:prefLabel>
+	<skos:definition>An area where archaeological evidence has been found. However, the finds were not diagnostic or the amount was too small to interpret the type of the area (settlement, grave, etc.)</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaType"/>
+	<skos:editorialNote>dc_area_type;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_type/1.064">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/undefined/2.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">quarry type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Abbauart</skos:prefLabel>
+	<skos:definition>A type of evidence pointing to the existence of a quarry</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;065</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaExplotationtype">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pinge/4.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pinge</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Pinge</skos:prefLabel>
+	<skos:definition>A wedge-, ditch- or funnel-shaped depression in the terrain caused by mining activity. This depression or sink-hole is frequently caused by the collapse of old underground mine workings that are close to the Earth's surface.</skos:definition>
+	<dc:source>https://en.wikipedia.org/wiki/Pinge</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaExplotationtype"/>
+	<skos:editorialNote>dc_area_explotationtype;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pinge/4.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mine_shaft/4.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">mine shaft</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Schlacht</skos:prefLabel>
+	<skos:definition>A vertical or inclined excavation giving access to an underground mine.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/pastscape_term.asp?thes_no=1&amp;term_no=69348</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaExplotationtype"/>
+	<skos:editorialNote>dc_area_explotationtype;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mine_shaft/4.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/surface/4.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">surface</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">oberflächennaher Abbau</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Tagebau</skos:altLabel>
+	<skos:definition>Tool marks recognized on a rock surface as the evidence for mining activities.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaExplotationtype"/>
+	<skos:editorialNote>dc_area_explotationtype;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry_type/3.065">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/surface/4.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">raw material</skos:prefLabel>
+	<skos:definition>Raw material that has been exploited at a quarry site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;066</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/quarry/2.3">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Stein</skos:prefLabel>
+	<skos:altLabel xml:lang="en">rock</skos:altLabel>
+	<skos:definition>Stone that has been extraced from a querry site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;072</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/obsidian/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">obsidian</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Obsidian</skos:prefLabel>
+	<skos:definition>Obsidian, natural glass of volcanic origin (formed by the rapid cooling of viscous lava) that has been extracted at a quarry site.</skos:definition>
+	<dc:source>Encyclopaedia Britannica - https://www.britannica.com/science/obsidian</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/obsidian/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/limestone/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">limestone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Kalkstein</skos:prefLabel>
+	<skos:definition>A sedimentary rock most commoly formed in clear, warm, shallow marine waters. It was extracted from a quarry site and probably used as building material.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/limestone/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">chert</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Kieselschiefer</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Gestein</skos:altLabel>
+	<skos:definition>Chert is a very fine-grained quarz and a silica mineral. Several varieties are included under the general term: jasper, chalcedony, agate, flint, porcelanite, and novaculite. It was dug at the quarry site and probably used for tools and weapon.</skos:definition>
+	<dc:source>Encyclopaedia Britannica - https://www.britannica.com/science/chert#ref272901</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/4.072">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/flint/6.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">flint</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Flint</skos:prefLabel>
+	<skos:definition>Flint os a fine-grained quarz and a silica mineral included under the general term chert. It has been extracted from a quarry site and probably used as material source for tools and weapons.</skos:definition>
+	<dc:source>Encyclopaedia Britannica - https://www.britannica.com/science/chert#ref272901</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.5">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/flint/6.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay/4.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">clay</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lehm</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Bodenart</skos:altLabel>
+	<skos:altLabel xml:lang="de">Ton</skos:altLabel>
+	<skos:definition>Clay, soil paricles the diameters of which are less than .5 mm; also a rock that is composed essentially of clay particles. Clay materials are plastic when wet, and coherent when dry. It has been extracetd from a quarry and has probably been used for pottery making and as building material.</skos:definition>
+	<dc:source>Encyclopaedia Britannica – https://www.britannica.com/science/clay-geology</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay/4.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">metal</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Metall</skos:prefLabel>
+	<skos:definition>A solid material which is typically hard, shiny, malleable, fusible, and ductile, with good thermal conductivity (e.g. iron, gold, silver, steel) extracted from a quarry site.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/metal</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/silver/5.9">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">silver</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Silber</skos:prefLabel>
+	<skos:definition>Silver (Ag), chemical element, a white, lustrous metal valued for its decorative beauty and electrical conductivity. Extracted from a quarry site.</skos:definition>
+	<dc:source>https://www.britannica.com/science/silver</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;9</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/silver/5.9"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lead/5.10">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">lead</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Blei</skos:prefLabel>
+	<skos:definition>A soft, heavy, silvery-coloured metal (Pb) with a low melting point that was alloyed with copper and tin to make bronze tools and weapons. Extracted from a quarry site.</skos:definition>
+	<dc:source>The Concise Oxford Dictionary of Archaeology</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;10</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lead/5.10"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/copper/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">copper</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Kupfer</skos:prefLabel>
+	<skos:definition>Copper (Cu) is a reddish, extremely ductile metal that can be found in the free metallic state in nature. Extracted from a quarry site.</skos:definition>
+	<dc:source>Encyclopaedia Britannica - https://www.britannica.com/science/copper</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal/4.7">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/copper/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ochre/4.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">ochre</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Ocker</skos:prefLabel>
+	<skos:definition>An earthy pigment containing ferric oxide, typically with clay, catying from light yellow to brown red.  Extracted from a quarry site.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/ochre</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaRawmaterial"/>
+	<skos:editorialNote>dc_area_rawmaterial;8</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/raw_material/3.066">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ochre/4.8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">settlement structure</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Siedlungsstruktur</skos:prefLabel>
+	<skos:definition>Organization and structure of the settlement – type of enclosure and the layout of houses.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;067</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">settlement enclosure</skos:prefLabel>
+	<skos:definition>A structure enclosing a settlement.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;073</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_ditch/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">enclosure ditch</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Graben</skos:prefLabel>
+	<skos:altLabel xml:lang="en">ditch</skos:altLabel>
+	<skos:definition>A common feature of archaeological sites in association with defensive structures, as means of drainage, or as a construction trench.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_ditch/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_rampart/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">enclosure rampart</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Wall</skos:prefLabel>
+	<skos:altLabel xml:lang="en">rampart</skos:altLabel>
+	<skos:definition>A protective earthen mound, often the main defence of a fortification.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/pastscape_term.asp?thes_no=1&amp;term_no=68905</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_rampart/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_wall/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">enclosure wall</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Mauer</skos:prefLabel>
+	<skos:altLabel xml:lang="en">enclosure wall</skos:altLabel>
+	<skos:definition>An enclosing structure composed of bricks, stones, wood or similar materials, laid in courses.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=546&amp;term_no=138407</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_wall/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_undetermined/5.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">enclosure undetermined</skos:prefLabel>
+	<skos:definition>An enclosure of a settlement has been recognized, but not indentified.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_enclosure/4.073">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_undetermined/5.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">house layout</skos:prefLabel>
+	<skos:definition>A system according to which houses in a settlement are arranged.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;074</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement_structure/3.067">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_free-standing/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">houses free-standing</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Freistehende Häuser</skos:prefLabel>
+	<skos:definition>A building which is not attached nor supported by another building.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_free-standing/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_agglutinated/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">houses agglutinated</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Agglutunierende Häuser</skos:prefLabel>
+	<skos:definition>Tightly clustered buildings.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_agglutinated/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_radial/5.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">houses radial</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Ringformige Häuser</skos:prefLabel>
+	<skos:definition>Houses arranged in radial plan.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementstructure"/>
+	<skos:editorialNote>dc_area_settlementstructure;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_layout/4.074">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/houses_radial/5.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">settlment type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Siedlungstyp</skos:prefLabel>
+	<skos:definition>A type of a settlement: tell or flat site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;068</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementtype">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/flat_site/4.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">flat site</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Flachland</skos:prefLabel>
+	<skos:definition>A settlement erected in the low-lying area.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementtype"/>
+	<skos:editorialNote>dc_area_settlementtype;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/flat_site/4.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tell/4.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">tell</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Tell</skos:prefLabel>
+	<skos:altLabel xml:lang="en">tel</skos:altLabel>
+	<skos:altLabel xml:lang="en">tepe</skos:altLabel>
+	<skos:altLabel xml:lang="de">Tepe</skos:altLabel>
+	<skos:definition>An artificial mound made of a build-up of settlement debris.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSettlementtype"/>
+	<skos:editorialNote>dc_area_settlementtype;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlment_type/3.068">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tell/4.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">building</skos:prefLabel>
+	<skos:definition>Describing everything in connection to a building found on a site (settlement or undifined site) such as building technique, type and shape.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;069</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">building technique</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Bautechnik</skos:prefLabel>
+	<skos:definition>A building technique in which a building has been build (mud brick, wattle and daub...). Also distinctive architectural elements such as pillars and floor.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;075</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">building material</skos:prefLabel>
+	<skos:definition>A certain type of building technique distinctive on the material that has been used.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;089</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mud_brick/6.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">mud brick</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lehmziegel</skos:prefLabel>
+	<skos:altLabel xml:lang="en">adobe</skos:altLabel>
+	<skos:definition>A brick dried in the sun rather than baked, used for construction in dry climates.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 372.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mud_brick/6.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pisé/6.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pisé</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Stampflehm</skos:prefLabel>
+	<skos:definition>A term describing a wall made of mud or clay, not formed into separate bricks but shaped, rammed, or piled up into walls in situ.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 441.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pisé/6.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wattle_and_daub/6.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">wattle and daub</skos:prefLabel>
+	<skos:altLabel xml:lang="en">wattle-and-daub</skos:altLabel>
+	<skos:altLabel xml:lang="en">wattle</skos:altLabel>
+	<skos:definition>A building techniques in which walls were made by plastering mud (daub, possibly with sand and plant fibers) over a lattice of branches and sticks (wattle). Interwoven twigs or thin split timbers were used.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 598.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wattle_and_daub/6.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/straw/6.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">straw</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Stroh</skos:prefLabel>
+	<skos:altLabel xml:lang="en">hay</skos:altLabel>
+	<skos:definition>Sried stalks of grain used as building material.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;8</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/straw/6.8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/timber/6.10">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">timber</skos:prefLabel>
+	<skos:definition>Wood prepared for use in building and carpentry.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/timber</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;10</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/timber/6.10"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/6.11">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Stein</skos:prefLabel>
+	<skos:definition>Hard solid non-metallic mineral matter of which rock is made, especailly as a building material.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/stone</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;11</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/6.11"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/concrete/6.16">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">concrete</skos:prefLabel>
+	<skos:definition>A construction material, a mixture of gravel, pebbles, or broken stone with cement.</skos:definition>
+	<dc:source>Mollett, J. W. 1966 An Illustrated Dictionary of Art and Archaeology. American Archives of World Art Inc., New York, p. 86</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;16</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_material/5.089">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/concrete/6.16"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pavement/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pavement</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Pflasterung</skos:prefLabel>
+	<skos:definition>A floor of surface-covering of flags, stones, tiles, or bricks accurately fitted in masonry with or without a bond material.</skos:definition>
+	<dc:source>http://triggs.djvu.org/century-dictionary.com/djvu2jpgframes.php?volno=05&amp;page=779&amp;query=pavement</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pavement/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.090">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">wall</skos:prefLabel>
+	<skos:definition>A wall structure inside of a building.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;090</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.090"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plaster_wall/6.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">plaster wall</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Wandverputz</skos:prefLabel>
+	<skos:definition>A wall covered with a mixture of lime or gypsum, sand and water, which hardens into a smooth solid.</skos:definition>
+	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p. 252.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.090"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.090">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plaster_wall/6.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_socket/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone socket</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Steinsockel</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_socket/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/timber-frame_construction/5.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">timber-frame construction</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Holzskelett</skos:prefLabel>
+	<skos:altLabel xml:lang="en">timber frame</skos:altLabel>
+	<skos:altLabel xml:lang="en">half-timbered</skos:altLabel>
+	<skos:altLabel xml:lang="en">timber framing</skos:altLabel>
+	<skos:definition>Constructed of wood framing with spaces filled with masonry, or by stone, rubble, or mud brick.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 226.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/timber-frame_construction/5.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plastered_threshold/5.9">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">plastered threshold</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Schwelle aus Mörtel</skos:prefLabel>
+	<skos:definition>A strip of plaster forming the bottom of a doorway and crossed in entering a house or room.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;9</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plastered_threshold/5.9"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_lining/5.12">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone lining</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;12</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_lining/5.12"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/foundation_trench/5.13">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">foundation trench</skos:prefLabel>
+	<skos:definition>A trench or gully, packed with stone, earth or logs, used to support a wall.  </skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;13</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/foundation_trench/5.13"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sacral/5.17">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">sacral</skos:prefLabel>
+	<skos:definition>A building related to sacred rites or symbols.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/sacral</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;17</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sacral/5.17"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pillar/5.091">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pillar</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;091</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pillar/5.091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/t-pillar/6.18">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">t-pillar</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">T-Pfeiler</skos:prefLabel>
+	<skos:definition>A megalithic pillar cut in a T-shape, typical of the Southeast Anatolian PPNA.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;18</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pillar/5.091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pillar/5.091">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/t-pillar/6.18"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">floor</skos:prefLabel>
+	<skos:definition>A floor construction inside of a building.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;092</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_technique/4.075">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/terrazzo_floor/6.15">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">terrazzo floor</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Terazzo Boden</skos:prefLabel>
+	<skos:definition>Floor consisting of chips of marble or granite set in concrete and polished to give a smooth surface involving a complex firing procedure.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/terrazzo</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;15</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/terrazzo_floor/6.15"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wooden_floor/6.19">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">wooden floor</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Holzboden</skos:prefLabel>
+	<skos:definition>The lower surface of a room, on which one may walk, made of wood.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/floor</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;19</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wooden_floor/6.19"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/limestone_floor/6.20">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">limestone floor</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Kalksteinboden</skos:prefLabel>
+	<skos:definition>The lower surface of a room, on which one may walk, made of limestone.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/floor</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaBuildingtechnique"/>
+	<skos:editorialNote>dc_area_buildingtechnique;20</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.092">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/limestone_floor/6.20"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">building shape</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grundriss</skos:prefLabel>
+	<skos:definition>Ground plan shape of a building (apsidal, circular, ovoid, rectangular…)</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;076</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/apsidal/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">apsidal</skos:prefLabel>
+	<skos:definition>A building with a semi-circular recess on one side.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape"/>
+	<skos:editorialNote>dc_area_constructionshape;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/apsidal/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/circular/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">circular</skos:prefLabel>
+	<skos:definition>A building with a round ground plan.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape"/>
+	<skos:editorialNote>dc_area_constructionshape;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/circular/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ovoid/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">ovoid</skos:prefLabel>
+	<skos:altLabel xml:lang="en">oval</skos:altLabel>
+	<skos:definition>A building with a rounded, slightly enlongated ground plan.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape"/>
+	<skos:editorialNote>dc_area_constructionshape;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ovoid/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rectangular/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">rectangular</skos:prefLabel>
+	<skos:definition>A building with a rectangular ground plan.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape"/>
+	<skos:editorialNote>dc_area_constructionshape;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rectangular/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rectangular-apsidal/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">rectangular-apsidal</skos:prefLabel>
+	<skos:definition>A rectangular building with a semi-circular recess on one sinde.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructionshape"/>
+	<skos:editorialNote>dc_area_constructionshape;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_shape/4.076">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rectangular-apsidal/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">building type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Bautyp</skos:prefLabel>
+	<skos:definition>A type of a building based on a certain building technique, space arangement, architectural, functional and cultural distinction.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;077</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building/3.069">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/longhouse/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">longhouse</skos:prefLabel>
+	<skos:definition>A rectangular buidling with a strong imbalance in the lenght:width ratio. Typical for the Central European Neolithic (Linearbandkeramik Culture).</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/longhouse/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/megaron/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">megaron</skos:prefLabel>
+	<skos:definition>A three-roomed building with a central axis.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/megaron/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/one-room/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">one-room</skos:prefLabel>
+	<skos:altLabel xml:lang="en">one room</skos:altLabel>
+	<skos:definition>A building with one room.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/one-room/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pile_dwelling/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pile dwelling</skos:prefLabel>
+	<skos:definition>A building with platforms raised on posts above open water or on damp ground at water´s edge.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. p. 440.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pile_dwelling/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit-house/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pit-house</skos:prefLabel>
+	<skos:altLabel xml:lang="en">pit house</skos:altLabel>
+	<skos:definition>A semi-subterranean structure with domestic features.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit-house/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tsangli_house/5.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">tsangli house</skos:prefLabel>
+	<skos:definition>A type of building with internal buttresses projecting from the walls. Named after the eponymous site of Tsangli in Thessaly.</skos:definition>
+	<dc:source>OREA (M. Brami)</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaConstructiontype"/>
+	<skos:editorialNote>dc_area_constructiontype;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/building_type/4.077">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tsangli_house/5.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">special feature</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">spezielle Befunde</skos:prefLabel>
+	<skos:definition>Special archaeological features (architecture and installation) that has been found outside of a building.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;070</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/settlement/2.4">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">installation</skos:prefLabel>
+	<skos:definition>An installed mostly communal facilities such as pits, kilns etc. that were found in space between residential buildings.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;078</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bench/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">bench</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Bank</skos:altLabel>
+	<skos:definition>A high narrow platform.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bench/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/channel/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">channel</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Kanal</skos:altLabel>
+	<skos:definition> A gully or groove usually used to drain or channel water.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/channel/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hearth/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">hearth</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Herd</skos:altLabel>
+	<skos:definition>A fire installation that lacks a superstructure.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hearth/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pit</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Grube</skos:altLabel>
+	<skos:definition>A hole or cavity in the ground, either natural or the result of human activity.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=1&amp;term_no=70398</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_hole/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">post hole</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Pfostenloch</skos:altLabel>
+	<skos:definition>A hole dug to provide a firm base for an upright post, often with stone packing.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=546&amp;term_no=138109</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_hole/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/well/5.10">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">well</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Brunnen</skos:altLabel>
+	<skos:definition>A shaft or pit dug in the ground over a supplyof spring-water.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=1&amp;term_no=70202</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;10</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/well/5.10"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/oven/5.11">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">oven</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Ofen</skos:altLabel>
+	<skos:definition>A fire installation with a closed chamber.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;11</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/oven/5.11"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fireplace/5.15">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">fireplace</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Feuerstelle</skos:altLabel>
+	<skos:definition>A specially built place in a room where a fire can be built.</skos:definition>
+	<dc:source>http://www.merriam-webster.com/dictionary/fireplace</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;15</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fireplace/5.15"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/waste_pit/5.20">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">waste pit</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Abfallgrube</skos:altLabel>
+	<skos:definition>A hole dug into the ground used for rubbish disposal.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;20</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/waste_pit/5.20"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">platform</skos:prefLabel>
+	<skos:definition>A raised surface.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;093</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_platform/6.19">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone platform</skos:prefLabel>
+	<skos:definition>A raised flat stone surface with a ridge.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;19</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_platform/6.19"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_platform/6.26">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">clay platform</skos:prefLabel>
+	<skos:definition>A raised flat clay surface with a ridge.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;26</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.093">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_platform/6.26"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hole/5.24">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">hole</skos:prefLabel>
+	<skos:definition>A hollow place in a surface, natural or man-made.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/hole</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;24</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hole/5.24"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/basin/5.29">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">basin</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Becken</skos:altLabel>
+	<skos:definition>Similar to a bin (a clay or plaster structure with upstanding edges) but with a shallow bowl and a low rim</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;29</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/basin/5.29"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_base/5.34">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">post base</skos:prefLabel>
+	<skos:altLabel xml:lang="en">pier</skos:altLabel>
+	<skos:definition>A freestanding, rectangular mass of masonry supporting the superstructure of a building</skos:definition>
+	<dc:source>http://www.dartmouth.edu/~prehistory/aegean/?glossary-term=pier</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;34</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_base/5.34"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/manger/5.35">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">manger</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Krippe</skos:altLabel>
+	<skos:definition>A long trough from which horses or cattle feed.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/manger</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;35</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/manger/5.35"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/kiln/5.36">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">kiln</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Brennofen</skos:altLabel>
+	<skos:definition>A kiln is a thermally insulated chamber, a type of oven, that produces temperatures sufficient to complete hardening and drying of clay, metal etc.</skos:definition>
+	<dc:source>http://dbpedia.org/page/Kiln</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;36</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/installation/4.078">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/kiln/5.36"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">ritual</skos:prefLabel>
+	<skos:definition>An archaeological feature found in the open space that has a ritual meaning or was used to carry out a ritual.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;079</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_setting/5.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone setting</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Steinsetzung</skos:altLabel>
+	<skos:definition>An arrangement of one or more standing stones.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=1&amp;term_no=70194</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_setting/5.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bothros/5.21">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">bothros</skos:prefLabel>
+	<skos:definition>A pit or depression used for various purposes such as storage or waste, but mostly related to cult activities such as sacrifice in ancient Greece.</skos:definition>
+	<dc:source>https://de.wikipedia.org/wiki/Bothros</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;21</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bothros/5.21"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stele/5.31">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stele</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Stele</skos:altLabel>
+	<skos:definition>An upright, freestanding monumne, often inscribed and used for funerary or commemorative purposes.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;31</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stele/5.31"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/altar/5.33">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">altar</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Altar</skos:altLabel>
+	<skos:definition>An elevated table or podium on which to place or sacrifice offerings to the deities.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;33</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ritual/4.079">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/altar/5.33"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">storage</skos:prefLabel>
+	<skos:definition>An archaeological feature found in the open space that was used for storage.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;080</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_building/5.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">storage building</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Lagerhaus</skos:altLabel>
+	<skos:definition>A building used for storing food and other goods.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_building/5.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_pit/5.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">storage pit</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Vorratsgrube</skos:altLabel>
+	<skos:definition>A pit dug in the ground used to store foodstuffs.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/pastscape_term.asp?thes_no=1&amp;term_no=68668</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;8</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_pit/5.8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_vessel/5.9">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">storage vessel</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Vorratsgefäß</skos:altLabel>
+	<skos:definition>A container used for storing food and liquids such as storage jar, pithos, amphore etc.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;9</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_vessel/5.9"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tank/5.12">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">tank</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Wasserbecken</skos:altLabel>
+	<skos:definition>A  container for storing liquid.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;12</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage/4.080">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tank/5.12"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">architecture</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;081</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/paved_area/5.13">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">paved area</skos:prefLabel>
+	<skos:altLabel xml:lang="en">paved road</skos:altLabel>
+	<skos:altLabel xml:lang="en">paved way</skos:altLabel>
+	<skos:definition>A distinct piece of land with a continuous surface or a network of surfaces formed artificially, either using man-made materials or constructed out of stable, non-planted natural materials like gravel.</skos:definition>
+	<dc:source>https://standards.phorio.com/?t=definition&amp;code=7120921898</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;13</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/paved_area/5.13"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/terrace_wall/5.14">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">terrace wall</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Terrassenmauer</skos:altLabel>
+	<skos:definition>A wall supporting the slope or shielding from erosion.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;14</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/terrace_wall/5.14"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_structure/5.16">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">clay structure</skos:prefLabel>
+	<skos:definition>A clay-made construction.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;16</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_structure/5.16"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stairway/5.17">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stairway</skos:prefLabel>
+	<skos:definition>A set of steps or stairs leading to an upper storey.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;17</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stairway/5.17"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.18">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">wall</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Mauer</skos:altLabel>
+	<skos:definition>An enclosing structure composed of bricks, stones, wood or similar materials, laid in courses.</skos:definition>
+	<dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=546&amp;term_no=138407</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;18</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall/5.18"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">floor</skos:prefLabel>
+	<skos:definition>Walking surface in an open space.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;094</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_floor/6.22">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">clay floor</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Lehmboden</skos:altLabel>
+	<skos:definition>A clay layer on which people tread.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;22</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_floor/6.22"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plastered_floor/6.25">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">plastered floor</skos:prefLabel>
+	<skos:definition>A layer of plaster on which people tread.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;25</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/floor/5.094">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plastered_floor/6.25"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/thermal_structure/5.27">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">thermal structure</skos:prefLabel>
+	<skos:definition>A construction used for heating.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;27</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/thermal_structure/5.27"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/niche/5.28">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">niche</skos:prefLabel>
+	<skos:altLabel xml:lang="de">Nische</skos:altLabel>
+	<skos:definition>A alcove-like recess in a wall.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;28</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/niche/5.28"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/buttress/5.32">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">buttress</skos:prefLabel>
+	<skos:definition>A projecting support built against a wall.</skos:definition>
+	<dc:source>M. Brami, PhD after Catalhoyuk Research Project http://www.catalhoyuk.com/database/catal/help_glossary1.asp</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;32</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/buttress/5.32"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall_painting/5.37">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">wall painting</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;37</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wall_painting/5.37"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">place</skos:prefLabel>
+	<skos:definition>A defined empty spave surrounded by one or several buildings (courtyard, square).</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;082</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_feature/3.070">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/courtyard/5.23">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">courtyard</skos:prefLabel>
+	<skos:definition>An accessible open-air space surrounded on three or four sides.</skos:definition>
+	<dc:source>https://standards.phorio.com/?t=definition&amp;code=6532938992</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;23</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/courtyard/5.23"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/square/5.30">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">square</skos:prefLabel>
+	<skos:altLabel xml:lang="en">plaza</skos:altLabel>
+	<skos:definition>An open paved area within a street system, traditionally used for open markets or large gatherings of people.</skos:definition>
+	<dc:source>https://standards.phorio.com/?t=definition&amp;code=5935638133</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;30</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/place/4.082">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/square/5.30"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">grave</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grab</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;071</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cemetery_or_grave/2.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cemetery_or_grave/2.2">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">grave type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grabtyp</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;083</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cist_grave/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cist grave</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Kistengrab</skos:prefLabel>
+	<skos:definition>A prehistoric coffin containing either a body or ashes, usually made of stone or a hollowed-put tree, of Europe and Asia. The grave might be lined with stones and covered with slabs or enclosed on four sides by stone slabs standing upright and cloed with</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P 119.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cist_grave/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit_grave/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pit grave</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grubengrab</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit_grave/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/vessel/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">vessel</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Gefäß</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/vessel/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">none recorded</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">nicht bestimmt</skos:prefLabel>
+	<skos:definition>The type of grave has not been recorded.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/shaft_grave/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">shaft grave</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Schachtgrab</skos:prefLabel>
+	<skos:altLabel xml:lang="en">shaft tomb</skos:altLabel>
+	<skos:definition>A grave in which the burial chamber was reached by a vertical shaft, the burials themselves placed at the bottom of a deep narrow pit. The tomb was usually rectangular, and the burial chamber was roofed and the shaft above it filled in.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/shaft_grave/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tumulus/5.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">tumulus</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grabhügel</skos:prefLabel>
+	<skos:definition>A mound of earth or stones built over a burial - most often a large, circular tomb.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.578</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tumulus/5.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chamber_grave/5.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">chamber grave</skos:prefLabel>
+	<skos:altLabel xml:lang="en">crypt</skos:altLabel>
+	<skos:definition>A vault or subterranean chamber used as a burial place.</skos:definition>
+	<dc:source>0.0</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chamber_grave/5.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cairn/5.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cairn</skos:prefLabel>
+	<skos:definition>A pyramid of rough stones, raised for a memorial or mark of some kind, usually over a burial but also as a landmark or monument.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.88.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaGravetype"/>
+	<skos:editorialNote>dc_area_gravetype;8</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cairn/5.8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">grave disturbance</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grabmanupulation</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;084</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaManipulationofgraves">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/consecutive_burials/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">consecutive burials</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Nachbestattung</skos:prefLabel>
+	<skos:definition>The grave has been intersected with another grave.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaManipulationofgraves"/>
+	<skos:editorialNote>dc_area_manipulationofgraves;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/consecutive_burials/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/construction_of_settlement/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">construction of settlement</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Störung durch nachfolgende Siedlung</skos:prefLabel>
+	<skos:definition>The grave has been disrupted because of building of a new settlement.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaManipulationofgraves"/>
+	<skos:editorialNote>dc_area_manipulationofgraves;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/construction_of_settlement/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/looting/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">looting</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grabraub</skos:prefLabel>
+	<skos:definition>Any unscientific and illegal act of pludering archaeological sites, especially graves, for profit.</skos:definition>
+	<dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.318.</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaManipulationofgraves"/>
+	<skos:editorialNote>dc_area_manipulationofgraves;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/looting/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/5.4">
+	<skos:definition>There has been no disturbance or removal of the grave prior to the research conducted at the site.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaManipulationofgraves"/>
+	<skos:editorialNote>dc_area_manipulationofgraves;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_disturbance/4.084">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">human remains</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">menschliche Überreste</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;085</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofgraveshumanremains">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_absence/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">human remains absence</skos:prefLabel>
+	<skos:definition>Human remains were not found on the site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofgraveshumanremains"/>
+	<skos:editorialNote>dc_area_evidenceofgraveshumanremains;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_absence/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_presence/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">human remains presence</skos:prefLabel>
+	<skos:definition>Human remains were found on the site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofgraveshumanremains"/>
+	<skos:editorialNote>dc_area_evidenceofgraveshumanremains;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_presence/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">sex</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Geschlecht</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;095</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSexes">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/male_individuals/6.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">male individuals</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">mänlich</skos:prefLabel>
+	<dc:source>http://dbpedia.org/page/Male</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSexes"/>
+	<skos:editorialNote>dc_area_sexes;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/male_individuals/6.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/female_individuals/6.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">female individuals</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">weiblich</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSexes"/>
+	<skos:editorialNote>dc_area_sexes;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/female_individuals/6.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex_not_specified/6.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">sex not specified</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">nicht bestimmt</skos:prefLabel>
+	<skos:definition>The sex of the found human remains was not determined or could not be specified.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSexes"/>
+	<skos:editorialNote>dc_area_sexes;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex_not_specified/6.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_specialist_report/6.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">part of specialist report</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSexes"/>
+	<skos:editorialNote>dc_area_sexes;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sex/5.095">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_specialist_report/6.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">human remains type</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Art der menschlichen Überreste</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;096</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTypeofhumanremains">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cremation/6.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">cremation</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTypeofhumanremains"/>
+	<skos:editorialNote>dc_area_typeofhumanremains;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cremation/6.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/inhumation/6.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">inhumation</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTypeofhumanremains"/>
+	<skos:editorialNote>dc_area_typeofhumanremains;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/inhumation/6.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/secondary_deposition/6.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">secondary deposition</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTypeofhumanremains"/>
+	<skos:editorialNote>dc_area_typeofhumanremains;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_type/5.096">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/secondary_deposition/6.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">age group</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Altersgruppe</skos:prefLabel>
+	<skos:definition>Age group of human remains.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;097</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains/4.085">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/neonate/6.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">neonate</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/neonate/6.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/infans_i_(0-6)/6.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">infans i (0-6)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/infans_i_(0-6)/6.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/infans_ii_(7-12)/6.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">infans ii (7-12)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/infans_ii_(7-12)/6.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/juvenile_(13-18)/6.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">juvenile (13-18)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/juvenile_(13-18)/6.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult_(19-40)/6.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">adult (19-40)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult_(19-40)/6.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult-mature_(19-45)/6.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">adult-mature (19-45)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult-mature_(19-45)/6.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mature_(41-60)/6.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">mature (41-60)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mature_(41-60)/6.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mature-senile_(51-70)/6.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">mature-senile (51-70)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;8</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mature-senile_(51-70)/6.8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/senile_(60-)/6.9">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">senile (60-)</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;9</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/senile_(60-)/6.9"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_not_specified/6.10">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">age not specified</skos:prefLabel>
+	<skos:definition>The age of human remains has not been specified.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;10</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_not_specified/6.10"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_specialist_report/6.11">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">part of specialist report</skos:prefLabel>
+	<skos:definition>The age of human remains has been noted in a specialist report.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;11</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_specialist_report/6.11"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subadult/6.14">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">subadult</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;14</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/subadult/6.14"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult/6.15">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">adult</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaAgegroups"/>
+	<skos:editorialNote>dc_area_agegroups;15</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/age_group/5.097">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/adult/6.15"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">morturary feature</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Befunde</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;086</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaMortuaryfeatures">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pyre/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pyre</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Scheiterhaufen</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaMortuaryfeatures"/>
+	<skos:editorialNote>dc_area_mortuaryfeatures;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pyre/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/separating_wall/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">separating wall</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">trennende Mauer</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaMortuaryfeatures"/>
+	<skos:editorialNote>dc_area_mortuaryfeatures;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/separating_wall/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">platform</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Plattform</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaMortuaryfeatures"/>
+	<skos:editorialNote>dc_area_mortuaryfeatures;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/morturary_feature/4.086">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/platform/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">grave location</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;087</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave/3.071">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intramural/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">intramural</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography"/>
+	<skos:editorialNote>dc_area_topography;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intramural/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/extramural/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">extramural</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography"/>
+	<skos:editorialNote>dc_area_topography;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/extramural/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/in_cave/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">in cave</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography"/>
+	<skos:editorialNote>dc_area_topography;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/in_cave/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/next_to_cave/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">next to cave</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography"/>
+	<skos:editorialNote>dc_area_topography;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/next_to_cave/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_house/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">part of house</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaTopography"/>
+	<skos:editorialNote>dc_area_topography;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_location/4.087">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/part_of_house/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">occupation evidence</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Nachweis von menschlichen Tätigkeiten</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;088</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave/3.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/cave/3.1">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Area properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fireplace/5.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">fireplace</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Feuerstelle</skos:prefLabel>
+	<skos:definition>A specially built place in a cave or a rockshelter where a fire can be built marking the use of a cave by the early men.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;1</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/fireplace/5.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_facilities/5.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">storage facilities</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lagerungseinrichtungen</skos:prefLabel>
+	<skos:definition>A place, amenity, or piece of equipment provided to store food and other goods inside of a cave or a rockshelter as evidence of human occupation.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;2</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/storage_facilities/5.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_hole/5.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">post hole</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Pfostenloch</skos:prefLabel>
+	<skos:definition>A hole dug to provide a firm base for an upright post, often with stone packing found in a cave or a rockshelter as evidence of human occupation.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;3</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/post_hole/5.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_setting/5.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone setting</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Steinsetzung</skos:prefLabel>
+	<skos:definition>An arrangement of one or more standing stones inside or in the vicinity of a cave or a rockshelter as a sign of human occupation.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;4</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_setting/5.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit/5.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pit</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Grube</skos:prefLabel>
+	<skos:definition>A hole or cavity in the ground, either natural or the result of human activity.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;5</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pit/5.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_structure/5.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">clay structure</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lehmstruktur</skos:prefLabel>
+	<skos:definition>A manmade construction of clay found inside of a cave or rockshelter as the evidence for human occupation.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;6</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_structure/5.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hearth/5.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">hearth</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Herd</skos:prefLabel>
+	<skos:definition>The slab or place on which a fire is made inside or in the vicinity of a cave or a rockshelter as an evidence of human occupation.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaEvidenceofocupation"/>
+	<skos:editorialNote>dc_area_evidenceofocupation;7</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/occupation_evidence/4.088">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hearth/5.7"/>
+</rdf:Description>
+
+</rdf:RDF>

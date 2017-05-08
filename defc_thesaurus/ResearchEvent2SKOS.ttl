@@ -1,0 +1,719 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the Research Event class in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> a skos:ConceptScheme ;
+	rdfs:comment "A concept scheme related to the particular Research Event properties" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/research_type/1.047> a skos:Concept ;
+	skos:prefLabel "research type"@en , "Forschungsart"@de ;
+	skos:definition "A type of research conducted during archaeological investigation." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_not_in_database;047" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , "NotInDatabase" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> a skos:Concept ;
+	skos:prefLabel "intrusive"@en , "Intrusiv"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.048" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/research_type/1.047> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/research_type/1.047> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the particular properties of Research Event in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/borehole_survey/3.1> a skos:Concept ;
+	skos:prefLabel "borehole survey"@en , "Bohrung"@de ;
+	skos:definition "Type of survey involving the drilling of deep and narrow shafts in the gorund used to describe deposits, understand stratigraphy and collect cores amples." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145112" ;
+	skos:editorialNote "dc_researchevet_researchtype;1" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/borehole_survey/3.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> rdfs:comment "A concept schema related to the particular properties of Research Event in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> a skos:Concept ;
+	skos:prefLabel "excavation"@en , "Ausgrabung"@de ;
+	skos:editorialNote "dc_not_in_database;049" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> rdfs:comment "A concept schema related to the particular properties of Research Event." .
+
+<excavation:_rescue/4.2> a skos:Concept ;
+	skos:prefLabel "excavation: rescue"@en , "Rettungsgrabung"@de ;
+	skos:altLabel "rescue excavation"@en ;
+	skos:definition "Controlled investigation, recording and removal of archaeological deposits under threat of destruction from building development." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145157" ;
+	skos:editorialNote "dc_researchevet_researchtype;2" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> skos:narrower <excavation:_rescue/4.2> .
+
+<excavation:_research/4.3> a skos:Concept ;
+	skos:prefLabel "excavation: research"@en , "Forschungsgrabung"@de ;
+	skos:altLabel "research excavation"@en ;
+	skos:definition "Controlled investigation, recording and removal of archaeological deposits in targeted areas in order to answer specific questions relating to a particular archaeological site or landscape." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=14735" ;
+	skos:editorialNote "dc_researchevet_researchtype;3" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> skos:narrower <excavation:_research/4.3> .
+
+<excavation:_underwater/4.4> a skos:Concept ;
+	skos:prefLabel "excavation: underwater"@en , "Unterwassergrabung"@de ;
+	skos:altLabel "underwater excavation"@en ;
+	skos:definition "Controlled intrusive fieldwork which examines, records and interprets arechaeological depostis, features and structures and, as appripriate, retrieves artefacts and ecofats within a specific underwater area." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=163244" ;
+	skos:editorialNote "dc_researchevet_researchtype;4" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> skos:narrower <excavation:_underwater/4.4> .
+
+<excavation:_undetermined/4.5> a skos:Concept ;
+	skos:prefLabel "excavation: undetermined"@en ;
+	skos:editorialNote "dc_researchevet_researchtype;5" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/excavation/3.049> skos:narrower <excavation:_undetermined/4.5> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_observation_(monitoring)/3.6> a skos:Concept ;
+	skos:prefLabel "field observation (monitoring)"@en , "archäologische Beobachtung (Kontrolle)"@de ;
+	skos:altLabel "field observation"@en , " monitoring"@en , "archäologische Beobachtung"@de , " Kontrolle"@de ;
+	skos:definition "Periodic visits being made to a site by an archaeologist to record archaeological deposts and recover finds that have come to light since the previous cisit. An archaeological presence is not maintained during gorundwork as it is with a watching brief." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=14513" ;
+	skos:editorialNote "dc_researchevet_researchtype;6" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_observation_(monitoring)/3.6> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_detecting_use/3.7> a skos:Concept ;
+	skos:prefLabel "metal detecting use"@en , "Metalldetektor Einsatz"@de ;
+	skos:altLabel "metal detection"@en ;
+	skos:definition "The hobby of using a metal detector to hunt for buried coins or artefacts; alternatively the use of a metal detector to locate metal artefacts on an archaeological excavation that otherwise would go unnoticed." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145148" ;
+	skos:editorialNote "dc_researchevet_researchtype;7" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_detecting_use/3.7> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> a skos:Concept ;
+	skos:prefLabel "evaluation"@en , "Evaluierung"@de ;
+	skos:editorialNote "dc_not_in_database;050" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/test_pit/4.8> a skos:Concept ;
+	skos:prefLabel "test pit"@en , "Sondage"@de ;
+	skos:definition "Systematically positioned hole, or holes, utilised in all studies that aim to sample the nature of the topsoil and subsurface deposits." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145172" ;
+	skos:editorialNote "dc_researchevet_researchtype;8" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/test_pit/4.8> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/trial_trench/4.9> a skos:Concept ;
+	skos:prefLabel "trial trench"@en , "Suchschnitt"@de ;
+	skos:definition "Archaeologically excavated trench, either hand or machine dug, as part of a sampling programme to evaluate the presence/absence, nature, preservation, age and extent of any buried archaeological features." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145175" ;
+	skos:editorialNote "dc_researchevet_researchtype;9" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/trial_trench/4.9> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/underwater_evaluation/4.10> a skos:Concept ;
+	skos:prefLabel "underwater evaluation"@en , "Testgrabung Unterwasser"@de ;
+	skos:definition "A limited programme of intrusive fieldwork which determines the presence or absence of archaeological features, structures, deposits, artefacts or ecofacts within a specified underwater area." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=163243" ;
+	skos:editorialNote "dc_researchevet_researchtype;10" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/evaluation/3.050> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/underwater_evaluation/4.10> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/profile_clearing/3.24> a skos:Concept ;
+	skos:prefLabel "profile clearing"@en ;
+	skos:editorialNote "dc_researchevet_researchtype;24" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/intrusive/2.048> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/profile_clearing/3.24> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> a skos:Concept ;
+	skos:prefLabel "non-intrusive"@en , "Nicht-intrusiv"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.051" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/research_type/1.047> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/research_type/1.047> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> a skos:Concept ;
+	skos:prefLabel "field survey"@en , "Geländeprospektion"@de ;
+	skos:altLabel "survey"@en , " prospection"@en , "Prospektion"@de ;
+	skos:editorialNote "dc_not_in_database;052" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architectural_survey/4.14> a skos:Concept ;
+	skos:prefLabel "architectural survey"@en , "Bauaufnahme"@de ;
+	skos:definition "Recording and analysis of built structures utilising close obervation as well as manual or electronic survey equipment such as GPS and REDM (Reflectorless Electromagnetic Distance measurement). Includes research, fieldwork and report." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=14511" ;
+	skos:editorialNote "dc_researchevet_researchtype;14" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architectural_survey/4.14> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> rdfs:comment "A concept schema related to the particular properties of Research Event." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> a skos:Concept ;
+	skos:prefLabel "field walking survey"@en , "Feldbegehung"@de ;
+	skos:editorialNote "dc_not_in_database;053" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> skos:prefLabel "Feldbegehung: nicht bestimmt"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_undetermined%2F5.11> a skos:Concept ;
+	skos:prefLabel "field walking survey: undetermined"@en , "Feldbegehung: nicht bestimmt"@de ;
+	skos:editorialNote "dc_researchevet_researchtype;11" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_undetermined%2F5.11> ;
+	skos:prefLabel "unsystematisch Feldbegehung"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_non-systematic%2F5.15> a skos:Concept ;
+	skos:prefLabel "field walking survey: non-systematic"@en , "unsystematisch Feldbegehung"@de ;
+	skos:definition "The unsystematic study of ground surfaces and collection of visible archaeological material." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145176" ;
+	skos:editorialNote "dc_researchevet_researchtype;15" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_non-systematic%2F5.15> ;
+	skos:prefLabel "systematisch Feldbegehung"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_systematic%2F5.16> a skos:Concept ;
+	skos:prefLabel "field walking survey: systematic"@en , "systematisch Feldbegehung"@de ;
+	skos:definition "The systematic study of ground surfaces and collection of visible archaeological material. Fieldwalking can be carried out as line-walking, grid collection and transect or quadrant sampling. Any material recovered is logged and stored by sample unit." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145132" ;
+	skos:editorialNote "dc_researchevet_researchtype;16" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey/4.053> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_walking_survey%3A_systematic%2F5.16> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> a skos:Concept ;
+	skos:prefLabel "geophysical survey"@en , "geophysicalischer Survey"@de ;
+	skos:editorialNote "dc_not_in_database;054" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> skos:prefLabel "Feldbegehung mit Metalldetektor"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_detecting_survey/5.20> a skos:Concept ;
+	skos:prefLabel "metal detecting survey"@en , "Feldbegehung mit Metalldetektor"@de ;
+	skos:altLabel "metal detection"@en ;
+	skos:definition "Structured and carefully executed scanning of the ground surface with a metal detecting device in order to recover surface scatters of metal objects and plot them spatially within the study area as part of an archaeological survey or metal detecting rally" ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145147" ;
+	skos:editorialNote "dc_researchevet_researchtype;20" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metal_detecting_survey/5.20> ;
+	skos:prefLabel "geomagnetische Messung"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey%3A_magnetic%2F5.17> a skos:Concept ;
+	skos:prefLabel "geophysical survey: magnetic"@en , "geomagnetische Messung"@de ;
+	skos:altLabel "magnetometry survey"@en , " magnetometry"@en , "Geomagnetik"@de ;
+	skos:definition "Survey using a magnetometer, a device capable detecting various in magnetic susceptibility between topsoils, subsoils and rocks, can also be used in a maritime context to detect variations in the magnetic field of seabed sediments." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145144" ;
+	skos:editorialNote "dc_researchevet_researchtype;17" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey%3A_magnetic%2F5.17> ;
+	skos:prefLabel "Bodenradarmessung"@de .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey%3A_radar%2F5.18> a skos:Concept ;
+	skos:prefLabel "geophysical survey: radar"@en , "Bodenradarmessung"@de ;
+	skos:altLabel "ground penetratig radar survey"@en , "GPR"@en , " ground penetrating radar"@en ;
+	skos:definition "A technique that measures the amount of time it takes pulses of electromagnetic energy sent into the ground, from a transmitter, to reflect back from the interfaces between layers and other subsurface features in order to produce a subsurface profile." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145135" ;
+	skos:editorialNote "dc_researchevet_researchtype;18" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey/4.054> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geophysical_survey%3A_radar%2F5.18> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/laser_scanning_survey/4.19> a skos:Concept ;
+	skos:prefLabel "laser scanning survey"@en , "Laserscanning"@de ;
+	skos:altLabel "LS"@en ;
+	skos:definition "The recording of a surface, or surfaces, using scanning technologies, to create a 3D model of the target structure/object." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=146342" ;
+	skos:editorialNote "dc_researchevet_researchtype;19" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/laser_scanning_survey/4.19> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/underwater_survey/4.23> a skos:Concept ;
+	skos:prefLabel "underwater survey"@en , "Unterwassersurvey"@de ;
+	skos:definition "The non-intrusive processes by which information is collected about the location, distribution and organisation of past human activities that are now submerged by water. The approaches can be either extensive or intensive depending on the objectives." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=163245" ;
+	skos:editorialNote "dc_researchevet_researchtype;23" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/field_survey/3.052> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/underwater_survey/4.23> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> a skos:Concept ;
+	skos:prefLabel "heritage assessment"@en ;
+	skos:editorialNote "dc_not_in_database;055" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/aerial_photograph_interpretation/4.12> a skos:Concept ;
+	skos:prefLabel "aerial photograph interpretation"@en , "Luftbildauswertung"@de ;
+	skos:definition "The interpretation of information on aerial photographs usually resulting in the production of maps and records of archaeological sites and landscapes. Many aerial photographs may be consulted for a single analytical survey." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=147552" ;
+	skos:editorialNote "dc_researchevet_researchtype;12" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/aerial_photograph_interpretation/4.12> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/antiquarian_observation/4.13> a skos:Concept ;
+	skos:prefLabel "antiquarian observation"@en , "Altgrabung/-untersuchung"@de ;
+	skos:definition "Observations made by antiquarians - those who studied sites and landscapes prior to archaeology and architectural history becoming established disciplined in the 19th century - and reported through publivation or from unpublished manuscripts." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=14634" ;
+	skos:editorialNote "dc_researchevet_researchtype;13" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/heritage_assessment/3.055> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/antiquarian_observation/4.13> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> a skos:Concept ;
+	skos:prefLabel "remote sensing"@en , "Fernerkundung"@de ;
+	skos:editorialNote "dc_not_in_database;056" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/airborne_laser_scanning_(ALS)/4.21> a skos:Concept ;
+	skos:prefLabel "airborne laser scanning (ALS)"@en , "Airborne laser scanning (ALS)"@de ;
+	skos:altLabel "LIDAR"@en , "LiDAR"@en , " lidar"@en , "ALS"@en ;
+	skos:definition "Light detection and ranging device is mounted on an aircraft to recird reflected laser pulses. The data can be used to produce digital elevation models." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_researchevet_researchtype;21" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> ;
+	skos:altLabel " airborne laser scanning"@en .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/airborne_laser_scanning_(ALS)/4.21> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/satellite_imaging/4.22> a skos:Concept ;
+	skos:prefLabel "satellite imaging"@en , "Satellitenbilderauswertung"@de ;
+	skos:definition "The capture of imagery using an orbiting satellite. The type of imagery is very varied including visible light photography, infrared and multi spectral photography as well as imagery derived from radar and lidar data." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=566&term_no=145162" ;
+	skos:editorialNote "dc_researchevet_researchtype;22" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/remote_sensing/3.056> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/satellite_imaging/4.22> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/petrological_research/3.25> a skos:Concept ;
+	skos:prefLabel "petrological research"@en , "petrologische Auswertung"@de ;
+	skos:altLabel "petrology"@en , "Petrologie"@de ;
+	skos:definition "The study concerned with the origin, structure, and composition of rocks." ;
+	dc:source "https://en.oxforddictionaries.com/definition/petrology" ;
+	skos:editorialNote "dc_researchevet_researchtype;25" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/petrological_research/3.25> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geological_research/3.26> a skos:Concept ;
+	skos:prefLabel "geological research"@en , "geologische Auswertung"@de ;
+	skos:altLabel "geology"@en , "Geologie"@de ;
+	skos:definition "The scientific tudy of minerals." ;
+	dc:source "https://en.oxforddictionaries.com/definition/mineralogy" ;
+	skos:editorialNote "dc_researchevet_researchtype;26" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchevetResearchtype> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/non-intrusive/2.051> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geological_research/3.26> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> a skos:Concept ;
+	skos:prefLabel "special analysis"@en ;
+	skos:definition "A type of special analysis conducted during an archaeological investigation." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_not_in_database;057" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , "NotInDatabase" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> a skos:ConceptScheme ;
+	rdfs:comment "A concept scheme related to the particular Research Event properties" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/animal_remains_report/2.1> a skos:Concept ;
+	skos:prefLabel "animal remains report"@en , "archäozoologischer Bericht"@de ;
+	skos:altLabel "zooarchaeology"@en , " archaeozoology"@en , "Archäozoologie"@de ;
+	skos:definition "The study of animal remains from archaeological sites." ;
+	dc:source "http://www.ucl.ac.uk/archaeology/research/tags/zooarchaeology" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:editorialNote "dc_researchevent_special_analysis/2.1" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/animal_remains_report/2.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> a skos:Concept ;
+	skos:prefLabel "archeobotany"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.058" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> rdfs:comment "A concept schema related to the particular properties of Research Event in the database." .
+
+<archaeobotany:_macro-botany/3.2> a skos:Concept ;
+	skos:prefLabel "archaeobotany: macro-botany"@en , "Makrobotanik"@de ;
+	skos:altLabel "macro-botany"@en , " macro botany"@en ;
+	skos:definition "Analysis of plant remains from archaeological sites visible with the naked eye." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_researchevent_special_analysis;2" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> skos:narrower <archaeobotany:_macro-botany/3.2> .
+
+<archaeobotany:_pollen/3.3> a skos:Concept ;
+	skos:prefLabel "archaeobotany: pollen"@en , "Pollenanalyse"@de ;
+	skos:altLabel "pollen"@en , " pollen analysis"@en ;
+	skos:definition "The study of pollen grains in soil samples from an archaeological site, which provides information on ancient human use of plansts and plant resources." ;
+	dc:source "Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York." ;
+	skos:editorialNote "dc_researchevent_special_analysis;3" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/archeobotany/2.058> skos:narrower <archaeobotany:_pollen/3.3> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> a skos:Concept ;
+	skos:prefLabel "ceramic analysis"@en ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.059" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> .
+
+<ceramics:_sourcing/3.4> a skos:Concept ;
+	skos:prefLabel "ceramics: sourcing"@en , "Herkunftanalyse"@de ;
+	skos:altLabel "ceramics sourcing"@en , " sourcing"@en ;
+	skos:definition "An analysis to find out where the ceramics came from." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_researchevent_special_analysis;4" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> skos:narrower <ceramics:_sourcing/3.4> .
+
+<ceramics:_thin_section_analysis/3.5> a skos:Concept ;
+	skos:prefLabel "ceramics: thin section analysis"@en , "Dünnschliffanalyse"@de ;
+	skos:altLabel "thin section analysis"@en , " thin section"@en ;
+	skos:definition "A laboratory preparation of pottery (or other materials such as rock, mineral, soil, bones) for tracing the movement of pottery and assicuated trade through provenance determination." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_researchevent_special_analysis;5" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramic_analysis/2.059> skos:narrower <ceramics:_thin_section_analysis/3.5> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> a skos:Concept ;
+	skos:prefLabel "dating"@en , "Datierung"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.060" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<dating:_archaeomagnetism/3.6> a skos:Concept ;
+	skos:prefLabel "dating: archaeomagnetism"@en , "Archäomagnetismus"@de ;
+	skos:definition "Measures the remanent magnetisation direction of mafnetic minerals. Useful for dating fired structures, in-situ since their last firing, and for sediments settling from non turbulent water bodies. In the UK, calibration data extends back to 1 BC." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=14214" ;
+	skos:editorialNote "dc_researchevent_special_analysis;6" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_archaeomagnetism/3.6> .
+
+<dating:_dendrochronology/3.7> a skos:Concept ;
+	skos:prefLabel "dating: dendrochronology"@en , "Dendrochronologie"@de ;
+	skos:altLabel "dendrochronology"@en ;
+	skos:definition "The measuring of annual tree-ring growth shown by most tree species in temperated regions. Regional chronologies are required to date any particular priece of wood, the longest of which, for Germany, works for the present to approximately 14 years ago." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142131" ;
+	skos:editorialNote "dc_researchevent_special_analysis;7" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_dendrochronology/3.7> .
+
+<dating:_lead_isotope_dating/3.8> a skos:Concept ;
+	skos:prefLabel "dating: lead isotope dating"@en , "Bleiisotopendatierung"@de ;
+	skos:altLabel "lead isotope dating"@en ;
+	skos:definition "A technique which uses the measurement of decay in radioactive lead (Pb) isotopes to determine a date. Useful for sediments and lead-based paints between 1 and 4 years old." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142155" ;
+	skos:editorialNote "dc_researchevent_special_analysis;8" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_lead_isotope_dating/3.8> .
+
+<dating:_luminescence_dating/3.9> a skos:Concept ;
+	skos:prefLabel "dating: luminescence dating"@en , "Lumineszenz"@de ;
+	skos:altLabel "luminescence"@en , " luminescence dating"@en ;
+	skos:definition "A range of techniques that use the build up of charge stored within a crystalline material to estimate its age." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142155" ;
+	skos:editorialNote "dc_researchevent_special_analysis;9" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_luminescence_dating/3.9> .
+
+<dating:_mitochondrial_dna/3.10> a skos:Concept ;
+	skos:prefLabel "dating: mitochondrial dna"@en , "Mitochondrien-DNA"@de ;
+	skos:altLabel "mitochondrial DNA"@en ;
+	skos:definition "A dating technique for the founding of individual populations based on the assumption of steady rates of mutation in mitochondrial D_NA. Sometimes used to produce dates for stratigraphic layers containing fossil specimens of populations." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=14217" ;
+	skos:editorialNote "dc_researchevent_special_analysis;10" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_mitochondrial_dna/3.10> .
+
+<dating:_oxygen_isotope_analysis/3.11> a skos:Concept ;
+	skos:prefLabel "dating: oxygen isotope analysis"@en , "Sauerstoffisotopenanalyse"@de ;
+	skos:altLabel "oxygen isotope analysis"@en ;
+	skos:definition "The use of oxygen (O) isotope rations in ice or ocean sedimet cores to data global environmental change." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142178" ;
+	skos:editorialNote "dc_researchevent_special_analysis;11" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_oxygen_isotope_analysis/3.11> .
+
+<dating:_radiocarbon_dating/3.12> a skos:Concept ;
+	skos:prefLabel "dating: radiocarbon dating"@en , "C14-Datierung"@de ;
+	skos:altLabel "C14"@en , " C14 dating"@en ;
+	skos:definition "The measurement of the ration of the radioactive Carbon 14 (C-14) isotope and non-radioactive carbon isotopes. Useful for dating organic materials such as wood and bone between 5 and 45 years old." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142188" ;
+	skos:editorialNote "dc_researchevent_special_analysis;12" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating/2.060> skos:narrower <dating:_radiocarbon_dating/3.12> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DNA_analysis/2.13> a skos:Concept ;
+	skos:prefLabel "DNA analysis"@en , "DNA-Analyse"@de ;
+	skos:definition "Any technique used to analyze genes and DNA to identify individuals by characteristics of their DNA." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:editorialNote "dc_researchevent_special_analysis/2.13" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DNA_analysis/2.13> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_report/2.14> a skos:Concept ;
+	skos:prefLabel "human remains report"@en , "Bericht physische Athropologie"@de ;
+	skos:definition "Skeletal remains analyzed for sex, age at death, stature, and possible causes of death." ;
+	dc:source "http://www.sfu.museum/forensics/eng/pg_media-media_pg/anthropologie-anthropology/" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:editorialNote "dc_researchevent_special_analysis/2.14" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/human_remains_report/2.14> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> a skos:Concept ;
+	skos:prefLabel "stable isotope analysis"@en , "Isotopanalyse"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.061" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<isotopes:_carbon_(C)/3.15> a skos:Concept ;
+	skos:prefLabel "isotopes: carbon (C)"@en , "Kohlenstoff (C)"@de ;
+	skos:altLabel "carbon analysis"@en , "Kohlenstoffanalyse"@de ;
+	skos:definition "Comparison of different proportions of natural occuring carbon isotope to determine the kind of environment and individual came from and their likely diet." ;
+	dc:source "http://www.sfu.museum/forensics/eng/pg_media-media_pg/isotopes/" ;
+	skos:editorialNote "dc_researchevent_special_analysis;15" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> skos:narrower <isotopes:_carbon_(C)/3.15> .
+
+<isotopes:_lead_(Pb)/3.16> a skos:Concept ;
+	skos:prefLabel "isotopes: lead (Pb)"@en , "Blei (Pb)"@de ;
+	skos:altLabel "lead analysis"@en , "Bleianalyse"@de ;
+	skos:definition "Comparison of different proportions of natural occuring lead isotope to determine the geographical origin of ancient metals and other materials, for which minerals containing lead were used in their manufacture, for example: pigments, glass, glaze and pai" ;
+	dc:source "http://oxalid.arch.ox.ac.uk/" ;
+	skos:editorialNote "dc_researchevent_special_analysis;16" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> skos:narrower <isotopes:_lead_(Pb)/3.16> .
+
+<isotopes:_nitrogen_(N)/3.17> a skos:Concept ;
+	skos:prefLabel "isotopes: nitrogen (N)"@en , "Stickstoff (N)"@de ;
+	skos:altLabel "nitrogen analysis"@en , "Stickstoffanalyse"@de ;
+	skos:definition "Comparison of different proportions of natural occuring nitrogen isotope to determine what level of the food chain an organism was on and whether they were herbivore, a carnivore or an omnivore." ;
+	dc:source "http://www.sfu.museum/forensics/eng/pg_media-media_pg/isotopes/" ;
+	skos:editorialNote "dc_researchevent_special_analysis;17" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> skos:narrower <isotopes:_nitrogen_(N)/3.17> .
+
+<isotopes:_oxygen_(O)/3.18> a skos:Concept ;
+	skos:prefLabel "isotopes: oxygen (O)"@en , "Sauerstoff (O)"@de ;
+	skos:altLabel "oxygen analysis"@en , "Sauerstoffanalyse"@de ;
+	skos:definition "Comparison of different proportions of natural occuring oxygen isotope to determine of an individual moved to different geographic areas during their lifetime or if two or more people are from the same area." ;
+	dc:source "http://www.sfu.museum/forensics/eng/pg_media-media_pg/isotopes/" ;
+	skos:editorialNote "dc_researchevent_special_analysis;18" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> skos:narrower <isotopes:_oxygen_(O)/3.18> .
+
+<isotopes:_strontium_(Sr)/3.19> a skos:Concept ;
+	skos:prefLabel "isotopes: strontium (Sr)"@en , "Strontium (Sr)"@de ;
+	skos:altLabel "strontium analysis"@en , "Strontiumanalyse"@de ;
+	skos:definition "Comparison of different proportions of natural occuring strontium isotope to determine where a person came from or to distinguish individuals whose remains are comingeld but who come from different places." ;
+	dc:source "http://www.sfu.museum/forensics/eng/pg_media-media_pg/isotopes/" ;
+	skos:editorialNote "dc_researchevent_special_analysis;19" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stable_isotope_analysis/2.061> skos:narrower <isotopes:_strontium_(Sr)/3.19> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lithics_analysis/2.062> a skos:Concept ;
+	skos:prefLabel "lithics analysis"@en , "Steinanalyse"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.062" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lithics_analysis/2.062> .
+
+<lithics:_raw_material_sourcing/3.20> a skos:Concept ;
+	skos:prefLabel "lithics: raw material sourcing"@en , "Herkunftanalyse"@de ;
+	skos:altLabel "lithics sourcing"@en , " sourcing"@en ;
+	skos:definition "An analysis to find out where the raw material of the object was obtained." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_researchevent_special_analysis;20" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lithics_analysis/2.062> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lithics_analysis/2.062> skos:narrower <lithics:_raw_material_sourcing/3.20> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metallurgy/2.21> a skos:Concept ;
+	skos:prefLabel "metallurgy"@en , "Metallurgie"@de ;
+	skos:definition "The branch of science and technology concerned with the properties of metals and their production and purification." ;
+	dc:source "https://en.oxforddictionaries.com/definition/metallurgy" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:editorialNote "dc_researchevent_special_analysis/2.21" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/metallurgy/2.21> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mineralogy/2.22> a skos:Concept ;
+	skos:prefLabel "mineralogy"@en , "Mineralogie"@de ;
+	skos:definition "The scientific study of minerals." ;
+	dc:source "https://en.oxforddictionaries.com/definition/mineralogy" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:editorialNote "dc_researchevent_special_analysis/2.22" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mineralogy/2.22> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> a skos:Concept ;
+	skos:prefLabel "soil analysis"@en , "Bodenanalyse"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> ;
+	skos:editorialNote "dc_not_in_database/2.063" ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/special_analysis/1.057> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_particle_size_analysis%2F3.23> a skos:Concept ;
+	skos:prefLabel "soil analysis: particle size analysis"@en , "Korngrößenanalyse"@de ;
+	skos:altLabel "particle size analysis"@en ;
+	skos:definition "The analysis of the distribution and proportion of sand, silt and clay in a deposit." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142179" ;
+	skos:editorialNote "dc_researchevent_special_analysis;23" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_particle_size_analysis%2F3.23> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_chemistry%2F3.24> a skos:Concept ;
+	skos:prefLabel "soil analysis: soil chemistry"@en , "Bodenchemie"@de ;
+	skos:altLabel "soil chemistry"@en ;
+	skos:definition "The study of the chemical composition and properties of soils and archaeological deposits in order to determine the nature and extent of activities within the area examined." ;
+	dc:source "http://oxfordindex.oup.com/view/1.193/oi/authority.21183151659?rskey=A9d7Zt&result=&q=soil%2chemistry" ;
+	skos:editorialNote "dc_researchevent_special_analysis;24" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_chemistry%2F3.24> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_micromorphology%2F3.25> a skos:Concept ;
+	skos:prefLabel "soil analysis: soil micromorphology"@en , "Mikromorphologie"@de ;
+	skos:altLabel "soil micromorphology"@en , " micromorphology"@en ;
+	skos:definition "Soil micromorphology consits of the integrated use of various microscopic techniques for studying the arrangement and the nature othat form sediments and soils to provide information which can discriminate the sedimentary signatures diagnostic of human-re" ;
+	dc:source "http://www.britac.ac.uk/pubs/proc/files/77p39.pdf" ;
+	skos:editorialNote "dc_researchevent_special_analysis;25" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_micromorphology%2F3.25> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_phosphorus_analysis%2F3.26> a skos:Concept ;
+	skos:prefLabel "soil analysis: soil phosphorus analysis"@en , "Phosphoranalyse"@de ;
+	skos:altLabel "soil phosphorus analysis"@en ;
+	skos:definition "The analysis of the amount of phosphorus (P) present in a soil." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=56&term_no=142197" ;
+	skos:editorialNote "dc_researchevent_special_analysis;26" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearchEventSchema> , <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ResearcheventSpecialAnalysis> ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis/2.063> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/soil_analysis%3A_soil_phosphorus_analysis%2F3.26> .

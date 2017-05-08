@@ -1,0 +1,123 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the class Area (and Research Event) in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema for terms that are not present in the database, but are essential for hierarchy of terms related to the period (Area class)" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> a skos:Concept ;
+	skos:prefLabel "dating method"@en , "Datierungsmethode"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_not_in_database;045" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodDatingmethod> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the Area and Research Event in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/radiocarbon_dating/4.1> a skos:Concept ;
+	skos:prefLabel "radiocarbon dating"@en , "C14-Datierung"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> ;
+	skos:altLabel "C14"@en ;
+	skos:definition "The measurement of the ration of the radioactive Carbon 14 (C-14) isotope and non-radioactive carbon isotopes. Useful for dating organic materials such as wood and bone between 500 and 45000 years old." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=560&term_no=142188" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datingmethod;1" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/radiocarbon_dating/4.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dendrochronology/4.2> a skos:Concept ;
+	skos:prefLabel "dendrochronology"@en , "Dendrochronologie"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> ;
+	skos:definition "The measuring of annual tree-ring growth shown by most tree species in temperated regions. Regional chronologies are required to date any particular priece of wood, the longest of which, for Germany, works for the present to approximately 14000 years ago." ;
+	dc:source "http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=560&term_no=142131" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datingmethod;2" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dendrochronology/4.2> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/material_culture/4.3> a skos:Concept ;
+	skos:prefLabel "material culture"@en , "materielle Kultur"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> ;
+	skos:definition "The study of material culture centers upon objects, their properties, and the materials that they are made of, and the ways in which these material facets are central to an understanding of culture and social relations." ;
+	dc:source "http://oxfordindex.oup.com/view/10.1093/obo/9780199766567-0085" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datingmethod;3" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/material_culture/4.3> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/4.4> a skos:Concept ;
+	skos:prefLabel "none recorded"@en ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> ;
+	skos:definition "The dating method of finds or the site has not been recorded in the documentation." ;
+	dc:source "OREA" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datingmethod;4" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/none_recorded/4.4> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> a skos:Concept ;
+	skos:prefLabel "dating material"@en , "Datierbaresmaterial"@de ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:definition "Material used for dating procedures (using radiocarbon dating)." ;
+	dc:source "OREA" ;
+	skos:editorialNote "dc_not_in_database;046" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodDatedby> a skos:ConceptScheme ;
+	rdfs:comment "A concept schema related to the Area and Research Event in the database." .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/charcoal/4.1> a skos:Concept ;
+	skos:prefLabel "charcoal"@en , "Holzkohle"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> ;
+	skos:definition "Charcoal is a light, black residue, consisting of carbon and any remaining ash, obtained by removing water and other volatile constituents from animal and vegetation substances. It can be used for dating analysis of an archaeological context." ;
+	dc:source "http://dbpedia.org/page/Charcoal" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datedby;1" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/charcoal/4.1> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bone/4.2> a skos:Concept ;
+	skos:prefLabel "bone"@en , "Knochen"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> ;
+	skos:definition "Any of the pieces of hard, whitish tissue making up the skeleton in humans and other vertebrates. It can be used for radiocarbon dating." ;
+	dc:source "https://en.oxforddictionaries.com/definition/us/bone" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datedby;2" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/bone/4.2> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grain/4.3> a skos:Concept ;
+	skos:prefLabel "grain"@en , "Korn"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> ;
+	skos:definition "Wheat or any other cultivated cereal used as food. " ;
+	dc:source "https://en.oxforddictionaries.com/definition/grain" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datedby;3" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grain/4.3> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/seed/4.4> a skos:Concept ;
+	skos:prefLabel "seed"@en , "Samen"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> ;
+	skos:definition "A variety of seeds may be preserved on archaeologcal sites by charring, grain impressions, or as a result of waterlogging. They may be the seeds of weed plants, fruits, pulses, or the grains of cereals." ;
+	dc:source "Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.502" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datedby;4" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/seed/4.4> .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramics/4.5> a skos:Concept ;
+	skos:prefLabel "ceramics"@en , "Keramik"@de ;
+	skos:broader <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> ;
+	skos:definition "Fired clay, normally belonging to pottery, figurine, or other ceramic industries. " ;
+	dc:source "Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.103" ;
+	skos:inScheme <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema> ;
+	skos:editorialNote "dc_period_datedby;5" .
+
+<https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_material/3.046> skos:narrower <https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ceramics/4.5> .
