@@ -1764,6 +1764,20 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/clay_structure/5.16"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_row_structure/5.38">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">stone row structure</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Steinreihenstruktur</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AreaSpecialfeatures"/>
+	<skos:editorialNote>dc_area_specialfeatures;38</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/architecture/4.081">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone_row_structure/5.38"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stairway/5.17">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">stairway</skos:prefLabel>

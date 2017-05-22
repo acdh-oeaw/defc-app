@@ -329,7 +329,7 @@
 	<skos:prefLabel xml:lang="de">Grünstein</skos:prefLabel>
 	<skos:altLabel xml:lang="en">jade</skos:altLabel>
 	<skos:altLabel xml:lang="de">Jade</skos:altLabel>
-	<dc:source>0.0</dc:source>
+	<dc:source>0</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsMaterial"/>
 	<skos:editorialNote>dc_finds_material;33</skos:editorialNote>
@@ -884,7 +884,7 @@
 	<dc:source>http://eol.org/pages/328649/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;13</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/deer/5.036"/>
 </rdf:Description>
 
@@ -904,7 +904,7 @@
 	<dc:source>http://eol.org/pages/308479/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;23</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/deer/5.036"/>
 </rdf:Description>
 
@@ -920,7 +920,7 @@
 	<dc:source>http://eol.org/pages/313992/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;14</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/deer/5.036"/>
 </rdf:Description>
 
@@ -1288,7 +1288,7 @@
 	<dc:source>http://eol.org/pages/1047334/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;31</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/goose/5.037"/>
 </rdf:Description>
 
@@ -1308,7 +1308,7 @@
 	<dc:source>http://eol.org/pages/1048449/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;32</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/goose/5.037"/>
 </rdf:Description>
 
@@ -1333,7 +1333,7 @@
 	<dc:source>http://eol.org/pages/1047918/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsAnimalRemainsSpecies"/>
-	<skos:editorialNote>dc_finds_animal_remains_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_animal_remains_species;33</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/duck/5.038"/>
 </rdf:Description>
 
@@ -1504,7 +1504,7 @@
 	<dc:source>https://en.oxforddictionaries.com/definition/hindlimb</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AnimalRemainsPart"/>
-	<skos:editorialNote>dc_animal_remains_part;02</skos:editorialNote>
+	<skos:editorialNote>dc_animal_remains_part;2</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/extremity/5.4"/>
 </rdf:Description>
 
@@ -1519,7 +1519,7 @@
 	<dc:source>https://en.oxforddictionaries.com/definition/forelimb</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/AnimalRemainsPart"/>
-	<skos:editorialNote>dc_animal_remains_part;02</skos:editorialNote>
+	<skos:editorialNote>dc_animal_remains_part;3</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/extremity/5.4"/>
 </rdf:Description>
 
@@ -1771,7 +1771,7 @@
 	<dc:source>http://eol.org/pages/1115242/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;6</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wheat/5.39"/>
 </rdf:Description>
 
@@ -1787,7 +1787,7 @@
 	<dc:source>http://eol.org/data_objects/32398343</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;21</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wheat/5.39"/>
 </rdf:Description>
 
@@ -1803,7 +1803,7 @@
 	<dc:source>http://eol.org/pages/1114086/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;7</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wheat/5.39"/>
 </rdf:Description>
 
@@ -1819,7 +1819,7 @@
 	<dc:source>http://eol.org/pages/5835380/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;22</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wheat/5.39"/>
 </rdf:Description>
 
@@ -1848,7 +1848,7 @@
 	<dc:source>http://eol.org/pages/1114498/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;4</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/millet/5.039"/>
 </rdf:Description>
 
@@ -1864,7 +1864,7 @@
 	<dc:source>http://eol.org/pages/1114673/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;10</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/millet/5.039"/>
 </rdf:Description>
 
@@ -1959,7 +1959,7 @@
 	<dc:source>http://eol.org/pages/685208/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;5</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pea/5.14"/>
 </rdf:Description>
 
@@ -1975,7 +1975,7 @@
 	<dc:source>http://eol.org/pages/643350/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;20</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pea/5.14"/>
 </rdf:Description>
 
@@ -1991,7 +1991,7 @@
 	<dc:source>http://eol.org/pages/703183/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;11</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pea/5.14"/>
 </rdf:Description>
 
@@ -2007,7 +2007,7 @@
 	<dc:source>http://eol.org/pages/1230334/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;25</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pea/5.14"/>
 </rdf:Description>
 
@@ -2039,7 +2039,7 @@
 	<dc:source>http://eol.org/pages/703201/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;3</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/vetch/5.33"/>
 </rdf:Description>
 
@@ -2055,7 +2055,7 @@
 	<dc:source>http://eol.org/pages/703201/overview</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/BotanySpecies"/>
-	<skos:editorialNote>dc_botany_species;02</skos:editorialNote>
+	<skos:editorialNote>dc_botany_species;19</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/vetch/5.33"/>
 </rdf:Description>
 
@@ -3393,7 +3393,7 @@
 	<dc:source>Encyclopaedia Britannica - https://www.britannica.com/science/chert#ref272901</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsLithicsRawMaterial"/>
-	<skos:editorialNote>dc_finds_lithics_raw_material;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_lithics_raw_material;2</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.3"/>
 </rdf:Description>
 
@@ -3409,7 +3409,7 @@
 	<dc:source>https://en.wikipedia.org/wiki/Radiolarite</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsLithicsRawMaterial"/>
-	<skos:editorialNote>dc_finds_lithics_raw_material;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_lithics_raw_material;9</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/chert/5.3"/>
 </rdf:Description>
 
@@ -4344,7 +4344,7 @@
 	<dc:source>Gopher, A. 1994. Arrowheads of the Neolithic Levant. Wiona Lake, Eisenbrauns.</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
-	<skos:editorialNote>dc_finds_small_finds_type;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_small_finds_type;116</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/projectile_point/5.70"/>
 </rdf:Description>
 
@@ -4359,7 +4359,7 @@
 	<dc:source>Peregrine, P. N., Ember, M. (eds.) 2002. Encyclopedia of Prehistory. Vol. 8: Sourth and Southwest Asia. Kluwer Academic/Plenum Pulishers, New York, Boston, Dortrecht, London, Moscow.</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
-	<skos:editorialNote>dc_finds_small_finds_type;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_small_finds_type;117</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/projectile_point/5.70"/>
 </rdf:Description>
 
@@ -4787,7 +4787,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p.113</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
-	<skos:editorialNote>dc_finds_small_finds_type;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_small_finds_type;89</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/male_figurine/5.85"/>
 </rdf:Description>
 
@@ -4825,6 +4825,20 @@
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/anthropomorphic_figurine/4.84">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/acrolith/5.92"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/kiliya_figurine/5.136">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">Kiliya figurine</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Figurine Typ Kiliya</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
+	<skos:editorialNote>dc_finds_small_finds_type;136</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/anthropomorphic_figurine/4.84"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/anthropomorphic_figurine/4.84">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/kiliya_figurine/5.136"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/house_model/4.88">
@@ -4883,6 +4897,20 @@
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/figurine/3.3">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/unknown/4.98"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ring_idol/4.137">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">ring idol</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Ringidol</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
+	<skos:editorialNote>dc_finds_small_finds_type;137</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/figurine/3.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/figurine/3.3">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ring_idol/4.137"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/other/3.4">
@@ -5041,6 +5069,20 @@
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/other/3.4">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dross/4.129"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pivot_stone/4.135">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pivot stone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Türangelstein</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSmallFindsType"/>
+	<skos:editorialNote>dc_finds_small_finds_type;135</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/other/3.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/other/3.4">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pivot_stone/4.135"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery/2.4">
@@ -5371,7 +5413,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryForm"/>
-	<skos:editorialNote>dc_finds_pottery_form;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_form;105</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/carinated_bowl/5.104"/>
 </rdf:Description>
 
@@ -5387,7 +5429,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryForm"/>
-	<skos:editorialNote>dc_finds_pottery_form;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_form;174</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/carinated_bowl/5.104"/>
 </rdf:Description>
 
@@ -5624,6 +5666,20 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/jug/4.110"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beak_spouted_jug/5.216">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">beak spouted jug</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Schnabelkanne</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryForm"/>
+	<skos:editorialNote>dc_finds_pottery_form;216</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/jug/4.110"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/jug/4.110">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beak_spouted_jug/5.216"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ladle/4.133">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">ladle</skos:prefLabel>
@@ -5847,7 +5903,35 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tripod/4.137"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tulip-shaped_beaker/4.118">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">beaker</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Becher</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
+	<skos:editorialNote>dc_not_in_database;098</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_form/3.016"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_form/3.016">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pointed_beaker/5.215">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">pointed beaker</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">spitzbodiger Becher</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryForm"/>
+	<skos:editorialNote>dc_finds_pottery_form;215</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pointed_beaker/5.215"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tulip-shaped_beaker/5.118">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">tulip-shaped beaker</skos:prefLabel>
 	<skos:prefLabel xml:lang="de">Tulpenförmger Becher</skos:prefLabel>
@@ -5856,11 +5940,11 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryForm"/>
 	<skos:editorialNote>dc_finds_pottery_form;118</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_form/3.016"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_form/3.016">
-	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tulip-shaped_beaker/4.118"/>
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/beaker/4.098">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tulip-shaped_beaker/5.118"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/zoomorphic_vessel/4.100">
@@ -5879,9 +5963,9 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/zoomorphic_vessel/4.100"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-	<skos:prefLabel xml:lang="en">pottery fragment</skos:prefLabel>
+	<skos:prefLabel xml:lang="en">pottery detail</skos:prefLabel>
 	<skos:prefLabel xml:lang="de">Keramikdetail</skos:prefLabel>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
@@ -5890,7 +5974,7 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery/2.4">
-	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle/4.031">
@@ -5900,10 +5984,10 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
 	<skos:editorialNote>dc_not_in_database;031</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle/4.031"/>
 </rdf:Description>
 
@@ -5936,7 +6020,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;67</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/round_bar_handle/5.109"/>
 </rdf:Description>
 
@@ -6002,7 +6086,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;97</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/tab_handle/5.96"/>
 </rdf:Description>
 
@@ -6035,7 +6119,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;156</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wishbone_handle/5.93"/>
 </rdf:Description>
 
@@ -6051,7 +6135,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;144</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wishbone_handle/5.93"/>
 </rdf:Description>
 
@@ -6067,7 +6151,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;148</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/wishbone_handle/5.93"/>
 </rdf:Description>
 
@@ -6131,7 +6215,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 305</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;119</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6147,7 +6231,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;90</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6163,7 +6247,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;92</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6179,7 +6263,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;147</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6195,7 +6279,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;151</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6211,7 +6295,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 305</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;91</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6227,7 +6311,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 305</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;149</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6243,7 +6327,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;154</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/strap_handle/5.78"/>
 </rdf:Description>
 
@@ -6285,6 +6369,20 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/knobbed_handle/5.120"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle_with_knob/5.182">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">handle with knob</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Griff mit Knubbe</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
+	<skos:editorialNote>dc_finds_pottery_detail;182</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle/4.031"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle/4.031">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/handle_with_knob/5.182"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mushroom_handle/5.75">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">mushroom handle</skos:prefLabel>
@@ -6318,6 +6416,20 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pronged_handle/5.130"/>
 </rdf:Description>
 
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/elongated_prong_handle_with_knob/6.183">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">elongated prong handle with knob</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">lang gezogener Stabhenkel mit Knubbe</skos:prefLabel>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
+	<skos:editorialNote>dc_finds_pottery_detail;183</skos:editorialNote>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pronged_handle/5.130"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pronged_handle/5.130">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/elongated_prong_handle_with_knob/6.183"/>
+</rdf:Description>
+
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ring_handle/5.100">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">ring handle</skos:prefLabel>
@@ -6342,7 +6454,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;102</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ring_handle/5.100"/>
 </rdf:Description>
 
@@ -6358,7 +6470,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;101</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/ring_handle/5.100"/>
 </rdf:Description>
 
@@ -6387,7 +6499,7 @@
 	<dc:source>Coleman 1977</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;68</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lug/5.040"/>
 </rdf:Description>
 
@@ -6403,7 +6515,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;70</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lug/5.040"/>
 </rdf:Description>
 
@@ -6420,7 +6532,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 184</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;79</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lug/5.040"/>
 </rdf:Description>
 
@@ -6438,7 +6550,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
-	<skos:editorialNote>dc_finds_pottery_detail;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_detail;80</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/lug/5.040"/>
 </rdf:Description>
 
@@ -6455,10 +6567,10 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
 	<skos:editorialNote>dc_finds_pottery_detail;88</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/spout/4.88"/>
 </rdf:Description>
 
@@ -6500,10 +6612,10 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
 	<skos:editorialNote>dc_not_in_database;032</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/base/4.032"/>
 </rdf:Description>
 
@@ -6575,7 +6687,7 @@
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<skos:prefLabel xml:lang="en">rim</skos:prefLabel>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
 <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/curved_tapered-up_rim/5.140">
@@ -6594,7 +6706,7 @@
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/curved_tapered-up_rim/5.140"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rim/4.033"/>
 </rdf:Description>
 
@@ -6737,10 +6849,10 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDetail"/>
 	<skos:editorialNote>dc_finds_pottery_detail;71</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/foot/4.71"/>
 </rdf:Description>
 
@@ -6831,10 +6943,10 @@
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase"/>
 	<skos:editorialNote>dc_not_in_database;034</skos:editorialNote>
-	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017"/>
+	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_fragment/3.017">
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pottery_detail/3.017">
 	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/attachment/4.034"/>
 </rdf:Description>
 
@@ -7420,7 +7532,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 248</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;202</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7436,7 +7548,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;138</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7452,7 +7564,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;139</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7468,7 +7580,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;140</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7484,7 +7596,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;287</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7501,7 +7613,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;163</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7517,7 +7629,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;144</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7533,7 +7645,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;279</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7549,7 +7661,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;145</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7565,7 +7677,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;185</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7581,7 +7693,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;147</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7597,7 +7709,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;262</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7613,7 +7725,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;148</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7629,7 +7741,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;186</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7645,7 +7757,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;283</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7661,7 +7773,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;194</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7677,7 +7789,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;277</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7693,7 +7805,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;150</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7709,7 +7821,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;246</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7725,7 +7837,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;125</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7741,7 +7853,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;199</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7758,7 +7870,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p. 191</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;169</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7774,7 +7886,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;204</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7790,7 +7902,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;230</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7806,7 +7918,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;268</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7822,7 +7934,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;158</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7838,7 +7950,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;290</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7854,7 +7966,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;157</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7870,7 +7982,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;282</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7886,7 +7998,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;181</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7902,7 +8014,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;137</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7918,7 +8030,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;161</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7934,7 +8046,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;160</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/pattern_painted/5.041"/>
 </rdf:Description>
 
@@ -7966,7 +8078,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;245</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -7982,7 +8094,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;130</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -7998,7 +8110,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;294</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8014,7 +8126,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;200</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8030,7 +8142,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;249</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8046,7 +8158,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;154</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8062,7 +8174,7 @@
 	<dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p. 329</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;155</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8078,7 +8190,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;171</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8094,7 +8206,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;301</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8110,7 +8222,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;286</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8125,7 +8237,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;259</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8141,7 +8253,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;273</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
@@ -8157,7 +8269,7 @@
 	<dc:source>OREA</dc:source>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsSchema"/>
 	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsPotteryDecoration"/>
-	<skos:editorialNote>dc_finds_pottery_decoration;02</skos:editorialNote>
+	<skos:editorialNote>dc_finds_pottery_decoration;275</skos:editorialNote>
 	<skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265"/>
 </rdf:Description>
 
