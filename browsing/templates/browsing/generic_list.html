@@ -21,8 +21,9 @@ $("#goto option").each(function() {
     }
 });
   $("#goto").change(function(){
+    // var newUrl = window.location.href+"&page=";
     if ($(this).val()!='') {
-      window.location.href="?page="+$(this).val();
+      window.location.href+="&page="+$(this).val();
     }
   });
 });
@@ -122,6 +123,9 @@ $("#goto option").each(function() {
                     <option>{{ p }}</option>
                 {% endfor %}
             </select>
+
+
+
         </div>
 
 <!--Page # of total -->

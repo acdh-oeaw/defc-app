@@ -87,10 +87,14 @@ class AreaListFilter(django_filters.FilterSet):
         queryset=DC_area_areatype.objects.all(), help_text=False
     )
     site__name = django_filters.CharFilter(lookup_expr='icontains', help_text=False)
-    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
-    period__cs_name = django_filters.MethodFilter(
-        action='my_custom_filter_csname', label='Period Chronological system', help_text=False
-    )
+    period = django_filters.CharFilter(
+        label='Period', name='period__period_name',
+        distinct=True, lookup_expr='icontains', help_text=False
+        )
+    period__cs_name = django_filters.CharFilter(
+        label='Period Chronological system', name='period__cs_name',
+        distinct=True, lookup_expr='icontains', help_text=False
+        )
     period__start_date1_BC = django_filters.NumberFilter(
         lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to'
     )
@@ -185,16 +189,9 @@ class AreaListFilter(django_filters.FilterSet):
         queryset=DC_area_manipulationofgraves.objects.all(), help_text=False,
         label="Grave disturbance of graves")
 
-
     class Meta:
         model = Area
         fields = ['id', 'area_type']
-
-    def my_custom_filter(self, queryset, value):
-        return queryset.filter(period__period_name__icontains=value).distinct()
-
-    def my_custom_filter_csname(self, queryset, value):
-        return queryset.filter(period__cs_name__icontains=value).distinct()
 
 
 class FindsListFilter(django_filters.FilterSet):
@@ -216,9 +213,14 @@ class FindsListFilter(django_filters.FilterSet):
         queryset=DC_researchevent_researchtype.objects.all(),
         label='Research type', help_text=False
     )
-    period = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
-    period__cs_name = django_filters.MethodFilter(
-        action='my_custom_filter_csname', label='Period Chronological system', help_text=False
+    period = django_filters.CharFilter(
+        label='Period', name='area__period__period_name', distinct=True,
+        lookup_expr='icontains', help_text=False
+    )
+    period__cs_name = django_filters.CharFilter(
+        label='Period Chronological system', help_text=False,
+        name='area__period__cs_name', distinct=True,
+        lookup_expr='icontains'
     )
     area__period__start_date1_BC = django_filters.NumberFilter(
         lookup_expr='lte', label='Period start date 1 BC', help_text='Lesser than or equal to'
@@ -302,22 +304,18 @@ class FindsListFilter(django_filters.FilterSet):
         help_text=False
     )
 
-
     class Meta:
         model = Finds
         fields = ['id', 'finds_type']
-
-    def my_custom_filter(self, queryset, value):
-        return queryset.filter(area__period__period_name__icontains=value).distinct()
-
-    def my_custom_filter_csname(self, queryset, value):
-        return queryset.filter(area__period__cs_name__icontains=value).distinct()
 
 
 class ResearchEventListFilter(django_filters.FilterSet):
     research_type = django_filters.ModelMultipleChoiceFilter(
         queryset=DC_researchevent_researchtype.objects.all(), help_text=False)
-    institution = django_filters.MethodFilter(action='my_custom_filter', help_text=False)
+    institution = django_filters.CharFilter(
+        name='institution__name', distinct=True,
+        lookup_expr='icontains', help_text=False
+    )
     year_of_activity_start_year = django_filters.NumberFilter(
         lookup_expr='exact', help_text=False, label='Start year of research activity')
     year_of_activity_end_year = django_filters.NumberFilter(
@@ -330,9 +328,6 @@ class ResearchEventListFilter(django_filters.FilterSet):
     class Meta:
         model = ResearchEvent
         fields = ['id', 'research_type']
-
-    def my_custom_filter(self, queryset, value):
-        return queryset.filter(institution__name__icontains=value).distinct()
 
 
 class InterpretationListFilter(django_filters.FilterSet):
