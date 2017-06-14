@@ -20,12 +20,7 @@ $("#goto option").each(function() {
         $(this).attr('selected', 'selected');
     }
 });
-  $("#goto").change(function(){
-    // var newUrl = window.location.href+"&page=";
-    if ($(this).val()!='') {
-      window.location.href+="&page="+$(this).val();
-    }
-  });
+
 });
 </script>
 
@@ -118,9 +113,9 @@ $("#goto option").each(function() {
         {% if table.paginator.page_range|length > 15 %}
         <div class="form-group">
           <label for="goto">Go to page</label>
-            <select class="form-control" id="goto">
+            <select class="form-control" id="goto" onchange="javascript:location.href = this.value;">
                 {% for p in table.paginator.page_range %}
-                    <option>{{ p }}</option>
+                    <option value="{% querystring table.prefixed_page_field=p %}">{{ p }}</option>
                 {% endfor %}
             </select>
 
