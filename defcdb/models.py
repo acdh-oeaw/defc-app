@@ -813,6 +813,15 @@ class Finds(TrackChanges):
     def __str__(self):
         return str(self.area)+'_'+str(self.finds_type)+'_'+str(self.id)
 
+    @property
+    def finds_description(self):
+        if self.pottery_form is not None:
+            return '{} {}'.format(self.finds_type, self.pottery_form.name)
+        elif self.small_finds_category is not None:
+            return '{} {}'.format(self.finds_type, self.small_finds_category)
+        else:
+            return '{}'.format(self.finds_type)
+
 
 reversion.register(Finds)
 

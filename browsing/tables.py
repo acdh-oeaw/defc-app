@@ -36,13 +36,15 @@ class AreaTable(tables.Table):
 
 
 class FindsTable(tables.Table):
-    finds_type = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')])
     finds_id = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')], accessor='id')
+    finds_description = tables.LinkColumn(
+        'publicrecords:finds_detail', args=[A('pk')],
+        verbose_name='finds type')
     site_name = tables.Column(accessor='area.site.name', verbose_name='site name')
 
     class Meta:
         model = Finds
-        fields = ['finds_id', 'finds_type', 'site_name']
+        fields = ['finds_id', 'finds_description', 'site_name']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
