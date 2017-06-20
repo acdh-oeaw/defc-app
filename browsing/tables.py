@@ -3,14 +3,6 @@ from django_tables2.utils import A
 from defcdb.models import Site, Area, Finds, Interpretation
 from django.utils.html import format_html
 
-TEMPLATE = """
-<ul>
-  {% for p in period_list %}
-  <li>{p} something<li></br>
-  {% endfor %}
-</ul>
- """
-
 
 class SiteTable(tables.Table):
     site_id = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], accessor='id')
