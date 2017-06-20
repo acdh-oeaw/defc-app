@@ -1,0 +1,10 @@
+{% for period in record.period.all %}
+<abbr title ="Name of the chronological system">{{ period.cs_name }}</abbr>
+<abbr title ="Period name">  {{ period.period_name }}</abbr>
+{% if period.start_date1_BC != None and  period.end_date1_BC != None %}
+<abbr title ="Period start date"> {{ period.start_date1_BC }}</abbr>
+ - <abbr title ="Period end date"> {{ period.end_date1_BC }}</abbr><br/>
+{% else %}
+</br>
+{% endif %}
+{% endfor %}

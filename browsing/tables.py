@@ -1,6 +1,15 @@
 import django_tables2 as tables
 from django_tables2.utils import A
 from defcdb.models import Site, Area, Finds, Interpretation
+from django.utils.html import format_html
+
+TEMPLATE = """
+<ul>
+  {% for p in period_list %}
+  <li>{p} something<li></br>
+  {% endfor %}
+</ul>
+ """
 
 
 class SiteTable(tables.Table):
@@ -16,12 +25,13 @@ class SiteTable(tables.Table):
 
 class AreaTable(tables.Table):
     area_type = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')])
+    period = tables.TemplateColumn(template_name='browsing/templateColumn.html')
     area_id = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')], accessor='id')
     site_name = tables.Column(accessor='site.name', verbose_name='site name')
 
     class Meta:
         model = Area
-        fields = ['area_id', 'area_type', 'site_name']
+        fields = ['area_id', 'area_type', 'site_name', 'period']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 

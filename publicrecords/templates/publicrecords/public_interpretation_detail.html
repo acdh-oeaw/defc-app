@@ -43,18 +43,27 @@
         </tr>
         <tr>
                 <td>Area</td>
-                <td>{% for area in areas_list %}
+                <td>
+                  {% for area in areas_list %}
                         <a href="{% url 'publicrecords:area_detail' pk=area.id %}">
                         ID {{ area.id }} {{ area.area_type }}<br/>
                         </a>
-                        {% endfor %}</td>
+                {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Finds</td>
-                <td>{% for find in finds_list %}
-                    <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/>
-                    </a>
-                    {% endfor %}</td>
+                <td>
+                  {% for find in finds_list %}
+                  {% if find.finds_type.name == 'small finds' %}
+                  <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }} {{ find.small_finds_category }}<br/></a>
+                  {% elif find.finds_type.name == 'pottery' %}
+                  <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }} {{ find.pottery_form.name }}<br/></a>
+                  {% else %}
+                  <a href="{% url 'publicrecords:finds_detail' pk=find.id %}">ID {{ find.id }} {{ find.finds_type }}<br/></a>
+                  {% endif %}
+                  {% endfor %}
+                </td>
         </tr>
         <tr>
                 <td>Description</td>
