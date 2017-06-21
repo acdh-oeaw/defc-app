@@ -31,7 +31,7 @@ class FindsTable(tables.Table):
     finds_id = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')], accessor='id')
     finds_description = tables.LinkColumn(
         'publicrecords:finds_detail', args=[A('pk')],
-        verbose_name='finds type')
+        verbose_name='finds type', order_by=('finds_type'))
     site_name = tables.Column(accessor='area.site.name', verbose_name='site name')
 
     class Meta:
