@@ -1,43 +1,39 @@
 # -*- coding: utf-8 -*-
 from django import forms
-import autocomplete_light
-#autocomplete_light.autodiscover()
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Div, Field
 from django.utils.translation import ugettext_lazy as _
-from .autocomplete_light_registry import (BookAutocomplete, InstitutionAutocomplete,
-	ProjectleaderAutocomplete, NameAutocomplete, ISOAutocomplete)
+# from .autocomplete_light_registry import (BookAutocomplete, InstitutionAutocomplete,
+# 	ProjectleaderAutocomplete, NameAutocomplete, ISOAutocomplete)
 from .models import Area, ResearchEvent, Site, Finds, Interpretation, DC_researchevent_institution, Name
 from bib.models import Book
 
 
-class NameForm(autocomplete_light.ModelForm):
-	language = forms.CharField(required=False,
-		widget=autocomplete_light.TextWidget('ISOAutocomplete'),
-		label = "ISO 639-3")
+class NameForm(forms.ModelForm):
 
 	class Meta:
-		model=Name
+		model = Name
 		fields = "__all__"
 
 	def __init__(self, *args, **kwargs):
 			super(NameForm, self).__init__(*args, **kwargs)
 			self.helper = FormHelper()
-			self.helper.add_input(Submit('submit','Create'))
+			self.helper.add_input(Submit('submit', 'Create'))
 
 
-class AreaForm(autocomplete_light.ModelForm):
-	period_reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
-		)
-	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
-		)
-	
+class AreaForm(forms.ModelForm):
+	# period_reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
+	# 	)
+	# reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete')
+	# 	)
+
 	class Meta:
 		model = Area
 		#exclude =['reference', 'period_reference']
@@ -69,15 +65,12 @@ class AreaForm(autocomplete_light.ModelForm):
 			return self.cleaned_data['area_type']
 
 
-class ResearcheventForm(autocomplete_light.ModelForm):
-	project_leader = forms.CharField(required=False,
-		widget=autocomplete_light.TextWidget('ResearchEventProjectleaderAutocomplete'),
-		help_text="Leader of the research project.")
-	# project_leader = autocomplete_light.ChoiceField(ResearchEvent.objects.all(),
-	# 	required = False,
-	# 	widget = autocomplete_light.TextWidget('ProjectleaderAutocomplete'))
-#if user inputs a not yet existing Project Leader, the whole object won´t be stored in the db
-	
+class ResearcheventForm(forms.ModelForm):
+	# project_leader = forms.CharField(required=False,
+	# 	widget=autocomplete_light.TextWidget('ResearchEventProjectleaderAutocomplete'),
+	# 	help_text="Leader of the research project.")
+
+
 	class Meta:
 		model = ResearchEvent
 		fields = '__all__'
@@ -88,13 +81,13 @@ class ResearcheventForm(autocomplete_light.ModelForm):
 			self.helper.add_input(Submit('submit','Create'))
 
 
-class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
-	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
-		help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the selected small finds.")
-	research_event = forms.ModelChoiceField(queryset=ResearchEvent.objects.all(),
-		help_text="Project/ Research the finds are related to.", required=False)
+class FindsForm(forms.ModelForm):
+	# reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
+	# 	help_text="Bibliographic and web-based reference(s) to publications and other relevant resources on the selected small finds.")
+	# research_event = forms.ModelChoiceField(queryset=ResearchEvent.objects.all(),
+	# 	help_text="Project/ Research the finds are related to.", required=False)
 
 	class Meta:
 		model = Finds
@@ -126,21 +119,12 @@ class FindsForm(autocomplete_light.ModelForm, forms.ModelForm):
 			return self.cleaned_data['finds_type']
 
 
-	# def clean_finds_type(self):  ###second option, also works
-	# 	if self.instance:
-	# 		return self.instance.area
-	# 	else:
-	# 		return self.cleaned_data.get('area')
+class SiteForm(forms.ModelForm):
+	# reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
+	# 	help_text="Bibliographic and web-based references to publications and other relevant information on the site.")
 
-	#http://stackoverflow.com/questions/324477/in-a-django-form-how-to-make-a-field-readonly-or-disabled-so-that-it-cannot-b
-
-	
-class SiteForm(autocomplete_light.ModelForm):
-	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'),
-		help_text="Bibliographic and web-based references to publications and other relevant information on the site.")
-	
 
 	class Meta:
 		model = Site
@@ -153,10 +137,10 @@ class SiteForm(autocomplete_light.ModelForm):
 			self.helper.add_input(Submit('submit','Create'))
 
 
-class InterpretationForm(autocomplete_light.ModelForm):
-	reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
-		required = False,
-		widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
+class InterpretationForm(forms.ModelForm):
+	# reference = autocomplete_light.ModelMultipleChoiceField(Book.objects.all(),
+	# 	required = False,
+	# 	widget =autocomplete_light.MultipleChoiceWidget('BookAutocomplete'))
 
 	class Meta:
 		model = Interpretation
@@ -170,11 +154,10 @@ class InterpretationForm(autocomplete_light.ModelForm):
 
 
 class form_user_login(forms.Form):
-	username = forms.CharField(label='Username',widget=forms.TextInput)
-	password = forms.CharField(label='Password',widget=forms.PasswordInput)
+	username = forms.CharField(label='Username', widget=forms.TextInput)
+	password = forms.CharField(label='Password', widget=forms.PasswordInput)
 
 	def __init__(self, *args, **kwargs):
 		super(form_user_login, self).__init__(*args, **kwargs)
 		self.helper = FormHelper()
 		self.helper.add_input(Submit('submit','Login'))
-

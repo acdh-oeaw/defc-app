@@ -5,8 +5,6 @@ from django.contrib import admin
 from orea.settings import base
 from defcdb import views
 from defcdb import api_views
-import autocomplete_light.shortcuts as al
-al.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'dc_finds_lithics_raw_material', api_views.DC_finds_lithics_raw_materialViewSet)
@@ -91,14 +89,13 @@ urlpatterns = [
     url(r'^login/$', views.user_login, name='user_login'),
     url(r'^accounts/login/$', views.user_login, name='user_login'),
     url(r'^logout/$', views.user_logout, name='user_logout'),
-    url(r'^autocomplete/', include('autocomplete_light.urls')),
     url(r'^', include('webpage.urls', namespace='webpage')),
     url(r'^bib/', include('bib.urls', namespace='bib')),
-    url(
-        r'^media/(?P<path>.*)$',
-        'django.views.static.serve',
-        {'document_root': base.MEDIA_ROOT, }, name='media_root_url'
-    ),
+    # url(
+    #     r'^media/(?P<path>.*)$',
+    #     'django.views.static.serve',
+    #     {'document_root': base.MEDIA_ROOT, }, name='media_root_url'
+    # ),
     url(r'^image_gallery/', include('images_metadata.urls', namespace="image_gallery")),
     url(r'^publicrecords/', include('publicrecords.urls', namespace="publicrecords")),
     url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),

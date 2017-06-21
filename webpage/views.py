@@ -11,64 +11,64 @@ from .models import Event
 
 # Create your views here.
 def imprint(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/imprint.html', context)
 
 
 def homepage(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/index.html', context)
 
 
 def about(request):
-	#context = RequestContext(request)
+	#context = {}
 	context = {}
 	context["event_list"] = Event.objects.all()
 	return render(request, 'webpage/about.html', context)
 
 
 def terms_of_use(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/terms_of_use.html', context)
 
 
 def cukurici_movie_content(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/cukurici_movie_content.html', context)
 
 
 def cukurici_movie_german_version(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/cukurici_movie_german_version.html', context)
 
 
 def ada_tepe_movie_content(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/ada_tepe_movie_content.html', context)
 
 
 def ada_tepe_movie_german_version(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/ada_tepe_movie_german_version.html', context)
 
 
 def blog_main(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/blog_main.html', context)
 
 
 def blog_post_01(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/blog_post_01.html', context)
 
 
 def blog_post_02(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/blog_post_02.html', context)
 
 
 def defc2rdf_demo(request):
-	context = RequestContext(request)
+	context = {}
 	return render(request, 'webpage/defc2rdf_demo.html', context)
 
 

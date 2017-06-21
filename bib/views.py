@@ -1,10 +1,11 @@
 import requests
+from django.conf import settings
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 from .models import Book
 # following line has to match the settings-file you are using
-from orea.settings.server import Z_USER_ID, Z_COLLECTION, Z_API_KEY
+
 
 
 def sync_zotero(request):
@@ -16,7 +17,7 @@ def sync_zotero(request):
 def sync_zotero_action(request):
     """ fetches the last n items form zoter and syncs it with the bib entries in defc-db"""
     root = "https://api.zotero.org/users/"
-    params = "{}/collections/{}/items/top?v=3&key={}".format(Z_USER_ID, Z_COLLECTION, Z_API_KEY)
+    params = "{}/collections/{}/items/top?v=3&key={}".format(settings.Z_USER_ID, settings.Z_COLLECTION, settings.Z_API_KEY)
     url = root + params + "&sort=dateModified&limit=10"
     books_before = len(Book.objects.all())
     try:

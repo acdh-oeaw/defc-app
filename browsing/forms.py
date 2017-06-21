@@ -1,17 +1,14 @@
-import autocomplete_light
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit, Layout, Fieldset, Field
 from defcdb.models import *
-from .autocomplete_light_registry import SiteAutocomplete
-
 
 class SiteFilterForm(forms.ModelForm):
-    name = autocomplete_light.ModelMultipleChoiceField(
-        Site.objects.all(),
-        required=False,
-        widget=autocomplete_light.MultipleChoiceWidget('SiteAutocomplete')
-    )
+    # name = autocomplete_light.ModelMultipleChoiceField(
+    #     Site.objects.all(),
+    #     required=False,
+    #     widget=autocomplete_light.MultipleChoiceWidget('SiteAutocomplete')
+    # )
 
     class Meta:
         model = Site
@@ -44,10 +41,10 @@ class SpecificAreaForm(FormHelper):
                 'site__name',
                 'period',
                 'period__cs_name',
-                'period__start_date1_BC', 
-                'period__end_date1_BC', 
-                'dating_method', 
-                'radiocarbon_dated', 
+                'period__start_date1_BC',
+                'period__end_date1_BC',
+                'dating_method',
+                'radiocarbon_dated',
                 #finds fields
                 css_id="basic_search_fields"),
             Fieldset(
@@ -100,12 +97,12 @@ class SpecificFindsForm(FormHelper):
                 'area__area_type',
                 'research_event__research_type__name',
                 'period',
-                'period__cs_name', 
-                'area__period__start_date1_BC', 
-                'area__period__end_date1_BC', 
+                'period__cs_name',
+                'area__period__start_date1_BC',
+                'area__period__end_date1_BC',
                 'amount',
-                'material', 
-                'confidence', 
+                'material',
+                'confidence',
                 css_id="basic_search_fields"),
             Fieldset(
                 'Advanced search options',
@@ -131,6 +128,3 @@ class SpecificFindsForm(FormHelper):
                 css_id="advanced_search_fields"
                 ),
         )
-
-
-
