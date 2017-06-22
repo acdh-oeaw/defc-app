@@ -139,7 +139,7 @@ class SpecificMapForm(FormHelper):
         self.helper = FormHelper()
         self.form_class = 'genericFilterForm'
         self.form_method = 'GET'
-        self.add_input(Submit('Filter', 'Filter'))
+        self.add_input(Submit('Filter', 'Search', css_class='btn-crispy-search'))
         self.layout = Layout(
             Fieldset(
                 'Basic search options',
