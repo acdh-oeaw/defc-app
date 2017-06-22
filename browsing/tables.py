@@ -17,7 +17,7 @@ class SiteTable(tables.Table):
 
 class AreaTable(tables.Table):
     area_type = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')])
-    period = tables.TemplateColumn(template_name='browsing/templateColumn.html')
+    period = tables.TemplateColumn(template_name='browsing/templateColumn.html', order_by=('period.start_date1_BC'))
     area_id = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')], accessor='id')
     site_name = tables.Column(accessor='site.name', verbose_name='site name')
 

@@ -9,8 +9,8 @@ from django_tables2 import SingleTableView, RequestConfig
 from .forms import DC_provinceForm
 from defcdb.models import DC_province, Site
 from browsing.tables import SiteTable
-from browsing.filters import SiteListFilter
-from browsing.forms import GenericFilterFormHelper
+from browsing.filters import SiteListFilter, MapListFilter
+from browsing.forms import GenericFilterFormHelper, SpecificMapForm
 from browsing.views import GenericListView
 
 
@@ -18,8 +18,8 @@ class SiteListFilterView(GenericListView):
     model = Site
     table_class = SiteTable
     template_name = 'geolocation/site_map.html'
-    filter_class = SiteListFilter
-    formhelper_class = GenericFilterFormHelper
+    filter_class = MapListFilter
+    formhelper_class = SpecificMapForm
 
     def get_queryset(self, **kwargs):
         qs = Site.objects.filter(latitude__isnull=False)
@@ -30,6 +30,12 @@ class SiteListFilterView(GenericListView):
     def get_context_data(self, **kwargs):
         context = super(GenericListView, self).get_context_data()
         context[self.context_filter_name] = self.filter
+        # context["params"] = dict(self.request.GET)
+        params = {}
+        for key, value in dict(self.request.GET).items():
+            if value[0] is not '':
+                params.update({key: value})
+        context["params"] = params
         lst_json = []
         sites = SiteListFilter(
             self.request.GET, queryset=Site.objects.filter(latitude__isnull=False)
@@ -47,6 +53,13 @@ class SiteListFilterView(GenericListView):
             lst_json.append(r)
         context["GeoJson"] = json.dumps(lst_json)
         return context
+
+    # def query_list(request):
+    #     params = dict(request.GET._iterlists())  # Set 'name' as a default value
+    #
+    #     return render(request, 'geolocation/site_map.html', {
+    #         'params': 'string'
+    #         })
 
 
 def site_map(request):
