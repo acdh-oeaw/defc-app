@@ -33,10 +33,13 @@ class FindsTable(tables.Table):
         'publicrecords:finds_detail', args=[A('pk')],
         verbose_name='finds type', order_by=('finds_type'))
     site_name = tables.Column(accessor='area.site.name', verbose_name='site name')
+    pottery_detail = tables.TemplateColumn(template_name='browsing/templateColumn.html')
+    pottery_decoration = tables.TemplateColumn(template_name='browsing/templateColumn02.html')
+
 
     class Meta:
         model = Finds
-        fields = ['finds_id', 'finds_description', 'site_name']
+        fields = ['finds_id', 'finds_description', 'site_name', 'pottery_detail', 'pottery_decoration']
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
