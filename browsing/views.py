@@ -8,6 +8,29 @@ from .filters import (
     InterpretationListFilter)
 from .forms import GenericFilterFormHelper, SpecificAreaForm, SpecificFindsForm
 from .tables import SiteTable, AreaTable, FindsTable, ResearchEventTable, InterpretationTable
+import csv
+import re
+import time
+import datetime
+import requests
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+
+def serialize(modelclass):
+    fields = modelclass._meta.get_fields()
+    serialized = []
+    for f in fields:
+        if f.get_internal_type() == "ManyToManyField":
+            attrs = getattr(modelclass, f.name)
+            values = "|".join([y[1] for y in attrs.values_list()])
+            key_value = values
+        else:
+            key_value = getattr(modelclass, f.name)
+        serialized.append(key_value)
+    return serialized
 
 
 class GenericListView(SingleTableView):
@@ -34,6 +57,61 @@ class GenericListView(SingleTableView):
         return context
 
 
+class SiteDownloadView(GenericListView):
+    model = Site
+    table_class = SiteTable
+    template_name = 'browsing/site_list_generic.html'
+    filter_class = SiteListFilter
+    formhelper_class = GenericFilterFormHelper
+
+    def render_to_response(self, context, **kwargs):
+        timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
+        response = HttpResponse(content_type='text/csv')
+        filename = "editions_{}".format(timestamp)
+        response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
+        writer = csv.writer(response, delimiter=",")
+        # writer.writerow([x.name for x in Site._meta.get_fields()])
+        # for x in self.get_queryset():
+        #     row = serialize(x)
+        #     writer.writerow(row)
+        writer.writerow([
+            'Site ID', 'Name of the site',
+            'Alias name', 'Alternative name',
+            'District', 'Region', 'Country',
+            'Geographical Coordinate Reference System', 'Coordinate source',
+            'Latitude', 'Longitude', 'Elevation',
+            'Authority file ID (Geonames ID)',
+            'Topography', 'Description',
+            'Exact location',
+            'Number of activity periods',
+            'Reference', 'Comment']
+        )
+        for obj in self.get_queryset():
+            if obj.province and obj.province.region:
+                writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
+                                '; '.join([obj.name for obj in obj.alternative_name.all()]),
+                                obj.province.name, obj.province.region.name, obj.province.region.country.name,
+                                obj.geographical_coordinate_reference_system,
+                                obj.coordinate_source, obj.latitude, obj.longitude,
+                                obj.elevation, obj.authorityfile_id, obj.topography,
+                                obj.description, obj.exact_location, obj.number_of_activity_periods,
+                                '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
+                                obj.comment])
+            else:
+                writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
+                                '; '.join([obj.name for obj in obj.alternative_name.all()]),
+                                obj.province, 'not defined', 'not defined',
+                                obj.geographical_coordinate_reference_system,
+                                obj.coordinate_source, obj.latitude, obj.longitude,
+                                obj.elevation, obj.authorityfile_id, obj.topography,
+                                obj.description, obj.exact_location, obj.number_of_activity_periods,
+                                # '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
+                                '; '.join([str(obj) for obj in obj.reference.all()]),
+                                obj.comment])
+
+        return response
+
+
 class SiteListView(GenericListView):
     model = Site
     table_class = SiteTable
@@ -56,6 +134,55 @@ class SiteListView(GenericListView):
         context["cs_names"] = set(cs_names)
         context["period_names"] = set(period_names)
         return context
+
+
+def download_results(request):
+    # queryset = Site.objects.filter(name__icontains='los')
+
+    f = SiteListFilter(request.GET, queryset=Site.objects.all())
+    timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
+    response = HttpResponse(content_type='text/csv')
+    filename = "defc_sites_{}".format(timestamp)
+    response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
+    writer = csv.writer(response, delimiter=",")
+    writer.writerow([
+        'Site ID', 'Name of the site',
+        'Alias name', 'Alternative name',
+        'District', 'Region', 'Country',
+        'Geographical Coordinate Reference System', 'Coordinate source',
+        'Latitude', 'Longitude', 'Elevation',
+        'Authority file ID (Geonames ID)',
+        'Topography', 'Description',
+        'Exact location',
+        'Number of activity periods',
+        'Reference', 'Comment']
+    )
+    for obj in f.qs.values():
+        if obj.province and obj.province.region:
+            writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
+                            '; '.join([obj.name for obj in obj.alternative_name.all()]),
+                            obj.province.name, obj.province.region.name, obj.province.region.country.name,
+                            obj.geographical_coordinate_reference_system,
+                            obj.coordinate_source, obj.latitude, obj.longitude,
+                            obj.elevation, obj.authorityfile_id, obj.topography,
+                            obj.description, obj.exact_location, obj.number_of_activity_periods,
+                            '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
+                            obj.comment])
+        else:
+            writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
+                            '; '.join([obj.name for obj in obj.alternative_name.all()]),
+                            obj.province, 'not defined', 'not defined',
+                            obj.geographical_coordinate_reference_system,
+                            obj.coordinate_source, obj.latitude, obj.longitude,
+                            obj.elevation, obj.authorityfile_id, obj.topography,
+                            obj.description, obj.exact_location, obj.number_of_activity_periods,
+                            '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
+                            obj.comment])
+
+    return response
+
+
+
 
 
 class AreaListView(GenericListView):
