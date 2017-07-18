@@ -1,6 +1,6 @@
 {% extends "browsing/generic_list.html" %}
 {% block list_title %}Search all Finds{% endblock %}
-
+{% load django_tables2 %}
 {% block create_button %}
 {% if user.is_authenticated %}
  <div>
@@ -13,6 +13,7 @@
 <a class ="btn btn-default"  id="01">Show/Hide Advanced search options</a></br>
  <p></p>
  <a class ="btn btn-default"  href="{% url 'browsing:browse_finds' %}">Reset search</a>
+ <a class ="btn btn-default" href="{% url 'browsing:download-finds' %}{% querystring %}">Download search results (.csv)</a>
 {% endblock %}
 
 {% block customScripts %}
