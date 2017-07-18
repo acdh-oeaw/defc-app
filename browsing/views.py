@@ -203,35 +203,35 @@ class AreaDownloadView(GenericListView):
         writer = csv.writer(response, delimiter=",")
         writer.writerow([
             'Area ID', 'Name of the site',
-            'area_type', 'area_nr',
-            'period', 'dating_method', 'radiocarbon_dated',
-            'earliest_date_14C_age',
-            'earliest_date_standard_deviation',
-            'earliest_datedated_by',
-            'latest_date_14C_age',
-            'latest_date_standard_deviation',
-            'latest_datedated_by',
-            'period_reference', 'period_comment',
-            'settlement_type', 'settlement_structure',
-            'settlement_construction_type', 'settlement_construction_shape',
-            'settlement_building_technique',
-            'settlement_special_features',
-            'settlement_human_remains',
-            'cave_rockshelters_type',
-            'cave_rockshelters_human_remains',
-            'cave_rockshelters_evidence_of_occupation',
-            'quarry_exploitation_type',
-            'quarry_raw_material',
-            'cemetery_or_grave',
-            'cemetery_or_graves_topography',
-            'cemetery_or_graves_mortuary_features',
-            'grave_number_of_graves',
-            'grave_type', 'grave_type_of_human_remains',
-            'grave_estimated_number_of_individuals',
-            'grave_age_groups', 'grave_sexes', 'grave_number_of_female_sex',
-            'grave_number_of_male_sex', 'grave_number_of_not_specified_sex',
-            'grave_manipulations_of_graves', 'description', 'reference',
-            'comment'
+            'Area type', 'Area nr',
+            'Period', 'Dating method', 'Radiocarbon dated',
+            'Earliest date 14C age',
+            'Earliest date standard deviation',
+            'Earliest datedated by',
+            'Latest date 14C age',
+            'Latest date standard deviation',
+            'Latest datedated by',
+            'Period reference', 'Period comment',
+            'Settlement type', 'Settlement structure',
+            'Settlement construction type', 'Settlement construction shape',
+            'Settlement building technique',
+            'Settlement special features',
+            'Settlement human remains',
+            'Cave rockshelters type',
+            'Cave rockshelters human remains',
+            'Cave rockshelters evidence of occupation',
+            'Quarry exploitation type',
+            'Quarry raw material',
+            'Cemetery or grave',
+            'Cemetery or graves topography',
+            'Cemetery or graves mortuary features',
+            'Grave number of graves',
+            'Grave type', 'Grave type of human remains',
+            'Grave estimated number of individuals',
+            'Grave age groups', 'Grave sexes', 'Grave number of female sex',
+            'Grave number of male sex', 'Grave number of not specified sex',
+            'Grave manipulations of graves', 'Description', 'Reference',
+            'Comment'
 #43 fields
              ]
         )
@@ -320,31 +320,31 @@ class FindsDownloadView(GenericListView):
         writer = csv.writer(response, delimiter=",")
         writer.writerow([
             'Finds ID', 'Area',
-            'research_event',
-            'finds_type',
-            'small_finds_category',
-            'small_finds_type',
-            'botany_species',
-            'animal_remains_species',
-            'animal_remains_completeness',
-            'animal_remains_part',
-            'lithics_technology',
-            'lithics_industry',
-            'lithics_core_shape',
-            'lithics_retouched_tools',
-            'lithics_unretouched_tools',
-            'lithics_raw_material',
-            'obsidian',
-            'obsidian_amount',
-            'pottery_form',
-            'pottery_detail',
-            'pottery_decoration',
-            'pottery_type',
-            'amount',
-            'material',
-            'confidence',
-            'reference',
-            'comment',
+            'Research event',
+            'Finds type',
+            'Small finds category',
+            'Small finds type',
+            'Botany species',
+            'Animal remains species',
+            'Animal remains completeness',
+            'Animal remains part',
+            'Lithics technology',
+            'Lithics industry',
+            'Lithics core shape',
+            'Lithics retouched tools',
+            'Lithics unretouched tools',
+            'Lithics raw material',
+            'Obsidian',
+            'Obsidian amount',
+            'Pottery form',
+            'Pottery detail',
+            'Pottery decoration',
+            'Pottery type',
+            'Amount',
+            'Material',
+            'Confidence',
+            'Reference',
+            'Comment',
             #27
              ]
         )
@@ -404,6 +404,41 @@ class FindsListView(GenericListView):
         return context
 
 
+class ResearchEventDownloadView(GenericListView):
+    model = ResearchEvent
+    table_class = ResearchEventTable
+    template_name = 'browsing/researchevent_list_generic.html'
+    filter_class = ResearchEventListFilter
+    formhelper_class = GenericFilterFormHelper
+
+    def render_to_response(self, context, **kwargs):
+        timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
+        response = HttpResponse(content_type='text/csv')
+        filename = "defc_research_events_{}".format(timestamp)
+        response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
+        writer = csv.writer(response, delimiter=",")
+        writer.writerow([
+            'Research event ID', 'Research type',
+            'Institution', 'Year of activity start year',
+            'Year of activity end year', 'Project name', 'Project id',
+            'Project leader', 'Special analysis',
+            'Reference', 'Comment']
+        )
+        for obj in self.get_queryset():
+            writer.writerow([obj.id,
+                            '; '.join([str(obj) for obj in obj.research_type.all()]),
+                            '; '.join([str(obj) for obj in obj.institution.all()]),
+                            obj.year_of_activity_start_year,
+                            obj.year_of_activity_end_year,
+                            obj.project_name,
+                            obj.project_id,
+                            obj.project_leader,
+                            '; '.join([str(obj) for obj in obj.special_analysis.all()]),
+                            '; '.join([str(obj) for obj in obj.reference.all()]),
+                            obj.comment])
+        return response
+
+
 class ResearchEventListView(GenericListView):
     model = ResearchEvent
     table_class = ResearchEventTable
@@ -427,6 +462,37 @@ class ResearchEventListView(GenericListView):
             site_names.append(x.name)
         context["site_names"] = set(site_names)
         return context
+
+
+class InterpretationDownloadView(GenericListView):
+    model = Interpretation
+    table_class = InterpretationTable
+    template_name = 'browsing/interpretation_list_generic.html'
+    filter_class = InterpretationListFilter
+    formhelper_class = GenericFilterFormHelper
+
+    def render_to_response(self, context, **kwargs):
+        timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
+        response = HttpResponse(content_type='text/csv')
+        filename = "defc_interpretations_{}".format(timestamp)
+        response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
+        writer = csv.writer(response, delimiter=",")
+        writer.writerow([
+            'Interpretation ID', 'Area',
+            'Finds', 'Description',
+            'Production type', 'Subsistence type',
+            'Reference', 'Comment']
+        )
+        for obj in self.get_queryset():
+            writer.writerow([obj.id,
+                            '; '.join([str(obj) for obj in obj.area.all()]),
+                            '; '.join([str(obj) for obj in obj.finds.all()]),
+                            obj.description,
+                            '; '.join([str(obj) for obj in obj.production_type.all()]),
+                            '; '.join([str(obj) for obj in obj.subsistence_type.all()]),
+                            '; '.join([str(obj) for obj in obj.reference.all()]),
+                            obj.comment])
+        return response
 
 
 class InterpretationListView(GenericListView):
