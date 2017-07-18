@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-import csv
-import re
-import time
-import datetime
 import requests
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -23,49 +19,6 @@ from .forms import (
     NameForm, form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 )
 from .serializers import *
-
-
-def download_sites(request):
-    timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
-    response = HttpResponse(content_type='text/csv')
-    filename = "defc_sites_{}".format(timestamp)
-    response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
-    writer = csv.writer(response, delimiter=",")
-    writer.writerow([
-        'Site ID', 'Name of the site',
-        'Alias name', 'Alternative name',
-        'District', 'Region', 'Country',
-        'Geographical Coordinate Reference System', 'Coordinate source',
-        'Latitude', 'Longitude', 'Elevation',
-        'Authority file ID (Geonames ID)',
-        'Topography', 'Description',
-        'Exact location',
-        'Number of activity periods',
-        'Reference', 'Comment']
-    )
-    for x in Site.objects.all():
-        if x.province and x.province.region:
-            writer.writerow([x.id, x.name, '; '.join([x.name for x in x.alias_name.all()]),
-                            '; '.join([x.name for x in x.alternative_name.all()]),
-                            x.province.name, x.province.region.name, x.province.region.country.name,
-                            x.geographical_coordinate_reference_system,
-                            x.coordinate_source, x.latitude, x.longitude,
-                            x.elevation, x.authorityfile_id, x.topography,
-                            x.description, x.exact_location, x.number_of_activity_periods,
-                            '; '.join([x.author +' '+ x.title+' '+ str(x.publication_year) +' '+ str(x.place) for x in x.reference.all()]),
-                            x.comment])
-        else:
-            writer.writerow([x.id, x.name, '; '.join([x.name for x in x.alias_name.all()]),
-                            '; '.join([x.name for x in x.alternative_name.all()]),
-                            x.province, 'not defined', 'not defined',
-                            x.geographical_coordinate_reference_system,
-                            x.coordinate_source, x.latitude, x.longitude,
-                            x.elevation, x.authorityfile_id, x.topography,
-                            x.description, x.exact_location, x.number_of_activity_periods,
-                            '; '.join([x.author +' '+ x.title+' '+ str(x.publication_year) +' '+ str(x.place) for x in x.reference.all()]),
-                            x.comment])
-
-    return response
 
 
 #################################################################

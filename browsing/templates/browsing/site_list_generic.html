@@ -12,7 +12,6 @@
 
 {% block reset_button %}
  <a class ="btn btn-default"  href="{% url 'browsing:browse_sites' %}">Reset search</a>
- <!-- <a class ="btn btn-default" href="{% url 'defcdb:download_sites' %}">Download all sites (.csv)</a> -->
  <a class ="btn btn-default" href="{% url 'browsing:download-sites' %}{% querystring %}">Download search results (.csv)</a>
 
 

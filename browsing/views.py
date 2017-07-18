@@ -142,52 +142,6 @@ class SiteListView(GenericListView):
         return context
 
 
-def download_results(request):
-    # queryset = Site.objects.filter(name__icontains='los')
-
-    f = SiteListFilter(request.GET, queryset=Site.objects.all())
-    timestamp = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
-    response = HttpResponse(content_type='text/csv')
-    filename = "defc_sites_{}".format(timestamp)
-    response['Content-Disposition'] = 'attachment; filename="{}.csv"'.format(filename)
-    writer = csv.writer(response, delimiter=",")
-    writer.writerow([
-        'Site ID', 'Name of the site',
-        'Alias name', 'Alternative name',
-        'District', 'Region', 'Country',
-        'Geographical Coordinate Reference System', 'Coordinate source',
-        'Latitude', 'Longitude', 'Elevation',
-        'Authority file ID (Geonames ID)',
-        'Topography', 'Description',
-        'Exact location',
-        'Number of activity periods',
-        'Reference', 'Comment']
-    )
-    for obj in f.qs.values():
-        if obj.province and obj.province.region:
-            writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
-                            '; '.join([obj.name for obj in obj.alternative_name.all()]),
-                            obj.province.name, obj.province.region.name, obj.province.region.country.name,
-                            obj.geographical_coordinate_reference_system,
-                            obj.coordinate_source, obj.latitude, obj.longitude,
-                            obj.elevation, obj.authorityfile_id, obj.topography,
-                            obj.description, obj.exact_location, obj.number_of_activity_periods,
-                            '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
-                            obj.comment])
-        else:
-            writer.writerow([obj.id, obj.name, '; '.join([obj.name for obj in obj.alias_name.all()]),
-                            '; '.join([obj.name for obj in obj.alternative_name.all()]),
-                            obj.province, 'not defined', 'not defined',
-                            obj.geographical_coordinate_reference_system,
-                            obj.coordinate_source, obj.latitude, obj.longitude,
-                            obj.elevation, obj.authorityfile_id, obj.topography,
-                            obj.description, obj.exact_location, obj.number_of_activity_periods,
-                            '; '.join([obj.author +' '+ obj.title+' '+ str(obj.publication_year) +' '+ str(obj.place) for obj in obj.reference.all()]),
-                            obj.comment])
-
-    return response
-
-
 class AreaDownloadView(GenericListView):
     model = Area
     table_class = AreaTable
@@ -377,7 +331,6 @@ class FindsDownloadView(GenericListView):
                             '; '.join([str(obj) for obj in obj.reference.all()]),
                             obj.comment])
         return response
-#27
 
 
 class FindsListView(GenericListView):

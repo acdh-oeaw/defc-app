@@ -36,7 +36,6 @@ url(r'^interpretation/create/$', views.create_interpretation, name='interpretati
 url(r'^interpretation/update/(?P<pk>[0-9]+)$', views.update_interpretation, name='interpretation_update'),
 url(r'^interpretation/delete/(?P<pk>[0-9]+)$', views.InterpretationDelete.as_view(), name='interpretation_delete'),
 url(r'^interpretation/detail/(?P<pk>[0-9]+)$', views.InterpretationDetail.as_view(), name='interpretation_detail'),
-url(r'download-sites/$', views.download_sites, name='download_sites'),
 ]
 #class Interpretation must be added
 #some change for git
