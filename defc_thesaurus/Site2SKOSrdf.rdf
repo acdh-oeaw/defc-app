@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to class Site in database.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/NotInDatabase">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Site properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteTopography">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<rdfs:comment>A concept schema related to the particular Site properties.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/geographic_location/1.098">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">geographic location</skos:prefLabel>
+	<skos:definition xml:lang="en">The location of the site.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>NotInDatabase</skos:inScheme>
+	<skos:editorialNote>dc_not_in_database;098</skos:editorialNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">topography</skos:prefLabel>
+	<skos:definition xml:lang="en">The location of the site based on the natural and artifical physical features of an area.</skos:definition>
+	<dc:source>OREA</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>NotInDatabase</skos:inScheme>
+	<skos:editorialNote>dc_not_in_database;099</skos:editorialNote>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/coast/2.1">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">coast</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Küste</skos:prefLabel>
+	<skos:definition xml:lang="en">A part of land adjoining or near the sea.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/coast</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;1</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/coast/2.1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hill/2.2">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">hill</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Hügel</skos:prefLabel>
+	<skos:definition xml:lang="en">A naturally raised area of land, not as high as a moutain.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/hill</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;2</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hill/2.2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hillside/2.3">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">hillside</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Hang</skos:prefLabel>
+	<skos:altLabel xml:lang="en">slope</skos:altLabel>
+	<skos:altLabel xml:lang="de">Abhang</skos:altLabel>
+	<skos:definition xml:lang="en">The sloping side of a hill.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/hillside</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;3</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hillside/2.3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/inland/2.4">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">inland</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Im Landesinneren</skos:prefLabel>
+	<skos:definition xml:lang="en">Situated in the interior rather than on the coast.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/inland</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;4</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/inland/2.4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/valley_bottom/2.5">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">valley bottom</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Talsohle</skos:prefLabel>
+	<skos:definition xml:lang="en">A long depression in the land surface, usually containing a river, formed by erosion or by movements in the earth's crust.</skos:definition>
+	<dc:source>http://www.collinsdictionary.com/dictionary/english/valley</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;5</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/valley_bottom/2.5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mountain_top/2.6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">mountain top</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Berggipfel</skos:prefLabel>
+	<skos:altLabel xml:lang="en">summit</skos:altLabel>
+	<skos:definition xml:lang="en">The area at the top of a mountain.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/mountaintop</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;6</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/mountain_top/2.6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plain/2.7">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">plain</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Flachland</skos:prefLabel>
+	<skos:definition xml:lang="en">A large area of flat land.</skos:definition>
+	<dc:source>https://en.oxforddictionaries.com/definition/plain</dc:source>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;7</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/plain/2.7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/river_delta/2.8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<skos:prefLabel xml:lang="en">river delta</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Flussdelta</skos:prefLabel>
+	<skos:definition xml:lang="en">A river mouth in which a river devides into smaller rivers, because of the sediment dropped by the river.</skos:definition>
+	<skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/SiteSchema"/>
+	<skos:inScheme>SiteTopography</skos:inScheme>
+	<skos:editorialNote>dc_site_topography;8</skos:editorialNote>
+	<skos:broader>topography/1.099</skos:broader>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/topography/1.099">
+	<skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/river_delta/2.8"/>
+</rdf:Description>
+
+</rdf:RDF>
