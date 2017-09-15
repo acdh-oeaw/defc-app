@@ -1,6 +1,6 @@
 {% extends "browsing/generic_list.html" %}
 {% block list_title %}Search all Research events{% endblock %}
-
+{% load django_tables2 %}
 {% block create_button %}
 {% if user.is_authenticated %}
  <div>
@@ -11,6 +11,7 @@
 
 {% block reset_button %}
  <a class ="btn btn-default"  href="{% url 'browsing:browse_researchevents' %}">Reset search</a>
+ <a class ="btn btn-default" href="{% url 'browsing:download-research-events' %}{% querystring %}">Download search results (.csv)</a>
 {% endblock %}
 
 {% block customScripts %}

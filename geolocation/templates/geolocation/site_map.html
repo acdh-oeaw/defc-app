@@ -8,7 +8,18 @@
     <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
     <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
         <style>
-            #map { height: 800px; }
+            #map {
+              height: 800px;
+              margin-bottom: 40px;
+            }
+            .btn.btn-default.map-search {
+              margin-bottom: 10px;
+              width: 50%;
+              white-space: normal;
+            }
+            .btn-crispy-search {
+              width: 50%;
+            }
         </style>
 {% endblock %}
 {% block content %}
@@ -21,17 +32,19 @@
     <div class="col-md-4">
         <div class="panel panel-default panel-fixed" >
             <div class="panel-heading">
-                <h3>Filter</h3>
+                <h3>Search</h3>
             </div>
             <div class="panel-body">
             {% load django_tables2 crispy_forms_tags %}
             {% crispy filter.form filter.form.helper %}
-             <a class ="btn btn-default"  href="{% url 'geolocation:filter_sites' %}">Reset search</a>
-            <hr/>
+            <a class ="btn btn-default map-search"  id="area-search-options">Show/Hide Area search options</a></br>
+            <a class ="btn btn-default map-search"  id="finds-search-options">Show/Hide Finds search options</a></br>
+             <a class ="btn btn-default map-search"  href="{% url 'geolocation:filter_sites' %}">Reset search</a></br>
+            <!-- <hr/>
             Results:  <br/>
             {% for obj in filter %}
                 <a href="{% url 'publicrecords:site_detail' pk=obj.id %}">{{ obj.name }}</a><br />
-            {% endfor %}
+            {% endfor %} -->
             </div>
         </div>
     </div>
@@ -42,6 +55,22 @@
             </div>
             <div class="panel-body">
                 <div id="map"></div>
+
+            </div>
+        </div>
+        <div class="panel panel-default panel-fixed" >
+            <div class="panel-heading">
+                <h3>All results</h3>
+            </div>
+            <div class="panel-body">
+
+                <div>
+                  {% for obj in filter %}
+                      <a href="{% url 'publicrecords:site_detail' pk=obj.id %}">{{ obj.name }}</a><br />
+                  {% endfor %}
+                </div>
+                <div>
+                </div>
             </div>
         </div>
     </div>
@@ -106,5 +135,21 @@
         mymap.addLayer(markers);
         mymap.fitBounds(markers.getBounds(), {'maxZoom': 12});
 
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#area_search_fields").hide();
+    $("#area-search-options").click(function(){
+        $("#area_search_fields").toggle();
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#finds_search_fields").hide();
+    $("#finds-search-options").click(function(){
+        $("#finds_search_fields").toggle();
+    });
+});
 </script>
 {% endblock %}

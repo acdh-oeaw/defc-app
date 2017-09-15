@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import requests
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response, get_object_or_404, redirect
@@ -13,7 +14,7 @@ from django.core.urlresolvers import reverse_lazy
 from reversion import revisions as reversion
 from haystack.query import SearchQuerySet
 
-from .models import Site, Area, Finds, ResearchEvent, Interpretation
+from .models import *
 from .forms import (
     NameForm, form_user_login, AreaForm, ResearcheventForm, FindsForm, SiteForm, InterpretationForm
 )
