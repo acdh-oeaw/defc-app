@@ -8,41 +8,44 @@
 <script src='//cdn.jsdelivr.net/yasr/2.4/yasr.bundled.min.js'></script>
 <script src='//cdn.jsdelivr.net/yasqe/2.11.10/yasqe.bundled.min.js'></script>
 <div class="container">
-    <div class="panel panel-default procustom-panel-create">
-        <div class="panel-heading procustom-panel-heading">
-                <h1 style="text-align: center;">Example-Queries</h1>
+    <div class="panel panel-default panel-browsing">
+        <div class="panel-heading panel-browsing-heading">
+        <h1>SPARQL Endpoint</h1>
+               
+            </div>
+            <div class="panel-body panel-browsing-body">
+            <div id="example-queries">
+             <h2>Example-Queries</h2>
                 {% for x in examples %}
-                    <h3><abbr title="{{ x.description }}">{{ x.title }}</abbr></h3>
+                    <h4><abbr title="{{ x.description }}">{{ x.title }}</abbr></h4>
                     <code>{{ x.query }}</code>
                 {% endfor %}
             </div>
-            <div class="panel-body">
+            <br>
+            <div id="query-editor">
+            <h2>Query editor</h2>
                 {% crispy form %}
+                </div>
             </div>
-            <div>
-                <h2>Result</h2>
+            <div id="sparql-results">
+                <h2>Results</h2>
                 <hr/>
                 <div id="yasr"></div>
                 <br/>
                 <hr/>
+                
+                <div class="panel panel-info">
+    <div class="panel-header info-panel">
+    <span class="glyphicon glyphicon-info-sign"></span>
+        Credits
+</div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr><td>SPARQL endpoint interface is built with <a href="http://about.yasgui.org/">YASGUI</a> package.</td></tr>
+    </table>
+    
 
-                <div class="alert alert-success">
-                    <strong>Thanks</strong> <a href="http://about.yasgui.org/">http://about.yasgui.org/</a>
-                </div>
-                <table class="table table-bordered table-hover table-condensed">
-                    <tr>
-                        {{ results.bindings|first}}
-                    </tr>
-                    {% for x in results.bindings %}
-                        <tr>
-                            {% for key, value in x.items %}
-                            <td>
-                                {{ value.value }}
-                            </td>
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </table>
+</div>
             </div>
         </div>
 </div>
