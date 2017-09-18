@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'browsing',
     'whoosh',
     'haystack',
+    'sparql',
 )
 
 WHOOSH_INDEX = os.path.join(BASE_DIR, 'whoosh/')

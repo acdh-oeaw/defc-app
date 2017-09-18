@@ -104,4 +104,5 @@ urlpatterns = [
     url(r'^3Dmodels/', include('threedmodels.urls', namespace="3Dmodels")),
     url(r'^browsing/', include('browsing.urls', namespace='browsing')),
     url(r'^datamodel/', include('django_spaghetti.urls', namespace="datamodel")),
+    url(r'^sparql/', include('sparql.urls', namespace='sparql')),
 ]
