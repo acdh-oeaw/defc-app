@@ -11,8 +11,10 @@
     <div class="panel panel-default procustom-panel-create">
         <div class="panel-heading procustom-panel-heading">
                 <h1 style="text-align: center;">Example-Queries</h1>
-                <h3>fetch all triples</h3>
-                <code>SELECT ?s ?p ?o WHERE {?s ?p ?o} </code>
+                {% for x in examples %}
+                    <h3><abbr title="{{ x.description }}">{{ x.title }}</abbr></h3>
+                    <code>{{ x.query }}</code>
+                {% endfor %}
             </div>
             <div class="panel-body">
                 {% crispy form %}

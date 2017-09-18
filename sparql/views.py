@@ -7,6 +7,7 @@ from django.conf import settings
 from django.shortcuts import render
 from django.views.generic.edit import FormView
 from .forms import QueryForm
+from .models import Query
 
 
 try:
@@ -33,6 +34,7 @@ class QueryView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(QueryView, self).get_context_data(**kwargs)
+        context['examples'] = Query.objects.all()
         context['endpoint'] = endpoint
         return context
 
@@ -42,7 +44,6 @@ class QueryView(FormView):
         query = cd['query']
         context['query'] = query
         sparql = SPARQLWrapper(endpoint)
-        print(endpoint)
         try:
             sparql.setQuery(query)
             sparql.setReturnFormat(JSON)
