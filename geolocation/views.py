@@ -9,8 +9,8 @@ from django_tables2 import SingleTableView, RequestConfig
 from .forms import DC_provinceForm
 from defcdb.models import DC_province, Site
 from browsing.tables import SiteTable
-from browsing.filters import SiteListFilter
-from browsing.forms import GenericFilterFormHelper
+from browsing.filters import SiteListFilter, MapListFilter
+from browsing.forms import GenericFilterFormHelper, SpecificMapForm
 from browsing.views import GenericListView
 
 
@@ -18,8 +18,8 @@ class SiteListFilterView(GenericListView):
     model = Site
     table_class = SiteTable
     template_name = 'geolocation/site_map.html'
-    filter_class = SiteListFilter
-    formhelper_class = GenericFilterFormHelper
+    filter_class = MapListFilter
+    formhelper_class = SpecificMapForm
 
     def get_queryset(self, **kwargs):
         qs = Site.objects.filter(latitude__isnull=False)
