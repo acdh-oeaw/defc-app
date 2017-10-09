@@ -180,7 +180,7 @@
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
     <dc:source>OREA</dc:source>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsLithicsCoreShape"/>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:prefLabel xml:lang="en">conical core</skos:prefLabel>
     <skos:definition>A blade core of a conical shape.</skos:definition>
   </rdf:Description>
@@ -541,6 +541,7 @@
     <dc:source>http://dbpedia.org/page/Charcoal</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="en">charcoal</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/elongated_prong_handle_with_knob/6.183">
     <skos:prefLabel xml:lang="en">elongated prong handle with knob</skos:prefLabel>
@@ -1019,7 +1020,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition>A blade core which complete exhaustion leads to the bullet shape.</skos:definition>
     <skos:prefLabel xml:lang="de">Bullet core</skos:prefLabel>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:prefLabel xml:lang="en">bullet core</skos:prefLabel>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsLithicsCoreShape"/>
@@ -1770,8 +1771,8 @@
     <dc:source>http://dbpedia.org/page/Horn_(anatomy)</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
     <skos:definition>A horn is a pointed projection on the head of various animals consisting of a covering of keratin and other proteins surrounding a core of live bone.</skos:definition>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/organic/2.4" />
-    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema" />
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/organic/2.4"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
     <skos:prefLabel xml:lang="en">horn</skos:prefLabel>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsMaterial" />
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/animal_remains_part/3.07" />
@@ -2162,6 +2163,7 @@
     <skos:prefLabel xml:lang="en">dating method</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_dating/1.060"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/hemp/3.12">
     <skos:prefLabel xml:lang="la">Cannabis sativa</skos:prefLabel>
@@ -2445,7 +2447,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/blade_core/4.2">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:prefLabel xml:lang="de">Klingenkern</skos:prefLabel>
     <skos:definition>A core which main reduction leads to the detachment of blades (aim of knapping-blades).</skos:definition>
     <skos:prefLabel xml:lang="en">blade core</skos:prefLabel>
@@ -2831,6 +2833,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:definition>Material used for dating procedures (using radiocarbon dating).</skos:definition>
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/area_dating/1.060"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/enclosure_rampart/5.2">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -3002,6 +3005,7 @@
     <skos:prefLabel xml:lang="de">Korn</skos:prefLabel>
     <skos:prefLabel xml:lang="en">grain</skos:prefLabel>
     <dc:source>https://en.oxforddictionaries.com/definition/grain</dc:source>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/monochrome/5.265">
     <skos:prefLabel xml:lang="en">monochrome</skos:prefLabel>
@@ -3698,6 +3702,7 @@
     <skos:prefLabel xml:lang="de">nicht bestimmt</skos:prefLabel>
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/grave_type/4.083"/>
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_method/3.045"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description> 
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/material_culture/4.3">
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema"/>
@@ -3707,6 +3712,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <dc:source>http://oxfordindex.oup.com/view/10.1093/obo/9780199766567-0085</dc:source>
     <skos:prefLabel xml:lang="en">material culture</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
  <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/limestone/3.22">
     <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/stone/2.1"/>
@@ -4287,7 +4293,7 @@
     <skos:prefLabel xml:lang="de">Steinwerkzeug</skos:prefLabel>
     <skos:prefLabel xml:lang="en">lithics</skos:prefLabel>
     <skos:related rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/scraper/4.74"/>
-    <skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:narrower rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsType"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/flat_base/5.86">
@@ -5187,6 +5193,7 @@
     <dc:source>Kipfer, B. A. Encyclopedic Dictionary of Archaeology. Kluwer Academic/Plenum Publishers, New York. P.502</dc:source>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/airborne_laser_scanning_(ALS)/4.21">
     <skos:prefLabel xml:lang="en">airborne laser scanning (ALS)</skos:prefLabel>
@@ -5429,6 +5436,7 @@
     <skos:prefLabel xml:lang="en">dendrochronology</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:exactMatch rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_dendrochronology/3.7"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/rectangular-apsidal/5.5">
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
@@ -5453,7 +5461,7 @@
     <skos:altLabel xml:lang="en">Bi-directional core</skos:altLabel>
     <skos:definition>A core with two, opposed knapping platforms.</skos:definition>
     <skos:prefLabel xml:lang="en">bidirectional core</skos:prefLabel>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:prefLabel xml:lang="de">bidirektionaler Kern</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <dc:source>OREA</dc:source>
@@ -6213,7 +6221,7 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core_fragment/4.5">
     <skos:definition>A fragment of a core (regardless typology, used when the core is incomplete, or the main type cannot be determined due to fragmentation)</skos:definition>
-    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.012"/>
+    <skos:broader rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/core/3.12"/>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/FindsLithicsCoreShape"/>
     <dc:source>OREA</dc:source>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
@@ -7754,6 +7762,7 @@
     <dc:source>http://thesaurus.historicengland.org.uk/thesaurus_term.asp?thes_no=560&amp;term_no=142188</dc:source>
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema"/>
     <skos:exactMatch rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/dating_radiocarbon_dating/3.12"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/sickle_implement/4.107">
     <dc:source>Kipfer, B. A. Dictionary of Artifacts 2007. Blackwell Publishing, Oxford.p 290</dc:source>
@@ -8432,6 +8441,7 @@
     <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodSchema"/>
     <skos:definition>Fired clay, normally belonging to pottery, figurine, or other ceramic industries.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:inScheme rdf:resource="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/DefcSchema"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://acdh.oeaw.ac.at/vocabs/defcthesaurus/PeriodDatingmethod">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
