@@ -1,8 +1,5 @@
 from rest_framework import viewsets
-from .models import (
-    DC_province, DC_country, DC_region, Site, Area, Finds, ResearchEvent,
-    Interpretation, DC_period_datingmethod, DC_researchevent_researchtype
-)
+from .models import *
 from .serializers import *
 from bib.models import Book
 
@@ -15,6 +12,11 @@ class DC_finds_lithics_raw_materialViewSet(viewsets.ModelViewSet):
 class DC_finds_lithics_retouched_toolsViewSet(viewsets.ModelViewSet):
     queryset = DC_finds_lithics_retouched_tools.objects.all()
     serializer_class = DC_finds_lithics_retouched_toolsSerializer
+
+
+class DC_finds_lithics_unretouched_toolsViewSet(viewsets.ModelViewSet):
+    queryset = DC_finds_lithics_unretouched_tools.objects.all()
+    serializer_class = DC_finds_lithics_unretouched_toolsSerializer
 
 
 class DC_finds_lithics_core_shapeViewSet(viewsets.ModelViewSet):
@@ -95,6 +97,11 @@ class DC_area_settlementstructureViewSet(viewsets.ModelViewSet):
 class DC_area_constructiontypeViewSet(viewsets.ModelViewSet):
     queryset = DC_area_constructiontype.objects.all()
     serializer_class = DC_area_constructiontypeSerializer
+
+
+class DC_area_constructionshapeViewSet(viewsets.ModelViewSet):
+    queryset = DC_area_constructionshape.objects.all()
+    serializer_class = DC_area_constructionshapeSerializer
 
 
 class DC_area_buildingtechniqueViewSet(viewsets.ModelViewSet):

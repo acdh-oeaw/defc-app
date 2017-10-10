@@ -14,6 +14,11 @@ class DC_finds_lithics_retouched_toolsSerializer(serializers.HyperlinkedModelSer
         model = DC_finds_lithics_retouched_tools
 
 
+class DC_finds_lithics_unretouched_toolsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_finds_lithics_unretouched_tools
+
+
 class DC_finds_lithics_core_shapeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DC_finds_lithics_core_shape
@@ -97,6 +102,11 @@ class DC_area_settlementstructureSerializer(serializers.HyperlinkedModelSerializ
 class DC_area_constructiontypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = DC_area_constructiontype
+
+
+class DC_area_constructionshapeSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = DC_area_constructionshape
 
 
 class DC_area_buildingtechniqueSerializer(serializers.HyperlinkedModelSerializer):

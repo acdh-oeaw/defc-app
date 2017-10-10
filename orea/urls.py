@@ -13,6 +13,9 @@ router.register(r'dc_finds_lithics_raw_material', api_views.DC_finds_lithics_raw
 router.register(
     r'dc_finds_lithics_retouched_tools', api_views.DC_finds_lithics_retouched_toolsViewSet
 )
+router.register(
+    r'dc_finds_lithics_retouched_tools', api_views.DC_finds_lithics_unretouched_toolsViewSet
+)
 router.register(r'dc_finds_lithics_core_shape', api_views.DC_finds_lithics_core_shapeViewSet)
 router.register(r'dc_finds_lithics_industry', api_views.DC_finds_lithics_industryViewSet)
 router.register(r'dc_area_agegroups', api_views.DC_area_agegroupsViewSet)
@@ -33,6 +36,7 @@ router.register(r'dc_area_areatype', api_views.DC_area_areatypeViewSet)
 router.register(r'dc_area_settlementtype', api_views.DC_area_settlementtypeViewSet)
 router.register(r'dc_area_settlementstructure', api_views.DC_area_settlementstructureViewSet)
 router.register(r'dc_area_constructiontype', api_views.DC_area_constructiontypeViewSet)
+router.register(r'dc_area_constructionshape', api_views.DC_area_constructionshapeViewSet)
 router.register(r'dc_area_buildingtechnique', api_views.DC_area_buildingtechniqueViewSet)
 router.register(r'dc_area_specialfeatures', api_views.DC_area_specialfeaturesViewSet)
 router.register(
