@@ -23,6 +23,20 @@ $("#goto option").each(function() {
 
 });
 </script>
+<style>
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+}
+</style>
 
 <div class="container">
 <div class="panel panel-default panel-browsing">
@@ -111,6 +125,20 @@ $("#goto option").each(function() {
 
 
         {% if table.paginator.page_range|length > 15 %}
+        <!--if has previous page - previous button -->
+
+        {% if table.page.has_previous %}
+        {% block pagination.previous.goto %}
+        <li class="previous">
+          <a href="{% querystring table.prefixed_page_field=table.page.previous_page_number %}" style="border-radius: 0px;">{% trans "Previous" %}</a>
+        </li>
+        {% endblock pagination.previous.goto %}
+        {% endif %}
+
+
+<!--select form if more than 15 pages -->
+
+
         <div class="form-group">
           <label for="goto">Go to page</label>
             <select class="form-control" id="goto" onchange="javascript:location.href = this.value;">
@@ -127,9 +155,20 @@ $("#goto option").each(function() {
 {% if table.page.has_previous or table.page.has_next %}
 {% block pagination.cardinality %}
 {% blocktrans with table.page.number as current and table.paginator.num_pages as total %}
-Page {{ current }} of {{ total }}
+<p>Page {{ current }} of {{ total }}</p>
 {% endblocktrans %}
 {% endblock pagination.cardinality %}
+{% endif %}
+
+
+<!--if has next page - next button -->
+
+{% if table.page.has_next %}
+{% block pagination.next.goto %}
+  <li class="next">
+  <a href="{% querystring table.prefixed_page_field=table.page.next_page_number %}" style="border-radius: 0px;">{% trans "Next" %}</a>
+  </li>
+{% endblock pagination.next.goto %}
 {% endif %}
 
 
