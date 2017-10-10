@@ -1,0 +1,81 @@
+{% extends "defcdb/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+ <script>
+    var shiftWindow = function() { scrollBy(0, -50) };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script>
+<div class="container">
+ <div class="panel panel-default panel-browsing">
+	<div class="panel-heading panel-browsing-heading">
+<h1>DEFC app mapping to CIDOC CRM</h1>
+</div>
+ <div class="panel-body panel-browsing-body text-justify">
+ <ul id="docs-outline" style="list-style-type: none; padding-left: 0px;">
+    <li><a href="#general"><b>General</b></a></li> 
+    <li><a href="#mapping"><b>Mapping</b></a></li>
+    <li><a href="#graphic"><b>Graphic representation</b></a></li>
+ </ul>
+
+<h2 id="general">General</h2>
+<h3>Ontologies</h3>
+<p>The following CIDOC CRM version and extensions have been used to map the DEFC app:</p>
+<ul>
+<li>CIDOC CRM version 6.2.1</li>
+<li>CIDOC CRMarchaeo version 1.4.1</li>
+<li>CIDOC CRMsci version 1.2.3</li>
+</ul>
+<h3>Tools</h3>
+<p>The first conceptual draft has been created in 3M (mapping memory manager) tool - <a href="http://139.91.183.3/3M/">http://139.91.183.3/3M/</a> (title: DEFCapp, creator: seta). </p>
+<p>Mapping the DEFC data and transforming them to RDF was carried out in Karma - <a href="http://usc-isi-i2.github.io/karma/">http://usc-isi-i2.github.io/karma/</a>.</p>
+
+<h3>URIs</h3>
+<p>Base URI: http://defc.acdh.ac.at/data/</p>
+<p>URI suffix form: DBfieldname/ID</p>
+
+<h2 id="mapping">Mapping</h2>
+<p>DEFC app is a relational database, which consist of 5 main tables (site, area, finds, interpretation, research event), their vocabulary tables and intermediate tables. All of them have been mapped to CIDOC CRM field by field following the relational database structure. </p>
+<p>All DEFC app tables have been mapped with the exception of:</p>
+<ul>
+<li>defcdb_dc_reference_type</li>
+<li>defcdb_dc_site_coordinatesource</li>
+<li>defcdb_dc_site_geographicalreferencesystem</li>
+<li>defcdb_reference</li>
+<li>tables referring to the 3D models</li>
+<li>other admin tables</li>
+</ul>
+<p>Additionally certain fields within the main “area” table were not mapped (concerning the radiocarbon dating – delta13, radiocarbon dating, date of calibration, standard deviation earliest, standard deviation latest).</p>
+<p>These tables and fields were not mapped, because their content did not seem to be of immediate value for further archaeological investigation, but can be mapped in the future.</p>
+<h3>Tables concerning SITE</h3>
+<p>The SITE has been mapped as S20PhysicalFeature as this class inherits the temporal as well as spatial components.</p>
+<p>The district (province) as well as the region where the site is located are mapped as E44Place_Appellation because they denote the names of places. Some of these names are official administrative names as used today, however, some of them are defined by the AAPP research group and may vary from the official definitions. E44 has been chosen because it allows this varying of definition in name and spatial span. 
+</p>
+<h3>Tables concerning the RESEARCH EVENT</h3>
+<p>RESEARCH EVENT is mapped as E7Activity, because it represents the activity of researching a site. </p>
+<h3>Tables concerning AREA</h3>
+<p>As the SITE also AREA has been mapped as S20 – because it is defined as a part of the site.</p>
+<p>Area is a challenging table to map as the information concerning only certain area types are spread in the whole table. Because we did not want to lose any details the table has been mapped accordingly. The main AREA table includes a field that holds information about different area types – cemetery, settlement, quarry, and cave. Each of these types is additionally described within the same table – cemetery: number of grave, settlement: building technique etc. The main field (area type) is therefore mapped as E55Type. The information that belongs only to one of those type is then mapped from this class E55 – some types belong to different classes that is why they are first defined and afterwards linked to their properties. Whereas a grave and settlement are E24Physical_Man_Made_Thing the cave is a E26_Physical_Feature. However, additional tables linked to the AREA table describing particular area types are mapped directly to the AREA without the extra E55_Type step in between. This inconsistency resulted from database structure and the mapping procedure that was strictly following this structure. Therefore this mapping could be improved and simplified by expressing these database fields consistently.</p>
+<h3>Tables concerning FINDS</h3>
+<p>FINDS in the DEFCapp describe man-made objects (small finds, pottery, lithics) as well as biological objects (animal-, plant- and human remains). Therefore they are described as E18_Physical_Thing and are later on divided to E20Biological_Object and E22_Man-Made_Object. From this step onwards the mapping logic follows the  </p>
+<h3>Tables concerning INTERPRETATION</h3>
+<p>INTERPRETATION is mapped as E7Activity as the table describes the past human activity that was carried out at the described site – in this sense this is the “activity” part of the SITE that we initially wanted to express by mapping the SITE to the E7 class.</p>
+
+
+<h2 id="graphic">Graphic representation</h2>
+<p>Turquoise colour – main tables and relationships between them</p>
+<p>Blue colour – DEFC app database fields</p>
+<p>Yellow colour – CIDOC CRM, CRMarchaeo, CRMsci classes</p>
+<p>Black colour – CIDOC CRM, CRMarchaeo, CRMsci properties</p>
+<p><span class="glyphicon glyphicon-exclamation-sign"></span> For a better overview, click on image to enlarge.</p>
+<div style="width:auto; height:30px;"></div>
+<a href='{% static "webpage/defc2cidoc.svg" %}'><img src='{% static "webpage/defc2cidoc.svg" %}' class="img-responsive center-block" alt="DEFC mapping model to CIDOC CRM" title="Click to enlarge" style="width: 60%;"></a>
+
+<div style="width:auto; height:30px;"></div>
+
+</div>
+</div>
+</div>
+
+{% endblock %}

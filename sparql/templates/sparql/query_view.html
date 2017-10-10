@@ -20,6 +20,8 @@
                     <h4><abbr title="{{ x.description }}">{{ x.title }}</abbr></h4>
                     <code>{{ x.query }}</code>
                 {% endfor %}
+                <div style="width:auto; height:30px;"></div>
+                <p><span class="glyphicon glyphicon-exclamation-sign"></span> See <a href="{% url 'webpage:mapping2cidoc' %}">DEFC mapping to CIDOC CRM documentation</a></p>
             </div>
             <br>
             <div id="query-editor">

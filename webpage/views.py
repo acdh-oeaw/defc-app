@@ -72,6 +72,11 @@ def defc2rdf_demo(request):
 	return render(request, 'webpage/defc2rdf_demo.html', context)
 
 
+def mapping2cidoc(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/mapping2cidoc.html', context)
+
+
 class EventListViewAdmin(generic.ListView):
 	template_name = 'webpage/event_list.html'
 	context_object_name = 'object_list'
