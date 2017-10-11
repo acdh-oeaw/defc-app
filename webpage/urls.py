@@ -14,6 +14,7 @@ url(r'^ada-tepe-movie-de/$', views.ada_tepe_movie_german_version, name='ada_tepe
 url(r'^terms-of-use/$', views.terms_of_use, name='terms_of_use'),
 url(r'^defc2rdf/$', views.defc2rdf_demo, name='defc2rdf_demo'),
 url(r'^mapping2cidoc/$', views.mapping2cidoc, name='mapping2cidoc'),
+url(r'^defc-thesaurus/$', views.defc_thesaurus, name='defc-thesaurus'),
 url(r'^blog/$', views.blog_main, name='blog_main'),
 url(r'^blog/post01/$', views.blog_post_01, name='blog_post_01'),
 url(r'^blog/post02/$', views.blog_post_02, name='blog_post_02'),

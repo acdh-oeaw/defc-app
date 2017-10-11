@@ -77,6 +77,11 @@ def mapping2cidoc(request):
 	return render(request, 'webpage/mapping2cidoc.html', context)
 
 
+def defc_thesaurus(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/defc_thesaurus.html', context)
+
+
 class EventListViewAdmin(generic.ListView):
 	template_name = 'webpage/event_list.html'
 	context_object_name = 'object_list'
