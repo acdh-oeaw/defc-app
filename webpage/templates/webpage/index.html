@@ -79,8 +79,8 @@
         <form action="/browsing/sites/?name=name" class="procustom-form" id="searchForm">
             <h3><b>DEFC Database </b></h3>
                   <h4>
-                  Start searching <a href="{% url 'browsing:browse_sites' %}">730 archaeological sites</a>
-                  and <a href="{% url 'browsing:browse_finds' %}">2045 finds</a>.
+                  Start searching more than <a href="{% url 'browsing:browse_sites' %}">1000 archaeological sites</a>
+                  and more than <a href="{% url 'browsing:browse_finds' %}">3000 finds</a>.
                   </h4>
                   <br>
                   <div class="input-group" id="inputGroup">
@@ -197,6 +197,20 @@
   </div>
   </div>
 
+  <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>DEFC Thesaurus</h4>
+      </div>
+    <div class="panel-body">
+      <img class="img-responsive" src="{% static "webpage/hp-thesaurus.jpg" %}" alt="defc thesaurus">
+    <br>
+    <p>DEFC thesaurus is a reference resource created during the project that lists and contextualizes terms from DEFC word lists based on their meaning, to present and explain the data structure.</p>
+       <a href="{% url 'webpage:defc-thesaurus' %}" class="btn btn-default learn-more" role="button">Learn More</a>
+    </div>
+  </div>
+  </div>
+
 
   <div class="col-lg-4 col-md-4 col-sm-6 grid-item">
     <div class="panel panel-default">
@@ -209,6 +223,7 @@
     </div>
   </div>
   </div>
+
 
 
 </div> <!--grid div-->
