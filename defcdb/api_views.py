@@ -1,7 +1,20 @@
 from rest_framework import viewsets
+from rest_framework.settings import api_settings
+from rest_framework.response import Response
+from .api_renderers import GeoJsonRenderer
 from .models import *
 from .serializers import *
 from bib.models import Book
+
+
+class GeoJsonViewSet(viewsets.ViewSet):
+
+    def list(self, request):
+        queryset = Site.objects.all()
+        serializer = GeoJsonSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    renderer_classes = tuple(api_settings.DEFAULT_RENDERER_CLASSES) + (GeoJsonRenderer,)
 
 
 class DC_finds_lithics_raw_materialViewSet(viewsets.ModelViewSet):

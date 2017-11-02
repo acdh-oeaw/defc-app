@@ -9,6 +9,7 @@ import autocomplete_light.shortcuts as al
 al.autodiscover()
 
 router = routers.DefaultRouter()
+router.register(r'geojson', api_views.GeoJsonViewSet, base_name='places')
 router.register(r'dc_finds_lithics_raw_material', api_views.DC_finds_lithics_raw_materialViewSet)
 router.register(
     r'dc_finds_lithics_retouched_tools', api_views.DC_finds_lithics_retouched_toolsViewSet

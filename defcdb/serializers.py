@@ -1,7 +1,51 @@
-# -*- coding: utf-8 -*-
+from django.conf import settings
 from rest_framework import serializers
 from .models import *
 from bib.models import Book
+
+try:
+    base_url = settings.CURRENT_BASE_URL
+except AttributeError:
+    base_url = 'https://defc.acdh.oeaw.ac.at'
+
+
+class GeoJsonSerializer(serializers.BaseSerializer):
+
+    def to_representation(self, obj):
+        geonames_base = "http://www.geonames.org/"
+        alt_names = [{'name': x.name} for x in obj.alternative_name.all()]
+        broad_matches = []
+        try:
+            geonames_id = obj.province.authorityfile_id
+        except AttributeError:
+            geonames_id = None
+
+        if geonames_id:
+            broad_matches.append(geonames_base+geonames_id)
+        if obj.longitude:
+            geojson = {
+                "links": {
+                    "broad_matches": broad_matches,
+                    "close_matches": [],
+                    "exact_matches": [],
+                },
+                "title": obj.name,
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [float(obj.longitude), float(obj.latitude)]
+                    },
+                "uri": base_url + obj.get_absolute_url(),
+                "id": obj.pk,
+                "names": alt_names,
+                "properties": {
+                    "name": obj.name,
+                    "descritpion": obj.description
+                }
+            }
+            return geojson
+        else:
+            return None
 
 
 class DC_finds_lithics_raw_materialSerializer(serializers.HyperlinkedModelSerializer):
@@ -292,4 +336,3 @@ class FindsSerializer(serializers.HyperlinkedModelSerializer):
 class InterpretationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Interpretation
-
