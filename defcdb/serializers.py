@@ -14,6 +14,8 @@ class GeoJsonSerializer(serializers.BaseSerializer):
     def to_representation(self, obj):
         geonames_base = "http://www.geonames.org/"
         alt_names = [{'name': x.name} for x in obj.alternative_name.all()]
+        for x in obj.alias_name.all():
+            alt_names.append({'name': x.name})
         broad_matches = []
         try:
             geonames_id = obj.province.authorityfile_id
