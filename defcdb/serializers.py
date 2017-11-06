@@ -29,9 +29,6 @@ class GeoJsonSerializer(serializers.BaseSerializer):
                 "links": {
                     "broad_matches": broad_matches,
                 },
-                "descriptions": [
-                    {"description": obj.description, "language": "EN"}
-                ],
                 "title": obj.name,
                 "type": "Feature",
                 "geometry": {
@@ -45,6 +42,10 @@ class GeoJsonSerializer(serializers.BaseSerializer):
                     "name": obj.name
                 }
             }
+            if obj.description:
+                geojson['descriptions'] = [
+                    {"description": obj.description, "language": "EN"}
+                ]
             return geojson
         else:
             return None
