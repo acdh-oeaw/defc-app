@@ -92,6 +92,11 @@ def defc_thesaurus(request):
 	return render(request, 'webpage/defc_thesaurus.html', context)
 
 
+def chronology_table(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/chronology_table.html', context)
+
+
 class EventListViewAdmin(generic.ListView):
 	template_name = 'webpage/event_list.html'
 	context_object_name = 'object_list'

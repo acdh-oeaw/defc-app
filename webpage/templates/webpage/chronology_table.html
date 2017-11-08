@@ -1,0 +1,16 @@
+{% extends "defcdb/base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="container">
+<div class="panel panel-default map_panel panel-browsing">
+            <div class="panel-heading panel-browsing-heading">
+                <h1>Chronology table</h1>
+            </div>
+            <div class="panel-body panel-browsing-body">
+            <p><span class="glyphicon glyphicon-exclamation-sign"></span> For a better overview, click on image to enlarge.</p>
+               <a href="{% static 'webpage/Chronologietabelle.jpg' %}"><img src="{% static 'webpage/Chronologietabelle.jpg' %}" class="img-responsive center-block"  alt="Chronology table" title="Chronology table for DEFC project"></a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

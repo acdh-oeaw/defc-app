@@ -195,7 +195,15 @@
       border:none;
       outline: 0;
       /*margin-left: 8px;*/
-      width:40%;
+      width: 40%;
+      max-width: 150px;
+      padding: 10px;
+    }
+    #f-defc-logo {
+      border:none;
+      outline: 0;
+      /*margin-left: 8px;*/
+      width: 60%;
       max-width: 150px;
       padding: 10px;
     }
@@ -299,6 +307,13 @@ input::-webkit-input-placeholder {
             float: none !important;
         }
     }
+    .dropdown-menu>li>a {
+      padding: 6px 15px;
+    }
+    .dropdown-menu .divider {
+      margin: 2px;
+    }
+
 
   </style>
 <body role="document" data-spy="scroll" data-target="#myScrollspy" data-offset="15" id="test">
@@ -416,6 +431,10 @@ input::-webkit-input-placeholder {
               </li>
               <li role="separator" class="divider"></li>
               <li>
+                <a href="{% url 'webpage:chronology-table' %}">Chronology table</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
                 <a href="{% url '3Dmodels:object_list' %}">3D Pottery gallery</a>
               </li>
               <li role="separator" class="divider"></li>
@@ -509,74 +528,47 @@ input::-webkit-input-placeholder {
 <p></p>
 
 
-  <footer>
+<footer>
      <div class="container">
 
         <div class="row text-center">
         <div class="col-sm-4">
           <a href="http://www.orea.oeaw.ac.at/" target="_blank" style="outline: 0;">
-              <img src="{% static "webpage/OREA_white.png" %}" id="f-orea-logo" title="Institute for Oriental and European Archaeology" />
+              <img src="{% static 'webpage/OREA_white.png' %}" id="f-orea-logo" title="Institute for Oriental and European Archaeology" />
           </a>
         </div>
         <div class="col-sm-4">
           <a href="http://www.oeaw.ac.at/acdh/" target="_blank" style="outline: 0;">
-            <img src="{% static "webpage/acdh_logo_02.png" %}" id="f-acdh-logo" title="Austrian Centre for Digital Humanities" />
+            <img src="{% static 'webpage/acdh_logo_02.png' %}" id="f-acdh-logo" title="Austrian Centre for Digital Humanities" />
           </a>
         </div>
         <div class="col-sm-4">
-          <a href="{% url 'webpage:terms_of_use' %}" class="footer_link">Terms of Use / License</a></br>
-          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a></br>
-          <!-- <p></p>
-          <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
-              <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
-          </a>
-          <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
-            <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
-          </a> -->
+          
+       
+            <img src="{% static 'webpage/DEFC-Logo.png' %}" id="f-defc-logo" title="Digitizing Early Farming Cultures" />
+         
         </div>
       </div>
-
-
-
-
 <hr>
 <div class="row text-center">
-  <!-- <div class="col-md-4">
-      <p>Fan? Drop a note.</p>
-      <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;">
-          <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/>
-      </a>
-      <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;">
-        <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>
-      </a>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Vienna, Austria</p>
-
-      <p><span class="glyphicon glyphicon-envelope"></span> Contact</p>
-    </div> -->
             <div class="col-sm-4">
-
-
             <a href="https://github.com/acdh-oeaw/defc-app" target="_blank" style="outline: 0;" class="footer_link">
-                <img src="{% static "webpage/GitHub-Mark-Light-64px.png" %}" id="githublogo"/> DEFC source code
+                <img src="{% static 'webpage/GitHub-Mark-Light-64px.png' %}" id="githublogo"/> DEFC source code
             </a>
-
           </div>
           <div class="col-sm-4">
             <a href="https://twitter.com/OREA_digArch" target="_blank" style="outline: 0;" class="footer_link">
-              <img src="{% static "webpage/TwitterLogo_white.png" %}" id="twitterlogo"/>  Twitter @OREA_digArch
+              <img src="{% static 'webpage/TwitterLogo_white.png' %}" id="twitterlogo"/>  Twitter @OREA_digArch
             </a>
-
           </div>
           <div class="col-sm-4">
-              <a href="{% url 'webpage:about' %}#contact" class="footer_link"><p><span class="glyphicon glyphicon-envelope"></span> Contact</p></a>
+              <a href="{% url 'webpage:about' %}#contact" class="footer_link"><span class="glyphicon glyphicon-envelope"></span> Contact</a></br>
+              <a href="{% url 'webpage:terms_of_use' %}" class="footer_link">Terms of Use / License</a></br>
+          <a href="{% url 'webpage:imprint' %}" class="footer_link">Imprint</a></br>
           </div>
 </div>
+</div>
 
-
-
-
-
-    </div>
 </footer>
 
     </div>
