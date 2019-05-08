@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet/leaflet.css' %}"/></link>
     <script src="{% static 'webpage/libraries/leaflet/leaflet.js' %}"></script>
     <script src="{% static 'webpage/libraries/leaflet.markercluster/src/leaflet.markercluster-src.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
             #map { height: 500px; }
         </style>
@@ -79,9 +80,10 @@
             <abbr title ="Period name">  {{ period.period_name }}</abbr>
                     {% if period.start_date1_BC != None and  period.end_date1_BC != None %}
               <abbr title ="Period start date"> {{ period.start_date1_BC }}</abbr>
-               - <abbr title ="Period end date"> {{ period.end_date1_BC }}</abbr><br/>
-                    {% else %}</br>
-                    {% endif %}
+               - <abbr title ="Period end date"> {{ period.end_date1_BC }}</abbr>
+               {% if period.description %} <a href="{{period.description}}" title="PeriodO permalink"><i class="fa fa-external-link"></i></a></i>{% endif %}<br/>
+                {% else %}</br>
+                {% endif %}
             {% endfor %}
             {% endfor %}
             {% endif %}
