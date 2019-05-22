@@ -77,6 +77,11 @@ def blog_post_04(request):
 	return render(request, 'webpage/blog_post_04.html', context)
 
 
+def blog_post_05(request):
+	context = RequestContext(request)
+	return render(request, 'webpage/blog_post_05.html', context)
+
+
 def defc2rdf_demo(request):
 	context = RequestContext(request)
 	return render(request, 'webpage/defc2rdf_demo.html', context)
