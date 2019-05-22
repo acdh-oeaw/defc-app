@@ -1,0 +1,116 @@
+{% extends "defcdb/base.html" %}
+{% load staticfiles %}
+{% block Titel %} Building the defc app {% endblock %}
+{% block content %}
+<div class="jumbotron text-center" id="blogjumbo">
+    <h1 class="blog-name">DEFC chronology and PeriodO</h1>
+    <h2 class="subheading">Defining and linking archaeological periods</h2>
+    <span class="meta">Posted by Seta Štuhec on May 22, 2019</span>
+</div>
+<article>
+    <div class="container" style="text-align: justify;">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-heading">Archaeological periods – the challenge</h2>
+                <p>
+                    Archaeological chronology is a complex and sometimes messy system of archaeological periods that enables archaeologists to determine the phase of a culture within a time sequence. The main definition of an archaeological period is not based on an absolute time-span but rather on distinctive characteristics of past human activities. For example, the Neolithic period is characterized by the occurrence of pottery and farming. Because the knowledge (and people) was spreading slowly, it often occurred that one region just started to learn about it, while another region was already characterized by what we call the Bronze Age. An archaeological period can, therefore, be present at different times in different places. However, not all regions followed the same period sequence. For example, while in some regions a direct transition from Neolithic to the Bronze Age has been confirmed, in other regions Neolithic was first followed by Chalcolithic.
+                </p>
+                <p>
+                    In addition to the general periods, archaeologists also use more detailed periods or phases to describe particulars of one material culture. Because each material culture is bound to a specific region during a specific time-span, the same goes for such archaeological periods. They are often named after prominent archaeological sites where the distinctive artefacts were found (e.g. Argissa I in Thessaly, Greece). Such archaeological periods/phases may overlap in time, but they are region specific. Furthermore, because several researchers worked on the same material culture, many developed their own chronological system. The result is many archaeological periods/phases describing the same material culture within the same region, but with a bit different sequencing of sub-phases.
+                </p>
+                <p>
+                    Taking all this into account it becomes obvious that structuring and formalizing archaeological chronology is a challenging task. <a href="{% url 'webpage:chronology-table' %}">The chronology of the DEFC app</a> is an attempt to provide an overview of archaeological periods used in Greece and Anatolia for the period of as early as 10000 (Anatolia) to ca. 2000 BC. To contribute to linked data and to ensure the possibility for their reuse, the periods of the app were linked to <a href="https://perio.do/en/">PeriodO</a> – the public domain gazetteer of scholarly definitions of historical, art-historical, and archaeological periods.
+                </p>
+                <h2 class="section-heading">Creating the DEFC chronology</h2>
+                <p>DEFC chronology was created in collaboration with Anatolian Aegean Prehistoric Phenomena (AAPP) research group (OREA ÖAW) using existing literature and relying on the experience and knowledge of the research group members. The periods were gathered separately for the following regions covering periods from the Neolithic to Early Bronze Age:</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Region</th>
+                            <th scope="col">Archaeological period coverage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Anatolia</td>
+                            <td>
+                                <p>Central, Western, Southwestern Anatolia</p>
+                                <hr style="margin-top: 0px; margin-bottom: 0px;">
+                                <p>General Anatolia, East Aegean</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Central and Southern Greece</td>
+                            <td>
+                                Peloponnese, Central Greece, Epirus-Northwestern Greece, Ionian Islands, Western Greece, Cyclades
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Thessaly</td>
+                            <td>Thessaly</td>
+                        </tr>
+                        <tr>
+                            <td>Macedonia/Thrace</td>
+                            <td>Macedonia, Thrace</td>
+                        </tr>
+                        <tr>
+                            <td>Macedonia</td>
+                            <td>
+                                <p>Eastern Macedonia</p>
+                                <hr style="margin-top: 0px; margin-bottom: 0px;">
+                                <p>Central Macedonia</p>
+                                <hr style="margin-top: 0px; margin-bottom: 0px;">
+                                <p>Western Macedonia</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Crete</td>
+                            <td>*3 different chronology systems for Crete by different authors</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>To create the DEFC chronology the following bibliographic resources have been used (the absolute dates were copied directly or derived from the contents).</p>
+                <p>
+                    <ul>
+                        <li>Aurenche, O., Cauvin, J., Cauvin, M. C., Copeland, I., Hours, F., Sanlaville, P., Chronologie et organisation de l’espace dans le Proche-Orient de 12 000 à 5 600 avant J.-C. In: Cauvin J. et Sanlaville P. (éd.), Préhistoire du Levant, (Paris 1981), 571–601.</li>
+                        <li>Alram-Stern, E. Die ägäische Frühzeit. Die Frühbronzezeit in Griechenland mit Ausnahme von Kreta (2004, Wien).</li>
+                        <li>Alram-Stern, E., A. Dousougli-Zachos, Die deutschen Ausgrabungen 1941 auf der Visviki-Magula/Velestino. Die neolithischen Befunde und Funde. Mit Beiträgen von Maximilian Bergner, † Franz Bertsch, Caroline Dürauer, Alfred Galik, Helmut Kroll, Areti Pentedeka, Ernst Pernicka, Gunter Schöbel, Kostas Zachos. Beiträge zur ur- und frühgeschichtlichen Archäologie des Mittelmeer-Kulturraumes 36, (Bonn 2015), 92.</li>
+                        <li>Clare, L., Weninger, B., The Dispersal of Neolithic Lifeways: Absolute Chronology and Rapid Climate Change, in: M. Özdoğan, N. Başgelen, P. Kuniholm (Eds.), Neolithic in Turkey, Vol 6: 10500-5200 BC: Environment settlement, flora, fauna, dating, symbols of belief, with views from north, south, east, and west (Istanbul 2014), 1–65.</li>
+                        <li>Efe, T., Demircihüyük III.2. Die Keramik 2. C. Die Frühbronzezeitliche Keramik der jüngeren Phasen (ab Phase H) (Mainz 1988), 117, Fig. 98.</li>
+                        <li>Evans, J. D., Excavations in the Neolithic Settlement at Knossos, 1957-60, BSA 59, 1964, 132–240.</li>
+                        <li>Momigliano, M. Late Prepalatial (EM III-MM IA): South Front House Foundation Trench, Upper East Well, and House C / RRS Fill groups, in: N. Momigliano. Knossos Pottery Handbook: Neolithic and Bronze Age (Minoan), (London 2007), 79-103.</li>
+                        <li>Özdoğan, M., Başgelen, N., Kuniholm, P. (Eds.), Neolithic in Turkey, Vol 6: The Euphrates Basin, (Istanbul 2011), 281.</li>
+                        <li>Reingruber, A., Die Argissa-Magula II. Das frühe und beginnende mittlere Neolithikum im Lichte transägäischer Beziehungen, Beiträge zur Ur- und Frühgeschichtlichen Archäologie des Mittelmeer-Kulturraumes 35 (Bonn 2008).</li>
+                        <li>Schoop, U. D., Das anatolische Chalkolithikum. Eine chronologische Untersuchung zur vorbronzezeitlichen Kultursequenz im nördlichen Zentralanatolien und den angrenzenden Gebieten, Urgeschichtliche Studien 1 (Großschönau 2005).</li>
+                        <li>Tomkins, P., Neolithic: Strata IX–VII, VII–VIB, VIA–V, IV, IIIB, IIIA, IIB, IIA and IC Groups, British School at Athens Studies, Vol. 14, Knossos Pottery Handbook: Neolithic and Bronze Age (Minoan) (2007), pp. 9-48, 1-2.</li>
+                        <li>Tsirtsoni, Z., Concluding remarks, in: Z. Tsirtsoni (ed.), The Human Face of Radiocarbon. Reassessing chronology in prehistoric Greece and Bulgaria, 5000-3000 cal BC., 453-464.</li>
+                        <li>Vagnetti, L., Belli, P., Characters and Problems of the Final Neolithic in Crete, Studi Micenei ed Egeo-anatolici 19, 1978, 125-163.</li>
+                        <li>Wilson, D., Early Prepalatial (EM I-EM II): EM I Well, West Court House, North-East Magazines and South Front Groups, in: N. Momigliano. Knossos Pottery Handbook: Neolithic and Bronze Age (Minoan), (London 2007), 49-77.</li>
+                    </ul>
+                </p>
+                <h2 class="section-heading">Linking to PeriodO</h2>
+                <p>
+                    PeriodO is an online gazetteer for historical, art-historical, and archaeological periods. Using PeriodO it is possible to define an archaeological period through an absolute time-span and the region of interest. As the final result, a permalink for each defined period is created, which can be used as a URI to link two or more online sources. All periods from the DEFC chronology were defined using PeriodO and then linked with the periods listed in the DEFC app.
+                </p>
+                <p>
+                    The periods from the DEFC chronology were grouped into three PeriodO collections. The so-called DEFC Project collection contains archaeological periods (i.e. the absolute time-span) that were derived but not literally copied from the cited literature. The other three collections (Schoop – Greiner 2005, Clare – Weiniger 2014, Tomkins 2007) include periods exactly as they were defined by the authors of cited works and as such also used in the DEFC chronology.
+                </p>
+                <h3>Collection permalinks:</h3>
+                <ul>
+                    <li><a href="https://test.perio.do/#/p/Canonical/periodCollections/p0qv6m8/">DEFC collection</a></li>
+                    <li><a href="https://test.perio.do/#/p/Canonical/periodCollections/p053rvt/">Clare – Weninger 2017 </a></li>
+                    <li><a href="https://test.perio.do/#/p/Canonical/periodCollections/p0rgttc/">Schoop – Greiner 2005</a></li>
+                    <li><a href="https://test.perio.do/#/p/Canonical/periodCollections/p0tsmch/">Tomkins 2007</a></li>
+                </ul>
+                <p>
+                    The collections can be reused by other projects investigating Neolithic, Chalcolithic, and Early Bronze Age in Greece and Anatolia.
+                </p>
+                <br>
+                <a href="{% url 'webpage:blog_main' %}">
+                    <p class="text-muted"><span class="glyphicon glyphicon-arrow-left"></span> Back to Main blog page</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}
