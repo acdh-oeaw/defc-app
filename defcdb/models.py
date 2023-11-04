@@ -85,7 +85,11 @@ class DC_region(GenericMethods):
     lat = models.FloatField(blank=True, null=True)
     lng = models.FloatField(blank=True, null=True)
     country = models.ForeignKey(
-        DC_country, blank=True, null=True, help_text="The name of the country"
+        DC_country,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="The name of the country",
     )
 
 
@@ -108,7 +112,11 @@ class DC_province(GenericMethods):
     lat = models.FloatField(blank=True, null=True)
     lng = models.FloatField(blank=True, null=True)
     region = models.ForeignKey(
-        DC_region, blank=True, null=True, help_text="The name of the country"
+        DC_region,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="The name of the country",
     )
 
     def __str__(self):
@@ -338,7 +346,9 @@ class DC_finds_small_finds_type(GenericMethods):
     german_name = models.CharField(
         max_length=100, blank=True, null=True, help_text="PLEASE PROVIDE SOME HELPTEX"
     )
-    category = models.ForeignKey(DC_finds_small_finds_category, blank=True, null=True)
+    category = models.ForeignKey(
+        DC_finds_small_finds_category, on_delete=models.SET_NULL, blank=True, null=True
+    )
 
     def __str__(self):
         try:
@@ -687,6 +697,7 @@ class Site(TrackChanges):
     )
     province = models.ForeignKey(
         DC_province,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Geographical area where the site is located.",
@@ -694,6 +705,7 @@ class Site(TrackChanges):
     )
     geographical_coordinate_reference_system = models.ForeignKey(
         DC_site_geographicalreferencesystem,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Name of system uniquely determining the position of the site.",
@@ -702,6 +714,7 @@ class Site(TrackChanges):
         DC_site_coordinatesource,
         blank=True,
         null=True,
+        on_delete=models.SET_NULL,
         help_text="Source providing information about the global position of site.",
     )
     latitude = models.DecimalField(
@@ -720,6 +733,7 @@ class Site(TrackChanges):
     )
     topography = models.ForeignKey(
         DC_site_topography,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Description of surface shape and features.",
@@ -770,10 +784,18 @@ class Area(TrackChanges):
         ("no", "no"),
     )
     site = models.ForeignKey(
-        Site, blank=True, null=True, help_text="The site where this area is located."
+        Site,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        help_text="The site where this area is located.",
     )
     area_type = models.ForeignKey(
-        DC_area_areatype, blank=True, null=True, help_text="The type of the area."
+        DC_area_areatype,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="The type of the area.",
     )
     area_nr = models.CharField(
         max_length=45,
@@ -918,6 +940,7 @@ class Area(TrackChanges):
     # settlement fields
     settlement_type = models.ForeignKey(
         DC_area_settlementtype,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Classification of settlement.",
@@ -956,6 +979,7 @@ class Area(TrackChanges):
     # cave&rockshelters fields
     cave_rockshelters_type = models.ForeignKey(
         DC_area_caverockshelterstype,
+        on_delete=models.SET_NULL,
         verbose_name="Cave/rockshelters type",
         blank=True,
         null=True,
@@ -976,7 +1000,11 @@ class Area(TrackChanges):
     )
     # quarry fields
     quarry_exploitation_type = models.ForeignKey(
-        DC_area_exploitationtype, blank=True, null=True, help_text="Type of extraction."
+        DC_area_exploitationtype,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="Type of extraction.",
     )
     quarry_raw_material = models.ManyToManyField(
         DC_area_rawmaterial, blank=True, help_text="Resource that was extracted."
@@ -1095,20 +1123,30 @@ class Finds(TrackChanges):
         ("No", "No"),
     )
     area = models.ForeignKey(
-        Area, blank=True, null=True, help_text="Location of the find."
+        Area,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="Location of the find.",
     )
     research_event = models.ForeignKey(
         ResearchEvent,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Project / Research the finds are related to.",
     )
     finds_type = models.ForeignKey(
-        DC_finds_type, blank=True, null=True, help_text="Category of finds."
+        DC_finds_type,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        help_text="Category of finds.",
     )
     # small finds properties
     small_finds_category = models.ForeignKey(
         DC_finds_small_finds_category,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Superordinate class of small find.",
@@ -1132,6 +1170,7 @@ class Finds(TrackChanges):
     )
     animal_remains_completeness = models.ForeignKey(
         DC_finds_animal_remains_completeness,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="How much was present (complete or part).",
@@ -1189,6 +1228,7 @@ class Finds(TrackChanges):
     # Pottery
     pottery_form = models.ForeignKey(
         DC_finds_pottery_form,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="The form of the pottery.",
@@ -1205,6 +1245,7 @@ class Finds(TrackChanges):
     # common fields
     amount = models.ForeignKey(
         DC_finds_amount,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
         help_text="Number of pieces within the category.",
