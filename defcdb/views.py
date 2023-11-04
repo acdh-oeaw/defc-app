@@ -2,7 +2,7 @@
 import requests
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, render_to_response, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required

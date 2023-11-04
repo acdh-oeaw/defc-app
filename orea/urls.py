@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import include, url
+from django.urls import path, include
 from rest_framework import routers
 from django.contrib import admin
 from orea.settings import base
 from defcdb import views
 from defcdb import api_views
-import autocomplete_light.shortcuts as al
 
-al.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r"geojson", api_views.GeoJsonViewSet, base_name="places")
