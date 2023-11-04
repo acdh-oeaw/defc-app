@@ -1,14 +1,14 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r"^districts/$", views.DC_provinceListView.as_view(), name="province_list"),
+    path("districts/$", views.DC_provinceListView.as_view(), name="province_list"),
     url(
         r"^province/edit/(?P<pk>[0-9]+)$",
         views.edit_DC_provinceForm,
         name="edit_province",
     ),
-    url(r"^excavations_map/$", views.showplaces, name="showplaces"),
-    url(r"^showdistricts/$", views.showdistricts, name="showdistricts"),
-    url(r"^site/show/$", views.SiteListFilterView.as_view(), name="filter_sites"),
+    path("excavations_map/$", views.showplaces, name="showplaces"),
+    path("showdistricts/$", views.showdistricts, name="showdistricts"),
+    path("site/show/$", views.SiteListFilterView.as_view(), name="filter_sites"),
 ]
