@@ -8,7 +8,7 @@ from defcdb import api_views
 
 
 router = routers.DefaultRouter()
-router.register(r"geojson", api_views.GeoJsonViewSet, base_name="places")
+router.register(r"geojson", api_views.GeoJsonViewSet, basename="places")
 router.register(
     r"dc_finds_lithics_raw_material", api_views.DC_finds_lithics_raw_materialViewSet
 )
