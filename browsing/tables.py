@@ -5,78 +5,101 @@ from django.utils.html import format_html
 
 
 class SiteTable(tables.Table):
-    site_id = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], accessor='id')
-    name = tables.LinkColumn('publicrecords:site_detail', args=[A('pk')], verbose_name='site name')
-    province_name = tables.Column(accessor='province.name', verbose_name='district')
+    site_id = tables.LinkColumn(
+        "publicrecords:site_detail", args=[A("pk")], accessor="id"
+    )
+    name = tables.LinkColumn(
+        "publicrecords:site_detail", args=[A("pk")], verbose_name="site name"
+    )
+    province_name = tables.Column(accessor="province.name", verbose_name="district")
 
     class Meta:
         model = Site
-        fields = ['site_id', 'name', 'province.region', 'province_name']
+        fields = ["site_id", "name", "province.region", "province_name"]
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class AreaTable(tables.Table):
-    area_type = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')])
-    period = tables.TemplateColumn(template_name='browsing/templateColumn.html', order_by=('period.start_date1_BC'))
-    area_id = tables.LinkColumn('publicrecords:area_detail', args=[A('pk')], accessor='id')
-    site_name = tables.Column(accessor='site.name', verbose_name='site name')
+    area_type = tables.LinkColumn("publicrecords:area_detail", args=[A("pk")])
+    period = tables.TemplateColumn(
+        template_name="browsing/templateColumn.html", order_by=("period.start_date1_BC")
+    )
+    area_id = tables.LinkColumn(
+        "publicrecords:area_detail", args=[A("pk")], accessor="id"
+    )
+    site_name = tables.Column(accessor="site.name", verbose_name="site name")
 
     class Meta:
         model = Area
-        fields = ['area_id', 'area_type', 'site_name', 'period']
+        fields = ["area_id", "area_type", "site_name", "period"]
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class FindsTable(tables.Table):
-    finds_id = tables.LinkColumn('publicrecords:finds_detail', args=[A('pk')], accessor='id')
+    finds_id = tables.LinkColumn(
+        "publicrecords:finds_detail", args=[A("pk")], accessor="id"
+    )
     finds_description = tables.LinkColumn(
-        'publicrecords:finds_detail', args=[A('pk')],
-        verbose_name='finds type', order_by=('finds_type'))
-    site_name = tables.Column(accessor='area.site.name', verbose_name='site name')
-    pottery_detail = tables.TemplateColumn(template_name='browsing/templateColumn.html')
-    pottery_decoration = tables.TemplateColumn(template_name='browsing/templateColumn02.html')
-
+        "publicrecords:finds_detail",
+        args=[A("pk")],
+        verbose_name="finds type",
+        order_by=("finds_type"),
+    )
+    site_name = tables.Column(accessor="area.site.name", verbose_name="site name")
+    pottery_detail = tables.TemplateColumn(template_name="browsing/templateColumn.html")
+    pottery_decoration = tables.TemplateColumn(
+        template_name="browsing/templateColumn02.html"
+    )
 
     class Meta:
         model = Finds
-        fields = ['finds_id', 'finds_description', 'site_name', 'pottery_detail', 'pottery_decoration']
+        fields = [
+            "finds_id",
+            "finds_description",
+            "site_name",
+            "pottery_detail",
+            "pottery_decoration",
+        ]
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class ResearchEventTable(tables.Table):
     researchevent_id = tables.LinkColumn(
-        'publicrecords:researchevent_detail', args=[A('pk')], accessor='id')
+        "publicrecords:researchevent_detail", args=[A("pk")], accessor="id"
+    )
     research_type = tables.LinkColumn(
-        'publicrecords:researchevent_detail', args=[A('pk')], empty_values=())
+        "publicrecords:researchevent_detail", args=[A("pk")], empty_values=()
+    )
     # research_type = tables.LinkColumn(empty_values=())
 
     def render_research_type(self, record):
         if record.research_type.all():
-            return ', '.join([rtype.name for rtype in record.research_type.all()])
-        return '-'
+            return ", ".join([rtype.name for rtype in record.research_type.all()])
+        return "-"
 
     class Meta:
         model = Finds
-        fields = ['researchevent_id', 'research_type', 'project_name']
+        fields = ["researchevent_id", "research_type", "project_name"]
         attrs = {"class": "table table-hover table-striped table-condensed"}
 
 
 class InterpretationTable(tables.Table):
     interpretation_id = tables.LinkColumn(
-        'publicrecords:interpretation_detail', args=[A('pk')], accessor='id')
+        "publicrecords:interpretation_detail", args=[A("pk")], accessor="id"
+    )
     production_type = tables.Column(empty_values=())
     subsistence_type = tables.Column(empty_values=())
-    area__site__name = tables.Column(empty_values=(), verbose_name='Site')
+    area__site__name = tables.Column(empty_values=(), verbose_name="Site")
 
     def render_production_type(self, record):
         if record.production_type.all():
-            return ', '.join([ptype.name for ptype in record.production_type.all()])
-        return '-'
+            return ", ".join([ptype.name for ptype in record.production_type.all()])
+        return "-"
 
     def render_subsistence_type(self, record):
         if record.subsistence_type.all():
-            return ', '.join([stype.name for stype in record.subsistence_type.all()])
-        return '-'
+            return ", ".join([stype.name for stype in record.subsistence_type.all()])
+        return "-"
 
     def render_area__site__name(self, record):
         if record.area.all():
@@ -87,5 +110,5 @@ class InterpretationTable(tables.Table):
 
     class Meta:
         model = Interpretation
-        fields = ['interpretation_id', 'production_type', 'subsistence_type']
+        fields = ["interpretation_id", "production_type", "subsistence_type"]
         attrs = {"class": "table table-hover table-striped table-condensed"}

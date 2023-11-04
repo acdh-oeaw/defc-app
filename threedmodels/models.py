@@ -31,11 +31,18 @@ class Inclusion(models.Model):
     inclusion_hardness = models.CharField(blank=True, null=True, max_length=500)
 
     def __str__(self):
-        return str(self.inclusion_id) + '_' + self.inclusion_type + '_' + self.inclusion_color
+        return (
+            str(self.inclusion_id)
+            + "_"
+            + self.inclusion_type
+            + "_"
+            + self.inclusion_color
+        )
 
 
 class Threedmodel(models.Model):
-    """ in an 1:1 relation to class Finds"""
+    """in an 1:1 relation to class Finds"""
+
     model_id = models.CharField(blank=True, null=True, max_length=100)
     finds = models.ForeignKey(Finds, blank=True, null=True)
     part = models.CharField(blank=True, null=True, max_length=500)
@@ -56,10 +63,7 @@ class Threedmodel(models.Model):
     core_color = models.CharField(blank=True, null=True, max_length=500)
     inclusion = models.ManyToManyField(Inclusion, blank=True)
     resource_metadata = models.ForeignKey(Project, blank=True, null=True)
-    model_file = models.FileField(upload_to='models', blank=True, null=True)
-    model_thumbnail = models.FileField(
-        upload_to='thumbnails', blank=True, null=True)
-    model_metadata = models.FileField(
-        upload_to='metadata', blank=True, null=True)
-    model_parameters = models.FileField(
-        upload_to='parameters', blank=True, null=True)
+    model_file = models.FileField(upload_to="models", blank=True, null=True)
+    model_thumbnail = models.FileField(upload_to="thumbnails", blank=True, null=True)
+    model_metadata = models.FileField(upload_to="metadata", blank=True, null=True)
+    model_parameters = models.FileField(upload_to="parameters", blank=True, null=True)

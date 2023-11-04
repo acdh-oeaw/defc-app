@@ -4,8 +4,8 @@ from django.template.loader import render_to_string
 
 
 class GeoJsonRenderer(renderers.BaseRenderer):
-    media_type = 'text/json'
-    format = 'geojson'
+    media_type = "text/json"
+    format = "geojson"
 
     def render(self, data, media_type=None, renderer_context=None):
         geojson_start = """{"type": "FeatureCollection","features": """

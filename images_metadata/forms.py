@@ -11,6 +11,6 @@ class ImageThesaurusForm(ModelForm):
         fields = "__all__"
 
     def __init__(self, *args, **kwargs):
-            super(ImageThesaurusForm, self).__init__(*args, **kwargs)
-            self.helper = FormHelper()
-            self.helper.add_input(Submit('submit', 'Create'))
+        super(ImageThesaurusForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit("submit", "Create"))

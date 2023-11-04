@@ -5,14 +5,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('images_metadata', '0003_imagethesaurus_filename'),
+        ("images_metadata", "0003_imagethesaurus_filename"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='imagethesaurus',
-            name='thumbnail',
+            model_name="imagethesaurus",
+            name="thumbnail",
         ),
     ]

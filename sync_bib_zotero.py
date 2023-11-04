@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[96]:
@@ -11,10 +10,10 @@ from orea.settings.ksenia_local import Z_USER_ID, Z_COLLECTION, Z_API_KEY
 # In[97]:
 
 root = "https://api.zotero.org/users/"
-params = "{}/collections/{}/items/top?v=3&key={}".format(Z_USER_ID,
-                                                         Z_COLLECTION,
-                                                         Z_API_KEY)
-url = root+params+"&sort=dateModified&limit=100"
+params = "{}/collections/{}/items/top?v=3&key={}".format(
+    Z_USER_ID, Z_COLLECTION, Z_API_KEY
+)
+url = root + params + "&sort=dateModified&limit=100"
 
 
 # In[98]:
@@ -35,17 +34,19 @@ response = r.json()
 failed = []
 saved = []
 for x in response:
-    NewBook = Book(zoterokey = x["data"]["key"],
-                      item_type =x["data"]["itemType"],
-                      author=x["data"]["creators"][0]["name"],
-                      title =x["data"]["title"],
-                      short_title = x["data"]["shortTitle"])
+    NewBook = Book(
+        zoterokey=x["data"]["key"],
+        item_type=x["data"]["itemType"],
+        author=x["data"]["creators"][0]["name"],
+        title=x["data"]["title"],
+        short_title=x["data"]["shortTitle"],
+    )
     try:
         NewBook.save()
-        saved.append(x['data'])
+        saved.append(x["data"])
     except:
-        failed.append(x['data'])
-print('saved: {} objects \nfailed: {} objects'.format(len(saved), len(failed)))
+        failed.append(x["data"])
+print("saved: {} objects \nfailed: {} objects".format(len(saved), len(failed)))
 
 
 # In[53]:
@@ -65,7 +66,7 @@ failed = []
 saved = []
 for row in datalist.items:
     print(row)
-print('saved: {} objects \n failed: {} objects'.format(len(saved), len(failed)))
+print("saved: {} objects \n failed: {} objects".format(len(saved), len(failed)))
 
 
 # In[47]:
@@ -80,6 +81,3 @@ for row in response:
 
 
 # In[ ]:
-
-
-

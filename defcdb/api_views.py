@@ -8,7 +8,6 @@ from bib.models import Book
 
 
 class GeoJsonViewSet(viewsets.ViewSet):
-
     def list(self, request):
         queryset = Site.objects.all()
         serializer = GeoJsonSerializer(queryset, many=True)

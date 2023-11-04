@@ -5,19 +5,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('defcdb', '0019_auto_20160118_1549'),
+        ("defcdb", "0019_auto_20160118_1549"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='dc_chronological_system',
-            name='region',
+            model_name="dc_chronological_system",
+            name="region",
         ),
         migrations.AddField(
-            model_name='dc_chronological_system',
-            name='region',
-            field=models.ManyToManyField(to='defcdb.DC_region', null=True, blank=True),
+            model_name="dc_chronological_system",
+            name="region",
+            field=models.ManyToManyField(to="defcdb.DC_region", null=True, blank=True),
         ),
     ]

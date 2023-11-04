@@ -6,16 +6,15 @@ from bib.models import Book
 try:
     base_url = settings.CURRENT_BASE_URL
 except AttributeError:
-    base_url = 'https://defc.acdh.oeaw.ac.at'
+    base_url = "https://defc.acdh.oeaw.ac.at"
 
 
 class GeoJsonSerializer(serializers.BaseSerializer):
-
     def to_representation(self, obj):
         geonames_base = "http://www.geonames.org/"
-        alt_names = [{'name': x.name} for x in obj.alternative_name.all()]
+        alt_names = [{"name": x.name} for x in obj.alternative_name.all()]
         for x in obj.alias_name.all():
-            alt_names.append({'name': x.name})
+            alt_names.append({"name": x.name})
         broad_matches = []
         try:
             geonames_id = obj.province.authorityfile_id
@@ -23,7 +22,7 @@ class GeoJsonSerializer(serializers.BaseSerializer):
             geonames_id = None
 
         if geonames_id:
-            broad_matches.append(geonames_base+geonames_id)
+            broad_matches.append(geonames_base + geonames_id)
         if obj.longitude:
             geojson = {
                 "links": {
@@ -33,17 +32,15 @@ class GeoJsonSerializer(serializers.BaseSerializer):
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [float(obj.longitude), float(obj.latitude)]
-                    },
+                    "coordinates": [float(obj.longitude), float(obj.latitude)],
+                },
                 "uri": base_url + obj.get_absolute_url(),
                 "id": obj.pk,
                 "names": alt_names,
-                "properties": {
-                    "name": obj.name
-                }
+                "properties": {"name": obj.name},
             }
             if obj.description:
-                geojson['descriptions'] = [
+                geojson["descriptions"] = [
                     {"description": obj.description, "language": "EN"}
                 ]
             return geojson
@@ -56,12 +53,16 @@ class DC_finds_lithics_raw_materialSerializer(serializers.HyperlinkedModelSerial
         model = DC_finds_lithics_raw_material
 
 
-class DC_finds_lithics_retouched_toolsSerializer(serializers.HyperlinkedModelSerializer):
+class DC_finds_lithics_retouched_toolsSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_finds_lithics_retouched_tools
 
 
-class DC_finds_lithics_unretouched_toolsSerializer(serializers.HyperlinkedModelSerializer):
+class DC_finds_lithics_unretouched_toolsSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_finds_lithics_unretouched_tools
 
@@ -121,12 +122,16 @@ class DC_researchevent_institutionSerializer(serializers.HyperlinkedModelSeriali
         model = DC_researchevent_institution
 
 
-class DC_researchevent_special_analysisSerializer(serializers.HyperlinkedModelSerializer):
+class DC_researchevent_special_analysisSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_researchevent_special_analysis
 
 
-class DC_site_geographicalreferencesystemSerializer(serializers.HyperlinkedModelSerializer):
+class DC_site_geographicalreferencesystemSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_site_geographicalreferencesystem
 
@@ -166,7 +171,9 @@ class DC_area_specialfeaturesSerializer(serializers.HyperlinkedModelSerializer):
         model = DC_area_specialfeatures
 
 
-class DC_area_evidenceofgraveshumanremainsSerializer(serializers.HyperlinkedModelSerializer):
+class DC_area_evidenceofgraveshumanremainsSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_area_evidenceofgraveshumanremains
 
@@ -256,7 +263,9 @@ class DC_finds_animal_remains_speciesSerializer(serializers.HyperlinkedModelSeri
         model = DC_finds_animal_remains_species
 
 
-class DC_finds_animal_remains_completenessSerializer(serializers.HyperlinkedModelSerializer):
+class DC_finds_animal_remains_completenessSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_finds_animal_remains_completeness
 
@@ -286,12 +295,16 @@ class DC_finds_pottery_decorationSerializer(serializers.HyperlinkedModelSerializ
         model = DC_finds_pottery_decoration
 
 
-class DC_interpretation_productiontypeSerializer(serializers.HyperlinkedModelSerializer):
+class DC_interpretation_productiontypeSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_interpretation_productiontype
 
 
-class DC_interpretation_subsistencetypeSerializer(serializers.HyperlinkedModelSerializer):
+class DC_interpretation_subsistencetypeSerializer(
+    serializers.HyperlinkedModelSerializer
+):
     class Meta:
         model = DC_interpretation_subsistencetype
 
