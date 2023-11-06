@@ -6,22 +6,22 @@ from . import views
 app_name = "publicrecords"
 urlpatterns = [
     path("site/", views.SiteListView.as_view(), name="site_list"),
-    path("site/detail/(?P<pk>[0-9]+)", views.SiteDetail.as_view(), name="site_detail"),
+    path("site/detail/<int:pk>", views.SiteDetail.as_view(), name="site_detail"),
     path("finds/", views.FindsListView.as_view(), name="finds_list"),
     path(
-        "finds/detail/(?P<pk>[0-9]+)",
+        "finds/detail/<int:pk>",
         views.FindsDetail.as_view(),
         name="finds_detail",
     ),
     path("area/", views.AreaListView.as_view(), name="area_list"),
-    path("area/detail/(?P<pk>[0-9]+)", views.AreaDetail.as_view(), name="area_detail"),
+    path("area/detail/<int:pk>", views.AreaDetail.as_view(), name="area_detail"),
     path(
         "researchevent/",
         views.ResearchEventListView.as_view(),
         name="researchevent_list",
     ),
     path(
-        "researchevent/detail/(?P<pk>[0-9]+)",
+        "researchevent/detail/<int:pk>",
         views.ResearchEventDetail.as_view(),
         name="researchevent_detail",
     ),
@@ -31,7 +31,7 @@ urlpatterns = [
         name="interpretation_list",
     ),
     path(
-        "interpretation/detail/(?P<pk>[0-9]+)",
+        "interpretation/detail/<int:pk>",
         views.InterpretationDetail.as_view(),
         name="interpretation_detail",
     ),

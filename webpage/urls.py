@@ -42,13 +42,13 @@ urlpatterns = [
     path("blog/post05/", views.blog_post_05, name="blog_post_05"),
     path("create/event/", views.EventCreate.as_view(), name="event_create"),
     path(
-        "update/event/(?P<pk>[0-9]+)",
+        "update/event/<int:pk>",
         views.EventUpdate.as_view(),
         name="event_update",
     ),
     path("list/event/", views.EventListViewAdmin.as_view(), name="event_list"),
     path(
-        "delete/event/(?P<pk>[0-9]+)",
+        "delete/event/<int:pk>",
         views.EventDelete.as_view(),
         name="event_delete",
     ),
