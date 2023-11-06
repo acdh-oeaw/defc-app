@@ -137,17 +137,16 @@ urlpatterns = [
     path("login/", views.user_login, name="user_login"),
     path("accounts/login/", views.user_login, name="user_login"),
     path("logout/", views.user_logout, name="user_logout"),
-    path("autocomplete/", include("autocomplete_light.urls")),
     path("", include("webpage.urls", namespace="webpage")),
     path("bib/", include("bib.urls", namespace="bib")),
-    url(
-        r"^media/(?P<path>.*)$",
-        "django.views.static.serve",
-        {
-            "document_root": base.MEDIA_ROOT,
-        },
-        name="media_root_url",
-    ),
+    # path(
+    #     r"media/(?P<path>.*)$",
+    #     "django.views.static.serve",
+    #     {
+    #         "document_root": base.MEDIA_ROOT,
+    #     },
+    #     name="media_root_url",
+    # ),
     path("image_gallery/", include("images_metadata.urls", namespace="image_gallery")),
     path("publicrecords/", include("publicrecords.urls", namespace="publicrecords")),
     path("3Dmodels/", include("threedmodels.urls", namespace="3Dmodels")),

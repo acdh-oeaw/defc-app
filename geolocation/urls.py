@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
 
+app_name = "geolocation"
+
 urlpatterns = [
     path("districts/$", views.DC_provinceListView.as_view(), name="province_list"),
-    url(
-        r"^province/edit/(?P<pk>[0-9]+)$",
+    path(
+        "province/edit/(?P<pk>[0-9]+)$",
         views.edit_DC_provinceForm,
         name="edit_province",
     ),

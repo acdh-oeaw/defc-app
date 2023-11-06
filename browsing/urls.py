@@ -1,30 +1,29 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
+
+app_name = "browsing"
+
 urlpatterns = [
-    url(r"download-sites/$", views.SiteDownloadView.as_view(), name="download-sites"),
-    url(r"download-areas/$", views.AreaDownloadView.as_view(), name="download-areas"),
-    url(r"download-finds/$", views.FindsDownloadView.as_view(), name="download-finds"),
-    url(
-        r"download-research-events/$",
+    path("download-sites/", views.SiteDownloadView.as_view(), name="download-sites"),
+    path("download-areas/", views.AreaDownloadView.as_view(), name="download-areas"),
+    path("download-finds/", views.FindsDownloadView.as_view(), name="download-finds"),
+    path("download-research-events/",
         views.ResearchEventDownloadView.as_view(),
         name="download-research-events",
     ),
-    url(
-        r"download-interpretations/$",
+    path("download-interpretations/",
         views.InterpretationDownloadView.as_view(),
         name="download-interpretations",
     ),
-    url(r"sites/$", views.SiteListView.as_view(), name="browse_sites"),
-    url(r"areas/$", views.AreaListView.as_view(), name="browse_areas"),
-    url(r"finds/$", views.FindsListView.as_view(), name="browse_finds"),
-    url(
-        r"research_events/$",
+    path("sites/", views.SiteListView.as_view(), name="browse_sites"),
+    path("areas/", views.AreaListView.as_view(), name="browse_areas"),
+    path("finds/", views.FindsListView.as_view(), name="browse_finds"),
+    path("research_events/",
         views.ResearchEventListView.as_view(),
         name="browse_researchevents",
     ),
-    url(
-        r"interpretations/$",
+    path("interpretations/",
         views.InterpretationListView.as_view(),
         name="browse_interpretations",
     ),

@@ -353,6 +353,7 @@ class MapListFilter(django_filters.FilterSet):
     class Meta:
         model = Site
         form = SiteFilterForm
+        fields = "__all__"
 
 
 class SiteListFilter(django_filters.FilterSet):

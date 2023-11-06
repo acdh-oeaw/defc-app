@@ -1,17 +1,11 @@
-import autocomplete_light
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit, Layout, Fieldset, Field
+from crispy_forms.layout import Submit, Layout, Fieldset
 from defcdb.models import *
-from .autocomplete_light_registry import SiteAutocomplete
 
 
 class SiteFilterForm(forms.ModelForm):
-    name = autocomplete_light.ModelMultipleChoiceField(
-        Site.objects.all(),
-        required=False,
-        widget=autocomplete_light.MultipleChoiceWidget("SiteAutocomplete"),
-    )
+    
 
     class Meta:
         model = Site
