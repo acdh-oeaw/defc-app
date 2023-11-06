@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 from django.conf import settings
-import audit_log.models.fields
 
 
 class Migration(migrations.Migration):
@@ -25,18 +24,18 @@ class Migration(migrations.Migration):
                         serialize=False,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, null=True, max_length=40
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, null=True, max_length=40
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, null=True, max_length=40
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, null=True, max_length=40
+                #     ),
+                # ),
                 ("created", models.DateTimeField(null=True, auto_now_add=True)),
                 ("modified", models.DateTimeField(null=True, auto_now=True)),
                 (
@@ -57,26 +56,26 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        related_name="created_defcdb_name_set",
-                        to=settings.AUTH_USER_MODEL,
-                        editable=False,
-                        null=True,
-                        verbose_name="created by",
-                    ),
-                ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        related_name="modified_defcdb_name_set",
-                        to=settings.AUTH_USER_MODEL,
-                        editable=False,
-                        null=True,
-                        verbose_name="modified by",
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         related_name="created_defcdb_name_set",
+                #         to=settings.AUTH_USER_MODEL,
+                #         editable=False,
+                #         null=True,
+                #         verbose_name="created by",
+                #     ),
+                # ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         related_name="modified_defcdb_name_set",
+                #         to=settings.AUTH_USER_MODEL,
+                #         editable=False,
+                #         null=True,
+                #         verbose_name="modified by",
+                #     ),
+                # ),
             ],
             options={
                 "abstract": False,
@@ -92,6 +91,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Other name of the site.",
                 null=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -103,6 +103,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Different spelling of the name of the site.",
                 null=True,
+                on_delete=models.SET_NULL,
             ),
         ),
     ]

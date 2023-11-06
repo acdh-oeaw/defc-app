@@ -41,6 +41,7 @@ class Migration(migrations.Migration):
             model_name="site",
             name="coordinate_source",
             field=models.ForeignKey(
+                on_delete=models.SET_NULL,
                 help_text="Source providing information about the global position of site.",
                 blank=True,
                 to="defcdb.DC_site_coordinatesource",

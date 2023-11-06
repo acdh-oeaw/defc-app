@@ -1195,6 +1195,7 @@ class Migration(migrations.Migration):
                     "country",
                     models.ForeignKey(
                         to="defcdb.DC_country",
+                        on_delete=models.SET_NULL,
                         help_text="The name of the country",
                         blank=True,
                         null=True,
@@ -1326,18 +1327,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        max_length=40, editable=False, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        max_length=40, editable=False, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         max_length=40, editable=False, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         max_length=40, editable=False, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (
@@ -1437,16 +1438,16 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        to=settings.AUTH_USER_MODEL,
-                        related_name="created_defcdb_site_set",
-                        null=True,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         to=settings.AUTH_USER_MODEL,
+                #         related_name="created_defcdb_site_set",
+                #         null=True,
+                #     ),
+                # ),
                 (
                     "geographical_coordinate_reference_system",
                     models.ForeignKey(
@@ -1454,18 +1455,19 @@ class Migration(migrations.Migration):
                         help_text="Name of system uniquely determining the position of the site.",
                         blank=True,
                         null=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        to=settings.AUTH_USER_MODEL,
-                        related_name="modified_defcdb_site_set",
-                        null=True,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         to=settings.AUTH_USER_MODEL,
+                #         related_name="modified_defcdb_site_set",
+                #         null=True,
+                #     ),
+                # ),
                 (
                     "province",
                     models.ForeignKey(
@@ -1473,6 +1475,7 @@ class Migration(migrations.Migration):
                         help_text="Geographical area where the site is located.",
                         blank=True,
                         null=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
             ],
@@ -1489,21 +1492,22 @@ class Migration(migrations.Migration):
                 help_text="The name of the country",
                 blank=True,
                 null=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AddField(
             model_name="dc_finds_pottery_form",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True),
+            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
         ),
         migrations.AddField(
             model_name="dc_finds_pottery_detail",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True),
+            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
         ),
         migrations.AddField(
             model_name="dc_finds_pottery_decoration",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True),
+            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
         ),
     ]

@@ -52,6 +52,7 @@ class Migration(migrations.Migration):
             name="period",
             field=models.ForeignKey(
                 null=True,
+                on_delete=models.SET_NULL,
                 to="defcdb.Period",
                 blank=True,
                 help_text="Period defined by the archaeologist",
@@ -66,6 +67,7 @@ class Migration(migrations.Migration):
             name="pottery_form",
             field=models.ForeignKey(
                 null=True,
+                on_delete=models.SET_NULL,
                 to="defcdb.DC_finds_pottery_form",
                 blank=True,
                 help_text="Form of pottery.",

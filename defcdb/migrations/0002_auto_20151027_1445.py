@@ -24,18 +24,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (
@@ -188,6 +188,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_area_areatype",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -198,6 +199,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_area_evidenceofgraveshumanremains",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -217,6 +219,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_area_caverockshelterstype",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -235,16 +238,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_area_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_area_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "grave_age_groups",
                     models.ManyToManyField(
@@ -289,16 +292,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_area_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_area_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
             ],
             options={
                 "ordering": ("site",),
@@ -340,7 +343,12 @@ class Migration(migrations.Migration):
                 ("end_date2_BC", models.IntegerField(blank=True, null=True)),
                 (
                     "region",
-                    models.ForeignKey(blank=True, null=True, to="defcdb.DC_region"),
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        to="defcdb.DC_region",
+                        on_delete=models.SET_NULL,
+                    ),
                 ),
             ],
             options={
@@ -359,18 +367,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (
@@ -404,6 +412,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_finds_amount",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -413,6 +422,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_finds_animal_remains_completeness",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -438,6 +448,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.Area",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -448,16 +459,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_finds_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_finds_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "finds_type",
                     models.ForeignKey(
@@ -465,6 +476,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_finds_type",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
@@ -507,16 +519,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_finds_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_finds_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "pottery_decoration",
                     models.ManyToManyField(
@@ -558,18 +570,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (

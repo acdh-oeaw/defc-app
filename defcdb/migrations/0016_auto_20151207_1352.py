@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
             model_name="finds",
             name="amount",
             field=models.ForeignKey(
+                on_delete=models.SET_NULL,
                 help_text="Number of pieces within the category.",
                 to="defcdb.DC_finds_amount",
                 null=True,
@@ -28,6 +29,7 @@ class Migration(migrations.Migration):
                 to="defcdb.DC_finds_animal_remains_completeness",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -56,6 +58,7 @@ class Migration(migrations.Migration):
                 to="defcdb.Area",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -86,6 +89,7 @@ class Migration(migrations.Migration):
                 to="defcdb.DC_finds_type",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -141,6 +145,7 @@ class Migration(migrations.Migration):
                 to="defcdb.DC_finds_pottery_form",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -160,6 +165,7 @@ class Migration(migrations.Migration):
                 to="defcdb.ResearchEvent",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -170,6 +176,7 @@ class Migration(migrations.Migration):
                 to="defcdb.DC_finds_small_finds_category",
                 null=True,
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
