@@ -1498,16 +1498,31 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="dc_finds_pottery_form",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
+            field=models.ForeignKey(
+                to="defcdb.DC_region",
+                null=True,
+                blank=True,
+                on_delete=models.SET_NULL,
+            ),
         ),
         migrations.AddField(
             model_name="dc_finds_pottery_detail",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
+            field=models.ForeignKey(
+                to="defcdb.DC_region",
+                null=True,
+                blank=True,
+                on_delete=models.SET_NULL,
+            ),
         ),
         migrations.AddField(
             model_name="dc_finds_pottery_decoration",
             name="region",
-            field=models.ForeignKey(to="defcdb.DC_region", null=True, blank=True, on_delete=models.SET_NULL,),
+            field=models.ForeignKey(
+                to="defcdb.DC_region",
+                null=True,
+                blank=True,
+                on_delete=models.SET_NULL,
+            ),
         ),
     ]

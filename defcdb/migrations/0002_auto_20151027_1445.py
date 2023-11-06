@@ -608,16 +608,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_interpretation_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_interpretation_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "finds",
                     models.ManyToManyField(
@@ -626,16 +626,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_interpretation_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_interpretation_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "production_type",
                     models.ManyToManyField(
@@ -661,30 +661,30 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_period_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_period_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "dated_by",
                     models.ManyToManyField(
@@ -702,16 +702,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_period_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_period_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "system",
                     models.ForeignKey(
@@ -719,6 +719,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_chronological_system",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
             ],
@@ -738,18 +739,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (
@@ -787,26 +788,26 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_reference_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_reference_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_reference_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_reference_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "reference_type",
                     models.ForeignKey(
@@ -814,6 +815,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         to="defcdb.DC_reference_type",
+                        on_delete=models.SET_NULL,
                     ),
                 ),
             ],
@@ -833,18 +835,18 @@ class Migration(migrations.Migration):
                         auto_created=True,
                     ),
                 ),
-                (
-                    "created_with_session_key",
-                    audit_log.models.fields.CreatingSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
-                (
-                    "modified_with_session_key",
-                    audit_log.models.fields.LastSessionKeyField(
-                        editable=False, max_length=40, null=True
-                    ),
-                ),
+                # (
+                #     "created_with_session_key",
+                #     audit_log.models.fields.CreatingSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
+                # (
+                #     "modified_with_session_key",
+                #     audit_log.models.fields.LastSessionKeyField(
+                #         editable=False, max_length=40, null=True
+                #     ),
+                # ),
                 ("created", models.DateTimeField(auto_now_add=True, null=True)),
                 ("modified", models.DateTimeField(auto_now=True, null=True)),
                 (
@@ -894,16 +896,16 @@ class Migration(migrations.Migration):
                         null=True,
                     ),
                 ),
-                (
-                    "created_by",
-                    audit_log.models.fields.CreatingUserField(
-                        editable=False,
-                        verbose_name="created by",
-                        related_name="created_defcdb_researchevent_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "created_by",
+                #     audit_log.models.fields.CreatingUserField(
+                #         editable=False,
+                #         verbose_name="created by",
+                #         related_name="created_defcdb_researchevent_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "institution",
                     models.ManyToManyField(
@@ -912,16 +914,16 @@ class Migration(migrations.Migration):
                         blank=True,
                     ),
                 ),
-                (
-                    "modified_by",
-                    audit_log.models.fields.LastUserField(
-                        editable=False,
-                        verbose_name="modified by",
-                        related_name="modified_defcdb_researchevent_set",
-                        null=True,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                # (
+                #     "modified_by",
+                #     audit_log.models.fields.LastUserField(
+                #         editable=False,
+                #         verbose_name="modified by",
+                #         related_name="modified_defcdb_researchevent_set",
+                #         null=True,
+                #         to=settings.AUTH_USER_MODEL,
+                #     ),
+                # ),
                 (
                     "reference",
                     models.ManyToManyField(
@@ -986,6 +988,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 to="defcdb.ResearchEvent",
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AddField(
@@ -996,6 +999,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 to="defcdb.DC_finds_small_finds_category",
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AddField(
@@ -1104,6 +1108,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 to="defcdb.Site",
+                on_delete=models.SET_NULL,
             ),
         ),
     ]
