@@ -5,8 +5,6 @@ from defcdb.models import *
 
 
 class SiteFilterForm(forms.ModelForm):
-    
-
     class Meta:
         model = Site
         fields = ["name"]
