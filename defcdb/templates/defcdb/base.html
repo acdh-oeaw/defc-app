@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +50,6 @@
       </p>
     </noscript>
 <!-- End Piwik Code -->
-      {% include 'autocomplete_light/static.html' %}
       {% block scriptHeader %}
       {% endblock %}
 
@@ -452,9 +451,6 @@ input::-webkit-input-placeholder {
               <ul class="dropdown-menu">
                 <li>
                   <a href="{% url 'api-root' %}">API</a>
-                </li>
-                <li>
-                  <a href="{% url 'sparql:query' %}">SPARQL Endpoint</a>
                 </li>
                 <li>
                   <a href="{% url 'webpage:mapping2cidoc' %}">Mapping to CIDOC CRM</a>

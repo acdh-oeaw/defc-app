@@ -136,10 +136,23 @@ class Migration(migrations.Migration):
                     "inclusion_hardness",
                     models.CharField(null=True, blank=True, max_length=500),
                 ),
-                ("finds", models.ForeignKey(null=True, blank=True, to="defcdb.Finds")),
+                (
+                    "finds",
+                    models.ForeignKey(
+                        null=True,
+                        blank=True,
+                        to="defcdb.Finds",
+                        on_delete=models.SET_NULL,
+                    ),
+                ),
                 (
                     "resource_metadata",
-                    models.ForeignKey(null=True, blank=True, to="threedmodels.Project"),
+                    models.ForeignKey(
+                        null=True,
+                        blank=True,
+                        to="threedmodels.Project",
+                        on_delete=models.SET_NULL,
+                    ),
                 ),
             ],
         ),

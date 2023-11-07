@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
             name="topography",
             field=models.ForeignKey(
                 blank=True,
+                on_delete=models.SET_NULL,
                 help_text="Description of surface shape and features.",
                 null=True,
                 to="defcdb.DC_site_topography",

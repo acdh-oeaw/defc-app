@@ -44,7 +44,7 @@ class Threedmodel(models.Model):
     """in an 1:1 relation to class Finds"""
 
     model_id = models.CharField(blank=True, null=True, max_length=100)
-    finds = models.ForeignKey(Finds, blank=True, null=True)
+    finds = models.ForeignKey(Finds, on_delete=models.SET_NULL, blank=True, null=True)
     part = models.CharField(blank=True, null=True, max_length=500)
     diameter = models.CharField(blank=True, null=True, max_length=500)
     wall_thickness = models.CharField(blank=True, null=True, max_length=500)
@@ -62,7 +62,9 @@ class Threedmodel(models.Model):
     core_form = models.CharField(blank=True, null=True, max_length=500)
     core_color = models.CharField(blank=True, null=True, max_length=500)
     inclusion = models.ManyToManyField(Inclusion, blank=True)
-    resource_metadata = models.ForeignKey(Project, blank=True, null=True)
+    resource_metadata = models.ForeignKey(
+        Project, on_delete=models.SET_NULL, blank=True, null=True
+    )
     model_file = models.FileField(upload_to="models", blank=True, null=True)
     model_thumbnail = models.FileField(upload_to="thumbnails", blank=True, null=True)
     model_metadata = models.FileField(upload_to="metadata", blank=True, null=True)

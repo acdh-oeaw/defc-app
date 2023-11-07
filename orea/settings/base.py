@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WHOOSH_BASE = os.path.dirname(
     os.path.dirname(os.path.abspath(os.path.join(__file__, "../")))
@@ -54,6 +55,7 @@ INSTALLED_APPS = (
     "django_tables2",
     "django_spaghetti",
     "crispy_forms",
+    "crispy_bootstrap3",
     "rest_framework",
     "defcdb",
     "bib",
@@ -66,7 +68,6 @@ INSTALLED_APPS = (
     "browsing",
     "whoosh",
     "haystack",
-    "sparql",
 )
 
 WHOOSH_INDEX = os.path.join(BASE_DIR, "whoosh/")
@@ -80,17 +81,17 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"
 
 
-MIDDLEWARE_CLASSES = (
-    "reversion.middleware.RevisionMiddleware",
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.middleware.security.SecurityMiddleware",
-)
+]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap3"
 
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 
@@ -98,7 +99,8 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ),
-    "PAGE_SIZE": 30,
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 20,
 }
 
 ROOT_URLCONF = "orea.urls"

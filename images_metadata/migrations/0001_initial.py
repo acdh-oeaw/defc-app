@@ -36,30 +36,50 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("page", models.CharField(max_length=100, null=True, blank=True)),
-                ("literature", models.ForeignKey(null=True, to="bib.Book", blank=True)),
+                (
+                    "literature",
+                    models.ForeignKey(
+                        null=True,
+                        to="bib.Book",
+                        blank=True,
+                        on_delete=models.SET_NULL,
+                    ),
+                ),
                 (
                     "pottery_decoration",
                     models.ForeignKey(
-                        null=True, to="defcdb.DC_finds_pottery_decoration", blank=True
+                        null=True,
+                        to="defcdb.DC_finds_pottery_decoration",
+                        blank=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
                     "pottery_detail",
                     models.ForeignKey(
-                        null=True, to="defcdb.DC_finds_pottery_detail", blank=True
+                        null=True,
+                        to="defcdb.DC_finds_pottery_detail",
+                        blank=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 (
                     "pottery_form",
                     models.ForeignKey(
-                        null=True, to="defcdb.DC_finds_pottery_form", blank=True
+                        null=True,
+                        to="defcdb.DC_finds_pottery_form",
+                        blank=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
                 ("region", models.ManyToManyField(null=True, to="defcdb.DC_region")),
                 (
                     "small_finds",
                     models.ForeignKey(
-                        null=True, to="defcdb.DC_finds_small_finds_type", blank=True
+                        null=True,
+                        to="defcdb.DC_finds_small_finds_type",
+                        blank=True,
+                        on_delete=models.SET_NULL,
                     ),
                 ),
             ],

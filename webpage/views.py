@@ -13,94 +13,94 @@ from .models import Event
 # Create your views here.
 def imprint(request):
     context = RequestContext(request)
-    return render(request, "webpage/imprint.html", context)
+    return render(request, "webpage/imprint.html")
 
 
 def homepage(request):
     context = RequestContext(request)
-    return render(request, "webpage/index.html", context)
+    return render(request, "webpage/index.html")
 
 
 def about(request):
     # context = RequestContext(request)
     context = {}
     context["event_list"] = Event.objects.all()
-    return render(request, "webpage/about.html", context)
+    return render(request, "webpage/about.html", context=context)
 
 
 def terms_of_use(request):
     context = RequestContext(request)
-    return render(request, "webpage/terms_of_use.html", context)
+    return render(request, "webpage/terms_of_use.html")
 
 
 def cukurici_movie_content(request):
     context = RequestContext(request)
-    return render(request, "webpage/cukurici_movie_content.html", context)
+    return render(request, "webpage/cukurici_movie_content.html")
 
 
 def cukurici_movie_german_version(request):
     context = RequestContext(request)
-    return render(request, "webpage/cukurici_movie_german_version.html", context)
+    return render(request, "webpage/cukurici_movie_german_version.html")
 
 
 def ada_tepe_movie_content(request):
     context = RequestContext(request)
-    return render(request, "webpage/ada_tepe_movie_content.html", context)
+    return render(request, "webpage/ada_tepe_movie_content.html")
 
 
 def ada_tepe_movie_german_version(request):
     context = RequestContext(request)
-    return render(request, "webpage/ada_tepe_movie_german_version.html", context)
+    return render(request, "webpage/ada_tepe_movie_german_version.html")
 
 
 def blog_main(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_main.html", context)
+    return render(request, "webpage/blog_main.html")
 
 
 def blog_post_01(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_post_01.html", context)
+    return render(request, "webpage/blog_post_01.html")
 
 
 def blog_post_02(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_post_02.html", context)
+    return render(request, "webpage/blog_post_02.html")
 
 
 def blog_post_03(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_post_03.html", context)
+    return render(request, "webpage/blog_post_03.html")
 
 
 def blog_post_04(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_post_04.html", context)
+    return render(request, "webpage/blog_post_04.html")
 
 
 def blog_post_05(request):
     context = RequestContext(request)
-    return render(request, "webpage/blog_post_05.html", context)
+    return render(request, "webpage/blog_post_05.html")
 
 
 def defc2rdf_demo(request):
     context = RequestContext(request)
-    return render(request, "webpage/defc2rdf_demo.html", context)
+    return render(request, "webpage/defc2rdf_demo.html")
 
 
 def mapping2cidoc(request):
     context = RequestContext(request)
-    return render(request, "webpage/mapping2cidoc.html", context)
+    return render(request, "webpage/mapping2cidoc.html")
 
 
 def defc_thesaurus(request):
     context = RequestContext(request)
-    return render(request, "webpage/defc_thesaurus.html", context)
+    return render(request, "webpage/defc_thesaurus.html")
 
 
 def chronology_table(request):
     context = RequestContext(request)
-    return render(request, "webpage/chronology_table.html", context)
+    return render(request, "webpage/chronology_table.html")
 
 
 class EventListViewAdmin(generic.ListView):

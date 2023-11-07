@@ -14,7 +14,10 @@ class Migration(migrations.Migration):
             model_name="dc_finds_small_finds_type",
             name="category",
             field=models.ForeignKey(
-                blank=True, to="defcdb.DC_finds_small_finds_category", null=True
+                blank=True,
+                to="defcdb.DC_finds_small_finds_category",
+                null=True,
+                on_delete=models.SET_NULL,
             ),
         ),
     ]

@@ -1,5 +1,5 @@
 {% extends "defcdb/base.html" %}
-{% load staticfiles %}
+{% load static %}
 {% block content %}
 
 <div class="container text-center">
@@ -91,7 +91,7 @@
         </tr>
       </thead>
       <tbody>
-      {% for object in  event_list %}
+      {% for object in event_list %}
       <tr>
         <td>
           {% if object.end_date != None %}

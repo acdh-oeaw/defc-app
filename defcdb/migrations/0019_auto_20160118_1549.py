@@ -409,6 +409,7 @@ class Migration(migrations.Migration):
             model_name="area",
             name="quarry_exploitation_type",
             field=models.ForeignKey(
+                on_delete=models.SET_NULL,
                 null=True,
                 help_text="Type of extraction.",
                 to="defcdb.DC_area_exploitationtype",
@@ -455,6 +456,7 @@ class Migration(migrations.Migration):
                 help_text="Classification of settlement.",
                 to="defcdb.DC_area_settlementtype",
                 blank=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(
@@ -474,6 +476,7 @@ class Migration(migrations.Migration):
                 help_text="Geographical area where the site is located.",
                 to="defcdb.DC_province",
                 verbose_name="District",
+                on_delete=models.SET_NULL,
                 blank=True,
             ),
         ),

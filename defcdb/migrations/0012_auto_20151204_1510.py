@@ -38,6 +38,7 @@ class Migration(migrations.Migration):
                 help_text="chronological period.",
                 verbose_name="Period",
                 null=True,
+                on_delete=models.SET_NULL,
             ),
         ),
         migrations.AlterField(

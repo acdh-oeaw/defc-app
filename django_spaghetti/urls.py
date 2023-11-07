@@ -1,6 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from django_spaghetti.views import plate
 
+
+app_name = "django_spaghetti"
 urlpatterns = [
-    url(r"^$", plate, name="plate"),
+    path(r"", plate, name="plate"),
 ]

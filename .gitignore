@@ -22,3 +22,4 @@ __try.html
 orea/whoosh/*
 /images_metadata/templates/images_metadata/*.bak
 orea/settings/local.py
+/env

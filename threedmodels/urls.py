@@ -1,9 +1,12 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
+
+app_name = "threedmodels"
+
 urlpatterns = [
-    url(r"^$", views.ThreedmodelListView.as_view(), name="object_list"),
-    url(r"^detail/(?P<pk>[0-9]+)$", views.ThreedmodelDetail.as_view(), name="detail"),
-    url(r"^upload/$", views.upload_file, name="upload_file"),
-    url(r"^update/(?P<pk>[0-9]+)$", views.update_file, name="update_file"),
+    path("", views.ThreedmodelListView.as_view(), name="object_list"),
+    path("detail/<int:pk>", views.ThreedmodelDetail.as_view(), name="detail"),
+    path("upload/", views.upload_file, name="upload_file"),
+    path("update/<int:pk>", views.update_file, name="update_file"),
 ]
