@@ -56,7 +56,7 @@ class MapListFilter(django_filters.FilterSet):
     )
     period = django_filters.CharFilter(
         label="Period",
-        name="area__period__period_name",
+        field_name="area__period__period_name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
@@ -64,7 +64,7 @@ class MapListFilter(django_filters.FilterSet):
     period__cs_name = django_filters.CharFilter(
         label="Period Chronological system",
         help_text=False,
-        name="area__period__cs_name",
+        field_name="area__period__cs_name",
         distinct=True,
         lookup_expr="icontains",
     )
@@ -72,14 +72,14 @@ class MapListFilter(django_filters.FilterSet):
         lookup_expr="lte",
         label="Period start date 1 BC",
         help_text="Lesser than or equal to",
-        name="area__period__start_date1_BC",
+        field_name="area__period__start_date1_BC",
         distinct=True,
     )
     area__period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr="gte",
         label="Period end date 1 BC",
         help_text="Greater than or equal to",
-        name="area__period__end_date1_BC",
+        field_name="area__period__end_date1_BC",
         distinct=True,
     )
     # area filters
@@ -371,7 +371,7 @@ class SiteListFilter(django_filters.FilterSet):
     )
     period = django_filters.CharFilter(
         label="Period",
-        name="area__period__period_name",
+        field_name="area__period__period_name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
@@ -379,7 +379,7 @@ class SiteListFilter(django_filters.FilterSet):
     period__cs_name = django_filters.CharFilter(
         label="Period Chronological system",
         help_text=False,
-        name="area__period__cs_name",
+        field_name="area__period__cs_name",
         distinct=True,
         lookup_expr="icontains",
     )
@@ -387,14 +387,14 @@ class SiteListFilter(django_filters.FilterSet):
         lookup_expr="lte",
         label="Period start date 1 BC",
         help_text="Lesser than or equal to",
-        name="area__period__start_date1_BC",
+        field_name="area__period__start_date1_BC",
         distinct=True,
     )
     area__period__end_date1_BC = django_filters.NumberFilter(
         lookup_expr="gte",
         label="Period end date 1 BC",
         help_text="Greater than or equal to",
-        name="area__period__end_date1_BC",
+        field_name="area__period__end_date1_BC",
         distinct=True,
     )
 
@@ -418,14 +418,14 @@ class AreaListFilter(django_filters.FilterSet):
     site__name = django_filters.CharFilter(lookup_expr="icontains", help_text=False)
     period = django_filters.CharFilter(
         label="Period",
-        name="period__period_name",
+        field_name="period__period_name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
     )
     period__cs_name = django_filters.CharFilter(
         label="Period Chronological system",
-        name="period__cs_name",
+        field_name="period__cs_name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
@@ -584,7 +584,7 @@ class FindsListFilter(django_filters.FilterSet):
     )
     period = django_filters.CharFilter(
         label="Period",
-        name="area__period__period_name",
+        field_name="area__period__period_name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
@@ -592,7 +592,7 @@ class FindsListFilter(django_filters.FilterSet):
     period__cs_name = django_filters.CharFilter(
         label="Period Chronological system",
         help_text=False,
-        name="area__period__cs_name",
+        field_name="area__period__cs_name",
         distinct=True,
         lookup_expr="icontains",
     )
@@ -690,7 +690,7 @@ class ResearchEventListFilter(django_filters.FilterSet):
         queryset=DC_researchevent_researchtype.objects.all(), help_text=False
     )
     institution = django_filters.CharFilter(
-        name="institution__name",
+        field_name="institution__name",
         distinct=True,
         lookup_expr="icontains",
         help_text=False,
