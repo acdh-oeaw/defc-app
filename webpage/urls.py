@@ -2,11 +2,18 @@
 
 from django.urls import path
 from . import views
+from django_spaghetti.views import Plate
+
 
 app_name = "webpage"
 
 urlpatterns = [
     path("", views.homepage, name="homepage"),
+    path(
+        "data-model/",
+        Plate.as_view(plate_template_name="webpage/data_model.html"),
+        name="data_model",
+    ),
     path("about/", views.about, name="about"),
     path("imprint/", views.imprint, name="imprint"),
     path(
