@@ -1,3 +1,4 @@
+crispy-bootstrap3
 Django
 django-autocomplete-light
 django-crispy-forms

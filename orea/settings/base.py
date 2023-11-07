@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     "django_tables2",
     "django_spaghetti",
     "crispy_forms",
+    "crispy_bootstrap3",
     "rest_framework",
     "defcdb",
     "bib",
@@ -89,6 +90,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap3"
 
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 
