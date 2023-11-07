@@ -9,7 +9,7 @@ django-tables2
 djangorestframework
 Jinja2
 jsonschema
-mysqlclient
+psycopg2
 python-dateutil
 requests
 Whoosh
