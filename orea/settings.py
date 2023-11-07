@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     "bib",
     "geolocation",
     "webpage",
-    "reversion",
     "images_metadata",
     "threedmodels",
     "publicrecords",
