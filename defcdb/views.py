@@ -513,7 +513,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return render_to_response("defcdb/logout.html")
+    return render(request, "defcdb/logout.html")
 
 
 #################################################################
