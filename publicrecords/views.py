@@ -87,11 +87,11 @@ class FindsDetail(DetailView):
             )
         if current_find.pottery_detail is not None:
             context["pottery_detail_list"] = ImageThesaurus.objects.filter(
-                pottery_detail=current_find.pottery_detail.all
+                pottery_detail__in=current_find.pottery_detail.all()
             )
         if current_find.pottery_decoration is not None:
             context["pottery_decoration_list"] = ImageThesaurus.objects.filter(
-                pottery_decoration=current_find.pottery_decoration.all
+                pottery_decoration__in=current_find.pottery_decoration.all()
             )
         return context
 
