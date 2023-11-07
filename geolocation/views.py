@@ -31,9 +31,8 @@ class SiteListFilterView(GenericListView):
         context = super(GenericListView, self).get_context_data()
         context[self.context_filter_name] = self.filter
         lst_json = []
-        sites = SiteListFilter(
-            self.request.GET, queryset=Site.objects.filter(latitude__isnull=False)
-        )
+        sites = self.get_queryset().distinct()
+       
         for x in sites:
             r = {
                 "geometry": {
@@ -50,10 +49,8 @@ class SiteListFilterView(GenericListView):
 
 
 def site_map(request):
-    site_filter = SiteListFilter(
-        request.GET, queryset=Site.objects.exclude(latitude__isnull=True)
-    )
-    return render(request, "geolocation/site_map.html", {"filter": site_filter})
+    sites = Site.objects.exclude(latitude__isnull=True)
+    return render(request, "geolocation/site_map.html", {"sites": sites})
 
 
 def showplaces(request):

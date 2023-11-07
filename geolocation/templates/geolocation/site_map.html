@@ -1,5 +1,5 @@
 {% extends "defcdb/base.html" %}
-{% load staticfiles %}
+{% load static %}
 {% block scriptHeader %}<!--leafletjs -->
    <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet/leaflet.css' %}"/></link>
    <link rel="stylesheet" href="{% static 'webpage/libraries/leaflet.markercluster/dist/MarkerCluster.css' %}"/></link>
@@ -65,7 +65,7 @@
             <div class="panel-body">
 
                 <div>
-                  {% for obj in filter %}
+                  {% for obj in sites %}
                       <a href="{% url 'publicrecords:site_detail' pk=obj.id %}">{{ obj.name }}</a><br />
                   {% endfor %}
                 </div>
@@ -129,7 +129,7 @@
 
 
 
-        var build_data =  [{% for obj in filter %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong><a href='{%url 'publicrecords:site_detail' pk=obj.id %}''>{{ obj.name }}</a></strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% empty %}]{% endfor %}
+        var build_data =  [{% for obj in sites %}{"geometry": {"type": "Point", "coordinates": [ {{ obj.longitude }}, {{ obj.latitude }} ]}, "type": "Feature", "properties": {"popupContent": "<strong><a href='{%url 'publicrecords:site_detail' pk=obj.id %}''>{{ obj.name }}</a></strong>" }, "id": "{{ obj.id }}" }{% if forloop.last %}] {% else %},{% endif %}{% empty %}]{% endfor %}
         var geoJsonLayer = L.geoJson( build_data, {onEachFeature: onEachFeature});
         markers.addLayer(geoJsonLayer);
         mymap.addLayer(markers);
