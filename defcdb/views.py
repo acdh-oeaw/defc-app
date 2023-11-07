@@ -239,17 +239,6 @@ def create_name(request):
 #################################################################
 
 
-class SiteListView(generic.ListView):
-    template_name = "defcdb/site_list.html"
-
-    def get_queryset(self):
-        return Site.objects.order_by("name")
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(SiteListView, self).dispatch(*args, **kwargs)
-
-
 @reversion.create_revision()
 @login_required
 def update_site(request, pk):

@@ -13,7 +13,6 @@ urlpatterns = [
     path("exploreturkey/", views.turkey_map_view, name="turkey_map"),
     path("exploregreece/", views.greece_map_view, name="greece_map"),
     path("bibliography/", views.bibliography_view, name="bibliography"),
-    path("site/", views.SiteListView.as_view(), name="site_list"),
     path("site/create/", views.create_site, name="site_create"),
     path("site/update/<int:pk>", views.update_site, name="site_update"),
     path("site/delete/<int:pk>", views.SiteDelete.as_view(), name="site_delete"),

@@ -2,7 +2,6 @@
 from django.urls import path, include
 from rest_framework import routers
 from django.contrib import admin
-from orea.settings import base
 from defcdb import views
 from defcdb import api_views
 
