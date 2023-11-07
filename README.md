@@ -1,30 +1,31 @@
-DEFC-App
-=====
-
-About DEFC-App 
---------------
+# DEFC-App
 
 DEFC stands for Digitizing Early Farming Cultures, a project conducted by the [Austrian Academy of
 Sciences](http://www.orea.oeaw.ac.at/go-digital.html). The DEFC-App is an application for curating, exploring, and retrieving archaeological datasets.
 
-Install
--------
+## install
 
-The DEFC-App is based on [Django 1.8](https://www.djangoproject.com/) and was developed and tested with Python 3.4. 
+* clone the repo
+* change into the project's root directory e.g. `cd defc-app`
+* create a virtual environment e.g. `virutalenv env` and activate it `source env/bin/activate`
+* install required packages `pip install -r requirements_dev.txt`
+* run migrations `python manage.py migrate`
+* start the dev sever `python manage.py runserver`
+* go to [http://127.0.0.1:8000](http://127.0.0.1:8000/) and check if everything works
 
-1. Clone the repository and check out the master branch which holds the latest stable version.
-2. Change to the project´s root directory.
-3. Create a virtual environment. 
-4. Run `pip install -r requirements.txt` to install all required packages.
-5. Change directory into `orea/settings/` and adept `dummysettings.py` according to your custom database.
-6. Open a terminal, change to the project´s root directory.
-7. Run `python manage.py runserver --settings=orea.settings.dummysettings`
-8. Open a browser of your choice and enter [http://127.0.0.1:8000/defcdb/](http://127.0.0.1:8000/defcdb/). 
-9. If everything worked out, you should see something like on this [demo-page](http://defc.eos.arz.oeaw.ac.at/defcdb/)
 
-Import controlled vocabularies
-------------------------------
+## Docker
 
-On of the main assets of the DEFC-App is its carefully curtated controlled vocabulary which helps keeping the different datasets as homogeneous as possible. 
+At the ACDH-CH we use a centralized database-server. So instead of spawning a database for each service our services are talking to a database on this centralized db-server. This setup is reflected in the dockerized setting as well, meaning it expects an already existing database (either on your host, e.g. accessible via 'localhost' or some remote one)
 
-1. more to come....
+### building the image
+
+* `docker build -t defc:latest .`
+* `docker build -t defc:latest --no-cache .`
+
+
+### running the image
+
+To run the image you should provide an `.env` file to pass in needed environment variables; see example below:
+
+* `docker run -it -p 8020:8020 --rm --env-file docker.env--name defc defc:latest`
