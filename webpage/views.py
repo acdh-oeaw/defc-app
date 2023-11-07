@@ -25,7 +25,7 @@ def about(request):
     # context = RequestContext(request)
     context = {}
     context["event_list"] = Event.objects.all()
-    return render(request, "webpage/about.html")
+    return render(request, "webpage/about.html", context=context)
 
 
 def terms_of_use(request):
