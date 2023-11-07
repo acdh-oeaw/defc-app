@@ -510,25 +510,25 @@ class DC_chronological_system(GenericMethods):
         null=True,
         help_text="Name of archaeological period for which evidence was found.",
     )
-    start_date1_BC = models.IntegerField(blank=True, null=True)
-    start_date2_BC = models.IntegerField(blank=True, null=True)
-    end_date1_BC = models.IntegerField(blank=True, null=True)
-    end_date2_BC = models.IntegerField(blank=True, null=True)
+    start_date1_bc = models.IntegerField(blank=True, null=True)
+    start_date2_bc = models.IntegerField(blank=True, null=True)
+    end_date1_bc = models.IntegerField(blank=True, null=True)
+    end_date2_bc = models.IntegerField(blank=True, null=True)
     region = models.ManyToManyField(DC_region, blank=True)
 
     class Meta:
         ordering = ("cs_name",)
 
     def __str__(self):
-        # return str(self.region)+'_'+str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_BC)
+        # return str(self.region)+'_'+str(self.cs_name)+'_'+str(self.period_name)+'_'+str(self.start_date1_bc)
         return (
             str(self.cs_name)
             + "_"
             + str(self.period_name)
             + "_"
-            + str(self.start_date1_BC)
+            + str(self.start_date1_bc)
             + "_"
-            + str(self.end_date1_BC)
+            + str(self.end_date1_bc)
             + "_"
             + str("_".join([str(x) for x in self.region.all()]))
         )
@@ -771,6 +771,7 @@ class Site(TrackChanges):
 
     class Meta:
         unique_together = ("name", "province")
+        ordering = ["id", ]
 
 
 reversion.register(Site)
@@ -827,7 +828,7 @@ class Area(TrackChanges):
         help_text="The Laboratory number of 14C sample of the earliest date.",
         verbose_name="Earliest date: Lab Number",
     )
-    earliest_date_14C_age = models.IntegerField(
+    earliest_date_14c_age = models.IntegerField(
         null=True,
         blank=True,
         help_text="The earliest date without calibration BP.",
@@ -841,7 +842,7 @@ class Area(TrackChanges):
         help_text="Was the date calibrated or not?",
         verbose_name="Earliest date: Calibration",
     )
-    earliest_date_14C_age_calibrated = models.IntegerField(
+    earliest_date_14c_age_calibrated = models.IntegerField(
         null=True,
         blank=True,
         help_text="The earliest date with calibration in BC.",
@@ -880,7 +881,7 @@ class Area(TrackChanges):
         help_text="The Laboratory number of 14C sample of the latest date.",
         verbose_name="Latest date: Lab Number",
     )
-    latest_date_14C_age = models.IntegerField(
+    latest_date_14c_age = models.IntegerField(
         null=True,
         blank=True,
         help_text="The latest date without calibration BP (raw).",
@@ -894,7 +895,7 @@ class Area(TrackChanges):
         help_text="Was the date calibrated or not?",
         verbose_name="Latest date: Calibration",
     )
-    latest_date_14C_age_calibrated = models.IntegerField(
+    latest_date_14c_age_calibrated = models.IntegerField(
         null=True,
         blank=True,
         help_text="The latest date with calibration in BC.",
