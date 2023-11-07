@@ -5,6 +5,7 @@ django-crispy-forms
 django-filter
 django-haystack
 django-reversion
+django-spaghetti-and-meatballs==0.4.2
 django-tables2
 djangorestframework
 Jinja2

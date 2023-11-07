@@ -150,5 +150,4 @@ urlpatterns = [
     path("publicrecords/", include("publicrecords.urls", namespace="publicrecords")),
     path("3Dmodels/", include("threedmodels.urls", namespace="3Dmodels")),
     path("browsing/", include("browsing.urls", namespace="browsing")),
-    path("datamodel/", include("django_spaghetti.urls", namespace="datamodel")),
 ]
