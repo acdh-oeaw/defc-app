@@ -87,9 +87,9 @@
     if(selected_option =="yes"){
         $('div[id*="earliest"]').show("slow");
         $('div[id*="latest"]').show("slow");
-        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_14c_age_calibrated').hide();
         $('#div_id_earliest_date_date_of_calibration').hide();
-        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_14c_age_calibrated').hide();
         $('#div_id_latest_date_date_of_calibration').hide();
     }
     else if(selected_option =="no"){
@@ -107,15 +107,15 @@
     $('#id_earliest_date_calibration').change(function(){
     var selected_option = $('#id_earliest_date_calibration option:selected').text();
     if(selected_option =="yes"){
-        $('#div_id_earliest_date_14C_age_calibrated').show("slow");
+        $('#div_id_earliest_date_14c_age_calibrated').show("slow");
         $('#div_id_earliest_date_date_of_calibration').show("slow");
     }
     else if(selected_option =="no"){
-        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_14c_age_calibrated').hide();
         $('#div_id_earliest_date_date_of_calibration').hide();
     }
     else if(selected_option == "---------"){
-        $('#div_id_earliest_date_14C_age_calibrated').hide();
+        $('#div_id_earliest_date_14c_age_calibrated').hide();
         $('#div_id_earliest_date_date_of_calibration').hide();
     }
 });
@@ -125,15 +125,15 @@
     $('#id_latest_date_calibration').change(function(){
     var selected_option = $('#id_latest_date_calibration option:selected').text();
     if(selected_option =="yes"){
-        $('#div_id_latest_date_14C_age_calibrated').show("slow");
+        $('#div_id_latest_date_14c_age_calibrated').show("slow");
         $('#div_id_latest_date_date_of_calibration').show("slow");
     }
     else if(selected_option =="no"){
-        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_14c_age_calibrated').hide();
         $('#div_id_latest_date_date_of_calibration').hide();
     }
     else if(selected_option == "---------"){
-        $('#div_id_latest_date_14C_age_calibrated').hide();
+        $('#div_id_latest_date_14c_age_calibrated').hide();
         $('#div_id_latest_date_date_of_calibration').hide();
     }
 });

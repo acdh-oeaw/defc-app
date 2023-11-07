@@ -111,7 +111,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="area",
-            name="earliest_date_14C_age",
+            name="earliest_date_14c_age",
             field=models.IntegerField(
                 blank=True,
                 help_text="The earliest date without calibration BP.",
@@ -121,7 +121,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="area",
-            name="earliest_date_14C_age_calibrated",
+            name="earliest_date_14c_age_calibrated",
             field=models.IntegerField(
                 blank=True,
                 help_text="The earliest date with calibration in BC.",
@@ -196,7 +196,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="area",
-            name="latest_date_14C_age",
+            name="latest_date_14c_age",
             field=models.IntegerField(
                 blank=True,
                 help_text="The latest date without calibration BP (raw).",
@@ -206,7 +206,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name="area",
-            name="latest_date_14C_age_calibrated",
+            name="latest_date_14c_age_calibrated",
             field=models.IntegerField(
                 blank=True,
                 help_text="The latest date with calibration in BC.",
