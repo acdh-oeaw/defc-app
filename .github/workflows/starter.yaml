@@ -21,7 +21,7 @@ jobs:
 # with org/repo-name (all lower case).
 # E. g. ACDH-OEAW/OpenAtlas-Discovery -> acdh-oeaw/openatlas-discovery
       registry_root: ghcr.io/${{ github.repository }}/
-      default_port: "8010"
+      default_port: "8020"
 # Usually you don't deal with all commits since the repository was created.
 # Increase if you e.g don't find a tag you want to display in the application
       fetch-depth: 10
