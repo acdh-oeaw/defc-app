@@ -81,22 +81,7 @@ jobs:
       fetch-depth: ${{ fromJson(needs.setup_workflow_env.outputs.fetch-depth) }}
       submodules: ${{ needs.setup_workflow_env.outputs.submodules }}
   _2:
-    needs: [setup_workflow_env, generate_workflow_vars]
-    uses:  acdh-oeaw/gl-autodevops-minimal-port/.github/workflows/herokuish-tests-db-url.yaml@main
-    secrets: inherit
-# if you run this outside of acdh-oeaw yo uneed to specify every secret you want to pass by name
-    with:
-      environment: ${{ needs.setup_workflow_env.outputs.environment}}
-      registry_root: ${{ needs.setup_workflow_env.outputs.registry_root }}
-      image_name: ${{ needs.setup_workflow_env.outputs.image_name }}
-      default_port: ${{ needs.setup_workflow_env.outputs.default_port }}
-      fetch-depth: ${{ fromJson(needs.setup_workflow_env.outputs.fetch-depth) }}
-      herokuish_base_image: ${{ needs.setup_workflow_env.outputs.herokuish_base_image }}
-      POSTGRES_ENABLED: ${{ needs.setup_workflow_env.outputs.POSTGRES_ENABLED }}
-      PUBLIC_URL: ${{ needs.generate_workflow_vars.outputs.PUBLIC_URL }}
-      submodules: ${{ needs.setup_workflow_env.outputs.submodules }}
-  _3:
-    needs: [setup_workflow_env, generate_workflow_vars, _1, _2]
+    needs: [setup_workflow_env, generate_workflow_vars, _1]
     uses: acdh-oeaw/gl-autodevops-minimal-port/.github/workflows/deploy.yml@main
     secrets: inherit
 # if you run this outside of acdh-oeaw yo uneed to specify every secret you want to pass by name
