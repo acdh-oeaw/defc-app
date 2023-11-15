@@ -16,6 +16,7 @@ jobs:
       environment: ${{ steps.get_environment_from_git_ref.outputs.environment }}
       environment_short: ${{ steps.get_environment_from_git_ref.outputs.environment_short }}
       image_name: defc
+      source_image: defc
 # Please note that the next line only works correctly with repositories that don't contain
 # upper case characters. If you have such a repo name please replace ${{ github.repository }}
 # with org/repo-name (all lower case).
